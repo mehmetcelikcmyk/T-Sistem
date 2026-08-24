@@ -1,0 +1,16 @@
+# Environments
+.env
+.env.local
+__pycache__/
+*.py[cod]
+*.class
+.pytest_cache/
+
+# Local DB & Data Caches
+data/tsistem.db
+data/local_ai_test_results/
+data/teknofest_yarismalar/
+
+# Logs & temp
+*.log
+.tempmediaStorage/

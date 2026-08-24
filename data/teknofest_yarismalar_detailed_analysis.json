@@ -1,0 +1,3118 @@
+{
+  "total_competitions": 60,
+  "extensions": {
+    ".docx": 83,
+    ".pdf": 216,
+    ".png": 45,
+    ".webp": 11,
+    ".pptx": 3,
+    ".jpg": 4
+  },
+  "stage_codes": {
+    "FTR": 1,
+    "OTR": 25,
+    "ODR": 15,
+    "PDR": 4,
+    "KTR": 12,
+    "DTR": 2,
+    "AHR": 2,
+    "TYF": 3,
+    "TTR": 3,
+    "DDR": 1,
+    "FDR": 2,
+    "TYR": 1,
+    "SABLON": 2,
+    "YARISMACI_RAPORLARI": 2,
+    "OAR": 1,
+    "PSR": 3,
+    "ATR": 1,
+    "ÖDR": 1,
+    "PVT": 1
+  },
+  "sub_folders_distribution": {
+    "asamalar": 60,
+    "sartname": 60
+  },
+  "competitions": [
+    {
+      "name": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_5G_YAPAY_ZEKA_%C4%B0LE_AKILLI_YOL_G%C3%9CVENL%C4%B0%C4%9E%C4%B0_YARISMASI_SARTNAMESI_2_PORZ6.pdf",
+          "ext": ".pdf",
+          "size_kb": 1694.1
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "FTR",
+          "files": [
+            {
+              "name": "2026_5G_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_FTR_%C5%9Fablon_TR_1_e4PVw.docx",
+              "rel_path": "sablon\\2026_5G_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_FTR_%C5%9Fablon_TR_1_e4PVw.docx",
+              "ext": ".docx",
+              "size_kb": 2653.1
+            },
+            {
+              "name": "5G_ve_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_Yar%C4%B1%C5%9Fmas%C4%B1_-_FTR_A%C5%9Famas%C4%B1_Teslim_D.pdf",
+              "rel_path": "sablon\\5G_ve_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_Yar%C4%B1%C5%9Fmas%C4%B1_-_FTR_A%C5%9Famas%C4%B1_Teslim_D.pdf",
+              "ext": ".pdf",
+              "size_kb": 410.0
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "2026_5G_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_%C3%96TR_%C5%9Fablon_TR_rYLTN.docx",
+              "rel_path": "sablon\\2026_5G_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_%C3%96TR_%C5%9Fablon_TR_rYLTN.docx",
+              "ext": ".docx",
+              "size_kb": 2655.4
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 5
+    },
+    {
+      "name": "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "Bagimliliklarla_M%C3%BCcadelede_Teknolojik_Uygulamalar_Sartnamesi_v1_3MQrt.pdf",
+          "ext": ".pdf",
+          "size_kb": 1088.7
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "Bagimliliklarla_M%C3%BCcadelede_Teknolojik_Uygulamalar_Yar%C4%B1%C5%9Fmas%C4%B1_Proje_Detay_R.docx",
+              "rel_path": "sablon\\Bagimliliklarla_M%C3%BCcadelede_Teknolojik_Uygulamalar_Yar%C4%B1%C5%9Fmas%C4%B1_Proje_Detay_R.docx",
+              "ext": ".docx",
+              "size_kb": 1838.3
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "biyoteknoloji-inovasyon-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026-TR_Biyoteknoloji_%C4%B0novasyon_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartname-_1I5Kr.pdf",
+          "ext": ".pdf",
+          "size_kb": 1596.1
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "Biyoteknoloji_%C4%B0novasyon_%C3%9Cniversite_%C3%96DR_2026_TR_2_ahAY1.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\sablon\\Biyoteknoloji_%C4%B0novasyon_%C3%9Cniversite_%C3%96DR_2026_TR_2_ahAY1.docx",
+              "ext": ".docx",
+              "size_kb": 2226.3
+            },
+            {
+              "name": "03t08LDoVDwGN0tTz9zVQolKivye1sqs.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\03t08LDoVDwGN0tTz9zVQolKivye1sqs.pdf",
+              "ext": ".pdf",
+              "size_kb": 765.3
+            },
+            {
+              "name": "0Xz5Wuk2CPwcNjUCQZQLsciCUXnqJmfF.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\0Xz5Wuk2CPwcNjUCQZQLsciCUXnqJmfF.pdf",
+              "ext": ".pdf",
+              "size_kb": 12481.4
+            },
+            {
+              "name": "4MZ8nm5gGqP9TJIQajKAhyRvfHRHKtWJ.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\4MZ8nm5gGqP9TJIQajKAhyRvfHRHKtWJ.pdf",
+              "ext": ".pdf",
+              "size_kb": 777.8
+            },
+            {
+              "name": "4qLg9qfzWN6lkiX9mQbsayknItEa99sH.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\4qLg9qfzWN6lkiX9mQbsayknItEa99sH.pdf",
+              "ext": ".pdf",
+              "size_kb": 735.0
+            },
+            {
+              "name": "5QbBewiszAssEdYiEAR7MiV3wlTfokp2.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\5QbBewiszAssEdYiEAR7MiV3wlTfokp2.pdf",
+              "ext": ".pdf",
+              "size_kb": 3308.8
+            },
+            {
+              "name": "8Syf12QjhN8IIpoMUocWLIWkSxtNzYx6.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\8Syf12QjhN8IIpoMUocWLIWkSxtNzYx6.pdf",
+              "ext": ".pdf",
+              "size_kb": 1340.5
+            },
+            {
+              "name": "8zcaHue96YWhOYnM62phrEArw6eD0msl.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\8zcaHue96YWhOYnM62phrEArw6eD0msl.docx",
+              "ext": ".docx",
+              "size_kb": 1858.8
+            },
+            {
+              "name": "E7vVpOf2hdxKsYSfT2vmReLQaeZg3HB2.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\E7vVpOf2hdxKsYSfT2vmReLQaeZg3HB2.pdf",
+              "ext": ".pdf",
+              "size_kb": 807.5
+            },
+            {
+              "name": "Biyoteknoloji_%C4%B0novasyon_Lise-%C3%96DR__2026_2_gV8iQ.docx",
+              "rel_path": "seviye\\lise\\sablon\\Biyoteknoloji_%C4%B0novasyon_Lise-%C3%96DR__2026_2_gV8iQ.docx",
+              "ext": ".docx",
+              "size_kb": 2225.8
+            }
+          ]
+        },
+        {
+          "stage_code": "PDR",
+          "files": [
+            {
+              "name": "2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+              "rel_path": "sablon\\2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+              "ext": ".docx",
+              "size_kb": 2238.0
+            },
+            {
+              "name": "2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\sablon\\2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+              "ext": ".docx",
+              "size_kb": 2238.0
+            },
+            {
+              "name": "91hh4o6JKXWrA4oUJHhe7OvLgnkqA6ZJ.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\91hh4o6JKXWrA4oUJHhe7OvLgnkqA6ZJ.pdf",
+              "ext": ".pdf",
+              "size_kb": 911.3
+            },
+            {
+              "name": "aNdK0bT6KVWAa7A9dgc089jt1uhXDVaG.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\aNdK0bT6KVWAa7A9dgc089jt1uhXDVaG.pdf",
+              "ext": ".pdf",
+              "size_kb": 758.3
+            },
+            {
+              "name": "aR06ZPJ1LJuuuwmlyYwKYRVKEO0dH3ot.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\aR06ZPJ1LJuuuwmlyYwKYRVKEO0dH3ot.pdf",
+              "ext": ".pdf",
+              "size_kb": 745.9
+            },
+            {
+              "name": "AzgqnpZOamtEKQvEPuWDP1IOedhyHyGo.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\AzgqnpZOamtEKQvEPuWDP1IOedhyHyGo.pdf",
+              "ext": ".pdf",
+              "size_kb": 1004.3
+            },
+            {
+              "name": "B21C9KCMCDIwMHLYd78wZYsbZe8zirDX.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\B21C9KCMCDIwMHLYd78wZYsbZe8zirDX.pdf",
+              "ext": ".pdf",
+              "size_kb": 593.3
+            },
+            {
+              "name": "cOtN4rk0LaTngFbJsp5sXAf7vd115qQ4.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\cOtN4rk0LaTngFbJsp5sXAf7vd115qQ4.pdf",
+              "ext": ".pdf",
+              "size_kb": 1233.7
+            },
+            {
+              "name": "DHnKWoad9KHdXC9OnWmBJueurboDkcmw.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\DHnKWoad9KHdXC9OnWmBJueurboDkcmw.pdf",
+              "ext": ".pdf",
+              "size_kb": 1236.9
+            },
+            {
+              "name": "EkKiXeE0YJg31iMuUBWF5YVP3zAHqtKG.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\EkKiXeE0YJg31iMuUBWF5YVP3zAHqtKG.pdf",
+              "ext": ".pdf",
+              "size_kb": 1172.7
+            },
+            {
+              "name": "elitw8kjGVPoaX7Lnh1KO1noxXhnC9Ak.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\elitw8kjGVPoaX7Lnh1KO1noxXhnC9Ak.pdf",
+              "ext": ".pdf",
+              "size_kb": 910.8
+            },
+            {
+              "name": "ElyCXm3pgF8dTfKF1YiJaV87dy4v8GAi.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\ElyCXm3pgF8dTfKF1YiJaV87dy4v8GAi.pdf",
+              "ext": ".pdf",
+              "size_kb": 1435.0
+            },
+            {
+              "name": "G5k2bOvP2xfM5OhomhKTFnMdU79GAegB.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\G5k2bOvP2xfM5OhomhKTFnMdU79GAegB.pdf",
+              "ext": ".pdf",
+              "size_kb": 1467.5
+            },
+            {
+              "name": "gaCQn9IOdHL999VufukNzaj0DUdkMiL5.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\gaCQn9IOdHL999VufukNzaj0DUdkMiL5.pdf",
+              "ext": ".pdf",
+              "size_kb": 9693.5
+            },
+            {
+              "name": "poOSIx2EIKdgInKrj1yh7mpNpdgYONID.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\poOSIx2EIKdgInKrj1yh7mpNpdgYONID.pdf",
+              "ext": ".pdf",
+              "size_kb": 1077.5
+            },
+            {
+              "name": "qMGn4KXsv3fEWWktJLCXp2So94FoSAwl.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\qMGn4KXsv3fEWWktJLCXp2So94FoSAwl.pdf",
+              "ext": ".pdf",
+              "size_kb": 993.8
+            },
+            {
+              "name": "qX5N0V44FOPXW5J7WBta8AAEMuicEVDi.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\qX5N0V44FOPXW5J7WBta8AAEMuicEVDi.pdf",
+              "ext": ".pdf",
+              "size_kb": 688.5
+            },
+            {
+              "name": "R0Rl7hfZjfSVJXDwLXloyggHAskPMDcr.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\R0Rl7hfZjfSVJXDwLXloyggHAskPMDcr.pdf",
+              "ext": ".pdf",
+              "size_kb": 1380.3
+            },
+            {
+              "name": "SPmjU02ebimUGfYfIoVrt7jzkuUmJTvV.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\SPmjU02ebimUGfYfIoVrt7jzkuUmJTvV.pdf",
+              "ext": ".pdf",
+              "size_kb": 1509.6
+            },
+            {
+              "name": "T3zPSYQUNgPiADpytaTNe6IiYdavaOI9.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\T3zPSYQUNgPiADpytaTNe6IiYdavaOI9.pdf",
+              "ext": ".pdf",
+              "size_kb": 667.1
+            },
+            {
+              "name": "tIlXilXRJJEamflNyRF21SB7tjTX3ILm.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\tIlXilXRJJEamflNyRF21SB7tjTX3ILm.pdf",
+              "ext": ".pdf",
+              "size_kb": 1086.6
+            },
+            {
+              "name": "VRKqdVbJ95p7OvaWVQj4T09NP10DVvLA.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\VRKqdVbJ95p7OvaWVQj4T09NP10DVvLA.pdf",
+              "ext": ".pdf",
+              "size_kb": 522.1
+            },
+            {
+              "name": "2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+              "rel_path": "seviye\\lise\\sablon\\2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+              "ext": ".docx",
+              "size_kb": 2238.0
+            },
+            {
+              "name": "0PihC4Em5zsBTvuPvcI3R2jgDsIqB8r7.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\0PihC4Em5zsBTvuPvcI3R2jgDsIqB8r7.pdf",
+              "ext": ".pdf",
+              "size_kb": 856.8
+            },
+            {
+              "name": "3OtTfzASUveVmr7h0ml4tJBkbZGVdWMt.docx",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\3OtTfzASUveVmr7h0ml4tJBkbZGVdWMt.docx",
+              "ext": ".docx",
+              "size_kb": 1114.5
+            },
+            {
+              "name": "b4ck8xGMz9rIFDmOvZCPtEKixJkwdGpL.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\b4ck8xGMz9rIFDmOvZCPtEKixJkwdGpL.pdf",
+              "ext": ".pdf",
+              "size_kb": 2293.3
+            },
+            {
+              "name": "c0PPsn4U9gOx9f7R0zhoarDhs9A8pKsh.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\c0PPsn4U9gOx9f7R0zhoarDhs9A8pKsh.pdf",
+              "ext": ".pdf",
+              "size_kb": 871.5
+            },
+            {
+              "name": "CP9xgPZq0Z9CZY759tAudBptZKwpr6h4.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\CP9xgPZq0Z9CZY759tAudBptZKwpr6h4.pdf",
+              "ext": ".pdf",
+              "size_kb": 1217.4
+            },
+            {
+              "name": "DIfhcVqazI5jn1xJpzymtWbY4pUV2gQ8.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\DIfhcVqazI5jn1xJpzymtWbY4pUV2gQ8.pdf",
+              "ext": ".pdf",
+              "size_kb": 1221.5
+            },
+            {
+              "name": "eEyjEQid9dvGkJEBVm95gBPoXAMryKt1.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\eEyjEQid9dvGkJEBVm95gBPoXAMryKt1.pdf",
+              "ext": ".pdf",
+              "size_kb": 892.3
+            },
+            {
+              "name": "eR1reEKwGXJnntbWKDhQEly7XYK0Xt3z.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\eR1reEKwGXJnntbWKDhQEly7XYK0Xt3z.pdf",
+              "ext": ".pdf",
+              "size_kb": 939.6
+            },
+            {
+              "name": "Fhfmp5uGOSyN1iTE3lzshTtBQ8MLrY2a.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\Fhfmp5uGOSyN1iTE3lzshTtBQ8MLrY2a.pdf",
+              "ext": ".pdf",
+              "size_kb": 1321.1
+            },
+            {
+              "name": "HET4Q11Sa9LNkAVzETuKsZIDoO6xFtWJ.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\HET4Q11Sa9LNkAVzETuKsZIDoO6xFtWJ.pdf",
+              "ext": ".pdf",
+              "size_kb": 888.2
+            },
+            {
+              "name": "hXOOzR7h2QvzGkWW5Erk4rG6h5vtIqfu.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\hXOOzR7h2QvzGkWW5Erk4rG6h5vtIqfu.pdf",
+              "ext": ".pdf",
+              "size_kb": 714.9
+            },
+            {
+              "name": "QHCL6JCc9qsfmOMkRoGqQ7L66SJDgcEW.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\QHCL6JCc9qsfmOMkRoGqQ7L66SJDgcEW.pdf",
+              "ext": ".pdf",
+              "size_kb": 1163.8
+            },
+            {
+              "name": "RLOkhzmxevHnbECiDEGynOxbN0SGLjf9.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\RLOkhzmxevHnbECiDEGynOxbN0SGLjf9.pdf",
+              "ext": ".pdf",
+              "size_kb": 1146.8
+            },
+            {
+              "name": "rM4HPICKvNzIrZarsA7y4HSrueT5sBXq.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\rM4HPICKvNzIrZarsA7y4HSrueT5sBXq.pdf",
+              "ext": ".pdf",
+              "size_kb": 869.7
+            },
+            {
+              "name": "s3hGhcziJTnnHIutDXm7BfnWmcDYsu9e.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\s3hGhcziJTnnHIutDXm7BfnWmcDYsu9e.pdf",
+              "ext": ".pdf",
+              "size_kb": 849.5
+            },
+            {
+              "name": "Siuk6ZiEEM7TcSxM6NBSW9UJmpEp5YLT.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\Siuk6ZiEEM7TcSxM6NBSW9UJmpEp5YLT.pdf",
+              "ext": ".pdf",
+              "size_kb": 508.6
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 51
+    },
+    {
+      "name": "blokzincir-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_BLOKZ%C4%B0NC%C4%B0R_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR.20_02_rBh8h.pdf",
+          "ext": ".pdf",
+          "size_kb": 1536.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "BlokzincirYar%C4%B1%C5%9Fmas%C4%B12026%C3%96DR%C5%9Eablonu.TR_EX2RH.docx",
+              "rel_path": "sablon\\BlokzincirYar%C4%B1%C5%9Fmas%C4%B12026%C3%96DR%C5%9Eablonu.TR_EX2RH.docx",
+              "ext": ".docx",
+              "size_kb": 2220.8
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "celikkubbe-hava-savunma-sistemleri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "28.07.2026_-_2026_%C5%9Eartname_TR_v1.5_CtfFw.pdf",
+          "ext": ".pdf",
+          "size_kb": 1794.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "2026_%C3%87elikkubbe_HavaSavunmaSistemleri_KTR_%C5%9Fablon_TR_eE7lb.docx",
+              "rel_path": "sablon\\2026_%C3%87elikkubbe_HavaSavunmaSistemleri_KTR_%C5%9Fablon_TR_eE7lb.docx",
+              "ext": ".docx",
+              "size_kb": 2661.0
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "cip-tasarim-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_v1_3_draft_1_LK3oV.pdf",
+          "ext": ".pdf",
+          "size_kb": 1881.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "DTR",
+          "files": [
+            {
+              "name": "2026_Mikrodenetleyici_Tasarim_DTR_Sablonu_1_w0HlD.docx",
+              "rel_path": "kategoriler\\mikrodenetleyici_tasarim_kategorisi\\sablon\\2026_Mikrodenetleyici_Tasarim_DTR_Sablonu_1_w0HlD.docx",
+              "ext": ".docx",
+              "size_kb": 6498.0
+            },
+            {
+              "name": "2026_DTR_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_Analog_v1_1Vl3m.docx",
+              "rel_path": "kategoriler\\analog_tasarim_kategorisi\\sablon\\2026_DTR_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_Analog_v1_1Vl3m.docx",
+              "ext": ".docx",
+              "size_kb": 3153.5
+            },
+            {
+              "name": "GZwTw8H0bQI9iHSxtjODZsEsrSizcJ54.pdf",
+              "rel_path": "kategoriler\\analog_tasarim_kategorisi\\yarismaci_raporlari\\GZwTw8H0bQI9iHSxtjODZsEsrSizcJ54.pdf",
+              "ext": ".pdf",
+              "size_kb": 2244.1
+            },
+            {
+              "name": "preVpIUbmvb78LLlwVN3J9wWXYq6gpFI.pdf",
+              "rel_path": "kategoriler\\analog_tasarim_kategorisi\\yarismaci_raporlari\\preVpIUbmvb78LLlwVN3J9wWXYq6gpFI.pdf",
+              "ext": ".pdf",
+              "size_kb": 1129.7
+            },
+            {
+              "name": "q8dc7NjnaNdCNRjj6FEzvLkGBiRE5LFy.pdf",
+              "rel_path": "kategoriler\\analog_tasarim_kategorisi\\yarismaci_raporlari\\q8dc7NjnaNdCNRjj6FEzvLkGBiRE5LFy.pdf",
+              "ext": ".pdf",
+              "size_kb": 3198.4
+            },
+            {
+              "name": "qFZgg4n2KCgZ6ID14YgFWPfWJI24nogB.pdf",
+              "rel_path": "kategoriler\\analog_tasarim_kategorisi\\yarismaci_raporlari\\qFZgg4n2KCgZ6ID14YgFWPfWJI24nogB.pdf",
+              "ext": ".pdf",
+              "size_kb": 6697.2
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "2026_OTR_Cip_Tasarim_Yarismasi_Mikrodenetleyici_Tasarim_Hd5WJ.docx",
+              "rel_path": "kategoriler\\mikrodenetleyici_tasarim_kategorisi\\sablon\\2026_OTR_Cip_Tasarim_Yarismasi_Mikrodenetleyici_Tasarim_Hd5WJ.docx",
+              "ext": ".docx",
+              "size_kb": 2222.5
+            },
+            {
+              "name": "2026_OTR_Cip_Tasarim_Yarismasi_Analog_Tasarim_xuMTS.docx",
+              "rel_path": "kategoriler\\analog_tasarim_kategorisi\\sablon\\2026_OTR_Cip_Tasarim_Yarismasi_Analog_Tasarim_xuMTS.docx",
+              "ext": ".docx",
+              "size_kb": 2221.8
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 10
+    },
+    {
+      "name": "dikey-inisli-roket-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "T%C3%9CB%C4%B0TAK_SAGE_Dikey_Inisli_Roket_Yar%C4%B1smas%C4%B1_Sartnamesi_2026_Qu4ap.pdf",
+          "ext": ".pdf",
+          "size_kb": 1950.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "AHR",
+          "files": [
+            {
+              "name": "Dikey_İnişli_Roket-Atışa_Hazırlık_Raporu_Formatı-2026_V01_JRjVs.pptx",
+              "rel_path": "sablon\\Dikey_İnişli_Roket-Atışa_Hazırlık_Raporu_Formatı-2026_V01_JRjVs.pptx",
+              "ext": ".pptx",
+              "size_kb": 1692.1
+            }
+          ]
+        },
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "Dikey_%C4%B0ni%C5%9Fli_Roket-Kritik_Tasar%C4%B1m_Raporu_Format%C4%B1-2026_EkRapor_V02_ezCHz.docx",
+              "rel_path": "sablon\\Dikey_%C4%B0ni%C5%9Fli_Roket-Kritik_Tasar%C4%B1m_Raporu_Format%C4%B1-2026_EkRapor_V02_ezCHz.docx",
+              "ext": ".docx",
+              "size_kb": 5405.8
+            },
+            {
+              "name": "Dikey_İnişli_Roket-Kritik_Tasarım_Raporu_Formatı-2026_V01.1_uGBGj.pptx",
+              "rel_path": "sablon\\Dikey_İnişli_Roket-Kritik_Tasarım_Raporu_Formatı-2026_V01.1_uGBGj.pptx",
+              "ext": ".pptx",
+              "size_kb": 1991.2
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 5
+    },
+    {
+      "name": "e-ticaret-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "E-T%C4%B0CARET_T_NFSoo.pdf",
+          "ext": ".pdf",
+          "size_kb": 1739.1
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "elektronik-harp-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_ELEKTRONIK_HARP_SARTNAMESI_TR_G%C3%BCncel_jjwso.pdf",
+          "ext": ".pdf",
+          "size_kb": 1945.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "260503_Teknofest26_ElektronikHarp_KTR_TR_v1_lqE5E.docx",
+              "rel_path": "sablon\\260503_Teknofest26_ElektronikHarp_KTR_TR_v1_lqE5E.docx",
+              "ext": ".docx",
+              "size_kb": 3622.9
+            }
+          ]
+        },
+        {
+          "stage_code": "TYF",
+          "files": [
+            {
+              "name": "TEKNOFEST26_ElektronikHarp_TYF_TR_2ieWj.pdf",
+              "rel_path": "sablon\\TEKNOFEST26_ElektronikHarp_TYF_TR_2ieWj.pdf",
+              "ext": ".pdf",
+              "size_kb": 1429.1
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "finansal-teknolojiler-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026-Finansal_Teknolojiler_%C5%9Eartname_M5Jbl_1_ptIng.pdf",
+          "ext": ".pdf",
+          "size_kb": 1478.6
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "Finansal_Teknolojiler_T%C3%BCrk%C3%A7e_%C3%96DR_%C5%9Eablon_6Wfrb.docx",
+              "rel_path": "sablon\\Finansal_Teknolojiler_T%C3%BCrk%C3%A7e_%C3%96DR_%C5%9Eablon_6Wfrb.docx",
+              "ext": ".docx",
+              "size_kb": 2224.6
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "fpv-drone-izleme-tracking-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.jpg"
+      ],
+      "specs": [
+        {
+          "name": "TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_%C4%B0ZLEME_YARISMASI_son_versiyon_8.pdf",
+          "ext": ".pdf",
+          "size_kb": 1650.8
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "2026.01.13-FPV_DRON_TAKIP_YARISMASI-KRITIK_TASARIM_RAPORU_SABLONU_003_1_n.docx",
+              "rel_path": "sablon\\2026.01.13-FPV_DRON_TAKIP_YARISMASI-KRITIK_TASARIM_RAPORU_SABLONU_003_1_n.docx",
+              "ext": ".docx",
+              "size_kb": 2271.0
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "FPV_DRONE_%C4%B0ZLEME_YARISMASI-ON_TASARIM_RAPORU_SABLONU_yQKqW.docx",
+              "rel_path": "sablon\\FPV_DRONE_%C4%B0ZLEME_YARISMASI-ON_TASARIM_RAPORU_SABLONU_yQKqW.docx",
+              "ext": ".docx",
+              "size_kb": 2235.2
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "hackmasters-guneydogu",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 1
+    },
+    {
+      "name": "hareketli-uydu-terminali-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.jpg"
+      ],
+      "specs": [
+        {
+          "name": "Teknofest_Hareketli_Uydu_Terminali_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4d8Az.pdf",
+          "ext": ".pdf",
+          "size_kb": 1818.8
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "2026_Hareketli_Uydu_Terminali_KTR_Sablon_TR_1_5awSB.docx",
+              "rel_path": "sablon\\2026_Hareketli_Uydu_Terminali_KTR_Sablon_TR_1_5awSB.docx",
+              "ext": ".docx",
+              "size_kb": 4793.8
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "2026_Hareketli_Uydu_Terminali_OTR_CeQC4.docx",
+              "rel_path": "sablon\\2026_Hareketli_Uydu_Terminali_OTR_CeQC4.docx",
+              "ext": ".docx",
+              "size_kb": 1928.9
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "havacilikta-yapay-zeka-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf",
+          "ext": ".pdf",
+          "size_kb": 3064.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "2026_HYZ_OTR_Sablon_TR_RKgye.docx",
+              "rel_path": "sablon\\2026_HYZ_OTR_Sablon_TR_RKgye.docx",
+              "ext": ".docx",
+              "size_kb": 2280.1
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "hyperloop-gelistirme-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_1_TR_V2.5_2lEkO.pdf",
+          "ext": ".pdf",
+          "size_kb": 2041.0
+        },
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_2_TR_V1_89EpH.pdf",
+          "ext": ".pdf",
+          "size_kb": 2168.4
+        },
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_3_TR_V3_deWa5.pdf",
+          "ext": ".pdf",
+          "size_kb": 2548.0
+        },
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_4_TR_V1_z4YQs.pdf",
+          "ext": ".pdf",
+          "size_kb": 1448.7
+        },
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_5_TR_V1_OQJqr.pdf",
+          "ext": ".pdf",
+          "size_kb": 1569.9
+        },
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_6_TR_V1.2_xhMoF.pdf",
+          "ext": ".pdf",
+          "size_kb": 3164.5
+        },
+        {
+          "name": "2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_9_TR_V1.1_NP9Dl.pdf",
+          "ext": ".pdf",
+          "size_kb": 1611.5
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "Teknoloji_G%C3%B6sterim_Rapor_Sablonu_TR_v2_Ndj16.docx",
+              "rel_path": "sablon\\Teknoloji_G%C3%B6sterim_Rapor_Sablonu_TR_v2_Ndj16.docx",
+              "ext": ".docx",
+              "size_kb": 4094.8
+            },
+            {
+              "name": "TP%C3%87K_Raporu_%C5%9Eablonu_TR_V2_kZt8e.docx",
+              "rel_path": "sablon\\TP%C3%87K_Raporu_%C5%9Eablonu_TR_V2_kZt8e.docx",
+              "ext": ".docx",
+              "size_kb": 4092.5
+            }
+          ]
+        },
+        {
+          "stage_code": "TTR",
+          "files": [
+            {
+              "name": "Teknik_Tasar%C4%B1m_Rapor_Sablonu_UAgsr.docx",
+              "rel_path": "sablon\\Teknik_Tasar%C4%B1m_Rapor_Sablonu_UAgsr.docx",
+              "ext": ".docx",
+              "size_kb": 4226.6
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 11
+    },
+    {
+      "name": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.jpg"
+      ],
+      "specs": [
+        {
+          "name": "Ileri_Otonom_Sistemler_Tasar%C4%B1m_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf",
+          "ext": ".pdf",
+          "size_kb": 2123.1
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "DDR",
+          "files": [
+            {
+              "name": "DDR_Sablon_TR_BhrGu.pdf",
+              "rel_path": "sablon\\DDR_Sablon_TR_BhrGu.pdf",
+              "ext": ".pdf",
+              "size_kb": 986.0
+            }
+          ]
+        },
+        {
+          "stage_code": "FDR",
+          "files": [
+            {
+              "name": "FDR_2_qNiVF.pdf",
+              "rel_path": "sablon\\FDR_2_qNiVF.pdf",
+              "ext": ".pdf",
+              "size_kb": 9578.2
+            }
+          ]
+        },
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "%C4%B0leri_Otonom_Sistemler_Tsar%C4%B1m_ve_Operasyon_Yar%C4%B1%C5%9Fmas%C4%B1_%C3%96DR_%C5%9Eablonu_TR_13.04.docx",
+              "rel_path": "sablon\\%C4%B0leri_Otonom_Sistemler_Tsar%C4%B1m_ve_Operasyon_Yar%C4%B1%C5%9Fmas%C4%B1_%C3%96DR_%C5%9Eablonu_TR_13.04.docx",
+              "ext": ".docx",
+              "size_kb": 1899.8
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 5
+    },
+    {
+      "name": "insanlik-yararina-teknolojiler-yarismasi-ilkokul-seviyesi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_%C4%B0NSANLIK_YARARINA_TEKNOLOJ%C4%B0LER_YARI%C5%9EMASI_-_%C4%B0LKOKUL_SEV%C4%B0YES%C4%B0_%C5%9EARTNAMES.pdf",
+          "ext": ".pdf",
+          "size_kb": 1693.5
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "%C4%B0nsanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1%C5%9Fmas%C4%B1_%C3%96DR_TR_1_%C4%B0lkokul_Hr7xt.docx",
+              "rel_path": "sablon\\%C4%B0nsanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1%C5%9Fmas%C4%B1_%C3%96DR_TR_1_%C4%B0lkokul_Hr7xt.docx",
+              "ext": ".docx",
+              "size_kb": 1833.5
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "insanlik-yararina-teknolojiler-yarismasi-lise-seviyesi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_%C4%B0NSANLIK_YARARINA_TEKNOLOJ%C4%B0LER_YARI%C5%9EMASI_-_L%C4%B0SE_SEV%C4%B0YES%C4%B0_%C5%9EARTNAMES%C4%B0_T.pdf",
+          "ext": ".pdf",
+          "size_kb": 1255.5
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "%C4%B0nsanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1%C5%9Fmas%C4%B1.%C3%96DR.TR.1_Lise_vFhXX.docx",
+              "rel_path": "sablon\\%C4%B0nsanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1%C5%9Fmas%C4%B1.%C3%96DR.TR.1_Lise_vFhXX.docx",
+              "ext": ".docx",
+              "size_kb": 1834.4
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "insanlik-yararina-teknolojiler-yarismasi-ortaokul-seviyesi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_%C4%B0NSANLIK_YARARINA_TEKNOLOJ%C4%B0LER_YARI%C5%9EMASI_ORTAOKUL_VERS%C4%B0YON_BA%C5%9EVURU_TA.pdf",
+          "ext": ".pdf",
+          "size_kb": 1684.8
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "Insanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1smas%C4%B1_ODR_TR_1_Ortaokul_mOhHp_2_JtCzq.docx",
+              "rel_path": "sablon\\Insanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1smas%C4%B1_ODR_TR_1_Ortaokul_mOhHp_2_JtCzq.docx",
+              "ext": ".docx",
+              "size_kb": 1833.5
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "insansiz-deniz-araci-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_%C4%B0nsans%C4%B1z_Deniz_Araci_%C5%9Eartnamesi_TR_18_05___QqiGV.pdf",
+          "ext": ".pdf",
+          "size_kb": 1846.1
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "2026_Insans%C4%B1z_Deniz_Araci_KTR_Sablonu_iedLX.docx",
+              "rel_path": "sablon\\2026_Insans%C4%B1z_Deniz_Araci_KTR_Sablonu_iedLX.docx",
+              "ext": ".docx",
+              "size_kb": 2233.3
+            }
+          ]
+        },
+        {
+          "stage_code": "TYR",
+          "files": [
+            {
+              "name": "2026_Insans%C4%B1z_Deniz_Araci_TYR_Sablonu_TR_KLBrN.docx",
+              "rel_path": "sablon\\2026_Insans%C4%B1z_Deniz_Araci_TYR_Sablonu_TR_KLBrN.docx",
+              "ext": ".docx",
+              "size_kb": 2231.9
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "insansiz-kara-araci-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026__C4_B0nsans_C4_B1z_Kara_Arac_C4_B1_T_C3_BCrk_C3_A7e__C5_9Eartname_2awot.pdf",
+          "ext": ".pdf",
+          "size_kb": 1960.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "TEKNOFEST_2026__C4_B0KA_KTR__C5_9EABLONU_xi1fe.docx",
+              "rel_path": "sablon\\TEKNOFEST_2026__C4_B0KA_KTR__C5_9EABLONU_xi1fe.docx",
+              "ext": ".docx",
+              "size_kb": 2661.7
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "insansiz-su-alti-sistemleri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026__C4_B0NSANSIZ_SU_ALTI_S_C4_B0STEMLER_C4_B0_YARI_C5_9EMASI_-_T_C3_9CRK_C3_87E_-_13.07.2026_jOTfB.pdf",
+          "ext": ".pdf",
+          "size_kb": 2918.2
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "_C4_B0nsans_C4_B1z_Su_Alti_Sistemleri_Yar_C4_B1_C5_9Fmas_C4_B1_KTR_2026_pz6Io.docx",
+              "rel_path": "sablon\\_C4_B0nsans_C4_B1z_Su_Alti_Sistemleri_Yar_C4_B1_C5_9Fmas_C4_B1_KTR_2026_pz6Io.docx",
+              "ext": ".docx",
+              "size_kb": 2628.8
+            },
+            {
+              "name": "0tMpIgDrQwuBP963Hxputf63UWTDx1RF.pdf",
+              "rel_path": "yarismaci_raporlari\\0tMpIgDrQwuBP963Hxputf63UWTDx1RF.pdf",
+              "ext": ".pdf",
+              "size_kb": 2803.1
+            },
+            {
+              "name": "AjQTt8so8fsR0KqgOiGqeyH7uAX07Z0k.pdf",
+              "rel_path": "yarismaci_raporlari\\AjQTt8so8fsR0KqgOiGqeyH7uAX07Z0k.pdf",
+              "ext": ".pdf",
+              "size_kb": 15014.4
+            },
+            {
+              "name": "Echd2Sjz2TyDAIW4StwANmI5x3B2MSEN.pdf",
+              "rel_path": "yarismaci_raporlari\\Echd2Sjz2TyDAIW4StwANmI5x3B2MSEN.pdf",
+              "ext": ".pdf",
+              "size_kb": 1796.6
+            },
+            {
+              "name": "glXohPouivhnPvkgtDA6elMOxbSjJP86.pdf",
+              "rel_path": "yarismaci_raporlari\\glXohPouivhnPvkgtDA6elMOxbSjJP86.pdf",
+              "ext": ".pdf",
+              "size_kb": 4478.8
+            },
+            {
+              "name": "IVurlI4SFO1H7selw4xBfroSlJSKC6cB.pdf",
+              "rel_path": "yarismaci_raporlari\\IVurlI4SFO1H7selw4xBfroSlJSKC6cB.pdf",
+              "ext": ".pdf",
+              "size_kb": 19249.2
+            },
+            {
+              "name": "Jiqy4KuUqEJnLCMXNd5bKFgCqAdWQQcL.pdf",
+              "rel_path": "yarismaci_raporlari\\Jiqy4KuUqEJnLCMXNd5bKFgCqAdWQQcL.pdf",
+              "ext": ".pdf",
+              "size_kb": 2511.7
+            },
+            {
+              "name": "Rf5FJ9z8bCHMuTytQxMtm6JOQoIhxCdt.pdf",
+              "rel_path": "yarismaci_raporlari\\Rf5FJ9z8bCHMuTytQxMtm6JOQoIhxCdt.pdf",
+              "ext": ".pdf",
+              "size_kb": 3056.6
+            },
+            {
+              "name": "SYIMXpje9GrrpnWGEHs72ozf2v6z8px7.pdf",
+              "rel_path": "yarismaci_raporlari\\SYIMXpje9GrrpnWGEHs72ozf2v6z8px7.pdf",
+              "ext": ".pdf",
+              "size_kb": 25586.9
+            },
+            {
+              "name": "tIZONnwgNgzLdYLVObT5EcpJm2PcT5Na.pdf",
+              "rel_path": "yarismaci_raporlari\\tIZONnwgNgzLdYLVObT5EcpJm2PcT5Na.pdf",
+              "ext": ".pdf",
+              "size_kb": 3617.1
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 12
+    },
+    {
+      "name": "insansiz-su-alti-sistemleri-yildizlar-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026__C4_B0nsans_C4_B1z_Su_Alt_C4_B1_Sistemleri_Y_C4_B1ld_C4_B1zlar_Sartname_3_D_C3_BCzeltilmi_C5_9F_oASWa.pdf",
+          "ext": ".pdf",
+          "size_kb": 1655.6
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "sablon",
+          "files": []
+        },
+        {
+          "stage_code": "yarismaci_raporlari",
+          "files": [
+            {
+              "name": "0tMpIgDrQwuBP963Hxputf63UWTDx1RF.pdf",
+              "rel_path": "0tMpIgDrQwuBP963Hxputf63UWTDx1RF.pdf",
+              "ext": ".pdf",
+              "size_kb": 2803.1
+            },
+            {
+              "name": "AjQTt8so8fsR0KqgOiGqeyH7uAX07Z0k.pdf",
+              "rel_path": "AjQTt8so8fsR0KqgOiGqeyH7uAX07Z0k.pdf",
+              "ext": ".pdf",
+              "size_kb": 15014.4
+            },
+            {
+              "name": "Echd2Sjz2TyDAIW4StwANmI5x3B2MSEN.pdf",
+              "rel_path": "Echd2Sjz2TyDAIW4StwANmI5x3B2MSEN.pdf",
+              "ext": ".pdf",
+              "size_kb": 1796.6
+            },
+            {
+              "name": "glXohPouivhnPvkgtDA6elMOxbSjJP86.pdf",
+              "rel_path": "glXohPouivhnPvkgtDA6elMOxbSjJP86.pdf",
+              "ext": ".pdf",
+              "size_kb": 4478.8
+            },
+            {
+              "name": "IVurlI4SFO1H7selw4xBfroSlJSKC6cB.pdf",
+              "rel_path": "IVurlI4SFO1H7selw4xBfroSlJSKC6cB.pdf",
+              "ext": ".pdf",
+              "size_kb": 19249.2
+            },
+            {
+              "name": "Jiqy4KuUqEJnLCMXNd5bKFgCqAdWQQcL.pdf",
+              "rel_path": "Jiqy4KuUqEJnLCMXNd5bKFgCqAdWQQcL.pdf",
+              "ext": ".pdf",
+              "size_kb": 2511.7
+            },
+            {
+              "name": "Rf5FJ9z8bCHMuTytQxMtm6JOQoIhxCdt.pdf",
+              "rel_path": "Rf5FJ9z8bCHMuTytQxMtm6JOQoIhxCdt.pdf",
+              "ext": ".pdf",
+              "size_kb": 3056.6
+            },
+            {
+              "name": "SYIMXpje9GrrpnWGEHs72ozf2v6z8px7.pdf",
+              "rel_path": "SYIMXpje9GrrpnWGEHs72ozf2v6z8px7.pdf",
+              "ext": ".pdf",
+              "size_kb": 25586.9
+            },
+            {
+              "name": "tIZONnwgNgzLdYLVObT5EcpJm2PcT5Na.pdf",
+              "rel_path": "tIZONnwgNgzLdYLVObT5EcpJm2PcT5Na.pdf",
+              "ext": ".pdf",
+              "size_kb": 3617.1
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 11
+    },
+    {
+      "name": "jet-motor-tasarim-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_JET_MOTOR_TASARIM_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_TR_V1.5_4bcs0.pdf",
+          "ext": ".pdf",
+          "size_kb": 2736.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "DTR",
+          "files": [
+            {
+              "name": "DTR_TR_JetMotorTasar_C4_B1m2026_jLHzz.docx",
+              "rel_path": "sablon\\DTR_TR_JetMotorTasar_C4_B1m2026_jLHzz.docx",
+              "ext": ".docx",
+              "size_kb": 4097.7
+            },
+            {
+              "name": "e9hFzNBjn0hXYeNKBeNZ5X3oHCyB1XVl.pdf",
+              "rel_path": "yarismaci_raporlari\\e9hFzNBjn0hXYeNKBeNZ5X3oHCyB1XVl.pdf",
+              "ext": ".pdf",
+              "size_kb": 22288.6
+            },
+            {
+              "name": "g3tJee8BUCSj0gSaMVEC1bcRJLQXWLAG.pdf",
+              "rel_path": "yarismaci_raporlari\\g3tJee8BUCSj0gSaMVEC1bcRJLQXWLAG.pdf",
+              "ext": ".pdf",
+              "size_kb": 16759.0
+            },
+            {
+              "name": "kWCofhxdhnONAAHQbz3ECsrnznob7xzG.docx",
+              "rel_path": "yarismaci_raporlari\\kWCofhxdhnONAAHQbz3ECsrnznob7xzG.docx",
+              "ext": ".docx",
+              "size_kb": 10880.6
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 6
+    },
+    {
+      "name": "kuantum-teknolojileri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [],
+      "stages": [
+        {
+          "stage_code": "OAR",
+          "files": [
+            {
+              "name": "2026-Kuantum_teknofest-On_Asama_Sablonu_C0RqB.docx",
+              "rel_path": "sablon\\2026-Kuantum_teknofest-On_Asama_Sablonu_C0RqB.docx",
+              "ext": ".docx",
+              "size_kb": 2477.5
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "kure-teknofest-mavi-vatan-madde-yazim-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "KURE_TEKNOFEST_Mavi_Vatan_Madde_Yazim_Yarismasi_2026_TR._e9LOj.pdf",
+          "ext": ".pdf",
+          "size_kb": 654.9
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "e9hFzNBjn0hXYeNKBeNZ5X3oHCyB1XVl.pdf",
+              "rel_path": "yarismaci_raporlari\\e9hFzNBjn0hXYeNKBeNZ5X3oHCyB1XVl.pdf",
+              "ext": ".pdf",
+              "size_kb": 22288.6
+            },
+            {
+              "name": "g3tJee8BUCSj0gSaMVEC1bcRJLQXWLAG.pdf",
+              "rel_path": "yarismaci_raporlari\\g3tJee8BUCSj0gSaMVEC1bcRJLQXWLAG.pdf",
+              "ext": ".pdf",
+              "size_kb": 16759.0
+            },
+            {
+              "name": "kWCofhxdhnONAAHQbz3ECsrnznob7xzG.docx",
+              "rel_path": "yarismaci_raporlari\\kWCofhxdhnONAAHQbz3ECsrnznob7xzG.docx",
+              "ext": ".docx",
+              "size_kb": 10880.6
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 5
+    },
+    {
+      "name": "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 1
+    },
+    {
+      "name": "lise-ogrencileri-kutup-arastirma-projeleri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_2204_C_Lise__C3_96_C4_9Frencileri_Kutup_Ara_C5_9Ft_C4_B1rma_Projeleri_Yar_C4_B1_C5_9Fmas_C4_B1_V1.0_1_jc.pdf",
+          "ext": ".pdf",
+          "size_kb": 1595.9
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "liseler-arasi-insansiz-hava-araclari-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026__C4_B0HA_Yar_C4_B1_C5_9Fmalar_C4_B1__C5_9Eartnamesi_TR_v6_n7Mv5.pdf",
+          "ext": ".pdf",
+          "size_kb": 3103.2
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "PSR",
+          "files": [
+            {
+              "name": "2026_Liseler_Aras_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_lZW0f.docx",
+              "rel_path": "kategoriler\\serbest_gorev_psr\\sablon\\2026_Liseler_Aras_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_lZW0f.docx",
+              "ext": ".docx",
+              "size_kb": 2479.6
+            },
+            {
+              "name": "2026_Liseler_Aras_C4_B1__C4_B0HA_Sabit-D_C3_B6ner_PSR__C5_9Eablonu_3WC6z.docx",
+              "rel_path": "kategoriler\\sabit_doner_kanatli_psr\\sablon\\2026_Liseler_Aras_C4_B1__C4_B0HA_Sabit-D_C3_B6ner_PSR__C5_9Eablonu_3WC6z.docx",
+              "ext": ".docx",
+              "size_kb": 2477.9
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "maden-teknolojileri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.jpg"
+      ],
+      "specs": [
+        {
+          "name": "2026_MADEN_TEKNOLOJ_C4_B0LER_C4_B0_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_20_02_2026_vTarih_urMBc.pdf",
+          "ext": ".pdf",
+          "size_kb": 1690.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "Maden_Teknolojileri_Yar_C4_B1smas_C4_B1_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+              "rel_path": "sablon\\Maden_Teknolojileri_Yar_C4_B1smas_C4_B1_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+              "ext": ".docx",
+              "size_kb": 2227.3
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "mavi-vatan-resim-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 1
+    },
+    {
+      "name": "model-uydu-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_Model_Uydu_Yar_C4_B1_C5_9Fmas_C4_B1__C5_9Eartnamesi_xu1ZC.pdf",
+          "ext": ".pdf",
+          "size_kb": 2179.5
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "nsosyal-inovasyon-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_NSOSYAL_YARISMASI_SARTNAMESI_TR_2026_07_24_v9_1_G92Gv_PpMLO.pdf",
+          "ext": ".pdf",
+          "size_kb": 986.7
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "nukleer-enerji-teknolojileri-tasarim-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_Nukleer_Enerji_Teknolojilleri_Tasar_C4_B1m_Yar_C4_B1smas_C4_B1_Sartnamesi_TR_4kjmi.pdf",
+          "ext": ".pdf",
+          "size_kb": 2509.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "FDR",
+          "files": [
+            {
+              "name": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-ALT_KATEGOR_C4_B0__C5_9EABL.docx",
+              "rel_path": "sablon\\ALT_KATEGORİLER\\2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-ALT_KATEGOR_C4_B0__C5_9EABL.docx",
+              "ext": ".docx",
+              "size_kb": 4385.1
+            },
+            {
+              "name": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-DETAY_TASARIM__C5_9EAB.docx",
+              "rel_path": "sablon\\DETAY_TASARIM\\2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-DETAY_TASARIM__C5_9EAB.docx",
+              "ext": ".docx",
+              "size_kb": 4392.3
+            },
+            {
+              "name": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx",
+              "rel_path": "sablon\\KAVRAMSAL_TASARIM\\2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx",
+              "ext": ".docx",
+              "size_kb": 4393.6
+            },
+            {
+              "name": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-UYGULAMA_KATEGOR_C4_B0.docx",
+              "rel_path": "sablon\\UYGULAMA_KATEGORİSİ\\2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-UYGULAMA_KATEGOR_C4_B0.docx",
+              "ext": ".docx",
+              "size_kb": 4390.9
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 6
+    },
+    {
+      "name": "onkolojide-3t-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "2026_TEKNOFEST_ONKOLOJ_C4_B0DE_3T_YARI_C5_9EMASI__C5_9EARTNAME_TR_2nhKo.pdf",
+          "ext": ".pdf",
+          "size_kb": 2432.2
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "Onkolojide_3T_Yar_C4_B1_C5_9Fmas_C4_B1_-_Yar_C4_B1_Final_Proje_Raporu__C5_9Eablonu_-_TR_Li4T0.docx",
+              "rel_path": "sablon\\Onkolojide_3T_Yar_C4_B1_C5_9Fmas_C4_B1_-_Yar_C4_B1_Final_Proje_Raporu__C5_9Eablonu_-_TR_Li4T0.docx",
+              "ext": ".docx",
+              "size_kb": 2468.0
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "pardus-hata-yakalama-ve-oneri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026-TR-PardusHataYakalamaOneriYarismasi-TeknikSartname_V1.3_IwHMa.pdf",
+          "ext": ".pdf",
+          "size_kb": 727.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "robotaksi-binek-otonom-arac-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_Robotaksi_Binek_Otonom_Arac_Yar_C4_B1smas_C4_B1_Sartnamesi_SvtF2.pdf",
+          "ext": ".pdf",
+          "size_kb": 1700.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+              "rel_path": "Ozgun_Arac_Kategorisi\\sablon\\Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+              "ext": ".docx",
+              "size_kb": 2308.4
+            },
+            {
+              "name": "53k3kb3oysVoJSzRn4aA2fEsAY3VoPQD.pdf",
+              "rel_path": "Ozgun_Arac_Kategorisi\\yarismaci_raporlari\\53k3kb3oysVoJSzRn4aA2fEsAY3VoPQD.pdf",
+              "ext": ".pdf",
+              "size_kb": 2523.1
+            },
+            {
+              "name": "NglOVb2pwmONLZi1SM9FUGF4KK7Xjxvc.pdf",
+              "rel_path": "Ozgun_Arac_Kategorisi\\yarismaci_raporlari\\NglOVb2pwmONLZi1SM9FUGF4KK7Xjxvc.pdf",
+              "ext": ".pdf",
+              "size_kb": 6448.1
+            },
+            {
+              "name": "PJSAEwI2gVbc6mRNOmXsCm3PGr3rEQDK.pdf",
+              "rel_path": "Ozgun_Arac_Kategorisi\\yarismaci_raporlari\\PJSAEwI2gVbc6mRNOmXsCm3PGr3rEQDK.pdf",
+              "ext": ".pdf",
+              "size_kb": 3541.3
+            },
+            {
+              "name": "z5VTbyCL21BVe7LlIRLvjs4JrJMHXI2a.pdf",
+              "rel_path": "Ozgun_Arac_Kategorisi\\yarismaci_raporlari\\z5VTbyCL21BVe7LlIRLvjs4JrJMHXI2a.pdf",
+              "ext": ".pdf",
+              "size_kb": 4759.6
+            },
+            {
+              "name": "z6qoRInoVq8m1owdaZIhcvQ1Qv6brgG2.pdf",
+              "rel_path": "Ozgun_Arac_Kategorisi\\yarismaci_raporlari\\z6qoRInoVq8m1owdaZIhcvQ1Qv6brgG2.pdf",
+              "ext": ".pdf",
+              "size_kb": 6076.5
+            },
+            {
+              "name": "ZwINdWza1PMP7VXme1VVQ3SMDrBZHkDD.pdf",
+              "rel_path": "Ozgun_Arac_Kategorisi\\yarismaci_raporlari\\ZwINdWza1PMP7VXme1VVQ3SMDrBZHkDD.pdf",
+              "ext": ".pdf",
+              "size_kb": 6775.6
+            },
+            {
+              "name": "Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+              "rel_path": "Hazir_Arac_Kategorisi\\sablon\\Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+              "ext": ".docx",
+              "size_kb": 2303.9
+            },
+            {
+              "name": "5bPiD59klXJXofInrEvRi69Q7ESXtzVO.pdf",
+              "rel_path": "Hazir_Arac_Kategorisi\\yarismaci_raporlari\\5bPiD59klXJXofInrEvRi69Q7ESXtzVO.pdf",
+              "ext": ".pdf",
+              "size_kb": 3217.1
+            },
+            {
+              "name": "6290i8W9cw05g7aEMCWVW9JW4lHUS11z.pdf",
+              "rel_path": "Hazir_Arac_Kategorisi\\yarismaci_raporlari\\6290i8W9cw05g7aEMCWVW9JW4lHUS11z.pdf",
+              "ext": ".pdf",
+              "size_kb": 34921.4
+            },
+            {
+              "name": "gVzFVC7krMnNrNU99bU5EQnDBwxwW6xd.pdf",
+              "rel_path": "Hazir_Arac_Kategorisi\\yarismaci_raporlari\\gVzFVC7krMnNrNU99bU5EQnDBwxwW6xd.pdf",
+              "ext": ".pdf",
+              "size_kb": 2269.3
+            },
+            {
+              "name": "skBchdHOIknozEQoi1axwkEYJlvPMqId.pdf",
+              "rel_path": "Hazir_Arac_Kategorisi\\yarismaci_raporlari\\skBchdHOIknozEQoi1axwkEYJlvPMqId.pdf",
+              "ext": ".pdf",
+              "size_kb": 2579.0
+            },
+            {
+              "name": "WXzr3izr9HYaTCaaYa8L39IrH3z3DYdl.pdf",
+              "rel_path": "Hazir_Arac_Kategorisi\\yarismaci_raporlari\\WXzr3izr9HYaTCaaYa8L39IrH3z3DYdl.pdf",
+              "ext": ".pdf",
+              "size_kb": 948.5
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "Robotaksi_Sim_C3_BClasyon__C5_9Eablon_rjtpc_bi9so.docx",
+              "rel_path": "sablon\\Robotaksi_Sim_C3_BClasyon__C5_9Eablon_rjtpc_bi9so.docx",
+              "ext": ".docx",
+              "size_kb": 1805.3
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 16
+    },
+    {
+      "name": "roket-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [],
+      "stages": [
+        {
+          "stage_code": "AHR",
+          "files": [
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A7\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "ext": ".docx",
+              "size_kb": 129.9
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A7_AHR_Şablonu_W8Zyo (2).docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A7\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A7_AHR_Şablonu_W8Zyo (2).docx",
+              "ext": ".docx",
+              "size_kb": 136.1
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A6\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "ext": ".docx",
+              "size_kb": 129.9
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A6_AHR_Şablonu_TBlpl.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A6\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A6_AHR_Şablonu_TBlpl.docx",
+              "ext": ".docx",
+              "size_kb": 136.8
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A5\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "ext": ".docx",
+              "size_kb": 129.9
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A5_AHR_Şablonu_LBRry.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A5\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A5_AHR_Şablonu_LBRry.docx",
+              "ext": ".docx",
+              "size_kb": 133.7
+            },
+            {
+              "name": "TEKNOFEST-2026_Rocket_Competition_A4_FRR_Template_d1t9m.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A4\\sablon\\TEKNOFEST-2026_Rocket_Competition_A4_FRR_Template_d1t9m.docx",
+              "ext": ".docx",
+              "size_kb": 176.2
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A4\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "ext": ".docx",
+              "size_kb": 129.9
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\kategori\\A2_A3\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+              "ext": ".docx",
+              "size_kb": 129.9
+            },
+            {
+              "name": "TEKNOFEST-2026_Roket_Yarışması_A1_AHR_Şablonu_xdcKS.docx",
+              "rel_path": "seviye\\lise\\sablon\\TEKNOFEST-2026_Roket_Yarışması_A1_AHR_Şablonu_xdcKS.docx",
+              "ext": ".docx",
+              "size_kb": 129.4
+            },
+            {
+              "name": "8dqPZfyZhtB2akfhdjkGFePQJ5zee4NF.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\8dqPZfyZhtB2akfhdjkGFePQJ5zee4NF.pdf",
+              "ext": ".pdf",
+              "size_kb": 11023.2
+            },
+            {
+              "name": "hdOWEXe89n3BBKAn1Jn24wjCSRYW8UeE.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\hdOWEXe89n3BBKAn1Jn24wjCSRYW8UeE.pdf",
+              "ext": ".pdf",
+              "size_kb": 16004.1
+            },
+            {
+              "name": "IDPKO4aLjJmvMs1pajIrMq1mF32tbqfL.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\IDPKO4aLjJmvMs1pajIrMq1mF32tbqfL.pdf",
+              "ext": ".pdf",
+              "size_kb": 2666.2
+            },
+            {
+              "name": "VmIFGhqBENFRvEHctqIyDTPptdjBNIR3.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\VmIFGhqBENFRvEHctqIyDTPptdjBNIR3.pdf",
+              "ext": ".pdf",
+              "size_kb": 3813.4
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "B4_-_OTR_Sablonu_2026_UfTYT.docx",
+              "rel_path": "kategoriler\\B4\\sablon\\B4_-_OTR_Sablonu_2026_UfTYT.docx",
+              "ext": ".docx",
+              "size_kb": 48.9
+            },
+            {
+              "name": "B3_-_OTR_Sablonu_2026_RyyVQ.docx",
+              "rel_path": "kategoriler\\B3\\sablon\\B3_-_OTR_Sablonu_2026_RyyVQ.docx",
+              "ext": ".docx",
+              "size_kb": 49.6
+            },
+            {
+              "name": "B2_-_OTR_Sablonu_2026_9O6kM.docx",
+              "rel_path": "kategoriler\\B2\\sablon\\B2_-_OTR_Sablonu_2026_9O6kM.docx",
+              "ext": ".docx",
+              "size_kb": 49.9
+            },
+            {
+              "name": "B1_-_ÖTR_Şablonu_2026_J6bPW.docx",
+              "rel_path": "kategoriler\\B1\\sablon\\B1_-_ÖTR_Şablonu_2026_J6bPW.docx",
+              "ext": ".docx",
+              "size_kb": 45.0
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 19
+    },
+    {
+      "name": "saglikta-yapay-zeka-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026-_Sa_C4_9Fl_C4_B1kta_Yapay_Zeka_T_C3_BCrk_C3_A7e__C5_9Eartname_v2_son_versiyon-2_DNTlA.pdf",
+          "ext": ".pdf",
+          "size_kb": 1564.7
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "PDR",
+          "files": [
+            {
+              "name": "2026_PDR__C5_9Eablon_Universite_TR_bCw49.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\sablon\\2026_PDR__C5_9Eablon_Universite_TR_bCw49.docx",
+              "ext": ".docx",
+              "size_kb": 4084.8
+            },
+            {
+              "name": "0nWBVcY6WnlyX1QahjP2hfA1pKVcBIDu.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\0nWBVcY6WnlyX1QahjP2hfA1pKVcBIDu.pdf",
+              "ext": ".pdf",
+              "size_kb": 7197.8
+            },
+            {
+              "name": "35laO06ncY3w3LeUe5Vd8SehThSkXxjr.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\35laO06ncY3w3LeUe5Vd8SehThSkXxjr.pdf",
+              "ext": ".pdf",
+              "size_kb": 1534.7
+            },
+            {
+              "name": "3njT4a2CDZC04f05ioaEcFWAXnBTzgKI.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\3njT4a2CDZC04f05ioaEcFWAXnBTzgKI.pdf",
+              "ext": ".pdf",
+              "size_kb": 3177.9
+            },
+            {
+              "name": "51wRD3IZaLyFLqx9UADr2Wy5fHmOS2Xk.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\51wRD3IZaLyFLqx9UADr2Wy5fHmOS2Xk.pdf",
+              "ext": ".pdf",
+              "size_kb": 1470.2
+            },
+            {
+              "name": "cnPkPlW4MQm5kuv2tHeTBtC9TR3ibFxy.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\cnPkPlW4MQm5kuv2tHeTBtC9TR3ibFxy.pdf",
+              "ext": ".pdf",
+              "size_kb": 3121.4
+            },
+            {
+              "name": "CSonBBRRwz4DmDxt18STHfGLrrAYcRIb.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\CSonBBRRwz4DmDxt18STHfGLrrAYcRIb.pdf",
+              "ext": ".pdf",
+              "size_kb": 7928.2
+            },
+            {
+              "name": "FTTILph4KT4ZXk3B6sPhnl1r9f6WLu9U.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\FTTILph4KT4ZXk3B6sPhnl1r9f6WLu9U.pdf",
+              "ext": ".pdf",
+              "size_kb": 4219.5
+            },
+            {
+              "name": "hOlCnmpypaqeO946R4uHe8sWsZQRQM7D.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\hOlCnmpypaqeO946R4uHe8sWsZQRQM7D.pdf",
+              "ext": ".pdf",
+              "size_kb": 8699.0
+            },
+            {
+              "name": "hVFh6WOYywybq3L3yS5b3V6WGSYG34rZ.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\hVFh6WOYywybq3L3yS5b3V6WGSYG34rZ.pdf",
+              "ext": ".pdf",
+              "size_kb": 1413.8
+            },
+            {
+              "name": "JTHaRKmvFlf42XOJU8KFRdtGnlMGRjba.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\JTHaRKmvFlf42XOJU8KFRdtGnlMGRjba.pdf",
+              "ext": ".pdf",
+              "size_kb": 7327.9
+            },
+            {
+              "name": "KH9ocGMLPUXMx5sTjDXskCtHtM3gklKU.pdf",
+              "rel_path": "seviye\\universite_ve_uzeri\\yarismaci_raporlari\\KH9ocGMLPUXMx5sTjDXskCtHtM3gklKU.pdf",
+              "ext": ".pdf",
+              "size_kb": 1258.1
+            },
+            {
+              "name": "2026_PDR__C5_9Eablon-Lise_v2_9eX0z.docx",
+              "rel_path": "seviye\\lise\\sablon\\2026_PDR__C5_9Eablon-Lise_v2_9eX0z.docx",
+              "ext": ".docx",
+              "size_kb": 4087.0
+            },
+            {
+              "name": "1t27zMfyxspJuoXwh2m9Au9R7aPAwn7q.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\1t27zMfyxspJuoXwh2m9Au9R7aPAwn7q.pdf",
+              "ext": ".pdf",
+              "size_kb": 1113.7
+            },
+            {
+              "name": "2ksqLJW2giNfI1EH8Bwwkikq2aXqo7YJ.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\2ksqLJW2giNfI1EH8Bwwkikq2aXqo7YJ.pdf",
+              "ext": ".pdf",
+              "size_kb": 820.9
+            },
+            {
+              "name": "2zslquHFKKyuBt69suLeRL5vGgNxORBg.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\2zslquHFKKyuBt69suLeRL5vGgNxORBg.pdf",
+              "ext": ".pdf",
+              "size_kb": 948.0
+            },
+            {
+              "name": "6QV0ekp7k5XlkytNtMfkjfj4iXk8cdZE.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\6QV0ekp7k5XlkytNtMfkjfj4iXk8cdZE.pdf",
+              "ext": ".pdf",
+              "size_kb": 790.8
+            },
+            {
+              "name": "8QiosiVys51rk2G0C9VpQM6RCx0SJ2aK.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\8QiosiVys51rk2G0C9VpQM6RCx0SJ2aK.pdf",
+              "ext": ".pdf",
+              "size_kb": 1112.4
+            },
+            {
+              "name": "lIKoEsCkzMpBcsYCcZKKFTcHWwvT8Rxz.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\lIKoEsCkzMpBcsYCcZKKFTcHWwvT8Rxz.pdf",
+              "ext": ".pdf",
+              "size_kb": 1677.7
+            },
+            {
+              "name": "LWV4JlmxDgpONFTDBfJ5kkCUNa4LJEMV.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\LWV4JlmxDgpONFTDBfJ5kkCUNa4LJEMV.pdf",
+              "ext": ".pdf",
+              "size_kb": 6412.6
+            },
+            {
+              "name": "VOO1iG2vRoOVvO2mG4VaagBp75F6CbJH.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\VOO1iG2vRoOVvO2mG4VaagBp75F6CbJH.pdf",
+              "ext": ".pdf",
+              "size_kb": 8595.9
+            },
+            {
+              "name": "YXAEIW4DZRxiLdQFenbBWp4szIW4uE7w.pdf",
+              "rel_path": "seviye\\lise\\yarismaci_raporlari\\YXAEIW4DZRxiLdQFenbBWp4szIW4uE7w.pdf",
+              "ext": ".pdf",
+              "size_kb": 4437.8
+            }
+          ]
+        },
+        {
+          "stage_code": "PSR",
+          "files": [
+            {
+              "name": "2026_Sa_C4_9Fl_C4_B1kta_Yapay_Zeka_PSR-_C3_9Cniversite_ve__C3_9Czeri_lt7Hv.docx",
+              "rel_path": "seviye\\universite_ve_uzeri\\sablon\\2026_Sa_C4_9Fl_C4_B1kta_Yapay_Zeka_PSR-_C3_9Cniversite_ve__C3_9Czeri_lt7Hv.docx",
+              "ext": ".docx",
+              "size_kb": 2231.4
+            },
+            {
+              "name": "2026_Sa_C4_9Fl_C4_B1kta_Yapay_Zeka_PSR-Lise_Lp5aI.docx",
+              "rel_path": "seviye\\lise\\sablon\\2026_Sa_C4_9Fl_C4_B1kta_Yapay_Zeka_PSR-Lise_Lp5aI.docx",
+              "ext": ".docx",
+              "size_kb": 2230.4
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 26
+    },
+    {
+      "name": "sanayide-robotik-uygulamalar-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_SRUY_TR_Hre2P.pdf",
+          "ext": ".pdf",
+          "size_kb": 1807.2
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "PDR",
+          "files": [
+            {
+              "name": "2026_Sanayide_Robotik_Uygulamalar_Yar_C4_B1_C5_9Fmas_C4_B1_Proje_Detay_Raporu__C5_9Eablonu_0L.docx",
+              "rel_path": "sablon\\2026_Sanayide_Robotik_Uygulamalar_Yar_C4_B1_C5_9Fmas_C4_B1_Proje_Detay_Raporu__C5_9Eablonu_0L.docx",
+              "ext": ".docx",
+              "size_kb": 1244.8
+            },
+            {
+              "name": "4A4BJgbRxWdxAyVbd0SLqj0zqRkVdd1w.pdf",
+              "rel_path": "yarismaci_raporlari\\4A4BJgbRxWdxAyVbd0SLqj0zqRkVdd1w.pdf",
+              "ext": ".pdf",
+              "size_kb": 3595.5
+            },
+            {
+              "name": "6eRJmjizkuAPyCUElKjeALuRL8lODq5d.pdf",
+              "rel_path": "yarismaci_raporlari\\6eRJmjizkuAPyCUElKjeALuRL8lODq5d.pdf",
+              "ext": ".pdf",
+              "size_kb": 19161.3
+            },
+            {
+              "name": "fdT1mYXR27FCkezjx7ajaDa0Nlal5gp1.pdf",
+              "rel_path": "yarismaci_raporlari\\fdT1mYXR27FCkezjx7ajaDa0Nlal5gp1.pdf",
+              "ext": ".pdf",
+              "size_kb": 16739.5
+            },
+            {
+              "name": "FG05XhPHtUy9vAD249VwdADrSYbhHj94.pdf",
+              "rel_path": "yarismaci_raporlari\\FG05XhPHtUy9vAD249VwdADrSYbhHj94.pdf",
+              "ext": ".pdf",
+              "size_kb": 3199.8
+            },
+            {
+              "name": "hZiuyxqEP6UuZvTxWkxnuXHKuDX5vtkW.pdf",
+              "rel_path": "yarismaci_raporlari\\hZiuyxqEP6UuZvTxWkxnuXHKuDX5vtkW.pdf",
+              "ext": ".pdf",
+              "size_kb": 3269.1
+            },
+            {
+              "name": "JUUOo5KY6GBOh5G18yyP1Xc2rIdbyDhR.pdf",
+              "rel_path": "yarismaci_raporlari\\JUUOo5KY6GBOh5G18yyP1Xc2rIdbyDhR.pdf",
+              "ext": ".pdf",
+              "size_kb": 3050.8
+            },
+            {
+              "name": "kELkxNMnPFVJwK40ezMIxBme8wCqGA9W.pdf",
+              "rel_path": "yarismaci_raporlari\\kELkxNMnPFVJwK40ezMIxBme8wCqGA9W.pdf",
+              "ext": ".pdf",
+              "size_kb": 2552.5
+            },
+            {
+              "name": "M2p4Lw1RAfylapiJ7AMFeu8c69IxxYwW.pdf",
+              "rel_path": "yarismaci_raporlari\\M2p4Lw1RAfylapiJ7AMFeu8c69IxxYwW.pdf",
+              "ext": ".pdf",
+              "size_kb": 3757.0
+            },
+            {
+              "name": "mEheCXHTt2QWcLJNW6sN6d0d1Ce7HAVK.pdf",
+              "rel_path": "yarismaci_raporlari\\mEheCXHTt2QWcLJNW6sN6d0d1Ce7HAVK.pdf",
+              "ext": ".pdf",
+              "size_kb": 9809.9
+            },
+            {
+              "name": "r3niuYvAdvZDeLtQAlZ3k1HdWgjmerr6.pdf",
+              "rel_path": "yarismaci_raporlari\\r3niuYvAdvZDeLtQAlZ3k1HdWgjmerr6.pdf",
+              "ext": ".pdf",
+              "size_kb": 3347.7
+            }
+          ]
+        },
+        {
+          "stage_code": "TTR",
+          "files": [
+            {
+              "name": "2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx",
+              "rel_path": "sablon\\2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx",
+              "ext": ".docx",
+              "size_kb": 868.3
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 14
+    },
+    {
+      "name": "savasan-iha-avci-drone-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMES_C4_B0_TR_v1.2_kbXvo.pdf",
+          "ext": ".pdf",
+          "size_kb": 1703.9
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ATR",
+          "files": [
+            {
+              "name": "AVCI_ATR_2026_TR_Z8I4P.docx",
+              "rel_path": "sablon\\AVCI_ATR_2026_TR_Z8I4P.docx",
+              "ext": ".docx",
+              "size_kb": 3137.8
+            }
+          ]
+        },
+        {
+          "stage_code": "TYF",
+          "files": [
+            {
+              "name": "TEKNOFEST26_Avci_Dron_TYF_iROGm.docx",
+              "rel_path": "sablon\\TEKNOFEST26_Avci_Dron_TYF_iROGm.docx",
+              "ext": ".docx",
+              "size_kb": 4698.7
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "savasan-iha-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_SAVASAN__C4_B0HA_YARISMA_SARTNAMES_C4_B0_TR_v1.4_Q373N.pdf",
+          "ext": ".pdf",
+          "size_kb": 2316.3
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "SIHA_KTR_2026_TR_v2_KBa6W.docx",
+              "rel_path": "sablon\\SIHA_KTR_2026_TR_v2_KBa6W.docx",
+              "ext": ".docx",
+              "size_kb": 4106.6
+            },
+            {
+              "name": "3gyQZS18uqXlkttZXZXFx99viIM748Cx.pdf",
+              "rel_path": "yarismaci_raporlari\\3gyQZS18uqXlkttZXZXFx99viIM748Cx.pdf",
+              "ext": ".pdf",
+              "size_kb": 22451.7
+            },
+            {
+              "name": "a7Si5EQrFpQUjdNKNeqbckx7MQCi7OwV.pdf",
+              "rel_path": "yarismaci_raporlari\\a7Si5EQrFpQUjdNKNeqbckx7MQCi7OwV.pdf",
+              "ext": ".pdf",
+              "size_kb": 3483.6
+            },
+            {
+              "name": "b4MD317QUBMSpG2oMJutg7uFjuzpllWA.pdf",
+              "rel_path": "yarismaci_raporlari\\b4MD317QUBMSpG2oMJutg7uFjuzpllWA.pdf",
+              "ext": ".pdf",
+              "size_kb": 15724.7
+            },
+            {
+              "name": "BxvA8pcP5c2FYGQoRb4nx76kKJ25mWSd.pdf",
+              "rel_path": "yarismaci_raporlari\\BxvA8pcP5c2FYGQoRb4nx76kKJ25mWSd.pdf",
+              "ext": ".pdf",
+              "size_kb": 2652.2
+            },
+            {
+              "name": "cU2B3RztOgETxU4cVMFyWUBD7LydnhDD.pdf",
+              "rel_path": "yarismaci_raporlari\\cU2B3RztOgETxU4cVMFyWUBD7LydnhDD.pdf",
+              "ext": ".pdf",
+              "size_kb": 4462.5
+            },
+            {
+              "name": "cUWzqgVouQQs10blwKuTTIkzzOmLaXKX.pdf",
+              "rel_path": "yarismaci_raporlari\\cUWzqgVouQQs10blwKuTTIkzzOmLaXKX.pdf",
+              "ext": ".pdf",
+              "size_kb": 2895.8
+            },
+            {
+              "name": "fE3ORDzjDJptDRcfsIeONorJlOrdNsFf.pdf",
+              "rel_path": "yarismaci_raporlari\\fE3ORDzjDJptDRcfsIeONorJlOrdNsFf.pdf",
+              "ext": ".pdf",
+              "size_kb": 16873.1
+            },
+            {
+              "name": "G4IWaL082pG9vJwvtC6aBaXgHE02O0AN.pdf",
+              "rel_path": "yarismaci_raporlari\\G4IWaL082pG9vJwvtC6aBaXgHE02O0AN.pdf",
+              "ext": ".pdf",
+              "size_kb": 3593.2
+            },
+            {
+              "name": "JPX5EUHXc5LXteIrZRyWSNqVXzOQf4HH.pdf",
+              "rel_path": "yarismaci_raporlari\\JPX5EUHXc5LXteIrZRyWSNqVXzOQf4HH.pdf",
+              "ext": ".pdf",
+              "size_kb": 3945.7
+            },
+            {
+              "name": "JVdNL010qIf0ypBj3cBfyJClyhVlOBDN.pdf",
+              "rel_path": "yarismaci_raporlari\\JVdNL010qIf0ypBj3cBfyJClyhVlOBDN.pdf",
+              "ext": ".pdf",
+              "size_kb": 3433.2
+            },
+            {
+              "name": "Np4dt0YWCuHqteQZAdaiSK4tizUjYYaE.pdf",
+              "rel_path": "yarismaci_raporlari\\Np4dt0YWCuHqteQZAdaiSK4tizUjYYaE.pdf",
+              "ext": ".pdf",
+              "size_kb": 4196.6
+            },
+            {
+              "name": "oobOQtJe86RxLTZs8Qml4IrqhN6bBE36.pdf",
+              "rel_path": "yarismaci_raporlari\\oobOQtJe86RxLTZs8Qml4IrqhN6bBE36.pdf",
+              "ext": ".pdf",
+              "size_kb": 4731.1
+            },
+            {
+              "name": "p9ZFgvEsFSS3PSd9qNLrElvuzzx2pp98.pdf",
+              "rel_path": "yarismaci_raporlari\\p9ZFgvEsFSS3PSd9qNLrElvuzzx2pp98.pdf",
+              "ext": ".pdf",
+              "size_kb": 1644.4
+            },
+            {
+              "name": "PfMI0X5DtRiKeh3gbNx6U48qOiD8dq1A.pdf",
+              "rel_path": "yarismaci_raporlari\\PfMI0X5DtRiKeh3gbNx6U48qOiD8dq1A.pdf",
+              "ext": ".pdf",
+              "size_kb": 3098.7
+            },
+            {
+              "name": "pV0LhnnCM4pLs3hihKmlQ73uBQqSFZlC.pdf",
+              "rel_path": "yarismaci_raporlari\\pV0LhnnCM4pLs3hihKmlQ73uBQqSFZlC.pdf",
+              "ext": ".pdf",
+              "size_kb": 2681.5
+            },
+            {
+              "name": "qehxldEKVOfpa9IrScerejYnDHxOSKJ4.pdf",
+              "rel_path": "yarismaci_raporlari\\qehxldEKVOfpa9IrScerejYnDHxOSKJ4.pdf",
+              "ext": ".pdf",
+              "size_kb": 5210.2
+            },
+            {
+              "name": "qQfKhndB69Banm9ITXLOIxRc3Y94cFHD.pdf",
+              "rel_path": "yarismaci_raporlari\\qQfKhndB69Banm9ITXLOIxRc3Y94cFHD.pdf",
+              "ext": ".pdf",
+              "size_kb": 11713.8
+            },
+            {
+              "name": "qRzIyKoiiOIeIUMucvTA5bQ1Q3n0mTYn.pdf",
+              "rel_path": "yarismaci_raporlari\\qRzIyKoiiOIeIUMucvTA5bQ1Q3n0mTYn.pdf",
+              "ext": ".pdf",
+              "size_kb": 21492.0
+            },
+            {
+              "name": "SCo5Sz3mP0ESofOnrI2CtcmbLQqpSHAc.pdf",
+              "rel_path": "yarismaci_raporlari\\SCo5Sz3mP0ESofOnrI2CtcmbLQqpSHAc.pdf",
+              "ext": ".pdf",
+              "size_kb": 5542.1
+            },
+            {
+              "name": "UINcKuC07t8FaLtx8sSt8AxzVJM6xXrb.pdf",
+              "rel_path": "yarismaci_raporlari\\UINcKuC07t8FaLtx8sSt8AxzVJM6xXrb.pdf",
+              "ext": ".pdf",
+              "size_kb": 7703.0
+            },
+            {
+              "name": "uzGgzAdujklFT5uFau8FP10npHgEso96.pdf",
+              "rel_path": "yarismaci_raporlari\\uzGgzAdujklFT5uFau8FP10npHgEso96.pdf",
+              "ext": ".pdf",
+              "size_kb": 3319.1
+            },
+            {
+              "name": "vb2qaN0gZc1LLfQkvA3Z52TsdyDpwcTX.pdf",
+              "rel_path": "yarismaci_raporlari\\vb2qaN0gZc1LLfQkvA3Z52TsdyDpwcTX.pdf",
+              "ext": ".pdf",
+              "size_kb": 5074.3
+            }
+          ]
+        },
+        {
+          "stage_code": "TYF",
+          "files": [
+            {
+              "name": "TEKNOFEST26_Savasan_IHA_TYF_TR_zMqMG.docx",
+              "rel_path": "sablon\\TEKNOFEST26_Savasan_IHA_TYF_TR_zMqMG.docx",
+              "ext": ".docx",
+              "size_kb": 5068.5
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 26
+    },
+    {
+      "name": "savasan-iha-yildizlar-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_Savasan_IHA_Y_C4_B1ld_C4_B1zlar_Sartnamesi_TR_V1.4_VHZwj.pdf",
+          "ext": ".pdf",
+          "size_kb": 1878.2
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "sifir-atik-dongusel-ekonomi-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "TEKNOFEST-2026_YARISMA_TEKNIK_SARTNAME_11.05.2026_4_1gIHj.pdf",
+          "ext": ".pdf",
+          "size_kb": 1769.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ÖDR",
+          "files": [
+            {
+              "name": "s_C4_B1f_C4_B1r_at_C4_B1k_3_1_SH8EA.docx",
+              "rel_path": "sablon\\s_C4_B1f_C4_B1r_at_C4_B1k_3_1_SH8EA.docx",
+              "ext": ".docx",
+              "size_kb": 6001.9
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "su-alti-roket-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_SU_ALTI_ROKET_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_TR.V1.6_M7Rif.pdf",
+          "ext": ".pdf",
+          "size_kb": 1547.9
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "2026_Sualt_C4_B1_Roket_KTR_Sablon_73TXZ.docx",
+              "rel_path": "sablon\\2026_Sualt_C4_B1_Roket_KTR_Sablon_73TXZ.docx",
+              "ext": ".docx",
+              "size_kb": 2384.2
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "suru-iha-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "S_C3_BCr_C3_BC__C4_B0HA_Yar_C4_B1_C5_9Fma__C5_9Eartnamesi_V2_-_TR_ZJlf8.pdf",
+          "ext": ".pdf",
+          "size_kb": 2140.7
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "KTR",
+          "files": [
+            {
+              "name": "2026_S_C3_BCr_C3_BC__C4_B0ha_KTR__C5_9Eablonu_l_ORree.docx",
+              "rel_path": "sablon\\2026_S_C3_BCr_C3_BC__C4_B0ha_KTR__C5_9Eablonu_l_ORree.docx",
+              "ext": ".docx",
+              "size_kb": 2235.8
+            }
+          ]
+        },
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "2026_S_C3_BCr_C3_BC__C4_B0ha__C3_96TR__C5_9Eablonu_cWiUn.docx",
+              "rel_path": "sablon\\2026_S_C3_BCr_C3_BC__C4_B0ha__C3_96TR__C5_9Eablonu_cWiUn.docx",
+              "ext": ".docx",
+              "size_kb": 2282.0
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    },
+    {
+      "name": "tarim-teknolojileri-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_TARIM__TEKNOLOJ_C4_B0LER_C4_B0_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_TR_3sOUx.pdf",
+          "ext": ".pdf",
+          "size_kb": 1027.8
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": [
+            {
+              "name": "2026_Tarım_Teknolojileri_Yarısması_Proje_Sunum_Sablonu_Revize_wOrJD.pptx",
+              "rel_path": "sablon\\2026_Tarım_Teknolojileri_Yarısması_Proje_Sunum_Sablonu_Revize_wOrJD.pptx",
+              "ext": ".pptx",
+              "size_kb": 8810.7
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "teknofest-drone-sampiyonasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_-TEKNOFEST_Drone__C5_9Eampiyonas_C4_B1__C5_9Eartname_oVnim.pdf",
+          "ext": ".pdf",
+          "size_kb": 1454.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "teknofest-mesleki-yetenek-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "AKILLI_FABR_C4_B0KA_S_C4_B0STEMLER_C4_B0_PROGRAMLAMAYARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_Du4UI.pdf",
+          "ext": ".pdf",
+          "size_kb": 2031.3
+        },
+        {
+          "name": "MESLEKI_YETENEK_YARISMASI_MARANGOZLUK_KATEGORISI_SARTNAMESI_oCFQT.pdf",
+          "ext": ".pdf",
+          "size_kb": 1575.1
+        },
+        {
+          "name": "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_ELEKTR_C4_B0K_KUMANDA_PANOSU_TASARIMI_VE_UYGULAMA_KAT.pdf",
+          "ext": ".pdf",
+          "size_kb": 1788.2
+        },
+        {
+          "name": "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_ELEKTR_C4_B0K_TES_C4_B0SATI_VE_PANO_MONTORL_C3_9C_C4_9E_C3_9C_KATEGOR_C4_B0S_C4_B0_.pdf",
+          "ext": ".pdf",
+          "size_kb": 1708.8
+        },
+        {
+          "name": "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_KAYNAK_C3_87ILIK_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_VPv8v.pdf",
+          "ext": ".pdf",
+          "size_kb": 2087.5
+        },
+        {
+          "name": "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_MEKATRON_C4_B0K_TEKNOLOJ_C4_B0LER_C4_B0_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_L.pdf",
+          "ext": ".pdf",
+          "size_kb": 1933.1
+        },
+        {
+          "name": "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_ORTA_GER_C4_B0L_C4_B0M_TEKNOLOJ_C4_B0LER_C4_B0_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0.pdf",
+          "ext": ".pdf",
+          "size_kb": 1461.3
+        },
+        {
+          "name": "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_SU_TES_C4_B0SAT_C3_87ILI_C4_9EI_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_TXRIu.pdf",
+          "ext": ".pdf",
+          "size_kb": 1677.6
+        },
+        {
+          "name": "MYY_PCB_MONTAJ_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_nr64w.pdf",
+          "ext": ".pdf",
+          "size_kb": 1455.6
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 10
+    },
+    {
+      "name": "teknofest-mimari-ve-gorsel-tasarim-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026-TEKNOFEST_Mimari_ve_G_C3_B6rsel_Tasar_C4_B1m_Yar_C4_B1_C5_9Fmas_C4_B1_T_C3_BCrk_C3_A7e__C5_9Eartname_k1oIh.pdf",
+          "ext": ".pdf",
+          "size_kb": 1844.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "teknofest-robolig-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.webp"
+      ],
+      "specs": [
+        {
+          "name": "TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf",
+          "ext": ".pdf",
+          "size_kb": 3359.6
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "ODR",
+          "files": [
+            {
+              "name": "TEKNOFEST_2026_robolig_ODR_rapor__C5_9Fablon_21.02.26v1.0_TR_qYHzY.docx",
+              "rel_path": "sablon\\TEKNOFEST_2026_robolig_ODR_rapor__C5_9Fablon_21.02.26v1.0_TR_qYHzY.docx",
+              "ext": ".docx",
+              "size_kb": 5388.0
+            }
+          ]
+        },
+        {
+          "stage_code": "PDR",
+          "files": [
+            {
+              "name": "TEKNOFEST_2026_robolig_proje_rapor__C5_9Fablon_K3wkU.docx",
+              "rel_path": "sablon\\TEKNOFEST_2026_robolig_proje_rapor__C5_9Fablon_K3wkU.docx",
+              "ext": ".docx",
+              "size_kb": 4729.6
+            }
+          ]
+        },
+        {
+          "stage_code": "PVT",
+          "files": [
+            {
+              "name": "TEKNOFEST_2026_video_k_C4_B1lavuz_TR_robolig_w8lkn.pdf",
+              "rel_path": "sablon\\TEKNOFEST_2026_video_k_C4_B1lavuz_TR_robolig_w8lkn.pdf",
+              "ext": ".pdf",
+              "size_kb": 923.5
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 5
+    },
+    {
+      "name": "teknofest-yapay-zeka-film-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_YAPAY_ZEKA_F_C4_B0LM_YARI_C5_9EMASI_SARTNAMES_C4_B0_TR_ykE9M.pdf",
+          "ext": ".pdf",
+          "size_kb": 1584.3
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "sablon",
+          "files": [
+            {
+              "name": "TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx",
+              "rel_path": "TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx",
+              "ext": ".docx",
+              "size_kb": 2249.0
+            }
+          ]
+        },
+        {
+          "stage_code": "yarismaci_raporlari",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "tuba-teknofest-doktora-bilim-odulleri",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "TUBA-TEKNOFEST_Doktora_Bilim_Odulu_Esaslar_C4_B1_oOqfa_e4tfn.pdf",
+          "ext": ".pdf",
+          "size_kb": 413.0
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "uluslararasi-elektrikli-arac-yarislari",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "B_C3_B6l_C3_BCm_1_TR_17.07_liRb5.pdf",
+          "ext": ".pdf",
+          "size_kb": 3071.3
+        },
+        {
+          "name": "B_C3_B6l_C3_BCm_2_TR_17.07_rFNZB.pdf",
+          "ext": ".pdf",
+          "size_kb": 5051.6
+        },
+        {
+          "name": "B_C3_B6l_C3_BCm_3_TR_FRYi5.pdf",
+          "ext": ".pdf",
+          "size_kb": 3425.2
+        },
+        {
+          "name": "B_C3_B6l_C3_BCm_4_TR_Jmdi2.pdf",
+          "ext": ".pdf",
+          "size_kb": 2447.4
+        },
+        {
+          "name": "B_C3_B6l_C3_BCm_5_TR__17.07_JIc6H.pdf",
+          "ext": ".pdf",
+          "size_kb": 2762.6
+        },
+        {
+          "name": "B_C3_B6l_C3_BCm_6_TR_HE1ZJ.pdf",
+          "ext": ".pdf",
+          "size_kb": 4219.4
+        },
+        {
+          "name": "B_C3_B6l_C3_BCm_7_TR_17.07_D1aS1.pdf",
+          "ext": ".pdf",
+          "size_kb": 2802.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "TTR",
+          "files": [
+            {
+              "name": "2026_TTR_Rapor__C5_9Eablonu_TR_OXmlL.docx",
+              "rel_path": "sablon\\2026_TTR_Rapor__C5_9Eablonu_TR_OXmlL.docx",
+              "ext": ".docx",
+              "size_kb": 5018.2
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 9
+    },
+    {
+      "name": "uluslararasi-insansiz-hava-araci-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026__C4_B0HA_Yar_C4_B1_C5_9Fmalar_C4_B1__C5_9Eartnamesi_TR_v6_CJbHl.pdf",
+          "ext": ".pdf",
+          "size_kb": 3103.2
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "PSR",
+          "files": [
+            {
+              "name": "2026_Uluslararas_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_KbbQ9.docx",
+              "rel_path": "sablon\\2026_Uluslararas_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_KbbQ9.docx",
+              "ext": ".docx",
+              "size_kb": 2479.3
+            }
+          ]
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 3
+    },
+    {
+      "name": "universite-ogrencileri-arastirma-proje-yarismalari",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_2242__C3_9Cniversite__C3_96_C4_9Frencileri_Ara_C5_9Ft_C4_B1rma_Proje_Yar_C4_B1_C5_9Fmalar_C4_B1_v1_0_TR_ULmqu.pdf",
+          "ext": ".pdf",
+          "size_kb": 1637.7
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "world-drone-cup",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_World_Drone_Cup_PrYxE.pdf",
+          "ext": ".pdf",
+          "size_kb": 1458.9
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "yapay-zeka-destekli-havayolu-optimizasyonu-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_Yapay_Zeka_Destekli_Havayolu_Optimizasyonu_Yar_C4_B1_C5_9Fmas_C4_B1__C5_9Eartname_s6aWG.pdf",
+          "ext": ".pdf",
+          "size_kb": 1571.3
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 2
+    },
+    {
+      "name": "yapay-zeka-destekli-lojistik-anahat-optimizasyonu-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 1
+    },
+    {
+      "name": "yapay-zeka-dil-ajanlari-yarismasi",
+      "sub_dirs": [
+        "asamalar",
+        "sartname"
+      ],
+      "direct_files": [
+        "logo.png"
+      ],
+      "specs": [
+        {
+          "name": "2026_TEKNOFEST_TYDA_SARTNAME_Ucuncu_Senaryo_TR_2_NoDue.pdf",
+          "ext": ".pdf",
+          "size_kb": 1638.5
+        },
+        {
+          "name": "2026_TYDA_SARTNAME_Birinci_Senaryo_TR_1_A8mT1.pdf",
+          "ext": ".pdf",
+          "size_kb": 1635.5
+        },
+        {
+          "name": "2026_TYDA_SARTNAME_Ikinci_Senaryo_TR_1_1IAJb.pdf",
+          "ext": ".pdf",
+          "size_kb": 1674.4
+        }
+      ],
+      "stages": [
+        {
+          "stage_code": "OTR",
+          "files": []
+        }
+      ],
+      "other_folders": {},
+      "total_files_count": 4
+    }
+  ]
+}

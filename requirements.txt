@@ -1,0 +1,43 @@
+fastapi>=0.110.0
+uvicorn>=0.28.0
+pydantic>=2.6.0
+python-multipart>=0.0.9
+jinja2>=3.1.3
+python-dotenv>=1.0.1
+
+# PDF & Text Processing
+pymupdf>=1.24.0
+pdfplumber>=0.11.0
+langdetect>=1.0.9
+langchain>=0.1.16
+langchain-community>=0.0.34
+langchain-text-splitters>=0.0.1
+
+# Embeddings & Vector Search
+sentence-transformers>=2.6.1
+faiss-cpu>=1.8.0
+chromadb>=0.4.24
+scikit-learn>=1.4.2
+
+# LLM & AI Clients
+anthropic>=0.34.0
+openai>=1.23.0
+
+# Cloud Storage (Cloudflare R2 - S3 uyumlu)
+boto3>=1.34.0
+
+# Data Analysis & Utils
+pandas>=2.2.1
+numpy>=1.26.4
+requests>=2.31.0
+tqdm>=4.66.2
+
+# UI & Dashboard (Emre)
+streamlit>=1.36.0
+plotly>=5.22.0
+reportlab>=4.0.0
+
+# Test
+pytest>=8.1.0
+httpx>=0.27.0
+
