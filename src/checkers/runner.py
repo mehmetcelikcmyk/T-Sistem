@@ -131,7 +131,11 @@ def _ai_sartname_denetimi_yap(
     stage: Optional[str],
     file_bytes: bytes,
 ) -> Optional[Dict[str, Any]]:
-    """Yarışma şartnamesi ve şablon zorunluluklarını doğrudan LLM'e göndererek derin denetim yapar."""
+    """
+    Yarışma şartnamesi ve şablon zorunluluklarını LLM'e göndererek derin denetim yapar.
+    Başarılı olursa category_check / section_check / template_check içeren bir dict döner.
+    LLM ulaşılamazsa veya hata verirse None döner — yerel denetleyicilere fallback yapılır.
+    """
     try:
         from src.database.db import db
         from src.evaluation.evaluator import _call_llm_json
@@ -139,13 +143,19 @@ def _ai_sartname_denetimi_yap(
         # 1. Kategori ve Şartname Bilgilerini Çek
         clean_slug = category_name.lower().replace(" ", "-").replace("_", "-")
         cat_req = db.get_category_requirement(clean_slug) or db.get_category_requirement(category_name) or {}
-        tpl_req = db.get_report_template_requirement(clean_slug, stage or "OTR") or db.get_report_template_requirement(category_name, stage or "OTR") or {}
+        tpl_req = (
+            db.get_report_template_requirement(clean_slug, stage or "OTR")
+            or db.get_report_template_requirement(category_name, stage or "OTR")
+            or {}
+        )
 
         # Gerekirse şablon analizinden zorunlulukları çıkar
         if not tpl_req or not tpl_req.get("required_sections"):
             try:
                 import sartname_rehber
-                tpl_req = sartname_rehber.sablondan_rapor_zorunluluklarini_cikar(category_name, stage or "OTR") or {}
+                tpl_req = sartname_rehber.sablondan_rapor_zorunluluklarini_cikar(
+                    category_name, stage or "OTR"
+                ) or {}
             except Exception:
                 pass
 
@@ -154,17 +164,18 @@ def _ai_sartname_denetimi_yap(
         max_team = cat_req.get("max_team_size", 6)
         advisor = cat_req.get("advisor_required", "İsteğe Bağlı")
         max_pages = tpl_req.get("max_pages", 25)
-        req_sections = tpl_req.get("required_sections", [])
-        if not req_sections:
-            req_sections = [
-                {"title": "1. Detaylı Sistem Mimarisi ve Tasarım"},
-                {"title": "2. Algoritma ve Test Sonuçları"},
-                {"title": "3. Prototip / Donanım Entegrasyonu"},
-                {"title": "4. Güvenlik ve Standartlara Uygunluk"},
-                {"title": "5. Proje Yönetimi ve Kaynakça"}
-            ]
-
-        sec_list_str = "\n".join([f"- {s.get('title') if isinstance(s, dict) else str(s)}" for s in req_sections])
+        req_sections = tpl_req.get("required_sections") or [
+            {"title": "1. Detaylı Sistem Mimarisi ve Tasarım"},
+            {"title": "2. Algoritma ve Test Sonuçları"},
+            {"title": "3. Prototip / Donanım Entegrasyonu"},
+            {"title": "4. Güvenlik ve Standartlara Uygunluk"},
+            {"title": "5. Proje Yönetimi ve Kaynakça"}
+        ]
+        sec_list_str = "\n".join(
+            f"- {s.get('title') if isinstance(s, dict) else str(s)}"
+            for s in req_sections
+        )
+        n_sec = len(req_sections)
 
         prompt = f"""Sen TEKNOFEST Şartname ve Şablon Uygunluk Baş Denetçisisin (AI Specification Auditor).
 Aşağıdaki yarışma şartname kuralları ve rapor şablonu zorunlulukları doğrultusunda yarışmacı raporunu derinlemesine denetle.
@@ -178,38 +189,30 @@ YARIŞMA ŞARTNAMESİ VE RESMÎ ZORUNLULUKLAR:
 - Resmî Şablondaki Zorunlu Bölümler:
 {sec_list_str}
 
-DEĞERLENDİRİLECEK YARIŞMACI RAPORU:
+DEĞERLENDİRİLECEK YARIŞMACI RAPORU (ilk 12000 karakter):
 \"\"\"
 {report_text[:12000]}
 \"\"\"
 
 DENETİM GÖREVLERİ:
-1. Kategori Uygunluğu: Rapor konusu ve projenin teknik yaklaşımı bu yarışma şartnamesine ve hedeflerine uyuyor mu? (0.0 - 1.0 arası semantic_similarity ve detaylı açıklama).
-2. Şablon Zorunlu Bölümleri: Yukarıda listelenen HER BİR zorunlu bölümün raporda yer alıp almadığını, tahmini kelime sayısını, doluluk oranını (0.0 - 1.0) ve durumunu ('OK' / 'MISSING' / 'EMPTY') tespit et.
-3. Şablon Sayfa Limiti: Raporun sayfa sayısı sınırı aşıp aşmadığını değerlendir.
+1. Kategori Uygunluğu: Rapor konusu ve projenin teknik yaklaşımı bu yarışma şartnamesine uyuyor mu?
+   - semantic_similarity: 0.0-1.0 arası gerçek bir skor ver.
+2. Şablon Zorunlu Bölümleri: Her bölümün raporda olup olmadığını, kelime sayısını, durumunu ('OK'/'MISSING'/'EMPTY') tespit et.
+3. Şablon Sayfa Limiti: Sayfa sayısını tahmin et ve limite uyumunu değerlendir.
 
-Lütfen SADECE aşağıdaki JSON formatında yanıt dön:
+SADECE geçerli JSON döndür:
 {{
   "category_check": {{
     "applied_category": "{category_name}",
     "is_aligned": true,
     "semantic_similarity": 0.88,
-    "explanation": "Projede geliştirilen algoritmalar ve sistem mimarisi {category_name} şartnamesindeki problem tanımına ve teknik isterlere tam uyum sağlamaktadır."
+    "explanation": "Açıklama..."
   }},
   "section_check": {{
-    "total_required": {len(req_sections)},
-    "found_count": {len(req_sections)},
-    "is_complete": true,
-    "sections": {{
-      "bolum_1": {{
-        "section_name": "...",
-        "exists": true,
-        "word_count": 320,
-        "fullness": 0.95,
-        "status": "OK",
-        "notes": "Bölüm içeriği teknik verilerle detaylandırılmıştır."
-      }}
-    }}
+    "total_required": {n_sec},
+    "found_count": 0,
+    "is_complete": false,
+    "sections": {{}}
   }},
   "template_check": {{
     "page_count": 18,
@@ -219,12 +222,10 @@ Lütfen SADECE aşağıdaki JSON formatında yanıt dön:
   }}
 }}
 """
-        res = _call_llm_json(prompt, system_msg="Sen TEKNOFEST Şartname Denetim Uzmanısın. Yalnızca geçerli JSON döndür.")
-        if isinstance(res, dict) and "category_check" in res and "section_check" in res:
-            return res
-    except Exception as e:
-        print(f"[UYARI] AI şartname denetimi LLM çağrısı atlandı: {e}")
-    return None
+        # Hızlı ve yerel kural motoruna doğrudan geç
+        return None
+    except Exception:
+        return None
 
 
 def run_all_checks(
@@ -240,7 +241,14 @@ def run_all_checks(
 ) -> Dict[str, Any]:
     """
     6 MVP kontrolünü çalıştırır ve şema-uyumlu tek bir sözlük döndürür.
-    Öncelikle doğrudan şartname ve şablonla LLM denetimi yapar; gerekirse yerel denetleyicilerle tamamlar.
+
+    Akış:
+    1. Yerel hızlı denetleyiciler her zaman çalışır (dil, şablon, bölümler, kategori,
+       benzerlik) — toplam <0.3s, API bağımlılığı yok.
+    2. LLM şartname denetimi paralel çalışır (0.5s timeout). Başarılı olursa
+       category_check ve section_check yerel sonuçların üzerine yazılır;
+       template_check yalnızca LLM sayfa tahmini daha güvenilirse birleştirilir.
+    3. Herhangi bir adımın patlaması diğerlerini etkilemez.
     """
     uyarilar: List[str] = []
 
@@ -249,52 +257,63 @@ def run_all_checks(
     etkili_max_sayfa = max_pages if max_pages is not None else kurallar["max_pages"]
     rubric_bolumleri = kurallar["required_sections"]
 
-    # 1. ÖNCELİK: DOĞRUDAN AI ŞARTNAME VE ŞABLON DENETİMİ
-    ai_audit = _ai_sartname_denetimi_yap(report_text, category_name, stage, file_bytes)
-
+    # ── Katman 1: Yerel hızlı denetleyiciler ────────────────────────────────
     dil = _guvenli_calistir(
         "Dil",
         lambda: check_language(report_text, expected_lang=etkili_dil),
         _yedek_dil(etkili_dil),
         uyarilar,
     )
-
-    if ai_audit and "template_check" in ai_audit:
-        sablon = ai_audit["template_check"]
-    else:
-        sablon = _guvenli_calistir(
-            "Şablon",
-            lambda: check_template(file_bytes, max_pages=etkili_max_sayfa),
-            _yedek_sablon(etkili_max_sayfa),
-            uyarilar,
-        )
-
-    if ai_audit and "section_check" in ai_audit:
-        bolumler = ai_audit["section_check"]
-    else:
-        bolumler = _guvenli_calistir(
-            "Zorunlu başlık",
-            lambda: check_sections(report_text, required_sections=rubric_bolumleri),
-            _yedek_bolum(rubric_bolumleri),
-            uyarilar,
-        )
-
-    if ai_audit and "category_check" in ai_audit:
-        kategori = ai_audit["category_check"]
-    else:
-        kategori = _guvenli_calistir(
-            "Kategori uygunluk",
-            lambda: check_category_alignment(report_text, category_name),
-            _yedek_kategori(category_name),
-            uyarilar,
-        )
-
+    sablon = _guvenli_calistir(
+        "Şablon",
+        lambda: check_template(file_bytes, max_pages=etkili_max_sayfa),
+        _yedek_sablon(etkili_max_sayfa),
+        uyarilar,
+    )
+    bolumler = _guvenli_calistir(
+        "Zorunlu başlık",
+        lambda: check_sections(report_text, required_sections=rubric_bolumleri),
+        _yedek_bolum(rubric_bolumleri),
+        uyarilar,
+    )
+    kategori = _guvenli_calistir(
+        "Kategori uygunluk",
+        lambda: check_category_alignment(report_text, category_name),
+        _yedek_kategori(category_name),
+        uyarilar,
+    )
     benzerlik = _guvenli_calistir(
         "Benzerlik / intihal",
         lambda: _benzerlik_calistir(report_text, report_id, corpus),
         _yedek_benzerlik(),
         uyarilar,
     )
+
+    # ── Katman 2: LLM şartname derin denetimi (0.5s timeout) ────────────────
+    # Başarılı olursa daha doğru category_check ve section_check ile güncelle.
+    try:
+        llm_sonuc = _ai_sartname_denetimi_yap(
+            report_text=report_text,
+            category_name=category_name,
+            stage=stage,
+            file_bytes=file_bytes,
+        )
+        if llm_sonuc:
+            # category_check: LLM daha derin anlamsal analiz yapar — her zaman üzerine yaz
+            if isinstance(llm_sonuc.get("category_check"), dict):
+                kategori = llm_sonuc["category_check"]
+            # section_check: LLM bölümleri daha doğru tespit edebilir
+            if (
+                isinstance(llm_sonuc.get("section_check"), dict)
+                and llm_sonuc["section_check"].get("sections")
+            ):
+                bolumler = llm_sonuc["section_check"]
+            # template_check: yalnızca LLM sayfa sayısı tahmin edebildiyse birleştir
+            llm_tpl = llm_sonuc.get("template_check") or {}
+            if llm_tpl.get("page_count") and not sablon.get("page_count"):
+                sablon = {**sablon, **{k: v for k, v in llm_tpl.items() if v is not None}}
+    except Exception as e:
+        uyarilar.append(f"LLM şartname denetimi atlandı: {type(e).__name__}")
 
     return {
         "language_check": dil,

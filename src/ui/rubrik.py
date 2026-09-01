@@ -66,15 +66,120 @@ IYT_OTR_2026 = {
 YARISMALAR = [HYZ_OTR_2026, IYT_OTR_2026]
 
 
-def getir(yarisma_id: str) -> dict:
+import json
+import os
+from pathlib import Path
+
+_AI_DIR = Path(__file__).resolve().parents[2] / "data" / "ai_rapor_analizi"
+
+
+from functools import lru_cache
+
+@lru_cache(maxsize=128)
+def getir(yarisma_id: str, asama: str | None = None, seviye: str | None = None) -> dict:
+    """Yarışma ve aşamaya ait resmî 0-100 puanlık rubrik kriterlerini döner."""
+    clean_id = (yarisma_id or "").strip()
+    target_stg = (asama or "OTR").upper().replace("Ö", "O").replace("Ü", "U").replace("İ", "I")
+
+    # 1. Cloudflare D1 competition_rubrics Tablosundan Sorgula
+    try:
+        from src.database.db import db
+        d1_rows = db.execute_d1(
+            "SELECT criteria_json, total_score, stage_code, level FROM competition_rubrics WHERE competition_id = ? OR competition_id LIKE ?;",
+            [clean_id, f"%{clean_id}%"]
+        )
+        if d1_rows:
+            matched_row = None
+            for r in d1_rows:
+                r_stg = (r.get("stage_code") or "").upper().replace("Ö", "O").replace("Ü", "U").replace("İ", "I")
+                if r_stg == target_stg or target_stg in r_stg:
+                    matched_row = r
+                    break
+            if not matched_row and d1_rows:
+                matched_row = d1_rows[0]
+
+            if matched_row and matched_row.get("criteria_json"):
+                criteria_raw = json.loads(matched_row["criteria_json"])
+                c_list = []
+                for c in criteria_raw:
+                    c_list.append({
+                        "id": c.get("id", "kriter"),
+                        "ad": c.get("name") or c.get("title") or "Kriter",
+                        "maks": float(c.get("max_score", 10.0)),
+                        "bolum": c.get("name", "").split(".")[0] if "." in c.get("name", "") else "—",
+                        "aciklama": c.get("description", "")
+                    })
+                if c_list:
+                    return {
+                        "yarisma_id": clean_id,
+                        "ad": clean_id,
+                        "rapor_turu": matched_row.get("stage_code", target_stg),
+                        "toplam_puan": float(matched_row.get("total_score", 100.0)),
+                        "kriterler": c_list,
+                        "zorunlu_bolumler": []
+                    }
+    except Exception:
+        pass
+
+    # 2. data/ai_rapor_analizi/{slug}.json dosyasından oku
+    json_candidates = list(_AI_DIR.glob(f"*{clean_id}*.json")) if _AI_DIR.exists() else []
+    if json_candidates:
+        try:
+            with open(json_candidates[0], "r", encoding="utf-8") as f:
+                c_data = json.load(f)
+                
+            stages_pool = []
+            stg_val = c_data.get("stages") or c_data.get("rubrics")
+            if isinstance(stg_val, list):
+                stages_pool.extend(stg_val)
+            elif isinstance(stg_val, dict):
+                for lvl_name, stg_list in stg_val.items():
+                    if isinstance(stg_list, list):
+                        stages_pool.extend(stg_list)
+
+            matched_stage = None
+            for s in stages_pool:
+                if isinstance(s, dict):
+                    s_code = (s.get("stage") or "").upper().replace("Ö", "O").replace("Ü", "U").replace("İ", "I")
+                    if s_code == target_stg or target_stg in s_code:
+                        matched_stage = s
+                        break
+                        
+            if not matched_stage and stages_pool:
+                matched_stage = stages_pool[0]
+
+            if matched_stage and "rubric" in matched_stage and isinstance(matched_stage["rubric"], dict):
+                rub = matched_stage["rubric"]
+                c_list = []
+                for c in rub.get("criteria", []):
+                    c_list.append({
+                        "id": c.get("id", "kriter"),
+                        "ad": c.get("name") or c.get("title") or "Kriter",
+                        "maks": float(c.get("max_score", 10.0)),
+                        "bolum": c.get("name", "").split(".")[0] if "." in c.get("name", "") else "—",
+                        "aciklama": c.get("description", "")
+                    })
+                if c_list:
+                    return {
+                        "yarisma_id": clean_id,
+                        "ad": c_data.get("name", clean_id),
+                        "rapor_turu": matched_stage.get("stage_name", target_stg),
+                        "toplam_puan": float(rub.get("total_score", 100.0)),
+                        "kriterler": c_list,
+                        "zorunlu_bolumler": matched_stage.get("sections", [])
+                    }
+        except Exception:
+            pass
+
+    # 2. Hardcoded fallback'ler
     for y in YARISMALAR:
-        if y["yarisma_id"] == yarisma_id:
+        if y["yarisma_id"] == clean_id:
             return y
     return YARISMALAR[0]
 
 
 def kriter_bul(yarisma: dict, kriter_id: str) -> dict | None:
-    for k in yarisma["kriterler"]:
+    for k in yarisma.get("kriterler", []):
         if k["id"] == kriter_id:
             return k
     return None

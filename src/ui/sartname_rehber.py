@@ -16,26 +16,38 @@ from typing import Dict, List, Any, Optional
 import base64
 import pymupdf
 
+import tempfile
+
 ROOT = Path(__file__).resolve().parents[2]
-DOCS_DIR = ROOT / "data" / "yarismalar"
-RUBRICS_DIR = ROOT / "data" / "rubrics"
-LOGOS_DIR = ROOT / "data" / "logos"
+CACHE_DIR = Path(tempfile.gettempdir()) / "tsistem_cache"
+DOCS_DIR = CACHE_DIR / "yarismalar"
+RUBRICS_DIR = CACHE_DIR / "rubrics"
+LOGOS_DIR = CACHE_DIR / "logos"
 
 
 @lru_cache(maxsize=128)
 def kategori_logosu_getir(slug: str) -> Path | None:
-    """Yarışma slug'ına ait resmî logo dosya yolunu (.png, .webp, .jpg) döndürür."""
+    """Yarışma slug'ına ait resmî logo dosya yolunu döndürür, yoksa R2'den indirip döner."""
     if not slug:
         return None
         
     clean_slug = slug.strip().lower()
+
+    # 1. DOCS_DIR / slug / logo.* (Öncelikli yerel klasör)
+    comp_dir = DOCS_DIR / clean_slug
+    if comp_dir.exists():
+        for ext in [".png", ".webp", ".jpg", ".jpeg"]:
+            p = comp_dir / f"logo{ext}"
+            if p.exists():
+                return p
+
+    # 2. LOGOS_DIR / slug.*
     if LOGOS_DIR.exists():
         for ext in [".png", ".webp", ".jpg", ".jpeg"]:
             p = LOGOS_DIR / f"{clean_slug}{ext}"
             if p.exists():
                 return p
                 
-        # Benzer / Normalleştirilmiş Arama
         clean_norm = clean_slug.replace("-", "").replace(" ", "").replace("i", "ı")
         for f in LOGOS_DIR.iterdir():
             if f.is_file() and f.suffix.lower() in [".png", ".webp", ".jpg", ".jpeg"]:
@@ -43,25 +55,31 @@ def kategori_logosu_getir(slug: str) -> Path | None:
                 if clean_norm in f_norm or f_norm in clean_norm:
                     return f
 
-    # Cloudflare R2 üzerinden indir ve önbellekle
+    # 3. Cloudflare R2'den dinamik çek
     try:
         from src.services.r2_service import r2_service
-        r2_key = f"logos/{clean_slug}.png"
-        file_bytes = r2_service.download_file(r2_key)
-        if file_bytes:
-            LOGOS_DIR.mkdir(parents=True, exist_ok=True)
-            cached_path = LOGOS_DIR / f"{clean_slug}.png"
-            cached_path.write_bytes(file_bytes)
-            return cached_path
+        for ext in [".png", ".webp", ".jpg", ".jpeg"]:
+            r2_key = f"yarismalar/{clean_slug}/logo{ext}"
+            img_bytes = r2_service.download_bytes(r2_key)
+            if img_bytes:
+                comp_dir.mkdir(parents=True, exist_ok=True)
+                local_logo = comp_dir / f"logo{ext}"
+                local_logo.write_bytes(img_bytes)
+                return local_logo
     except Exception:
         pass
+
+    # 4. Varsayılan T-Sistem Logosu
+    fallback_logo = ROOT / "src" / "ui" / "tsistem_logo.png"
+    if fallback_logo.exists():
+        return fallback_logo
 
     return None
 
 
-@lru_cache(maxsize=128)
+@lru_cache(maxsize=256)
 def kategori_logosu_base64_getir(slug: str) -> str:
-    """Yarışma logosunu kırpıp tam ölçekte Base64 Data URI olarak döner."""
+    """Yarışma logosunu kırpıp optimize boyutlu (max 180px) Base64 Data URI olarak döner."""
     p = kategori_logosu_getir(slug)
     if not p or not p.exists():
         return ""
@@ -71,25 +89,33 @@ def kategori_logosu_base64_getir(slug: str) -> str:
 
         im = Image.open(p)
         # Etraftaki gereksiz beyaz ve şeffaf boşlukları otomatik kırp
-        rgb = im.convert("RGB")
-        diff = ImageChops.difference(rgb, Image.new("RGB", rgb.size, (255, 255, 255)))
-        diff_bbox = diff.getbbox()
-        if diff_bbox:
-            # Kenarlardan hafif nefes payı (padding) bırak
-            w, h = im.size
-            pad = 12
-            crop_box = (
-                max(0, diff_bbox[0] - pad),
-                max(0, diff_bbox[1] - pad),
-                min(w, diff_bbox[2] + pad),
-                min(h, diff_bbox[3] + pad)
-            )
-            im = im.crop(crop_box)
+        if im.mode in ("RGBA", "LA"):
+            alpha = im.getchannel("A")
+            bbox = alpha.getbbox()
+            if bbox:
+                im = im.crop(bbox)
+        else:
+            rgb = im.convert("RGB")
+            diff = ImageChops.difference(rgb, Image.new("RGB", rgb.size, (255, 255, 255)))
+            diff_bbox = diff.getbbox()
+            if diff_bbox:
+                w, h = im.size
+                pad = 8
+                crop_box = (
+                    max(0, diff_bbox[0] - pad),
+                    max(0, diff_bbox[1] - pad),
+                    min(w, diff_bbox[2] + pad),
+                    min(h, diff_bbox[3] + pad)
+                )
+                im = im.crop(crop_box)
+
+        # Hızlı yükleme ve hafiflik için thumbnail boyutlandır
+        im.thumbnail((180, 180), Image.Resampling.LANCZOS)
 
         buf = io.BytesIO()
-        im.save(buf, format="PNG", optimize=True)
+        im.save(buf, format="WEBP", quality=90)
         encoded = base64.b64encode(buf.getvalue()).decode("utf-8")
-        return f"data:image/png;base64,{encoded}"
+        return f"data:image/webp;base64,{encoded}"
     except Exception:
         try:
             mime = "image/png" if p.suffix.lower() == ".png" else ("image/webp" if p.suffix.lower() == ".webp" else "image/jpeg")
@@ -101,27 +127,27 @@ def kategori_logosu_base64_getir(slug: str) -> str:
 
 # TEKNOFEST Bilinen Aşamalar ve Açıklamaları
 ASAMALAR = {
-    "ODR": {"kod": "ODR", "ad": "Ön Değerlendirme Raporu", "ikon": "📝", "renk": "#3b82f6"},
-    "OTR": {"kod": "OTR", "ad": "Ön Tasarım Raporu", "ikon": "📐", "renk": "#2563eb"},
-    "PDR": {"kod": "PDR", "ad": "Proje Detay / Ön Tasarım İnceleme", "ikon": "📋", "renk": "#0284c7"},
-    "KTR": {"kod": "KTR", "ad": "Kritik Tasarım Raporu", "ikon": "🔍", "renk": "#7c3aed"},
-    "CDR": {"kod": "CDR", "ad": "Kritik Tasarım İnceleme Raporu", "ikon": "🔬", "renk": "#6d28d9"},
-    "DTR": {"kod": "DTR", "ad": "Detaylı Tasarım Raporu", "ikon": "📊", "renk": "#8b5cf6"},
-    "AHR": {"kod": "AHR", "ad": "Atışa Hazırlık Raporu", "ikon": "🚀", "renk": "#ea580c"},
-    "POR": {"kod": "POR", "ad": "Proje Planı ve Organizasyon", "ikon": "📅", "renk": "#0d9488"},
-    "QR":  {"kod": "QR",  "ad": "Yeterlilik İnceleme Raporu", "ikon": "🎯", "renk": "#16a34a"},
-    "FRR": {"kod": "FRR", "ad": "Uçuşa Yeterlilik Raporu", "ikon": "✈️", "renk": "#059669"},
-    "PFR": {"kod": "PFR", "ad": "Uçuş Sonrası İnceleme", "ikon": "📈", "renk": "#475569"},
-    "FTR": {"kod": "FTR", "ad": "Final Tasarım Raporu", "ikon": "🏆", "renk": "#dc2626"},
-    "FYR": {"kod": "FYR", "ad": "Final Yarışma Raporu", "ikon": "🏅", "renk": "#b91c1c"},
-    "GENEL": {"kod": "GENEL", "ad": "Genel Değerlendirme", "ikon": "⚖️", "renk": "#4b5563"},
+    "ODR": {"kod": "ODR", "ad": "Ön Değerlendirme Raporu", "ikon": "", "renk": "#3b82f6"},
+    "OTR": {"kod": "OTR", "ad": "Ön Tasarım Raporu", "ikon": "", "renk": "#2563eb"},
+    "PDR": {"kod": "PDR", "ad": "Proje Detay / Ön Tasarım İnceleme", "ikon": "", "renk": "#0284c7"},
+    "KTR": {"kod": "KTR", "ad": "Kritik Tasarım Raporu", "ikon": "", "renk": "#7c3aed"},
+    "CDR": {"kod": "CDR", "ad": "Kritik Tasarım İnceleme Raporu", "ikon": "", "renk": "#6d28d9"},
+    "DTR": {"kod": "DTR", "ad": "Detaylı Tasarım Raporu", "ikon": "", "renk": "#8b5cf6"},
+    "AHR": {"kod": "AHR", "ad": "Atışa Hazırlık Raporu", "ikon": "", "renk": "#ea580c"},
+    "POR": {"kod": "POR", "ad": "Proje Planı ve Organizasyon", "ikon": "", "renk": "#0d9488"},
+    "QR":  {"kod": "QR",  "ad": "Yeterlilik İnceleme Raporu", "ikon": "", "renk": "#16a34a"},
+    "FRR": {"kod": "FRR", "ad": "Uçuşa Yeterlilik Raporu", "ikon": "", "renk": "#059669"},
+    "PFR": {"kod": "PFR", "ad": "Uçuş Sonrası İnceleme", "ikon": "", "renk": "#475569"},
+    "FTR": {"kod": "FTR", "ad": "Final Tasarım Raporu", "ikon": "", "renk": "#dc2626"},
+    "FYR": {"kod": "FYR", "ad": "Final Yarışma Raporu", "ikon": "", "renk": "#b91c1c"},
+    "GENEL": {"kod": "GENEL", "ad": "Genel Değerlendirme", "ikon": "", "renk": "#4b5563"},
 }
 
 # Bilinen Ana Gruplar ve Alt Kategori Tanımları
 YARISMA_GRUPLARI = {
     "insanlik-yararina-teknoloji": {
         "ad": "İnsanlık Yararına Teknoloji Yarışması",
-        "ikon": "🌍",
+        "ikon": "",
         "alt_kategoriler": [
             {"id": "lise", "ad": "Lise Seviyesi", "klasor": "insanlik-yararina-teknolojiler-yarismasi-lise-seviyesi"},
             {"id": "ortaokul", "ad": "Ortaokul Seviyesi", "klasor": "insanlik-yararina-teknolojiler-yarismasi-ortaokul-seviyesi"},
@@ -131,7 +157,7 @@ YARISMA_GRUPLARI = {
     },
     "roket-yarismasi": {
         "ad": "Roket Yarışması",
-        "ikon": "🚀",
+        "ikon": "",
         "alt_kategoriler": [
             {"id": "roket-genel", "ad": "Genel Roket Kategorisi", "klasor": "roket-yarismasi"},
             {"id": "dikey-inis", "ad": "Dikey İnişli Roket", "klasor": "dikey-inisli-roket-yarismasi"},
@@ -140,7 +166,7 @@ YARISMA_GRUPLARI = {
     },
     "savasan-iha": {
         "ad": "Savaşan İHA Yarışması",
-        "ikon": "✈️",
+        "ikon": "",
         "alt_kategoriler": [
             {"id": "savasan-iha-genel", "ad": "Savaşan İHA (Sabit / Döner Kanat)", "klasor": "savasan-iha-yarismasi"},
             {"id": "avci-drone", "ad": "Avcı Drone Kategorisi", "klasor": "savasan-iha-avci-drone-yarismasi"},
@@ -189,114 +215,120 @@ def tr_norm(s: str) -> str:
 
 
 def klasor_bul(query: str) -> Path | None:
-    """Yarışma ID, kod veya başlığına göre klasörü bulur veya R2'den çeker."""
-    if DOCS_DIR.exists():
-        direct = DOCS_DIR / query
-        if direct.exists() and direct.is_dir():
-            return direct
-
-        words = [w for w in tr_norm(query).split() if len(w) >= 2 and w not in (
-            "tekno", "teknofest", "2026", "yarismasi", "genel", "raporu", "ve", "ile", "tr", "rub"
-        )]
-        if words:
-            best_folder, best_score = None, 0
-            for f in DOCS_DIR.iterdir():
-                if not f.is_dir():
-                    continue
-                f_norm = tr_norm(f.name)
-                f_words = f_norm.split()
-                score = sum(3 for w in words if w in f_words) + sum(1 for w in words if w in f_norm)
-                if any(w == f_words[0] for w in words):
-                    score += 3
-                if score > best_score:
-                    best_score = score
-                    best_folder = f
-            if best_folder:
-                return best_folder
-
-    # R2 üzerinden dinamik klasör oluştur
-    try:
-        from src.services.r2_service import r2_service
-        clean_slug = r2_service.slugify(query)
-        target_dir = DOCS_DIR / clean_slug / "sartname"
-        target_dir.mkdir(parents=True, exist_ok=True)
-        return DOCS_DIR / clean_slug
-    except Exception:
-        pass
-
-    return None
+    """Yarışma ID, slug veya başlığına göre klasörü bulur veya R2/D1 hedef yolunu döndürür."""
+    if not query:
+        return None
+    slug = query.strip().lower()
+    target_dir = DOCS_DIR / slug
+    target_dir.mkdir(parents=True, exist_ok=True)
+    return target_dir
 
 
 @lru_cache(maxsize=128)
 def klasor_bilgisi(yarisma_id_veya_adi: str) -> dict:
-    """Belirtilen yarışma için şartname ve aşama şablonlarını tarar."""
-    klasor_yolu = klasor_bul(yarisma_id_veya_adi)
-    if not klasor_yolu or not klasor_yolu.exists():
-        return {"asama_listesi": ["GENEL"], "sartname_pdf": None, "sablonlar": {}, "zorunlu_bolumler": []}
+    """Belirtilen yarışma için şartname ve aşama şablonlarını Cloudflare D1 ve R2 üzerinden dinamik çözer."""
+    if not yarisma_id_veya_adi:
+        return {"asama_listesi": ["GENEL"], "sartname_pdf": None, "sablonlar": {}, "tum_sablon_dosyalari": []}
 
-    sartname_files = list((klasor_yolu / "sartname").glob("*.pdf"))
-    sartname_pdf = sartname_files[0] if sartname_files else None
+    slug = yarisma_id_veya_adi.strip().lower()
+    comp_dir = DOCS_DIR / slug
+    comp_dir.mkdir(parents=True, exist_ok=True)
+    sn_dir = comp_dir / "sartname"
+    sn_dir.mkdir(parents=True, exist_ok=True)
 
-    # Eğer yerelde PDF yoksa R2'den çek
-    if not sartname_pdf:
-        try:
-            from src.services.r2_service import r2_service
-            clean_slug = r2_service.slugify(yarisma_id_veya_adi)
-            r2_key = f"sartnameler/{clean_slug}/{clean_slug}_sartname.pdf"
-            pdf_bytes = r2_service.download_file(r2_key)
-            if pdf_bytes:
-                sn_dir = klasor_yolu / "sartname"
-                sn_dir.mkdir(parents=True, exist_ok=True)
-                target_pdf = sn_dir / f"{clean_slug}_sartname.pdf"
-                target_pdf.write_bytes(pdf_bytes)
-                sartname_pdf = target_pdf
-        except Exception:
-            pass
-
+    sartname_pdf = None
     asama_map = {}
     tum_sablonlar = []
 
-    # 1. Yeni Standart: asamalar/[asama]/sablon/
-    asamalar_dir = klasor_yolu / "asamalar"
-    if asamalar_dir.exists() and asamalar_dir.is_dir():
-        for stg_dir in sorted(asamalar_dir.iterdir()):
-            if stg_dir.is_dir():
-                stg_code = stg_dir.name.upper()
-                sablon_dir = stg_dir / "sablon"
-                if sablon_dir.exists():
-                    s_files = list(sablon_dir.glob("*.pdf")) + [f for f in sablon_dir.glob("*.docx") if not f.with_suffix(".pdf").exists()]
-                    if s_files:
-                        asama_map[stg_code] = s_files[0]
-                        tum_sablonlar.extend(s_files)
+    # 1. Cloudflare D1 & R2 Entegrasyonu
+    try:
+        from src.data import repos
+        from src.services.r2_service import r2_service
 
-    # 2. Geriye Dönük Uyumluluk (rapor_sablonlari/)
-    if not asama_map:
-        sablon_dir = klasor_yolu / "rapor_sablonlari"
-        sablon_files = list(sablon_dir.glob("*.pdf")) + [f for f in sablon_dir.glob("*.docx") if not f.with_suffix(".pdf").exists()] if sablon_dir.exists() else []
-        tum_sablonlar = sablon_files
-        for sf in sablon_files:
-            name_u = sf.stem.upper()
-            detected_asama = "GENEL"
-            for code in ("OTR", "ODR", "KTR", "PDR", "CDR", "DTR", "AHR", "POR", "QR", "FRR", "FTR", "FYR"):
-                if code in name_u or code in sf.name.upper():
-                    detected_asama = code
-                    break
-            if detected_asama not in asama_map:
-                if sf.suffix.lower() == ".docx" and sf.with_suffix(".pdf").exists():
-                    sf = sf.with_suffix(".pdf")
-                asama_map[detected_asama] = sf
+        repo = repos().competitions
+        # A) Şartnameyi D1 ve R2'den Çek
+        specs = repo.list_specs(slug)
+        if specs:
+            primary_spec = next((s for s in specs if s.is_primary), specs[0])
+            if primary_spec and primary_spec.r2_key:
+                local_sn = sn_dir / (Path(primary_spec.r2_key).name)
+                if not local_sn.exists():
+                    pdf_bytes = r2_service.download_bytes(primary_spec.r2_key)
+                    if pdf_bytes:
+                        local_sn.write_bytes(pdf_bytes)
+                if local_sn.exists():
+                    sartname_pdf = local_sn
 
-    # Şartname dosya adından da aşama tespit et
-    if sartname_pdf and not asama_map:
-        sn_u = sartname_pdf.name.upper()
-        for code in ("OTR", "ODR", "KTR", "PDR", "AHR", "FTR"):
-            if code in sn_u and code not in asama_map:
-                asama_map[code] = sartname_pdf
+        # B) Şablonları D1 ve R2'den Çek
+        stages = repo.list_stages(slug)
+        for stg in stages:
+            stg_code = (stg.stage_code or "OTR").upper().replace("Ö", "O").replace("Ü", "U").replace("İ", "I")
+            stg_dir = comp_dir / "sablon" / stg_code
+            stg_dir.mkdir(parents=True, exist_ok=True)
 
-    asama_listesi = list(asama_map.keys()) if asama_map else ["GENEL"]
-    k_name = klasor_yolu.name
-    if "OTR" in asama_listesi and "KTR" not in asama_listesi and any(w in k_name for w in ("roket", "iha", "yapay", "drone")):
-        asama_listesi.append("KTR")
+            r2_target = stg.sablon_pdf_r2_key or stg.sablon_docx_r2_key
+            if r2_target:
+                fname = Path(r2_target).name
+                local_file = stg_dir / fname
+                if not local_file.exists():
+                    data = r2_service.download_bytes(r2_target)
+                    if data:
+                        local_file.write_bytes(data)
+
+                # PDF karşılığı varsa onu önceliklendir
+                if local_file.suffix.lower() == ".docx" and not local_file.with_suffix(".pdf").exists():
+                    pdf_target = r2_target.replace(".docx", ".pdf")
+                    pdf_data = r2_service.download_bytes(pdf_target)
+                    if pdf_data:
+                        local_pdf = stg_dir / Path(pdf_target).name
+                        local_pdf.write_bytes(pdf_data)
+                        local_file = local_pdf
+
+                if local_file.exists():
+                    asama_map[stg_code] = local_file
+                    tum_sablonlar.append(local_file)
+    except Exception as e:
+        pass
+
+    # 2. Eğer D1/R2 boşsa R2 Prefix taraması ile dinamik kurtarma
+    if not sartname_pdf or not asama_map:
+        try:
+            from src.services.r2_service import r2_service
+            res = r2_service.client.list_objects_v2(
+                Bucket=r2_service.bucket_name,
+                Prefix=f"yarismalar/{slug}/"
+            )
+            for item in res.get("Contents", []):
+                key = item["Key"]
+                if "/sartname/" in key and key.lower().endswith(".pdf") and not sartname_pdf:
+                    fname = Path(key).name
+                    local_sn = sn_dir / fname
+                    if not local_sn.exists():
+                        b = r2_service.download_bytes(key)
+                        if b:
+                            local_sn.write_bytes(b)
+                    if local_sn.exists():
+                        sartname_pdf = local_sn
+                elif "/sablon/" in key:
+                    parts = key.split("/")
+                    # yarismalar/{slug}/sablon/{STAGE}/{file}
+                    stg_code = parts[3].upper() if len(parts) > 3 else "GENEL"
+                    stg_code = stg_code.replace("Ö", "O").replace("Ü", "U").replace("İ", "I")
+                    stg_dir = comp_dir / "sablon" / stg_code
+                    stg_dir.mkdir(parents=True, exist_ok=True)
+                    fname = Path(key).name
+                    local_s = stg_dir / fname
+                    if not local_s.exists():
+                        b = r2_service.download_bytes(key)
+                        if b:
+                            local_s.write_bytes(b)
+                    if local_s.exists() and stg_code not in asama_map:
+                        asama_map[stg_code] = local_s
+                        tum_sablonlar.append(local_s)
+        except Exception:
+            pass
+
+    asama_listesi = list(asama_map.keys()) if asama_map else ["OTR"]
 
     return {
         "asama_listesi": asama_listesi,
@@ -306,11 +338,31 @@ def klasor_bilgisi(yarisma_id_veya_adi: str) -> dict:
     }
 
 
-def dokuman_rehberi_getir(klasor_adi: str, secili_asama: str = "OTR") -> dict:
+def dokuman_rehberi_getir(klasor_adi: str, secili_asama: str = "OTR", secili_seviye: str | None = None) -> dict:
     """Seçilen yarışma ve aşamaya ait dokümanları, sayfa sayısını ve kılavuz başlıklarını döner."""
     kb = klasor_bilgisi(klasor_adi)
     sartname_pdf = kb.get("sartname_pdf")
-    sablon_pdf = kb.get("sablonlar", {}).get(secili_asama) or (kb.get("tum_sablon_dosyalari", [None])[0] if kb.get("tum_sablon_dosyalari") else None)
+    
+    clean_asama = (secili_asama or "OTR").upper().replace("Ö", "O").replace("Ü", "U").replace("İ", "I")
+    sablonlar = kb.get("sablonlar", {})
+    
+    # 1. Doğrudan veya seviyeli eşleşme ara
+    sablon_pdf = None
+    if secili_seviye:
+        clean_lvl = secili_seviye.upper().replace(" ", "_")
+        sablon_pdf = sablonlar.get(f"{clean_asama}_{clean_lvl}")
+        
+    if not sablon_pdf:
+        sablon_pdf = sablonlar.get(clean_asama)
+        
+    if not sablon_pdf:
+        for k_stg, s_file in sablonlar.items():
+            if clean_asama in k_stg or k_stg in clean_asama:
+                sablon_pdf = s_file
+                break
+                
+    if not sablon_pdf and kb.get("tum_sablon_dosyalari"):
+        sablon_pdf = kb.get("tum_sablon_dosyalari")[0]
 
     if sablon_pdf and sablon_pdf.suffix.lower() == ".docx" and sablon_pdf.with_suffix(".pdf").exists():
         sablon_pdf = sablon_pdf.with_suffix(".pdf")
@@ -333,6 +385,23 @@ def dokuman_rehberi_getir(klasor_adi: str, secili_asama: str = "OTR") -> dict:
         except Exception:
             pass
 
+    # Şablondan gerçek içindekiler / zorunlu bölümleri çıkar
+    zorunlu_bolumler = []
+    if sablon_pdf and sablon_pdf.exists():
+        zorunlu_bolumler = sablon_zorunlu_bolumleri_ayikla(sablon_pdf)
+
+    if not zorunlu_bolumler:
+        zorunlu_bolumler = [
+            "1. PROJE MEVCUT DURUM VE İHTİYAÇ ANALİZİ",
+            "2. VERİ SETLERİ VE HAZIRLIK SÜREÇLERİ",
+            "3. ALGORİTMA VE SİSTEM MİMARİSİ",
+            "4. AKIŞ ŞEMASI VE BLOK DİYAGRAMLAR",
+            "5. ÖZGÜNLÜK VE YENİLİKÇİ YÖNLER",
+            "6. PROJE TAKVİMİ VE İŞ PAKETLERİ",
+            "7. SONUÇLAR VE RİSK ANALİZİ",
+            "8. KAYNAKÇA VE REFERANSLAR",
+        ]
+
     # Aşama kuralları
     asama_meta = ASAMALAR.get(secili_asama, ASAMALAR["GENEL"])
 
@@ -347,19 +416,166 @@ def dokuman_rehberi_getir(klasor_adi: str, secili_asama: str = "OTR") -> dict:
         "sablon_yolu": str(sablon_pdf) if sablon_pdf else None,
         "sablon_adi": sablon_pdf.name if sablon_pdf else "Rapor Şablonu bulunamadı",
         "sablon_sayfa_sayisi": sablon_sayfa_sayisi,
-        "zorunlu_bolumler": [
-            "1. PROJE MEVCUT DURUM VE İHTİYAÇ ANALİZİ",
-            "2. VERİ SETLERİ VE HAZIRLIK SÜREÇLERİ",
-            "3. ALGORİTMA VE SİSTEM MİMARİSİ",
-            "4. AKIŞ ŞEMASI VE BLOK DİYAGRAMLAR",
-            "5. ÖZGÜNLÜK VE YENİLİKÇİ YÖNLER",
-            "6. PROJE TAKVİMİ VE İŞ PAKETLERİ",
-            "7. SONUÇLAR VE RİSK ANALİZİ",
-            "8. KAYNAKÇA VE REFERANSLAR",
-        ],
-        "sayfa_limiti": "Maksimum 25 Sayfa (Kapak ve Kaynakça hariç)",
+        "zorunlu_bolumler": zorunlu_bolumler,
+        "sayfa_limiti": f"Maksimum {sablon_sayfa_sayisi if sablon_sayfa_sayisi > 0 else 25} Sayfa (Kapak ve Kaynakça hariç)",
         "yazi_tipi_kurallari": "Times New Roman / Arial 11pt, 1.15 satır aralığı, 2.5 cm kenar boşlukları"
     }
+
+
+@lru_cache(maxsize=128)
+def sablon_zorunlu_bolumleri_ayikla(sablon_path: Path | str) -> list[str]:
+    """Şablon PDF veya Word dosyasından resmî zorunlu başlıkları ayıklar."""
+    p = Path(sablon_path)
+    if not p.exists():
+        return []
+        
+    sections = []
+    # PDF ise PyMuPDF ile tara
+    if p.suffix.lower() == ".pdf":
+        try:
+            doc = pymupdf.open(str(p))
+            # 1. Strateji: İçindekiler Sayfasını Ara
+            for page_idx in range(min(len(doc), 6)):
+                page_text = doc[page_idx].get_text()
+                if any(w in page_text.upper() for w in ['İÇİNDEKİLER', 'ICINDEKILER', 'TABLE OF CONTENTS', 'İ Ç İ N D E K İ L E R']):
+                    lines = [l.strip() for l in page_text.splitlines() if l.strip()]
+                    i = 0
+                    while i < len(lines):
+                        line = lines[i]
+                        # Format A: '1.' sonraki satır 'TAKIM YAPISI ..... 3'
+                        if re.match(r'^\d+[\.\)]$', line) and i + 1 < len(lines):
+                            next_line = lines[i+1]
+                            clean_title = re.sub(r'[\.\s\d]+$', '', next_line).strip()
+                            if clean_title and len(clean_title) > 2:
+                                sections.append(f'{line} {clean_title}')
+                            i += 2
+                            continue
+                        # Format B: '1. TAKIM YAPISI ..... 3'
+                        m = re.match(r'^(\d+[\.\)]\s*[A-ZÇĞİÖŞÜa-zçğıöşü\s\(\)\/\-]+)', line)
+                        if m and not line.isdigit():
+                            clean_title = re.sub(r'[\.\s\d]+$', '', line).strip()
+                            if clean_title and len(clean_title) > 2 and clean_title not in sections:
+                                sections.append(clean_title)
+                        elif line.upper() in ['EKLER', 'KAYNAKÇA', 'SONUÇ'] and line.upper() not in [s.upper() for s in sections]:
+                            sections.append(line)
+                        i += 1
+                    if sections:
+                        break
+
+            # 2. Strateji: İçindekiler tablosu yoksa doğrudan metin içindeki sıralı 1., 2., 3. başlıkları tara
+            if not sections:
+                current_num = 1
+                for page in doc:
+                    lines = [l.strip() for l in page.get_text().splitlines() if l.strip()]
+                    for line in lines:
+                        pattern = rf'^{current_num}[\.\)]\s+([A-ZÇĞİÖŞÜ0-9\s\(\)\/\-_,]+)$'
+                        m = re.match(pattern, line)
+                        if m:
+                            clean_h = m.group(1).strip()
+                            if len(clean_h) > 2 and len(clean_h) < 90:
+                                heading = f'{current_num}. {clean_h}'
+                                if heading not in sections:
+                                    sections.append(heading)
+                                    current_num += 1
+
+            doc.close()
+        except Exception:
+            pass
+            
+    return sections
+
+
+@lru_cache(maxsize=128)
+def sartname_gereklilikleri_getir(yarisma_id: str) -> list[dict]:
+    """Yarışmanın veritabanındaki veya resmî şartname PDF'indeki gerçek gereksinim ve kurallarını döner."""
+    gereksinimler = []
+    
+    # 1. Cloudflare D1 competition_requirements tablosunu sorgula
+    try:
+        from src.database.db import db
+        clean_slug = yarisma_id.strip()
+        rows = db.execute_d1(
+            "SELECT title, description, min_team_size, max_team_size, advisor_required, target_level, is_mandatory FROM competition_requirements WHERE competition_id = ? OR competition_id LIKE ? ORDER BY order_index ASC;",
+            [clean_slug, f"%{clean_slug}%"]
+        )
+        if rows:
+            for r in rows:
+                gereksinimler.append({
+                    "baslik": r.get("title") or "Şartname Kuralı",
+                    "aciklama": r.get("description") or "",
+                    "zorunlu": bool(r.get("is_mandatory", 1)),
+                    "min_uye": r.get("min_team_size"),
+                    "max_uye": r.get("max_team_size"),
+                    "danisman": r.get("advisor_required"),
+                    "seviye": r.get("target_level")
+                })
+            return gereksinimler
+    except Exception:
+        pass
+
+    # 2. Şartname PDF'inden akıllı kural çıkarımı
+    kb = klasor_bilgisi(yarisma_id)
+    sn_pdf = kb.get("sartname_pdf")
+    if sn_pdf and Path(sn_pdf).exists():
+        try:
+            doc = pymupdf.open(str(sn_pdf))
+            full_text = ""
+            for p in range(min(len(doc), 15)):
+                full_text += doc[p].get_text() + "\n"
+            doc.close()
+
+            # Danışman Kuralı
+            for line in full_text.splitlines():
+                if "DANIŞMAN" in line.upper() and len(line) > 25 and not line.endswith("..."):
+                    gereksinimler.append({
+                        "baslik": "Danışman Kuralı",
+                        "aciklama": line.strip(),
+                        "zorunlu": True
+                    })
+                    break
+
+            # Katılım Koşulları & Takım Sınırı
+            for line in full_text.splitlines():
+                if any(k in line.upper() for k in ["EN AZ", "EN FAZLA", "TAKIM ÜYE", "TAKIM YAPISI"]) and any(d in line for d in ["1", "2", "3", "4", "5", "6", "7", "8"]):
+                    if len(line) > 20 and len(line) < 140:
+                        gereksinimler.append({
+                            "baslik": "Takım Yapısı & Üye Sınırları",
+                            "aciklama": line.strip(),
+                            "zorunlu": True
+                        })
+                        break
+
+            # Özgünlük & İntihal Kuralı
+            for line in full_text.splitlines():
+                if any(k in line.upper() for k in ["ÖZGÜNLÜK", "İNTİHAL", "ALINTI"]) and len(line) > 25:
+                    gereksinimler.append({
+                        "baslik": "Özgünlük & Kaynakça İlkesi",
+                        "aciklama": line.strip(),
+                        "zorunlu": True
+                    })
+                    break
+
+            # Raporlama Standardı
+            for line in full_text.splitlines():
+                if any(k in line.upper() for k in ["PUNTO", "YAZI TİPİ", "SAYFA KENAR", "SATIR ARALIĞI"]) and len(line) > 25:
+                    gereksinimler.append({
+                        "baslik": "Format & Yazı Tipi Kuralları",
+                        "aciklama": line.strip(),
+                        "zorunlu": True
+                    })
+                    break
+        except Exception:
+            pass
+
+    if not gereksinimler:
+        gereksinimler = [
+            {"baslik": "Özgünlük İlkesi", "aciklama": "Başka kaynaklardan yapılan alıntılar açıkça kaynakça ile belirtilmeli, intihal oranı azami %15 olmalıdır.", "zorunlu": True},
+            {"baslik": "Sayfa Sınırı", "aciklama": "Şartnamede belirtilen sayfa sınırını aşan raporlar için puan kırılma kuralları işletilir.", "zorunlu": True},
+            {"baslik": "Zorunlu Başlıklar", "aciklama": "Zorunlu başlıklardan herhangi biri boş veya eksik bırakılmışsa ilgili kriterden 0 puan verilir.", "zorunlu": True},
+            {"baslik": "Etik Kurallar", "aciklama": "Takım üyeleri ve danışman bilgileri hakem kör değerlendirmesinde gizlenmelidir.", "zorunlu": True}
+        ]
+
+    return gereksinimler
 
 
 def pdf_sayfa_onizle(pdf_yolu: str, sayfa_no: int, dpi: int = 140) -> bytes | None:
@@ -534,6 +750,8 @@ OZEL_KATEGORI_ISIMLERI = {
 
 def turkce_kategori_adi_formatla(slug: str) -> str:
     """Slug'ı kusursuz Türkçe karakterli kategori adına dönüştürür."""
+    if not slug:
+        return "Yarışma"
     if slug in OZEL_KATEGORI_ISIMLERI:
         return OZEL_KATEGORI_ISIMLERI[slug]
 
@@ -601,7 +819,11 @@ def turkce_kategori_adi_formatla(slug: str) -> str:
 
 
 def tum_yarismalari_sozluk_getir() -> dict[str, str]:
-    """Cloudflare D1 üzerindeki 60 yarışmayı slug -> Okunabilir Ad sözlüğü olarak döndürür."""
+    """Cloudflare D1 competitions tablosundaki yarışmaları slug -> Ad sözlüğü olarak döndürür.
+
+    Yalnızca D1 competitions tablosuna yönetici panelinden eklenen gerçek yarışmalar
+    listelenir. Tablo boşsa boş sözlük döner — demo/seed/hardcoded veriye düşülmez.
+    """
     sonuc = {}
     try:
         from src.database.db import db
@@ -613,18 +835,6 @@ def tum_yarismalari_sozluk_getir() -> dict[str, str]:
                 sonuc[slug] = name
     except Exception:
         pass
-
-    if not sonuc and DOCS_DIR.exists():
-        for k in sorted(DOCS_DIR.iterdir()):
-            if k.is_dir():
-                slug = k.name
-                ad = turkce_kategori_adi_formatla(slug)
-                sonuc[slug] = f"TEKNOFEST 2026 · {ad}"
-    
-    if not sonuc:
-        for slug, ad in OZEL_KATEGORI_ISIMLERI.items():
-            sonuc[slug] = f"TEKNOFEST 2026 · {ad}"
-            
     return sonuc
 
 

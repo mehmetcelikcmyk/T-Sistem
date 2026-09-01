@@ -79,11 +79,10 @@ def main():
         print("=" * 60)
         print("  ✅ T-Sistem Çalışıyor!")
         if not args.only_ui:
-            print("  📚 API Docs   → http://localhost:8000/docs")
+            print("  📚 API Docs     → http://localhost:8000/docs")
         if not args.only_api:
-            print("  🖥️  UI (Hakem) → http://localhost:8501/?rol=hakem")
-            print("  🖥️  UI (Demo)  → http://localhost:8501/?demo=1")
-        print("  Durdurmak için: Ctrl+C")
+            print("  🖥️  Giriş Portalı → http://localhost:8501")
+        print("  Durdurmak için : Ctrl+C")
         print("=" * 60)
 
         for p in processes:

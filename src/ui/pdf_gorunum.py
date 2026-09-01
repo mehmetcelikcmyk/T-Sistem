@@ -28,9 +28,11 @@ except Exception as _e:  # ImportError, DLL load failed, vb.
     pymupdf = None
     PYMUPDF_VAR = False
 
+import tempfile
+
 # Arayüz paketine gömülü örnek raporlar ve proje kökü
 PROJE_KOKU = Path(__file__).resolve().parents[2]
-ORNEK_DIZIN = PROJE_KOKU / "data" / "ornek_raporlar"
+ORNEK_DIZIN = Path(tempfile.gettempdir()) / "tsistem_cache" / "ornek_raporlar"
 
 ISARET_RENK = (1.0, 0.85, 0.30)      # yumuşak sarı vurgulama
 CERCEVE_RENK = (0.16, 0.47, 0.84)    # slot-1 mavi
@@ -70,6 +72,8 @@ def yol(dosya_adi: str) -> Path:
     """
     import urllib.parse
     temiz_ad = urllib.parse.unquote(dosya_adi or "").strip()
+    if not temiz_ad:
+        return None
     sade_ad = Path(temiz_ad).name
     sade_lower = sade_ad.lower()
 
@@ -102,13 +106,6 @@ def yol(dosya_adi: str) -> Path:
     except Exception:
         pass
 
-    # Bulunamazsa varsayılan olarak geçerli ilk örnek raporu dön
-    valid_ornekler = [p for p in ORNEK_DIZIN.glob("*.pdf") if not p.name.startswith(("BOS", "BOZUK", "SIFRELI"))]
-    if valid_ornekler:
-        return valid_ornekler[0]
-    ornekler = ornek_raporlar()
-    if ornekler:
-        return ORNEK_DIZIN / ornekler[0]
     return p1
 
 
@@ -289,25 +286,43 @@ def isaretle(dosya_adi: str, alinti: str | list[str], bolum_ipucu: str | None = 
                     "eslesen": None, "toplam_sayfa": len(belge), "bulunan_sayfa_sayisi": 0}
 
         toplam_sayfa_adedi = len(belge)
-        aranacak_adaylar = _adaylar(alinti)
         
         # Sayfa bazında bulunan kutular ve eşleşen metinler
         sayfa_kutulari: dict[int, list] = {}
         sayfa_eslesmeler: dict[int, list[str]] = {}
 
-        # 1. TÜM SAYFALARDA alıntı ve aday varyasyonlarını tara (En uzun/kesin adayla başla)
-        for aday in aranacak_adaylar:
-            for no, sayfa in enumerate(belge):
-                bulunan = sayfa.search_for(aday, quads=False)
-                if bulunan:
-                    sayfa_kutulari.setdefault(no, []).extend(bulunan)
-                    if aday not in sayfa_eslesmeler.setdefault(no, []):
-                        sayfa_eslesmeler[no].append(aday)
-            # En kesin adayla en az bir sayfada eşleşme bulunduysa, daha kısa adaylarla diğer sayfaları kirletme!
-            if sayfa_kutulari:
-                break
+        # 1. TÜM ALINTILARI BAĞIMSIZ ARA: her alıntı için kendi adaylarını üret ve tüm sayfalarda tara
+        #    (Eski kod: ilk eşleşmede break yapıyordu → sadece 1 kanıt görünüyordu)
+        alinti_listesi = alinti if isinstance(alinti, (list, tuple)) else [alinti]
+        alinti_listesi = [str(a).strip() for a in alinti_listesi if a and str(a).strip()]
+
+        for tek_alinti in alinti_listesi:
+            # Her alıntı için giderek kısalan önek adayları
+            tek_temiz = re.sub(r"\s+", " ", tek_alinti).strip().strip("\u201c\u201d\"")
+            kelimeler = tek_temiz.split()
+            tek_adaylar: list[str] = [tek_temiz]
+            for uzunluk in (14, 10, 7, 5):
+                if len(kelimeler) > uzunluk:
+                    onek = " ".join(kelimeler[:uzunluk])
+                    if onek not in tek_adaylar:
+                        tek_adaylar.append(onek)
+
+            # Bu alıntı için tüm sayfalarda en uzun eşleşmeyle ara; bulununca diğer öneklere geçme
+            for aday in tek_adaylar:
+                aday_bulundu = False
+                for no, sayfa in enumerate(belge):
+                    bulunan = sayfa.search_for(aday, quads=False)
+                    if bulunan:
+                        sayfa_kutulari.setdefault(no, []).extend(bulunan)
+                        if aday not in sayfa_eslesmeler.setdefault(no, []):
+                            sayfa_eslesmeler[no].append(aday)
+                        aday_bulundu = True
+                # Bu alıntı için en kesin adayla eşleşme bulunduysa, kısa önek ile sayfaları kirletme
+                if aday_bulundu:
+                    break
 
         durum = "bulundu" if sayfa_kutulari else "bulunamadi"
+
 
         # 2. Birebir veya önek eşleşme bulunamazsa bölüm ipucuyla tüm sayfalarda ara
         if not sayfa_kutulari and bolum_ipucu:

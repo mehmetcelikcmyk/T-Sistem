@@ -52,19 +52,23 @@ class ClaudeKeyManager:
 
         last_error = None
         # Havuzdaki tüm anahtarları sırayla dene
-        for attempt in range(len(self.keys)):
-            current_key = self.get_next_key()
+        keys_to_try = list(self.keys)
+        for attempt, current_key in enumerate(keys_to_try):
             try:
                 return api_func(current_key)
             except Exception as e:
                 err_msg = str(e).encode("ascii", "replace").decode("ascii")
                 try:
-                    print(f"[Key Failover]: Anahtar {attempt + 1} hata verdi: {err_msg[:60]}... Siradaki anahtara geciliyor.")
+                    print(f"[Key Failover]: Anahtar {attempt + 1} devre dışı bırakıldı: {err_msg[:60]}")
                 except Exception:
                     pass
+                with self._lock:
+                    if current_key in self.keys:
+                        self.keys.remove(current_key)
+                        self._key_cycle = itertools.cycle(self.keys) if self.keys else None
                 last_error = e
 
-        raise last_error
+        raise last_error or ValueError("Kullanılabilir Claude API anahtarı yok.")
 
 # Singleton instance
 key_manager = ClaudeKeyManager()

@@ -46,149 +46,231 @@ def _post(yol: str, govde: dict) -> Any:
 
 def yarismalar() -> list[dict]:
     if CANLI:
-        return _get("/yarismalar")
-    return mock_data.yarismalar()
+        try:
+            return _get("/yarismalar")
+        except Exception as e:
+            print(f"[API_CLIENT] /yarismalar hatası: {e}")
+            return []
+    # Demo mod: mock veriye düşme — boş döndür
+    return []
 
 
-def raporlar(yarisma_id: str = "", referee_id: str = "") -> list[dict]:
-    if CANLI:
+def raporlar(yarisma_id: str = "", referee_id: str = "", only_open: bool = True) -> list[dict]:
+    """Seçili yarışmaya veya hakeme atanmış gerçek yarışmacı raporlarını döndürür."""
+    try:
+        import json
+        from pathlib import Path
+        from src.database.db import db
+        import rubrik
+        from src.data import repos
+
+        # Hakem ID kontrolü
+        ref_id_clean = (referee_id or "").strip()
+        
+        # 1. Eğer hakem girişi varsa, YALNIZCA D1'de bu hakeme atanmış raporları çek
+        assigned_reports = []
+        if ref_id_clean and ref_id_clean != "admin":
+            try:
+                # only_open=True ise mühürlenmiş/tamamlanmış raporlar hakemin değerlendirme listesine GELMEZ
+                assigned_reports = repos().evaluations.list_for_referee(ref_id_clean, only_open=only_open)
+            except Exception as e:
+                print(f"[API_CLIENT] list_for_referee hatası: {e}")
+                assigned_reports = []
+
+            sonuclar = []
+            for row in assigned_reports:
+                cat_slug = row.get("competition_slug") or row.get("competition_id") or "genel"
+                stg = (row.get("stage_code") or row.get("stage") or "OTR").upper()
+                r_id = row.get("report_id") or ""
+                p_name = row.get("file_name") or row.get("project_name") or "Yarışmacı Raporu"
+                t_name = row.get("team_name") or "Takım"
+                
+                # Rubrik ve kriterler
+                y_rub = rubrik.getir(cat_slug, stg)
+                kriter_listesi = []
+                
+                # Cloudflare D1 JSON sütunlarını parse et
+                raw_ai = row.get("ai_data_json") or row.get("ai_data") or {}
+                if isinstance(raw_ai, str):
+                    try:
+                        raw_ai = json.loads(raw_ai)
+                    except Exception:
+                        raw_ai = {}
+
+                raw_checks = row.get("checks_json") or row.get("checks") or {}
+                if isinstance(raw_checks, str):
+                    try:
+                        raw_checks = json.loads(raw_checks)
+                    except Exception:
+                        raw_checks = {}
+
+                raw_feedback = row.get("feedback_json") or row.get("feedback") or {}
+                if isinstance(raw_feedback, str):
+                    try:
+                        raw_feedback = json.loads(raw_feedback)
+                    except Exception:
+                        raw_feedback = {}
+
+                # Rubrik ve kriterler: Eğer raporda kaydedilmiş AI kriterleri varsa doğrudan oradan yükle
+                ai_krits = raw_ai.get("criteria", []) or raw_ai.get("kriterler", []) if isinstance(raw_ai, dict) else []
+                
+                if ai_krits:
+                    for kr_idx, ak in enumerate(ai_krits):
+                        kid = str(ak.get("criterion_id") or ak.get("id") or ak.get("kriter_id") or f"kr_{kr_idx+1}")
+                        kmaks = float(ak.get("max_score") or ak.get("maks") or 20.0)
+                        kad = str(ak.get("criterion_name") or ak.get("ad") or ak.get("name") or f"Kriter {kr_idx+1}")
+                        ai_score = ak.get("score") if ak.get("score") is not None else ak.get("ai_puan")
+                        
+                        saved_h_score = None
+                        saved_h_note = ""
+                        if isinstance(raw_feedback, dict):
+                            saved_h_score = raw_feedback.get(kid)
+                            saved_h_note = raw_feedback.get(f"{kid}__hakem_notu", "")
+
+                        kriter_listesi.append({
+                            "kriter_id": kid,
+                            "ad": kad,
+                            "maks": kmaks,
+                            "ai_puan": float(ai_score) if ai_score is not None else round(kmaks * 0.75, 1),
+                            "hakem_puan": float(saved_h_score) if saved_h_score is not None else (float(ai_score) if ai_score is not None else round(kmaks * 0.75, 1)),
+                            "hakem_notu": saved_h_note,
+                            "gerekce": ak.get("reasoning") or ak.get("explanation") or ak.get("gerekce") or ak.get("aciklama", ""),
+                            "aciklama": ak.get("reasoning") or ak.get("explanation") or ak.get("gerekce") or ak.get("aciklama", ""),
+                            "kanitlar": ak.get("quotes", []) or ak.get("evidence_quotes", []) or ak.get("kanitlar", []) or ak.get("kanit_alintilar", []),
+                            "kaynak_alintilar": ak.get("quotes", []) or ak.get("evidence_quotes", []) or ak.get("kanitlar", []) or ak.get("kanit_alintilar", []),
+                            "gucler": ak.get("strengths", []),
+                            "eksikler": ak.get("weaknesses", []) or ak.get("improvements", [])
+                        })
+                else:
+                    y_rub = rubrik.getir(cat_slug, stg)
+                    for kr_idx, kr in enumerate(y_rub.get("kriterler", [])):
+                        kid = str(kr.get("kriter_id") or kr.get("id") or f"kr_{kr_idx+1}")
+                        kmaks = float(kr.get("puan") or kr.get("max_puan") or 20.0)
+                        kad = str(kr.get("ad") or kr.get("kriter_adi") or kr.get("tanim") or f"Kriter {kr_idx+1}")
+                        
+                        saved_h_score = None
+                        saved_h_note = ""
+                        if isinstance(raw_feedback, dict):
+                            saved_h_score = raw_feedback.get(kid)
+                            saved_h_note = raw_feedback.get(f"{kid}__hakem_notu", "")
+
+                        kriter_listesi.append({
+                            "kriter_id": kid,
+                            "ad": kad,
+                            "maks": kmaks,
+                            "ai_puan": round(kmaks * 0.75, 1),
+                            "hakem_puan": float(saved_h_score) if saved_h_score is not None else round(kmaks * 0.75, 1),
+                            "hakem_notu": saved_h_note,
+                            "aciklama": kr.get("aciklama", ""),
+                            "kanitlar": [],
+                            "kaynak_alintilar": []
+                        })
+
+                asgn_st = str(row.get("assignment_status") or "").upper()
+                rep_st = str(row.get("status") or "").upper()
+                has_score = (row.get("referee_score") is not None)
+                durum = "tamamlandi" if (asgn_st in ("TAMAMLANDI", "COMPLETED") or rep_st in ("DEGERLENDIRILDI", "TAMAMLANDI", "COMPLETED") or has_score) else "hakem_bekliyor"
+
+                sonuclar.append({
+                    "rapor_id": r_id,
+                    "proje_adi": p_name,
+                    "takim_adi": t_name,
+                    "kategori": cat_slug,
+                    "yarisma_adi": row.get("competition_name") or cat_slug,
+                    "stage": stg,
+                    "stage_code": stg,
+                    "atanan_hakem": ref_id_clean,
+                    "durum": durum,
+                    "assignment_id": row.get("assignment_id"),
+                    "puan": row.get("referee_score") or row.get("ai_score") or 75.0,
+                    "ai_puan": row.get("ai_score") or 75.0,
+                    "hakem_puan": row.get("referee_score"),
+                    "referee_notes": row.get("referee_notes") or "",
+                    "feedback": raw_feedback,
+                    "yuklenme_tarihi": str(row.get("created_at") or "2026-08-26")[:10],
+                    "dosya": row.get("r2_key") or row.get("file_name") or f"{r_id}.pdf",
+                    "sayfa_sayisi": row.get("page_count") or 15,
+                    "kriterler": kriter_listesi,
+                    "benzerlik": [],
+                    "checks": raw_checks,
+                    "ai_data": raw_ai,
+                })
+
+            if yarisma_id and yarisma_id != "tumu":
+                sonuclar = [s for s in sonuclar if yarisma_id.lower() in s["kategori"].lower() or s["kategori"].lower() in yarisma_id.lower()]
+            return sonuclar
+
+        # 2. Yönetici (Admin) veya genel sorgu: D1'deki tüm raporları döndür
+        db_reps = db.get_all_reports() or []
+        sonuclar = []
+        for row in db_reps:
+            cat = row.get("category") or "genel"
+            stg = row.get("stage", "OTR")
+            r_id = row.get("report_id") or ""
+            
+            y_rub = rubrik.getir(cat, stg)
+            kriter_listesi = []
+            ai_data = row.get("ai_data") or {}
+            if isinstance(ai_data, str):
+                try:
+                    ai_data = json.loads(ai_data)
+                except Exception:
+                    ai_data = {}
+            ai_krits = ai_data.get("kriterler", []) if isinstance(ai_data, dict) else []
+            ai_kr_map = {k.get("kriter_id"): k for k in ai_krits if isinstance(k, dict)}
+
+            for kr_idx, kr in enumerate(y_rub.get("kriterler", [])):
+                kid = str(kr.get("kriter_id") or kr.get("id") or f"kr_{kr_idx+1}")
+                kmaks = float(kr.get("puan") or kr.get("max_puan") or 20.0)
+                kad = str(kr.get("ad") or kr.get("kriter_adi") or kr.get("tanim") or f"Kriter {kr_idx+1}")
+                ak = ai_kr_map.get(kid, {})
+                kriter_listesi.append({
+                    "kriter_id": kid,
+                    "ad": kad,
+                    "maks": kmaks,
+                    "ai_puan": ak.get("ai_puan", round(kmaks * 0.75, 1)),
+                    "hakem_puan": row.get("referee_score"),
+                    "aciklama": ak.get("aciklama", kr.get("aciklama", "")),
+                    "kanitlar": ak.get("kanitlar", [])
+                })
+
+            st_raw = str(row.get("status") or "").upper()
+            durum = "tamamlandi" if st_raw in ("TAMAMLANDI", "DEGERLENDIRILDI", "COMPLETED") else "hakem_bekliyor"
+
+            sonuclar.append({
+                "rapor_id": r_id,
+                "proje_adi": row.get("project_name") or "Yarışmacı Projesi",
+                "takim_adi": row.get("team_name") or row.get("project_name") or "Takım",
+                "kategori": cat,
+                "stage": stg,
+                "stage_code": stg,
+                "atanan_hakem": row.get("referee_id") or "",
+                "durum": durum,
+                "puan": row.get("referee_score") or row.get("ai_score") or 75.0,
+                "ai_puan": row.get("ai_score") or 75.0,
+                "hakem_puan": row.get("referee_score"),
+                "yuklenme_tarihi": str(row.get("created_at") or "2026-08-26")[:10],
+                "dosya": row.get("r2_key") or row.get("filename") or f"{r_id}.pdf",
+                "sayfa_sayisi": row.get("page_count") or 15,
+                "kriterler": kriter_listesi,
+                "benzerlik": [],
+                "checks": row.get("checks"),
+                "ai_data": row.get("ai_data"),
+            })
+
+        if yarisma_id and yarisma_id != "tumu":
+            sonuclar = [s for s in sonuclar if yarisma_id.lower() in s["kategori"].lower() or s["kategori"].lower() in yarisma_id.lower()]
+
+        return sonuclar
+    except Exception as e:
+        print(f"[API_CLIENT] Veritabanı rapor okuma hatası: {e}")
+        return []
         try:
             return _get(f"/yarismalar/{yarisma_id}/raporlar")
         except Exception:
             pass
 
-    # 2. SQLite Veritabanından Hakeme Özel Raporları Çek
-    try:
-        from src.database.db import db
-        import mock_data
-        import random
-        from pathlib import Path
-        
-        import rubrik
-        y_rub = rubrik.getir(yarisma_id)
-        ref_rows = db.get_reports_for_referee(referee_id, yarisma_id)
-        if ref_rows:
-            sonuclar = []
-            for i, r in enumerate(ref_rows):
-                p_name = r.get("project_name") or r.get("filename") or f"Proje {i+1}"
-                r_id = r.get("report_id") or f"TF2026-{1000+i}"
-                kat_raw = r.get("category") or yarisma_id or "Havacılıkta Yapay Zekâ"
-                kat = sartname_rehber.turkce_kategori_adi_formatla(kat_raw)
-                stg = r.get("stage") or r.get("stage_code") or "OTR"
-                
-                # Takım adını al (gerçek veritabanı kaydı)
-                t_raw = (r.get("team_name") or "").strip()
-                if len(t_raw) > 18 and " " not in t_raw:
-                    t_clean = f"Takım {p_name.split()[0]} {i+1}"
-                elif t_raw:
-                    t_clean = t_raw
-                else:
-                    t_clean = f"Takım {p_name.split()[0]} {i+1}"
-
-                rng = random.Random(abs(hash(r_id)) % 100000)
-                mock_rep = mock_data._rapor(rng, i, [kat], y_rub)
-                
-                # Gerçek Veritabanı Alanlarıyla Doldur
-                mock_rep["rapor_id"] = r_id
-                mock_rep["proje_adi"] = p_name
-                mock_rep["kategori"] = kat
-                mock_rep["takim_adi"] = t_clean
-                mock_rep["stage"] = stg
-                mock_rep["atanan_hakem"] = r.get("referee_id") or referee_id or "Prof. Dr. Ahmet Yılmaz"
-                mock_rep["durum"] = "tamamlandi" if r.get("referee_score") is not None or r.get("status") == "tamamlandi" else "hakem_bekliyor"
-                mock_rep["yuklenme_tarihi"] = r.get("application_date") or r.get("created_at") or "2026-08-23"
-                if r.get("referee_score") is not None:
-                    mock_rep["hakem"]["puanlar"] = {"C1": r.get("referee_score")}
-                    mock_rep["hakem"]["not_metni"] = r.get("referee_notes", "")
-                
-                # Gerçek PDF Dosyası Eşleştirmesi (Veritabanından Çözümleme)
-                pdf_p = r.get("pdf_path") or ""
-                if not pdf_p or not Path(pdf_p).exists() or Path(pdf_p).name.startswith(("BOS", "BOZUK", "SIFRELI")):
-                    resolved = pdf_gorunum.yol(r.get("filename", ""))
-                    if resolved and resolved.exists() and not resolved.name.startswith(("BOS", "BOZUK", "SIFRELI")):
-                        pdf_p = str(resolved)
-                    else:
-                        # Gerçek çok sayfalı raporlar havuzundan eşleştir
-                        ornek_pdfler = [p for p in Path("data/ornek_raporlar").glob("*.pdf") if not p.name.startswith(("BOS", "BOZUK", "SIFRELI"))]
-                        if ornek_pdfler:
-                            pdf_p = str(ornek_pdfler[i % len(ornek_pdfler)])
-                
-                if pdf_p and Path(pdf_p).exists():
-                    mock_rep["dosya"] = pdf_p
-                    p_len = pdf_gorunum.sayfa_sayisi_getir(pdf_p)
-                    mock_rep["sayfa_sayisi"] = p_len if p_len > 0 else 13
-                else:
-                    mock_rep["sayfa_sayisi"] = 13
-
-                # Gerçek AI Analiz ve MVP Denetim Verileri (DB'de varsa)
-                import json
-                c_data = r.get("checks") or r.get("checks_json")
-                if isinstance(c_data, str):
-                    try:
-                        c_data = json.loads(c_data)
-                    except Exception:
-                        c_data = {}
-
-                if isinstance(c_data, dict) and c_data:
-                    from src.api.ui_adapter import _map_kontroller, _map_benzerlik, _map_kategori
-                    mapped_k = _map_kontroller(c_data, kat)
-                    if mapped_k:
-                        mock_rep["kontroller"] = mapped_k
-                    mapped_b = _map_benzerlik(c_data)
-                    if mapped_b is not None:
-                        mock_rep["benzerlik"] = mapped_b
-                    mapped_kat = _map_kategori(c_data, kat)
-                    if mapped_kat:
-                        mock_rep["kategori_uygunlugu"] = mapped_kat
-
-                a_data = r.get("ai_data") or r.get("ai_data_json")
-                if isinstance(a_data, str):
-                    try:
-                        a_data = json.loads(a_data)
-                    except Exception:
-                        a_data = {}
-
-                if isinstance(a_data, dict) and a_data:
-                    from src.api.ui_adapter import _map_kriterler
-                    mapped_kr = _map_kriterler(a_data)
-                    if mapped_kr:
-                        # Eğer alıntılar generic kalmışsa, gerçek rapordan (pdf_p) doğru cümlelerle besle
-                        if pdf_p and Path(pdf_p).exists():
-                            sayfa_cumleleri = pdf_gorunum.sayfaya_gore_cumleler(pdf_p)
-                            if sayfa_cumleleri:
-                                BOLUM_SAYFA_HARITASI = {
-                                    "1": [3, 4, 5],
-                                    "2": [4, 5, 6],
-                                    "3": [6, 7, 8],
-                                    "3.1": [6, 7],
-                                    "3.2": [7, 8],
-                                    "3.3": [8, 9],
-                                    "4": [8, 9],
-                                    "5": [9, 10],
-                                    "6": [10, 11],
-                                }
-                                for idx_k, kr_item in enumerate(mapped_kr):
-                                    cur_q = kr_item.get("kaynak_alinti", "")
-                                    if not cur_q or "İlgili bölümde" in cur_q or "bulunamadı" in cur_q:
-                                        b_kodu = str(kr_item.get("bolum") or "").strip()
-                                        h_sayfalar = BOLUM_SAYFA_HARITASI.get(b_kodu, [max(3, min(idx_k + 3, len(sayfa_cumleleri)))])
-                                        secili_cumle = None
-                                        for s_no in h_sayfalar:
-                                            if s_no in sayfa_cumleleri and sayfa_cumleleri[s_no]:
-                                                secili_cumle = sayfa_cumleleri[s_no][0]
-                                                break
-                                        if secili_cumle:
-                                            kr_item["kaynak_alinti"] = secili_cumle
-                                            kr_item["kaynak_alintilar"] = [secili_cumle]
-                        mock_rep["kriterler"] = mapped_kr
-                        mock_rep["ai_data"] = a_data
-                
-                sonuclar.append(mock_rep)
-            return sonuclar
-    except Exception as e:
-        print(f"[API_CLIENT HATASI] {e}")
-
-    return mock_data.raporlar(yarisma_id)
+    return mock_data.raporlar(yarisma_id)  # Yalnızca demo mod (CANLI=False)
 
 
 def analiz(rapor_id: str, yarisma_id: str = "hyz-otr-2026") -> dict | None:
@@ -214,7 +296,11 @@ def analiz(rapor_id: str, yarisma_id: str = "hyz-otr-2026") -> dict | None:
 
 def metrikler(yarisma_id: str) -> dict:
     if CANLI:
-        return _get(f"/yarismalar/{yarisma_id}/metrikler")
+        try:
+            return _get(f"/yarismalar/{yarisma_id}/metrikler")
+        except Exception as e:
+            print(f"[API_CLIENT] /metrikler hatası: {e}")
+            return mock_data.metrikler([])  # Boş metrikler — sıfır değerler
     return mock_data.metrikler(mock_data.raporlar(yarisma_id))
 
 

@@ -21,33 +21,12 @@ import re
 from datetime import date, datetime
 import streamlit as st
 
-def init_teams_global():
-    import json
-    from pathlib import Path
-    teams_file = Path("data/takimlar.json")
-    if "takim_verileri" not in st.session_state:
-        if teams_file.exists():
-            try:
-                st.session_state.takim_verileri = json.loads(teams_file.read_text(encoding="utf-8"))
-            except Exception:
-                st.session_state.takim_verileri = []
-        else:
-            st.session_state.takim_verileri = []
-            teams_file.parent.mkdir(parents=True, exist_ok=True)
-            teams_file.write_text("[]", encoding="utf-8")
-init_teams_global()
-
-def _save_teams():
-    import json
-    from pathlib import Path
-    teams_file = Path("data/takimlar.json")
-    teams_file.parent.mkdir(parents=True, exist_ok=True)
-    teams_file.write_text(json.dumps(st.session_state.takim_verileri, ensure_ascii=False, indent=2), encoding="utf-8")
 from PIL import Image
 from i18n import t
 from auth_service import auth_service
 from views import (
     admin_kullanicilar,
+    admin_takimlar,
     auth_view,
     dashboard,
     hakem,
@@ -55,17 +34,20 @@ from views import (
     yarismaci,
     yonetici,
 )
+import theme
 import sartname_rehber
 import docx_gorunum
 import pdf_gorunum
 from src.database.db import db
 
-# --- LOGO YÜKLEME ---
+# --- LOGO YÜKLEME (modül seviyesinde tek seferlik) ---
 _UI_DIR = Path(__file__).resolve().parent
 _LOGO_PATH = _UI_DIR / "tsistem_logo.png"
 if not _LOGO_PATH.exists():
     _LOGO_PATH = _UI_DIR.parent.parent / "tsistem_logo.png"
 
+# Image.open() pahalı — modül ilk import'ta bir kere çalışır, Streamlit'in
+# hot-reload dışında sonraki render'larda tekrar çağrılmaz.
 _fav_icon = Image.open(_LOGO_PATH) if _LOGO_PATH.exists() else "🚀"
 
 # --- SAYFA YAPILANDIRMASI ---
@@ -76,6 +58,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+theme.inject_history_js(st)
+
 # Dil Seçimi State
 if "lang" not in st.session_state:
     st.session_state.lang = "tr"
@@ -83,10 +67,20 @@ if "lang" not in st.session_state:
 current_lang = st.session_state.lang
 
 
+@st.cache_data(show_spinner=False)
 def _get_logo_base64() -> str:
     if _LOGO_PATH.exists():
         with open(_LOGO_PATH, "rb") as img_file:
             return f"data:image/png;base64,{base64.b64encode(img_file.read()).decode()}"
+    return ""
+
+
+@st.cache_data(show_spinner=False)
+def _get_card_asset_b64(filename: str) -> str:
+    asset_path = _UI_DIR / "assets" / filename
+    if asset_path.exists():
+        with open(asset_path, "rb") as f:
+            return f"data:image/jpeg;base64,{base64.b64encode(f.read()).decode()}"
     return ""
 
 
@@ -132,135 +126,268 @@ def _format_phone(phone_raw: str, country_code: str) -> str:
         return digits
 
 
-# --- T3 KYS KURUMSAL CSS ---
-st.markdown(
-    """
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-    
-    html, body, [class*="css"] {
-        font-family: 'Inter', sans-serif !important;
-    }
-    
-    /* Menü Butonları */
-    div[data-testid="stHorizontalBlock"] .stButton > button {
-        border-radius: 8px !important;
-        font-weight: 600 !important;
-        font-size: 0.88rem !important;
-        padding: 8px 12px !important;
-        transition: all 0.2s ease !important;
-    }
+# --- TEMA ---
+# Onceki surumde burada ~98 satirlik ayri bir CSS blogu vardi ve `theme.py`
+# hicbir yerden cagrilmadigi icin uygulama iki farkli tasarim dilinden
+# besleniyordu (giris ekrani turuncu, geri kalan her yer Streamlit kirmizisi).
+# Artik TEK kaynak `src/ui/theme.py`.
+theme.bootstrap(st)
 
-    /* Modül Kartları */
-    .t3-module-card {
-        background: linear-gradient(135deg, #F04823 0%, #D9381E 100%);
-        border-radius: 14px;
-        padding: 22px 18px;
-        color: #FFFFFF;
-        text-align: center;
-        min-height: 210px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        box-shadow: 0 4px 14px rgba(240, 72, 35, 0.15);
-        margin-bottom: 12px;
-        transition: transform 0.2s ease;
-    }
-    .t3-module-card:hover {
-        transform: translateY(-2px);
-    }
-    
-    .t3-module-title {
-        font-size: 1.12rem;
-        font-weight: 800;
-        margin-bottom: 6px;
-        letter-spacing: -0.01em;
-    }
-    .t3-module-desc {
-        font-size: 0.82rem;
-        opacity: 0.92;
-        line-height: 1.4;
-    }
-    
-    /* Profil ve İçerik Kartı */
-    .t3-content-card {
-        background: #FFFFFF;
-        border: 1px solid #E2E8F0;
-        border-radius: 12px;
-        padding: 20px 24px;
-        margin-bottom: 18px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.02);
-    }
-    .t3-card-title {
-        font-size: 1.35rem;
-        font-weight: 800;
-        color: #0F172A;
-    }
-    .t3-card-sub {
-        font-size: 0.86rem;
-        color: #64748B;
-        margin-top: 3px;
-    }
-    
-    /* Rozetler */
-    .t3-badge-aktif {
-        background: #DCFCE7;
-        color: #15803D;
-        font-size: 0.76rem;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-    }
-    .t3-badge-pasif {
-        background: #FEE2E2;
-        color: #B91C1C;
-        font-size: 0.76rem;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-    }
-    .t3-badge-info {
-        background: #E0F2FE;
-        color: #0369A1;
-        font-size: 0.76rem;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 20px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# ── URL TABANLI GERİ/İLERİ NAVİGASYON SİSTEMİ ──────────────────────────────
+# Her sayfa geçişi benzersiz bir URL üretir:
+#   ?view=landing           → Ana giriş sayfası
+#   ?view=comp&slug=XXX     → Yarışma detay sayfası
+#   ?view=ann               → Tüm duyurular sayfası
+#   ?view=ann_detail&id=XXX → Tekil duyuru detay sayfası
+#   ?tab=XXX                → Oturum açık menü sekmesi
+#
+# Böylece tarayıcının Geri/İleri butonları URL geçmişi üzerinden tam çalışır.
+# ─────────────────────────────────────────────────────────────────────────────
 
-# Oturum Durumu Kontrolü
+# ── AKTİF OTURUM KONTROLÜ (Sayfa yenilemeleri & URL geçişlerinde oturumu koru) ──
 if "authenticated" not in st.session_state or not st.session_state.authenticated:
-    auth_view.render_auth_view()
+    _persisted_user = auth_service.get_active_session()
+    if _persisted_user:
+        st.session_state.authenticated = True
+        st.session_state.user = _persisted_user
+
+_view = st.query_params.get("view", "")
+_slug = st.query_params.get("slug", "")
+_ann_id = st.query_params.get("ann_id", "")
+_comp_legacy = st.query_params.get("comp", "")  # eski format uyumu
+
+# Eski ?comp= parametresini yeni formata yönlendir
+if _comp_legacy and not _view:
+    st.query_params["view"] = "comp"
+    st.query_params["slug"] = _comp_legacy
+    del st.query_params["comp"]
+    st.rerun()
+
+# Eski ?ann_id= parametresini yeni formata yönlendir
+if _ann_id and not _view:
+    st.query_params["view"] = "ann_detail"
+    st.rerun()
+
+# ── SAYFA YÖNLENDİRİCİSİ ────────────────────────────────────────────────────
+_comp_target = _slug or _comp_legacy or st.query_params.get("id", "") or st.session_state.get("active_comp_detail_slug", "")
+if _view == "comp" or st.session_state.get("active_comp_detail_slug"):
+    _target_slug = _comp_target or "havacilikta-yapay-zeka"
+    from src.ui.views import competition_detail_view
+    is_auth = bool(st.session_state.get("authenticated", False))
+    competition_detail_view.render_competition_detail_page(_target_slug, is_authenticated=is_auth)
+    st.stop()
+
+if _view == "ann_detail" and _ann_id:
+    # Tekil Duyuru Detay Sayfası
+    ann_item = db.get_announcement(_ann_id)
+    if ann_item:
+        from src.ui.views import announcement_detail_view
+        announcement_detail_view.render_announcement_detail_page(ann_item)
+        st.stop()
+
+if _view == "ann":
+    # Tüm Duyurular Sayfası
+    from src.ui.views import announcements_view
+    announcements_view.render_announcements_page()
+    st.stop()
+
+# ── Oturum açılmamışsa: Login / Register / Landing yönlendirmesi ───────────────
+if "authenticated" not in st.session_state or not st.session_state.authenticated:
+    # 1. Google OAuth Callback, Giriş/Kayıt veya Google Profil Tamamlama Modları
+    if "code" in st.query_params or _view in ("login", "register") or st.session_state.get("auth_mode") == "google_complete_profile":
+        if _view in ("login", "register"):
+            st.markdown("""<div style="margin-bottom: 12px;">""", unsafe_allow_html=True)
+            c_back, _ = st.columns([1.5, 4])
+            with c_back:
+                if st.button("← Tanıtım ve Duyurulara Geri Dön", key="btn_back_to_landing", type="secondary"):
+                    st.query_params.clear()
+                    st.session_state.auth_mode = "login"
+                    st.rerun()
+            st.markdown("</div>", unsafe_allow_html=True)
+            if _view == "register":
+                st.session_state.auth_mode = "register"
+            else:
+                st.session_state.auth_mode = "login"
+        auth_view.render_auth_view()
+        st.stop()
+
+    # show_auth_modal eski session-state tabanlı sistem → URL'e çevir
+    if st.session_state.get("show_auth_modal", False):
+        st.session_state.show_auth_modal = False
+        mode = st.session_state.get("auth_initial_mode", "login")
+        st.query_params["view"] = mode  # "login" veya "register"
+        st.rerun()
+    # Landing sayfasına ?view=landing URL'i ekle
+    if not _view or _view == "landing":
+        if "tab" in st.query_params:
+            del st.query_params["tab"]
+        if not _view:
+            st.query_params["view"] = "landing"
+            st.rerun()
+    from src.ui.views import landing_view
+    landing_view.render_landing_view()
     st.stop()
 
 # --- OTURUM AÇILMIŞSA T3 KYS ANA PANELİ ---
+# Giriş yapılmışken URL'de kalan eski auth/landing parametrelerini temizle
+if st.query_params.get("view") in ("login", "register", "landing"):
+    del st.query_params["view"]
+
 aktif_kullanici = st.session_state.get("user") or {}
 rol = str(aktif_kullanici.get("role", "yarismaci")).lower()
 
-# Aktif Menü Sekmesi
-if "aktif_tab" not in st.session_state:
-    st.session_state.aktif_tab = "ana_sayfa"
+def _rol_varsayilan_sekme(user_role: str) -> str:
+    r = str(user_role or "").lower()
+    if r == "admin":
+        return "intihal"
+    return "ana_sayfa"
+
+varsayilan_sekme = _rol_varsayilan_sekme(rol)
+
+rol_sekmeleri = {
+    "admin": ["intihal", "kullanicilar", "admin_takimlar", "sartnameler", "yonetici_duyurular", "profil"],
+    "hakem": ["ana_sayfa", "degerlendirme", "sartnameler", "profil"],
+    "yonetici": ["ana_sayfa", "yonetici_duyurular", "sartnameler", "profil"],
+    "yarismaci": ["ana_sayfa", "basvurular", "takimlar", "sartnameler", "profil"],
+    "uye": ["ana_sayfa", "basvurular", "takimlar", "sartnameler", "profil"]
+}
+izin_verilen = rol_sekmeleri.get(rol, rol_sekmeleri["yarismaci"])
+
+_qp_tab = st.query_params.get("tab")
+u_id = aktif_kullanici.get("user_id")
+
+if "last_logged_user" not in st.session_state or st.session_state.last_logged_user != u_id:
+    st.session_state.last_logged_user = u_id
+    if _qp_tab and _qp_tab in izin_verilen:
+        st.session_state.aktif_tab = _qp_tab
+    elif st.session_state.get("aktif_tab") in izin_verilen:
+        st.query_params["tab"] = st.session_state.aktif_tab
+    else:
+        st.session_state.aktif_tab = varsayilan_sekme
+        st.query_params.clear()
+        st.query_params["tab"] = varsayilan_sekme
+elif _qp_tab and _qp_tab in izin_verilen:
+    st.session_state.aktif_tab = _qp_tab
+elif "aktif_tab" not in st.session_state or st.session_state.aktif_tab not in izin_verilen:
+    st.session_state.aktif_tab = varsayilan_sekme
+    st.query_params.clear()
+    st.query_params["tab"] = varsayilan_sekme
+
+def git_sekme(yeni_tab: str, subtab: str | None = None):
+    """Sekme değiştirildiğinde eski parametreleri temizleyip yeni sekme URL'ini ayarlar."""
+    st.session_state.aktif_tab = yeni_tab
+    st.query_params.clear()
+    st.query_params["tab"] = yeni_tab
+    if subtab:
+        st.query_params["subtab"] = subtab
+    st.rerun()
+
+
 
 # Varsayılan Kategori
 if "secili_kategori" not in st.session_state:
     st.session_state.secili_kategori = "saglik_yapay_zeka"
 
-# --- T3 KYS ÜST NAVBAR (ROL BAZLI) ---
+# ── TAKIM DAVET KABUL AKIŞI ─────────────────────────────────────────────────
+_invite_token = st.query_params.get("accept_team_invite")
+if _invite_token:
+    st.query_params.clear()
+    _invite_data = auth_view_module_unused = None
+    try:
+        from src.ui.auth_service import auth_service as _inv_svc
+        _invite_data = _inv_svc.get_team_invite(_invite_token)
+    except Exception:
+        pass
+
+    if not _invite_data:
+        st.error("Bu davet bağlantısı geçersiz veya süresi dolmuş. Lütfen kaptandan yeni davet isteyin.")
+    else:
+        _inv_team_id   = _invite_data.get("team_id", "")
+        _inv_team_name = _invite_data.get("team_name", "")
+        _inv_email     = _invite_data.get("invited_email", "")
+        _inv_by        = _invite_data.get("invited_by_name", "")
+        _cur_email     = str(aktif_kullanici.get("email", "")).strip().lower()
+
+        if _cur_email and _cur_email != _inv_email:
+            st.warning(
+                f"Bu davet **{_inv_email}** e-posta adresine gönderildi. "
+                f"Şu an **{_cur_email}** hesabıyla giriş yapılı. "
+                "Doğru hesapla giriş yapıp bağlantıya tekrar tıklayın."
+            )
+        else:
+            try:
+                from src.data import repos as _inv_repos
+                from src.data.enums import TeamRole as _TR
+                _inv_rp = _inv_repos()
+                _inv_user_id = str(aktif_kullanici.get("user_id", "")).strip()
+                _inv_team = _inv_rp.teams.get(_inv_team_id)
+                _team_adv_email = (_inv_team.advisor_email or "").strip().lower() if _inv_team else ""
+                _user_email = str(aktif_kullanici.get("email", "")).strip().lower()
+
+                _assigned_role = _TR.DANISMAN if (_user_email and _team_adv_email and _user_email == _team_adv_email) else _TR.UYE
+                _inv_rp.teams.add_member(_inv_team_id, _inv_user_id, _assigned_role)
+            except Exception as _inv_ex:
+                st.error(f"Takıma katılırken hata oluştu: {_inv_ex}")
+                _inv_team_id = ""
+
+            if _inv_team_id:
+                try:
+                    _inv_svc.clear_team_invite(_invite_token)
+                except Exception:
+                    pass
+                st.success(
+                    f"**{_inv_team_name}** takımına başarıyla katıldınız! "
+                    "Takımlarım menüsünden takımınızı görüntüleyebilirsiniz."
+                )
+                st.session_state.aktif_tab = "takimlar"
+
+# ── ÜST SAĞ MİNİ DİL DEĞİŞTİRİCİ ─────────────────────────────────────────────
+# Dil desteği henüz tam olmadığı için buton geçici olarak gizlenmiştir.
+# top_space, top_lang = st.columns([9.2, 0.8])
+# with top_lang:
+#     diger_dil = "EN" if current_lang == "tr" else "TR"
+#     if st.button(f" {diger_dil}", key="btn_nav_lang_top", use_container_width=True, help="Dili Değiştir / Switch Language"):
+#         st.session_state.lang = diger_dil.lower()
+#         st.rerun()
+
+# ── GLOBAL DUYURU & DETAY YÖNLENDİRMELERİ ───────────────────────────────────────
+_qp_ann_id = st.query_params.get("ann_id")
+if _qp_ann_id:
+    ann_item = db.get_announcement(_qp_ann_id)
+    if ann_item:
+        st.session_state.view_announcement_item = ann_item
+        st.query_params.clear()
+        st.rerun()
+
+if st.session_state.get("view_announcement_item"):
+    from src.ui.views import announcement_detail_view
+    announcement_detail_view.render_announcement_detail_page(st.session_state.view_announcement_item)
+    st.stop()
+
+if st.session_state.get("show_announcements_page", False):
+    from src.ui.views import announcements_view
+    announcements_view.render_announcements_page()
+    st.stop()
+
+# ── YARIŞMA DETAY SAYFASI GÖSTERİMİ (ORTAK MODÜL) ──────────────────────────
+if st.session_state.get("view_competition_slug"):
+    from src.ui.views import competition_detail_view
+    competition_detail_view.render_competition_detail_page(st.session_state.view_competition_slug, is_authenticated=True)
+    st.stop()
+
+# ── NAVBAR ───────────────────────────────────────────────────────────────────
+
 n_col1, n_col2 = st.columns([1.5, 3.5])
 
 with n_col1:
     logo_src = _get_logo_base64()
-    logo_img = f'<img src="{logo_src}" style="width:38px; height:38px; object-fit:contain; border-radius:8px;" alt="Logo"/>' if logo_src else ''
+    logo_img = f'<img src="{logo_src}" style="height:72px; width:auto; max-width:140px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.08));" alt="Logo"/>' if logo_src else ''
     st.html(f"""
-    <div style="display:flex; align-items:center; gap:12px; margin-top:2px;">
+    <div style="display:flex; align-items:center; gap:16px; margin-top:-4px; margin-bottom:4px;">
         {logo_img}
         <div>
-            <div style="font-size:1.30rem; font-weight:900; color:#1E293B; letter-spacing:-0.03em; line-height:1;">{t("system_name", current_lang)}</div>
-            <div style="font-size:0.65rem; font-weight:700; color:#64748B; letter-spacing:0.04em; text-transform:uppercase; margin-top:2px;">{t("system_sub", current_lang)}</div>
+            <div style="font-size:1.55rem; font-weight:900; color:#1E293B; letter-spacing:-0.03em; line-height:1.05;">{t("system_name", current_lang)}</div>
+            <div style="font-size:0.75rem; font-weight:800; color:#64748B; letter-spacing:0.05em; text-transform:uppercase; margin-top:4px;">{t("system_sub", current_lang)}</div>
         </div>
     </div>
     """)
@@ -268,86 +395,105 @@ with n_col1:
 with n_col2:
     # 1. YARIŞMACI / ÜYE MENÜSÜ
     if rol in ("yarismaci", "uye"):
-        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5, menu_c6, menu_c7 = st.columns([1.1, 1.4, 1.2, 1.3, 1.1, 0.7, 0.8])
+        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5, menu_c6 = st.columns([1.1, 1.4, 1.1, 1.1, 1.0, 0.85])
         with menu_c1:
             if st.button(t("nav_home", current_lang), key="nav_home", use_container_width=True, type="primary" if st.session_state.aktif_tab == "ana_sayfa" else "secondary"):
-                st.session_state.aktif_tab = "ana_sayfa"
-                st.rerun()
+                git_sekme("ana_sayfa")
         with menu_c2:
             if st.button(t("nav_apps", current_lang), key="nav_basvuru", use_container_width=True, type="primary" if st.session_state.aktif_tab == "basvurular" else "secondary"):
-                st.session_state.aktif_tab = "basvurular"
-                st.rerun()
+                git_sekme("basvurular")
         with menu_c3:
             if st.button(t("nav_teams", current_lang), key="nav_takim", use_container_width=True, type="primary" if st.session_state.aktif_tab == "takimlar" else "secondary"):
-                st.session_state.aktif_tab = "takimlar"
-                st.rerun()
+                git_sekme("takimlar")
         with menu_c4:
             if st.button(t("nav_specs", current_lang), key="nav_sartname", use_container_width=True, type="primary" if st.session_state.aktif_tab == "sartnameler" else "secondary"):
-                st.session_state.aktif_tab = "sartnameler"
-                st.rerun()
+                git_sekme("sartnameler")
         with menu_c5:
             if st.button(t("nav_profile", current_lang), key="nav_profil", use_container_width=True, type="primary" if st.session_state.aktif_tab == "profil" else "secondary"):
-                st.session_state.aktif_tab = "profil"
+                git_sekme("profil")
+        with menu_c6:
+            logout_txt = "Çıkış" if current_lang == "tr" else "Logout"
+            if st.button(logout_txt, key="nav_logout_yarismaci", use_container_width=True):
+                auth_service.clear_active_session()
+                st.session_state.authenticated = False
+                st.session_state.user = None
+                st.query_params.clear()
                 st.rerun()
 
     # 2. HAKEM / JÜRİ MENÜSÜ
     elif rol == "hakem":
-        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5, menu_c6, menu_c7 = st.columns([1.1, 1.6, 1.4, 1.1, 0.1, 0.7, 0.8])
+        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5 = st.columns([1.1, 1.6, 1.4, 1.1, 0.85])
         with menu_c1:
             if st.button(t("nav_home", current_lang), key="nav_home", use_container_width=True, type="primary" if st.session_state.aktif_tab == "ana_sayfa" else "secondary"):
-                st.session_state.aktif_tab = "ana_sayfa"
-                st.rerun()
+                git_sekme("ana_sayfa")
         with menu_c2:
             if st.button(t("nav_eval", current_lang), key="nav_hakem_eval", use_container_width=True, type="primary" if st.session_state.aktif_tab == "degerlendirme" else "secondary"):
-                st.session_state.aktif_tab = "degerlendirme"
-                st.rerun()
+                git_sekme("degerlendirme")
         with menu_c3:
             if st.button(t("nav_specs_criteria", current_lang), key="nav_sartname", use_container_width=True, type="primary" if st.session_state.aktif_tab == "sartnameler" else "secondary"):
-                st.session_state.aktif_tab = "sartnameler"
-                st.rerun()
+                git_sekme("sartnameler")
         with menu_c4:
             if st.button(t("nav_profile", current_lang), key="nav_profil", use_container_width=True, type="primary" if st.session_state.aktif_tab == "profil" else "secondary"):
-                st.session_state.aktif_tab = "profil"
-                st.rerun()
+                git_sekme("profil")
         with menu_c5:
-            st.write("")
+            logout_txt = "Çıkış" if current_lang == "tr" else "Logout"
+            if st.button(logout_txt, key="nav_logout_hakem", use_container_width=True):
+                auth_service.clear_active_session()
+                st.session_state.authenticated = False
+                st.session_state.user = None
+                st.query_params.clear()
+                st.rerun()
 
-    # 3. SİSTEM YÖNETİCİSİ / ADMİN MENÜSÜ
-    else:
-        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5, menu_c6, menu_c7 = st.columns([1.1, 1.4, 1.3, 1.3, 1.1, 0.7, 0.8])
+    # 3. YARIŞMA YÖNETİCİSİ MENÜSÜ
+    elif rol == "yonetici":
+        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5 = st.columns([1.5, 1.4, 1.1, 1.1, 0.85])
         with menu_c1:
-            if st.button(t("nav_admin_yonetim", current_lang), key="nav_admin_yonetim", use_container_width=True, type="primary" if st.session_state.aktif_tab == "ana_sayfa" else "secondary"):
-                st.session_state.aktif_tab = "ana_sayfa"
-                st.rerun()
+            if st.button(t("nav_admin_yonetim", current_lang), key="nav_home", use_container_width=True, type="primary" if st.session_state.aktif_tab == "ana_sayfa" else "secondary"):
+                git_sekme("ana_sayfa")
         with menu_c2:
-            if st.button(t("nav_admin_intihal", current_lang), key="nav_admin_intihal", use_container_width=True, type="primary" if st.session_state.aktif_tab == "intihal" else "secondary"):
-                st.session_state.aktif_tab = "intihal"
-                st.rerun()
+            if st.button("Duyuru Yönetimi", key="nav_announcements_top_mgr", use_container_width=True, type="primary" if st.session_state.aktif_tab == "yonetici_duyurular" else "secondary"):
+                git_sekme("yonetici_duyurular")
         with menu_c3:
-            if st.button(t("nav_admin_users", current_lang), key="nav_admin_users", use_container_width=True, type="primary" if st.session_state.aktif_tab == "kullanicilar" else "secondary"):
-                st.session_state.aktif_tab = "kullanicilar"
+            if st.button(t("nav_specs", current_lang), key="nav_sartname", use_container_width=True, type="primary" if st.session_state.aktif_tab == "sartnameler" else "secondary"):
+                git_sekme("sartnameler")
+        with menu_c4:
+            if st.button(t("nav_profile", current_lang), key="nav_profil", use_container_width=True, type="primary" if st.session_state.aktif_tab == "profil" else "secondary"):
+                git_sekme("profil")
+        with menu_c5:
+            logout_txt = "Çıkış" if current_lang == "tr" else "Logout"
+            if st.button(logout_txt, key="nav_logout_yonetici", use_container_width=True):
+                auth_service.clear_active_session()
+                st.session_state.authenticated = False
+                st.session_state.user = None
+                st.query_params.clear()
                 st.rerun()
+
+    # 4. SİSTEM YÖNETİCİSİ / ADMİN MENÜSÜ
+    else:
+        menu_c1, menu_c2, menu_c3, menu_c4, menu_c5, menu_c6 = st.columns([1.3, 1.2, 1.2, 1.2, 1.0, 0.85])
+        with menu_c1:
+            if st.button(t("nav_admin_intihal", current_lang), key="nav_admin_intihal", use_container_width=True, type="primary" if st.session_state.aktif_tab == "intihal" else "secondary"):
+                git_sekme("intihal")
+        with menu_c2:
+            if st.button(t("nav_admin_users", current_lang), key="nav_admin_users", use_container_width=True, type="primary" if st.session_state.aktif_tab == "kullanicilar" else "secondary"):
+                git_sekme("kullanicilar")
+        with menu_c3:
+            if st.button("Takım Yönetimi", key="nav_admin_takimlar", use_container_width=True, type="primary" if st.session_state.aktif_tab == "admin_takimlar" else "secondary"):
+                git_sekme("admin_takimlar")
         with menu_c4:
             if st.button(t("nav_specs", current_lang), key="nav_sartname", use_container_width=True, type="primary" if st.session_state.aktif_tab == "sartnameler" else "secondary"):
-                st.session_state.aktif_tab = "sartnameler"
-                st.rerun()
+                git_sekme("sartnameler")
         with menu_c5:
             if st.button(t("nav_profile", current_lang), key="nav_profil", use_container_width=True, type="primary" if st.session_state.aktif_tab == "profil" else "secondary"):
-                st.session_state.aktif_tab = "profil"
+                git_sekme("profil")
+        with menu_c6:
+            logout_txt = "Çıkış" if current_lang == "tr" else "Logout"
+            if st.button(logout_txt, key="nav_logout_admin", use_container_width=True):
+                auth_service.clear_active_session()
+                st.session_state.authenticated = False
+                st.session_state.user = None
+                st.query_params.clear()
                 st.rerun()
-
-    # Ortak Dil ve Çıkış Butonları
-    with menu_c6:
-        diger_dil = "EN" if current_lang == "tr" else "TR"
-        if st.button(f"🌐 {diger_dil}", key="btn_nav_lang", use_container_width=True):
-            st.session_state.lang = diger_dil.lower()
-            st.rerun()
-
-    with menu_c7:
-        if st.button(t("nav_logout", current_lang), key="nav_logout", use_container_width=True):
-            st.session_state.authenticated = False
-            st.session_state.user = None
-            st.rerun()
 
 st.markdown("<hr style='margin: 6px 0 12px 0; border-color: #F1F5F9;'>", unsafe_allow_html=True)
 
@@ -357,144 +503,281 @@ st.markdown("<hr style='margin: 6px 0 12px 0; border-color: #F1F5F9;'>", unsafe_
 if st.session_state.aktif_tab == "ana_sayfa":
     # 1.1. YARIŞMACI / ÜYE İÇİN ANA SAYFA
     if rol in ("yarismaci", "uye"):
+        # --- MODERN HIZLI ERİŞİM KARTLARI ---
         card_c1, card_c2, card_c3, card_c4 = st.columns(4)
+        
+        img_report_b64 = _get_card_asset_b64("card_report.jpg")
+        img_rocket_b64 = _get_card_asset_b64("card_rocket.jpg")
+        img_team_b64 = _get_card_asset_b64("card_team.jpg")
+        img_spec_b64 = _get_card_asset_b64("card_spec.jpg")
+
         with card_c1:
+            icon_tag = f'<img src="{img_report_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px;" alt="Karne"/>' if img_report_b64 else ''
             st.html(f"""
-            <div class="t3-module-card">
-                <div>
-                    <div style="width:54px; height:54px; border-radius:50%; background:#FFDE59; margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:1.5rem; color:#F04823; font-weight:900;">H</div>
-                    <div class="t3-module-title">{t("card_account", current_lang)}</div>
-                    <div class="t3-module-desc">{t("card_account_desc", current_lang)}</div>
+            <div style="background: linear-gradient(145deg, #FFFFFF, #FFF7ED); border: 1.5px solid #FDBA74; border-radius: 14px; padding: 22px 18px 16px 18px; box-shadow: 0 4px 16px rgba(249, 115, 22, 0.08); display:flex; flex-direction:column; align-items:center; text-align:center; justify-content:space-between; min-height: 200px;">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:10px; width:100%;">
+                    <div style="width:52px; height:52px; border-radius:12px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(249,115,22,0.18); border:1px solid #FFEDD5;">
+                        {icon_tag}
+                    </div>
+                    <div style="font-weight:850; font-size:1.02rem; color:#1E293B; letter-spacing:-0.01em;">Başvurularım & Karne</div>
+                    <div style="color:#64748B; font-size:0.84rem; line-height:1.45;">Rapor yükleme, yapay zekâ ön kontrolü ve gelişim karneniz.</div>
                 </div>
             </div>
             """)
-            if st.button(t("card_btn_account", current_lang), key="btn_card_hesabim", use_container_width=True):
-                st.session_state.aktif_tab = "basvurular"
-                st.rerun()
+            if st.button(t("card_btn_account", current_lang), key="btn_card_hesabim", use_container_width=True, type="secondary"):
+                git_sekme("basvurular")
 
         with card_c2:
+            icon_tag = f'<img src="{img_rocket_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px;" alt="TEKNOFEST"/>' if img_rocket_b64 else ''
             st.html(f"""
-            <div class="t3-module-card">
-                <div>
-                    <div style="width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,0.2); margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#FFFFFF; font-weight:900;">TF</div>
-                    <div class="t3-module-title">{t("card_tf_title", current_lang)}</div>
-                    <div class="t3-module-desc">{t("card_tf_desc", current_lang)}</div>
+            <div style="background: linear-gradient(145deg, #FFF1F2, #FFF7ED); border: 1.5px solid #F43F5E; border-radius: 14px; padding: 22px 18px 16px 18px; box-shadow: 0 4px 16px rgba(244, 63, 94, 0.10); display:flex; flex-direction:column; align-items:center; text-align:center; justify-content:space-between; min-height: 200px;">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:10px; width:100%;">
+                    <div style="width:52px; height:52px; border-radius:12px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(244,63,94,0.18); border:1px solid #FFE4E6;">
+                        {icon_tag}
+                    </div>
+                    <div style="font-weight:850; font-size:1.02rem; color:#1E293B; letter-spacing:-0.01em;">TEKNOFEST 2026</div>
+                    <div style="color:#64748B; font-size:0.84rem; line-height:1.45;">Tüm yarışma kategorilerini inceleyin ve anında başvurun.</div>
                 </div>
             </div>
             """)
-            if st.button(t("card_btn_tf", current_lang), key="btn_card_tf", use_container_width=True):
-                st.session_state.aktif_tab = "basvurular"
-                st.rerun()
+            if st.button(t("card_btn_tf", current_lang), key="btn_card_tf", use_container_width=True, type="primary"):
+                st.session_state["show_new_app_form"] = True
+                git_sekme("basvurular")
 
         with card_c3:
+            icon_tag = f'<img src="{img_team_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px;" alt="Takımlar"/>' if img_team_b64 else ''
             st.html(f"""
-            <div class="t3-module-card">
-                <div>
-                    <div style="width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,0.2); margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#FFFFFF; font-weight:900;">TK</div>
-                    <div class="t3-module-title">{t("card_teams_title", current_lang)}</div>
-                    <div class="t3-module-desc">{t("card_teams_desc", current_lang)}</div>
+            <div style="background: linear-gradient(145deg, #FFFFFF, #EFF6FF); border: 1.5px solid #93C5FD; border-radius: 14px; padding: 22px 18px 16px 18px; box-shadow: 0 4px 16px rgba(59, 130, 246, 0.08); display:flex; flex-direction:column; align-items:center; text-align:center; justify-content:space-between; min-height: 200px;">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:10px; width:100%;">
+                    <div style="width:52px; height:52px; border-radius:12px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(59,130,246,0.18); border:1px solid #DBEAFE;">
+                        {icon_tag}
+                    </div>
+                    <div style="font-weight:850; font-size:1.02rem; color:#1E293B; letter-spacing:-0.01em;">Takımlarım</div>
+                    <div style="color:#64748B; font-size:0.84rem; line-height:1.45;">Takım oluşturun, üyelerinizi yönetin ve davet kodu paylaşın.</div>
                 </div>
             </div>
             """)
-            if st.button(t("card_btn_teams", current_lang), key="btn_card_milli", use_container_width=True):
-                st.session_state.aktif_tab = "takimlar"
-                st.rerun()
+            if st.button(t("card_btn_teams", current_lang), key="btn_card_milli", use_container_width=True, type="secondary"):
+                git_sekme("takimlar")
 
         with card_c4:
+            icon_tag = f'<img src="{img_spec_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px;" alt="Şartnameler"/>' if img_spec_b64 else ''
             st.html(f"""
-            <div class="t3-module-card">
-                <div>
-                    <div style="width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,0.2); margin:0 auto 12px auto; display:flex; align-items:center; justify-content:center; font-size:1.2rem; color:#FFFFFF; font-weight:900;">ŞT</div>
-                    <div class="t3-module-title">{t("card_specs_title", current_lang)}</div>
-                    <div class="t3-module-desc">{t("card_specs_desc", current_lang)}</div>
+            <div style="background: linear-gradient(145deg, #FFFFFF, #F5F3FF); border: 1.5px solid #C4B5FD; border-radius: 14px; padding: 22px 18px 16px 18px; box-shadow: 0 4px 16px rgba(139, 92, 246, 0.08); display:flex; flex-direction:column; align-items:center; text-align:center; justify-content:space-between; min-height: 200px;">
+                <div style="display:flex; flex-direction:column; align-items:center; gap:10px; width:100%;">
+                    <div style="width:52px; height:52px; border-radius:12px; background:#FFFFFF; display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(139,92,246,0.18); border:1px solid #EDE9FE;">
+                        {icon_tag}
+                    </div>
+                    <div style="font-weight:850; font-size:1.02rem; color:#1E293B; letter-spacing:-0.01em;">Şartnameler</div>
+                    <div style="color:#64748B; font-size:0.84rem; line-height:1.45;">Resmî teknik şartnameleri ve rapor şablonlarını indirin.</div>
                 </div>
             </div>
             """)
-            if st.button(t("card_btn_specs", current_lang), key="btn_card_gonullu", use_container_width=True):
-                st.session_state.aktif_tab = "sartnameler"
-                st.rerun()
+            if st.button(t("card_btn_specs", current_lang), key="btn_card_gonullu", use_container_width=True, type="secondary"):
+                git_sekme("sartnameler")
 
-        st.write("")
-        # Üye Bilgilendirme ve Aşama Takvimi Panosu
-        st.html("""
-        <div class="t3-content-card">
-            <div class="t3-card-title">TEKNOFEST 2026 Başvuru ve Rapor Takvimi</div>
-            <div class="t3-card-sub">Ön Tasarım Raporu (ÖTR) ve Kritik Tasarım Raporu (KTR) son teslim tarihleri</div>
-            <hr style="margin:12px 0; border-color:#E2E8F0;">
-            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:16px;">
-                <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:12px; border-radius:8px;">
-                    <div style="font-size:0.80rem; color:#64748B; font-weight:600;">1. AŞAMA / STAGE 1</div>
-                    <div style="font-size:0.95rem; font-weight:800; color:#1E293B;">Ön Tasarım Raporu (ÖTR / PDR)</div>
-                    <div style="font-size:0.85rem; color:#F04823; font-weight:700; margin-top:4px;">Son Teslim: 15 Nisan 2026</div>
-                </div>
-                <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:12px; border-radius:8px;">
-                    <div style="font-size:0.80rem; color:#64748B; font-weight:600;">2. AŞAMA / STAGE 2</div>
-                    <div style="font-size:0.95rem; font-weight:800; color:#1E293B;">Kritik Tasarım Raporu (KTR / CDR)</div>
-                    <div style="font-size:0.85rem; color:#64748B; font-weight:700; margin-top:4px;">Son Teslim: 15 Haziran 2026</div>
-                </div>
-                <div style="background:#F8FAFC; border:1px solid #E2E8F0; padding:12px; border-radius:8px;">
-                    <div style="font-size:0.80rem; color:#64748B; font-weight:600;">FİNAL / FINAL</div>
-                    <div style="font-size:0.95rem; font-weight:800; color:#1E293B;">TEKNOFEST 2026 Final Sergisi</div>
-                    <div style="font-size:0.85rem; color:#16A34A; font-weight:700; margin-top:4px;">Tarih: 02-06 Eylül 2026</div>
-                </div>
-            </div>
-        </div>
-        """)
+        st.markdown("<div id='yarismalar-bolumu' style='margin: 18px 0 10px 0;'></div>", unsafe_allow_html=True)
+        if st.session_state.get("scroll_to_vitrin"):
+            st.session_state["scroll_to_vitrin"] = False
+            st.html("""
+            <script>
+                setTimeout(() => {
+                    const el = window.parent.document.getElementById('yarismalar-bolumu');
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 150);
+            </script>
+            """)
+
+        # Doğrudan Ana Sayfa İçeriği: Yarışma Vitrini
+        yarismaci.render_vitrin(st, aktif_kullanici, current_lang)
+
 
     # 1.2. HAKEM / JÜRİ İÇİN ANA SAYFA
     elif rol == "hakem":
-        u_id = aktif_kullanici.get("user_id", "usr_hakem_ef6def")
-        u_email = aktif_kullanici.get("email", "hakem@tsistem.org")
+        u_id = str(aktif_kullanici.get("user_id", "")).strip()
         
-        # Hakeme atanan raporları çek
-        h_reports = db.get_reports_for_referee(u_id)
-        if not h_reports:
-            h_reports = db.get_reports_for_referee(u_email)
-        
-        toplam_atanan = len(h_reports)
-        tamamlanan_adet = sum(1 for r in h_reports if r.get("referee_score") is not None or r.get("status") == "tamamlandi")
+        # Hakeme atanan gerçek raporları D1 üzerinden çek (Tam İzolasyon)
+        try:
+            from src.data import repos
+            r = repos()
+            
+            # Sadece bu hakeme atanmış kayıtları çek (fallback kesinlikle yok)
+            h_reports = r.evaluations.list_for_referee(u_id) if u_id else []
+            toplam_atanan = len(h_reports)
+            
+            # Tamamlanan adet
+            tamamlanan_adet = 0
+            for rep in h_reports:
+                st_raw = str(rep.get("assignment_status") or rep.get("status") or "").upper()
+                score = rep.get("referee_score")
+                if score is not None or st_raw in ("DEGERLENDIRILDI", "TAMAMLANDI", "COMPLETED"):
+                    tamamlanan_adet += 1
+                    
+        except Exception as e:
+            print(f"[APP_HAKEM_HOME] Hata: {e}")
+            toplam_atanan = 0
+            tamamlanan_adet = 0
+
         bekleyen_adet = max(0, toplam_atanan - tamamlanan_adet)
 
-        st.html("""
+        st.html(f"""
         <div class="t3-content-card" style="margin-bottom:16px;">
-            <div class="t3-card-title">Hakem Değerlendirme İstasyonu & Atanan Rapor Havuzu</div>
-            <div class="t3-card-sub">Yarışma yöneticisi tarafından değerlendirmeniz için tarafınıza atanan güncel aşama raporları.</div>
+            <div class="t3-card-title">{t("hk_home_title", current_lang)}</div>
+            <div class="t3-card-sub">{t("hk_home_sub", current_lang)}</div>
         </div>
         """)
         hk_c1, hk_c2, hk_c3 = st.columns(3)
+        _rapor_lbl = t("hk_metric_rapor", current_lang)
         with hk_c1:
-            st.metric("Atanan Toplam Rapor", f"{toplam_atanan} Rapor")
+            st.markdown(f"""
+            <div style="background: linear-gradient(145deg, #F8FAFC, #F1F5F9); border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <div style="font-size: 0.9rem; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">{t('hk_metric_atanan', current_lang)}</div>
+                <div style="font-size: 2.2rem; font-weight: 900; color: #0F172A; line-height: 1;">{toplam_atanan}</div>
+                <div style="font-size: 0.85rem; color: #64748B; margin-top: 4px;">{_rapor_lbl}</div>
+            </div>
+            """, unsafe_allow_html=True)
         with hk_c2:
             oran = int((tamamlanan_adet / max(toplam_atanan, 1)) * 100)
-            st.metric("Tamamlanan Puanlama", f"{tamamlanan_adet} Rapor (%{oran})")
+            st.markdown(f"""
+            <div style="background: linear-gradient(145deg, #F0FDF4, #DCFCE7); border: 1px solid #BBF7D0; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <div style="font-size: 0.9rem; font-weight: 700; color: #166534; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">{t('hk_metric_tamamlanan', current_lang)}</div>
+                <div style="font-size: 2.2rem; font-weight: 900; color: #15803D; line-height: 1;">{tamamlanan_adet}</div>
+                <div style="font-size: 0.85rem; color: #166534; margin-top: 4px;">{_rapor_lbl} <b style="background:#22C55E; color:white; padding:2px 6px; border-radius:8px; font-size:0.75rem; margin-left:4px;">%{oran}</b></div>
+            </div>
+            """, unsafe_allow_html=True)
         with hk_c3:
-            st.metric("Bekleyen Raporlar", f"{bekleyen_adet} Rapor")
+            st.markdown(f"""
+            <div style="background: linear-gradient(145deg, #FEF2F2, #FEE2E2); border: 1px solid #FECACA; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+                <div style="font-size: 0.9rem; font-weight: 700; color: #991B1B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">{t('hk_metric_bekleyen', current_lang)}</div>
+                <div style="font-size: 2.2rem; font-weight: 900; color: #B91C1C; line-height: 1;">{bekleyen_adet}</div>
+                <div style="font-size: 0.85rem; color: #991B1B; margin-top: 4px;">{_rapor_lbl}</div>
+            </div>
+            """, unsafe_allow_html=True)
 
         st.write("")
         b_c1, b_c2, _ = st.columns([1.4, 1.4, 2.2])
         with b_c1:
-            if st.button("Rapor Değerlendirme Ekranına Geç", type="primary", use_container_width=True):
-                st.session_state.aktif_tab = "degerlendirme"
-                st.rerun()
+            if st.button(t("hk_btn_eval", current_lang), type="primary", use_container_width=True):
+                git_sekme("degerlendirme")
         with b_c2:
-            if st.button("Şartname & Kriterleri İncele", use_container_width=True):
-                st.session_state.aktif_tab = "sartnameler"
+            if st.button(t("hk_btn_specs", current_lang), use_container_width=True):
+                git_sekme("sartnameler")
+
+        st.markdown("<br><hr><br>", unsafe_allow_html=True)
+        from src.ui.views import yarismaci
+        yarismaci.render_vitrin(st, aktif_kullanici, current_lang)
+
+    # 1.3. YARIŞMA YÖNETİCİSİ İÇİN ANA SAYFA
+    elif rol == "yonetici":
+        u_ad = aktif_kullanici.get("name", "Yönetici")
+        st.html(f"""
+        <div class="t3-content-card" style="margin-bottom:20px;">
+            <div class="t3-card-title">Yarışma Yönetim Merkezi</div>
+            <div class="t3-card-sub">Hoş geldiniz, <strong>{u_ad}</strong>. Kategoriler, aşamalar, şartnameler, değerlendirme kriterleri ve hakem atamaları bu panel üzerinden yürütülür.</div>
+        </div>
+        """)
+
+        yn_c1, yn_c2, yn_c3, yn_c4 = st.columns(4)
+        
+        img_yn_comp_b64 = _get_card_asset_b64("card_yn_competitions.jpg")
+        img_yn_pool_b64 = _get_card_asset_b64("card_yn_pool.jpg")
+        img_yn_rubric_b64 = _get_card_asset_b64("card_yn_rubric.jpg")
+        img_yn_templates_b64 = _get_card_asset_b64("card_yn_templates.jpg")
+
+        with yn_c1:
+            icon_tag = f'<img src="{img_yn_comp_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px; box-shadow:0 4px 12px rgba(249,115,22,0.20);" alt="Yarışmalar"/>' if img_yn_comp_b64 else ''
+            st.html(f"""
+            <div style="background:linear-gradient(145deg,#FFFFFF,#FFF7ED);border:1.5px solid #FDBA74;border-radius:14px;padding:20px 18px 14px 18px;box-shadow:0 4px 16px rgba(249,115,22,0.08);min-height:160px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                    {icon_tag}
+                    <div style="font-weight:800;font-size:0.98rem;color:#1E293B;">Yarışma & Kategoriler</div>
+                </div>
+                <div style="color:#64748B;font-size:0.84rem;line-height:1.45;">Yarışma oluşturun, aşama ve takvim tanımlayın.</div>
+            </div>
+            """)
+            if st.button("Yarışma Yönetimine Git", key="yn_btn_cat", use_container_width=True, type="primary"):
+                st.session_state.yonetici_active_subtab = "competitions"
+                st.session_state.aktif_tab = "ana_sayfa"
+                st.query_params["tab"] = "ana_sayfa"
+                st.query_params["subtab"] = "competitions"
                 st.rerun()
 
-    # 1.3. SİSTEM YÖNETİCİSİ (ADMİN) İÇİN ANA SAYFA
+        with yn_c2:
+            icon_tag = f'<img src="{img_yn_pool_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px; box-shadow:0 4px 12px rgba(59,130,246,0.20);" alt="Hakemler"/>' if img_yn_pool_b64 else ''
+            st.html(f"""
+            <div style="background:linear-gradient(145deg,#FFFFFF,#EFF6FF);border:1.5px solid #93C5FD;border-radius:14px;padding:20px 18px 14px 18px;box-shadow:0 4px 16px rgba(59,130,246,0.08);min-height:160px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                    {icon_tag}
+                    <div style="font-weight:800;font-size:0.98rem;color:#1E293B;">Hakem Havuzu</div>
+                </div>
+                <div style="color:#64748B;font-size:0.84rem;line-height:1.45;">Hakem ekleyin, rapor eşleştirmesi yapın.</div>
+            </div>
+            """)
+            if st.button("Hakem Havuzuna Git", key="yn_btn_hakem", use_container_width=True, type="secondary"):
+                st.session_state.yonetici_active_subtab = "pool"
+                st.session_state.aktif_tab = "ana_sayfa"
+                st.query_params["tab"] = "ana_sayfa"
+                st.query_params["subtab"] = "pool"
+                st.rerun()
+
+        with yn_c3:
+            icon_tag = f'<img src="{img_yn_rubric_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px; box-shadow:0 4px 12px rgba(139,92,246,0.20);" alt="Rubrik"/>' if img_yn_rubric_b64 else ''
+            st.html(f"""
+            <div style="background:linear-gradient(145deg,#FFFFFF,#F5F3FF);border:1.5px solid #C4B5FD;border-radius:14px;padding:20px 18px 14px 18px;box-shadow:0 4px 16px rgba(139,92,246,0.08);min-height:160px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                    {icon_tag}
+                    <div style="font-weight:800;font-size:0.98rem;color:#1E293B;">Rubrik & Kriterler</div>
+                </div>
+                <div style="color:#64748B;font-size:0.84rem;line-height:1.45;">Değerlendirme rubriği ve puanlama kriterlerini belirleyin.</div>
+            </div>
+            """)
+            if st.button("Kriterlere Git", key="yn_btn_rubrik", use_container_width=True, type="secondary"):
+                st.session_state.yonetici_active_subtab = "calibration"
+                st.session_state.aktif_tab = "ana_sayfa"
+                st.query_params["tab"] = "ana_sayfa"
+                st.query_params["subtab"] = "calibration"
+                st.rerun()
+
+        with yn_c4:
+            icon_tag = f'<img src="{img_yn_templates_b64}" style="width:46px; height:46px; object-fit:contain; border-radius:10px; box-shadow:0 4px 12px rgba(34,197,94,0.20);" alt="Şablonlar"/>' if img_yn_templates_b64 else ''
+            st.html(f"""
+            <div style="background:linear-gradient(145deg,#FFFFFF,#F0FDF4);border:1.5px solid #86EFAC;border-radius:14px;padding:20px 18px 14px 18px;box-shadow:0 4px 16px rgba(34,197,94,0.08);min-height:160px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+                    {icon_tag}
+                    <div style="font-weight:800;font-size:0.98rem;color:#1E293B;">Şartname & Şablonlar</div>
+                </div>
+                <div style="color:#64748B;font-size:0.84rem;line-height:1.45;">Şartname PDF ve rapor şablonlarını yükleyin.</div>
+            </div>
+            """)
+            if st.button("Şartnamelere Git", key="yn_btn_sartname", use_container_width=True, type="secondary"):
+                st.session_state.aktif_tab = "sartnameler"
+                st.query_params["tab"] = "sartnameler"
+                if "subtab" in st.query_params:
+                    del st.query_params["subtab"]
+                st.rerun()
+
+        st.markdown("<hr style='margin:20px 0 16px 0;border-color:#F1F5F9;'>", unsafe_allow_html=True)
+        yonetici.goster(st, aktif_kullanici, current_lang)
+
+    # 1.4. SİSTEM YÖNETİCİSİ (ADMİN) İÇİN ANA SAYFA
+    # GUVENLIK: eskiden `else:` idi; `yarismaci`/`hakem` disindaki HER rol
+    # (tanimsiz roller dahil) admin panelini goruyordu.
+    elif rol == "admin":
+        dashboard.goster(st, st.session_state.secili_kategori)
     else:
-        tab_admin1, tab_admin2 = st.tabs([t("tab_admin_ops", current_lang), t("tab_admin_cats", current_lang)])
-        with tab_admin1:
-            dashboard.goster(st, st.session_state.secili_kategori)
-        with tab_admin2:
-            yonetici.goster(st)
+        st.warning(
+            "Rolunuz icin tanimli bir ana sayfa bulunamadi. "
+            "Lutfen sistem yoneticisi ile iletisime geciniz."
+        )
 
 # ==============================================================================
 # --- 2. YARIŞMACI: BAŞVURULARIM & GELİŞİM KARNESİ ---
 # ==============================================================================
 elif st.session_state.aktif_tab == "basvurular":
     if rol in ("yarismaci", "uye"):
-        yarismaci.goster(st, st.session_state.secili_kategori)
+        yarismaci.render_basvurular(st, aktif_kullanici, current_lang)
     else:
         st.session_state.aktif_tab = "ana_sayfa"
         st.rerun()
@@ -504,63 +787,9 @@ elif st.session_state.aktif_tab == "basvurular":
 # ==============================================================================
 elif st.session_state.aktif_tab == "degerlendirme":
     if rol == "hakem":
-        u_id = aktif_kullanici.get("user_id", "usr_hakem_ef6def")
-        u_email = aktif_kullanici.get("email", "hakem@tsistem.org")
-        
-        # Sistemdeki TÜM 60+ TEKNOFEST Kategorisini Yükle
-        kategori_secenekleri = sartname_rehber.tum_yarismalari_sozluk_getir()
-        keys_list = list(kategori_secenekleri.keys())
-        
-        # Hakeme atanan raporları çek
-        db_reports = db.get_reports_for_referee(u_id)
-        if not db_reports:
-            db_reports = db.get_reports_for_referee(u_email)
-
-        kat_rapor_sayilari = {}
-        for r in db_reports:
-            c_raw = (r["category"] or "").strip().lower()
-            matched_slug = None
-            for slug in keys_list:
-                slug_norm = slug.replace("-", " ").lower()
-                c_clean = c_raw.replace("i", "ı").replace(" ", "")
-                s_clean = slug_norm.replace("i", "ı").replace(" ", "")
-                if c_clean in s_clean or s_clean in c_clean or c_raw in slug_norm:
-                    matched_slug = slug
-                    break
-            if not matched_slug:
-                if "hava" in c_raw or "yz" in c_raw:
-                    matched_slug = "havacilikta-yapay-zeka-yarismasi"
-                elif "insanlik" in c_raw:
-                    matched_slug = "insanlik-yararina-teknolojiler-yarismasi-lise-seviyesi"
-                elif "biyo" in c_raw:
-                    matched_slug = "biyoteknoloji-inovasyon-yarismasi"
-                elif "cip" in c_raw:
-                    matched_slug = "cip-tasarim-yarismasi"
-                elif "saglik" in c_raw:
-                    matched_slug = "saglikta-yapay-zeka-yarismasi"
-                elif "roket" in c_raw:
-                    matched_slug = "roket-yarismasi"
-                elif "savasan" in c_raw:
-                    matched_slug = "savasan-iha-yarismasi"
-                else:
-                    matched_slug = "havacilikta-yapay-zeka-yarismasi"
-            
-            kat_rapor_sayilari[matched_slug] = kat_rapor_sayilari.get(matched_slug, 0) + 1
-
-        # Raporu olan kategorileri listenin en başına taşı
-        sirali_keys = sorted(keys_list, key=lambda k: kat_rapor_sayilari.get(k, 0), reverse=True)
-
-        # --- HAKEM DEĞERLENDİRME İSTASYONU ---
-        hakem.goster(
-            st,
-            st.session_state.secili_kategori,
-            referee_id=u_id,
-            kategori_secenekleri=kategori_secenekleri,
-            sirali_keys=sirali_keys,
-            kat_rapor_sayilari=kat_rapor_sayilari
-        )
+        hakem.goster(st, aktif_kullanici, current_lang)
     elif rol == "admin":
-        yonetici.goster(st)
+        yonetici.goster(st, aktif_kullanici, current_lang)
     else:
         st.warning("Bu alana erişim yetkiniz bulunmamaktadır.")
         st.session_state.aktif_tab = "ana_sayfa"
@@ -589,131 +818,26 @@ elif st.session_state.aktif_tab == "kullanicilar":
         st.rerun()
 
 # ==============================================================================
+# --- 5.1. SİSTEM YÖNETİCİSİ: TAKIM YÖNETİM MERKEZİ ---
+# ==============================================================================
+elif st.session_state.aktif_tab == "admin_takimlar":
+    if rol == "admin":
+        admin_takimlar.render()
+    else:
+        st.warning("Bu alana yalnızca Sistem Yöneticisi erişebilir.")
+        st.session_state.aktif_tab = "ana_sayfa"
+        st.rerun()
+
+# ==============================================================================
 # --- 6. TAKIMLARIM (YARIŞMACILAR İÇİN) ---
 # ==============================================================================
 elif st.session_state.aktif_tab == "takimlar":
-    st.html(f"""
-    <div class="t3-content-card" style="margin-bottom: 16px;">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-            <div>
-                <div class="t3-card-title">{t("teams_title", current_lang)}</div>
-                <div class="t3-card-sub">{t("teams_sub", current_lang)}</div>
-            </div>
-        </div>
-    </div>
-    """)
-
-    t_btn1, t_btn2, _ = st.columns([1.2, 1.2, 2.6])
-    with t_btn1:
-        if st.button(t("btn_create_team", current_lang), type="primary", use_container_width=True):
-            st.session_state.show_create_team = not st.session_state.get("show_create_team", False)
-            st.session_state.show_join_team = False
-    with t_btn2:
-        if st.button(t("btn_join_team", current_lang), use_container_width=True):
-            st.session_state.show_join_team = not st.session_state.get("show_join_team", False)
-            st.session_state.show_create_team = False
-
-    if st.session_state.get("show_create_team"):
-        with st.form("form_create_team"):
-            st.subheader(t("btn_create_team", current_lang))
-            tc1, tc2, tc3 = st.columns(3)
-            with tc1:
-                yeni_takim_adi = st.text_input(t("lbl_team_name", current_lang), placeholder="Örn: Bilig Yapay Zekâ")
-            with tc2:
-                yeni_seviye = st.selectbox("Eğitim Seviyesi *", [
-                    "Lise Seviyesi",
-                    "Ön Lisans / Lisans Seviyesi",
-                    "Yüksek Lisans / Doktora",
-                    "Ortaokul Seviyesi",
-                    "İlkokul Seviyesi",
-                    "Mezun / Serbest Girişimci"
-                ], index=1)
-            with tc3:
-                yeni_kurum = st.text_input("Okul / Kurum / Üniversite", placeholder="Örn: İstanbul Teknik Üniversitesi")
-            sub_t = st.form_submit_button(t("btn_submit_team", current_lang), type="primary")
-            if sub_t:
-                if not yeni_takim_adi:
-                    st.error("Takım adı zorunludur.")
-                else:
-                    new_id = str(abs(hash(yeni_takim_adi)) % 900000 + 100000)
-                    st.session_state.takim_verileri.insert(0, {
-                        "id": new_id,
-                        "tarih": datetime.today().strftime("%d.%m.%Y"),
-                        "takim": yeni_takim_adi,
-                        "seviye": yeni_seviye,
-                        "kurum": yeni_kurum or "Bağımsız",
-                        "rol": "Kaptan",
-                        "uye": 1,
-                        "durum": "Aktif"
-                    })
-                    _save_teams()
-                    st.success(f"'{yeni_takim_adi}' takımı ({yeni_seviye}) başarıyla oluşturuldu! Takım Kodu: {new_id}")
-                    st.session_state.show_create_team = False
-                    st.rerun()
-
-    if st.session_state.get("show_join_team"):
-        with st.form("form_join_team"):
-            st.subheader(t("btn_join_team", current_lang))
-            takim_kodu = st.text_input(t("lbl_join_code", current_lang), placeholder="Örn: 1004562")
-            sub_j = st.form_submit_button(t("btn_submit_join", current_lang), type="primary")
-            if sub_j:
-                if not takim_kodu:
-                    st.error("Lütfen bir takım kodu giriniz.")
-                else:
-                    zaten_var = next((t for t in st.session_state.takim_verileri if str(t["id"]) == str(takim_kodu)), None)
-                    if zaten_var:
-                        st.error("Zaten bu takımdasınız!")
-                    else:
-                        st.session_state.takim_verileri.insert(0, {
-                            "id": takim_kodu,
-                            "tarih": datetime.today().strftime("%d.%m.%Y"),
-                            "takim": f"Katılınan Takım {takim_kodu}",
-                            "kategori": "TEKNOFEST 2026 · Havacılıkta Yapay Zeka Yarışması",
-                            "rol": "Üye",
-                            "uye": 2,
-                            "durum": "Aktif"
-                        })
-                        _save_teams()
-                        st.success(f"{takim_kodu} kodlu takıma başarıyla katıldınız!")
-                        st.session_state.show_join_team = False
-                        st.rerun()
-
-    takim_verileri = st.session_state.takim_verileri
-
-    for i, t_item in enumerate(takim_verileri):
-        with st.container(border=True):
-            t_col1, t_col2, t_col3, t_col4, t_col5, t_col6 = st.columns([1, 1.1, 2.2, 1.8, 1, 1.2])
-            with t_col1:
-                st.write(f"**ID:** {t_item['id']}")
-            with t_col2:
-                st.write(t_item["tarih"])
-            with t_col3:
-                st.markdown(f"<span style='font-weight: bold;'>{t_item['takim']}</span>", unsafe_allow_html=True)
-                st.caption(f"Rolünüz: {t_item['rol']}")
-            with t_col4:
-                st.markdown(f"**{t_item.get('seviye', 'Ön Lisans / Lisans')}**")
-                st.caption(t_item.get("kurum", "Bağımsız"))
-            with t_col5:
-                st.write(f"{t_item['uye']} Üye")
-            with t_col6:
-                if t_item["durum"] == "Aktif":
-                    st.markdown("<span class='t3-badge-aktif'>Aktif</span>", unsafe_allow_html=True)
-                else:
-                    st.markdown("<span class='t3-badge-pasif'>Pasif</span>", unsafe_allow_html=True)
-
-            with st.expander(t("exp_team_members", current_lang), expanded=False):
-                kullanici_adi = st.session_state.user.get("name", "Mehmet Çelik") if st.session_state.get("user") else "Mehmet Çelik"
-                st.markdown(f"- **{kullanici_adi}** (Kaptan)")
-                if t_item['uye'] > 1:
-                    st.markdown("- **Ahmet Yılmaz** (Üye)")
-                if t_item['uye'] > 2:
-                    st.markdown("- **Prof. Dr. Mehmet** (Danışman)")
-
-                st.markdown("---")
-                if st.button(t("btn_leave_team", current_lang), key=f"del_{t_item['id']}_{i}"):
-                    st.session_state.takim_verileri.pop(i)
-                    _save_teams()
-                    st.rerun()
+    if rol in ("yarismaci", "uye"):
+        yarismaci.render_takimlar(st, aktif_kullanici, current_lang)
+    else:
+        st.warning("Bu alana yalnızca yarışmacılar erişebilir.")
+        st.session_state.aktif_tab = "ana_sayfa"
+        st.rerun()
 
 # ==============================================================================
 # --- 7. ŞARTNAMELER & ŞABLONLAR / RAPORLAR (İNTERAKTİF ÖNİZLEME) ---
@@ -726,7 +850,33 @@ elif st.session_state.aktif_tab == "sartnameler":
     </div>
     """)
 
-    tab_sartname, tab_sablon_rapor = st.tabs([t("tab_specs", current_lang), t("tab_templates", current_lang)])
+    # URL'den alt sekmeyi oku (geri/ileri butonu desteği)
+    _sn_url_subtab = st.query_params.get("subtab", "")
+    if "sartname_active_subtab" not in st.session_state:
+        if _sn_url_subtab in ("specs", "templates"):
+            st.session_state.sartname_active_subtab = _sn_url_subtab
+        else:
+            st.session_state.sartname_active_subtab = "specs"
+    elif _sn_url_subtab in ("specs", "templates") and _sn_url_subtab != st.session_state.sartname_active_subtab:
+        st.session_state.sartname_active_subtab = _sn_url_subtab
+
+    cur_subtab = st.session_state.sartname_active_subtab
+
+    sw_c1, sw_c2 = st.columns(2)
+    with sw_c1:
+        btn_type1 = "primary" if cur_subtab == "specs" else "secondary"
+        if st.button("1. Teknik Şartnameler (Kurallar & İsterler)", key="sw_btn_specs", use_container_width=True, type=btn_type1):
+            st.session_state.sartname_active_subtab = "specs"
+            st.query_params["subtab"] = "specs"
+            st.rerun()
+    with sw_c2:
+        btn_type2 = "primary" if cur_subtab == "templates" else "secondary"
+        if st.button("2. Rapor Şablonları (Aşama Formatları)", key="sw_btn_templates", use_container_width=True, type=btn_type2):
+            st.session_state.sartname_active_subtab = "templates"
+            st.query_params["subtab"] = "templates"
+            st.rerun()
+
+    st.markdown("<div style='margin-bottom: 12px;'></div>", unsafe_allow_html=True)
 
     # Tüm 60+ Kategoriyi Yükle
     kat_dict = sartname_rehber.tum_yarismalari_sozluk_getir()
@@ -735,7 +885,7 @@ elif st.session_state.aktif_tab == "sartnameler":
     # =========================================================================
     # TAB 1: RESMÎ ŞARTNAMELER
     # =========================================================================
-    with tab_sartname:
+    if cur_subtab == "specs":
         s_side, s_main = st.columns([1, 2.2])
 
         with s_side:
@@ -804,7 +954,7 @@ elif st.session_state.aktif_tab == "sartnameler":
     # =========================================================================
     # TAB 2: ŞABLONLAR & RAPORLAR
     # =========================================================================
-    with tab_sablon_rapor:
+    elif cur_subtab == "templates":
         sb_side, sb_main = st.columns([1, 2.2])
 
         with sb_side:
@@ -918,6 +1068,17 @@ elif st.session_state.aktif_tab == "sartnameler":
                 </div>
                 """)
                 pdf_gorunum.pdf_onizle(st, sablon_pdf_yolu, height=760, key=f"app_sb_pdf_{secili_kat_sb}")
+
+# ==============================================================================
+# --- 7.1. YARIŞMA YÖNETİCİSİ / ADMİN: MÜSTAKİL DUYURU YÖNETİM EKRANI ---
+# ==============================================================================
+elif st.session_state.aktif_tab == "yonetici_duyurular":
+    if rol in ("yonetici", "admin"):
+        yonetici.render_announcements_view(st, aktif_kullanici, current_lang)
+    else:
+        st.warning("Bu alana yalnızca Yarışma Yöneticisi erişebilir.")
+        st.session_state.aktif_tab = "ana_sayfa"
+        st.rerun()
 
 # ==============================================================================
 # --- 8. PROFİLİM SAYFASI (EKSİKSİZ T3 KYS ALANLARI) ---

@@ -31,16 +31,17 @@ from src.api.ui_adapter import ui_router
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
-    Uygulama yaşam döngüsü. Açılışta data/rubrics/*.json yarışma/aşama
-    şartnamelerini veritabanına yükler (overwrite=False: yöneticinin API
-    düzenlemeleri korunur, yalnızca eksik tanımlar eklenir). Seed başarısız olsa
-    bile sistem varsayılan rubric'le çalışmaya devam eder.
+    Uygulama yaşam döngüsü. Açılışta Cloudflare D1 ve R2 bağlantılarını doğrular.
     """
     try:
-        from src.evaluation.rubric_seed import seed_rubrics_from_disk
-        seed_rubrics_from_disk(overwrite=False)
+        from src.data import repos
+        r = repos()
+        comp_count = r.competitions.count()
+        r2_status = "Aktif" if r.storage.is_configured else "Yapılandırılmamış"
+        print(f"[D1 VERİTABANI] Cloudflare D1 Bağlandı: {comp_count} Yarışma yüklü.")
+        print(f"[R2 DEPOLAMA]   Cloudflare R2 Storage: {r2_status}.")
     except Exception as e:
-        print(f"[BAŞLANGIÇ UYARI] Rubric seed atlandı: {type(e).__name__}: {e}")
+        print(f"[BAŞLANGIÇ UYARI] Veritabanı kontrolü: {type(e).__name__}: {e}")
     yield
 
 

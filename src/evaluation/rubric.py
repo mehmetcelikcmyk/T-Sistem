@@ -173,50 +173,39 @@ def get_rubric_prompt_context(
 ) -> str:
     """
     LLM prompt'una beslenecek rubric açıklamasını metin olarak döndürür.
-    Eğer (category_name, stage) için DB'de özel bir şartname tanımlıysa ONU
-    kullanır; aksi hâlde varsayılan genel TEKNOFEST rubriğine düşer.
-
-    stage (ÖTR/KTR/FTR) verildiğinde o aşamanın kriterleri seçilir — böylece
-    aynı yarışmanın farklı aşamaları farklı puanlanır.
+    Yarışma ve aşamaya özel resmî rubrik tablosundan (0-100 Puan) kriterleri çeker.
     """
     if category_name:
         try:
-            from src.database.db import db
-            db_rubric = db.get_rubric_by_category(category_name, stage)
-            if db_rubric and db_rubric.get("criteria"):
-                cat_display = db_rubric.get("category_name", category_name)
-                asama = db_rubric.get("stage", "GENEL")
-                asama_etiket = (
-                    f" — {stage_display_name(asama)} ({asama})"
-                    if asama and asama != "GENEL" else ""
-                )
-                lines = [f"YARIŞMA RAPOR ŞABLONU VE RESMİ RUBRİK PUANLAMA TABLOSU ({cat_display.upper()}{asama_etiket} - TOPLAM 100 PUAN):"]
-                lines.append("Aşağıdaki kriterler, yarışma yöneticisi tarafından sisteme yüklenen resmî rapor şablonundan çıkarılmıştır. Her bir kritere neye göre puan verileceği açıkça belirtilmiştir:")
-                for idx, c in enumerate(db_rubric["criteria"], 1):
-                    c_name = c.get("name", f"Kriter {idx}")
-                    c_max = float(c.get("max_score", 20.0))
-                    c_desc = c.get("description", "")
-                    c_questions = c.get("guiding_questions", [])
-                    
-                    lines.append(f"\n{idx}. **{c_name}** (Tavan Puan: {c_max:.1f} Puan)")
-                    if c_desc:
-                        lines.append(f"   - Değerlendirme Esası & Beklentiler: {c_desc}")
-                    if c_questions:
-                        lines.append(f"   - Hakem İnceleme Soruları: {' | '.join(c_questions)}")
+            from src.ui import rubrik
+            r_data = rubrik.getir(category_name, stage)
+            if r_data and r_data.get("kriterler"):
+                lines = [
+                    f"YARIŞMA VE AŞAMA RESMÎ RUBRİK PUANLAMA TABLOSU ({category_name.upper()} - {stage or 'PDR'} - TOPLAM 100 PUAN):",
+                    "Aşağıdaki kriterler, yarışma yöneticisi tarafından sisteme yüklenen resmî rapor şablonundan çıkarılmıştır.",
+                    "HER BİR KRİTERİN TAVAN PUANINI (max_score) ASLA DEĞİŞTİRME VE HER BİR KRİTERİ AYRI AYRI PUANLA:\n"
+                ]
+                for idx, c in enumerate(r_data["kriterler"], 1):
+                    cid = c.get("id") or f"k_{idx}"
+                    cad = c.get("ad", f"Kriter {idx}")
+                    cmax = float(c.get("maks", 10.0))
+                    caciklama = c.get("aciklama", "")
+                    bolum = c.get("bolum", "")
 
-                req_secs = db_rubric.get("required_sections", [])
-                if req_secs:
-                    lines.append("\nŞABLONDAKİ ZORUNLU BÖLÜM VE İÇERİK YAPISI:")
-                    for s in req_secs:
-                        lines.append(f"   * {s.get('title') if isinstance(s, dict) else str(s)}")
+                    lines.append(f"{idx}. ID: \"{cid}\" | Adı: **{cad}** (Tavan Puan: {cmax:.1f} Puan)")
+                    if caciklama:
+                        lines.append(f"   - Değerlendirme Esası & Beklentiler: {caciklama}")
+                    if bolum:
+                        lines.append(f"   - İlgili Rapor Bölümü: Bölüm {bolum}")
+                    lines.append("")
 
                 return "\n".join(lines)
         except Exception as e:
-            print(f"[UYARI] DB rubric yüklenemedi: {e}. Genel rubric kullanılıyor.")
+            print(f"[UYARI] Rubrik tablosu okunamadı: {e}")
 
     lines = ["TEKNOFEST GENEL DEĞERLENDİRME RUBRİC KRİTERLERİ (0-100 Puan):"]
     for c in TEKNOFEST_RUBRIC:
-        lines.append(f"\n- **{c.name}** (Maksimum {c.max_score:.0f} Puan, Ağırlık: %{int(c.weight*100)})")
+        lines.append(f"\n- ID: \"{c.id}\" | **{c.name}** (Maksimum {c.max_score:.0f} Puan, Ağırlık: %{int(c.weight*100)})")
         lines.append(f"  * Açıklama: {c.description}")
         lines.append(f"  * Kılavuz Sorular: {' | '.join(c.guiding_questions)}")
     return "\n".join(lines)

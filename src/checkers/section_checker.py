@@ -100,49 +100,95 @@ def check_sections(
 ) -> Dict[str, Any]:
     """
     Raporun zorunlu başlıklarını ve içerik doluluğunu GERÇEKTEN tespit eder.
-
-    `required_sections` verilirse (kategori/aşamaya özel set) o kullanılır.
-
-    Returns: SectionCheckResult şemasına uygun sözlük.
+    İçindekiler tablosunu atlayarak doğrudan rapor gövdesindeki başlıklar arasındaki
+    gerçek kelime sayılarını hesaplar.
     """
-    hedef = required_sections if required_sections else REQUIRED_SECTIONS
-    norm_text = _norm(text or "")
-    kelimeler_toplam = len((text or "").split())
+    raw_lines = [l.strip() for l in (text or "").split("\n") if l.strip()]
+    
+    # 1. İçindekiler (TOC) / Kapak sayfasındaki tekrarları filtrele
+    body_lines: List[str] = []
+    in_toc = False
+    for l in raw_lines:
+        l_low = _norm(l)
+        if any(w in l_low for w in ["icindekiler", "içindekiler", "table of contents", "sayfa no"]):
+            in_toc = True
+            continue
+        if in_toc:
+            # İçindekiler tablosundaki noktalı veya kısa satırları geç
+            if re.search(r"\.{4,}|\b\d+\s*$", l) or (re.match(r"^\d+[\.\)]", l) and len(l.split()) <= 4):
+                continue
+            else:
+                in_toc = False
+        body_lines.append(l)
 
-    # 1) Her bölüm için ilk konum
-    konumlar: List[Tuple[str, int]] = []
-    bulunan_pos: Dict[str, int] = {}
-    for key, ad in hedef.items():
-        pos = _ilk_konum(norm_text, _arama_terimleri(key, ad)) if norm_text else -1
-        bulunan_pos[key] = pos
-        if pos != -1:
-            konumlar.append((key, pos))
+    if not body_lines:
+        body_lines = raw_lines
 
-    # 2) Bulunan başlıkları konuma göre sırala; aralardaki metni o bölüme say
-    konumlar.sort(key=lambda x: x[1])
-    span_kelime: Dict[str, int] = {}
-    for i, (key, pos) in enumerate(konumlar):
-        bitis = konumlar[i + 1][1] if i + 1 < len(konumlar) else len(norm_text)
-        span = norm_text[pos:bitis]
-        span_kelime[key] = len(span.split())
+    # 2. Gövdedeki numaralı ana başlıkları tespit et (1., 2., 3., 4., 5. ...)
+    detected_headings: List[Tuple[int, str, int]] = []
+    for i in range(1, 20):
+        for l_idx, l in enumerate(body_lines):
+            # '1. Başlık Adı' veya '1) Başlık Adı'
+            m = re.match(rf"^{i}[\.\)]\s+([A-ZÇĞİÖŞÜa-zçğıöşü0-9\s\(\)\/\-_,]{{3,80}})$", l)
+            if m:
+                clean_title = l.strip()
+                detected_headings.append((i, clean_title, l_idx))
+                break
 
-    # 3) Bölümleri kur
     sections: Dict[str, Dict[str, Any]] = {}
-    for key, ad in hedef.items():
-        pos = bulunan_pos[key]
-        exists = pos != -1
-        wc = span_kelime.get(key, 0)
-        sections[key] = {
-            "section_name": ad,
-            "exists": exists,
-            "word_count": wc,
-            "status": classify_section(exists, wc),
-        }
+
+    # Eğer raporda dinamik numaralı başlıklar bulunduysa onları esas al
+    if len(detected_headings) >= 3:
+        for idx, (num, h_title, l_idx) in enumerate(detected_headings):
+            next_l_idx = len(body_lines)
+            if idx + 1 < len(detected_headings):
+                next_l_idx = detected_headings[idx + 1][2]
+            
+            sec_lines = body_lines[l_idx:next_l_idx]
+            sec_text = " ".join(sec_lines)
+            wc = len(sec_text.split())
+            key = f"bolum_{num}"
+            
+            sections[key] = {
+                "section_name": h_title,
+                "exists": True,
+                "word_count": wc,
+                "status": classify_section(True, wc),
+            }
+    else:
+        # Klasik anahtar kelime tabanlı arama
+        hedef = required_sections if required_sections else REQUIRED_SECTIONS
+        norm_text = _norm(" ".join(body_lines))
+        konumlar: List[Tuple[str, int]] = []
+        bulunan_pos: Dict[str, int] = {}
+        for key, ad in hedef.items():
+            pos = _ilk_konum(norm_text, _arama_terimleri(key, ad)) if norm_text else -1
+            bulunan_pos[key] = pos
+            if pos != -1:
+                konumlar.append((key, pos))
+
+        konumlar.sort(key=lambda x: x[1])
+        span_kelime: Dict[str, int] = {}
+        for i, (key, pos) in enumerate(konumlar):
+            bitis = konumlar[i + 1][1] if i + 1 < len(konumlar) else len(norm_text)
+            span = norm_text[pos:bitis]
+            span_kelime[key] = len(span.split())
+
+        for key, ad in hedef.items():
+            pos = bulunan_pos[key]
+            exists = pos != -1
+            wc = span_kelime.get(key, 0)
+            sections[key] = {
+                "section_name": ad,
+                "exists": exists,
+                "word_count": wc,
+                "status": classify_section(exists, wc),
+            }
 
     found_count = sum(1 for s in sections.values() if s["status"] == STATUS_OK)
     return {
-        "total_required": len(hedef),
+        "total_required": len(sections),
         "found_count": found_count,
-        "is_complete": found_count == len(hedef),
+        "is_complete": found_count >= len(sections) * 0.75,
         "sections": sections,
     }

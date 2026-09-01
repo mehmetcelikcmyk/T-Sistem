@@ -13,7 +13,7 @@ import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 from fastapi import APIRouter, HTTPException, Body
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 # src/ui/ içindeki modüller (pdf_gorunum, rubrik) kendi klasöründen import edilmeli
 _UI_DIR = Path(__file__).resolve().parents[2] / "src" / "ui"
@@ -490,7 +490,7 @@ async def list_yarismalar_for_ui():
     """
     rubrics = db.get_all_rubrics()
     if not rubrics:
-        return _mock_call("yarismalar", default=[])
+        return []  # D1 boş — demo veriye düşme
 
     all_comps = {c["name"]: c for c in db.get_all_competitions()}
 
@@ -534,7 +534,7 @@ async def list_yarismalar_for_ui():
 
 
     sonuc = list(kategori_gruplari.values())
-    return sonuc if sonuc else _mock_call("yarismalar", default=[])
+    return sonuc  # D1'de rubric yoksa boş liste — demo veriye düşme
 
 
 
@@ -578,7 +578,7 @@ async def get_raporlar_for_yarisma(yarisma_id: str):
 
     db_reports = db.get_all_reports()
     if not db_reports:
-        return _mock_call("raporlar", yarisma_id, default=[])
+        return []  # DB boş — mock veriye düşme, gerçek veri bekleniyor
 
     if hedef_category:
         # 2a. Rubric bulundu → exact category_name ile filtrele
@@ -624,12 +624,6 @@ async def get_rapor_analiz_for_ui(rapor_id: str):
     if db_report:
         return _format_analysis_for_ui(db_report)
     
-    # DB'de bulunamadıysa mock kümesinde ara
-    for yarisma in ["hyz-otr-2026", "iyt-otr-2026"]:
-        for r in _mock_call("raporlar", yarisma, default=[]):
-            if r["rapor_id"] == rapor_id:
-                return r
-    
     raise HTTPException(status_code=404, detail=f"Rapor {rapor_id} bulunamadı.")
 
 
@@ -643,17 +637,17 @@ async def get_yarisma_metrikler_for_ui(yarisma_id: str):
     """
     db_reports = db.get_all_reports()
     if not db_reports:
-        return _mock_call("metrikler", _mock_call("raporlar", yarisma_id, default=[]), default={})
+        return {}  # DB boş — sıfır metrikler, demo veri yok
 
     ui_reports = [_format_analysis_for_ui(r, yarisma_id) for r in db_reports]
-    return _mock_call("metrikler", ui_reports, default={})
+    return _mock_call("metrikler", ui_reports, default={})  # Gerçek DB raporları üzerinden hesaplanır
 
 
 # ==========================================
 # ENDPOINT 5: HAKEM KARARI GÖNDERME (POST /api/raporlar/{rapor_id}/hakem-karari)
 # ==========================================
 class HakemKarariBody(BaseModel):
-    puanlar: Dict[str, float]
+    puanlar: Dict[str, Any] = Field(default_factory=dict)
     not_metni: Optional[str] = ""
     onaylandi: bool = True
 
@@ -663,23 +657,38 @@ async def submit_hakem_karari_ui(rapor_id: str, body: HakemKarariBody = Body(...
     """
     Hakemin girdiği puanları ve notu veritabanına kaydeder ve rapor durumunu tamamlandı yapar.
     """
-    toplam_puan = sum(body.puanlar.values()) if body.puanlar else 0.0
+    sayisal_puanlar = {}
+    kriter_notlari = {}
     
-    # DB'ye kaydet
+    for k, v in (body.puanlar or {}).items():
+        if k.endswith("__hakem_notu"):
+            k_id = k.replace("__hakem_notu", "")
+            kriter_notlari[k_id] = str(v or "").strip()
+        else:
+            try:
+                sayisal_puanlar[k] = float(v)
+            except (ValueError, TypeError):
+                pass
+
+    toplam_puan = round(sum(sayisal_puanlar.values()), 2)
+    
+    # DB'ye ve Cloudflare D1'e kalıcı olarak kaydet
     db.save_referee_decision(
         report_id=rapor_id,
         referee_score=toplam_puan,
         referee_notes=body.not_metni or "",
         referee_id="HAKEM-EMRE-1",
+        criteria_scores={"scores": sayisal_puanlar, "notes": kriter_notlari},
+        status="DEGERLENDIRILDI"
     )
-    db.update_report_status(rapor_id, "COMPLETED")
+    db.update_report_status(rapor_id, "DEGERLENDIRILDI")
 
     return {
         "ok": True,
         "rapor_id": rapor_id,
         "toplam_puan": toplam_puan,
-        "durum": "tamamlandi",
-        "mesaj": "Hakem değerlendirmesi başarıyla kaydedildi.",
+        "durum": "DEGERLENDIRILDI",
+        "mesaj": "Hakem değerlendirmesi Cloudflare D1 ve yerel veritabanına başarıyla kaydedildi.",
     }
 
 

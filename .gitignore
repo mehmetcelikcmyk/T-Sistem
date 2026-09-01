@@ -1,16 +1,110 @@
-# Environments
-.env
-.env.local
+# Byte-compiled / optimized / URL
 __pycache__/
 *.py[cod]
-*.class
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
 .pytest_cache/
+cover/
 
-# Local DB & Data Caches
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Vector DBs and local data indexes
+*.faiss
+*.index
+chroma_db/
+data/processed/vector_index/*
+!data/processed/vector_index/.gitkeep
+
+# Veritabani dosyalari (uretim verisi commit edilmez)
+*.db
+*.sqlite
+*.sqlite3
+
+# Yuklenen yarismaci raporlari — KVKK geregi ASLA commit edilmez
+data/raw/*.pdf
+data/raw/*.PDF
+
+# Test ciktilari
+data/test_artifacts/
+
+# ─── T-Sistem guvenlik eklentileri (Faz 0) ───────────────────────────────
+.env
+.env.*
+!.env.example
+src/ui/firebase_config.py
 data/tsistem.db
-data/local_ai_test_results/
-data/teknofest_yarismalar/
-
-# Logs & temp
-*.log
-.tempmediaStorage/
+data/tsistem.db-wal
+data/tsistem.db-shm
+data/.remembered_user.json
+data/takimlar.json
+data/temp_*
+data/smoke.db
+*.pem
+*.key

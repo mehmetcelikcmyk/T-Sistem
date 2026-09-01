@@ -252,6 +252,19 @@ class DatabaseManager:
         "stage_code": "TEXT",        # Aşama kodu (ÖTR, KTR, AHR)
         "competition_id": "TEXT",    # İlişkili yarışma ID
         "pdf_path": "TEXT",          # Rapor PDF yerel dosya yolu
+        "filename": "TEXT",          # Dosya adı aliası
+        "file_name": "TEXT",         # Dosya adı
+        "project_name": "TEXT",      # Proje / takım adı
+        "category": "TEXT",          # Kategori / yarışma slug
+        "r2_url": "TEXT",            # R2 bağlantısı
+        "r2_key": "TEXT",            # R2 obje anahtarı
+        "app_id": "TEXT",            # Başvuru ID
+        "level": "TEXT",             # Kademe
+        "branch_code": "TEXT",       # Alt alan
+        "version": "INTEGER",        # Rapor versiyonu
+        "page_count": "INTEGER",     # Sayfa sayısı
+        "uploaded_by": "TEXT",       # Yükleyen kullanıcı ID
+        "updated_at": "TEXT",        # Güncellenme zamanı
     }
 
     def _ensure_columns(self, conn: sqlite3.Connection) -> None:
@@ -570,6 +583,10 @@ class DatabaseManager:
         """Raporu hem yerel SQLite'a hem Cloudflare D1'e kaydeder (mevcut alanları koruyarak güvenle birleştirir)."""
         conn = sqlite3.connect(DB_FILE)
         conn.row_factory = sqlite3.Row
+        
+        # Eksik kolonları otomatik göç et
+        self._ensure_columns(conn)
+
         cursor = conn.cursor()
         r_id = report_data.get("report_id")
 
@@ -577,26 +594,63 @@ class DatabaseManager:
         mevcut = cursor.execute("SELECT * FROM reports WHERE report_id = ?", (r_id,)).fetchone()
         mevcut_d = self._row_to_dict(mevcut) if mevcut else {}
 
-
         ai_data = report_data.get("ai_data") if report_data.get("ai_data") is not None else mevcut_d.get("ai_data", {})
         checks = report_data.get("checks") if report_data.get("checks") is not None else mevcut_d.get("checks", {})
         feedback = report_data.get("feedback") if report_data.get("feedback") is not None else mevcut_d.get("feedback", {})
         security = report_data.get("security") if report_data.get("security") is not None else mevcut_d.get("security", {})
         ai_score = report_data.get("ai_score") if report_data.get("ai_score") is not None else mevcut_d.get("ai_score", 0.0)
 
+        app_id = report_data.get("app_id") or mevcut_d.get("app_id") or f"APP_{r_id}"
+        fn = report_data.get("filename") or report_data.get("file_name") or mevcut_d.get("filename") or mevcut_d.get("file_name") or "rapor.pdf"
+        proj_name = report_data.get("project_name") or report_data.get("team_name") or mevcut_d.get("project_name", "İsimsiz Proje")
+        cat = report_data.get("category") or report_data.get("competition_id") or mevcut_d.get("category", "Genel")
+        r2 = report_data.get("r2_url") or report_data.get("r2_key") or mevcut_d.get("r2_url", f"reports/{r_id}.pdf")
+        stage = report_data.get("stage") or report_data.get("stage_code") or mevcut_d.get("stage", "GENEL")
+        team = report_data.get("team_name") or proj_name
+        pdf_p = report_data.get("pdf_path") or mevcut_d.get("pdf_path", "")
+        level = report_data.get("level") or report_data.get("team_level") or mevcut_d.get("level", "Genel")
+        version = report_data.get("version") or mevcut_d.get("version", 1)
+        p_count = report_data.get("page_count") or mevcut_d.get("page_count", 1)
+        u_by = report_data.get("uploaded_by") or mevcut_d.get("uploaded_by", "")
+
+        st_raw = str(report_data.get("status") or mevcut_d.get("status") or "BEKLEMEDE").upper()
+        if st_raw in ("READY_FOR_REFEREE", "PENDING", "BEKLEMEDE", "SUBMITTED"):
+            status_val = "BEKLEMEDE"
+        elif st_raw in ("ASSIGNED", "HAKEME_ATANDI"):
+            status_val = "HAKEME_ATANDI"
+        elif st_raw in ("EVALUATING", "DEGERLENDIRILIYOR", "UNDER_REVIEW"):
+            status_val = "DEGERLENDIRILIYOR"
+        elif st_raw in ("EVALUATED", "COMPLETED", "DEGERLENDIRILDI", "TAMAMLANDI", "APPROVED", "ONAYLANDI"):
+            status_val = "DEGERLENDIRILDI"
+        elif st_raw in ("REVISION", "REVIZYON_ISTENDI", "NEEDS_REVISION"):
+            status_val = "REVIZYON_ISTENDI"
+        elif st_raw in ("REJECTED", "REDDEDILDI", "FAILED"):
+            status_val = "REDDEDILDI"
+        else:
+            status_val = "BEKLEMEDE"
+
         cursor.execute("""
         INSERT OR REPLACE INTO reports
-        (report_id, filename, project_name, category, r2_url, status, ai_score,
+        (report_id, app_id, competition_id, stage_code, level, version, file_name, filename,
+         r2_key, r2_url, project_name, category, status, ai_score,
          referee_score, referee_id, referee_notes, ai_data_json, feedback_json,
-         report_text, security_json, checks_json, decision, evaluated_at, stage, created_at)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, COALESCE((SELECT created_at FROM reports WHERE report_id = ?), datetime('now')))
+         report_text, security_json, checks_json, decision, evaluated_at, stage, team_name, pdf_path,
+         page_count, uploaded_by, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, COALESCE((SELECT created_at FROM reports WHERE report_id = ?), datetime('now')))
         """, (
             r_id,
-            report_data.get("filename") or mevcut_d.get("filename"),
-            report_data.get("project_name") or mevcut_d.get("project_name", "İsimsiz Proje"),
-            report_data.get("category") or mevcut_d.get("category", "Genel"),
-            report_data.get("r2_url") or mevcut_d.get("r2_url", ""),
-            report_data.get("status") or mevcut_d.get("status", "READY_FOR_REFEREE"),
+            app_id,
+            cat,
+            stage,
+            level,
+            version,
+            fn,
+            fn,
+            r2,
+            r2,
+            proj_name,
+            cat,
+            status_val,
             ai_score,
             report_data.get("referee_score") if report_data.get("referee_score") is not None else mevcut_d.get("referee_score"),
             report_data.get("referee_id") or mevcut_d.get("referee_id"),
@@ -608,7 +662,11 @@ class DatabaseManager:
             json.dumps(checks, ensure_ascii=False) if isinstance(checks, dict) else str(checks),
             report_data.get("decision") or mevcut_d.get("decision"),
             report_data.get("evaluated_at") or mevcut_d.get("evaluated_at"),
-            report_data.get("stage") or mevcut_d.get("stage"),
+            stage,
+            team,
+            pdf_p,
+            p_count,
+            u_by,
             r_id
         ))
         conn.commit()
@@ -622,38 +680,28 @@ class DatabaseManager:
         if not (self.account_id and self.database_id and self.api_token):
             return
 
-        # NOT: Önceden CREATE TABLE ve INSERT tek bir 'sql' alanında, 6 parametreyle
-        # birlikte gönderiliyordu. D1'in query endpoint'i çoklu ifadeyi parametrelerle
-        # birlikte güvenilir biçimde kabul etmez; istek sessizce başarısız oluyordu.
-        # Artık iki ayrı çağrı yapılıyor ve hatalar loglanıyor.
-        create_sql = """
-        CREATE TABLE IF NOT EXISTS reports (
-            report_id TEXT PRIMARY KEY,
-            filename TEXT,
-            project_name TEXT,
-            category TEXT,
-            status TEXT,
-            ai_score REAL,
-            referee_score REAL
-        )
-        """
-        insert_sql = """
-        INSERT OR REPLACE INTO reports
-            (report_id, filename, project_name, category, status, ai_score)
-        VALUES (?, ?, ?, ?, ?, ?)
-        """
-        insert_params = [
-            report_data.get("report_id"),
-            report_data.get("filename"),
-            report_data.get("project_name", "Proje"),
-            report_data.get("category", "Genel"),
-            report_data.get("status", "READY_FOR_REFEREE"),
-            report_data.get("ai_score", 0.0),
-        ]
-
-        if not self._d1_query(create_sql):
-            return
-        self._d1_query(insert_sql, insert_params)
+        try:
+            r_id = report_data.get("report_id")
+            insert_sql = """
+            INSERT OR REPLACE INTO reports
+                (report_id, app_id, competition_id, stage_code, level, version, file_name, r2_key, status, ai_score, created_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))
+            """
+            insert_params = [
+                r_id,
+                report_data.get("app_id") or f"APP_{r_id}",
+                report_data.get("competition_id") or report_data.get("category") or "GENEL",
+                report_data.get("stage_code") or report_data.get("stage") or "GENEL",
+                report_data.get("level") or "Genel",
+                report_data.get("version") or 1,
+                report_data.get("file_name") or report_data.get("filename") or "rapor.pdf",
+                report_data.get("r2_key") or report_data.get("r2_url") or f"reports/{r_id}.pdf",
+                report_data.get("status") or "BEKLEMEDE",
+                report_data.get("ai_score") or 0.0,
+            ]
+            self._d1_query(insert_sql, insert_params)
+        except Exception:
+            pass
 
     def _d1_query(self, sql: str, params: Optional[List[Any]] = None) -> bool:
         """
@@ -1770,6 +1818,194 @@ class DatabaseManager:
             except Exception:
                 pass
         return res
+
+    # --- Duyurular (Announcements) CRUD ---
+    def list_announcements(self, category: str = "TÜMÜ") -> List[Dict[str, Any]]:
+        """Sistemdeki tüm resmî duyuruları listeler."""
+        sql = "SELECT * FROM announcements"
+        params = []
+        if category and category != "TÜMÜ":
+            sql += " WHERE category = ? OR category = 'GENEL'"
+            params.append(category)
+        sql += " ORDER BY is_pinned DESC, created_at DESC;"
+        
+        res = self.execute_d1(sql, params)
+        if not res:
+            try:
+                conn = sqlite3.connect(DB_FILE)
+                conn.row_factory = sqlite3.Row
+                cursor = conn.cursor()
+                try:
+                    cursor.execute("ALTER TABLE announcements ADD COLUMN image_url TEXT;")
+                except Exception:
+                    pass
+                rows = cursor.execute(sql, tuple(params)).fetchall()
+                res = [dict(r) for r in rows]
+                conn.close()
+            except Exception:
+                pass
+        
+        if not res:
+            self._seed_default_announcements()
+            try:
+                conn = sqlite3.connect(DB_FILE)
+                conn.row_factory = sqlite3.Row
+                cursor = conn.cursor()
+                rows = cursor.execute("SELECT * FROM announcements ORDER BY is_pinned DESC, created_at DESC;").fetchall()
+                res = [dict(r) for r in rows]
+                conn.close()
+            except Exception:
+                pass
+        return res
+
+    def _seed_default_announcements(self):
+        """İlk açılışta zengin resmî duyuruları ve görsellerini ekler."""
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        seed_data = [
+            (
+                "ann_1",
+                "TEKNOFEST 2026 Rapor Değerlendirme Süreci Başladı",
+                "T-Sistem Yapay Zekâ Destekli 4. Göz Değerlendirme İstasyonları tüm kategoriler için devreye alınmıştır. Yarışmacı takımlar aşama raporlarını ilgili yarışma portalından yükleyebilirler.",
+                "GENEL",
+                "T-Sistem Merkez Heyeti",
+                "https://cdn.teknofest.org/media/upload/userFormUpload/kapak_gorsel_GqVNx.jpeg",
+                1,
+                now,
+                now
+            ),
+            (
+                "ann_2",
+                "Yeni Şartnameler ve Kriter Rubrikleri Yayında",
+                "Biyoteknoloji İnovasyon, Sağlıkta Yapay Zekâ, Savaşan İHA ve Sıfır Atık yarışmalarına ait güncel 2026 teknik şartnameleri ve aşama şablonları (ÖTR/KTR/FTR) sisteme yüklenmiştir.",
+                "ŞARTNAME",
+                "Yarışma Koordinatörlüğü",
+                "https://cdn.teknofest.org/media/upload/userFormUpload/dikeyini%C5%9Filitr_iXgg8_wggoj_mNPAa.jpg",
+                1,
+                now,
+                now
+            ),
+            (
+                "ann_3",
+                "Hakem Heyetleri Değerlendirme Takvimi Açıklandı",
+                "Ön Tasarım ve Ön Değerlendirme Raporları için hakem heyeti atamaları tamamlanmış olup mühürleme işlemleri başlamıştır.",
+                "HAKEM",
+                "Yarışma Yönetimi",
+                "https://cdn.teknofest.org/media/upload/userFormUpload/harp-tr_gAM2G_FhhNk.jpg",
+                0,
+                now,
+                now
+            ),
+            (
+                "ann_4",
+                "İnsansız Su Altı Sistemleri Sonuçları Açıklandı",
+                "İnsansız Su Altı Sistemleri yarışması için kritik tasarım ve hareket kabiliyeti rapor sonuçları açıklandı.",
+                "YARIŞMA",
+                "Yarışma Heyeti",
+                "https://cdn.teknofest.org/media/upload/userFormUpload/tr_i_sualt%C4%B1_lnLq4_e65WY.jpg",
+                0,
+                now,
+                now
+            )
+        ]
+        try:
+            conn = sqlite3.connect(DB_FILE)
+            cursor = conn.cursor()
+            try:
+                cursor.execute("ALTER TABLE announcements ADD COLUMN image_url TEXT;")
+            except Exception:
+                pass
+            for s in seed_data:
+                cursor.execute("""
+                INSERT OR REPLACE INTO announcements (announcement_id, title, content, category, author_name, image_url, is_pinned, created_at, updated_at)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+                """, s)
+            conn.commit()
+            conn.close()
+        except Exception:
+            pass
+
+    def get_announcement(self, ann_id: str) -> Optional[Dict[str, Any]]:
+        """ID'si verilen tekil duyuruyu getirir."""
+        sql = "SELECT * FROM announcements WHERE announcement_id = ? LIMIT 1;"
+        res = self.execute_d1(sql, [ann_id])
+        if res and len(res) > 0:
+            return res[0]
+        try:
+            conn = sqlite3.connect(DB_FILE)
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+            row = cursor.execute(sql, (ann_id,)).fetchone()
+            conn.close()
+            if row:
+                return dict(row)
+        except Exception:
+            pass
+
+        # Veritabanında henüz yoksa varsayılan listeden ara
+        for a in self.list_announcements():
+            if str(a.get("announcement_id")) == str(ann_id):
+                return a
+        return None
+
+    def create_announcement(self, title: str, content: str, category: str = "GENEL", author_name: str = "Yarışma Yönetimi", image_url: str = "", is_pinned: bool = False) -> Dict[str, Any]:
+        """Yeni bir duyuru oluşturur ve kaydeder."""
+        ann_id = f"ann_{uuid.uuid4().hex[:8]}"
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        pin_val = 1 if is_pinned else 0
+        sql = """
+        INSERT INTO announcements (announcement_id, title, content, category, author_name, image_url, is_pinned, created_at, updated_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+        """
+        self.execute_d1(sql, [ann_id, title, content, category, author_name, image_url, pin_val, now, now])
+        try:
+            conn = sqlite3.connect(DB_FILE)
+            cursor = conn.cursor()
+            try:
+                cursor.execute("ALTER TABLE announcements ADD COLUMN image_url TEXT;")
+            except Exception:
+                pass
+            cursor.execute(sql, (ann_id, title, content, category, author_name, image_url, pin_val, now, now))
+            conn.commit()
+            conn.close()
+        except Exception:
+            pass
+        return {"announcement_id": ann_id, "title": title, "content": content, "category": category, "author_name": author_name, "image_url": image_url, "is_pinned": pin_val, "created_at": now}
+
+    def update_announcement(self, ann_id: str, title: str, content: str, category: str = "GENEL", image_url: str = "", is_pinned: bool = False) -> None:
+        """Mevcut bir duyuruyu günceller."""
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        pin_val = 1 if is_pinned else 0
+        sql = """
+        UPDATE announcements
+        SET title = ?, content = ?, category = ?, image_url = ?, is_pinned = ?, updated_at = ?
+        WHERE announcement_id = ?;
+        """
+        self.execute_d1(sql, [title, content, category, image_url, pin_val, now, ann_id])
+        try:
+            conn = sqlite3.connect(DB_FILE)
+            cursor = conn.cursor()
+            try:
+                cursor.execute("ALTER TABLE announcements ADD COLUMN image_url TEXT;")
+            except Exception:
+                pass
+            cursor.execute(sql, (title, content, category, image_url, pin_val, now, ann_id))
+            conn.commit()
+            conn.close()
+        except Exception:
+            pass
+
+    def delete_announcement(self, ann_id: str) -> None:
+        """Duyuruyu sistemden siler."""
+        sql = "DELETE FROM announcements WHERE announcement_id = ?;"
+        self.execute_d1(sql, [ann_id])
+        try:
+            conn = sqlite3.connect(DB_FILE)
+            cursor = conn.cursor()
+            cursor.execute(sql, (ann_id,))
+            conn.commit()
+            conn.close()
+        except Exception:
+            pass
 
 
 # Uygulama genelinde tek örnek

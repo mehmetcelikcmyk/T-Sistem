@@ -11,6 +11,6 @@ FIREBASE_CONFIG: Dict[str, str] = {
     "messagingSenderId": "953163762448",
     "appId": "1:953163762448:web:48d928196e972c52043395",
     "measurementId": "G-64DKSELMDR",
-    "clientId": "953163762448-rqcibjk8lqbhnelc1ipbfgjnqgtbms89.apps.googleusercontent.com",
-    "clientSecret": "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"
+    "clientId": "953163762448-mhu7d7lvnuhcbki40sg9j35r2jt9820j.apps.googleusercontent.com",
+    "clientSecret": "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"
 }

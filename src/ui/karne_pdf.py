@@ -181,8 +181,11 @@ def uret(rapor: dict, yarisma: dict) -> bytes:
 
     gb = rapor.get("geri_bildirim") or {}
     if gb.get("ozet"):
-        ak.append(Paragraph("Değerlendirme özeti", st_["bolum"]))
-        ak.append(Paragraph(gb["ozet"], st_["govde"]))
+        ak.append(Paragraph("Değerlendirme Özeti", st_["bolum"]))
+        ozet_text = str(gb["ozet"]).replace("\r\n", "\n")
+        for para in ozet_text.split("\n"):
+            if para.strip():
+                ak.append(Paragraph(para.strip(), st_["govde"]))
 
     if gb.get("guclu_yonler"):
         ak.append(Paragraph("Güçlü yönler", st_["bolum"]))

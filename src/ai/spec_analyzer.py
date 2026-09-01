@@ -1,141 +1,295 @@
-"""
-Yarışma Şartnamesi AI Analiz Modülü.
-Admin şartname (PDF) yüklediğinde kuralları, takım sınırlarını,
-danışman şartını, hedef seviyeleri ve teknik isterleri otomatik çıkarır.
+"""T-Sistem · Sartname analiz motoru (GERCEK LLM).
+
+ONCEKI DURUM
+------------
+Bu dosya "AI Analiz Modulu" basligini tasiyordu ama hicbir LLM import etmiyordu.
+Ciktisi tamamen sabitti:
+  * Her yarisma icin BIREBIR AYNI 4 kural metni dondururdu,
+  * "%15 intihal siniri" belgeden okunmaz, koda gomuluydu,
+  * Danisman sarti `... or "lise" in low_text` ile belirleniyordu; yani
+    sartnamede "lise" kelimesi gecen HER belgede danisman zorunlu sayiliyordu,
+  * Tarih bulunamazsa `28.02.2026` gibi uydurma tarihler yaziliyordu.
+
+YENI DURUM
+----------
+* Sartname metni gercek LLM'e gonderilir; her kural icin `source_quote`
+  (belgedeki dayanak cumle) ZORUNLUDUR — dogrulanamayan kural elenir.
+* Cok dalli yarismalarda her dal AYRI analiz edilir (branch_code) — KARAR #1.
+* LLM yoksa SESSIZ SAHTE VERI URETILMEZ; `LLMUnavailable` firlatilir ve
+  arayuz kullaniciya "AI analizi yapilamadi" uyarisi gosterir.
 """
 
 from __future__ import annotations
 
-import os
-import json
+import logging
 import re
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Any, List, Optional
-import pymupdf
+from typing import Any
 
-class SpecAnalyzer:
-    def extract_text_from_pdf(self, pdf_path: str, max_pages: int = 15) -> str:
-        """PDF dosyasından metin çıkarır."""
-        p = Path(pdf_path)
-        if not p.exists():
-            return ""
-        text = []
+from src.data.enums import RuleType
+from src.data.models import Requirement
+
+from .llm import LLMUnavailable, get_llm
+
+log = logging.getLogger("tsistem.ai.spec")
+
+MAX_CHARS = 60_000          # ~15-20 sayfa; LLM baglam siniri icin
+QUOTE_MIN_MATCH = 0.72      # kanit dogrulama esigi
+
+SYSTEM_PROMPT = (
+    "Sen TEKNOFEST yarisma sartnamelerini inceleyen bir kural cikarim uzmanisin. "
+    "Gorevin, verilen sartname metninden takim ve basvuru kosullarini eksiksiz cikarmaktir. "
+    "ASLA metinde olmayan bir kural uydurma. Her kural icin metinden BIREBIR alinti ver. "
+    "Yalnizca gecerli JSON dondur."
+)
+
+USER_TEMPLATE = """Asagida bir TEKNOFEST yarismasinin resmi sartnamesi yer aliyor.
+
+YARISMA: {competition_name}
+{branch_line}
+SARTNAME METNI:
+\"\"\"
+{text}
+\"\"\"
+
+GOREV
+Bu sartnameden takimlarin UYMASI GEREKEN kosullari cikar. Su kategorilerde ara:
+  - takim     : takim uye sayisi alt/ust siniri, kaptan kosullari
+  - danisman  : danisman zorunlulugu, danismanin nitelikleri
+  - katilim   : hedef egitim seviyesi (Ortaokul/Lise/Universite/Mezun), yas, uyruk
+  - teknik    : rapor bicimi disindaki teknik zorunluluklar, malzeme/donanim kisitlari
+  - dil       : rapor dili, terminoloji kosullari
+  - diger     : yukaridakilere girmeyen baglayici kosullar
+
+KATI KURALLAR
+1. Her kural icin `source_quote` alanina metinden BIREBIR bir cumle koy. Cumleyi
+   degistirme, kisaltma, ozetleme. Dayanak cumlesi bulamadigin kurali HIC EKLEME.
+2. Sayisal degerleri (min/max takim buyuklugu) yalnizca metinde aciksa doldur;
+   yoksa null birak. TAHMIN ETME.
+3. Metinde gecmeyen genel gecer kurallar ekleme.
+4. En fazla 20 kural dondur, en baglayici olanlardan basla.
+
+JSON SEMASI (baska hicbir sey yazma):
+{{
+  "requirements": [
+    {{
+      "rule_type": "takim|danisman|katilim|teknik|dil|diger",
+      "title": "kisa baslik (en fazla 70 karakter)",
+      "description": "kuralin acik ifadesi (1-3 cumle)",
+      "min_team_size": null,
+      "max_team_size": null,
+      "advisor_required": false,
+      "target_level": null,
+      "is_mandatory": true,
+      "source_quote": "metinden birebir alinti"
+    }}
+  ],
+  "schedule": {{ "son_basvuru": null, "yarisma_tarihi": null, "sonuc_tarihi": null }},
+  "summary": "sartnamenin 2 cumlelik ozeti"
+}}"""
+
+
+@dataclass
+class SpecAnalysis:
+    requirements: list[Requirement]
+    schedule: dict[str, str]
+    summary: str
+    provider: str
+    model: str
+    dropped_unverified: int = 0
+    warnings: list[str] = None  # type: ignore[assignment]
+
+    def __post_init__(self) -> None:
+        if self.warnings is None:
+            self.warnings = []
+
+
+# ── metin cikarimi ─────────────────────────────────────────────────────────
+def extract_text(source: str | bytes | Path, *, max_pages: int = 40) -> str:
+    """PDF veya duz metinden analiz metnini cikarir."""
+    if isinstance(source, str) and not Path(source).exists():
+        return source[:MAX_CHARS]
+
+    data = source if isinstance(source, bytes) else Path(source).read_bytes()
+    if not data[:4] == b"%PDF":
+        return data.decode("utf-8", errors="replace")[:MAX_CHARS]
+
+    try:
+        import pymupdf  # type: ignore
+    except ImportError:
         try:
-            doc = pymupdf.open(str(p))
-            for idx, page in enumerate(doc):
-                if idx >= max_pages:
-                    break
-                text.append(page.get_text())
-            doc.close()
-        except Exception:
-            pass
-        return "\n".join(text)
+            import fitz as pymupdf  # type: ignore
+        except ImportError as exc:
+            raise RuntimeError("PDF okumak icin pymupdf gerekli: pip install pymupdf") from exc
 
-    def analyze_specification(self, pdf_path_or_text: str, competition_name: str = "") -> Dict[str, Any]:
-        """
-        Şartnameyi analiz ederek kuralları yapılandırılmış JSON olarak döndürür.
-        """
-        if os.path.exists(pdf_path_or_text):
-            raw_text = self.extract_text_from_pdf(pdf_path_or_text)
-        else:
-            raw_text = pdf_path_or_text
-
-        low_text = raw_text.lower()
-
-        # 1. Takım Üye Sayısı Tespiti
-        min_members = 1
-        max_members = 6
-        member_match = re.search(r"takım.*?(\d+)\s*(?:-|ila|veya|ile)\s*(\d+)\s*kişi", low_text)
-        if member_match:
-            try:
-                min_members = int(member_match.group(1))
-                max_members = int(member_match.group(2))
-            except Exception:
-                pass
-        elif "en az 2" in low_text or "en az iki" in low_text:
-            min_members = 2
-        elif "en fazla 5" in low_text or "en çok 5" in low_text:
-            max_members = 5
-
-        # 2. Danışman Şartı Tespiti
-        advisor_required = 0
-        if "danışman zorunlu" in low_text or "danışman bulundurmak zorunludur" in low_text or "lise" in low_text:
-            advisor_required = 1
-
-        # 3. Seviye ve Hedef Kitle Tespiti
-        levels = []
-        if "ilkokul" in low_text:
-            levels.append("İlkokul")
-        if "ortaokul" in low_text:
-            levels.append("Ortaokul")
-        if "lise" in low_text:
-            levels.append("Lise")
-        if "üniversite" in low_text or "lisans" in low_text:
-            levels.append("Üniversite ve Üzeri")
-        if "mezun" in low_text:
-            levels.append("Mezun")
-        if not levels:
-            levels = ["Lise", "Üniversite ve Üzeri", "Mezun"]
-
-        # 4. Kurallar ve Ön Koşullar Listesi
-        requirements = [
-            {
-                "rule_type": "takim_yapisi",
-                "title": "Takım Büyüklüğü ve Üye Sınırı",
-                "description": f"Takımlar asgari {min_members}, azami {max_members} kişiden oluşmalıdır.",
-                "min_team_size": min_members,
-                "max_team_size": max_members,
-                "advisor_required": advisor_required,
-                "is_mandatory": 1
-            },
-            {
-                "rule_type": "danisman_kurali",
-                "title": "Danışman Gereksinimi",
-                "description": "Lise seviyesi takımlar için danışman öğretmen/akademisyen zorunludur." if advisor_required else "Danışman bulundurmak isteğe bağlıdır.",
-                "min_team_size": min_members,
-                "max_team_size": max_members,
-                "advisor_required": advisor_required,
-                "is_mandatory": advisor_required
-            },
-            {
-                "rule_type": "ozgunluk_ve_intihal",
-                "title": "Özgünlük ve İntihal Benzerlik Sınırı",
-                "description": "Rapor intihal benzerlik oranı azami %15 olmalı, hakem kör değerlendirmesi için raporda takım/şahıs ismi bulunmamalıdır.",
-                "min_team_size": min_members,
-                "max_team_size": max_members,
-                "advisor_required": advisor_required,
-                "is_mandatory": 1
-            },
-            {
-                "rule_type": "teknik_ister",
-                "title": "Teknik Kapsam ve Problem Çözümü",
-                "description": f"Proje, {competition_name or 'yarışma'} teknik şartnamesinde belirtilen problem senaryosuna ve isterlerine doğrudan uygun modellenmelidir.",
-                "min_team_size": min_members,
-                "max_team_size": max_members,
-                "advisor_required": advisor_required,
-                "is_mandatory": 1
-            }
-        ]
-
-        # 5. Bağımsız Takvim Tarihleri Tespiti
-        schedule = {
-            "son_basvuru": "28.02.2026",
-            "yarisma_tarihi": "15.09.2026 - 20.09.2026",
-            "sonuc_tarihi": "25.09.2026"
-        }
-        dates_found = re.findall(r"\b(\d{1,2}[\.\/]\d{1,2}[\.\/]202[5-7])\b", raw_text)
-        if len(dates_found) >= 2:
-            schedule["son_basvuru"] = dates_found[0]
-            schedule["yarisma_tarihi"] = dates_found[1]
-
-        return {
-            "min_team_size": min_members,
-            "max_team_size": max_members,
-            "advisor_required": advisor_required,
-            "levels": levels,
-            "requirements": requirements,
-            "schedule": schedule
-        }
+    parts: list[str] = []
+    with pymupdf.open(stream=data, filetype="pdf") as doc:
+        for page_no, page in enumerate(doc, 1):
+            if page_no > max_pages:
+                break
+            parts.append(page.get_text())
+    text = "\n".join(parts)
+    if not text.strip():
+        raise RuntimeError(
+            "PDF'ten metin cikarilamadi (taranmis goruntu olabilir). "
+            "OCR gerekiyor; analiz yapilmadi."
+        )
+    return text[:MAX_CHARS]
 
 
-spec_analyzer = SpecAnalyzer()
+# ── kanit dogrulama ────────────────────────────────────────────────────────
+def _normalize(text: str) -> str:
+    return re.sub(r"\s+", " ", text.lower()).strip()
+
+
+def verify_quote(quote: str, haystack_norm: str) -> bool:
+    """Alintinin metinde GERCEKTEN gecip gecmedigini dogrular.
+
+    Bu, `evaluator.py`'deki 2. katman (fact-checker) ile ayni mantiktir:
+    LLM'in uydurdugu 'kanit'lar sessizce elenir.
+    """
+    needle = _normalize(quote)
+    if len(needle) < 12:
+        return False
+    if needle in haystack_norm:
+        return True
+    words = needle.split()
+    for size in (12, 9, 7, 5):
+        if len(words) >= size:
+            window = " ".join(words[:size])
+            if window in haystack_norm:
+                return True
+    from difflib import SequenceMatcher
+
+    sample = needle[:180]
+    best = 0.0
+    step = max(1, len(sample) // 2)
+    for start in range(0, max(1, len(haystack_norm) - len(sample)), step):
+        ratio = SequenceMatcher(None, sample, haystack_norm[start:start + len(sample)]).ratio()
+        best = max(best, ratio)
+        if best >= QUOTE_MIN_MATCH:
+            return True
+    return False
+
+
+# ── ana giris ──────────────────────────────────────────────────────────────
+def analyze_specification(
+    source: str | bytes | Path,
+    *,
+    competition_id: str,
+    competition_name: str,
+    branch_code: str | None = None,
+    branch_name: str | None = None,
+    spec_id: str | None = None,
+) -> SpecAnalysis:
+    """Sartnameden kural setini cikarir. LLM yoksa `LLMUnavailable` firlatir."""
+    text = extract_text(source)
+    if len(text.strip()) < 400:
+        raise RuntimeError("Sartname metni analiz icin fazla kisa (400 karakterden az).")
+
+    branch_line = (
+        f"ALT DAL: {branch_name or branch_code}\n"
+        "Yalnizca BU DALA ait kosullari cikar; diger dallarin kosullarini karistirma.\n"
+        if branch_code else ""
+    )
+    prompt = USER_TEMPLATE.format(
+        competition_name=competition_name, branch_line=branch_line, text=text
+    )
+
+    llm = get_llm()
+    payload, result = llm.complete_json(
+        prompt, system=SYSTEM_PROMPT, max_tokens=6000, temperature=0.1,
+        validator=_validate_payload,
+    )
+
+    haystack = _normalize(text)
+    requirements: list[Requirement] = []
+    dropped = 0
+    warnings: list[str] = []
+
+    for idx, raw in enumerate(payload.get("requirements", [])):
+        quote = str(raw.get("source_quote") or "").strip()
+        if not quote or not verify_quote(quote, haystack):
+            dropped += 1
+            continue
+        try:
+            rule_type = RuleType(str(raw.get("rule_type", "diger")).lower())
+        except ValueError:
+            rule_type = RuleType.DIGER
+        requirements.append(
+            Requirement(
+                competition_id=competition_id,
+                spec_id=spec_id,
+                branch_code=branch_code,
+                rule_type=rule_type,
+                title=str(raw.get("title") or "Kural")[:120],
+                description=(str(raw.get("description")) if raw.get("description") else None),
+                min_team_size=_int_or_none(raw.get("min_team_size")),
+                max_team_size=_int_or_none(raw.get("max_team_size")),
+                advisor_required=bool(raw.get("advisor_required")),
+                target_level=(str(raw.get("target_level")) if raw.get("target_level") else None),
+                is_mandatory=bool(raw.get("is_mandatory", True)),
+                source_quote=quote,
+                order_index=idx,
+            )
+        )
+
+    if dropped:
+        warnings.append(
+            f"{dropped} kural, sartname metninde dayanak cumlesi dogrulanamadigi icin elendi."
+        )
+    if not requirements:
+        warnings.append(
+            "Sartnameden dogrulanabilir kural cikarilamadi. Metin taranmis goruntu olabilir "
+            "veya sartname kosul icermiyor olabilir."
+        )
+
+    schedule = {
+        k: str(v).strip()
+        for k, v in (payload.get("schedule") or {}).items()
+        if v and str(v).strip().lower() not in ("null", "none", "")
+    }
+
+    log.info(
+        "[spec] %s%s -> %d kural (%d elendi) · %s/%s",
+        competition_id, f"/{branch_code}" if branch_code else "",
+        len(requirements), dropped, result.provider, result.model,
+    )
+    return SpecAnalysis(
+        requirements=requirements,
+        schedule=schedule,
+        summary=str(payload.get("summary") or "").strip(),
+        provider=result.provider,
+        model=result.model,
+        dropped_unverified=dropped,
+        warnings=warnings,
+    )
+
+
+def _validate_payload(payload: Any) -> dict[str, Any]:
+    if not isinstance(payload, dict):
+        raise ValueError("Kok nesne sozluk olmali.")
+    reqs = payload.get("requirements")
+    if not isinstance(reqs, list):
+        raise ValueError("'requirements' bir dizi olmali.")
+    for item in reqs:
+        if not isinstance(item, dict):
+            raise ValueError("Her kural bir nesne olmali.")
+        if not item.get("title"):
+            raise ValueError("Her kuralin 'title' alani olmali.")
+        if "source_quote" not in item:
+            raise ValueError("Her kuralin 'source_quote' alani olmali.")
+    return payload
+
+
+def _int_or_none(value: Any) -> int | None:
+    if value is None or value == "":
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+__all__ = ["analyze_specification", "SpecAnalysis", "extract_text", "verify_quote", "LLMUnavailable"]

@@ -1,27 +1,26 @@
-# T-Sistem Streamlit Tema Ayarları
-# NOT: src/ui/theme.py açık (light) tema için tasarlandı (beyaz zemin, siyah
-# metin, mavi vurgu). Streamlit tabanı da bununla UYUMLU olacak şekilde light
-# yapıldı; aksi hâlde koyu zemin üstünde koyu metin okunmuyordu.
+# T-Sistem · Streamlit tema ve sunucu ayarlari
+
 [theme]
-base = "light"
-primaryColor = "#2a78d6"
-backgroundColor = "#f9f9f7"
-secondaryBackgroundColor = "#fcfcfb"
-textColor = "#0b0b0b"
-font = "sans serif"
+base                       = "light"
+primaryColor               = "#F04823"   # TEKNOFEST turuncusu
+backgroundColor            = "#FFFFFF"
+secondaryBackgroundColor   = "#F4F6F9"
+textColor                  = "#0F172A"
+font                       = "sans serif"
 
 [server]
-headless = true
-enableCORS = false
-enableXsrfProtection = false
-runOnSave = true
-
-[runner]
-fastReruns = true
-
-[client]
-toolbarMode = "minimal"
-showSidebarNav = false
+headless                   = true
+maxUploadSize              = 60          # MB — rapor/sablon yuklemeleri
+enableStaticServing        = false       # static klasoru olmadigi icin devre disi
+enableXsrfProtection       = true
+# enableCORS kaldirildi — enableXsrfProtection=true ile catisiyor, Streamlit zaten yonetiyor
 
 [browser]
-gatherUsageStats = false
+gatherUsageStats           = false
+
+[client]
+showErrorDetails           = false       # prod: teknik detay sizdirma
+toolbarMode                = "minimal"
+
+[runner]
+fastReruns                 = true
