@@ -1,0 +1,345 @@
+"""T-Sistem · Hakem Değerlendirme İstasyonu — i18n çevirileri.
+
+Bu modül yalnızca hakem.py tarafından kullanılır.
+"""
+from __future__ import annotations
+
+from typing import Dict
+
+TRANSLATIONS: Dict[str, Dict[str, str]] = {
+    "tr": {
+        # ── Panel genel ──────────────────────────────────────────────────────
+        "hak_title": "Hakem Değerlendirme İstasyonu",
+        "hak_subtitle": "Atanan raporlarınızı adım adım değerlendirin",
+        "hak_session_invalid": "Oturum geçersiz. Lütfen yeniden giriş yapın.",
+        "hak_no_permission": "Bu sayfaya erişim yetkiniz yok.",
+        "hak_data_error": "Veri hatası",
+        "hak_storage_error": "Depolama hatası",
+
+        # ── Rapor seçici ─────────────────────────────────────────────────────
+        "sel_title": "Değerlendirilecek Rapor",
+        "sel_sub": "Yalnızca size atanan raporlar listelenmektedir.",
+        "chip_total": "Toplam",
+        "chip_open": "Bekleyen",
+        "chip_done": "Tamamlanan",
+        "lbl_filter_competition": "Yarışma",
+        "lbl_filter_stage": "Aşama",
+        "lbl_filter_status": "Durum",
+        "lbl_select_report": "Rapor Seçin",
+
+        # ── Seçenek etiketleri ───────────────────────────────────────────────
+        "opt_all": "Tümü",
+        "opt_open": "Bekleyen",
+        "opt_done": "Tamamlandı",
+        "opt_kabul": "Kabul",
+        "opt_revizyon": "Revizyon",
+        "opt_ret": "Red",
+        "opt_decision_unset": "Karar verilmedi",
+
+        # ── Mesajlar (boş durum, uyarı) ──────────────────────────────────────
+        "msg_no_assignment": "Size atanmış değerlendirme bulunamadı.",
+        "msg_no_match": "Filtrelere uyan rapor yok.",
+        "msg_pdf_key_missing": "PDF depolama anahtarı eksik.",
+        "msg_pdf_unavailable": "PDF yüklenemiyor.",
+        "msg_no_requirements": "Bu aşama için şartname bulunamadı.",
+        "msg_step3_not_run": "AI ön denetimi henüz çalıştırılmadı.",
+        "msg_no_format_finding": "Biçim bulgusu yok.",
+        "msg_step3_running": "AI ön denetimi çalışıyor…",
+        "msg_no_rubric": "Değerlendirme rubriği bulunamadı — yönetici henüz rubrik onaylamamış.",
+        "msg_step4_not_run": "AI puanlama henüz çalıştırılmadı.",
+        "msg_step4_running": "AI puanlama çalışıyor…",
+        "msg_similarity_not_run": "Benzerlik analizi henüz çalıştırılmadı.",
+        "msg_no_corpus": "Karşılaştırma yapılacak rapor korpusu bulunamadı.",
+        "msg_similarity_running": "Benzerlik analizi çalışıyor…",
+
+        # ── ADIM 1 ───────────────────────────────────────────────────────────
+        "step1_title": "ADIM 1 · BAŞVURU VE PROJE BİLGİLERİ",
+        "step1_sub": "Takım, yarışma ve atama bilgileri",
+        "lbl_report_status": "Rapor Durumu",
+        "lbl_assignment_status": "Atama Durumu",
+        "lbl_competition": "Yarışma",
+        "lbl_stage": "Aşama",
+        "lbl_stage_missing": "Aşama bilgisi bulunamadı",
+        "lbl_team": "Takım",
+        "lbl_branch": "Dal",
+        "lbl_level": "Seviye",
+        "lbl_domain": "Alan",
+        "lbl_institution": "Kurum",
+        "lbl_uploaded_at": "Yükleme Tarihi",
+        "lbl_file_name": "Dosya Adı",
+        "lbl_page_count": "Sayfa Sayısı",
+        "lbl_version": "Sürüm",
+        "lbl_deadline": "Son Tarih",
+        "lbl_deadline_passed": "Süre Doldu",
+        "lbl_no_deadline": "Tarih belirtilmemiş",
+        "lbl_assigned_at": "Atama Tarihi",
+
+        # ── ADIM 2 ───────────────────────────────────────────────────────────
+        "step2_title": "ADIM 2 · ORİJİNAL RAPOR DOKÜMANI",
+        "step2_sub": "Tam sayfa gömülü PDF görüntüleyici — zoom ve serbest kaydırma",
+        "lbl_zoom": "Yakınlaştırma (%)",
+        "lbl_viewer_height": "Görüntüleyici Yüksekliği (px)",
+        "lbl_max_pages": "Maksimum Sayfa",
+        "hint_pdf_scroll": "PDF içinde kaydırmak için fare tekerleğini veya kaydırma çubuğunu kullanın.",
+        "hint_native_viewer": "Tarayıcının yerleşik PDF görüntüleyicisini kullanın.",
+
+        # ── ADIM 3 ───────────────────────────────────────────────────────────
+        "step3_title": "ADIM 3 · ŞARTNAME VE BİÇİM ÖN DENETİMİ",
+        "step3_sub": "AI yalnızca bu adım için otomatik ön denetim çalıştırır",
+        "lbl_format_findings": "Biçim Bulguları",
+        "lbl_rule_type": "Kural Türü",
+        "lbl_rule_quote": "Kural Alıntısı",
+        "btn_run_step3": "AI Ön Denetimini Çalıştır",
+        "btn_rerun_step3": "Yeniden Çalıştır",
+        "succ_step3": "AI ön denetimi başarıyla tamamlandı.",
+
+        # ── ADIM 4 ───────────────────────────────────────────────────────────
+        "step4_title": "ADIM 4 · KRİTER BAZLI RUBRİK PUANLAMA",
+        "step4_sub": "AI ön puanlama · hakem doğrulama ve nihai puan girişi",
+        "lbl_ai_score": "AI Puanı",
+        "lbl_referee_score": "Hakem Puanı",
+        "lbl_ai_total": "AI Toplam Puanı",
+        "lbl_live_total": "Anlık Toplam",
+        "lbl_overall": "Genel",
+        "lbl_rationale": "Gerekçe",
+        "lbl_evidence": "Kanıt",
+        "lbl_strengths": "Güçlü Yönler",
+        "lbl_weaknesses": "Zayıf Yönler",
+        "lbl_summary": "Özet",
+        "lbl_no_evidence": "Kanıt yok",
+        "lbl_parent_computed": "Ana kriter (alt kriterlerden hesaplanır)",
+        "lbl_score_slider": "Puan (Kaydırıcı)",
+        "lbl_score_input": "Puan Girişi",
+        "lbl_saved_notes": "Kayıtlı Notlar",
+        "lbl_referee_notes": "Hakem Notları",
+        "lbl_ai_decision": "AI Kararı",
+        "lbl_ai_explanation": "AI Açıklaması",
+        "lbl_referee_decision": "Hakem Kararı",
+        "lbl_decision": "Karar",
+        "ph_referee_notes": "Değerlendirme notlarınızı buraya yazın…",
+        "tile_ai_total": "AI Toplam",
+        "tile_referee_total": "Hakem Toplam",
+        "tile_delta": "Fark",
+        "tile_ai_missing": "AI Puanı Yok",
+        "col_criterion": "Kriter",
+        "col_ai": "AI",
+        "col_referee": "Hakem",
+        "col_max": "Maks",
+        "col_delta": "Fark",
+        "btn_run_step4": "AI Puanlamayı Çalıştır",
+        "btn_rerun_step4": "Yeniden Puanla",
+        "succ_step4": "AI puanlama başarıyla tamamlandı.",
+        "warn_need_rubric_scores": "Mühürlemeden önce tüm kriterleri puanlamanız gerekmektedir.",
+
+        # ── ADIM 5 ───────────────────────────────────────────────────────────
+        "step5_title": "ADIM 5 · NİHAİ KARAR VE MÜHÜRLEME",
+        "step5_sub": "Değerlendirmeyi onaylayın ve dijital mühür uygulayın",
+        "lbl_comparison": "Karşılaştırma Özeti",
+        "lbl_counts": "Sayılar",
+        "lbl_spans": "Eşleşen Bölümler",
+        "lbl_plagiarism": "İntihal Oranı",
+        "lbl_risk": "Risk Seviyesi",
+        "lbl_highest_similarity": "En Yüksek Benzerlik",
+        "lbl_matched_report": "Eşleşen Rapor",
+        "lbl_none": "Yok",
+        "btn_run_similarity": "Benzerlik Analizi Çalıştır",
+        "btn_seal": "Değerlendirmeyi Mühürle",
+        "btn_download_pdf": "Karne PDF İndir",
+        "warn_already_sealed": "Bu değerlendirme zaten mühürlenmiş.",
+        "succ_sealed": "Değerlendirme başarıyla mühürlendi ve kapatıldı.",
+        "err_card": "Karne oluşturulurken bir hata oluştu.",
+
+        # ── Rozet etiketleri ─────────────────────────────────────────────────
+        "badge_uygun": "Uygun",
+        "badge_uygun_degil": "Uygun Değil",
+        "badge_belirsiz": "Belirsiz",
+        "badge_assign_atandi": "Atandı",
+        "badge_assign_inceleniyor": "İnceleniyor",
+        "badge_assign_tamamlandi": "Tamamlandı",
+        "badge_assign_iptal": "İptal",
+        "badge_risk_dusuk": "Düşük Risk",
+        "badge_risk_orta": "Orta Risk",
+        "badge_risk_yuksek": "Yüksek Risk",
+        "badge_general_comment": "Genel Yorum",
+        "badge_evidence": "Kanıt",
+
+        # ── Ek etiketler ─────────────────────────────────────────────────────
+        "lbl_card_strengths": "Güçlü Yönler",
+        "lbl_card_improvements": "Gelişim Alanları",
+    },
+
+    "en": {
+        # ── Panel general ────────────────────────────────────────────────────
+        "hak_title": "Referee Evaluation Station",
+        "hak_subtitle": "Evaluate your assigned reports step by step",
+        "hak_session_invalid": "Session invalid. Please sign in again.",
+        "hak_no_permission": "You do not have permission to access this page.",
+        "hak_data_error": "Data error",
+        "hak_storage_error": "Storage error",
+
+        # ── Report picker ────────────────────────────────────────────────────
+        "sel_title": "Report to Evaluate",
+        "sel_sub": "Only reports assigned to you are listed.",
+        "chip_total": "Total",
+        "chip_open": "Open",
+        "chip_done": "Completed",
+        "lbl_filter_competition": "Competition",
+        "lbl_filter_stage": "Stage",
+        "lbl_filter_status": "Status",
+        "lbl_select_report": "Select Report",
+
+        # ── Select options ───────────────────────────────────────────────────
+        "opt_all": "All",
+        "opt_open": "Open",
+        "opt_done": "Completed",
+        "opt_kabul": "Accept",
+        "opt_revizyon": "Revision",
+        "opt_ret": "Reject",
+        "opt_decision_unset": "No decision",
+
+        # ── Messages ─────────────────────────────────────────────────────────
+        "msg_no_assignment": "No evaluations assigned to you were found.",
+        "msg_no_match": "No reports match the selected filters.",
+        "msg_pdf_key_missing": "PDF storage key is missing.",
+        "msg_pdf_unavailable": "PDF could not be loaded.",
+        "msg_no_requirements": "No requirements found for this stage.",
+        "msg_step3_not_run": "AI pre-check has not been run yet.",
+        "msg_no_format_finding": "No format findings.",
+        "msg_step3_running": "Running AI pre-check…",
+        "msg_no_rubric": "Evaluation rubric not found — the administrator has not approved a rubric yet.",
+        "msg_step4_not_run": "AI scoring has not been run yet.",
+        "msg_step4_running": "Running AI scoring…",
+        "msg_similarity_not_run": "Similarity analysis has not been run yet.",
+        "msg_no_corpus": "No report corpus found for comparison.",
+        "msg_similarity_running": "Running similarity analysis…",
+
+        # ── STEP 1 ───────────────────────────────────────────────────────────
+        "step1_title": "STEP 1 · APPLICATION & PROJECT INFORMATION",
+        "step1_sub": "Team, competition and assignment details",
+        "lbl_report_status": "Report Status",
+        "lbl_assignment_status": "Assignment Status",
+        "lbl_competition": "Competition",
+        "lbl_stage": "Stage",
+        "lbl_stage_missing": "Stage information not found",
+        "lbl_team": "Team",
+        "lbl_branch": "Branch",
+        "lbl_level": "Level",
+        "lbl_domain": "Domain",
+        "lbl_institution": "Institution",
+        "lbl_uploaded_at": "Upload Date",
+        "lbl_file_name": "File Name",
+        "lbl_page_count": "Page Count",
+        "lbl_version": "Version",
+        "lbl_deadline": "Deadline",
+        "lbl_deadline_passed": "Deadline Passed",
+        "lbl_no_deadline": "No deadline set",
+        "lbl_assigned_at": "Assigned At",
+
+        # ── STEP 2 ───────────────────────────────────────────────────────────
+        "step2_title": "STEP 2 · ORIGINAL REPORT DOCUMENT",
+        "step2_sub": "Full-page embedded PDF viewer — zoom and free scroll",
+        "lbl_zoom": "Zoom (%)",
+        "lbl_viewer_height": "Viewer Height (px)",
+        "lbl_max_pages": "Max Pages",
+        "hint_pdf_scroll": "Use the mouse wheel or scrollbar to navigate the PDF.",
+        "hint_native_viewer": "Use the browser's built-in PDF viewer.",
+
+        # ── STEP 3 ───────────────────────────────────────────────────────────
+        "step3_title": "STEP 3 · REQUIREMENTS & FORMAT PRE-CHECK",
+        "step3_sub": "AI automatically runs a pre-check for this step only",
+        "lbl_format_findings": "Format Findings",
+        "lbl_rule_type": "Rule Type",
+        "lbl_rule_quote": "Rule Quote",
+        "btn_run_step3": "Run AI Pre-Check",
+        "btn_rerun_step3": "Re-run",
+        "succ_step3": "AI pre-check completed successfully.",
+
+        # ── STEP 4 ───────────────────────────────────────────────────────────
+        "step4_title": "STEP 4 · CRITERION-BASED RUBRIC SCORING",
+        "step4_sub": "AI pre-scoring · referee validation and final score entry",
+        "lbl_ai_score": "AI Score",
+        "lbl_referee_score": "Referee Score",
+        "lbl_ai_total": "AI Total Score",
+        "lbl_live_total": "Live Total",
+        "lbl_overall": "Overall",
+        "lbl_rationale": "Rationale",
+        "lbl_evidence": "Evidence",
+        "lbl_strengths": "Strengths",
+        "lbl_weaknesses": "Weaknesses",
+        "lbl_summary": "Summary",
+        "lbl_no_evidence": "No evidence",
+        "lbl_parent_computed": "Parent criterion (computed from sub-criteria)",
+        "lbl_score_slider": "Score (Slider)",
+        "lbl_score_input": "Score Input",
+        "lbl_saved_notes": "Saved Notes",
+        "lbl_referee_notes": "Referee Notes",
+        "lbl_ai_decision": "AI Decision",
+        "lbl_ai_explanation": "AI Explanation",
+        "lbl_referee_decision": "Referee Decision",
+        "lbl_decision": "Decision",
+        "ph_referee_notes": "Enter your evaluation notes here…",
+        "tile_ai_total": "AI Total",
+        "tile_referee_total": "Referee Total",
+        "tile_delta": "Delta",
+        "tile_ai_missing": "AI Score Missing",
+        "col_criterion": "Criterion",
+        "col_ai": "AI",
+        "col_referee": "Referee",
+        "col_max": "Max",
+        "col_delta": "Delta",
+        "btn_run_step4": "Run AI Scoring",
+        "btn_rerun_step4": "Re-score",
+        "succ_step4": "AI scoring completed successfully.",
+        "warn_need_rubric_scores": "You must score all criteria before sealing.",
+
+        # ── STEP 5 ───────────────────────────────────────────────────────────
+        "step5_title": "STEP 5 · FINAL DECISION & SEAL",
+        "step5_sub": "Confirm and apply a digital seal to the evaluation",
+        "lbl_comparison": "Comparison Summary",
+        "lbl_counts": "Counts",
+        "lbl_spans": "Matched Spans",
+        "lbl_plagiarism": "Plagiarism Rate",
+        "lbl_risk": "Risk Level",
+        "lbl_highest_similarity": "Highest Similarity",
+        "lbl_matched_report": "Matched Report",
+        "lbl_none": "None",
+        "btn_run_similarity": "Run Similarity Analysis",
+        "btn_seal": "Seal Evaluation",
+        "btn_download_pdf": "Download Card PDF",
+        "warn_already_sealed": "This evaluation has already been sealed.",
+        "succ_sealed": "Evaluation successfully sealed and closed.",
+        "err_card": "An error occurred while generating the evaluation card.",
+
+        # ── Badge labels ─────────────────────────────────────────────────────
+        "badge_uygun": "Compliant",
+        "badge_uygun_degil": "Non-Compliant",
+        "badge_belirsiz": "Unclear",
+        "badge_assign_atandi": "Assigned",
+        "badge_assign_inceleniyor": "In Review",
+        "badge_assign_tamamlandi": "Completed",
+        "badge_assign_iptal": "Cancelled",
+        "badge_risk_dusuk": "Low Risk",
+        "badge_risk_orta": "Medium Risk",
+        "badge_risk_yuksek": "High Risk",
+        "badge_general_comment": "General Comment",
+        "badge_evidence": "Evidence",
+
+        # ── Additional labels ─────────────────────────────────────────────────
+        "lbl_card_strengths": "Strengths",
+        "lbl_card_improvements": "Areas for Improvement",
+    },
+}
+
+
+def t(key: str, lang: str | None = None) -> str:
+    """Verilen dil için çeviriyi döndürür; bulunamazsa anahtarı döndürür.
+
+    lang belirtilmezse ``st.session_state.lang`` otomatik okunur.
+    """
+    if lang is None:
+        try:
+            import streamlit as st
+            lang = getattr(st.session_state, "lang", None) or "tr"
+        except Exception:
+            lang = "tr"
+    return TRANSLATIONS.get(lang, TRANSLATIONS["tr"]).get(key, key)
