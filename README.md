@@ -1,149 +1,199 @@
-# 🚀 T-Sistem — TEKNOFEST Yapay Zekâ Destekli Değerlendirme Sistemi
+<div align="center">
 
-> **T3 Vakfı Bursiyer Yapay Zekâ Creathonu** kapsamında **Problem 4** için geliştirilmiş uçtan uca Akıllı Hakem Karar Destek ve Rapor Değerlendirme Platformu.
+# 🚀 T-Sistem (Versiyon 4)
+### TEKNOFEST Yapay Zekâ Destekli Akıllı Rapor Değerlendirme & Hakem Karar Destek Platformu
 
----
+> **T3 Vakfı Bursiyer Yapay Zekâ Creathonu** kapsamında **Problem 4** için geliştirilmiş; Hibrit LLM Motoru, Cloudflare D1/R2 mimarisi ve "AI 4. Göz" yaklaşımı sunan uçtan uca değerlendirme ekosistemi.
 
-## 📌 Problem Tanımı ve Proje Amacı (Problem 4)
-TEKNOFEST yarışmalarında on binlerce başvuru raporu alınmakta; dil, şablon, başlık-içerik, kategori uygunluğu, intihal/benzerlik ve kriter bazlı puanlama gibi aşamalar hakemler üzerinde devasa bir operasyonel yük oluşturmaktadır.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-D1%20%26%20R2-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://cloudflare.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-**T-Sistem Çözümü:** 
-Yapay zekâyı nihai bir karar verici olarak değil; kontrol, derin semantik analiz ve ön değerlendirme sunan bir **"AI 4. Göz" (Karar Destek Sistemi)** olarak konumlandırır. Böylece hakemlerin rutin kontrollerini otomatikleştirir, değerlendirme standardizasyonu sağlar ve yarışmacılara gelişim odaklı yapıcı geri bildirimler üretir.
-
----
-
-## 🎯 MVP Zorunlu 6 Temel Modül
-Projemiz, Creathon şartnamesinde belirtilen 6 kritik MVP şartının tamamını eksiksiz kapsar:
-
-1. **🌐 Dil ve Şablon Uygunluk Kontrolü:** Rapor dilinin otomatik tespiti ve resmi güncel TEKNOFEST şablonuna (sayfa yapısı, font, yerleşim) uyum doğrulaması.
-2. **📑 Başlık ve İçerik Kontrolü:** Zorunlu tüm ana ve alt başlıkların varlığı ile ilgili bölümlerde beklenen içeriğin bulunurluk/doluluk analizi.
-3. **🎯 Kategori Uygunluğu Analizi:** Proje konusunun başvuru yapılan yarışma kategorisi ile anlamsal/semantik uyumunun tespiti.
-4. **🔍 Benzerlik ve İntihal Analizi:** Başvurular arası semantik embedding ve kosinüs benzerliği ile yüksek benzerlik gösteren içeriklerin otomatik işaretlenmesi.
-5. **🧠 AI Kriter Değerlendirmesi ("AI 4. Göz"):** Rubric kriterlerine göre (Özgünlük, Teknik Derinlik, Uygulanabilirlik, Etki, Sunum) ön puanlama ve gerekçelendirme.
-6. **💡 Yapıcı Yarışmacı Geri Bildirimi:** Projenin güçlü yönlerini, eksikliklerini ve somut gelişim önerilerini içeren dinamik karne çıktısı.
+[📌 Problem & Çözüm](#-problem-tanımı-ve-t-sistem-çözümü) •
+[🎯 Core MVP Modülleri](#-mvp-6-temel-analiz-modülü) •
+[🏗️ Mimari](#-mimari-ve-hibrit-yapay-zekâ-motoru) •
+[👥 Kullanıcı Rolleri](#-kullanıcı-rolleri-ve-deneyim-akışları) •
+[🚀 Kurulum](#-hızlı-başlangıç)
 
 ---
 
-## 👥 Kullanıcı Rolleri ve Akışlar
-| Rol | Tanım ve Yetkiler |
-| :--- | :--- |
-| **👑 Yarışma Yöneticisi** | Yarışmaları tanımlar, güncel şablon/kriterleri yükler, toplu raporları sisteme aktarır ve analiz sürecini başlatır. |
-| **⚖️ Hakem / Değerlendirici** | AI ön kontrollerini ve 4. göz kriter analizini inceler, puan ve notlarını vererek nihai kararı onaylar. |
-| **🎓 Yarışmacı** | Değerlendirme tamamlandığında projesinin güçlü yönlerini, eksiklerini ve kişiselleştirilmiş gelişim önerilerini görüntüler. |
-| **📊 Değerlendirme Yöneticisi** | Tüm analiz durumlarını, hakem tamamlama oranlarını ve yarışma genel metriğini canlı dashboard üzerinden izler. |
+</div>
+
+## 📌 Problem Tanımı ve T-Sistem Çözümü
+
+TEKNOFEST yarışmalarında her yıl **60'tan fazla kategoride on binlerce rapor** sunulmaktadır. Hakem kurulunun karşı karşıya kaldığı temel operasyonel güçlükler:
+- Sayfa yapısı, font, başlık hiyerarşisi gibi **rutin şablon kontrolleri** nedeniyle harcanan aşırı zaman.
+- Raporların ilgili kategori şartnamesine **anlamsal (semantik) uyumunun** manuel tespit zorluğu.
+- Başvurular arası **intihal ve yüksek benzerliklerin** binlerce belge içinde gözden kaçabilmesi.
+- Yarışmacılara verilecek **gelişim odaklı yapıcı geri bildirimlerin** zaman kısıtı sebebiyle yüzeysel kalması.
+
+### 💡 "AI 4. Göz" Yaklaşımı
+T-Sistem, yapay zekâyı kararı tek başına veren bir mekanizma olarak değil; **Hakem Kuruluna veri, analiz ve öneri sunan şeffaf bir "Karar Destek Asistanı" (4. Göz)** olarak konumlandırır. Sistem ön değerlendirmeleri tamamlar, işaretlemeleri yapar ve hakemin onayına sunar.
 
 ---
 
-## 🏗️ Sistem Mimarisi ve Teknoloji Yığını
+## 🎯 MVP 6 Temel Analiz Modülü
+
+T-Sistem Versiyon 4, Creathon şartnamesinde tanımlanan 6 temel analitik gereksinimi tam modüler yapıda sunar:
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        T-SİSTEM ANALİZ DÖNGÜSÜ                          │
+└─────────────────────────────────────────────────────────────────────────┘
+        │
+        ├── 1. 🌐 Dil & Şablon Doğrulama (Resmi TEKNOFEST Font/Sayfa Tespiti)
+        ├── 2. 📑 Başlık & İçerik Varlık Analizi (Eksik Bölüm & Hiyerarşi)
+        ├── 3. 🎯 Kategori Semantik Uygunluğu (Şartname Vektör Eşleşmesi)
+        ├── 4. 🔍 Çapraz İntihal & Benzerlik (FAISS / Kosinüs Embedding)
+        ├── 5. 🧠 "AI 4. Göz" Rubric Puanlama (Kriter Bazlı Gerekçelendirme)
+        └── 6. 💡 Yapıcı Gelişim Karnesi (Yarışmacı Özel PDF & Görsel Rapor)
+```
+
+1. **🌐 Dil ve Şablon Uygunluk Kontrolü:** Rapor dilinin otomatik tespiti ve resmi güncel TEKNOFEST şablonuna (sayfa yapısı, font, marjin, kapak düzeni) %100 dijital doğrulama.
+2. **📑 Başlık ve İçerik Kontrolü:** Şartnamede zorunlu kılınan ana ve alt başlıkların varlığı ile ilgili bölümlerdeki içerik doluluk ve tutarlılık analizi.
+3. **🎯 Kategori Uygunluk Analizi:** Proje konusunun başvuru yapılan yarışma kategorisi ile anlamsal/semantik uyumunun vektörel tespiti.
+4. **🔍 Çapraz Benzerlik & İntihal Analizi:** Başvurular arasında semantik embedding ve kosinüs benzerliği ile yüksek benzerlik gösteren paragrafların otomatik işaretlenmesi.
+5. **🧠 AI Kriter Değerlendirmesi ("AI 4. Göz"):** Rubric kriterlerine göre (Özgünlük, Teknik Derinlik, Uygulanabilirlik, Etki, Sunum) ön puanlama ve kanıta dayalı gerekçelendirme.
+6. **💡 Yapıcı Yarışmacı Gelişim Karnesi:** Projenin güçlü yönlerini, eksikliklerini ve somut gelişim tavsiyelerini içeren dinamik karneler.
+
+---
+
+## 🏗️ Mimari ve Hibrit Yapay Zekâ Motoru
+
+Versiyon 4 ile sistem; yüksek erişilebilirlik, sıfır kesinti ve esnek LLM altyapısı için baştan tasarlandı:
+
 ```mermaid
 flowchart TD
-    A[Yarışmacı PDF Raporu] --> B[PDF Ayrıştırma & Metin Çıkarma]
-    B --> C1[Dil & Şablon Kontrol Modülü]
-    B --> C2[Zorunlu Başlık & İçerik Analizi]
-    B --> C3[Embedding & Vektör Arama / Benzerlik Analizi]
-    B --> C4[LLM Kriter Bazlı Değerlendirme - AI 4. Göz]
-    
-    C1 --> D[Bütünleşik Analiz Motoru]
-    C2 --> D
-    C3 --> D
-    C4 --> D
-    
-    D --> E[Hakem Karar Destek Paneli]
-    D --> F[Yarışmacı Gelişim Karnesi]
-    D --> G[Yönetici İzleme Dashboard]
+    subgraph INPUT [Girdi Katmanı]
+        PDF[Yarışmacı PDF Raporu]
+        TEMPLATE[Resmi Şablon & Şartname]
+    end
+
+    subgraph ENGINE [T-Sistem Analiz Motoru]
+        PARSER[PyMuPDF & pdfplumber Parser]
+        EMBED[HuggingFace / OpenAI Embeddings]
+        VECTOR[FAISS / Kosinüs Benzerlik Motoru]
+        
+        subgraph LLM_POOL [Yüksek Erişilebilir LLM Havuzu]
+            CLAUDE[Anthropic Claude 3.5 / Sonnet]
+            GPT[OpenAI GPT-4o Failover]
+            HEURISTIC[Dahili Heuristic Motor - Offline Support]
+        end
+    end
+
+    subgraph STORAGE [Bulut & Veri Altyapısı]
+        D1[(Cloudflare D1 SQL)]
+        R2[(Cloudflare R2 Object Store)]
+    end
+
+    subgraph DASHBOARDS [Kullanıcı Arayüzleri]
+        ADMIN[👑 Yönetici Paneli]
+        REFEREE[⚖️ Hakem Karar Destek Paneli]
+        PARTICIPANT[🎓 Yarışmacı Gelişim Portalı]
+    end
+
+    PDF --> PARSER
+    TEMPLATE --> PARSER
+    PARSER --> EMBED & VECTOR
+    EMBED & VECTOR --> LLM_POOL
+    LLM_POOL --> D1 & R2
+    D1 & R2 --> ADMIN & REFEREE & PARTICIPANT
 ```
 
-* **Backend:** Python / FastAPI, Pydantic, Uvicorn
-* **PDF & Metin İşleme:** PyMuPDF, pdfplumber, LangChain TextSplitter
-* **AI & NLP:** OpenAI GPT-4o / Llama 3, HuggingFace Embeddings, FAISS / ChromaDB
-* **Frontend / Dashboard:** Modern Responsive UI (FastAPI Templates / React / Streamlit)
-* **Veri & Analiz:** SQLite / PostgreSQL, Pandas, NumPy
+### ⚡ Öne Çıkan Teknik Özellikler (Versiyon 4)
+- **Harici Yük Dengelemeli LLM Havuzu:** Virgülle ayrılmış çoklu API anahtarı desteği (Round-robin yük dengeleme + Otomatik Failover).
+- **Offline / Zero-Key Desteği:** Hiçbir LLM API anahtarı tanımlanmasa dahi sistem çökmez; dahili *heuristic* analiz motoru devreye girer.
+- **Cloudflare D1 & R2 Entegrasyonu:** Milyonlarca rapor verisini bulutta ışık hızında SQLite mimarisi (D1) ve Nesne Depolama (R2) ile saklama yeteneği.
 
 ---
 
-## 📂 Proje Dizin Yapısı
-```bash
-T-Sistem/
-├── data/                  # Ham PDF raporlar, işlenmiş metinler ve veri setleri
-│   ├── raw/               # Yarışma raporları ve şablon dosyaları
-│   └── processed/         # Ayrıştırılmış ve indekslenmiş veri çıktıları
-├── docs/                  # Proje dokümantasyonu, kılavuzlar ve analizler
-│   ├── kaynaklar/         # Şartname, problem kitapçığı ve akademik referanslar
-│   ├── raporlar_ve_taslaklar/ # Jüri raporları ve tasarım belgeleri
-│   ├── sunumlar/          # Jüri sunum slaytları
-│   └── gorseller/         # Mimari diyagramlar ve ekran görüntüleri
-├── notebooks/             # Ar-Ge, NLP, embedding ve prompt deneme notebook'ları
-├── src/                   # Üretime hazır modüler kaynak kodlar
-│   ├── ingestion/         # PDF parser ve metin temizleme
-│   ├── checkers/          # Dil, şablon, başlık ve kategori doğrulayıcılar
-│   ├── similarity/        # Vektör veritabanı ve benzerlik motoru
-│   ├── evaluation/        # AI kriter değerlendirme ve rubric motoru
-│   ├── feedback/          # Yarışmacı gelişim raporu üreteci
-│   └── api/               # FastAPI REST endpoint'leri ve arayüz servisleri
-├── requirements.txt       # Proje bağımlılıkları
-└── README.md              # Ana proje tanıtım belgesi
-```
+## 👥 Kullanıcı Rolleri ve Deneyim Akışları
+
+| Rol | Görsel Panel | Yetki ve Sorumluluklar |
+| :--- | :--- | :--- |
+| **👑 Yarışma Yöneticisi** | `Yönetici Paneli` | Yarışmaları ve rubrikleri tanımlar, şablon yükler, toplu analiz başlatır ve süreç metriğini izler. |
+| **⚖️ Hakem / Değerlendirici** | `Hakem Paneli` | AI tarafından hazırlanan 4. göz ön raporunu, intihal skorunu ve başlık analizini inceler, puanı onaylar/düzenler. |
+| **🎓 Yarışmacı** | `Yarışmacı Portalı` | Değerlendirmesi tamamlanan raporunun detaylı karne çıktısını, eksik yönlerini ve AI önerilerini görüntüler. |
+| **📊 Sistem Yöneticisi** | `Admin Dashboards` | Kullanıcı yetkilendirmeleri, hakem atamaları ve genel sistem sağlığını canlı olarak takip eder. |
+
+---
+
+## 🛠️ Teknoloji Yığını
+
+* **Core & Backend:** Python 3.10+, FastAPI, Pydantic v2, Uvicorn
+* **Arayüz (Frontend):** Streamlit (Custom Theme & Responsive Glassmorphism Design)
+* **Veritabanı & Storage:** Cloudflare D1 (Serverless SQL), Cloudflare R2 (Object Storage), SQLite
+* **AI, NLP & Embeddings:** Anthropic Claude API, OpenAI GPT-4o, LangChain, FAISS, HuggingFace Sentence-Transformers
+* **Doküman Ayrıştırma:** PyMuPDF (FitZ), pdfplumber, python-docx
 
 ---
 
 ## 🚀 Hızlı Başlangıç
 
-### 1. Kurulum
+### 1. Depoyu Klonlayın ve Bağımlılıkları Yükleyin
+
 ```bash
 git clone https://github.com/mehmetcelikcmyk/T-Sistem.git
 cd T-Sistem
+
+# Sanal ortam oluşturma
 python -m venv venv
-# Windows:
+
+# Sanal ortamı aktifleştirme (Windows)
 venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
+# Sanal ortamı aktifleştirme (Linux / macOS)
+# source venv/bin/activate
+
+# Paketleri yükleme
 pip install -r requirements.txt
 ```
 
-### 2. Ortam Değişkenleri
-Proje kökünde `.env` dosyası oluşturun. **Bu dosya `.gitignore` içindedir, asla commit edilmez.**
-```env
-# Birincil LLM motoru — virgülle ayırarak birden fazla anahtar verilebilir
-# (round-robin yük dengeleme + otomatik failover devreye girer)
-ANTHROPIC_API_KEYS=sk-ant-xxx1,sk-ant-xxx2,sk-ant-xxx3
+### 2. Ortam Değişkenleri (`.env`)
 
-# Yedek LLM sağlayıcısı (Claude havuzu tükenirse otomatik denenir)
+Proje kök dizininde `.env` dosyası oluşturun (Örnek yapı için `.env.example` dosyasını kullanabilirsiniz):
+
+```env
+# Birincil LLM motoru (Virgülle ayırarak çoklu anahtar verebilirsiniz)
+ANTHROPIC_API_KEYS=sk-ant-xxx1,sk-ant-xxx2
+
+# Yedek LLM motoru
 OPENAI_API_KEY=sk-xxx
 
-# Opsiyonel — Cloudflare R2 nesne depolama (PDF arşivi)
-CLOUDFLARE_R2_ENDPOINT_URL=
-CLOUDFLARE_R2_ACCESS_KEY=
-CLOUDFLARE_R2_SECRET_KEY=
+# Cloudflare D1 & R2 Bulut Veri Yapılandırması (Opsiyonel)
+CLOUDFLARE_R2_ENDPOINT_URL=https://<account_id>.r2.cloudflarestorage.com
+CLOUDFLARE_R2_ACCESS_KEY=<access_key>
+CLOUDFLARE_R2_SECRET_KEY=<secret_key>
 CLOUDFLARE_R2_BUCKET_NAME=t-sistem-raporlar
-
-# Opsiyonel — Cloudflare D1 bulut veritabanı senkronizasyonu
-CLOUDFLARE_ACCOUNT_ID=
-CLOUDFLARE_D1_DATABASE_ID=
-CLOUDFLARE_API_TOKEN=
-
-# Opsiyonel — frontend adresleri (belirtilmezse tüm kaynaklara izin verilir)
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
 ```
 
-> Hiçbir LLM anahtarı tanımlanmazsa sistem **çökmez**: dahili heuristic
-> değerlendirme motoru devreye girer ve demo kesintisiz çalışır.
+> 💡 **Not:** Herhangi bir API anahtarı girmeden de uygulamayı çalıştırabilirsiniz. Sistem otomatik olarak dahili demo/heuristic modda çalışacaktır.
 
-### 3. Uygulamayı Çalıştırma
-Proje **kök dizininden** (`T-Sistem/`) çalıştırın:
+### 3. Uygulamayı Çalıştırın
+
+Proje kök dizininden tek bir komutla başlatın:
+
 ```bash
-# Önerilen (otomatik yeniden yükleme ile)
-uvicorn src.main:app --reload
-
-# Alternatif
-python src/main.py
+python start.py
 ```
-Ardından tarayıcıdan açın:
-* Swagger arayüzü → http://localhost:8000/docs
-* Sistem durumu → http://localhost:8000/health
+veya doğrudan Streamlit arayüzünü açın:
+```bash
+streamlit run src/ui/app.py
+```
 
 ---
 
 ## 👥 T-Sistem Ekibi
-* **Mehmet Çelik** — Backend API, AI Modül Entegrasyonu & Prompt Mühendisliği
+
+* **Mehmet Çelik** — Backend API Mimarisi, AI Entegrasyonu & Prompt Mühendisliği
 * **Birhan** — PDF Pipeline, Vektör Veritabanı & Semantik Benzerlik Analizi
-* **Emre** — Frontend / Arayüz Geliştirme, Dashboard & Görselleştirme
+* **Emre** — Frontend / Streamlit Arayüz Geliştirme & UX Tasarımı
+
+---
+
+<div align="center">
+
+Made with ❤️ for **TEKNOFEST & T3 Vakfı Creathon**
+
+</div>
