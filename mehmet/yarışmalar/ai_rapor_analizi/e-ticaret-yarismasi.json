@@ -1,0 +1,129 @@
+{
+  "slug": "e-ticaret-yarismasi",
+  "name": "E-Ticaret Hackathonu Yarışması",
+  "specifications": [
+    "E-TİCARET_T_NFSoo.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "e-ticaret-yarismasi",
+    "kategori_adi": "E-Ticaret Hackathonu Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, T.C. Sanayi ve Teknoloji Bakanlığı & Trendyol",
+    "etkinlik_yeri": "1. Aşama: Çevrim içi (Kaggle) / 2. Aşama: Trendyol Maslak Kampüs (İstanbul) / Ödül Töreni: TEKNOFEST Şanlıurfa",
+    "hedef_egitim_seviyesi": "Lise, Üniversite (Ön Lisans, Lisans, Yüksek Lisans, Doktora, Açık Öğretim) ve Mezunlar (15-30 Yaş Aralığı)",
+    "yas_kriteri": "15 - 30 yaş aralığında olan kişiler katılabilir.",
+    "takim_kurallari": {
+      "uye_sayisi_min": 2,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": false,
+      "finalist_sayisi": 10,
+      "kural_detayi": "Yarışmaya 2-5 kişilik takımlar halinde başvurulabilir (Bireysel başvuru kabul edilmez). Kaggle aşamasında başarılı olan ilk 10 takım fiziksel Hackathona davet edilir. Trendyol çalışanları katılamaz."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar isteğe bağlı olarak 1 danışman ekleyebilir.",
+      "lise_zorunlulugu": "Lise düzeyindeki takımlar için danışman eklenmesi zorunludur (18 yaş altı yarışmacılar danışman eşliğinde katılır)."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "teknik_ve_model_kurallari": [
+      "Çözümlerde kullanılan modellerin kaynak koduna ve ağırlıklarına tam erişilebilmeli ve internetsiz ortamda çalışabilmelidir.",
+      "ChatGPT, Gemini vb. ücretli yapay zeka araçlarının en son çıktıyı tahmin edici/üretici olarak API üzerinden kullanılması kesinlikle yasaktır (Kodlama aşamasında YZ asistanı kullanılabilir).",
+      "1. Aşama Kaggle Datathon değerlendirme metriği Macro-F1'dir.",
+      "2. Aşama Açıklanabilir Ürün-Terim İlişki modelinde 3 sınıf vardır: İlişkili, Zayıf İlişkili, İlişkili Değil."
+    ],
+    "genel_puanlama_dagilimi": {
+      "toplam_oran": "%100",
+      "puan_kalemleri": {
+        "kaggle_skoru": "%40 (1. Aşama Kaggle Private Leaderboard Skoru)",
+        "final_set_skoru": "%20 (2. Aşama Servis Edilen Modelin Gizli Test Seti Skoru)",
+        "sunum_kalitesi": "%10 (Jüri Sunumunun Akıcılığı ve Anlaşılırlığı)",
+        "model_hizi": "%10 (Servisin İstek Yanıt Süresi ve İstatistiksel Hızı)",
+        "model_aciklanabilirlik_arayuzu": "%10 (Model Kararının Nedenini Metin/Görsel Olarak Açıklayan Arayüz/Demo)",
+        "final_raporu": "%10 (Tüm Karar ve Analizleri İçeren Teknik Rapor)"
+      }
+    },
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "150.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "120.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "100.000,00 ₺"
+      }
+    },
+    "sartname_dosyasi": "E-TİCARET_T_NFSoo.pdf"
+  },
+  "stages": [
+    {
+      "stage": "DATATHON_KAGGLE",
+      "stage_name": "1. Aşama: Çevrim İçi Kaggle Datathon",
+      "weight_in_total": "%40",
+      "format_rules": {
+        "platform": "Kaggle (Private Leaderboard)",
+        "metric": "Macro-F1",
+        "task_definition": "Arama terimi, ürün ismi, ürün kategorisi ve özellikleri üzerinden ürün-terim ilişkisini (Alakalı/Alakasız) tahmin etme.",
+        "deliverables": "Kaggle notebook, repo ve ilk 10 finalist takım için Çözüm Rapor Taslağı teslimi."
+      }
+    },
+    {
+      "stage": "HACKATHON_VE_FINAL",
+      "stage_name": "2. Aşama: Trendyol Maslak Fiziksel Hackathon ve Final Değerlendirmesi",
+      "weight_in_total": "%60",
+      "format_rules": {
+        "location": "Trendyol Maslak Kampüs (İstanbul)",
+        "duration": "2 Gün (5-6 Eylül 2026)",
+        "jury_evaluation_format": "10 dakika Proje Sunumu + 5 dakika Ürün Açıklanabilirliği Demosu + 5 dakika Soru-Cevap (Toplam 20 Dakika)",
+        "technical_components": [
+          "Gizli Final Test Seti Değerlendirmesi (%20)",
+          "Model Yanıt Hızı Analizi (%10)",
+          "Model Açıklanabilirlik Arayüz Demosu (%10)",
+          "Teknik Final Raporu (%10)",
+          "Jüri Sunumu (%10)"
+        ]
+      },
+      "rubric": {
+        "category_name": "e-ticaret-yarismasi",
+        "stage": "FINAL_EVALUATION",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_kaggle_skoru",
+            "name": "Kaggle Skoru",
+            "max_score": 40.0,
+            "description": "Birinci aşamadaki Kaggle private leaderboard skoru (gerekirse normalize edilir)."
+          },
+          {
+            "id": "2_final_set_skoru",
+            "name": "Final Set Skoru",
+            "max_score": 20.0,
+            "description": "Servis edilen modelin ikinci aşamadaki yeni ve gizli test seti üzerindeki başarı skoru."
+          },
+          {
+            "id": "3_sunum_kalitesi",
+            "name": "Sunum Kalitesi",
+            "max_score": 10.0,
+            "description": "Proje sunumunun akıcılığı, netliği, çıktıların aktarımı ve takım içi rollerin jüriye yansıtılması."
+          },
+          {
+            "id": "4_model_hizi",
+            "name": "Model Hızı",
+            "max_score": 10.0,
+            "description": "Servis edilen modelin çeşitli yük ve istek tiplerine karşılık ortalama yanıt verme süresi."
+          },
+          {
+            "id": "5_model_aciklanabilirlik_arayuzu",
+            "name": "Model Açıklanabilirlik Arayüzü",
+            "max_score": 10.0,
+            "description": "Modelin verdiği tahmin cevabının nedenselliğini ve açıklamasını metin/görseller yoluyla sunan çalışan ek arayüz/demo."
+          },
+          {
+            "id": "6_final_raporu",
+            "name": "Final Raporu",
+            "max_score": 10.0,
+            "description": "Tüm mühendislik ve veri analiz kararlarını, implementasyon detaylarını içeren teknik jüri raporu."
+          }
+        ]
+      }
+    }
+  ]
+}

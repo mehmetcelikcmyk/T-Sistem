@@ -1,0 +1,216 @@
+{
+  "slug": "suru-iha-yarismasi",
+  "name": "Sürü İHA Yarışması",
+  "specifications": [
+    "S_C3_BCr_C3_BC__C4_B0HA_Yar_C4_B1_C5_9Fma__C5_9Eartnamesi_V2_-_TR_ZJlf8.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "suru-iha-yarismasi",
+    "kategori_adi": "Sürü İHA Yarışması",
+    "hedef_egitim_seviyesi": "Türkiye ve yurt dışında öğrenim gören üniversitelerin ön lisans, lisans, yüksek lisans ve doktora öğrencileri veya mezunlar",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 10,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "",
+      "mezuniyet_kurali": "",
+      "gorev_dagilimi_kurali": ""
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Üniversite ve üzeri seviye için danışman zorunluluğu yoktur, her takımın en fazla bir danışmanı olabilir.",
+      "limit": "1"
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Dinamik Sürü Kabiliyeti Görevi: Sürü halinde uçan İHA'ların QR kodu üzerinden görev bilgisi alarak otonom şekilde planlayıp icra etmesi.",
+      "Yarı Otonom Sürü Kontrolü Görevi: Sürü İHA'ların tek bir joystick/kumanda üzerinden yönlendirilerek (yaw, pitch, roll manevraları) sürü bütünlüğünü koruyarak koordineli tepki vermesi."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "İHA kalkış ağırlığı 10 kg'dan ağır olmamalıdır.",
+      "Görev icrası sırasında en az 3 İHA kullanılmalıdır.",
+      "İHA'lar multicopter (döner kanat) olmalıdır. Sabit kanat ve VTOL kabul edilmez.",
+      "Sürü algoritmaları dağıtık yapıda olmalıdır. Merkezi sürü algoritmaları eksik puan alır.",
+      "Otonom görev başladıktan sonra Yer Kontrol İstasyonundan herhangi bir müdahalede bulunmak kesinlikle yasaktır.",
+      "Lipo piller lipo taşıma çantasında bulundurulmalıdır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Güvenlik pilotu ile Yer Kontrol İstasyonu (YKİ) operatörü aynı kişi olamaz.",
+      "Her bir İHA için bir pilot ve acil durumlarda (kill switch) kullanmak üzere ayrı RC kumanda bulunmalıdır.",
+      "Uçuş kanıt videosunda İHA'nın air HUD görüntüsünün yer alması zorunludur.",
+      "Tüm İHA'ların üzerinde 1., 2., 3. drone olduğunu belirten kimlik (ID) bilgisi eklenmelidir.",
+      "Kumanda bağlantısı koptuğunda araçlar 5 saniye sonra failsafe durumuna girerek 'Land' (İniş) moduna geçmelidir. Yapay zeka rapor ve test videolarında '5 saniye' ve 'Land' davranışını denetlemelidir."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "odul_siralamasi_baraji": 200,
+      "baraj_aciklamasi": "Ödül alabilmek için sürü görevlerinden toplamda en az 200 puan toplanmalı ve her iki görevden de puan alınmalıdır."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Kritik Tasarım Raporu": "%10",
+      "Uçuş Kanıt ve Yazılım Mimarisi Videosu": "%10"
+    },
+    "gorev_puanlamasi": {
+      "Dinamik Sürü Kabiliyeti Görevi": 250,
+      "Yarı Otonom Sürü Kontrolü": 150
+    },
+    "penalties": {
+      "carpma_olmasi_durumu": -20,
+      "gorev_sirasinda_iha_dusmesi": -20,
+      "irtifa_sinirinin_ihlali": -20,
+      "yer_istasyonu_baglantisi_kesilememesi": -50,
+      "formasyon_butunlugunun_bozulmasi": "-1 ile -15 arası",
+      "osilasyon_gozlemlenmesi": "-1 ile -15 arası"
+    },
+    "minimum_active_iha_requirements": {
+      "Formasyon": 3,
+      "Manevra": 3,
+      "Rotasyon": 3,
+      "Navigasyon": 2,
+      "Birey Ekleme/Çıkarma": 2,
+      "İrtifa Değişimi": 2,
+      "kural": "Sürüdeki aktif İHA sayısı ilgili görevin minimum sınırının altına düşerse, o görevden puan alınamaz."
+    }
+  },
+  "stages": [
+    {
+      "stage": "ÖTR",
+      "document": "2026_S_C3_BCr_C3_BC__C4_B0ha__C3_96TR__C5_9Eablonu_cWiUn.docx",
+      "format_rules": {
+        "max_pages": 15,
+        "must_not_contain_personal_info": false,
+        "font_rules": "Yazı tipi: Arial, Punto: 10, Satır Aralıkları: 1.15. İki tarafa yaslı, Sayfa kenar boşlukları 2.5 cm.",
+        "layout_rules": "Kapak ve İçindekiler başlıkları için 2 ayrı sayfa içermelidir. Kullanılan görseller metinlerde bahsedilen yerlerin hemen sonunda (ardından) belirtilmelidir."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_yonetici_ozeti",
+            "name": "1. YÖNETİCİ ÖZETİ",
+            "max_score": 5,
+            "description": "Proje raporunun özeti en fazla 300 kelime kullanılarak ifade edilmelidir."
+          },
+          {
+            "id": "2_proje_yonetimi",
+            "name": "2. PROJE YÖNETİMİ",
+            "max_score": 5,
+            "description": "Takım üyelerini de içeren proje organizasyonu ve proje takvimi sunulmalıdır."
+          },
+          {
+            "id": "3_proje_gereksinimleri",
+            "name": "3. PROJE GEREKSİNİMLERİ",
+            "max_score": 10,
+            "description": "Yarışma şartnamesinde belirlenen hususların kapsanması ve içeriğin doğru anlaşıldığının ifade edilmesi."
+          },
+          {
+            "id": "4_iha_platform_tasarimi",
+            "name": "4. İHA PLATFORM TASARIMI",
+            "max_score": 20,
+            "description": "Ön tasarım, 3B CAD modelleri, haberleşme yapısı (İHA-YKİ ve İHA-İHA), sistem mimari şeması, otopilot donanım/yazılım tercihleri ve tasarımın özgünlük/işlevsellik katkısı."
+          },
+          {
+            "id": "5_suru_mimarisi_ve_yazilim",
+            "name": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI",
+            "max_score": 35,
+            "description": "Seçilen sürü mimarisinin (dağıtık/merkezi vb.) gerekçelendirilmesi, literatür karşılaştırması, algoritmaların yarışma görevleriyle ilişkisi, akış diyagramları ve failsafe (haberleşme kaybı vb.) senaryolarının yönetimi."
+          },
+          {
+            "id": "6_gorev_dogrulama_simulasyon",
+            "name": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME",
+            "max_score": 20,
+            "description": "Sürü İHA algoritmalarının simülasyon ortamında doğrulanması, kamera/QR entegrasyonu modellemesi, en az 3 farklı sürü formasyonu çıktısı ve simülasyon sonuçlarının yorumlanması."
+          },
+          {
+            "id": "7_format_ve_kaynakca",
+            "name": "7. FORMAT VE KAYNAKÇA",
+            "max_score": 5,
+            "description": "Rapor formatına uyum, yazım/dilbilgisi kurallarına uyum ve akademik rapor standartlarına uygun kaynakça atıfları."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KTR",
+      "document": "2026_S_C3_BCr_C3_BC__C4_B0ha_KTR__C5_9Eablonu_l_ORree.docx",
+      "format_rules": {
+        "max_pages": 22,
+        "must_not_contain_personal_info": false,
+        "font_rules": "Yazı tipi: Arial, Punto: 10, Satır Aralıkları: 1.15. İki tarafa yaslı, Sayfa kenar boşlukları 2.5 cm.",
+        "layout_rules": "Kapak ve İçindekiler başlıkları için 2 ayrı sayfa içermelidir. Kullanılan görseller metinlerde bahsedilen yerlerin hemen sonunda (ardından) belirtilmelidir."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_yonetici_ozeti",
+            "name": "1. YÖNETİCİ ÖZETİ",
+            "max_score": 1,
+            "description": "Proje raporunun özeti en fazla 300 kelime kullanılarak ifade edilmelidir."
+          },
+          {
+            "id": "2_proje_yonetimi",
+            "name": "2. PROJE YÖNETİMİ",
+            "max_score": 2,
+            "description": "Takım üyelerini de içeren proje organizasyonu ve proje takvimi sunulmalıdır."
+          },
+          {
+            "id": "3_proje_gereksinimleri",
+            "name": "3. PROJE GEREKSİNİMLERİ",
+            "max_score": 4,
+            "description": "Yarışma şartnamesinde belirlenen hususların kapsanması ve içeriğin doğru anlaşıldığının ifade edilmesi."
+          },
+          {
+            "id": "4_iha_platform_tasarimi",
+            "name": "4. İHA PLATFORM TASARIMI",
+            "max_score": 25,
+            "description": "Nihai 3B CAD modelleri/gerçek sistem fotoğrafları, uçuş performans testleri, haberleşme (İHA-YKİ ve İHA-İHA) kararlılık testleri, güncel mimari şeması ve maliyet tablosu/toplam tahmini bütçe."
+          },
+          {
+            "id": "5_suru_mimarisi_ve_yazilim",
+            "name": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI",
+            "max_score": 30,
+            "description": "Nihai sürü mimarisi, formasyon, görev paylaşımı, navigasyon, çarpışmadan kaçınma, QR çözümleme, renk algılama, ve failsafe mekanizmaları (durum diyagramları/psödo kod örnekleri ile)."
+          },
+          {
+            "id": "6_gorev_dogrulama_simulasyon",
+            "name": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME",
+            "max_score": 35,
+            "description": "SITL/HITL simülasyon ortamları, görev algoritmalarının doğrulama testleri (QR/renk tespiti vb.), Uçuş Kontrol Listesi ve gerçekleştirilen uçuş testlerinin sonuçları."
+          },
+          {
+            "id": "7_format_ve_kaynakca",
+            "name": "7. FORMAT VE KAYNAKÇA",
+            "max_score": 3,
+            "description": "Rapor formatına uyum, yazım/dilbilgisi kurallarına uyum ve akademik rapor standartlarına uygun kaynakça atıfları."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Uçuş Kanıt ve Yazılım Mimarisi Videosu",
+      "document": "",
+      "format_rules": {
+        "flight_video_duration_max_mins": 5,
+        "flight_video_autonomous_min_mins": 3,
+        "must_contain_air_hud": true,
+        "software_video_duration_max_mins": 10,
+        "code_upload_platform": "Havelsan"
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_ucus_kanit_videosu",
+            "name": "1. Uçuş Kanıt Videosu",
+            "max_score": 10,
+            "description": "Kalkış, uçuş ve iniş aşamaları kesintisiz yer almalı. Yaklaşık 5 dk sürmeli, en az 3 dk otonom olmalı. Air HUD görüntüsü zorunludur."
+          },
+          {
+            "id": "2_yazilim_mimarisi_videosu",
+            "name": "2. Yazılım Mimarisi Videosu",
+            "max_score": 10,
+            "description": "Algoritmaların (çarpışma önleme, sürü formasyonu) ve mimarinin teknik detaylarının anlatıldığı maksimum 10 dk video. Kodlar Havelsan platformuna yüklenmelidir."
+          }
+        ]
+      }
+    }
+  ]
+}

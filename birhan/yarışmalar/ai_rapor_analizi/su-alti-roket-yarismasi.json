@@ -1,0 +1,155 @@
+{
+  "slug": "su-alti-roket-yarismasi",
+  "name": "Su Altı Roket Yarışması",
+  "specifications": [
+    "2026_SU_ALTI_ROKET_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_TR.V1.6_M7Rif.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "su-alti-roket-yarismasi",
+    "kategori_adi": "Su Altı Roket Yarışması",
+    "hedef_egitim_seviyesi": "Türkiye'de öğrenim gören ön lisans, lisans ve lisansüstü öğrencileri",
+    "takim_kurallari": {
+      "uye_sayisi_min": 5,
+      "uye_sayisi_max": 15,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "",
+      "mezuniyet_kurali": "",
+      "gorev_dagilimi_kurali": "Yabancı uyruklu öğrenci sayısı en fazla 4 kişi olmalıdır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar, bir öğretim görevlisini/üyesini veya araştırma görevlisini danışman olarak alabilir.",
+      "limit": "1"
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Aşama-1 Seyir Yapma ve Başlangıç Noktasına Geri Dönüş: SARA 2m derinlikte 10m düz ilerler, kıyıdan 50m uzaklaşır, sonrasında geri dönüp başlangıç/bitiş çizgisini otonom geçer.",
+      "Aşama-2 Roket Ateşleme: Kıyıya dik ve düz bir istikamette 30m ilerler. Atış bölgesine otonom ulaşarak yüzeye çıkar (+30 derece) ve roket ateşleme işlemini gerçekleştirir."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "SARA boyu maksimum 1000 milimetre, çapı maksimum 200 milimetre olacak şekilde tasarlanmalıdır. SARA 1000x350x350 mm hacmin dışına çıkmamalıdır.",
+      "SARA'nın burun ayırma sistemi veya farklı bir alt bileşeninde enerjik madde bulunmayacaktır.",
+      "Model roket fırlatmadan önce ilgili burun/gövde açma mekanizmasını takımlar kendileri tasarlayacaktır.",
+      "Acil durum butonu basıldığında sistem kapanmalı, batarya kaynaklı ateşlemeyi durdurmalıdır.",
+      "SARA 10 metre derinlikteki hidrostatik basınca dayanacak şekilde tasarlanmalıdır (En az 1.5 Emniyet Katsayısı).",
+      "Gövde rengi deniz ortamında rahatça fark edilebilir renkler olan turuncu, kırmızı veya sarı renkli olmalıdır.",
+      "İtki sistemi yalnızca kuyruk bölümünde bulunmalı, X veya + konfigürasyonda ve simetrik olarak yer almalıdır.",
+      "Algoritma ve Yazılım Testleri kapsamında istenen aracın düz gidip sancak yönüne 90 derece döndüğü ve derinlik değiştirdiği test videosu toplam 45 saniyeyi geçmemelidir. Burun ayırma sistemi testi videosu ise toplam 30 saniyeyi geçmemelidir.",
+      "Gövde-gövde birleşimlerinde bantlama veya silikon çekme gibi sök-tak işlemine uygun olmayan yöntemler kesinlikle kabul edilemez. O-halka kullanılıyorsa seçim hesaplamaları, kullanılmıyorsa alternatif standart gösterilmelidir. AI, silikon/bant kullanımına doğrudan eksi puan vermelidir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Sızdırmazlık Testi: Video gösterimi sırasında minimum 1 metre derinlikte araç hiçbir noktasından hava kabarcığı çıkarmamalıdır.",
+      "SARA su altında çalışabilecek, konumun tespit edilmesine olanak sağlayacak buzzer veya pingere sahip olmalıdır.",
+      "Tüm pervaneler, 12mm çapında bir test çubuğunun temasını engelleyecek sıklıkta bir ızgara/tel örgü ile kapatılmalıdır.",
+      "Takımlar, SARA kurtarma faaliyetlerini kolaylaştıracak bir şamandıra ve arayüzü bulundurmalıdır.",
+      "SARA ağırlık merkezi (CG) ve kaldırma merkezi (CB) noktalarını SARA gövdesinde bant vb. ile işaretlemelidir.",
+      "Gövde dışındaki tüm kablo bağlantıları IP68 standardında olmalı; sadece silikon veya bant ile izolasyon kabul edilmemektedir.",
+      "SARA iç yüzeyinde ağırlığı 200 gramdan fazla olan tüm bileşenler sadece yapıştırılamaz, mutlaka mekanik bir bağlantı yöntemi (vida vb.) ile monte edilmelidir.",
+      "Araçta ticari GKB'ye ek olarak özgün tasarımlı GKB bulunsa bile, göreve başlamadan önce hangisinin kullanılacağı bildirilmeli ve kullanılmayacak olan platformdan çıkarılmalıdır. Mimari incelenirken GKB'lerin platformdan ayrılabilir (sökülebilir) tasarlandığı denetlenmelidir."
+    ]
+  },
+  "mission_scoring": {
+    "Genel Puanlama": {
+      "Raporlar ve Değerlendirme Puanlaması": 270,
+      "Ebat Puanlaması": 30,
+      "1. Aşama Görevleri Puanlaması": 300,
+      "2. Aşama Görevleri Puanlaması": 400
+    },
+    "Aşama 1": {
+      "Süre Puanı": 150,
+      "Başlangıç/Bitiş Çizgisinde Enerjiyi Keserek Güvenli Şekilde Görevi Sonlandırma": 90,
+      "Görev Boyunca Sızdırmazlığın Sağlanması": 60
+    },
+    "Aşama 2": {
+      "Güvenli Atış Bölgesine Ulaşma": 100,
+      "Su Yüzeyine İstenen Açıyla Güvenli Çıkış": 100,
+      "Model Roketin Güvenli Bir Şekilde Fırlatılması": 150,
+      "Görev Boyunca Sızdırmazlığın Sağlanması": 50
+    },
+    "limits_and_thresholds": {
+      "asama_1_gecis_baraji": 150,
+      "odul_siralamasi_asama_2_baraji": 300,
+      "baraj_aciklamasi": "Aşama-1'den Aşama-2'ye geçmek için en az 150 puan toplanmalıdır. Ödül sıralamasına girmek için 2. Aşamadan en az 300 Puan alınmalıdır."
+    }
+  },
+  "stages": [
+    {
+      "stage": "KTR",
+      "document": "2026_Sualt_C4_B1_Roket_KTR_Sablon_73TXZ.docx",
+      "format_rules": {
+        "max_pages": 50,
+        "must_not_contain_personal_info": false,
+        "reference_format": "Metin içinde referanslar köşeli parantez içindeki numaralarla [1] alıntılanmalı ve raporun sonunda standart yayın stiline (yazar adı, yayıncı, tarih vb.) göre numaralandırılmış liste halinde sunulmalıdır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "0_ozet",
+            "name": "0. Özet",
+            "max_score": 0,
+            "description": "Özet bölümü tek bir paragraf olmalı, kalın (bold) karakterlerle yazılmalı ve toplam 1.500 karakteri geçmemelidir. Aksi halde bu bölüm değerlendirmeye alınmayacaktır."
+          },
+          {
+            "id": "1_giris",
+            "name": "1. Giriş",
+            "max_score": 5,
+            "description": "Araştırma konusu, karşılaşılan sorunlar ve hipotez/yöntemlerin özetlendiği bölüm (Maks 5000 karakter)."
+          },
+          {
+            "id": "2_operasyonel_gorev",
+            "name": "2. Operasyonel Görev Konsepti",
+            "max_score": 10,
+            "description": "Su altı roketlerinin görevlerinin sıralı olarak atış anından görev bitişine kadar olan süreçlerinin görsel tablo eşliğinde tanıtılması (Maks 5000 karakter)."
+          },
+          {
+            "id": "3_sistem_mimarisi",
+            "name": "3. Sistem Mimarisi ve Analizi",
+            "max_score": 15,
+            "description": "Genel sistem mimarisi, statik marjin, fonksiyonel boyutlar ve alt sistemlerin fonksiyonel ilişkilerinin aktarılması (Maks 5000 karakter)."
+          },
+          {
+            "id": "4_yapisal",
+            "name": "4. Yapısal",
+            "max_score": 15,
+            "description": "Her bir alt sistem için 3B CAD ve 2B teknik ölçülerin sunulması (Burun, Dümenler, Gövde, Montaj Stratejisi vb.)."
+          },
+          {
+            "id": "5_guc_sistemi",
+            "name": "5. Güç Sistemi",
+            "max_score": 10,
+            "description": "Araçta kullanılması planlanan batarya ve güç dağıtım kartı bileşenleri hakkında bilgi."
+          },
+          {
+            "id": "6_kontrol_sistemi",
+            "name": "6. Kontrol Sistemi",
+            "max_score": 10,
+            "description": "Sensörler, görev bilgisayarları ve kontrol bilgisayarları hakkında bilgi."
+          },
+          {
+            "id": "7_itki_sistemi",
+            "name": "7. İtki Sistemi",
+            "max_score": 10,
+            "description": "Aracın hareketini sağlayan ESC ve motor tasarımı hakkında bilgi."
+          },
+          {
+            "id": "8_algoritma_yazilim",
+            "name": "8. Algoritma ve Yazılım Sistemi",
+            "max_score": 15,
+            "description": "Güdüm, otopilot ve navigasyon algoritmalarının matematiksel/deneysel yöntemleri ve yazılım mimarisi."
+          },
+          {
+            "id": "9_burun_ayirma",
+            "name": "9. Burun Ayırma Sistemi",
+            "max_score": 5,
+            "description": "Model roketin burun ayrılma sisteminin konumu, mekanizması ve (varsa) piroteknik malzeme tablosu."
+          },
+          {
+            "id": "10_degisiklik_takibi",
+            "name": "10. Değişiklik Takibi",
+            "max_score": 5,
+            "description": "ÖTR aşamasından KTR aşamasına geçerken yapılan değişikliklerin tablo halinde sunulması. Ek olarak, ÖTR'de hiç var olmayıp KTR'de yeni eklenen içeriklerin (hangi bölüm ve sayfada olduklarıyla birlikte) ayrı bir tablo halinde belirtilmesi zorunludur."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "slug": "tarim-teknolojileri-yarismasi",
+  "name": "Tarım Teknolojileri Yarışması",
+  "specifications": [
+    "2026_TARIM__TEKNOLOJ_C4_B0LER_C4_B0_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_TR_3sOUx.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "tarim-teknolojileri-yarismasi",
+    "kategori_adi": "Tarım Teknolojileri Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Üniversite (Ön Lisans, Lisans, Yüksek Lisans, Doktora, Açık Öğretim), Mezunlar, Girişim ve Özel Sektör",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 6,
+      "bireysel_basvuru": true,
+      "final_alani_kisi_siniri": "Takım başı en fazla 3 kişi (danışman dahil)",
+      "mezuniyet_kurali": "Lise mezunu üyelerin mezuniyetinden itibaren 3 yıldan fazla geçmemiş olması gerekmektedir.",
+      "gorev_dagilimi_kurali": "",
+      "karma_takim_kurali": "Takımlar en fazla bir seviye altındaki eğitim düzeyinden katılımcılarla karma takım oluşturabilir (Örn: Üniversite takımı liselilerle, ancak lise takımı sadece liselilerle). İlkokul ve ortaokul seviyesindeki öğrenciler takımlara kesinlikle dahil edilemez."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Lise seviyesindeki takımlar ve bireysel başvurular danışman almak zorundadır. Üniversite ve üzeri seviyede danışman zorunlu değildir.",
+      "limit": "En fazla 1 danışman olabilir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Arz Güvenliği: Alternatif protein üretimi, hayvancılıkta yavru kayıplarını engelleyici sistemler, sperma ayrıştırma, akıllı bitki besleme ve koruma.",
+      "Sosyoloji: Tarımda otonom araçlar (AGV), akıllı ahır ve tam otonom sera modelleri, tarımsal görüntü işleme ve veri analitiği.",
+      "İklim/Çevre: Biyolojik gübre ve alg biyoyakıtı, organik atıkların enerji ve yeme dönüşümü, don ve yangın önleme, toprak altı sulama, dirençli tohumlar.",
+      "Fiyat İstikrarı: Tarımsal üreticiler için alternatif finansman teknolojileri (mikro finans, platformlar).",
+      "Sağlık (Güvenilir Gıda): Organik üretim teknolojileri, bitkisel/alg tabanlı Omega-3 ve gıda takviyeleri üretimi."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Projeler sürdürülebilir, çevre dostu ve yenilikçi olmalıdır. Belirtilen alt kategoriler dışında sunulan projeler doğrudan elenecektir.",
+      "İlkokul ve ortaokul seviyesindeki öğrenciler takımlara dahil edilemez.",
+      "Daha önce katıldığı projenin birebir aynısı veya kopyası ile başvuru yapılamaz.",
+      "Geçmiş yıl raporlarından alıntı yapılması halinde kaynak belirtilmesi zorunludur."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Final aşamasında sunumlar sadece takım üyeleri tarafından yapılmalı, danışman sunum yapmamalıdır.",
+      "Nihai değerlendirme sadece prototip ve final sunumu (%100) üzerinden yapılır, önceki raporların final puanına etkisi yoktur."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "baraj_aciklamasi": "Ön değerlendirme raporu ve yarı final sunumu puanları %0 ağırlığındadır ve sadece elemeyi geçmek için kullanılır. Nihai ödül sıralaması Prototip ve Final Sunumu (%100) performansına göre belirlenir.",
+      "itiraz_sartlari": "Takımların PÖDR veya Sunum değerlendirmelerine itiraz edebilmesi için baraj puanından en fazla 25 puan altında alması şarttır. Barajın 26 ve daha altı puan alan takımlar itiraz edemez."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Proje Ön Değerlendirme Raporu": "%0",
+      "Proje Sunumu (Yarı Final)": "%0",
+      "Prototip ve Final Sunum Puanlaması": "%100"
+    },
+    "gorev_puanlamasi": {}
+  },
+  "stages": [
+    {
+      "stage": "Proje Ön Değerlendirme Raporu",
+      "document": "",
+      "format_rules": {},
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_kapsam_uygunlugu",
+            "name": "Kapsam Uygunluğu ve Gelişim Düzeyi",
+            "max_score": 100,
+            "description": "Projenin yarışma kapsamına uygunluğu ve gelişim düzeyi değerlendirilerek ön eleme yapılır."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Proje Sunumu",
+      "document": "2026_Tarım_Teknolojileri_Yarısmast_Proje_Sunum_Sablonu_Revize_wOrJD.pptx",
+      "format_rules": {
+        "max_pages": 17,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Problem Tanımı maks 2 sayfa, Çözüm Önerisi maks 2 sayfa, Yöntem maks 2 sayfa, Prototip/Tasarım maks 2 sayfa, Mevcut Çözümler maks 1 sayfa. Görseller metinlerin yanında verilmelidir.",
+        "file_format": "PDF",
+        "max_size_mb": 75,
+        "footer_rule": "Her sayfanın alt kısmında 'TAKIM ADI – TAKIM ID – BAŞVURU ID – YARIŞMA SEVİYESİ' bilgileri tüm sayfalarda aynı pozisyonda ve formatta bulunmalıdır.",
+        "slogan_rule": "'Teşekkürler' adlı son sayfada proje/fikre ait bir sloganla kapanış yapılması zorunludur."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_takim_tanitimi",
+            "name": "1. TAKIM TANITIMI",
+            "max_score": 10,
+            "description": "Takım üyelerinin tanıtılması."
+          },
+          {
+            "id": "2_proje_ozeti",
+            "name": "2. PROJE ÖZETİ, KAPSAMI ve HEDEF KİTLE",
+            "max_score": 10,
+            "description": "Projenin kapsamının ve kime hitap ettiğinin özetlenmesi."
+          },
+          {
+            "id": "3_proje_amaci",
+            "name": "3. PROJE AMACI VE TOPLUMSAL FAYDASI",
+            "max_score": 10,
+            "description": "Projenin hangi gerekçeyle geliştirildiği ve tarımsal üretime/topluma faydası."
+          },
+          {
+            "id": "4_problem_tanimi",
+            "name": "4. PROBLEMİN TANIMI VE ÖNEMİ",
+            "max_score": 10,
+            "description": "Temel tarımsal veya çevresel problemin etkisi, % kayıp/maliyet gibi ölçülebilir göstergelerle tanımlanması."
+          },
+          {
+            "id": "5_cozum_onerisi",
+            "name": "5. ÇÖZÜM ÖNERİSİ",
+            "max_score": 10,
+            "description": "Probleme yönelik geliştirilen yenilikçi çözümün temel mantığı ve sektöre uyarlanabilirliği."
+          },
+          {
+            "id": "6_yontem",
+            "name": "6. YÖNTEM",
+            "max_score": 10,
+            "description": "İzlenecek metot, deney, teknolojiler ve kullanılacak malzemeler."
+          },
+          {
+            "id": "7_prototip_tasarimi",
+            "name": "7. PROTOTİP / TASARIM VE İŞLEYİŞİ",
+            "max_score": 15,
+            "description": "Somut donanım veya yazılım ürününün tasarım/kodlama adımları ve çalışma mekanizması (görsellerle)."
+          },
+          {
+            "id": "8_mevcut_cozumlerle_karsilastirma",
+            "name": "8. MEVCUT ÇÖZÜMLERLE KARŞILAŞTIRMA",
+            "max_score": 10,
+            "description": "Yerli ve milli özelliklerin, piyasadaki benzer çözümlerle avantaj/farklılık karşılaştırması."
+          },
+          {
+            "id": "9_ticarilesme_ve_surdurulebilirlik",
+            "name": "9. TİCARİLEŞME POTANSİYELİ VE SÜRDÜRÜLEBİLİRLİK",
+            "max_score": 10,
+            "description": "Seri üretime geçiş, pazar araştırması ve iş modeli."
+          },
+          {
+            "id": "10_proje_takvimi",
+            "name": "10. PROJE TAKVİMİ",
+            "max_score": 5,
+            "description": "Aşamalar ve zaman çizelgesi."
+          }
+        ]
+      }
+    }
+  ]
+}

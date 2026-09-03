@@ -1,0 +1,156 @@
+{
+  "slug": "finansal-teknolojiler-yarismasi",
+  "name": "Finansal Teknolojiler Yarışması",
+  "specifications": [
+    "2026-Finansal_Teknolojiler_Şartname_M5Jbl_1_ptIng.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "finansal-teknolojiler-yarismasi",
+    "kategori_adi": "Finansal Teknolojiler Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, Finansal Teknoloji Paydaşları & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Ön Lisans / Lisans / Yüksek Lisans / Doktora Öğrencileri ve Mezunlar (Son 2 Yıl İçinde Mezun Olmuş Kişiler)",
+    "tematik_alanlar": [
+      "Ödeme Hizmetleri ve Teknolojileri Uygulamaları",
+      "Bankacılık Teknolojileri Uygulamaları",
+      "Dağıtık Defter Teknolojisinin Finans Alanında Kullanılması",
+      "Yeşil ve Sürdürülebilir Finans Uygulamaları",
+      "Muhasebe Teknolojileri Uygulamaları",
+      "Oyun ve Finans Teknolojileri Uygulamaları (GameFi)"
+    ],
+    "takim_kurallari": {
+      "uye_sayisi_min": 2,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": false,
+      "final_destek_limiti": "Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği takım başı en fazla 3 kişi (danışman dâhil) ile sınırlıdır.",
+      "kural_detayi": "Yarışmaya 2-5 kişilik takımlar halinde başvurulabilir (Bireysel başvuru kabul edilmez). Her yarışmacı yalnızca 1 takımda yer alabilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Öğrencilerden oluşan takımların, ilgili alanda görev yapan bir akademisyen ya da profesyonelden danışmanlık desteği alması tavsiye edilir (İsteğe Bağlı).",
+      "limit": "Her takımın en fazla 1 danışmanı olabilir. Danışman takım üyesi olarak eklenmez; varsa onaylı görevlendirme belgesi sisteme yüklenir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_dagilimi": {
+      "formul": "Nihai Puan = (0.10 * ODR) + (0.20 * Cevrimici_Sunum) + (0.70 * Final_Sunumu_ve_Demo)",
+      "puan_kalemleri": {
+        "odr_yuzdesi": "%10 (Proje Ön Değerlendirme Raporu)",
+        "cevrimici_sunum_yuzdesi": "%20 (Yarı Final Çevrim İçi Proje Sunumu)",
+        "final_sunum_yuzdesi": "%70 (TEKNOFEST Alanında Final Jüri Sunumu ve Ürün Demosu)"
+      }
+    },
+    "itiraz_kurali": "Rapor itirazları, rapor sonuçları açıklandıktan sonraki 48 saat içerisinde KYS üzerinden takım danışmanı veya takım kaptanı tarafından yapılmalıdır.",
+    "etik_ve_gizlilik_kurallari": [
+      "Raporlarda intihal, kopyalama vb. etik ihlalinin tespiti durumunda rapor değerlendirilmeye alınmaz ve takım yarışmadan elenir.",
+      "Geçmiş yıl raporlarından alıntı yapılması durumunda standart alıntı formatına uygun olarak kaynak belirtilmelidir."
+    ],
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "150.000,00 ₺",
+        "danisman_odulu": "15.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "120.000,00 ₺",
+        "danisman_odulu": "12.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "100.000,00 ₺",
+        "danisman_odulu": "10.000,00 ₺"
+      },
+      "prestij_odulleri": [
+        "En İyi Sunum Ödülü",
+        "Toplumsal Etki Ödülü",
+        "Yenilikçi Yaklaşım Ödülü"
+      ]
+    },
+    "sartname_dosyasi": "2026-Finansal_Teknolojiler_Şartname_M5Jbl_1_ptIng.pdf"
+  },
+  "stages": [
+    {
+      "stage": "ODR",
+      "stage_name": "Proje Ön Değerlendirme Raporu",
+      "weight_in_total": "%10",
+      "template": "Finansal_Teknolojiler_Türkçe_ÖDR_Şablon_6Wfrb.docx",
+      "format_rules": {
+        "max_pages": 5,
+        "total_page_limit_description": "Kapak, İçindekiler ve Kaynakça kısımları hariç rapor en fazla 5 sayfa olmalıdır. 5 sayfayı geçen raporlar Rapor Düzeni bölümünden 0 puan alır ve değerlendirmeye alınmaz.",
+        "font_family": "Aptos",
+        "font_size": "12 pt (Başlıklar: 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor Kapak, İçindekiler ve Kaynakça sayfalarını içermelidir. Rapor sayfaları birbirini takip edecek şekilde numaralandırılmalıdır."
+      },
+      "rubric": {
+        "category_name": "finansal-teknolojiler-yarismasi",
+        "stage": "ODR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_ozeti",
+            "name": "1. Proje Özeti",
+            "max_score": 10.0,
+            "description": "Projenin konusu, amacı, kapsamı ve yöntemi açık, öz ve anlaşılır bir biçimde tanımlanmalıdır."
+          },
+          {
+            "id": "2_cozum_urettigi_sorun_ihtiyac",
+            "name": "2. Çözüm Ürettiği Sorun/İhtiyaç",
+            "max_score": 15.0,
+            "description": "Çözüm üretilen sorun ya da ihtiyaç, mevcut durumdaki eksiklikler, önerilen çözümün güçlü yönleri ve alternatiflerden farkı."
+          },
+          {
+            "id": "3_kullanilacak_yontem",
+            "name": "3. Kullanılacak Yöntem",
+            "max_score": 25.0,
+            "description": "Kullanılacak teknikler, metotlar, analizler; ileri teknoloji kullanımı, özgün ve yenilikçi yaklaşımlar, verimlilik ve bilimsel temeller."
+          },
+          {
+            "id": "4_is_modeli",
+            "name": "4. İş Modeli",
+            "max_score": 20.0,
+            "description": "Pazar büyüklüğü, trendler, rekabet ortamı, hedef kitle kullanıcı profilleri, iş modeli ve ticarileşme potansiyeli."
+          },
+          {
+            "id": "5_rakip_analizi",
+            "name": "5. Rakip Analizi",
+            "max_score": 10.0,
+            "description": "Pazardaki birincil ve ikincil rakiplerle karşılaştırma tablosu ve projeyi benzerlerinden ayıran yenilikçi özellikler."
+          },
+          {
+            "id": "6_risk_analizi",
+            "name": "6. Risk Analizi",
+            "max_score": 10.0,
+            "description": "Projenin başarısını etkileyebilecek olası riskler ve bu risklere karşı alınacak gerçekçi önlemler ve çözümler."
+          },
+          {
+            "id": "7_proje_takvimi",
+            "name": "7. Proje Takvimi",
+            "max_score": 5.0,
+            "description": "İş paketleri ve alt faaliyetlerin görsel bir şema/tablo ile detaylı, açık ve gerçekçi zaman planlaması."
+          },
+          {
+            "id": "8_rapor_duzeni",
+            "name": "8. Rapor Düzeni",
+            "max_score": 5.0,
+            "description": "Şablondaki tüm başlıkların eksiksizliği, şekil/tablo düzeni, sayfa sınırına uyum (Kapak, İçindekiler, Kaynakça hariç 5 sayfa sınırı)."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "CEVRIMICI_SUNUM",
+      "stage_name": "Proje Sunumu (Çevrim İçi Yarı Final)",
+      "weight_in_total": "%20",
+      "format_rules": {
+        "special_requirements": "ÖDR aşamasını geçen takımların çevrim içi ortamda jüriye yapacağı sözlü yarı final sunumu."
+      }
+    },
+    {
+      "stage": "FINAL_SUNUM_VE_DEMO",
+      "stage_name": "Final Sunum ve Ürün Demosu Puanlaması",
+      "weight_in_total": "%70",
+      "format_rules": {
+        "special_requirements": "TEKNOFEST alanında jüriye PowerPoint sunumu ve çalışan yazılım/ürün demosunun yapılması (Danışmanlar sunum yapamaz)."
+      }
+    }
+  ]
+}

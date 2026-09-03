@@ -1,0 +1,304 @@
+{
+  "slug": "liseler-arasi-insansiz-hava-araclari-yarismasi",
+  "name": "TÜBİTAK Liseler Arası İnsansız Hava Araçları Yarışması",
+  "specifications": [
+    "2026__C4_B0HA_Yar_C4_B1_C5_9Fmalar_C4_B1__C5_9Eartnamesi_TR_v6_n7Mv5.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "liseler-arasi-insansiz-hava-araclari-yarismasi",
+    "kategori_adi": "Liseler Arası İnsansız Hava Araçları Yarışması",
+    "hedef_egitim_seviyesi": "Lise ve dengi okullar",
+    "takim_uye_sayisi": {
+      "min": 5,
+      "max": 10
+    },
+    "danisman_sarti": "Takım sorumlusu (Danışman Öğretmen) dahil en az 5, en fazla 10 üyeden oluşmak zorundadır. Danışman zorunludur.",
+    "dil_gereksinimi": "Türkçe",
+    "keywords": [
+      "İHA",
+      "sabit kanat",
+      "döner kanat",
+      "serbest görev",
+      "otonom",
+      "görev mekanizması",
+      "fail-safe",
+      "MTOW",
+      "muhafaza kutusu",
+      "telemetri",
+      "VTOL",
+      "AGL",
+      "SHGM",
+      "RTL yasağı",
+      "Sonsuzluk manevrası",
+      "Tek Kamera"
+    ],
+    "oncelikli_gorevler": [
+      "Sabit Kanat ve Döner Kanat kategorilerinde belirlenen hedeflere yük (su topu) bırakma görevlerinin otonom uçuş dinamiklerinin tasarlanması",
+      "Serbest Görev kategorisinde yenilikçi ve özgün bir uçuş/görev tanımı oluşturulması",
+      "Aerodinamik, elektronik, otopilot ve mekanik üretim (muhafaza kutusu dahil) aşamalarının detaylı belgelenmesi"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Takım Üye Sayısı (Madde 4): Takımlar danışman öğretmen dahil en az 5, en fazla 10 kişiden oluşmak zorundadır.",
+      "Kalkış Ağırlığı (MTOW) Sınırı: Sabit ve Döner Kanat için azami toplam kalkış ağırlığı (faydalı yük dahil) 4 kg'dır. Serbest Görev için azami toplam kalkış ağırlığı 25 kg'dır.",
+      "VTOL (DİKY) Yasağı: DİKY (VTOL) tipi hava araçları Sabit veya Döner Kanat kategorilerine başvuramaz; yalnızca Serbest Görev kategorisinde yarışabilir.",
+      "Sayfa ve Biçim Sınırı (Kritik): Proje Süreç Raporu (PSR) şablon başlıkları ve TEKNOFEST kapakları dahil en fazla 17 sayfa olmalıdır. Aşan raporlar değerlendirme dışı kalır.",
+      "Yapay Zeka (AI) Metin Yasağı (Kritik İhlal): Raporda ChatGPT ve türevi yapay zeka araçlarıyla yazılmış takıma özgü olmayan içerik tespiti durumunda takım yarışmadan elenir.",
+      "İntihal ve Kopyalama (Kritik): Başka takımların görev bilgileri ve tasarım görselleri kopyalanamaz, tespiti elenme sebebidir.",
+      "Kör Hakemlik İstisnası (Kritik AI Uyarısı): Liseler Arası İHA kategorisi şablon kapaklarında Okul/Kurum Adı, İl ve Danışman bilgileri resmî olarak zorunludur. Yapay zeka bu bilgileri kör hakemlik ihlali olarak algılayıp CEZA KESMEMELİDİR.",
+      "Yasaklı Bütçe Kalemleri: TÜBİTAK Proje Desteğinden yakıt, araç kiralama, yemek, şahsi harcamalar ve tüketim giderleri karşılanamaz. Bu kalemler bütçe tablosunda beyan edilemez.",
+      "Saha ve Hazırlık Ekip Kısıtı: İHA'nın kurulumunda maksimum 3 öğrenci, YKİ başında 1 öğrenci (toplam 4 kişi) bulunabilir. Danışman öğretmen uçuş ve hazırlık alanına kesinlikle giremez.",
+      "SHGM Kayıt Zorunluluğu: İHA pilotunun ve hava aracının SHGM amatör/sportif kaydı ve karekodu bulunmak zorundadır.",
+      "Serbest Görev Tehlikeli Madde Yasağı (Madde 8.2 & 10.3): Canlı sağlığını/çevreyi tehdit edecek gerçek mühimmat, patlayıcı, kimyasal/biyolojik yüklerin kullanımı kesinlikle yasaktır (Sadece boya tabancası veya temsili simülasyon serbesttir).",
+      "Görüntü İşleme Tek Kamera Kısıtı (Madde 10.1.2 & 10.2.2): Yardımcı bilgisayara bağlı sadece TEK BİR kamera kullanılabilir. Hedef tespiti veya alan taraması için ikinci bir kameranın donanım/yazılım mimarisine eklenmesi kesinlikle yasaktır.",
+      "Döner Kanat Fail-Safe RTL Yasağı (Madde 9.2): Döner Kanat İHA'ların arıza emniyet (fail-safe) senaryosunda RTL (Eve Dönüş) modu KULLANILAMAZ. Standart ArduPilot/PX4 RTL parametresi yerine zorunlu olarak yarım gaz ile kontrollü iniş (land) ayarlanmalıdır.",
+      "Demirbaş TİF Hibe Zorunluluğu (Madde 13): 120.000 TL'lik bütçeden alınan 3D yazıcı, takım çantası veya ölçüm cihazı gibi demirbaşlar yarışma bitiminde okula hibe edilmek ve TİF (Taşınır İşlem Fişi) düzenlenmek zorundadır.",
+      "Lise Öğrencisi Pilot Kısıtı (Madde 8.1): Uçuş pilotu zorunlu olarak lise öğrencisi olmalıdır. Danışman öğretmen kesinlikle pilotluk yapamaz.",
+      "İtiraz Eşiği Sınırı (Madde 5.1 & 5.2): Takımlar rapor sonuçlarına yalnızca puanları barajın en fazla 25 puan altındaysa itiraz edebilirler. (AI'ın rapor çıktısına bu uyarı yansıtılabilir)."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Zaman ve Uçuş Süresi Kısıtları: İHA kutu kurulum üst limiti 8 dakika, uçuşa hazırlık (GPS/Arm) üst limiti 8 dakikadır. Görev uçuş süreleri: 1. Görev max 5 dk, 2. Görev max 10 dk, Serbest Görev max 15 dakikadır.",
+      "İrtifa ve Çevresel Limitler: Azami uçuş irtifası 120 metre (400 ft) AGL'dir. İHA, en az 25 km/h rüzgar direncine dayanacak güç ve itki/ağırlık (T/W) kapasitesine sahip olmalıdır.",
+      "Faydalı Yük (Payload) Fiziksel Şartları: 2 adet yük renkleri hariç ağırlık, boyut ve malzeme olarak tamamen aynı olmalıdır. Üzerinde elektronik bileşen bulunamaz. Paraşüt varsa, rengi taşıdığı yük ile aynı olmalıdır. Yük çarpmada parçalanmamalıdır.",
+      "Hedef Ölçüm Toleransları: Hedef merkezinden geçerli puanlama ölçümü Sabit Kanat için en fazla 20 metre, Döner Kanat için en fazla 10 metre yarıçaptır.",
+      "Serbest Görev Kapak Beyanı: Serbest Görev kapağında ARAÇ GELİŞTİRME ŞEKLİ (Yeni Araç / Mevcut Araç) seçeneğinin kesinlikle işaretlenmiş olması denetlenmelidir.",
+      "Yerli Ürün Sınırı: Vida, hazır köpük, filament veya yabancı menşeli hazır otopilotların yerli satıcıdan alınması 'Yerli Ürün Katkısı' sayılamaz (Serbest Görev'de puan kesintisi).",
+      "Acil Güç Kesme ve Fail-Safe: Gücü donanımsal olarak en fazla 2 saniyede kesen buton; sinyal kaybında en fazla 5 saniyede Fail-Safe moduna (Sabit: gaz kes/tam yukarı irtifa/tam sağ/flap aşağı, Döner: RTL yasak, yarım gaz iniş) geçiş belgelenmelidir.",
+      "Kumanda ile Motor Arm/Disarm Kuralı (Madde 9.1): Motorların arm ve disarm işlemleri yalnızca RC kumanda üzerindeki stick (çubuk) hareketleriyle yapılmalıdır.",
+      "İkinci Görev İtki Bileşeni Sabitliği (Madde 8.3.2): 1. görev ve 2. görev arasında motor, pervane ve ESC donanımında değişiklik yapılamaz (T/W bu iki durumu aynı donanımla sağlamalıdır).",
+      "1. Görev Zorunlu 'Sonsuz' (Yatay 8) Manevrası: Sabit ve Döner kanat araçlar 1. görevde aralarında 150m mesafe olan iki direği içerisine alarak art arda iki tur yatay 8 (sonsuzluk) manevrası algoritmasını tasarlamak zorundadır. Aksi takdirde 0 puanla elenirler.",
+      "Direk Dönüş İhlali (Turn Radius Margin): Otopilot yönlendirme algoritması direkleri DIŞARIDAN dönecek genişlikte (Turn Radius) olmalıdır. (1 iç dönüş = -10 Puan, 2 iç dönüş = 0 Puan başarısızlık).",
+      "Otonomi Puan Çarpanı (c Katsayısı): Tam Manuel uçuşlarda puan 0.5 ile, Yarı Otonomlarda 0.7 ile çarpılır. Tam puan almak için 'Otonom Kalkış, Uçuş ve İniş (c=1.0)' algoritmalarının kullanıldığı raporda gösterilmelidir.",
+      "Şifreli Haberleşme: Radyo kontrol ve telemetri hatları uçtan uca şifrelenmiş olmalıdır.",
+      "Muhafaza Kutusu Geometrisi: Sabit Kanat için tam silindirik (elips yasak), Döner Kanat için kare/dikdörtgen prizma.",
+      "İnişte Donanımsal Bütünlük (Pervane Kırılması İstisnası): İHA, uçuş sonu inişte mekanik bütünlüğünü korumalıdır. Gövde/kanat/iniş takımı kırılırsa uçuş geçersizdir, ANCAK pervane kırılması istisnai olarak kırım sayılmaz. İniş takımlarının şok sönümleme (shock absorption) hesabı bulunmalıdır."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin TÜBİTAK İHA yarışması isterlerine (görev algoritması, yatay 8 manevrası, fail-safe, muhafaza kutusu, MTOW sınırları, rüzgar direnci ve zaman kısıtları) tam uyumlu hava aracı kavramsal ve detay tasarımını içermesi."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "PSR_Sabit_Doner",
+      "template": "2026_Liseler_Aras_C4_B1__C4_B0HA_Sabit-D_C3_B6ner_PSR__C5_9Eablonu_3WC6z.docx",
+      "rubric": {
+        "category_name": "liseler-arasi-insansiz-hava-araclari-yarismasi",
+        "stage": "PSR_Sabit_Doner",
+        "description": "Sabit ve Döner Kanatlı İHA PSR değerlendirmesi. (Not: Şablondaki 95 puanlık dağılım, 5 puanlık format/şartname uyum kriteri eklenerek 100.0 puana normalize edilmiştir.)",
+        "criteria": [
+          {
+            "id": "organizasyon_ozeti",
+            "name": "Organizasyon Özeti",
+            "max_score": 10.0,
+            "description": "Takım Organizasyonu (5) ve Zaman Çizelgesi ve Geliştirme Süreci (5).",
+            "guiding_questions": [
+              "Takım üyelerinin görev dağılımları (öğrenci pilot dahil) ve Gantt şeması gerçekçi mi? Saha ekibi 4 kişi ile sınırlanmış mı?"
+            ]
+          },
+          {
+            "id": "iha_konfigurasyonu",
+            "name": "Görevler için İHA Konfigürasyonu ve Yenilikçi Tasarım Özellikleri",
+            "max_score": 10.0,
+            "description": "Görevler için İHA konfigürasyonu ve inovatif özellikler.",
+            "guiding_questions": [
+              "Tasarımın aerodinamik konfigürasyonu ve VTOL/DİKY yasağına uyumu doğrulanmış mı?"
+            ]
+          },
+          {
+            "id": "malzeme_ve_uretim",
+            "name": "Malzeme Seçimi, Gövde ve Mekanik Sistem Üretim Teknikleri",
+            "max_score": 15.0,
+            "description": "Malzeme, Gövde, İniş Takımı Mukavemeti, Katlanabilirlik ve Muhafaza Kutusu tasarımı (Silindirik/Prizma).",
+            "guiding_questions": [
+              "İHA'nın kutuya sığma, 8 dakikalık kurulum süresi ve MTOW <= 4 kg kısıtı teknik olarak sağlanıyor mu? İniş takımlarının şok sönümleme yeteneği belirtilmiş mi?"
+            ]
+          },
+          {
+            "id": "gorev_mekanizmasi",
+            "name": "Görev Mekanizması Sistemi",
+            "max_score": 10.0,
+            "description": "Faydalı yük bırakma (2 adet aynı ebat, elektroniksiz, uyumlu renk paraşütlü).",
+            "guiding_questions": [
+              "Yük bırakma mekanizması 20m (Sabit) veya 10m (Döner) doğruluk limitine ve yük çarpma bütünlüğüne (dağılmama) göre tasarlanmış mı?"
+            ]
+          },
+          {
+            "id": "elektrik_ve_guc_sistemleri",
+            "name": "Elektrik ve Elektronik Donanım ile Güç Sistemleri",
+            "max_score": 15.0,
+            "description": "Aviyonik mimari, motor KV, ESC limiti, Power On/Off devresi (2sn) ve Fail-Safe (5sn).",
+            "guiding_questions": [
+              "Motorlar RC stick ile arm oluyor mu? Döner kanat fail-safe modunda RTL yasağına (yarım gaz iniş mecburi) uyulmuş mu?"
+            ]
+          },
+          {
+            "id": "yazilim_kontrol",
+            "name": "Yazılım ve Kontrol Sistemi",
+            "max_score": 10.0,
+            "description": "Otopilot algoritması, otonomi (c çarpanı), sonsuzluk manevrası direk yarıçapı ve TEK kamera ile hedef tanıma.",
+            "guiding_questions": [
+              "1. Görev yatay 8 (sonsuzluk) algoritması direklerin DIŞINDAN dönecek güvenli dönüş yarıçapı marjına (turn radius) sahip mi? Otonomi çarpanının c=1.0 olması (tam otonom) için algoritmalar net mi?"
+            ]
+          },
+          {
+            "id": "performans_parametreleri",
+            "name": "İHA Performans Parametreleri",
+            "max_score": 10.0,
+            "description": "1. görev 5dk, 2. görev 10dk limitleri, 25km/h rüzgar direnci ve 120m AGL kapasitesi.",
+            "guiding_questions": [
+              "25 km/h rüzgara dayanım (T/W oranı) ve max 120m AGL tavan irtifası, motor-pervane sabitliği korunarak hesaplanmış mı?"
+            ]
+          },
+          {
+            "id": "gorsel_tasarim",
+            "name": "Görsel Tasarım Konfigürasyonu",
+            "max_score": 10.0,
+            "description": "Aracın tüm bileşenleriyle genel görünümü ve CAD montaj estetiği.",
+            "guiding_questions": [
+              "Görsel CAD çizimleri 3 eksende detaylandırılmış ve parçalar net olarak isimlendirilmiş mi?"
+            ]
+          },
+          {
+            "id": "maliyet_analizi",
+            "name": "Maliyet Analizi ve Bütçe Tablosu",
+            "max_score": 5.0,
+            "description": "Max 120.000 TL bütçe tablosu.",
+            "guiding_questions": [
+              "Bütçede TİF (Taşınır İşlem Fişi) bilinci gösterilerek okula hibe edilecek demirbaşlar net mi? Yasaklı kalem bulunuyor mu?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "Genel Rapor Düzeni ve Formatı",
+            "max_score": 5.0,
+            "description": "17 sayfa sınırı, yapay zeka yasağı denetimi. (Kapak okul bilgilerine ceza kesilmez).",
+            "guiding_questions": [
+              "Metin format kurallarına uygun mu ve şablondaki 17 sayfa sınırına riayet edilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "organizasyon_ozeti_baslik": "ORGANİZASYON ÖZETİ",
+          "takim_organizasyonu": "Takım Organizasyonu",
+          "zaman_cizelgesi": "Zaman Çizelgesi ve Geliştirme Süreci",
+          "iha_ozellikleri_baslik": "İNSANSIZ HAVA ARACININ ÖZELLİKLERİ",
+          "iha_konfigurasyonu": "Görevler için İHA Konfigürasyonu ve Yenilikçi Tasarım Özellikleri",
+          "malzeme_secimi": "Malzeme Seçimi, Gövde ve Mekanik Sistem Üretim Teknikleri",
+          "gorev_mekanizmasi": "Görev Mekanizması Sistemi",
+          "elektrik_ve_guc_sistemleri": "Elektrik ve Elektronik Donanım ile Güç Sistemleri",
+          "yazilim_kontrol": "Yazılım ve Kontrol Sistemi",
+          "performans": "İHA Performans Parametreleri",
+          "gorsel_tasarim": "Görsel Tasarım Konfigürasyonu",
+          "maliyet_analizi": "MALİYET ANALİZİ VE BÜTÇE TABLOSU"
+        },
+        "max_pages": 17
+      }
+    },
+    {
+      "stage": "PSR_Serbest_Gorev",
+      "template": "2026_Liseler_Aras_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_lZW0f.docx",
+      "rubric": {
+        "category_name": "liseler-arasi-insansiz-hava-araclari-yarismasi",
+        "stage": "PSR_Serbest_Gorev",
+        "description": "Serbest Görev İHA PSR değerlendirmesi. (Not: Şablondaki 95 puanlık dağılım, 5 puanlık format/şartname uyum kriteri eklenerek 100.0 puana normalize edilmiştir.)",
+        "criteria": [
+          {
+            "id": "ozet_baslik_sg",
+            "name": "Özet ve Görev",
+            "max_score": 8.0,
+            "description": "Takım Organizasyonu (4) ve Görev Başlığı (4). (Serbest Görev kapağında ARAÇ GELİŞTİRME ŞEKLİ var mı?)",
+            "guiding_questions": [
+              "Takım kapağında Yeni/Mevcut Araç durumu işaretlenmiş ve takım organizasyonu (öğrenci pilot) aktarılmış mı?"
+            ]
+          },
+          {
+            "id": "ucus_gorevi_tanimi",
+            "name": "Uçuş Görevinin Tanımı",
+            "max_score": 18.0,
+            "description": "Serbest görev senaryosu (max 15 dakika uçuş limiti dahilinde).",
+            "guiding_questions": [
+              "Tehlikeli mühimmat/patlayıcı KULLANILMAMIŞ güvenli görev senaryosu net tanımlanmış mı?"
+            ]
+          },
+          {
+            "id": "ucus_gorevi_ozgunlugu",
+            "name": "Uçuş Görevinin Özgünlüğü",
+            "max_score": 10.0,
+            "description": "Görevin yenilikçi (inovatif) ve endüstriyel farklılıkları.",
+            "guiding_questions": [
+              "Proje senaryosu yenilikçi, inovatif ve katma değerli mi?"
+            ]
+          },
+          {
+            "id": "tasarim_sg",
+            "name": "Tasarım",
+            "max_score": 10.0,
+            "description": "İHA Gövde tasarımı, iniş takımları (şok emici) ve DİKY (VTOL) yapısal elemanları.",
+            "guiding_questions": [
+              "Gövde tasarımı max 25 kg ağırlığa ve 25 km/h rüzgar direncine uygun mu? İniş donanımsal bütünlüğü korunuyor mu?"
+            ]
+          },
+          {
+            "id": "donanim_sg",
+            "name": "Donanım",
+            "max_score": 10.0,
+            "description": "Sensörler, güç sistemi, Fail-Safe uyumu (5sn) ve eyleyiciler.",
+            "guiding_questions": [
+              "2 saniyede güç kesme, RC Stick Arm kuralı, Fail-safe (5sn) tepkisi donanımsal olarak net mi?"
+            ]
+          },
+          {
+            "id": "yazilim_sg",
+            "name": "Yazılım",
+            "max_score": 10.0,
+            "description": "Otonomi ve veri analiz algoritmaları (c katsayısı doğrulaması).",
+            "guiding_questions": [
+              "Yazılım mimarisi 120m AGL tavan ve tam otonomi (c=1.0) kalkış/uçuş/iniş için gerekli kontrolcü mantığını taşıyor mu?"
+            ]
+          },
+          {
+            "id": "ozgunluk_yerli_uretim",
+            "name": "Özgünlük-Takım Üretimi ve Yerli Ürün Kullanımı",
+            "max_score": 24.0,
+            "description": "Donanım/Yazılım modüllerinde R&D (Yerli malı vida/köpük, yabancı otopilot vs. sayılamaz).",
+            "guiding_questions": [
+              "Takımın kendi geliştirdiği AR-GE yazılım/donanımları (sahte yerlilik argümanları olmadan) ön plana çıkarılmış mı?"
+            ]
+          },
+          {
+            "id": "maliyet_analizi_sg",
+            "name": "Maliyet Analizi ve Bütçe Tablosu",
+            "max_score": 5.0,
+            "description": "Max 120.000 TL bütçe tablosu.",
+            "guiding_questions": [
+              "Bütçede TİF hibe farkındalığı var mı, yakıt/kişisel vb. yasaklı kalemler dışarıda bırakılmış mı?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni_sg",
+            "name": "Genel Rapor Düzeni ve Formatı",
+            "max_score": 5.0,
+            "description": "17 sayfa sınırı ve AI yasağı denetimi. (Kör hakemlik istisnası).",
+            "guiding_questions": [
+              "Rapor şablona tam uyumlu mu, Lise formatı olan kapaktaki okul/danışman bilgileri doğru formda bırakılmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "ozet_ana_baslik": "ÖZET",
+          "takim_organizasyonu": "Takım Organizasyonu",
+          "gorev_basligi": "Görev Başlığı",
+          "gorev_bilgileri_ana_baslik": "GÖREV BİLGİLERİ",
+          "ucus_gorevinin_tanimi": "Uçuş Görevinin Tanımı",
+          "ucus_gorevinin_ozgunlugu": "Uçuş Görevinin Özgünlüğü",
+          "iha_bilgileri_ana_baslik": "İHA BİLGİLERİ",
+          "tasarim": "Tasarım",
+          "donanim": "Donanım",
+          "yazilim": "Yazılım",
+          "ozgunluk_yerli_uretim": "Özgünlük-Takım Üretimi ve Yerli Ürün Kullanımı",
+          "maliyet_analizi": "MALİYET ANALİZİ VE BÜTÇE TABLOSU"
+        },
+        "max_pages": 17
+      }
+    }
+  ]
+}

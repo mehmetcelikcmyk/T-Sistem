@@ -1,0 +1,156 @@
+{
+  "slug": "savasan-iha-yildizlar-yarismasi",
+  "name": "Savaşan İHA Yıldızlar Yarışması",
+  "specifications": [
+    "2026_Savasan_IHA_Y_C4_B1ld_C4_B1zlar_Sartnamesi_TR_V1.4_VHZwj.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "savasan-iha-yildizlar-yarismasi",
+    "kategori_adi": "Savaşan İHA Yıldızlar Yarışması",
+    "hedef_egitim_seviyesi": "Lise / Ön lisans / Lisans / Yüksek Lisans / Doktora / Açık Öğretim / Mezun",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 15,
+      "ozel_katilim_sarti": "TEKNOFEST 2025 Savaşan İHA yarışmasında dereceye giren ilk 5 takım katılabilir. Üyelerin en az %40'ı eski takımdan olmalıdır.",
+      "gorev_dagilimi_kurali": "Güvenlik pilotu ile YKİ operatörü kesinlikle aynı kişi olamaz."
+    },
+    "danisman_kurallari": {
+      "limit": "Bir takımın en fazla 1 danışmanı olabilir. Bir danışman sadece tek bir takıma danışmanlık yapabilir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Otonom kalkış, otonom sürü formasyonuna geçiş ve otonom iniş.",
+      "Sürü İHA uçuşu (En az 2, en fazla 10 İHA ile müşterek hedef arama).",
+      "Hedef İmha Görevi: Havada bulunan hedef uçağı tespit edip otonom sürü sistemleriyle çarparak (fiziksel vuruş) düşürmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Hava aracının kalkış ağırlığı 12 kg'ı geçemez.",
+      "Patlayıcı, önleyici veya engelleyici sistemlerin kullanımı yasaktır. İmha, sadece aracın kendisiyle çarparak yapılmalıdır.",
+      "Otonom sürü uçuşuna 5 dakikalık operasyonel hazırlık süresinde geçilememesi elenme sebebidir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Arayüz (UI) Harita Zorunluluğu: YKİ haritasında sürüdeki tüm İHA'ların (ID'leri ile birlikte) görselleştirilmesi zorunludur.",
+      "Failsafe Zorunluluğu: 10 saniye haberleşme kesintisi durumunda sabit kanat manuelde serbest düşüş, otonomda RTL; döner kanat manuelde olduğu yere iniş, otonomda RTL modunda beklemelidir."
+    ],
+    "video_rules": {
+      "naming_format": "Belirtilmemiş",
+      "visual_requirements": "Sürü Uçuş Kanıt Videosunda (maks 15 dk) HUD ve tüm İHA'ların harita görünümü olmalıdır. STV (maks 15 dk) en az 720p kalitesinde olmalıdır."
+    },
+    "sartname_dosyasi": "2026_Savasan_IHA_Y_C4_B1ld_C4_B1zlar_Sartnamesi_TR_V1.4_VHZwj.pdf"
+  },
+  "mission_scoring": {
+    "final_score_formula": "Puan kıstası bulunmamaktadır. Tüm isterleri başarılı şekilde yerine getiren takım kazanır (Pass/Fail).",
+    "tasks": [],
+    "penalties": []
+  },
+  "stages": [
+    {
+      "stage": "GBS",
+      "stage_name": "Görev Başarım Sunumları",
+      "format_rules": {
+        "special_requirements": "Takımlar başvurudan sonra her ay hakem kuruluna 4 adet görev başarım sunumu (GBS 1, 2, 3, 4) yapmakla yükümlüdür."
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yildizlar-yarismasi",
+        "stage": "GBS",
+        "evaluation_type": "pass_fail",
+        "criteria": [
+          {
+            "id": "gbs_1",
+            "name": "GBS 1: Literatür ve Mimari",
+            "is_required": true,
+            "description": "Ekipman, algoritma ve genel sistem mimarisi sunumu."
+          },
+          {
+            "id": "gbs_2",
+            "name": "GBS 2: Sürü ve Güdüm",
+            "is_required": true,
+            "description": "Sürü uçuş, hedef tespit ve güdüm algoritmalarının kesinleştirilmesi."
+          },
+          {
+            "id": "gbs_3",
+            "name": "GBS 3: Simülasyon Çalışmaları",
+            "is_required": true,
+            "description": "Geliştirilen algoritmaların simülasyon sonuçları ve sorunlara çözüm tahminleri."
+          },
+          {
+            "id": "gbs_4",
+            "name": "GBS 4: Gerçekleme",
+            "is_required": true,
+            "description": "Simülasyon çalışmaları ile gerçek uçuş testlerinin karşılaştırılması."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "SUKV",
+      "stage_name": "Sürü Uçuş Kanıt Videosu",
+      "format_rules": {
+        "special_requirements": "Maksimum 15 dakikalık kesintisiz uçuş videosu. Uçuşların tamamı otonom olmalıdır. Ekranda HUD ve sürü araçlarının harita görüntüsü yer almalıdır."
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yildizlar-yarismasi",
+        "stage": "SUKV",
+        "evaluation_type": "pass_fail",
+        "criteria": [
+          {
+            "id": "1_otonom_kalkis_inis",
+            "name": "Otonom Kalkış, Uçuş ve İniş",
+            "is_required": true,
+            "description": "Tüm sürü araçlarının insan müdahalesi olmadan kalkıp inmesi."
+          },
+          {
+            "id": "2_suru_formasyonu",
+            "name": "Sürü Formasyonu",
+            "is_required": true,
+            "description": "Araçların havada sürü formasyonuna geçiş yapabilmesi."
+          },
+          {
+            "id": "3_hud_harita",
+            "name": "HUD ve Harita Görünümü",
+            "is_required": true,
+            "description": "Ekranda HUD bilgileri ve araçların eş zamanlı harita/ID bilgisinin bulunması."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "STV",
+      "stage_name": "Sistem Tanımlama Videosu",
+      "format_rules": {
+        "special_requirements": "Maksimum 15 dakikalık video. En az 720p çözünürlük."
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yildizlar-yarismasi",
+        "stage": "STV",
+        "evaluation_type": "pass_fail",
+        "criteria": [
+          {
+            "id": "1_sistem_ozeti",
+            "name": "Sistem Özeti",
+            "is_required": true,
+            "description": "Uçuş süresi, ağırlık vb. genel özellikler."
+          },
+          {
+            "id": "2_gelistirme_testleri",
+            "name": "Geliştirme Testleri",
+            "is_required": true,
+            "description": "Kanat yüklenme, itki, haberleşme mesafe testlerinin grafikli gösterimi."
+          },
+          {
+            "id": "3_haberlesme",
+            "name": "Haberleşme Mimarisi",
+            "is_required": true,
+            "description": "Frekans aralıkları ve Mesh, Point-to-multipoint gibi sürü haberleşme mimarilerinin açıklanması."
+          },
+          {
+            "id": "4_gorev_testi",
+            "name": "Tüm Görev Testi",
+            "is_required": true,
+            "description": "Otonom uçuş ve hedef imha (çarpma) algoritmalarının nasıl çalıştığı."
+          }
+        ]
+      }
+    }
+  ]
+}

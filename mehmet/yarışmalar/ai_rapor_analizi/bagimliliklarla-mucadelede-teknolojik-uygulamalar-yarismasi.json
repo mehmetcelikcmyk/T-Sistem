@@ -1,0 +1,260 @@
+{
+  "slug": "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi",
+  "name": "Bağımlılıklarla Mücadelede Teknolojik Uygulamalar Yarışması",
+  "specifications": [
+    "Bagimliliklarla_Mücadelede_Teknolojik_Uygulamalar_Sartnamesi_v1_3MQrt.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi",
+    "kategori_adi": "Bağımlılıklarla Mücadelede Teknolojik Uygulamalar Yarışması",
+    "yurutucu_kurum": "Türkiye Yeşilay Cemiyeti & Türkiye Teknoloji Takımı Vakfı (T3 Vakfı)",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Lise / Üniversite Lisans / Son 3 Yılda Mezun Olmuş Gençler (Tek ve Birleşik Yarışma Yapısı)",
+    "yarisma_yapisi": {
+      "kategori_ayrimi": "Yarışmada Lise ve Üniversite şeklinde ayrı kategoriler ve ayrı ödül havuzları YOKTUR. Lise öğrencileri, lisans öğrencileri ve son 3 yıl içinde mezun olmuş gençler karma takım kurabilir veya bağımsız başvurabilir; tüm takımlar tek bir kulvarda ve aynı kriterlerle yarışır.",
+      "hedef_kitle": "Türkiye ve yurt dışında öğrenim gören T.C. vatandaşı veya yabancı uyruklu lise, açık lise, üniversite lisans öğrencileri ile lise/lisans derecesinden son 3 yıl içerisinde mezun olmuş gençler."
+    },
+    "takim_kurallari": {
+      "uye_sayisi_min": 4,
+      "uye_sayisi_max": 9,
+      "bireysel_basvuru": false,
+      "karma_takim_durumu": "Takımlar yalnızca lise veya yalnızca lisans öğrencilerinden oluşabileceği gibi, lise, lisans ve son 3 yıl mezunlarının bir araya gelmesiyle karma takım olarak da kurulabilir.",
+      "aciklama": "Takım üye sayısı en az 4, en fazla 9 kişiden oluşabilir (Danışman bu sayıya dâhil değildir)."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Yarışma kapsamında takımlarda 1 danışman bulunmalıdır.",
+      "danisman_nitelikleri": "Öncelikli olarak ruh sağlığı (Tıp, PDR veya Psikoloji) alanlarından en az yüksek lisans mezunu / doktora öğrencisi-mezunu veya bilgisayar, yazılım, YZ, veri bilimi gibi teknik alanlardan en az lisans mezunu uzman/akademisyenler.",
+      "fiziki_katilim_kurali": "Final aşamasında üniversite seviyesindeki takım üyelerinin danışmanları ile alana fiziken gelme zorunluluğu bulunmamaktadır; ancak danışmanlık belgesi/atama işlemi KYS sistemine eksiksiz yüklenmelidir.",
+      "limit": "Bir danışman en fazla 2 takıma danışmanlık yapabilir."
+    },
+    "dil_gereksinimi": "Türkçe veya İngilizce",
+    "tematik_kapsam": {
+      "ana_bagimlilik_alanlari": [
+        {
+          "alan": "Tütün / Nikotin Bağımlılığı",
+          "detay": "Geleneksel sigara, elektronik sigara (e-sigara), ısıtılmış tütün ürünleri ve türevleri."
+        },
+        {
+          "alan": "Alkol Bağımlılığı",
+          "detay": "Alkol tüketimi ve buna bağlı davranışsal/fiziksel riskler."
+        },
+        {
+          "alan": "Madde Bağımlılığı",
+          "detay": "Uyuşturucu ve uyarıcı maddeler, reçeteli ilaçların kötüye kullanımı, uçucu maddeler."
+        },
+        {
+          "alan": "Kumar Bağımlılığı",
+          "detay": "Geleneksel kumar, çevrim içi bahis, dijital oyun içi şans oyunları / loot box mekanizmaları."
+        },
+        {
+          "alan": "Teknoloji / Dijital Bağımlılıklar",
+          "detay": "Akıllı telefon, sosyal medya, dijital oyun, internet, pornografi/ekran bağımlılığı."
+        }
+      ],
+      "tematik_alt_basliklar": [
+        {
+          "tema": "Önleme Teknolojileri",
+          "detay": "Bağımlılık riskini azaltan sistemler, farkındalık uygulamaları, eğitim ve bilinçlendirme araçları, dijital dayanıklılık uygulamaları."
+        },
+        {
+          "tema": "Erken Risk Belirleme Teknolojileri",
+          "detay": "Risk tarama sistemleri, yapay zekâ destekli erken uyarı mekanizmaları, davranış örüntüsü analizleri, risk göstergelerini izleyen sistemler."
+        },
+        {
+          "tema": "Destek ve Müdahale Teknolojileri",
+          "detay": "YEDAM yönlendirme araçları, aile destek sistemleri, danışmanlık süreçlerini kolaylaştıran uygulamalar, takip ve motivasyon sistemleri."
+        },
+        {
+          "tema": "Psikolojik İyi Oluş ve Dayanıklılık Teknolojileri",
+          "detay": "Stres yönetimi uygulamaları, duygu düzenleme araçları, akran destek sistemleri, psikolojik dayanıklılık uygulamaları."
+        }
+      ]
+    },
+    "etik_ve_gizlilik_kurallari": [
+      "Tez ve Patent Kısıtı (Madde 3.3): Tamamlanmış veya devam etmekte olan tez çalışmalarıyla, fikrî mülkiyet hakkı/patent kazanım süreci dahilinde olan, ticarileşmiş veya patent/faydalı model süreci devam eden çalışmalar ile yarışmaya başvuru yapılamaz.",
+      "İntihal ve Diskalifiye Men Cezası (Madde 3.3): Benzer ya da taklit olduğu tespit edilen projeler diskalifiye edilir ve yarışmacılar en az 2 yıl TEKNOFEST yarışmalarına başvuramaz.",
+      "Geçmiş Derece Kısıtı (Madde 3.3): Geçmiş dönemde dereceye giren takımlar katılım sağladıkları dönemdeki projelerini geliştirerek katılamazlar; yeni proje fikirleri sunmak zorundadırlar.",
+      "Üçüncü Taraf Telif ve İzinleri (Madde 3.4): Başkalarına ait fotoğraf, video vb. materyallerin kullanımı için sahiplerinden izin alındığı belirtilmeli; fikir ve sanat eserleri telif haklarına uyulmalıdır.",
+      "KVKK ve Açık Rıza Formu (Madde 3.4): İnsan verisi içeren projelerde KVKK formu alınmalı ve araştırma projelerinde Açık Rıza Onam Formu nüshası eklenmelidir.",
+      "Rapor Takım Şemasında ve metin içinde kişisel verilere (isim, soyisim, TC kimlik no, iletişim bilgisi, kurum/okul adı vb.) kesinlikle yer verilmemelidir (Kör hakem değerlendirmesi kuralı).",
+      "Rapor metinlerinde damgalayıcı, manipülatif ve/veya siyasi söylemlere kesinlikle yer verilmemelidir."
+    ],
+    "oduller": {
+      "dereceler": {
+        "birincilik": {
+          "takim_odulu": "100.000 ₺",
+          "danisman_odulu": "15.000 ₺"
+        },
+        "ikincilik": {
+          "takim_odulu": "85.000 ₺",
+          "danisman_odulu": "10.000 ₺"
+        },
+        "ucunculuk": {
+          "takim_odulu": "70.000 ₺",
+          "danisman_odulu": "7.500 ₺"
+        }
+      },
+      "ozel_odul_havuzu": "50.000 ₺ (Yürütücü kurumun kararına bağlı olarak finalistler arasından seçilen takımlara dağıtılabilir)",
+      "prestij_odulleri": [
+        {
+          "odul": "En İyi Sunum Ödülü",
+          "aciklama": "Verilen süre, sorulara verilen doğru cevaplar, beden dili, dinleyicilere karşı tutum, sunumun akıcılığı ve sunum taslağını en iyi yansıtan takıma verilir."
+        },
+        {
+          "odul": "Gelecek Vadeden Proje Ödülü",
+          "aciklama": "Projelerin teknik altyapısı, yarattığı etki, uzun vadeli faydaları, uygulanabilirlik, özgünlük, yenilikçilik ve toplumsal fayda potansiyeli en yüksek takıma verilir."
+        },
+        {
+          "odul": "En İyi Takım Ruhu Ödülü",
+          "aciklama": "Alan çalışması, alanda gösterilen çaba, beceri, takım içi ve takımlar arası iletişim ve enerjiyi en iyi yansıtan takıma verilir."
+        }
+      ],
+      "birincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ikincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ucunculuk": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir"
+    },
+    "sartname_dosyasi": "Bagimliliklarla_Mücadelede_Teknolojik_Uygulamalar_Sartnamesi_v1_3MQrt.pdf"
+  },
+  "stages": [
+    {
+      "stage": "PDR",
+      "stage_name": "Proje Değerlendirme Raporu",
+      "template": "Bagimliliklarla_Mücadelede_Teknolojik_Uygulamalar_Yarışması_Proje_Detay_R.docx",
+      "evaluation_type": "Yarı Final Değerlendirmesi (Başarılı / Başarısız)",
+      "format_rules": {
+        "max_pages": 12,
+        "total_page_limit_description": "Proje Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 12 sayfa olacaktır.",
+        "font_family": "Arial (Başlıklar: Arial Black)",
+        "font_size": "12 pt (Başlıklar: 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt: 2.5 cm, Sağ: 2.5 cm, Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak ve İçindekiler' başlıkları için 2 ayrı sayfa içermelidir. Şablon notundaki 7. 'Proje Rapor Düzeni ve Şablona Uyum' başlığına raporda ayrı bir başlık olarak yer verilmeyecektir. Kişisel veri içermemelidir."
+      },
+      "rubric": {
+        "category_name": "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi",
+        "stage": "PDR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1.1_proje_ozeti_ve_kapsami",
+            "name": "1.1. Proje Özeti ve Proje Kapsamı",
+            "max_score": 10.0,
+            "description": "Projenin kısa, özlü ve anlaşılır özeti; projenin bağımlılıklarla mücadele alanındaki kapsamı ve hangi konuya odaklandığı."
+          },
+          {
+            "id": "1.2_proje_amaci_ve_toplumsal_faydasi",
+            "name": "1.2. Proje Amacı ve Toplumsal Faydası",
+            "max_score": 10.0,
+            "description": "Projenin temel amacı, çözmeyi hedeflediği durum ve bağımlılık alanında topluma, hedef kitleye sağlayacağı somut fayda."
+          },
+          {
+            "id": "2.1_problemin_tanimi_ve_onemi",
+            "name": "2.1. Problemin Tanımı ve Önemi",
+            "max_score": 15.0,
+            "description": "Ele alınan bağımlılık probleminin net tanımı, neden önemli olduğu ve neden çözülmesi gerektiğinin gerekçelendirilmesi."
+          },
+          {
+            "id": "2.2_cozum_onerisi",
+            "name": "2.2. Çözüm Önerisi",
+            "max_score": 20.0,
+            "description": "Önerilen çözümün temel çalışma mantığı, mevcut çözümler ve YEDAM gibi destek mekanizmalarıyla farkları, sahada/günlük hayatta nasıl kullanılacağı."
+          },
+          {
+            "id": "3.1_ozgunluk",
+            "name": "3.1. Özgünlük",
+            "max_score": 12.0,
+            "description": "Takımın problemi kendi bakış açısıyla ele alması, alandaki mevcut/bilinen çözümlerden farklı bir yaklaşım geliştirme çabası ve düşünsel katkısı (İleri düzey teknolojik buluş zorunlu değildir)."
+          },
+          {
+            "id": "3.2_uygulanabilirlik_ve_surdurulebilirlik",
+            "name": "3.2. Uygulanabilirlik ve Sürdürülebilirlik",
+            "max_score": 12.0,
+            "description": "Projenin gerçek yaşam koşullarında yapılabilirliği, teknik yeterliliği, geliştirilebilir yönleri ve daha fazla kişiye fayda sağlama potansiyeli."
+          },
+          {
+            "id": "4_hazirlanis_sureci_ve_yontem",
+            "name": "4. Projenin Hazırlanış Süreci ve Çalışma Yöntemi",
+            "max_score": 12.0,
+            "description": "İzlenen temel çalışma adımları, kullanılan araçlar/yazılımlar/malzemeler ve takım üyelerinin süreçteki aktif rol ve katkıları."
+          },
+          {
+            "id": "5_proje_takimi",
+            "name": "5. Proje Takımı",
+            "max_score": 3.0,
+            "description": "Tablo formatında takım görev paylaşımı (Kişisel veriler içermez; görev tanımları kısa, sade ve üyelerin katkısını gösterir nitelikte olmalıdır. Danışman hariç 4-9 kişi)."
+          },
+          {
+            "id": "6_kaynaklar",
+            "name": "6. Kaynaklar",
+            "max_score": 3.0,
+            "description": "Yararlanılan kitap, makale, web sitesi ve raporların şeffaf, güvenilir ve akademik düzene uygun listesi."
+          },
+          {
+            "id": "7_rapor_duzeni_ve_sablona_uyum",
+            "name": "7. Proje Rapor Düzeni ve Şablona Uyum",
+            "max_score": 3.0,
+            "description": "Raporun genel düzeninin okunaklılığı, sistematik akışı, dilbilgisi, tablo/grafiklerin ölçülü kullanımı ve şablon standartlarına uyum (Raporda ayrı bir başlık olarak yazılmaz)."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "FINAL_PROTOTIP",
+      "stage_name": "Final Prototip ve Canlı Sunum Puanlaması",
+      "weight": "%100",
+      "format_rules": {
+        "special_requirements": "Şanlıurfa TEKNOFEST alanında jüriye yüz yüze prototip sunumu ve canlı demo gösterimi. Prototip, çalışan bir ilk ürün olabileceği gibi işlevselliği yansıtan ekran tasarımları/akış düzeyinde de olabilir."
+      },
+      "rubric": {
+        "category_name": "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi",
+        "stage": "FINAL_PROTOTIP",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "islevsellik_calisabilirlik",
+            "name": "İşlevsellik / Çalışabilirlik",
+            "weight": "%25",
+            "max_score": 25.0,
+            "description": "Prototipin tarif edilen işlevi fiilen göstermesi."
+          },
+          {
+            "id": "teknik_yeterlilik",
+            "name": "Teknik Yeterlilik",
+            "weight": "%20",
+            "max_score": 20.0,
+            "description": "Teknolojinin doğru, tutarlı ve amaca uygun uygulanması."
+          },
+          {
+            "id": "problemle_ortusme",
+            "name": "Problemle Örtüşme",
+            "weight": "%20",
+            "max_score": 20.0,
+            "description": "Raporda tanımlanan probleme gerçekten çözüm üretmesi."
+          },
+          {
+            "id": "kullanici_deneyimi_uygulanabilirlik",
+            "name": "Kullanıcı Deneyimi / Uygulanabilirlik",
+            "weight": "%15",
+            "max_score": 15.0,
+            "description": "Hedef kullanıcı için kullanılabilirlik ve sahaya uyarlanabilirlik."
+          },
+          {
+            "id": "ozgunluk",
+            "name": "Özgünlük",
+            "weight": "%10",
+            "max_score": 10.0,
+            "description": "Çözümün yenilikçi ve ayırt edici yönü."
+          },
+          {
+            "id": "sunum_anlatim_netligi",
+            "name": "Sunum / Anlatım Netliği",
+            "weight": "%10",
+            "max_score": 10.0,
+            "description": "Problem ve çözümün anlaşılır aktarımı."
+          }
+        ]
+      }
+    }
+  ]
+}

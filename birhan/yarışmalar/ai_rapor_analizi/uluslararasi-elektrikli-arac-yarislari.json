@@ -1,0 +1,146 @@
+{
+  "slug": "uluslararasi-elektrikli-arac-yarislari",
+  "name": "Uluslararası Elektrikli Araç Yarışları",
+  "specifications": [
+    "B_C3_B6l_C3_BCm_1_TR_17.07_liRb5.pdf",
+    "B_C3_B6l_C3_BCm_2_TR_17.07_rFNZB.pdf",
+    "B_C3_B6l_C3_BCm_3_TR_FRYi5.pdf",
+    "B_C3_B6l_C3_BCm_4_TR_Jmdi2.pdf",
+    "B_C3_B6l_C3_BCm_5_TR__17.07_JIc6H.pdf",
+    "B_C3_B6l_C3_BCm_6_TR_HE1ZJ.pdf",
+    "B_C3_B6l_C3_BCm_7_TR_17.07_D1aS1.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "uluslararasi-elektrikli-arac-yarislari",
+    "kategori_adi": "Uluslararası Elektrikli Araç Yarışları",
+    "hedef_egitim_seviyesi": "Lise, Ön lisans ve Lisans öğrencileri (Yurt dışı takımları lise düzeyinde üye bulunduramaz).",
+    "takim_kurallari": {
+      "uye_sayisi_min": 5,
+      "uye_sayisi_max": 25,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "",
+      "mezuniyet_kurali": "Yarışma haftası içerisinde mezun olan öğrenciler yarışmaya katılabilir.",
+      "gorev_dagilimi_kurali": "1 Sürücü, 1 Yedek Sürücü, 1 Takım Kaptanı ve 1 Danışman bulunması zorunludur."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Her takımda en fazla 1 danışman görev alabilir. Danışman, takımın temsil ettiği kurumda görev yapan tam zamanlı akademik personel veya öğretmen/eğitmen olmak zorundadır. Danışman, sürücü pozisyonunda yer alamaz.",
+      "limit": "1"
+    },
+    "dil_gereksinimi": "Türkçe veya İngilizce (Rapor yalnızca bir dilde ve tutarlı olarak yazılmalıdır. Türkçe yazanlar yaygın Türkçe kavramları kullanmalı, ilk kullanımda orijinal dilde karşılığını parantez içinde vermelidir).",
+    "oncelikli_gorevler": [
+      "1. Takım Gelişim ve Teknolojik Olgunluk Değerlendirme Videosu",
+      "2. Teknik Tasarım Raporu (TTR)",
+      "3. Teknik Onay Videoları (Teknik Onay, Dinamik Sürüş Testi, Fren Testi Videosu)",
+      "4. Final Yarışı (Pistte 3 tur atarak en kısa sürede tamamlamak)"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Takımlar sadece bir kategori (Elektromobil veya Hidromobil) seçebilir.",
+      "Aynı kişi birden fazla takımda eşzamanlı görev alamaz.",
+      "Hidromobil kategorisinde yarışan takımlar, TENMAK tarafından verilen yakıt hücresi ve metal hidrür hidrojen tankını kullanmak zorundadır.",
+      "Etik ihlaller (intihal, kopyalama, AI/GPT kullanımı vb.) tespit edilirse takım doğrudan diskalifiye edilir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Yarışma haftasında takımların kayıt işlemleri sırasında ıslak imzalı 'Sorumluluk Taahhütnamesi' teslim etmesi zorunludur.",
+      "Araçta yolcu koltuğunda 75 kg ağırlık taşıma kapasitesi olmalıdır (Güvenlik testleri için).",
+      "TTR'de Elektrik sisteminin tüm güç devrelerini gösteren A4 boyutunda detaylı şema bulunmalıdır."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "hidromobil_enerji_tuketim_baraji": "Hidromobil kategorisinde performans ödülü alınabilmesi için hidrojen tüketimi toplam enerji tüketiminin en az %30'u olmalıdır.",
+      "hiz_limiti": "Antrenman sürüşlerinde pistte maksimum hız limiti 50 km/saat olarak belirlenmiştir.",
+      "motor_gucu_siniri": "Final yarışına katılacak takımların toplam motor gücü maksimum 5 kW olmalıdır.",
+      "itiraz_kurali": "Rapor değerlendirmelerinde alt sınırın en fazla %10 altı puana sahip takımlar 48 saat içerisinde itiraz edebilir."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Teknik Tasarım Raporu (TTR)": "Elektromobil: Maks 3000 Puan, Hidromobil: Maks 4000 Puan"
+    },
+    "gorev_puanlamasi": {
+      "Performans Ödülleri": "Birincilik: 250.000 TL, İkincilik: 200.000 TL, Üçüncülük: 175.000 TL",
+      "Görsel Tasarım Ödülü": "60.000 TL",
+      "Kurul Özel Ödülü": "60.000 TL"
+    }
+  },
+  "stages": [
+    {
+      "stage": "Teknik Tasarım Raporu (TTR)",
+      "document": "2026_TTR_Rapor__C5_9Eablonu_Uluslararas_C4_B1_Elektrikli_Ara_C3_A7_Yar_C4_B1_C5_9Flar_C4_B1_lJ7z4.docx",
+      "format_rules": {
+        "max_pages": 200,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Maksimum 100 MB boyutunda ve PDF formatında olmalıdır. Kapak sayfası, içindekiler ve kaynakça dahil toplam 200 sayfayı aşmamalıdır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_arac_ozellikleri",
+            "name": "Araç Özellik Tablosu",
+            "max_score": 100,
+            "description": "Aracın genel ölçüleri, ağırlığı, motor kapasitesi ve temel dinamik özelliklerinin özeti."
+          },
+          {
+            "id": "2_motor_ve_surucu",
+            "name": "Motor (300) ve Motor Sürücüsü (400)",
+            "max_score": 700,
+            "description": "Yerli motor tasarımı, stator/rotor analizi, soğutma kurgusu ve sürücü donanım kartı (PCB) yerliliği."
+          },
+          {
+            "id": "3_batarya_ve_sarj",
+            "name": "BYS (200), Batarya Paketleme (100), Yerleşik Şarj Birimi (200)",
+            "max_score": 500,
+            "description": "Batarya Yönetim Sistemi, hücrelerin izolasyonu, şok testleri ve güvenli şarj mekanizmaları."
+          },
+          {
+            "id": "4_arac_kontrol_izolasyon",
+            "name": "Araç Kontrol Sistemi (300) ve İzolasyon İzleme Cihazı (150)",
+            "max_score": 450,
+            "description": "Araç Ana Kontrol Ünitesi tasarımı, telemetri, ekran (OSD) sistemleri ve kaçak akım/izolasyon izleme rölesi."
+          },
+          {
+            "id": "5_mekanik_ve_dinamik",
+            "name": "Direksiyon (200), Fren (250), Kapı (150), Mekanik Detaylar (150), Yolcu Koltuğu (150)",
+            "max_score": 900,
+            "description": "Şasi, roll-bar sağlamlığı, fren tepkisi, direksiyon ergonomisi ve 75 kg yolcu kapasiteli koltuk tasarımı."
+          },
+          {
+            "id": "6_hidromobil_sistemleri",
+            "name": "Hidromobil Özel: Enerji Yönetim (300), Yakıt Hücresi (650), Hidrojen Hattı (50)",
+            "max_score": 1000,
+            "description": "SADECE HİDROMOBİL İÇİN: Hidrojen yakıt pili entegrasyonu, sızdırmazlık, termal yönetim ve hidrojen hattı tasarımı. Elektromobil için bu kısım 0 puandır."
+          },
+          {
+            "id": "7_sema_ve_duzen",
+            "name": "Araç Elektrik Şeması (50), Rapor Düzeni (200), Takım Bilgisi (100)",
+            "max_score": 350,
+            "description": "A4 ebadında güç devre şeması, yazım kurallarına uygunluk, anlaşılırlık ve ekip organizasyonu."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Video Değerlendirme Aşamaları",
+      "document": "",
+      "format_rules": {
+        "max_pages": 0,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Video bağlantıları T3KYS sistemine yüklenir."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_tg_video",
+            "name": "Takım Gelişim ve Teknolojik Olgunluk Değerlendirme Videosu",
+            "max_score": 100,
+            "description": "Aracın temel teknik mimarisinin ve alt sistemlerinin doğru entegre edildiğinin ön kontrolü."
+          },
+          {
+            "id": "2_to_video",
+            "name": "Teknik Onay ve Dinamik Sürüş / Fren Testi Videoları",
+            "max_score": 100,
+            "description": "Aracın yarış alanına ve pistine uygunluğu, frenleme kabiliyeti ve manevra performansının objektif gösterimi."
+          }
+        ]
+      }
+    }
+  ]
+}

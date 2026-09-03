@@ -1,0 +1,105 @@
+{
+  "slug": "onkolojide-3t-yarismasi",
+  "name": "TEKNOFEST Onkolojide 3T (Tanı, Tedavi, Takip) Yarışması",
+  "specifications": [
+    "2026_TEKNOFEST_ONKOLOJİDE_3T_YARIŞMASI_ŞARTNAME_TR_2nhKo.pdf",
+    "Onkolojide_3T_Yarışması_-_Yarı_Final_Proje_Raporu_Şablonu_-_TR_Li4T0.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "onkolojide-3t-yarismasi",
+    "kategori_adi": "Onkolojide 3T (Tanı, Tedavi, Takip) Yarışması",
+    "hedef_egitim_seviyesi": "Üniversite (Lisans, YL, Doktora), Mezunlar ve uzmanlığını almamış asistan hekimler. (Lise katılamaz).",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 5
+    },
+    "danisman_sarti": "1 danışman ZORUNLUDUR. Danışmanın kesinlikle Tıp Hekimi (MD) veya Doktora (PhD) unvanına sahip olması ve ıslak imzalı belge sunması şarttır.",
+    "dil_gereksinimi": "Türkçe (Tıbbi/Onkolojik terminoloji kullanılabilir)",
+    "keywords": [
+      "onkoloji",
+      "kanser",
+      "tanı",
+      "tedavi",
+      "takip",
+      "bireyselleştirilmiş tıp",
+      "hassas tıp",
+      "ths",
+      "yapay zeka",
+      "medikal cihaz",
+      "biyobelirteç",
+      "hadyek",
+      "etik kurul"
+    ],
+    "oncelikli_gorevler": [
+      "Kanser süreçlerinde (beyin kanseri vb. spesifik veya genel onkolojik) tanı, tedavi veya takip (3T) süreçlerini iyileştiren yenilikçi mühendislik/tıbbi teknolojiler geliştirmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Takım Sınırı (Kritik): Takımlar en az 3, en fazla 5 kişiden oluşmalıdır.",
+      "Sayfa Limiti (Kritik): Rapor kapak, kaynakça ve ekler dahil TOPLAM EN FAZLA 50 sayfa olmalıdır. 51. sayfa uyarısı verilmelidir.",
+      "Yapay Zeka ve İntihal Limiti (Kesin Kural): Turnitin analizinde yapay zeka ve intihal oranı %20'yi GEÇMEMELİDİR. Geçen raporlar eksi puan alır.",
+      "THS (Teknoloji Hazırlık Seviyesi) Kısıtı: Başvuru öncesi projenin başlangıç THS seviyesi KESİNLİKLE THS 4'ten (Laboratuvar bench üstü) DÜŞÜK olmalıdır.",
+      "Etik Kurul Onayları ve Yasal Belgeler (Eleme Sebebi): İnsan veya hayvan hücre/doku deneyleri planlanan projelerde HADYEK veya Girişimsel Olmayan Etik Kurul onayı ŞARTTIR. İnsan verisi içeren (AI/Biyo-veri) projelerde KVKK ve Aydınlatılmış Onam Formu raporda/sistemde sunulmak ZORUNDADIR."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Proje Ekibi ve İş Birlikleri Denetimi: Raporda proje yöneticisi (takım kaptanı), ekip üyelerinin spesifik teknik rolleri (örn: yazılımcı, moleküler biyolog) ve projede ihtiyaç duyulan kurum/laboratuvar iş birlikleri AÇIKÇA tanımlanmalıdır.",
+      "Tematik Ek Ödül - Yapay Zeka Bonus Radarı: Raporda 'Hesaplamalı biyoloji, derin öğrenme veya yapay zeka (AI) metodolojileri' kullanılıyorsa, proje 'En İyi Yapay Zekâ Odaklı Proje' ek ödülü değerlendirme potasında işaretlenmelidir.",
+      "Sıralama Hedeflemesi: Finalde sadece ilk 25 takımın sunum yapacağı, ilk 50'nin destek alacağı dikkate alınarak tıbbi fizibilite sert bir şekilde analiz edilmelidir."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin onkolojik süreçlerde (Tanı, Tedavi, Takip) spesifik bir problemi çözmeye odaklanması ve klinik etik sınırları (KVKK/Etik Kurul) ihlal etmemesi."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Yari_Final_Proje_Raporu",
+      "template": "Onkolojide_3T_Yar_C4_B1_C5_9Fmas_C4_B1_-_Yar_C4_B1_Final_Proje_Raporu__C5_9Eablonu_-_TR_Li4T0.docx",
+      "rubric": {
+        "category_name": "onkolojide-3t-yarismasi",
+        "stage": "Yari_Final_Proje_Raporu",
+        "description": "Onkolojide 3T Yarı Final Rapor Rubriği (Şartnamedeki %40 Uygulanabilirlik, %30 Kapsam/Yöntem, %30 Yenilikçilik matematiğine göre 100 üzerinden dengelenmiştir).",
+        "criteria": [
+          {
+            "id": "kapsam_ve_yontem",
+            "name": "Proje Kapsamı ve Yöntem",
+            "max_score": 30.0,
+            "description": "Sorun tanımı, çözüm yaklaşımı, klinik metodoloji ve KVKK/Etik Kurul belgelerinin doğruluğu.",
+            "guiding_questions": [
+              "Onkolojik problem net olarak tanımlanıp yöntem bilimsel verilere (HADYEK/KVKK standartlarına) oturtulmuş mu?"
+            ]
+          },
+          {
+            "id": "yenilikci_ve_ozgun",
+            "name": "Yenilikçi ve Özgün Değer",
+            "max_score": 30.0,
+            "description": "Piyasadaki tıbbi cihazlardan/yazılımlardan farkı ve yapay zeka, hesaplamalı biyoloji gibi derin öğrenme katkıları.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Proje mevcut literatürden farklı, özgün bir değer (Yapay Zeka/Derin Öğrenme) sunuyor mu? Kanser literatürü/patentlerle kıyas yapılmış mı?"
+            ]
+          },
+          {
+            "id": "uygulanabilirlik_ve_hayata_gecirme",
+            "name": "Uygulanabilirlik ve Hayata Geçirilebilirlik",
+            "max_score": 40.0,
+            "description": "THS 4 altı başlama kuralı, iş paketleri, laboratuvar iş birlikleri, bütçe tablosu ve klinik risk skorlaması.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Takım rolleri, kurum/laboratuvar iş birlikleri, bütçe tablosu verilmiş mi? Başlangıç seviyesi THS 4'ten düşük mü?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "sorun_tanimi": "SORUN TANIMI",
+          "cozum": "ÇÖZÜM",
+          "yontem": "YÖNTEM",
+          "yenilikci_yon": "YENİLİKÇİ YÖNÜ VE ÖZGÜN DEĞERİ",
+          "ths": "TEKNOLOJİ HAZIRLIK SEVİYESİ (THS)",
+          "uygulanabilirlik": "UYGULANABİLİRLİK",
+          "tahmini_maliyet_ve_zaman": "TAHMİNİ MALİYET VE PROJE ZAMAN PLANLAMASI",
+          "hedef_kitle": "PROJENİN HEDEF KİTLESİ",
+          "riskler": "RİSKLER",
+          "kaynaklar_ve_duzen": "KAYNAKLAR VE RAPOR DÜZENİ"
+        },
+        "max_pages": 50
+      }
+    }
+  ]
+}

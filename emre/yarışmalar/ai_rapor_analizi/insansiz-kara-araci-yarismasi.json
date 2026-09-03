@@ -1,0 +1,192 @@
+{
+  "slug": "insansiz-kara-araci-yarismasi",
+  "name": "İnsansız Kara Aracı Yarışması",
+  "specifications": [
+    "2026__C4_B0nsans_C4_B1z_Kara_Arac_C4_B1_T_C3_BCrk_C3_A7e__C5_9Eartname_2awot.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "insansiz-kara-araci-yarismasi",
+    "kategori_adi": "İnsansız Kara Aracı Yarışması",
+    "hedef_egitim_seviyesi": "Ön Lisans, Lisans, Lisansüstü",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 15
+    },
+    "danisman_sarti": "Yükseköğretim seviyesi olduğu için danışman zorunluluğu bulunmamaktadır (isteğe bağlı).",
+    "dil_gereksinimi": "Türkçe (Teknik terimler ve akademik ifadeler orijinal dillerinde kullanılabilir)",
+    "keywords": [
+      "otonom",
+      "manuel",
+      "engel aşma",
+      "görüntü işleme",
+      "lidar",
+      "kamera",
+      "ROS",
+      "SLAM",
+      "hedef tespiti",
+      "lazer",
+      "dik engel",
+      "süspansiyon",
+      "PID",
+      "tork",
+      "ayrıklık ilkesi",
+      "IP koruma",
+      "DWA",
+      "Local Planner",
+      "fail-safe fren",
+      "dönüş yarıçapı",
+      "interlock"
+    ],
+    "oncelikli_gorevler": [
+      "Otonom/Manuel sürüş ile parkur (15-20 cm dik engel, 40 cm su geçişi, çamur, kayar engel vb.) aşımı",
+      "Otonom/Manuel Lazer ile Hedef Tespiti (Odak çapı <= 1.5 cm) ve 1s hedefte kalma",
+      "Araçta en az 3 kamera (ileri, geri, nişan) ve lazer işaretleyici entegrasyonu"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Sayfa ve Biçim Sınırı (Kritik): Raporun metin kısımları toplamda en fazla 15 sayfa, ekler ise en fazla 10 sayfa olmalıdır. (Toplam en fazla 25 sayfa). Sınırın aşılması kesin geçersiz sayılma sebebidir.",
+      "Görsel ve CAD Tasarım Yasağı (Kritik): Sistem tasarımı ve CAD modellerinde üretken yapay zeka araçlarıyla oluşturulmuş sahte render/görsellerin kullanılması kesinlikle yasaktır.",
+      "Tipografi ve Format Kısıtları: Yazı tipi Arial, Punto 12, Satır Aralıkları 1.15, İki tarafa yaslı, Sayfa kenar boşlukları tüm kenarlardan 2.5 cm olmalıdır. Kapak ve İçindekiler zorunludur.",
+      "Ekler Bölümü Boyut Standartları: Ekler kısmında şemalar/mimari çizimler için A3, 3D CAD/fotoğraflar için A4 boyutu kullanılmalıdır.",
+      "Boyut ve Geometri Uyumu: Aracın boyu en az 1.2 m, en fazla 2.0 m; genişliği ise en az 0.75 m, en fazla 1.2 m olmalıdır. Yükseklik >= 0.4 m ve < 1.25 * Genişlik.",
+      "Kör Hakemlik İhlali (Kritik): Takım şemasında (rol başına <= 30 kelime) ve metin içinde kişisel isim, okul adı, öğrenci numarası veya fotoğraf bulunması kesinlikle yasaktır.",
+      "Montaj ve Bağlantı Yasağı (Madde 7.7): Kritik parçaların montajında hızlı yapıştırıcı veya silikon kullanımı kesinlikle yasaktır; standart mekanik bağlantı elemanı (civata, somun vb.) kullanılmalıdır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Yapay zeka içermeyen, gerçek 3D CAD sistem montaj modelinin gösterimi.",
+      "40 cm derinliğindeki su geçişi için izolasyon (motor şaftı, glend vb.) hesapları.",
+      "Mekanik analizler: %45 dik eğim torku, %20 yan eğim dengesi, 15-20 cm dik engel mukavemeti ve 3 hazır + 3 tasarlanan parça hesabı.",
+      "Fail-Safe Fren Mimarisi (Madde 7.5): Fren sistemi %45 dik eğimde aracı tutabilmeli ve normalde kapalı (tahrik verildiğinde açılır) yapıda tasarlandığı kanıtlanmalıdır.",
+      "Manevra ve Koridor Geometrisi (Madde 7.4): Aracın dingil mesafesi ve direksiyon sistemi en fazla 5 metrelik dönüş yarıçapını sağlayacak ve 3 metrelik parkur koridorunda kalacak şekilde doğrulanmalıdır.",
+      "Elektrik/elektronik: Emniyet donanımı/yazılımının ana araç kontrolcüsünden bağımsız (Ayrıklık İlkesi) olması, kill-switch şeması.",
+      "Otonomi: ROS tabanlı durum makinesi, 20 cm/s kayar engel ve koni tanıma algoritmaları.",
+      "Lazer Atışı Sabitlik Kuralı (Madde 6.10): Lazer aktif edildikten sonra en az 1 saniye hedefte kalmalı; kontrol döngüsüne hareket kilidi (interlock) koşulu eklenerek hedefe kilitliyken araca/tarete hareket verilmemelidir."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin yarışma şartnamesindeki zorlu arazi koşullarını (engel aşma, su geçişi vb.) ve otonom navigasyon/hedef tespit görevlerini yerine getirecek nitelikte bir insansız kara aracı (İKA) olması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "KTR",
+      "template": "TEKNOFEST_2026__C4_B0KA_KTR__C5_9EABLONU_xi1fe.docx",
+      "rubric": {
+        "category_name": "insansiz-kara-araci-yarismasi",
+        "stage": "KTR",
+        "description": "Değerlendirme; AI 4. Göz Gerekçe Formatı kullanılarak Puan ve Gerekçe (İncelenen Zorunlu Varlıklar dikkate alınarak) şeklinde sunulmalı, en sonda da Yarışmacı Gelişim Karnesi (🟢 Güçlü Yönler, 🔴 Kritik Eksikler, 🟡 Somut İyileştirme Tavsiyeleri) başlıklarıyla raporlanmalıdır.",
+        "criteria": [
+          {
+            "id": "proje_mevcut_durum",
+            "name": "Proje Mevcut Durum Kıyaslaması",
+            "max_score": 5.0,
+            "description": "Tablo-2 formatında TYF vs KTR kıyaslaması ve en fazla 100 kelimelik değişiklik gerekçesi.",
+            "guiding_questions": [
+              "TYF ile KTR arasındaki değişiklikler listelenip özetle açıklanmış mı?"
+            ]
+          },
+          {
+            "id": "sistem_tasarimi",
+            "name": "Sistem Tasarımı",
+            "max_score": 6.0,
+            "description": "Donanım blok şeması (3p) ve yapay zeka içermeyen gerçek 3D CAD sistem montaj modeli (3p).",
+            "guiding_questions": [
+              "Sistem alt bileşenleri blok şemada net ayrılmış ve CAD modelinde sensör yerleşimleri gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "mekanik_tasarim",
+            "name": "Mekanik Tasarım",
+            "max_score": 18.0,
+            "description": "Komponent Hesapları (3 hazır + 3 tasarlanan) (5p), Malzemeler (2p), Üretim (4p), Fiziksel Özellikler (2p), Platform Hesapları (%45 eğim torku, %20 yan eğim, 15-20 cm engel, max 5m dönüş yarıçapı) (5p).",
+            "guiding_questions": [
+              "Mukavemet analizleri sunulmuş ve eğim tırmanma, yan eğim, 5m dönüş çapı hesaplamaları tutarlı mı?",
+              "Montajda silikon/hızlı yapıştırıcı yerine mekanik bağlantı elemanı kullanılmış mı?"
+            ]
+          },
+          {
+            "id": "elektronik_tasarim",
+            "name": "Elektronik Tasarım",
+            "max_score": 18.0,
+            "description": "Güç dağıtım şeması, batarya/BMS mimarisi, motor sürücüler, kablaj, 40 cm su geçişi ve yağmura karşı IP yalıtım çözümleri, fail-safe normalde kapalı fren.",
+            "guiding_questions": [
+              "BMS koruma eşikleri verilmiş mi? 40 cm su geçişi için IP sınıfı ve sızdırmazlık anlatılmış mı?",
+              "Fren sistemi normalde kapalı (fail-safe) yapıda tasarlanmış mı?"
+            ]
+          },
+          {
+            "id": "yazilim_gelistirme_algoritma",
+            "name": "Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme",
+            "max_score": 18.0,
+            "description": "Otonomi akış mimarisi / State Machine, parkur tabela tanıma, koni slalom, dinamik engel (20 cm/s) planlama, lazer hedef tespit ve lazer interlock algoritması.",
+            "guiding_questions": [
+              "Lazer hedefe kilitlendiğinde tareti ve aracı sabitleyen interlock döngüsü (en az 1s) mevcut mu?"
+            ]
+          },
+          {
+            "id": "test",
+            "name": "Test",
+            "max_score": 10.0,
+            "description": "Birim, entegrasyon ve sistem seviyesi test planları; simülasyon ve prototip test verileri.",
+            "guiding_questions": [
+              "Sadece simülasyon mu yoksa fiziksel durma/tırmanma test verileri de raporda var mı?"
+            ]
+          },
+          {
+            "id": "guvenlik_ve_emniyet",
+            "name": "Güvenlik Ve Emniyet",
+            "max_score": 10.0,
+            "description": "Ayrıklık İlkesi (Kritik): Emniyet donanımı/yazılımının ana araç kontrolcüsünden bağımsız olması. Acil durdurma, kısa devre korumaları.",
+            "guiding_questions": [
+              "Acil durdurma/güvenlik devresi ana bilgisayardan ayrı bir mikrokontrolcüde mi çalışıyor?"
+            ]
+          },
+          {
+            "id": "ogrenilmis_dersler",
+            "name": "Öğrenilmiş Dersler",
+            "max_score": 5.0,
+            "description": "Tasarım, üretim ve test sürecinde karşılaşılan somut problemler ve arızalar için çözüm yolları.",
+            "guiding_questions": [
+              "Karşılaşılan problemler ve getirilen çözümler şeffaf aktarılmış mı?"
+            ]
+          },
+          {
+            "id": "zaman_butce_risk",
+            "name": "Zaman, Bütçe Ve Risk Planlaması",
+            "max_score": 5.0,
+            "description": "Gantt takvimi, TYF vs KTR bütçe farkı ve teknik risk analizi matrisi.",
+            "guiding_questions": [
+              "Risk matrisinde sensör/motor arızası veya su sızıntısına karşı B planı var mı?"
+            ]
+          },
+          {
+            "id": "kaynakca",
+            "name": "Kaynakça",
+            "max_score": 5.0,
+            "description": "Rapor metni içinde atıfta bulunulmuş, bilimsel formatta (IEEE/APA vb.) referans listesi.",
+            "guiding_questions": [
+              "Referanslar kurallara uygun olarak belirtilip metin içinde kullanılmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "takim_organizasyonu": "Takım Organizasyonu",
+          "proje_mevcut_durum": "Proje Mevcut Durum Kıyaslaması",
+          "sistem_tasarimi": "Sistem Tasarımı",
+          "mekanik_tasarim": "Mekanik Tasarım",
+          "komponent_muhendislik_hesaplamalari": "Komponent Mühendislik Hesaplamaları",
+          "malzemeler": "Malzemeler",
+          "uretim_yontemleri": "Üretim Yöntemleri",
+          "fiziksel_ozellikler": "Fiziksel Özellikler",
+          "platform_muhendislik_hesaplamalari": "Platform Mühendislik Hesaplamaları",
+          "elektronik_tasarim": "Elektronik Tasarım",
+          "yazilim_gelistirme_algoritma_tasarimi_ve_haberlesme": "Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme",
+          "test": "Test",
+          "guvenlik_ve_emniyet": "Güvenlik Ve Emniyet",
+          "ogrenilmis_dersler": "Öğrenilmiş Dersler",
+          "zaman_butce_ve_risk_planlamasi": "Zaman, Bütçe Ve Risk Planlaması",
+          "kaynakca": "Kaynakça"
+        },
+        "max_pages": 25
+      }
+    }
+  ]
+}

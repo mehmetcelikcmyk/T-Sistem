@@ -1,0 +1,124 @@
+{
+  "slug": "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi",
+  "name": "TÜBİTAK 2204-D Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması",
+  "specifications": [
+    "2026_2204_D_Lise_Öğrencileri_İklim_Değişikliği_Araştırma_Projeleri_Yarışma.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi",
+    "kategori_adi": "2204-D Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması",
+    "hedef_egitim_seviyesi": "Lise ve dengi okullar (20 yaşından gün almamış öğrenciler)",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 3
+    },
+    "danisman_sarti": "Projede en fazla 1 danışman görev alabilir ancak danışman olması ZORUNLU DEĞİLDİR. Öğrenci/danışman arasında birinci derece yakınlık bulunamaz.",
+    "dil_gereksinimi": "Türkçe",
+    "keywords": [
+      "iklim değişikliği",
+      "çevre",
+      "sürdürülebilirlik",
+      "hava ve iklim",
+      "su araştırmaları",
+      "2204",
+      "bilimsel yöntem"
+    ],
+    "oncelikli_gorevler": [
+      "İklim değişikliği farkındalığını artırmak ve doğal kaynakların sürdürülebilir kullanımı için bilimsel, yenilikçi çözümler üretmek",
+      "Araştırmanın Çevre, Ekonomik Sektörler, Hava ve İklim, Su Araştırmaları, Sürdürülebilirlik veya Toplumsal Farkındalık alt alanlarından biriyle ilişkilendirilmesi"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Sayfa ve Kelime Sınırı (Kritik): Proje özeti (abstract) en az 150, en fazla 300 kelime olmalıdır. Proje raporunun tamamı en az 2, en fazla 20 sayfa olmalıdır. Ek belgeler bu sınıra dahil değildir.",
+      "Tehlikeli ve Etik Dışı Deney Yasağı (Madde 4.1.j): Halk sağlığını/güvenliğini riske atan deneyler, omurgalılar üzerinde kesi/kan alma veya etkisi bilinmeyen kimyasal uygulamalar içeren projeler doğrudan elenir.",
+      "Marka ve Reklam Yasağı (Madde 4.2.h): Raporda hiçbir kurum, firma, ticari ürün veya markanın öne çıkarılması / reklamı yapılamaz.",
+      "Gönüllülük ve İzin Belgeleri (Madde 4.1.l): Anket/test uygulaması içeren (özellikle insan denekli) çalışmalarda katılımcı onamı/veli izni veya MEB onay belgelerinin projede kullanıldığı beyan edilmelidir.",
+      "İntihal Yasağı: Daha önceki yıllarda katılmış veya başka yarışmalara sunulmuş projelerle katılım sağlanamaz."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Tematik Alan Uyumu: Projenin belirlenen 6 ana iklim temasından (Çevre, Ekonomik Sektörler, Hava ve İklim, vb.) birisine doğrudan bilimsel bir katkı sunması.",
+      "Bilimsel Yöntem Standardı: 2204-D formatı gereği projenin 'Problem -> Hipotez -> Yöntem -> Bulgular -> Sonuç' zincirine (Scientific Method) sıkı sıkıya bağlı kalması.",
+      "Veri Seti ve Analiz: Çevresel veya toplumsal iklim verilerinin (anket, sensör verisi, meteorolojik veriler) bilimsel grafik/tablolarla analiz edilmiş olması."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin yalnızca teorik bir derleme olmaması, özgün bir araştırma sorusu barındırması ve iklim değişikliğiyle mücadelede (azaltım veya uyum) somut bir fayda (yaygın etki) sağlaması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "2204_Proje_Raporu",
+      "template": "Standart_2204_Sablonu",
+      "rubric": {
+        "category_name": "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi",
+        "stage": "2204_Proje_Raporu",
+        "description": "2204-D Lise İklim Değişikliği Araştırma Raporu Değerlendirmesi.",
+        "criteria": [
+          {
+            "id": "ozgunluk_ve_yaraticilik",
+            "name": "Özgünlük ve Yaratıcılık",
+            "max_score": 20.0,
+            "description": "Araştırma probleminin veya çözüm önerisinin yenilikçi/inovatif olması.",
+            "guiding_questions": [
+              "Fikir öğrencinin kendi yaratıcılığından mı çıkmış, mevcut çözümlerden belirgin bir farkı var mı?"
+            ]
+          },
+          {
+            "id": "bilimsel_yontem",
+            "name": "Bilimsel Yöntem",
+            "max_score": 25.0,
+            "description": "Kullanılan metodolojinin amaca uygunluğu, veri toplama araçlarının doğruluğu ve değişken kontrolü.",
+            "guiding_questions": [
+              "Araştırmanın hipotezi net mi? Kullanılan yöntem (anket, deney, veri analizi vb.) bilimsel temellere (geçerlilik/güvenilirlik) uygun mu? Etik/İzin kurallarına uyulmuş mu?"
+            ]
+          },
+          {
+            "id": "sonuc_ve_oneriler",
+            "name": "Sonuç ve Öneriler",
+            "max_score": 15.0,
+            "description": "Elde edilen bulguların iklim değişikliği problemiyle bağlantısı ve çözüm odaklı öneriler.",
+            "guiding_questions": [
+              "Bulgular, başta hedeflenen amaç ile örtüşüyor mu? İklim değişikliği bağlamında anlamlı sonuçlar çıkarılmış mı?"
+            ]
+          },
+          {
+            "id": "uygulanabilirlik",
+            "name": "Uygulanabilirlik",
+            "max_score": 15.0,
+            "description": "Geliştirilen çözümün hayata geçirilebilirliği (maliyet, malzeme, teknolojik kolaylık).",
+            "guiding_questions": [
+              "Geliştirilen prototip, model veya öneri gerçek hayatta (şehirlerde/tarımda vs.) sürdürülebilir bir şekilde uygulanabilir mi?"
+            ]
+          },
+          {
+            "id": "yaygin_etki",
+            "name": "Yaygın Etki",
+            "max_score": 15.0,
+            "description": "Projenin ekolojik dengede, ekonomide veya toplumda yaratacağı pozitif etki potansiyeli.",
+            "guiding_questions": [
+              "Çözüm ne kadarlık bir kitleyi etkiliyor? Karbon ayak izini düşürme veya adaptasyon anlamında katma değeri yüksek mi?"
+            ]
+          },
+          {
+            "id": "raporlama",
+            "name": "Raporlama",
+            "max_score": 10.0,
+            "description": "Özetin 150-300 kelime olması, raporun 2-20 sayfa sınırında olması, bilimsel yazım kuralları ve akademik dil.",
+            "guiding_questions": [
+              "Özet (150-300 kelime) ve sayfa (2-20 sayfa) kurallarına riayet edilmiş mi? APA vb. referans kurallarına uygun kaynakça var mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "ozet": "Özet",
+          "amac": "Amaç",
+          "giris": "Giriş",
+          "yontem": "Yöntem",
+          "bulgular": "Bulgular",
+          "sonuc_ve_tartisma": "Sonuç ve Tartışma",
+          "oneriler": "Öneriler",
+          "kaynakca": "Kaynakça"
+        },
+        "max_pages": 20
+      }
+    }
+  ]
+}

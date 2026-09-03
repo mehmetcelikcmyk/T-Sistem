@@ -1,0 +1,24 @@
+{
+  "slug": "hackmasters-guneydogu",
+  "name": "Hack Masters Güneydoğu Siber Güvenlik Yarışması",
+  "specifications": [],
+  "ai_rules": {
+    "kategori_slug": "hackmasters-guneydogu",
+    "kategori_adi": "Hack Masters Güneydoğu Siber Güvenlik Yarışması",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "durum_notu": "Bu yarışma klasörü içerisinde şartname PDF veya aşama rapor şablonu (DOCX/PPTX) dosyası bulunmamaktadır. Yalnızca logo.png mevcuttur. Belgeler sağlandığında şartname ve rubrik analizleri eklenecektir.",
+    "dil_gereksinimi": "Türkçe",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 4,
+      "bireysel_basvuru": true
+    },
+    "oduller": {
+      "durum_notu": "Şartname PDF'i sağlandığında detaylı ödül ve rubric eklenecektir.",
+      "birincilik": "Resmi ödül TEKNOFEST duyurusu ile ilan edilecektir",
+      "ikincilik": "Resmi ödül TEKNOFEST duyurusu ile ilan edilecektir",
+      "ucunculuk": "Resmi ödül TEKNOFEST duyurusu ile ilan edilecektir"
+    }
+  },
+  "stages": []
+}

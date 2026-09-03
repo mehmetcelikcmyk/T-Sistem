@@ -1,0 +1,359 @@
+{
+  "slug": "biyoteknoloji-inovasyon-yarismasi",
+  "name": "Biyoteknoloji İnovasyon Yarışması",
+  "specifications": [
+    "2026-TR_Biyoteknoloji_İnovasyon_Yarışması_Şartname-_1I5Kr.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "biyoteknoloji-inovasyon-yarismasi",
+    "kategori_adi": "Biyoteknoloji İnovasyon Yarışması",
+    "yurutucu_kurum": "Türkiye Teknoloji Takımı Vakfı (T3 Vakfı) & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Lise / Ön Lisans / Lisans / Yüksek Lisans / Mezun (14-30 Yaş)",
+    "kategoriler": [
+      {
+        "kategori_adi": "Lise Kategorisi",
+        "hedef_kitle": "MEB'e bağlı lise ve dengi okullarda öğrenim gören öğrenciler ile mezuniyetinin üzerinden en fazla 3 yıl geçmiş lise mezunları.",
+        "takim_uye_sayisi": {
+          "max": 6,
+          "aciklama": "Takımlar en fazla 6 öğrenciden oluşabilir (Danışman dâhil değildir). Bireysel başvuru yapılabilir."
+        },
+        "danisman_sarti": "ZORUNLU (Öğretmen veya akademisyen, en fazla 1 takım)",
+        "prototip_zorunlulugu": "Fikir ve proje ayrımı yoktur, THS seviyesi eleme kriteri değildir; prototip zorunlu olmayıp poster ve sözlü sunum değerlendirilir."
+      },
+      {
+        "kategori_adi": "Üniversite Seviyesi Fikir Kategorisi",
+        "hedef_kitle": "Ön lisans, lisans ve yüksek lisans öğrencileri.",
+        "takim_uye_sayisi": {
+          "max": 6,
+          "aciklama": "Takımlar en fazla 6 öğrenciden oluşabilir (Danışman dâhil değildir). Bireysel başvuru yapılabilir."
+        },
+        "danisman_sarti": "İSTEĞE BAĞLI (Danışmanı olan takımların final aşamasına danışmanı ile gelme zorunluluğu yoktur).",
+        "ths_kurali": "Yalnızca THS 1-2 seviyesindeki projeler kabul edilir. THS 3 ve üzeri olan, patent başvurusu/tescili bulunan veya THS 3+ seviyede makalesi yayımlanmış projeler teknik kontrolde elenerek diskalifiye edilir.",
+        "prototip_zorunlulugu": "Fiziksel prototip yer almaz; puanlama için yalnızca poster ve sözlü sunumlar dikkate alınır."
+      },
+      {
+        "kategori_adi": "Üniversite Seviyesi Proje Kategorisi",
+        "hedef_kitle": "Ön lisans, lisans ve yüksek lisans öğrencileri.",
+        "takim_uye_sayisi": {
+          "max": 6,
+          "aciklama": "Takımlar en fazla 6 öğrenciden oluşabilir (Danışman dâhil değildir). Bireysel başvuru yapılabilir."
+        },
+        "danisman_sarti": "İSTEĞE BAĞLI (Danışmanı olan takımların final aşamasına danışmanı ile gelme zorunluluğu yoktur).",
+        "ths_kurali": "Yalnızca THS 4 ve üzeri projeler kabul edilir. THS 4 altında kalan projeler teknik kontrolde elenir.",
+        "prototip_zorunlulugu": "THS 4 seviyesini kanıtlayan çalışan ürün (fiziksel ürün, model veya laboratuvar ölçekli prototip) yarışma alanına getirilmek ve jüriye çalışır gösterilmek ZORUNLUDUR (Puanlamaya dâhildir)."
+      }
+    ],
+    "genel_puanlama_oranlari": {
+      "proje_detay_raporu_pdr": "%20",
+      "final_sunum_ve_prototip": "%80",
+      "toplam": "%100"
+    },
+    "itiraz_kurali": "PDR değerlendirmesinde baraj puanından en fazla 25 puan altında kalan takımların sonuçlar açıklandıktan sonraki 48 saat içerisinde KYS üzerinden itiraz hakkı bulunur.",
+    "dil_gereksinimi": "Türkçe",
+    "tematik_kapsam": [
+      "Tanı (Moleküler ve genetik tanı sistemleri, kanser/otoimmün tanı, hücresel/protein tanı, antimikrobiyal direnç)",
+      "Tedavi Edici Yöntemler (Hücre/gen tedavileri, CRISPR/Cas, rekombinant terapötikler, akıllı ilaç taşıyıcı sistemler, aşılar)",
+      "İklim Krizi (Atmosfer sera gazı azaltımı, mikrobiyal karbon fiksasyonu, alg/siyanobakteri CO2 fiksasyonu, biyoenerji)",
+      "Tarım (Biyogübre, biyopestisit, nitrojen fiksasyonu, stres toleransı, toprak sağlığı)",
+      "Çevre (Yerel/okyanus çevre kirliliği, algler, temiz içme suyu)",
+      "Biyoremediasyon (Mikroplastik mikrobiyal/enzimatik bozunumu, ağır metaller, zehirli atıklar)",
+      "Gıda ve Beslenme (Probiyotikler, hayvansal olmayan protein, biyolojik aktif takviyeler, gıda saklama)",
+      "Uzay (Uzayda tarım ve gıda üretimi, radyasyonun biyolojik etkileri, uzay tıbbı, biyoalgoritmalar)"
+    ],
+    "biyoteknoloji_kapsam_disi_durumlar": [
+      "Biyoteknolojik yöntem içermeyen salt malzeme/kimya projeleri",
+      "Biyolojik molekül/metot içermeyen tanı kitleri ve biyomedikal cihazlar",
+      "Yalnızca bitki ekstraktı içeren ve biyoteknolojik süreç içermeyen kozmetik/sağlık ürünleri",
+      "Biyolojik doğrulaması olmayan salt istatistiksel/biyoinformatik analizler",
+      "Biyolojik süreç içermeyen geleneksel gıda/karışım formülasyonları"
+    ],
+    "etik_ve_gizlilik_kurallari": [
+      "Takım şeması tablosunda ve rapor metninde kişisel verilere (isim, soyisim, T.C. kimlik numarası, iletişim bilgileri, kurum/okul adı, fotoğraf vb.) kesinlikle yer verilmemelidir (Kör hakem değerlendirmesi kuralı).",
+      "İnsan ve hayvan denek içeren çalışmalarda resmi Etik Kurul İzin Belgesi Ekler bölümünde sunulmalıdır.",
+      "Üretken yapay zeka (ÜYZ) çıktıları doğrudan kopyalanmamalı, uyarlanmalı ve kullanılan ÜYZ modeli kaynakçada/görsel altında belirtilmelidir.",
+      "Şablondaki açıklayıcı kılavuz metinler rapordan silinmelidir (silinmemesi eksi puan sebebidir)."
+    ],
+    "oduller": {
+      "kategori_bazli_oduller": {
+        "lise": {
+          "birincilik": "90.000 ₺",
+          "ikincilik": "80.000 ₺",
+          "ucunculuk": "70.000 ₺",
+          "danisman": {
+            "birincilik": "15.000 ₺",
+            "ikincilik": "12.000 ₺",
+            "ucunculuk": "10.000 ₺"
+          }
+        },
+        "universite_fikir": {
+          "birincilik": "120.000 ₺",
+          "ikincilik": "100.000 ₺",
+          "ucunculuk": "80.000 ₺",
+          "danisman": {
+            "birincilik": "15.000 ₺",
+            "ikincilik": "12.000 ₺",
+            "ucunculuk": "10.000 ₺"
+          }
+        },
+        "universite_proje": {
+          "birincilik": "180.000 ₺",
+          "ikincilik": "150.000 ₺",
+          "ucunculuk": "120.000 ₺",
+          "danisman": {
+            "birincilik": "15.000 ₺",
+            "ikincilik": "12.000 ₺",
+            "ucunculuk": "10.000 ₺"
+          }
+        }
+      },
+      "prestij_odulleri": [
+        {
+          "odul": "En İyi Sunum Ödülü",
+          "aciklama": "Her kategoriden (Lise, Uni Fikir, Uni Proje) seçilecek birer takıma verilir (Maddi karşılığı yoktur)."
+        },
+        {
+          "odul": "Ticarileştirme Potansiyeli Ödülü",
+          "aciklama": "Yalnızca Üniversite Seviyesi Proje Kategorisine başvuran takımlardan birine verilir (Maddi karşılığı yoktur)."
+        }
+      ]
+    },
+    "sartname_dosyasi": "2026-TR_Biyoteknoloji_İnovasyon_Yarışması_Şartname-_1I5Kr.pdf"
+  },
+  "stages": {
+    "lise_seviyesi": [
+      {
+        "stage": "ODR",
+        "stage_name": "Lise Ön Değerlendirme Raporu",
+        "evaluation_type": "Ön Eleme (Puanlama yapılmaz; Başarılı / Başarısız olarak değerlendirilir)",
+        "template": "Biyoteknoloji_İnovasyon_Lise-ÖDR__2026_2_gV8iQ.docx",
+        "format_rules": {
+          "max_pages": 2,
+          "total_page_limit_description": "Kapak, İçindekiler ve Kaynakça hariç ve (varsa) Ekler dahil en fazla 2 sayfa.",
+          "font_family": "Aptos (Başlıklar: Aptos Başlık)",
+          "font_size": "12 pt (Başlıklar: 14 pt)",
+          "line_spacing": 1.15,
+          "alignment": "İki tarafa yaslı",
+          "margins": "Üst: 2.8 cm, Alt: 2.5 cm, Sağ: 2.5 cm, Sol: 2.5 cm",
+          "special_requirements": "Kapak ve İçindekiler için 2 ayrı sayfa. Kişisel veri içermemelidir."
+        },
+        "sections": [
+          "1. Takım Yapısı (Kişisel verisiz görev ve disiplin tablosu)",
+          "2. Proje Kapsamı (Biyoteknoloji içeriği ve şartname uyumu)",
+          "3. Tespit Edilen Bilimsel Problemin Tanımlanması",
+          "4. Çözüm Yaklaşımı ve Yöntem",
+          "5. Projenin Yenilikçi (İnovatif) Yönü",
+          "6. Sonuç ve Öneriler",
+          "7. Kaynakça ve Rapor Düzeni"
+        ]
+      },
+      {
+        "stage": "PDR",
+        "stage_name": "Lise Proje Detay Raporu",
+        "template": "2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+        "format_rules": {
+          "max_pages": 15,
+          "max_image_pages": 2,
+          "total_page_limit_description": "İçindekiler tablosu ve 10 ana başlık dahil en fazla 15 sayfa metin + en fazla 2 sayfa görsel ek (Toplam en fazla 15+2 sayfa).",
+          "font_family": "Arial",
+          "font_size": "12 pt (Başlıklar: 14 pt)",
+          "line_spacing": 1.15,
+          "alignment": "İki tarafa yaslı",
+          "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+          "special_requirements": "Şablondaki açıklayıcı metinler silinmelidir. Kapak tek sayfa olmalıdır. Kişisel bilgi girilmemelidir."
+        },
+        "rubric": {
+          "total_score": 100.0,
+          "criteria": [
+            {
+              "id": "1_takim_yapisi",
+              "name": "1. Takım Yapısı",
+              "max_score": 5.0,
+              "description": "Görev dağılımını ve planlama ihtiyaçlarını karşılayacak ekip yapısı tablosu (Kişisel verisiz; isim, TC, okul/kurum, fotoğraf içermez; danışman rolü dâhildir)."
+            },
+            {
+              "id": "2_proje_ozeti",
+              "name": "2. Proje Özeti (Proje Tanımı)",
+              "max_score": 10.0,
+              "description": "Projenin temel fikrinin kısa, açık ve anlaşılır özeti; amacı, hedefi, hangi soruna çözüm sunduğu ve tasarım/deneysel/üretim teknik yönleri."
+            },
+            {
+              "id": "3_tespit_edilen_sorun",
+              "name": "3. Tespit Edilen Sorun",
+              "max_score": 10.0,
+              "description": "Çözülmek istenen problemin tanımı, neden önemli olduğu, hangi alanları etkilediği, mevcut çözümlerin yetersizlikleri ve projenin ayrışan yönleri."
+            },
+            {
+              "id": "4_yontem",
+              "name": "4. Yöntem",
+              "max_score": 15.0,
+              "description": "Bilimsel prensipler, teknolojik yaklaşımlar, metodolojiler, THS başlangıç/bitiş seviyesi, deneysel çalışmalar ve teknik çizimler."
+            },
+            {
+              "id": "5_yenilikci_yonu",
+              "name": "5. Yenilikçi Yönü",
+              "max_score": 20.0,
+              "description": "Projenin mevcut çözümlerden ayrışan özgün ve yenilikçi yönleri; kullanılan mikroorganizma, enzim, biyomalzeme veya biyolojik sistemlerin özgünlüğü."
+            },
+            {
+              "id": "6_uygulanabilirlik",
+              "name": "6. Uygulanabilirlik",
+              "max_score": 15.0,
+              "description": "Projenin gerçek hayatta uygulanabilirliği, ürün/yönteme dönüşme potansiyeli, maliyet, ölçeklenebilirlik, sürdürülebilirlik ve hedef sektördeki kullanım değeri."
+            },
+            {
+              "id": "7_maliyet_ve_zaman_planlamasi",
+              "name": "7. Maliyet ve Zaman Planlaması",
+              "max_score": 10.0,
+              "description": "Projenin tahmini bütçesi (malzeme tablosu, birim/toplam maliyet, dönemsel harcama planı) ve iş paketlerini içeren zaman çizelgesi (Gantt şeması/yol haritası)."
+            },
+            {
+              "id": "8_hedef_kitle",
+              "name": "8. Hedef Kitle",
+              "max_score": 5.0,
+              "description": "Projenin hitap ettiği doğrudan kullanıcılar (hastalar, çiftçiler vb.) ile dolaylı fayda sağlayan grupların ayrıştırılarak açıklanması."
+            },
+            {
+              "id": "9_riskler",
+              "name": "9. Riskler",
+              "max_score": 5.0,
+              "description": "Teknik, deneysel, mali ve lojistik risklerin olasılık x etki değerlendirmesi ve somut B planları (SWOT analizi)."
+            },
+            {
+              "id": "10_kaynakca",
+              "name": "10. Kaynakça",
+              "max_score": 5.0,
+              "description": "APA, IEEE, MLA veya Chicago formatında tek tip akademik kaynakça listesi (Web erişim tarihleri dahil)."
+            }
+          ]
+        }
+      },
+      {
+        "stage": "FINAL_SUNUM",
+        "stage_name": "Lise Final Sunum Değerlendirmesi",
+        "weight": "%80",
+        "format_rules": {
+          "special_requirements": "Şanlıurfa TEKNOFEST alanında jüriye sözlü ve poster sunumu yapılması (Prototip zorunlu değildir)."
+        }
+      }
+    ],
+    "universite_seviyesi": [
+      {
+        "stage": "ODR",
+        "stage_name": "Üniversite Ön Değerlendirme Raporu",
+        "evaluation_type": "Ön Eleme (Puanlama yapılmaz; Başarılı / Başarısız olarak değerlendirilir)",
+        "template": "Biyoteknoloji_İnovasyon_Üniversite_ÖDR_2026_TR_2_ahAY1.docx",
+        "format_rules": {
+          "max_pages": 2,
+          "total_page_limit_description": "Kapak, İçindekiler ve Kaynakça hariç ve (varsa) Ekler dahil en fazla 2 sayfa.",
+          "font_family": "Aptos (Başlıklar: Aptos Başlık)",
+          "font_size": "12 pt (Başlıklar: 14 pt)",
+          "line_spacing": 1.15,
+          "alignment": "İki tarafa yaslı",
+          "margins": "Üst: 2.8 cm, Alt: 2.5 cm, Sağ: 2.5 cm, Sol: 2.5 cm",
+          "special_requirements": "Kapak ve İçindekiler için 2 ayrı sayfa. Kişisel veri içermemelidir."
+        },
+        "sections": [
+          "1. Takım Yapısı (Kişisel verisiz görev ve disiplin tablosu)",
+          "2. Proje Kapsamı (Biyoteknoloji içeriği ve şartname uyumu)",
+          "3. Tespit Edilen Bilimsel Problemin Tanımlanması",
+          "4. Çözüm Yaklaşımı ve Yöntem",
+          "5. Projenin Yenilikçi (İnovatif) Yönü",
+          "6. Sonuç ve Öneriler",
+          "7. THS Seviyesi (Fikir Kategorisi için THS 1-2, Proje Kategorisi için THS 4+ uygunluk beyanı)",
+          "8. Kaynakça ve Rapor Düzeni"
+        ]
+      },
+      {
+        "stage": "PDR",
+        "stage_name": "Üniversite Proje Detay Raporu (Fikir ve Proje)",
+        "template": "2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+        "format_rules": {
+          "max_pages": 15,
+          "max_image_pages": 2,
+          "total_page_limit_description": "İçindekiler tablosu ve 10 ana başlık dahil en fazla 15 sayfa metin + en fazla 2 sayfa görsel ek (Toplam en fazla 15+2 sayfa).",
+          "font_family": "Arial",
+          "font_size": "12 pt (Başlıklar: 14 pt)",
+          "line_spacing": 1.15,
+          "alignment": "İki tarafa yaslı",
+          "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+          "special_requirements": "Şablondaki açıklayıcı metinler silinmelidir. Kapak tek sayfa olmalıdır. Kişisel bilgi girilmemelidir."
+        },
+        "rubric": {
+          "total_score": 100.0,
+          "criteria": [
+            {
+              "id": "1_takim_yapisi",
+              "name": "1. Takım Yapısı",
+              "max_score": 5.0,
+              "description": "Görev dağılımını ve planlama ihtiyaçlarını karşılayacak ekip yapısı tablosu (Kişisel verisiz; isim, TC, okul/kurum, fotoğraf içermez; danışman rolü dâhildir)."
+            },
+            {
+              "id": "2_proje_ozeti",
+              "name": "2. Proje Özeti (Proje Tanımı)",
+              "max_score": 10.0,
+              "description": "Projenin temel fikrinin kısa, açık ve anlaşılır özeti; amacı, hedefi, hangi soruna çözüm sunduğu ve teknik yönleri."
+            },
+            {
+              "id": "3_tespit_edilen_sorun",
+              "name": "3. Tespit Edilen Sorun",
+              "max_score": 10.0,
+              "description": "Çözülmek istenen problemin tanımı, önemi, mevcut çözümlerin yetersizlikleri ve projenin ayrışan yönleri."
+            },
+            {
+              "id": "4_yontem",
+              "name": "4. Yöntem",
+              "max_score": 15.0,
+              "description": "Bilimsel prensipler, teknolojik yaklaşımlar, metodolojiler, THS başlangıç/bitiş seviyesi, deneysel/hesaplamalı çalışmalar ve teknik çizimler."
+            },
+            {
+              "id": "5_yenilikci_yonu",
+              "name": "5. Yenilikçi Yönü",
+              "max_score": 20.0,
+              "description": "Projenin mevcut çözümlerden ayrışan özgün ve yenilikçi yönleri; kullanılan biyolojik materyaller, yöntemler, genetik/hücresel süreçler veya algoritmalar."
+            },
+            {
+              "id": "6_uygulanabilirlik",
+              "name": "6. Uygulanabilirlik",
+              "max_score": 15.0,
+              "description": "Projenin gerçek hayatta uygulanabilirliği, ürün/yönteme dönüşme potansiyeli, maliyet, ölçeklenebilirlik, sürdürülebilirlik ve hedef sektördeki kullanım değeri."
+            },
+            {
+              "id": "7_maliyet_ve_zaman_planlamasi",
+              "name": "7. Maliyet ve Zaman Planlaması",
+              "max_score": 10.0,
+              "description": "Projenin tahmini bütçesi (malzeme tablosu, birim/toplam maliyet, dönemsel harcama planı) ve iş paketlerini içeren zaman çizelgesi (Gantt şeması/yol haritası)."
+            },
+            {
+              "id": "8_hedef_kitle",
+              "name": "8. Hedef Kitle",
+              "max_score": 5.0,
+              "description": "Doğrudan kullanıcılar (hastalar, çiftçiler, araştırmacılar, sanayi vb.) ile dolaylı fayda sağlayan grupların ayrıştırılarak açıklanması."
+            },
+            {
+              "id": "9_riskler",
+              "name": "9. Riskler",
+              "max_score": 5.0,
+              "description": "Teknik, deneysel, mali ve lojistik risklerin olasılık x etki değerlendirmesi ve somut B planları (SWOT analizi)."
+            },
+            {
+              "id": "10_kaynakca",
+              "name": "10. Kaynakça",
+              "max_score": 5.0,
+              "description": "APA, IEEE, MLA veya Chicago formatında tek tip akademik kaynakça listesi (Web erişim tarihleri dahil)."
+            }
+          ]
+        }
+      },
+      {
+        "stage": "FINAL_SUNUM",
+        "stage_name": "Üniversite Final Değerlendirmesi",
+        "weight": "%80",
+        "format_rules": {
+          "fikir_kategorisi": "Poster ve sözlü jüri sunumu üzerinden puanlanır (%80).",
+          "proje_kategorisi": "Poster ve sözlü sunuma ek olarak THS 4 seviyesinde çalışan prototip/fiziksel ürün incelemesi yapılır ve puanlanır (%80)."
+        }
+      }
+    ]
+  }
+}

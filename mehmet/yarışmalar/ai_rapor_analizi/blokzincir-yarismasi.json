@@ -1,0 +1,211 @@
+{
+  "slug": "blokzincir-yarismasi",
+  "name": "Blokzincir Yarışması",
+  "specifications": [
+    "2026_BLOKZİNCİR_YARIŞMASI_ŞARTNAMESİ_TR.20_02_rBh8h.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "blokzincir-yarismasi",
+    "kategori_adi": "Blokzincir Yarışması",
+    "yurutucu_kurum": "Türkiye Teknoloji Takımı Vakfı (T3 Vakfı) & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Ön Lisans / Lisans / Yüksek Lisans / Doktora Öğrencileri ve Mezunlar (Son 3 Yılda Mezun Olmuş Gençler)",
+    "uluslararasi_katilim": true,
+    "takim_kurallari": {
+      "uye_sayisi_min": 2,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": false,
+      "final_destek_limiti": "Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği takım başı en fazla 3 kişi (danışman dâhil) ile sınırlıdır.",
+      "aciklama": "Yarışmacılar, en az 2 ve en fazla 5 kişilik takımlar (danışman hariç) halinde katılabilecektir. Takım içerisinde bir takım kaptanı ve iletişim sorumlusu bulunmalıdır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Öğrencilerden oluşan takımların, ilgili alanda görev yapan bir akademisyen ya da profesyonelden danışmanlık desteği alması tavsiye edilmektedir (İsteğe Bağlı).",
+      "danismanlik_belgesi": "Başvurularda takım danışmanı bulunması durumunda danışmanlık belgesi göndermesi zorunludur.",
+      "limit": "Her takımın en fazla 1 danışmanı olabilir. Varsa danışman, takım üyesi olarak eklenmemelidir.",
+      "sorumluluk": "Danışman final aşamasına kadar takıma destek olacağını ve final aşaması süresince takımın yanında bulunacağını taahhüt eder."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_oranlari": {
+      "proje_on_degerlendirme_raporu_odr": "%10",
+      "proje_sunum_raporu": "%15",
+      "ozet_proje_sunum_cevrim_ici": "%15",
+      "final_sunum_puanlamasi": "%60",
+      "toplam": "%100"
+    },
+    "itiraz_kurali": "Rapor itirazları, rapor sonuçları açıklandıktan sonraki 48 saat içerisinde KYS üzerinden takım kaptanı veya danışmanı tarafından yapılmalıdır.",
+    "tematik_kapsam": [
+      {
+        "alan": "Yüksek Başarımlı ve Ölçeklenebilir DLT Altyapıları",
+        "detay": "Yüksek performanslı DLT mimarileri, durum kanalları, sidechain, rollup, sharding, DLT'ler arası entegrasyon ve birlikte çalışabilirlik, on-chain/off-chain çifte işlem önleme protokolleri, yüksek performanslı mutabakat algoritmaları."
+      },
+      {
+        "alan": "DLT Sistemlerinde Mahremiyet",
+        "detay": "Merkezi olmayan uygulamalar için gizlilik protokolleri, dijital varlık mahremiyeti, DLT mahremiyet yapı taşları, merkeziyetsiz depolama ağlarında (IPFS, Filecoin vb.) veri mahremiyeti."
+      },
+      {
+        "alan": "Dijital Cüzdanlar",
+        "detay": "Hibrit cüzdanlar (kimlik ve varlık), güvenliği güçlendirilmiş cüzdanlar, cüzdan donanım çözümleri, MPC (Çok Taraflı Hesaplama) tabanlı yetenekler, cüzdan saklama (Custody) sistemleri, cüzdan yedekleme/kurtarma, soğuk depolama ve çoklu imza (multisig) çözümleri."
+      },
+      {
+        "alan": "Blokzincir Kriptolojisi",
+        "detay": "Sıfır Bilgi İspatı (ZKP) tabanlı hızlı ve düşük maliyetli gizlilik çözümleri, kuantum dayanıklı blokzincir protokolleri, MPC+ZKP gizlilik protokolleri, homomorfik şifreleme ile on-chain işlem mekanizmaları, taahhüt (commitment) protokolleri, kriptografik özet optimizasyonları."
+      },
+      {
+        "alan": "Blokzincir Güvenliği",
+        "detay": "Akıllı sözleşmeler için otomatik güvenlik analizi ve hata tespit araçları, DLT ağ katmanı protokol zafiyet analizi, protokol seviyesinde saldırılara dayanıklı çözümler."
+      },
+      {
+        "alan": "Kripto Varlık Regülasyon Uygulama Altyapıları",
+        "detay": "Rezerv kanıtı çözümleri (Proof of Reserve - PoR), blokzincir analitiği çözümleri, kripto varlık suç analizi ve vaka takip sistemleri, Travel Rule altyapıları."
+      },
+      {
+        "alan": "Seçilmiş DLT Uygulama Alanları",
+        "detay": "Merkeziyetsiz dijital kimlik yönetim sistemleri (DID/SSI/VC), Orijin takibi (tedarik zinciri, gıda/varlık takibi, sahte ürün engelleme, on-chain büyük veri analitiği), Merkeziyetsiz Finans (DeFi güvenlik/birlikte çalışabilirlik), Tokenizasyon (RWA, çapraz zincir token transferi, NFT optimizasyonu), Web3 Yönetişim, Geliştirici ve Topluluk Araçları (DAO altyapıları, IDE, derleyiciler, simülatörler)."
+      }
+    ],
+    "etik_ve_gizlilik_kurallari": [
+      "Takım Yapısı bölümünde ve rapor genelinde kişisel verilere (isim, soyisim, fotoğraf, T.C. kimlik numarası vb.) kesinlikle yer verilmemelidir (Kör hakem kuralı).",
+      "Proje fikirleri özgün olmalı, taklit/kopya edilmemiş olmalıdır; benzer veya intihal projeler diskalifiye edilir.",
+      "Geçmiş yıllarda düzenlenen TEKNOFEST yarışmalarına katılan projeler ancak geliştirilme ve/veya dönüştürülme şartı ile tekrar başvurabilir.",
+      "Aynı proje ile yalnızca tek bir TEKNOFEST yarışmasına başvurulabilir.",
+      "Geçmiş yıl raporlarından veya alıntılardan yararlanılması durumunda standart alıntı formatına ve kaynakça kurallarına uyulmalıdır."
+    ],
+    "oduller": {
+      "dereceler": {
+        "birincilik": {
+          "takim_odulu": "200.000 TL",
+          "danisman_odulu": "15.000 TL"
+        },
+        "ikincilik": {
+          "takim_odulu": "150.000 TL",
+          "danisman_odulu": "12.000 TL"
+        },
+        "ucunculuk": {
+          "takim_odulu": "100.000 TL",
+          "danisman_odulu": "10.000 TL"
+        }
+      },
+      "prestij_odulleri": [
+        {
+          "odul": "En İyi Sunum Ödülü",
+          "aciklama": "Yarışma alanında projesini süre, sorulara verilen doğru cevaplar, beden dili, dinleyicilere karşı tutum, sunumun akıcılığı ve sunum taslağı kriterlerine göre en iyi yansıtan 1 takıma verilir (Maddi karşılığı yoktur)."
+        },
+        {
+          "odul": "Ticarileştirme Potansiyeli Ödülü",
+          "aciklama": "Finale kalan takımlar arasında projenin hayata geçirebilme kolaylığı, risk ve belirsizliklerin azlığı, mevcut teknoloji ile üretilebilmesi ve satılabilir/sunulabilir ürün potansiyeli en yüksek olan 1 takıma verilir (Maddi karşılığı yoktur)."
+        }
+      ],
+      "birincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ikincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ucunculuk": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir"
+    },
+    "sartname_dosyasi": "2026_BLOKZİNCİR_YARIŞMASI_ŞARTNAMESİ_TR.20_02_rBh8h.pdf"
+  },
+  "stages": [
+    {
+      "stage": "ODR",
+      "stage_name": "Proje Ön Değerlendirme Raporu",
+      "weight": "%10",
+      "template": "BlokzincirYarışması2026ÖDRŞablonu.TR_EX2RH.docx",
+      "format_rules": {
+        "max_pages": 30,
+        "total_page_limit_description": "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 30 sayfa olacaktır.",
+        "font_family": "Arial (Başlıklar: Arial Black)",
+        "font_size": "12 pt (Başlıklar: 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+        "citation_format": "Metin içi köşeli parantez referans gösterimi (Örn: [1], [4,7,21], [5-11]).",
+        "special_requirements": "Her rapor 'Kapak, İçindekiler ve Kaynakça' başlıkları için 3 ayrı sayfa içermelidir. Kişisel veriler (isim, fotoğraf vb.) raporda yer almamalıdır. Şablon notu rapordan silinmelidir."
+      },
+      "rubric": {
+        "category_name": "blokzincir-yarismasi",
+        "stage": "ODR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_ozeti",
+            "name": "1. Proje Özeti",
+            "max_score": 15.0,
+            "description": "Projenin konusu, amacı; seçilen yarışma kapsamı ve yöntem dikkate alınarak açık bir dille ifade edilmelidir."
+          },
+          {
+            "id": "2_katma_deger_ve_yenilikcilik",
+            "name": "2. Katma Değer ve Yenilikçilik",
+            "max_score": 15.0,
+            "description": "Projenin sunduğu çözüm, sektördeki mevcut çözümlerden ayrışabilmeli ve değer oluşturmalıdır. Çözülen sorun tanıtılmalı, mevcut çözümler/akademik yayınlar paylaşılmalı, önerilen çözümün yenilikçi yanı, özgünlüğü, yerliliği ve emsallerinden farkı açıklanmalıdır."
+          },
+          {
+            "id": "3_teknoloji_kullanimi",
+            "name": "3. Teknoloji Kullanımı",
+            "max_score": 20.0,
+            "description": "İlgili DLT ve blokzincir teknolojilerinin projeye etkin entegrasyonu ve hedeflere yönelik güçlü teknolojik temel. Önerilen çözümün mimarisi tanıtılmalı, yapılacak test ve analizler ifade edilmelidir."
+          },
+          {
+            "id": "4_uygulanabilirlik",
+            "name": "4. Uygulanabilirlik",
+            "max_score": 15.0,
+            "description": "Proje fikrinin hayata nasıl geçirileceği ve mevcut şartlar altında ticari bir ürüne dönüştürülebilir olup olmadığı, yenilik ve ticarileşme potansiyeli."
+          },
+          {
+            "id": "5_yaygin_etki",
+            "name": "5. Yaygın Etki",
+            "max_score": 10.0,
+            "description": "Projenin geniş bir kitleye hitap edebilme potansiyeli ile toplumsal, ekonomik veya endüstri düzeyinde olumlu etki yaratma kapasitesi."
+          },
+          {
+            "id": "6_surdurulebilirlik",
+            "name": "6. Sürdürülebilirlik",
+            "max_score": 10.0,
+            "description": "Projenin finansal, çevresel ve sosyal sürdürülebilirlik ilkesine uygunluğu, uzun vadeli kaynak uyumu ve potansiyel risklerin farkındalığıyla sürdürülebilirliğe katkısı."
+          },
+          {
+            "id": "7_proje_takvimi",
+            "name": "7. Proje Takvimi",
+            "max_score": 5.0,
+            "description": "İş paketleri ve alt faaliyetlerin detaylı, açık ve gerçekçi planlanması; anlaşılır ve düzenli şema/tablo (Gantt vb.) kullanımı."
+          },
+          {
+            "id": "8_takim_yapisi",
+            "name": "8. Takım Yapısı",
+            "max_score": 5.0,
+            "description": "Takım üyelerinin görev dağılımı, uzmanlıkları ve ekip organizasyonu bilgisi (İsim ve fotoğraf gibi kişisel bilgiler eklenmez)."
+          },
+          {
+            "id": "9_kaynakca",
+            "name": "9. Kaynakça (Formata Uygunluk)",
+            "max_score": 5.0,
+            "description": "Kullanılan tüm dijital/web ve akademik kaynakların standart formatta detaylı listelenmesi, akademik rapor standartlarına uyum."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "PROJE_SUNUM_RAPORU",
+      "stage_name": "Proje Sunum Raporu",
+      "weight": "%15",
+      "template": null,
+      "format_rules": {
+        "special_requirements": "Proje Sunum aşamasına geçen takımlar sunumları öncesinde Proje Sunum Raporunu teslim ederler. Varsa projelerin kaynak kodları da hakemlerce incelenir."
+      }
+    },
+    {
+      "stage": "OZET_PROJE_SUNUM_CEVRIM_ICI",
+      "stage_name": "Özet Proje Sunumu (Çevrim İçi)",
+      "weight": "%15",
+      "template": null,
+      "format_rules": {
+        "special_requirements": "Belirlenen tarih ve saatte jüriye çevrim içi canlı proje sunumu gerçekleştirilir. Yarı final aşaması niteliğindedir."
+      }
+    },
+    {
+      "stage": "FINAL_SUNUM",
+      "stage_name": "Final Sunum Puanlaması (TEKNOFEST Alanı)",
+      "weight": "%60",
+      "template": null,
+      "format_rules": {
+        "special_requirements": "Şanlıurfa TEKNOFEST festival alanında jüriye yüz yüze sunum ve soru-cevap değerlendirmesi."
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "nsosyal-inovasyon-yarismasi",
+  "name": "TEKNOFEST NSosyal İnovasyon Yarışması",
+  "specifications": [
+    "2026_NSOSYAL_YARISMASI_SARTNAMESI_TR_2026_07_24_v9_1_G92Gv_PpMLO.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "nsosyal-inovasyon-yarismasi",
+    "kategori_adi": "NSosyal İnovasyon Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Üniversite (Ön lisans, Lisans, YL, Doktora) ve Yeni Mezunlar (Maksimum 3 yıl).",
+    "takim_uye_sayisi": {
+      "min": 2,
+      "max": 5
+    },
+    "danisman_sarti": "En fazla 1 danışman bulunabilir (Zorunlu değildir).",
+    "dil_gereksinimi": "Türkçe",
+    "keywords": [
+      "sosyal ağ",
+      "nsosyal",
+      "içerik ekonomisi",
+      "sosyal yapay zeka",
+      "algoritma",
+      "ui/ux",
+      "kullanıcı katılımı",
+      "dijital refah",
+      "öneri sistemi",
+      "toksik içerik filtreleme",
+      "veri mahremiyeti"
+    ],
+    "oncelikli_gorevler": [
+      "Türkiye'nin yerli sosyal medya platformu NSosyal için algoritmik, finansal veya arayüz odaklı yenilikçi özellikler geliştirmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Bireysel Katılım Yasağı (Kritik): Bu yarışmaya bireysel (tek kişi) başvuru KABUL EDİLEMEZ. Takımlar en az 2, en fazla 5 kişiden oluşmalıdır.",
+      "Yeni Mezun Kısıtı: Mezun kategorisinde yarışanların mezuniyetlerinin üzerinden en fazla 3 yıl geçmiş olması zorunludur.",
+      "İntihal ve Kopya Yasağı: Başka kişi veya kurumlara ait çalışmaların (mevcut sosyal medya uygulamalarının birebir kopyası vb.) tespiti diskalifiye sebebidir.",
+      "Daha Önce Yarışmış Proje: Önceki yıllarda farklı yarışmalarda sunulmuş projeler ancak 'önemli ölçüde geliştirilmiş' iseler kabul edilir ve bu durum raporda beyan edilmek zorundadır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Tema Seçimi ve Puanlama Ağırlığı: Raporun 3 ana inovasyon dikeyinden (İçerik Ekonomisi, Sosyal Yapay Zeka, Kullanıcı Katılımı UI/UX) birine açıkça odaklandığının tespiti. Puanlamadaki teknik/iş modeli ağırlığı bu temaya göre belirlenecektir.",
+      "İçerik Ekonomisi Teması: İçerik üreticilerine sürdürülebilir gelir modelleri, mikro ödeme sistemleri veya içerik üretimini hızlandıran teknolojik araçlar içeriyor mu?",
+      "Sosyal Yapay Zeka Teması: Kullanıcı ruh haline uygun öneri sistemleri (recommendation engine), toksik/zararlı içerik yönetimi ve algoritmik şeffaflık barındırıyor mu?",
+      "Kullanıcı Katılımı (UI/UX) Teması: Gamification (oyunlaştırma), dijital bağımlılığı önleyen dijital refah araçları ve erişilebilirlik (accessibility) standartlarına uygun mu?"
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Geliştirilen özelliğin yalnızca teoride kalmayıp NSosyal platformunun yazılım mimarisine entegre edilebilir, prototiplenebilir (UI tasarımı veya çalışan kod) ve ölçeklenebilir (scalable) olması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Proje_Teknik_Raporu",
+      "template": "NSosyal_PTR_Sablonu",
+      "rubric": {
+        "category_name": "nsosyal-inovasyon-yarismasi",
+        "stage": "Proje_Teknik_Raporu",
+        "description": "NSosyal İnovasyon Yarışması Proje Teknik Raporu Genel Rubriği (Tema ağırlıkları ortalanarak 100 üzerinden dengelenmiştir).",
+        "criteria": [
+          {
+            "id": "yenilikcilik_ve_ozgunluk",
+            "name": "Yenilikçilik ve Özgünlük",
+            "max_score": 20.0,
+            "description": "Projenin NSosyal platformuna kattığı yenilikçi değer (Tüm temalarda %20).",
+            "guiding_questions": [
+              "Önerilen modül veya algoritma mevcut global sosyal ağlardan (Instagram, X, TikTok vb.) ayrışan özgün bir yaklaşıma sahip mi?"
+            ]
+          },
+          {
+            "id": "teknik_yeterlilik",
+            "name": "Teknik Yeterlilik ve Sistem Mimarisi",
+            "max_score": 25.0,
+            "description": "Yazılım mimarisi, yapay zeka entegrasyonu, veri akışı ve ölçeklenebilirlik.",
+            "guiding_questions": [
+              "Kullanılan teknolojiler (AI, veritabanı, frontend/backend mimarisi) milyonlarca kullanıcıyı kaldırabilecek ölçekte (scalable) mi?"
+            ]
+          },
+          {
+            "id": "problemi_cozme",
+            "name": "Problemi Çözme Başarısı",
+            "max_score": 20.0,
+            "description": "Dijital refah, gelir adaletsizliği veya zararlı içerik problemini çözme kabiliyeti.",
+            "guiding_questions": [
+              "Projenin çözdüğü sorun net mi? Sosyal medya ekosistemine doğrudan bir fayda/çözüm sunuyor mu?"
+            ]
+          },
+          {
+            "id": "ui_ux_ve_kullanim",
+            "name": "Kullanıcı Deneyimi (UI/UX)",
+            "max_score": 20.0,
+            "description": "Kullanıcı arayüzü, erişilebilirlik ve etkileşimi artıran (gamification) ekran tasarımları.",
+            "guiding_questions": [
+              "Figma/Adobe XD gibi araçlarla UI/UX prototipleri veya wireframe tasarımları rapora eklenmiş mi? Kullanıcı dostu mu?"
+            ]
+          },
+          {
+            "id": "is_modeli_ve_prototip",
+            "name": "İş Modeli ve Prototip Kalitesi",
+            "max_score": 15.0,
+            "description": "İçerik Ekonomisi projeleri için gelir/iş modeli, diğer projeler için prototip ilerleme durumu.",
+            "guiding_questions": [
+              "Proje bir iş modeli barındırıyor mu? Yazılım/arayüz prototipi ne aşamada, uygulanabilirliği test edilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "proje_amaci": "Proje Amacı ve Sorun Tanımı",
+          "yenilikci_yon": "Yenilikçi Yön ve Özgünlük",
+          "sistem_mimarisi": "Teknik Yeterlilik ve Sistem Mimarisi",
+          "kullanci_deneyimi": "Kullanıcı Deneyimi (UI/UX) Tasarımı",
+          "is_modeli_uygulanabilirlik": "İş Modeli ve Uygulanabilirlik"
+        },
+        "max_pages": 0
+      }
+    }
+  ]
+}

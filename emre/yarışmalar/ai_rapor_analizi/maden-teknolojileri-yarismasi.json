@@ -1,0 +1,173 @@
+{
+  "slug": "maden-teknolojileri-yarismasi",
+  "name": "TEKNOFEST Maden Teknolojileri Yarışması",
+  "specifications": [
+    "2026_MADEN_TEKNOLOJİLERİ_YARIŞMASI_ŞARTNAMESİ_20_02_2026_vTarih_urMBc.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "maden-teknolojileri-yarismasi",
+    "kategori_adi": "Maden Teknolojileri Yarışması",
+    "hedef_egitim_seviyesi": "Üniversite (Ön lisans, Lisans, YL, Doktora), Mezunlar, Girişim ve Özel Sektör. (Lise öğrencileri katılamaz).",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 6
+    },
+    "danisman_sarti": "En fazla 1 danışman bulunabilir (Zorunlu değildir). Yarı final ve final sunumlarında danışmanlar kesinlikle sunum yapamaz ve soruları yanıtlayamaz.",
+    "dil_gereksinimi": "Türkçe",
+    "keywords": [
+      "maden teknolojileri",
+      "otonom madencilik",
+      "yapay zeka",
+      "iş güvenliği",
+      "cevher işleme",
+      "çevreye duyarlı madencilik",
+      "döngüsel ekonomi",
+      "nadir toprak elementleri (NTE)",
+      "bor cevheri",
+      "trona",
+      "uç ürün",
+      "pasa değerlendirme",
+      "XRF",
+      "LIBS",
+      "PGNAA",
+      "InSAR",
+      "yer radarı (GBR)",
+      "süreksizlik ölçümü",
+      "yeraltı navigasyonu",
+      "kestirimci bakım",
+      "madencilik 4.0",
+      "giyilebilir İSG",
+      "akıllı kask",
+      "metan takip sensörü",
+      "retrofitting",
+      "kentsel madencilik",
+      "asit maden drenajı",
+      "su geri kazanımı"
+    ],
+    "oncelikli_gorevler": [
+      "İleri Cevher İşleme ve Yerli Yazılım Teknolojileri geliştirmek",
+      "Otonom Madencilik, Yapay Zeka Entegrasyonu ve İş Güvenliği çözümleri sunmak",
+      "Çevreye Duyarlı Madencilik ve Döngüsel Ekonomi Modelleri oluşturmak"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Eğitim Seviyesi Kısıtı (Kritik): Lise öğrencileri bu yarışmaya KESİNLİKLE katılamaz. Sadece üniversite, mezun ve girişim seviyesi kabul edilmektedir.",
+      "Takım Sınırı ve Destek: Takımlar en fazla 6 kişiden oluşabilir. Finale kalan takımlara sağlanacak destek takım başına max 3 kişi ile sınırlıdır.",
+      "Maddi Destek ve Faturalandırma Kuralı: ÖDR aşamasında maddi destek verilmez. Yalnızca Yarı Finali geçen takımlar destek talep edebilir. Destek alan takımlar harcamalarını fatura/dekont ile belgelemek zorundadır.",
+      "Sayfa ve Biçim Sınırı (Kritik - Eleme Sebebi): Kapak, İçindekiler, Kaynakça ve Ekler dahil EN FAZLA 10 sayfa olmalıdır. 11. sayfa doğrudan elenme sebebidir.",
+      "Proje Özeti Kelime Sınırı (Kritik - Puan Kesintisi): Proje özeti 150 ile 250 kelime arasında olmak ZORUNDADIR. Aşımı veya altında kalması doğrudan 18 puanlık kısımdan ceza gerektirir.",
+      "Kişisel Veri ve Kör Hakemlik Kuralı (Kritik - İhlal): PROJE TAKIMI tablosunda İSİM, SOYİSİM, OKUL/ÜNİVERSİTE, TC ve İLETİŞİM BİLGİSİ yasaktır. Üniversite adı veya öğrenci ismi geçmesi kör hakemliği ihlal eder.",
+      "Tipografi ve 3 Bağımsız Sayfa Kuralı: Metin Arial (12 pt), başlıklar Arial Black (14 pt), satır aralığı 1.15, iki yana yaslı ve kenar boşlukları 2.5 cm olmalıdır. Kapak, İçindekiler ve Kaynakça ana metinle birleştirilmeden 3 AYRI BAĞIMSIZ SAYFA halinde düzenlenmelidir.",
+      "ÖDR Aşamasında Tanıtım Videosu Muafiyeti: Şablonda 'Bu aşamada proje tanıtım videosu bulunmamaktadır' yazar. Yapay zeka, ÖDR incelemesinde eksik video linki uyarısı KESİNLİKLE vermemelidir.",
+      "Yapay Zeka (AI) Metin Yasağı: Jenerik AI metin tespiti elenme sebebidir.",
+      "İntihal Yasağı: Önceki yılların projeleri kopyalanamaz veya kaynak gösterilmeden alıntı yapılamaz."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Prototip Ölçeklendirme ve Maket Kabulü (Madde 5.5.4): Madencilik yapıları devasa olduğu için birebir boyut beklenmez. Raporun, çözümünü 'Ölçekli maket (ahşap, 3B baskı)', 'Çalışan yazılım arayüzü' veya 'Temel sensör test düzeneği' formatında prototipleyeceğini beyan etmesi zorunludur.",
+      "Danışman Sorumluluk Kısıtı: Final sunumunu bizzat öğrenciler yapacağı için, rapordaki iş paketlerinin tamamen öğrencilerin teknik hakimiyetini yansıtacak şekilde kurgulandığı denetlenmelidir.",
+      "İleri Cevher İşleme (Tema 1): Bor, NTE, Trona, Lityum veya Kobalt gibi stratejik cevherlerin uç ürüne dönüşümü; XRF, LIBS, PGNAA sensörlerle anlık tenör ölçümü; GBR ve InSAR entegrasyonlu yer radarı tasarımları.",
+      "Otonomi, Yapay Zeka ve İSG (Tema 2): GPS olmayan galerilerde LiDAR/sensör füzyonlu yeraltı navigasyonu; 3D cevher modelleme ve kestirimci bakım algoritmaları; Metan/toz takibi yapan IoT ağları ve fizyolojik durum (nabız, yorgunluk) izleyen akıllı kask/yelek sistemleri.",
+      "Çevreye Duyarlı Madencilik (Tema 3): Yeraltı iş makinelerinin elektrifikasyonu (retrofitting); E-atıklardan değerli metal kazanımı (Kentsel Madencilik) veya maden pasalarının seramik/çimentoya dönüştürülmesi; %90 proses su geri kazanımı ve asit maden drenajı uyarı sistemleri.",
+      "8. Başlık Tuzağı (Hakem Kontrol Listesi): Şablondaki 'PROJE RAPOR DÜZENİ VE ŞABLONA UYUM' 8. başlığı rapor içine ASLA YAZILMAMALIDIR. Yazan takımlar şablon notuna aykırılıktan ceza almalıdır."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin maden sektöründeki güncel bir operasyonel, iş güvenliği, yazılım veya ekolojik sorunu tespit edip yenilikçi ve prototiplenebilir (Theme 1/2/3 uyumlu) teknolojik çözüm sunması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "ODR",
+      "template": "Maden_Teknolojileri_Yar_C4_B1smas_C4_B1_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+      "rubric": {
+        "category_name": "maden-teknolojileri-yarismasi",
+        "stage": "ODR",
+        "description": "Maden Teknolojileri Yarışması Proje Ön Değerlendirme Raporu (ÖDR) Rubriği. (Toplam 100 Puan)",
+        "criteria": [
+          {
+            "id": "proje_ozeti",
+            "name": "PROJE ÖZETİ",
+            "max_score": 18.0,
+            "description": "150-250 kelime aralığında; projenin amacı, hedef madencilik alanı ve çözüm yaklaşımı.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ 1: Proje özeti tam olarak 150-250 kelime aralığında mı?",
+              "HAKEM KONTROLÜ 2: Özet içinde şu 5 zorunlu unsur yer alıyor mu: Proje Adı, Projenin Amacı, Ana Fikir (Temel Düşünce), Hedef Süreç (Madencilik aşaması) ve Çözüm Yaklaşımı?"
+            ]
+          },
+          {
+            "id": "sorunun_tanimi_cozum_onerisi",
+            "name": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ",
+            "max_score": 35.0,
+            "description": "Sektörel problem analizi, mevcut yöntemlerin verimsizliği ve teknik çözüm mekanizması.",
+            "guiding_questions": [
+              "Madencilik (cevher, otonomi, ekoloji) sorunu gerçekçi mi? Çözüm mekanizması teknik olarak uygulanabilir mi?"
+            ]
+          },
+          {
+            "id": "yenilikcilik",
+            "name": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ",
+            "max_score": 15.0,
+            "description": "İthal teknolojilerden ayrışma, dünyadaki muadillerle kıyaslama ve yerli teknolojik bağımsızlık.",
+            "guiding_questions": [
+              "Çözüm inovatif mi veya ithal ekipman/yazılımlara karşı yerlileştirme değeri taşıyor mu?"
+            ]
+          },
+          {
+            "id": "uygulanabilirlik",
+            "name": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+            "max_score": 15.0,
+            "description": "Zorlu maden ortamına uyum, entegrasyon fizibilitesi ve Yeşil Mutabakat katkısı. Ölçekli maket/arayüz prototipleme formatı.",
+            "guiding_questions": [
+              "Proje maket, 3B baskı veya yazılım arayüzü gibi uygun bir formata ölçeklendirilmiş mi? Finalde sunulabilir mi?"
+            ]
+          },
+          {
+            "id": "hazirlanis_sureci",
+            "name": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "max_score": 10.0,
+            "description": "Kronolojik Ar-Ge iş paketleri, simülasyon/tasarım yöntemleri ve prototipleme yol haritası.",
+            "guiding_questions": [
+              "İş paketleri tamamen öğrencilerin/katılımcıların teknik emeğini yansıtıyor mu? Yöntem gerçekçi mi?"
+            ]
+          },
+          {
+            "id": "proje_takimi",
+            "name": "PROJE TAKIMI",
+            "max_score": 2.0,
+            "description": "Tablo formatında görev dağılımı (isim, T.C., üniversite adı KESİNLİKLE içermemeli).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Tabloda okul/üniversite adı veya öğrenci ismi geçiyor mu? Kör hakemlik ihlali varsa uyarın."
+            ]
+          },
+          {
+            "id": "kaynaklar",
+            "name": "KAYNAKLAR",
+            "max_score": 3.0,
+            "description": "Akademik standartlarda (APA/IEEE) güvenilir referanslar ve metin içi [1] atıfları.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Kaynaklar metin içinde köşeli parantez (Örn: [1], [4,7]) kullanılarak atıflandırılmış mı? Atıfsız listelere puan kesintisi uygulayın."
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "max_score": 2.0,
+            "description": "Arial 12pt / Arial Black 14pt formatı, max 10 sayfa sınırı ve bağımsız 3 sayfa kuralı. (Bu başlık raporda yazılmaz, format puanıdır).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ 1: Rapor 10 sayfayı aşmış mı? 8. Başlık metin içine hatalı şekilde açılmış mı? (Yazan ceza alır).",
+              "HAKEM KONTROLÜ 2: Kapak, İçindekiler ve Kaynakça ana metinden ayrılarak 3 bağımsız tam sayfada mı verilmiş?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "proje_ozeti": "PROJE ÖZETİ",
+          "sorunun_tanimi_cozum": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ",
+          "yenilikcilik": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ",
+          "uygulanabilirlik": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+          "surec_ve_yontem": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+          "proje_takimi": "PROJE TAKIMI",
+          "kaynaklar": "KAYNAKLAR"
+        },
+        "max_pages": 10
+      }
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "world-drone-cup",
+  "name": "TEKNOFEST World Drone Cup 2026",
+  "specifications": [
+    "2026_World_Drone_Cup_PrYxE.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "world-drone-cup",
+    "kategori_adi": "World Drone Cup",
+    "hedef_egitim_seviyesi": "All Levels (International Competitors Only)",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 1
+    },
+    "danisman_sarti": "There is no advisor requirement. Pilots compete individually.",
+    "keywords": [
+      "Drone Racing",
+      "World Drone Cup",
+      "FPV",
+      "HDZero",
+      "Fastest-3-Consecutive",
+      "Chase the Ace"
+    ],
+    "oncelikli_gorevler": [
+      "Navigate a challenging FPV drone race track at a partially active airport.",
+      "Achieve the fastest 3 consecutive laps during qualification.",
+      "Win the double-elimination bracket in the finals (Chase the Ace)."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Drone Size & Battery: Framesize must be 4\" - 6\". Batteries up to 6S.",
+      "VTx Rules: 25mW output limit. Only Analog and HDZero are allowed. VTx MUST be controllable via the remote (for PitMode/channel switching). Increasing output power beyond 25mW leads to disqualification.",
+      "RC Link Rules: Crossfire MUST be set to 868MHz (Turkey uses 900MHz for GSM). 2.4GHz links (ELRS/Tracer/Ghost) must be set to 25mW with dynamic power turned OFF.",
+      "Track Rules: Obstacles must be passed in the correct order and side. Missed obstacles must be re-passed.",
+      "Safety (Failsafe): If safety is jeopardized due to video loss or failsafe, the pilot must land or crash immediately on the spot, without crossing the flying field.",
+      "Unsportsmanlike Conduct: Any insult, discrimination, or physical/psychological pressure leads to disciplinary action/disqualification."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Technical_Inspection",
+      "template": "Physical_Inspection",
+      "rubric": {
+        "category_name": "world-drone-cup",
+        "stage": "Technical_Inspection",
+        "description": "Pre-race Drone Technical Scrutineering",
+        "criteria": [
+          {
+            "id": "frame_and_battery",
+            "name": "Frame Size and Battery Check",
+            "max_score": 30.0,
+            "description": "Check if drone dimensions and power source match the rules.",
+            "guiding_questions": [
+              "Is the frame size between 4\" and 6\"? Are the batteries 6S or below?"
+            ]
+          },
+          {
+            "id": "vtx_and_rc",
+            "name": "VTx and RC Link Settings",
+            "max_score": 50.0,
+            "description": "Strict check on video and radio transmission powers.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Is the VTx set to 25mW? Is it strictly Analog or HDZero? Can the pilot switch to PitMode via their radio?",
+              "HAKEM KONTROLÜ (KRİTİK): Is Crossfire set to 868MHz? If 2.4GHz is used, is dynamic power OFF and locked to 25mW?"
+            ]
+          },
+          {
+            "id": "safety_features",
+            "name": "LEDs and Failsafe",
+            "max_score": 20.0,
+            "description": "Visual and safety requirements.",
+            "guiding_questions": [
+              "Does the drone correctly cut motors upon signal loss (failsafe)? (LEDs are optional but recommended)."
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 0,
+        "max_pages": 0
+      }
+    },
+    {
+      "stage": "Qualifying_and_Finals",
+      "template": "Race_Results",
+      "rubric": {
+        "category_name": "world-drone-cup",
+        "stage": "Qualifying_and_Finals",
+        "description": "Track Performance Evaluation",
+        "criteria": [
+          {
+            "id": "qualifying_performance",
+            "name": "Fastest-3-Consecutive (Qualifying)",
+            "max_score": 50.0,
+            "description": "Pilot's best 3 consecutive laps in a 120s window.",
+            "guiding_questions": [
+              "What is the pilot's best 3 consecutive lap time? Did the pilot skip any obstacles without returning?"
+            ]
+          },
+          {
+            "id": "finals_bracket",
+            "name": "Double Elimination & Chase the Ace",
+            "max_score": 50.0,
+            "description": "Performance in head-to-head racing.",
+            "guiding_questions": [
+              "Did the pilot advance through the double-elimination bracket? In 'Chase the Ace', did the pilot achieve the required two wins?",
+              "In case of a crash or DNF, who passed the most gates or traveled further?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 0,
+        "max_pages": 0
+      }
+    }
+  ]
+}

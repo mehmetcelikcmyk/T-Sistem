@@ -1,0 +1,90 @@
+{
+  "slug": "yapay-zeka-dil-ajanlari-yarismasi",
+  "name": "TEKNOFEST Yapay Zeka Dil Ajanları Yarışması",
+  "specifications": [
+    "2026_TYDA_SARTNAME_Birinci_Senaryo_TR_1_A8mT1.pdf",
+    "2026_TYDA_SARTNAME_Ikinci_Senaryo_TR_1_1IAJb.pdf",
+    "2026_TEKNOFEST_TYDA_SARTNAME_Ucuncu_Senaryo_TR_2_NoDue.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "yapay-zeka-dil-ajanlari",
+    "kategori_adi": "Yapay Zeka Dil Ajanları Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Ön Lisans, Lisans, Yüksek Lisans, Doktora ve Mezunlar (18 yaşından büyük olmak şartıyla)",
+    "takim_uye_sayisi": {
+      "min": 4,
+      "max": 4
+    },
+    "danisman_sarti": "Takım kaptanı zorunludur. Bilişim Vadisi mentörlük ataması yapacaktır.",
+    "keywords": [
+      "Dil Ajanı",
+      "LLM",
+      "Büyük Dil Modelleri",
+      "Doğal Dil İşleme",
+      "Bilişim Vadisi",
+      "Otonom Agent"
+    ],
+    "oncelikli_gorevler": [
+      "Büyük Dil Modelleri (LLM) ve otonom karar mekanizmalarıyla Türkçe tabanlı akıllı dil ajanları geliştirmek.",
+      "Açık kaynak (Open Source) kod kültürüyle projeleri GitHub üzerinden lisanslayarak paylaşmak."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Kişi Sınırı: Takımlar tam olarak 4 kişiden oluşmalıdır.",
+      "Ödüllü Takım Yasağı: Son 2 yıl içinde bu yarışmada dereceye giren takım/üyeler katılamaz.",
+      "TAKP Yasağı: Türkiye Açık Kaynak Platformu (TAKP) Doğal Dil İşleme projesinde görev alanlar yarışamaz.",
+      "Açık Kaynak Şartı: Geliştirilen kodlar GitHub üzerinde MIT, Apache, GNU vb. lisanslarla açık paylaşılmalıdır.",
+      "Çoklu Katılım Kısıtı: Aynı projeyle eş zamanlı olarak başka bir TEKNOFEST yarışmasına başvurulamaz."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Proje_Sunumu_ve_Demo",
+      "template": "Proje_Raporu",
+      "rubric": {
+        "category_name": "yapay-zeka-dil-ajanlari",
+        "stage": "Proje_Sunumu_ve_Demo",
+        "description": "Yapay Zeka Dil Ajanları Final Demo ve Teknik Değerlendirme",
+        "criteria": [
+          {
+            "id": "yontem_ve_teknik",
+            "name": "Yöntem ve Teknik Yaklaşım",
+            "max_score": 35.0,
+            "description": "Kullanılan agent mimarisinin karmaşıklığı, NLP yöntemleri ve teknik altyapı.",
+            "guiding_questions": [
+              "Geliştirilen çoklu ajan (multi-agent) veya otonom sistem mimarisi ne kadar derin ve teknik açıdan tutarlı kurgulanmış?"
+            ]
+          },
+          {
+            "id": "uygulama_basarimi",
+            "name": "Uygulama",
+            "max_score": 35.0,
+            "description": "Sınıflandırma, metin üretme, doğru yönlendirme ve hata tespiti performansı.",
+            "guiding_questions": [
+              "Sistem, senaryolardaki görevleri (örneğin evrak okuma, sınıflandırma, taslak oluşturma) ne derece yüksek bir doğrulukla ve eksiksiz yerine getiriyor?"
+            ]
+          },
+          {
+            "id": "demo_basarisi",
+            "name": "Demo",
+            "max_score": 15.0,
+            "description": "Uçtan uca sistem demosu ve gerçek zamana yakın sonuç üretme.",
+            "guiding_questions": [
+              "Geliştirilen çözümün demosu gerçek bir iş akışını (real-time) etkili ve anlaşılır şekilde başarıyla simüle edebiliyor mu?"
+            ]
+          },
+          {
+            "id": "yenilikcilik_ve_ticarilesme",
+            "name": "Yenilikçilik, Özgünlük ve Ticarileşme Potansiyeli",
+            "max_score": 15.0,
+            "description": "Sistemin farklılaşması ve gerçek dünyada ölçeklenebilir bir değere dönüşme potansiyeli.",
+            "guiding_questions": [
+              "Önerilen çözüm piyasadaki mevcut uygulamalara kıyasla ne kadar yenilikçi? Kamu veya özel sektörde kullanılabilir/ölçeklenebilir mi?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 0,
+        "max_pages": 0
+      }
+    }
+  ]
+}

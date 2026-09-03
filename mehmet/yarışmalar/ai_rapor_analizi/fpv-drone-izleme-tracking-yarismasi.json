@@ -1,0 +1,280 @@
+{
+  "slug": "fpv-drone-izleme-tracking-yarismasi",
+  "name": "FPV Drone İzleme (Tracking) Yarışması",
+  "specifications": [
+    "TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_İZLEME_YARISMASI_son_versiyon_8.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "fpv-drone-izleme-tracking-yarismasi",
+    "kategori_adi": "FPV Drone İzleme (Tracking) Yarışması",
+    "yurutucu_kurum": "T3 Vakfı & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Üniversite ve Üzeri (Ön Lisans, Lisans, Yüksek Lisans, Doktora, Açık Öğretim) ve Mezunlar",
+    "takim_kurallari": {
+      "uye_sayisi_min": 4,
+      "uye_sayisi_max": 10,
+      "danisman_dahil_mi": true,
+      "bireysel_basvuru": false,
+      "parkur_ekip_kurali": "Takımdan 1 kişi asıl pilot seçilir. Müsabaka parkurunda pilot hariç en fazla 3 kişi bulunabilir (bu 3 kişiden biri yedek pilot olabilir).",
+      "final_destek_limiti": "Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği takım başı en fazla 3 kişi (danışman dâhil) ile sınırlıdır.",
+      "shgm_kayit_sarti": "Pilotların iha.shgm.gov.tr üzerinden onaylı pilot kaydı bulunmalı ve Drone'ların üzerinde onaylı İHA kayıt barkodları yapıştırılmış olmalıdır.",
+      "kural_detayi": "Takımlar danışman dâhil en az 4, en fazla 10 kişiden oluşmalıdır (Bireysel başvuru kabul edilmez). Her yarışmacı yalnızca 1 takımda yer alabilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar en fazla 1 öğretim üyesi/görevlisi veya araştırma görevlisini danışman olarak alabilir (İsteğe Bağlı).",
+      "zorunluluk": "Üniversite ve üzeri seviyesinde danışman zorunlu değildir. Danışman varsa onaylı görevlendirme belgesi sisteme yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "teknik_ve_arac_kisitlari": [
+      "Drone boyutu 15 inç (15\") boyutunu aşmamalıdır.",
+      "Drone ağırlığı maksimum İHA-1 kategorisinde (4 kg - 25 kg azami kalkış ağırlığı) olmalıdır.",
+      "Drone üzerinde GNSS (GPS) sistemi bulunmayacaktır ve yarışma boyunca kullanılması kesinlikle yasaktır (Takip tamamen kamera ve görüntü işleme algoritmaları ile otonom yapılmalıdır).",
+      "VTOL tip İHA'lar yarışmada kabul edilmez.",
+      "İtki sistemi elektrik motorlu ve bataryalı olmalı, ticari paketli güvenli bataryalar kullanılmalıdır.",
+      "Drone'un kamera görüntüsü kontrol merkezindeki ekrana eşzamanlı/canlı olarak aktarılabilmeli ve kaydedilebilmelidir."
+    ],
+    "genel_puanlama_dagilimi": {
+      "formul": "Toplam Puan = Rapor_ve_Video_Puanlamasi (%25) + Gorev_Puanlamasi (%75)",
+      "rapor_ve_video_kirilimi": {
+        "otr_yuzdesi": "%5 (Ön Tasarım Raporu)",
+        "ktr_yuzdesi": "%10 (Kritik Tasarım Raporu)",
+        "video_yuzdesi": "%10 (Metot Tanıtım ve Uçuş Kanıt Videosu)"
+      },
+      "gorev_puanlamasi_kirilimi": {
+        "canli_yayin": "10 Puan (Anlık Görüntü Aktarımının Sağlanması)",
+        "otonom_ucus": "10 Puan (Otonom Uçuş Kabiliyetine Sahip Olunması)",
+        "manevra_1": "10 Puan (1. Manevra İstasyonunun Başarıyla Tamamlanması)",
+        "manevra_2": "10 Puan (2. Manevra İstasyonunun Başarıyla Tamamlanması)",
+        "manevra_3": "15 Puan (3. Manevra İstasyonunun Başarıyla Tamamlanması)",
+        "manevra_4": "20 Puan (4. Manevra İstasyonunun Başarıyla Tamamlanması)"
+      },
+      "odul_asgari_kriteri": "Yarışma sırasında otonom bir şekilde ilk 4 manevrayı başarıyla tamamlayan takımlar ödül sıralamasına girmeye hak kazanır."
+    },
+    "itiraz_kurali": "Yazılı itirazlar yarışma alanındaki ilgili hakeme iletilir; sözlü itirazlar dikkate alınmaz. Rapor itirazları KYS üzerinden yapılır.",
+    "etik_ve_gizlilik_kurallari": [
+      "Raporlarda intihal, kopyalama veya taklit tespit edilen projeler diskalifiye edilir.",
+      "Geçmiş yıl raporlarından yapılan alıntılarda standart alıntı formatı kullanılmalıdır."
+    ],
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "300.000,00 ₺",
+        "danisman_odulu": "20.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "250.000,00 ₺",
+        "danisman_odulu": "15.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "200.000,00 ₺",
+        "danisman_odulu": "12.000,00 ₺"
+      }
+    },
+    "sartname_dosyasi": "TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_İZLEME_YARISMASI_son_versiyon_8.pdf"
+  },
+  "stages": [
+    {
+      "stage": "OTR",
+      "stage_name": "Ön Tasarım Raporu",
+      "weight_in_total": "%5",
+      "template": "FPV_DRONE_İZLEME_YARISMASI-ON_TASARIM_RAPORU_SABLONU_yQKqW.docx",
+      "format_rules": {
+        "min_pages": 3,
+        "max_pages": 10,
+        "total_page_limit_description": "Ön Tasarım Raporu Kapak, İçindekiler, Kaynakça ve Ekler dahil en az 3, en fazla 10 sayfa olacaktır.",
+        "font_family": "Arial",
+        "font_size": "12 pt (Başlıklar: Arial Black 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak' ve 'İçindekiler' başlıkları için 2 ayrı sayfa içermelidir."
+      },
+      "rubric": {
+        "category_name": "fpv-drone-izleme-tracking-yarismasi",
+        "stage": "OTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_ozeti",
+            "name": "1. Proje Özeti",
+            "max_score": 10.0,
+            "description": "Proje kapsamında yürütülen faaliyetlerle ilgili özet bilgi."
+          },
+          {
+            "id": "2.1_takim_organizasyonu",
+            "name": "2.1. Takım Organizasyonu",
+            "max_score": 2.0,
+            "description": "Görev isterlerine uygun multidisipliner ekip listesi ve görev dağılımı tablosu."
+          },
+          {
+            "id": "2.2_zaman_cizelgesi_ve_butce",
+            "name": "2.2. Zaman Akış Çizelgesi ve Bütçe",
+            "max_score": 3.0,
+            "description": "Sistemin tahmini üretim/test zaman planlaması ve tahmini bütçe tablosu."
+          },
+          {
+            "id": "3.1_elektronik_tasarim",
+            "name": "3.1. Elektronik Tasarım",
+            "max_score": 20.0,
+            "description": "Donanım alt bileşenlerinin (itki, güç, uçuş kontrol, görüntü işleme) şematik tanımları ve bileşen seçim gerekçeleri."
+          },
+          {
+            "id": "3.2_yazilim_tasarim",
+            "name": "3.2. Yazılım Tasarım",
+            "max_score": 25.0,
+            "description": "Uçuş kontrol yazılımı, görüntü işleme ve takip algoritmaları, kontrol mimarisi ve yazılım arayüz tanımları."
+          },
+          {
+            "id": "3.3_mekanik_tasarim",
+            "name": "3.3. Mekanik Tasarım",
+            "max_score": 15.0,
+            "description": "Gövde yapı malzemesi, üretim yöntemi, temel hesaplamalar ve ön tasarım görseli."
+          },
+          {
+            "id": "4_yontem",
+            "name": "4. Yöntem",
+            "max_score": 20.0,
+            "description": "Seçilen yöntemin etkinlik ve verimlilik gerekçesi, sistemin çalışma kurgusu akış ve kullanım durumu (use case) diyagramları."
+          },
+          {
+            "id": "5_kaynakca",
+            "name": "5. Kaynakça",
+            "max_score": 5.0,
+            "description": "Standart formatta akademik ve teknik kaynakça listesi."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu",
+      "weight_in_total": "%10",
+      "template": "2026.01.13-FPV_DRON_TAKIP_YARISMASI-KRITIK_TASARIM_RAPORU_SABLONU_003_1_n.docx",
+      "format_rules": {
+        "max_pages": 30,
+        "total_page_limit_description": "Açıklama, Kapak, İçindekiler ve Görsel (Teknik Resim vs.) dahil olmak üzere en fazla 30 sayfa olacaktır.",
+        "font_family": "Arial",
+        "font_size": "12 pt",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak' ve 'İçindekiler' olacak şekilde iki ayrı sayfa içermelidir."
+      },
+      "rubric": {
+        "category_name": "fpv-drone-izleme-tracking-yarismasi",
+        "stage": "KTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_ozeti",
+            "name": "1. Proje Özeti",
+            "max_score": 10.0,
+            "description": "Proje kapsamında yürütülen faaliyetlerle ilgili özet bilgi."
+          },
+          {
+            "id": "2.1_takim_organizasyonu",
+            "name": "2.1. Takım Organizasyonu",
+            "max_score": 2.0,
+            "description": "Görev isterlerine uygun takım organizasyon listesi tablosu."
+          },
+          {
+            "id": "2.2_zaman_butce_risk",
+            "name": "2.2. Zaman Akış Çizelgesi, Bütçe ve Risk Planlaması",
+            "max_score": 3.0,
+            "description": "Kritik tasarım, üretim ve test zaman çizelgesi; ön tasarım ile nihai bütçe karşılaştırması ve risk analizi."
+          },
+          {
+            "id": "3_proje_mevcut_durum_degerlendirmesi",
+            "name": "3. Proje Mevcut Durum Değerlendirmesi",
+            "max_score": 5.0,
+            "description": "Ön Tasarım Raporu değerlendirmesi, yapılan değişiklikler ve gerekçeleri."
+          },
+          {
+            "id": "4.1_mekanik_tasarim",
+            "name": "4.1. Mekanik Tasarım (Genel)",
+            "max_score": 10.0,
+            "description": "Sistemin boyutları, ağırlığı, moment tablosu, aerodinamik yapısı, stres testleri, dengesi ve taşıma hesaplamaları; yapısal özellikler ve neden seçildiği (karşılaştırmalı yöntemle)."
+          },
+          {
+            "id": "4.1.1_malzemeler",
+            "name": "4.1.1. Malzemeler",
+            "max_score": 5.0,
+            "description": "Üretimde kullanılan malzemeler, özellikleri ve seçim/değişiklik gerekçeleri. Hazır alınan ve geliştirilen alt bileşenler. Tüm malzemelerin yerleşim planı görseli."
+          },
+          {
+            "id": "4.1.2_3d_tasarim_ve_teknik_resim",
+            "name": "4.1.2. 3D Tasarım ve Teknik Resim",
+            "max_score": 5.0,
+            "description": "Tasarlanan aracın detaylı teknik resmi ve sol üst çaprazdan alınmış detaylı render görseli."
+          },
+          {
+            "id": "4.2_elektronik_tasarim",
+            "name": "4.2. Elektronik Tasarım",
+            "max_score": 20.0,
+            "description": "Nihai elektronik mimari, blok şemalar, sensörler, kameralar, motor sürücüler, güç kartları ve malzeme seçim gerekçeleri."
+          },
+          {
+            "id": "4.3.1_goruntu_isleme_ve_takip",
+            "name": "4.3.1. Görüntü İşleme ve Takip Algoritmaları",
+            "max_score": 15.0,
+            "description": "Kilitleme, takip, mesafe koruma, hedef arama algoritmaları, akış şemaları, iletim protokol paketi ve test ekran görüntüleri."
+          },
+          {
+            "id": "4.3.2_ucus_kontrol_yazilimi",
+            "name": "4.3.2. Uçuş Kontrol Yazılımı",
+            "max_score": 5.0,
+            "description": "Uçuş kontrol yazılımı, PID konfigürasyonları ve görüntü işleme sistemi ile haberleşme yapısı."
+          },
+          {
+            "id": "5_test",
+            "name": "5. Test",
+            "max_score": 5.0,
+            "description": "Uygulanan test senaryoları, sonuçlar, tasarım uyumu ve test ekipmanları."
+          },
+          {
+            "id": "6_guvenlik",
+            "name": "6. Güvenlik",
+            "max_score": 5.0,
+            "description": "Şartnamedeki güvenlik ihtiyaçlarının karşılanması, donanımsal ve yazılımsal önlemler."
+          },
+          {
+            "id": "7_tecrube",
+            "name": "7. Tecrübe",
+            "max_score": 5.0,
+            "description": "Tasarım, üretim ve testlerde karşılaşılan problemler, kazalar, hatalar ve edinilen tecrübeler."
+          },
+          {
+            "id": "8_kaynakca",
+            "name": "8. Kaynakça",
+            "max_score": 5.0,
+            "description": "Akademik ve teknik kaynakların standart referans listesi."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "METOT_VE_UCUS_VIDEOSU",
+      "stage_name": "Metot Tanıtım ve Uçuş Kanıt Videosu",
+      "weight_in_total": "%10",
+      "format_rules": {
+        "duration": "Maksimum 5 dakika",
+        "resolution": "En az 720p",
+        "platform": "YouTube (Liste dışı veya herkese açık link)",
+        "naming_convention": "TEKNOFEST 2026_Yarışma Adı_Takım Adı_Takım ID",
+        "video_content": [
+          "Bölüm 1: Metot Tanıtımı (Drone'un yakın çekim tanıtımı, görüntü işleme tekniği anlatımı ve drone üzerinde uygulamalı gösterimi)",
+          "Bölüm 2: Uçuş Kanıtı (Güvenli kalkış, yatayda en az 3 metre uçuş, güvenli iniş ve kamera görüntüsünün harici ekrana canlı aktarımının yan yana gösterimi)"
+        ]
+      }
+    },
+    {
+      "stage": "SAHA_GOREVLERI",
+      "stage_name": "Saha Otonom Takip Görevleri İcrası",
+      "weight_in_total": "%75",
+      "format_rules": {
+        "task_time": "15 dakika hazırlık, maksimum 10 dakika görev süresi",
+        "attempts": "4 gün boyunca günde 1 haktan toplam 4 deneme hakkı",
+        "special_requirements": "Hedef dronun 11 manevrası boyunca otonom kamera takibi ve anlık canlı yayın (İlk 4 manevrayı başarmak ödül için zorunludur)."
+      }
+    }
+  ]
+}

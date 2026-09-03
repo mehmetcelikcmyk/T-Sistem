@@ -1,0 +1,181 @@
+{
+  "slug": "sifir-atik-dongusel-ekonomi-yarismasi",
+  "name": "Sıfır Atık & Döngüsel Ekonomi Yarışması",
+  "specifications": [
+    "TEKNOFEST-2026_YARISMA_TEKNIK_SARTNAME_11.05.2026_4_1gIHj.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "sifir-atik-dongusel-ekonomi-yarismasi",
+    "kategori_adi": "Sıfır Atık & Döngüsel Ekonomi Yarışması",
+    "hedef_egitim_seviyesi": "Türkiye veya yurtdışında öğrenim gören ön lisans, lisans ve yüksek lisans öğrencileri",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "Ön elemeler sonrasında finale en fazla 15 takım ve toplamda en fazla 75 kişi kalabilecektir.",
+      "mezuniyet_kurali": "",
+      "gorev_dagilimi_kurali": "İletişim Sorumlusu olarak görevlendirilmeli ve bu kişi takım adına rapor iletmekten, iletişim sağlamaktan sorumlu olmalıdır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Yarışmaya katılmaya hak kazanan takımlar için, proje alanları ve ihtiyaçları doğrultusunda mentorluk programı oluşturulacaktır. Her takım en az 4 kez mentor görüşmesine katılmakla yükümlüdür.",
+      "limit": ""
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Atıktan Değere: Akıllı Geri Dönüşüm Sistemleri geliştirilmesi.",
+      "Endüstriyel Atık Yönetimi ve Yeniden Kullanım çözümleri üretilmesi.",
+      "Tüketim Sonrası Atık İzleme ve Davranış Dönüşümü uygulamaları tasarlanması."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Takımlar yalnızca bir temaya başvurabileceklerdir.",
+      "Aynı kişi birden fazla takıma üye olamaz.",
+      "Yalnızca teorik çalışma niteliğinde olan ve çözümün uygulanabilirliğini ortaya koyamayan projeler düşük puan alabilecektir.",
+      "Kopya proje tespiti veya başka yarışmalarda derece almış projenin aynen sunulması durumunda diskalifiye edilir.",
+      "Geliştirilecek uygulamalar mobil cihazlar ve internet siteleri üzerinden çalışacak şekilde tasarlanacaktır.",
+      "Projelerde GPL, AGPL, ticari kullanımı sınırlı veya kapalı lisanslı bileşenlerin kullanımı beyan edilmeli ve açık kaynak kuralları denetlenmelidir.",
+      "Gerçek kişi verileri kullanılamaz; projelerde mutlaka anonimleştirilmiş, sentetik veya maskeleme uygulanmış veri kullanılması esastır.",
+      "Bakanlık tarafından sağlanan veri setleri, elenen takımlar tarafından 15 gün içinde, finalist takımlar tarafından ise 30 gün içinde tüm cihazlardan ve buluttan silinmek zorundadır.",
+      "Takım isimleri; siyasi, dini, ticari içerik veya küfür/hakaret barındıramaz. Aykırı durumlarda diskalifiye bayrağı (flag) atanmalıdır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Başvuru aşamasında fikir veya MVP yeterli olup, final aşamasında çalışan demo, prototip veya simülasyon sunulması zorunludur.",
+      "Yapay zekâ kullanılan projelerde; kullanılan modelin adı, lisansı, eğitim/veri kaynağı, dış API kullanımı vb. beyan edilecektir.",
+      "Yapay zeka modellerinde çıktı doğrulama yöntemi, hata/yanlılık riski ve açıklanabilirlik yaklaşımı raporda beyan edilmek zorundadır."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "ÖDR",
+      "document": "s_C4_B1f_C4_B1r_at_C4_B1k_3_1_SH8EA.docx",
+      "format_rules": {
+        "max_pages": 0,
+        "must_not_contain_personal_info": false
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_projenin_kisa_ozeti",
+            "name": "1. PROJENİN KISA ÖZETİ",
+            "max_score": 10,
+            "description": "Projenin içeriği en fazla 300 kelime ile anlatılmalıdır."
+          },
+          {
+            "id": "2_cozulmesi_hedeflenen_problem",
+            "name": "2. ÇÖZÜLMESİ HEDEFLENEN PROBLEM",
+            "max_score": 10,
+            "description": "Çözülmesi hedeflenen problem ayrıntılı açıklanmalıdır. Kimleri etkilediği, mevcut durumda yaşanan zorluklar ve çözüme ihtiyaç duyulma nedeni belirtilmelidir. (En fazla 500 kelime)"
+          },
+          {
+            "id": "3_cozum_yaklasimi",
+            "name": "3. ÇÖZÜM YAKLAŞIMI",
+            "max_score": 10,
+            "description": "Geliştirilen çözümün nasıl çalıştığı anlatılmalıdır. Kullanıcı sistemi nasıl kullanacak, iş akışı, girdiler/çıktılar açıklanmalıdır. (En fazla 600 kelime)"
+          },
+          {
+            "id": "4_yenilikci_yonler",
+            "name": "4. PROJENİN YENİLİKÇİ YÖNLERİ VE BENZERSİZ DEĞER ÖNERİSİ",
+            "max_score": 10,
+            "description": "Projenin mevcut çözümlerden hangi yönleriyle ayrıldığı açıklanmalıdır. Yenilikçi özellikler, rekabet avantajı. (En fazla 500 kelime)"
+          },
+          {
+            "id": "5_kullanilacak_teknolojiler",
+            "name": "5. KULLANILACAK TEKNOLOJİLER",
+            "max_score": 5,
+            "description": "Projede kullanılan veya kullanılması planlanan teknolojiler açıklanmalıdır (Yapay Zeka, IoT vb.)."
+          },
+          {
+            "id": "6_teknik_mimari",
+            "name": "6. TEKNİK MİMARİ",
+            "max_score": 8,
+            "description": "Sistemin teknik mimarisi açıklanmalıdır. Yazılım/Donanım bileşenleri, veri akışı, API, entegrasyonlar. (En fazla 500 kelime) Kamu sistemlerine entegrasyon potansiyeli bulunan projelerde açık standartlara, REST API/OGC API benzeri servis yaklaşımına ve taşınabilir veri formatlarına öncelik verilmesi beklenir."
+          },
+          {
+            "id": "7_gelistirme_seviyesi",
+            "name": "7. PROJENİN GELİŞTİRME SEVİYESİ",
+            "max_score": 8,
+            "description": "Mevcut geliştirme durumu ayrıntılı olarak açıklanmalıdır."
+          },
+          {
+            "id": "8_bugune_kadar_neler_tamamlandi",
+            "name": "8. BUGÜNE KADAR NELER TAMAMLANDI?",
+            "max_score": 5,
+            "description": "Fikir aşamasından başvuru tarihine kadar gerçekleştirilen somut adımlar."
+          },
+          {
+            "id": "9_gercek_hayat_uygulamasi",
+            "name": "9. GERÇEK HAYAT UYGULAMASI VE KULLANIM SENARYOLARI",
+            "max_score": 8,
+            "description": "Gerçek dünyada nasıl konumlanacağı aktarılmalıdır. Günlük hayatta nasıl kullanılacağı somut bir senaryo üzerinden açıklanmalıdır. (En fazla 500 kelime)"
+          },
+          {
+            "id": "10_beklenen_etki",
+            "name": "10. BEKLENEN ETKİ",
+            "max_score": 8,
+            "description": "Hayata geçmesi durumunda çevreye, ekonomiye ve topluma sağlayacağı somut faydalar 5 temel metrik (Atık azaltımı, Kaynak verimliliği, Karbon emisyonu, Ekonomik fayda, Toplumsal fayda) üzerinden ölçülebilir verilerle anlatılmalıdır. Şartname Md. 10.9 gereği iddialar; varsayım, yöntem ve veri kaynağı ile birlikte sunulmak zorundadır."
+          },
+          {
+            "id": "11_olceklenebilirlik",
+            "name": "11. ÖLÇEKLENEBİLİRLİK VE YAYGINLAŞTIRMA POTANSİYELİ",
+            "max_score": 5,
+            "description": "Daha geniş kitlelere ve pazarlara nasıl entegre edilebileceği."
+          },
+          {
+            "id": "12_riskler_cozumler",
+            "name": "12. RİSKLER VE ÇÖZÜM YAKLAŞIMINIZ",
+            "max_score": 5,
+            "description": "Potansiyel zorluklar ve kurgulanan B Planları."
+          },
+          {
+            "id": "13_takim_yetkinligi",
+            "name": "13. TAKIM YETKİNLİĞİ",
+            "max_score": 4,
+            "description": "Takım üyelerinin okuduğu bölüm ve projeye katkıları."
+          },
+          {
+            "id": "14_proje_takvimi",
+            "name": "14. PROJE TAKVİMİ",
+            "max_score": 4,
+            "description": "Projenin yarışma finaline kadar olan yol haritası."
+          },
+          {
+            "id": "15_ek_aciklamalar",
+            "name": "15. EK AÇIKLAMALAR",
+            "max_score": 0,
+            "description": "Eklemek istenilen ek bilgiler."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Final",
+      "format_rules": {
+        "presentation_duration_minutes": 7,
+        "qa_duration_minutes": 3,
+        "total_duration_minutes": 10
+      },
+      "technical_deliverables_checklist": [
+        "Kaynak kodları",
+        "Kurulum dokümanı",
+        "Kullanıcı kılavuzu",
+        "Teknik mimari dokümanı",
+        "Veri modeli açıklaması",
+        "Kullanılan kütüphane ve lisans listesi",
+        "Demo videosu",
+        "Çalıştırılabilir uygulama paketi"
+      ]
+    }
+  ],
+  "mission_scoring": {
+    "on_eleme": {
+      "Teknik Yeterlilik ve İşlevsellik": 40,
+      "Tema ile Uyum ve Kamuya Katkı Potansiyeli": 35,
+      "Özgünlük ve Yenilikçilik": 25
+    },
+    "final": {
+      "Teknik Yeterlilik ve İşlevsellik": 35,
+      "Tema ile Uyum ve Kamuya Katkı Potansiyeli": 30,
+      "Sunum Kalitesi ve Proje Anlatımı": 15,
+      "Özgünlük ve Yenilikçilik": 20
+    }
+  }
+}

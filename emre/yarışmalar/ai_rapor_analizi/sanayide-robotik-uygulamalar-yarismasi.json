@@ -1,0 +1,241 @@
+{
+  "slug": "sanayide-robotik-uygulamalar-yarismasi",
+  "name": "TEKNOFEST Sanayide Robotik Uygulamalar Yarışması",
+  "specifications": [
+    "2026_SRUY_TR_Hre2P.pdf",
+    "2026_Sanayide_Robotik_Uygulamalar_Yarışması_Proje_Detay_Raporu_Şablonu_0L.docx",
+    "2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "sanayide-robotik-uygulamalar",
+    "kategori_adi": "Sanayide Robotik Uygulamalar Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Üniversite ve Üzeri (Açık öğretim dahil)",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 15
+    },
+    "danisman_sarti": "Lise seviyesi için 1 danışman ZORUNLU. Üniversite için isteğe bağlı. Danışman takım üyesi rolüyle eklenemez, sayıya dahil edilmez.",
+    "keywords": [
+      "Otonom Forklift",
+      "Mobil Robot",
+      "AGV",
+      "AMR",
+      "2D Lidar",
+      "Haritalama",
+      "PLC Haberleşme",
+      "Çizgi Takibi",
+      "QR Kod",
+      "Tolerans",
+      "Key Switch",
+      "GUI",
+      "En Özgün Tasarım Ödülü",
+      "En İyi Sunum Ödülü"
+    ],
+    "oncelikli_gorevler": [
+      "Fabrika iç lojistiğinde kullanılacak, palet üzerindeki (maks 5 kg) yükleri otonom taşıyan forklift mobil robot (AGV/AMR) tasarlamak.",
+      "Hibrit Navigasyon: 2D Lazer tarayıcı ile haritalama ve genel rota oluşturmak; yük alma/bırakma noktalarına 1.5m kala ise görüntü işleme ile renkli çizgi takibi yapmak.",
+      "QR Kod Lokalizasyonu: Rota üzerindeki (q1-q9) QR kodları okuyarak kameraya göre hassas pozisyon hesaplamak.",
+      "Fabrika Otomasyonu (PLC): Kapı noktasında durup Wi-Fi üzerinden endüstriyel PLC'ye bilgi vermek ve 'geçebilirsin' izni sonrasında hareket etmek.",
+      "Engel Davranışı: Rota üzerindeki engelleri aşıp etrafından dolaşmak YERİNE, güvenli mesafede durup engelin kalkmasını beklemek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Üye Sayısı Kontrolü: AI hakem 3-15 kişilik takım üyesi sınırını kontrol ederken danışmanı KESİNLİKLE bu sayıdan bağımsız tutmalıdır (Danışman üye sayılmaz).",
+      "TYF Sayfa Limiti: Teknik Yeterlilik Formu kapaklar dahil MAKSİMUM 12 SAYFA olmalıdır.",
+      "PDR Sayfa Limiti (KRİTİK): Proje Detay Raporu kapak ve içindekiler dahil EN AZ 15 SAYFA, EN FAZLA 60 SAYFA olmalıdır. 15 sayfanın altında kalan raporlar DEĞERLENDİRME DIŞI bırakılacaktır.",
+      "Tipografi: Yazı Tipi Arial 12 Punto, Başlıklar Arial Black 14 Punto, Satır Aralığı 1.15, iki yana yaslı, kenar boşlukları 2.5 cm olmalıdır.",
+      "Atıf Formatı: Metin içi gösterimde köşeli parantez kullanılmalıdır (Örn: [1]).",
+      "Robot Fiziksel Boyut Kısıtları: Robot maksimum 25 cm yükseklik (çatal hariç), 50 cm genişlik, 70 cm uzunluğa (çatal dahil) sahip olmalıdır. Çatal genişliği dıştan dışa 26 - 30 cm arası olmalıdır. Palet yükü maksimum 5 kg olmalıdır.",
+      "Donanımsal Mod Anahtarı (Key Switch): Robot üzerinde otomatik ve manuel mod geçişini sağlayan fiziksel bir anahtar bulunmalıdır. Otomatik moddayken uzaktan kontrol yapılamaz.",
+      "Kullanıcı Arayüzü (GUI) İsterleri: Arayüzde aracın (a) idle, (b) görev işleniyor, (c) yüksüz hareket, (d) yüklü hareket, (e) PLC komut bekliyor, (f) başlangıca dönüş, (g) hata ve (h) Acil stop durumları anlık gösterilmelidir.",
+      "Wi-Fi MAC Adresi Kaydı: Takımlar hem deneme hem de yarışma alanı Wi-Fi ağlarına bağlanacak cihazların (robot ve kontrol bilgisayarı) MAC adreslerini organizasyona yarışmadan en az iki gün önceden bildirmek zorundadır.",
+      "Danışman Yasağı (Kritik): Atölye, yarışma parkuru ve kontrol masasında SADECE öğrenciler bulunabilir. Danışmanların bu alanlarda bulunması, kontrol paneline müdahale etmesi veya yönlendirme yapması KESİNLİKLE YASAKTIR."
+    ],
+    "ekstra_puan_parametreleri": [
+      "Yerlilik (+5 Puan): Donanım, yazılım veya özgün mekanik tasarımların yerli imkanlarla geliştirilmiş olması.",
+      "Otomatik Şarj Bonusu (+5 Puan): Şarj seviyesi %20'nin altına düştüğünde robotun görevini bitirip doğrudan otonom olarak şarj istasyonuna dönmesi.",
+      "Zaman Bonusu (+1 Puan/Dk): Görevi 30 dakikadan önce bitiren takımlara kalan her dakika için +1 puan verilir (Zaman üst limiti 45 dakikadır)."
+    ],
+    "ceza_parametreleri": [
+      "Zaman Cezası (-1 Puan/Dk): 30 dakikayı aşan her dakika için -1 puan yazılır.",
+      "Tolerans Cezası (-5 Puan): Yük alma/bırakma noktalarında XY düzleminde +/- 7.5 cm ve yön olarak +/- 5 derece sapma dışına çıkılırsa veya rotadan 10 cm sapılırsa ceza uygulanır.",
+      "GUI Eksik Bilgi Cezası (-4 Puan): Kullanıcı arayüzünde gösterilemeyen her bir sistem bilgisi için kesinti yapılır.",
+      "Ceza Sınırı Kuralı: Tablo 4'teki ceza puanları (örneğin yük düşürme) her biri en fazla 2 KEZ uygulanabilir. 2'den fazla tekrarlanırsa parkur görevi başarısız sayılır."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Teknik_Yeterlilik_Formu_TYF",
+      "template": "TYF_Sablonu",
+      "rubric": {
+        "category_name": "sanayide-robotik-uygulamalar",
+        "stage": "Teknik_Yeterlilik_Formu_TYF",
+        "description": "Sanayide Robotik Uygulamalar TYF Ön Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "takim_ve_arac_tanitimi",
+            "name": "Takım ve Araç Tanıtımı",
+            "max_score": 20.0,
+            "description": "Kişisel veri içermeyen, maks 100 kelimelik tanıtımlar ve görev dağılımı.",
+            "guiding_questions": [
+              "Takım tanıtımı ve Araç tasarımı bölümleri kişisel veri içermeden (en fazla 100 kelime limitine uyarak) doldurulmuş mu?"
+            ]
+          },
+          {
+            "id": "mekanik_ve_ustyapi",
+            "name": "Mekanik, Üst Yapı ve Maliyet",
+            "max_score": 30.0,
+            "description": "Mekanik bileşenler, 3D render görseli ve maliyet tablosu (TL veya envanter).",
+            "guiding_questions": [
+              "Mekanik sistem (Motor, Gövde, Mil vb.) listelenmiş mi? 3 boyutlu (3D) render/görsel eklenmiş mi? Fiyatlandırılmış mı?"
+            ]
+          },
+          {
+            "id": "elektronik_ve_sensor",
+            "name": "Elektronik ve Sensör Şeması",
+            "max_score": 30.0,
+            "description": "Lidar, Wi-fi, Batarya tablosu ve güç/sinyal elektronik bağlantı şeması.",
+            "guiding_questions": [
+              "Sensörler (2D Lidar dahil) listelenmiş mi? Donanımları içeren elektronik devre/sinyal şeması eklenmiş mi?"
+            ]
+          },
+          {
+            "id": "algoritma_ve_yazilim",
+            "name": "Algoritmalar ve Yazılım Dili",
+            "max_score": 20.0,
+            "description": "Şerit takip, yük taşıma, haritalama algoritmaları ve yazılım dilleri.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: TYF dosya uzunluğu 12 sayfayı geçmiş mi? Form toplam fiyat (TL) veya 'envanter' notu ile tamamlanmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "takim_tanitimi_regex": "(?i)(TAKIM TANITIMI|Takım Tanıtımı)",
+          "arac_tasarimi_regex": "(?i)(ARAÇ TASARIMI|Araç Tasarımı)",
+          "mekanik_regex": "(?i)(MEKANİK|Mekanik)",
+          "elektronik_regex": "(?i)(ELEKTRONİK|Elektronik)",
+          "yazilim_regex": "(?i)(YAZILIM|Yazılım)"
+        },
+        "max_pages": 12
+      }
+    },
+    {
+      "stage": "Proje_Detay_Raporu_PDR",
+      "template": "PDR_Sablonu",
+      "rubric": {
+        "category_name": "sanayide-robotik-uygulamalar",
+        "stage": "Proje_Detay_Raporu_PDR",
+        "description": "Sanayide Robotik Uygulamalar PDR Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "rapor_ozeti_ve_takim",
+            "name": "Rapor Özeti (10), Takım Şeması (5) ve Mevcut Durum (5)",
+            "max_score": 20.0,
+            "description": "Rapor özeti, organizasyon şeması ve TYF sonrasındaki bütçe/tasarım durum değerlendirmesi.",
+            "guiding_questions": [
+              "Takım üyelerinin görevleri açıklanmış mı? TYF'deki bütçe ile son bütçe karşılaştırması yapılmış mı?"
+            ]
+          },
+          {
+            "id": "arac_tasarimi_mekanik",
+            "name": "Sistem (10) ve Mekanik Tasarım (10)",
+            "max_score": 20.0,
+            "description": "Nihai blok şema, mekanik süreç, üretim yöntemi, boyut kısıtlarına uyum.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Robotun boyutları (25x50x70) şartname sınırlarına uygun mu? Çatal genişliğinin dıştan dışa 26-30 cm aralığında olduğu teyit edilmiş mi ve 5 kg yükü kaldırabilecek mekanik mukavemet analizi sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "arac_tasarimi_elektronik",
+            "name": "Elektronik, Algoritma, Yazılım (10) ve Dış Arayüzler (10)",
+            "max_score": 20.0,
+            "description": "Sensör seçimi (Lidar), Hibrit Navigasyon, PLC, QR kod, GUI arayüzü.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Haritalama ve rota tanımlama işlemlerinin 60 dakikalık (yarışma senaryosu öncesi) süre kısıtı göz önüne alınarak optimize edildiğinden bahsedilmiş mi? Hibrit navigasyon, PLC haberleşmesi ve uzaktan manuel kontrol (key switch destekli) GUI anlatılmış mı?"
+            ]
+          },
+          {
+            "id": "guvenlik_test_tecrube",
+            "name": "Güvenlik (10), Test (5) ve Tecrübe (5)",
+            "max_score": 20.0,
+            "description": "Acil stop (E-Stop), uygulanan senaryo testleri ve karşılaşılan hatalar.",
+            "guiding_questions": [
+              "Fiziksel acil durum (E-Stop) butonu kurgulanmış mı? Testlerde karşılaşılan kazalar 'Tecrübe' başlığı altında anlatılmış mı?"
+            ]
+          },
+          {
+            "id": "yonetim_ve_diger",
+            "name": "Planlama (5), Özgünlük (5), Ticarileşme (5) ve Kaynakça (5)",
+            "max_score": 20.0,
+            "description": "Zaman/Risk/Bütçe planı, Yerlilik payı, Pazar analizi ve Kaynakça formatı.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Rapor EN AZ 15, en fazla 60 sayfa kuralına uyuyor mu? Kaynakça köşeli parantez [1] IEEE kuralına uygun yazılmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "ozet_regex": "(?i)(RAPOR ÖZETİ|Rapor Özeti)",
+          "takim_regex": "(?i)(TAKIM ŞEMASI|Takım Şeması)",
+          "mevcut_durum_regex": "(?i)(PROJE MEVCUT DURUM DEĞERLENDİRMESİ|Proje Mevcut Durum)",
+          "arac_tasarimi_regex": "(?i)(ARAÇ TASARIMI|Araç Tasarımı)",
+          "guvenlik_regex": "(?i)(GÜVENLİK|Güvenlik)",
+          "test_regex": "(?i)(TEST|Test)",
+          "tecrube_regex": "(?i)(TECRÜBE|Tecrübe)",
+          "planlama_regex": "(?i)(ZAMAN, BÜTÇE VE RİSK PLANLAMASI|Risk Planlaması)",
+          "ozgunluk_regex": "(?i)(ÖZGÜNLÜK VE YERLİLİK|Özgünlük ve Yerlilik)",
+          "ticarilesme_regex": "(?i)(TİCARİLEŞME POTANSİYELİ|Ticarileşme Potansiyeli)",
+          "kaynakca_regex": "(?i)(KAYNAKÇA|Kaynakça)"
+        },
+        "min_pages": 15,
+        "max_pages": 60
+      }
+    },
+    {
+      "stage": "Hareket_Kabiliyet_Videosu_HKV",
+      "template": "Video_Degerlendirme",
+      "rubric": {
+        "category_name": "sanayide-robotik-uygulamalar",
+        "stage": "Hareket_Kabiliyet_Videosu_HKV",
+        "description": "Hareket ve Kabiliyet Videosu Analizi",
+        "criteria": [
+          {
+            "id": "video_kriterleri",
+            "name": "Format ve Temel İsterler",
+            "max_score": 25.0,
+            "description": "YouTube'da herkese açık bağlantı verilmeli; kaynak dosya MP4 formatında ve maks 50 MB boyutunda olmalıdır (min 2 - maks 5 dk, en az 720p).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Video diğer platformlara yüklenmişse (YouTube dışında) VEYA orijinal boyutu 50 MB (mp4) sınırını aştığı belirtilmişse KABUL EDİLEMEZ. Ortam sesleri duyuluyor mu?"
+            ]
+          },
+          {
+            "id": "otonom_hareket",
+            "name": "Otonom Sürüş ve Çizgi Takibi",
+            "max_score": 25.0,
+            "description": "Aracın bilgisayardan verilen komut ile bağımsız hareket ettiği görülüyor mu?",
+            "guiding_questions": [
+              "Otonom araç dışarıdan manuel kontrol olmaksızın (hibrit navigasyon ve çizgi takibi ile) düz zeminde hareket edebiliyor mu?"
+            ]
+          },
+          {
+            "id": "engel_ve_guvenlik",
+            "name": "Engel Davranışı ve Acil Durum Butonu",
+            "max_score": 25.0,
+            "description": "Engelde durma ve E-Stop testleri.",
+            "guiding_questions": [
+              "Araç bir engel gördüğünde durabiliyor mu? Fiziksel acil durdurma (E-Stop) butonuna basıldığında bütün motorlar durup sistem kapanıyor mu?"
+            ]
+          },
+          {
+            "id": "gui_ve_harita",
+            "name": "Arayüz (GUI) ve Haritalandırma",
+            "max_score": 25.0,
+            "description": "Kullanıcı arayüzünün ve haritalama kabiliyetinin videoda gösterilmesi.",
+            "guiding_questions": [
+              "GUI tasarımları ve ileri seviye için lidar/haritalandırma işlemi videoda net olarak gösterilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {}
+      }
+    }
+  ]
+}

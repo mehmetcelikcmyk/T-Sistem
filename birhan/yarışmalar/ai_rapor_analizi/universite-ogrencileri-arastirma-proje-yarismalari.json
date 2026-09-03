@@ -1,0 +1,96 @@
+{
+  "slug": "universite-ogrencileri-arastirma-proje-yarismalari",
+  "name": "TÜBİTAK 2242 Üniversite Öğrencileri Araştırma Proje Yarışmaları",
+  "specifications": [
+    "2026_2242_Üniversite_Öğrencileri_Araştırma_Proje_Yarışmaları_v1_0_TR_ULmqu.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "universite-ogrencileri-arastirma-proje-yarismalari",
+    "kategori_adi": "TÜBİTAK 2242 Üniversite Öğrencileri Araştırma Proje Yarışmaları",
+    "hedef_egitim_seviyesi": "Ön Lisans ve Lisans (Üniversite)",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 5
+    },
+    "danisman_sarti": "En fazla 1 danışman bulunabilir, ancak danışman bulunması ZORUNLU DEĞİLDİR.",
+    "keywords": [
+      "2242",
+      "Araştırma Projesi",
+      "TÜBİTAK",
+      "Özgünlük",
+      "Yenilikçilik",
+      "Uygulanabilirlik",
+      "Yaygın Etki",
+      "Makale",
+      "Akademik Format"
+    ],
+    "oncelikli_gorevler": [
+      "Üniversite öğrencilerinin araştırma yapmaya teşvik edilmesi.",
+      "9 Ana Alan (Akıllı Şehirler, Savunma, Sağlık vb.) ve alt tematik alanlardan birinde özgün araştırma projesi geliştirmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Sayfa ve Kelime Limiti (Kritik): Proje Özeti en az 150, en fazla 300 kelime olmalıdır. Proje Raporu en az 2, en fazla 20 sayfa (PDF formatında) olmalıdır.",
+      "Ticarileşmiş Ürün Yasağı: Yarışmaya daha önce ticarileşmiş bir ürünle başvurulamaz. Tamamen özgün araştırma olmalıdır.",
+      "Marka ve Reklam Yasağı: Rapor içinde herhangi bir kurum, kuruluş, firma, ticari ürün ya da marka öne çıkarılmamalıdır.",
+      "Ayrımcılık Yasağı: Dil, din, ırk, mezhep vb. ayrımcılık içeren ifadeler elenme sebebidir.",
+      "Çoklu Başvuru Kısıtı: Aynı veya benzer proje ile aynı yıl içinde veya geçmiş yıllarda başka yarışmalara/kategorilere başvurulmuşsa proje elenir.",
+      "Etik İhlal (Kritik): Yararlanılan kaynakların belirtilmemesi (intihal), izin alınmadan anket/deney yapılması, kişisel veri paylaşımı ve halk sağlığına zararlı maddelerin kullanımı doğrudan elenme sebebidir.",
+      "Dil Şartı: Türkiye'de öğrenim görenler için dil Türkçe olmalıdır."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "2242_Proje_Raporu",
+      "template": "Arastirma_Proje_Raporu",
+      "rubric": {
+        "category_name": "universite-ogrencileri-arastirma-proje-yarismalari",
+        "stage": "2242_Proje_Raporu",
+        "description": "TÜBİTAK 2242 Ön Değerlendirme Raporu",
+        "criteria": [
+          {
+            "id": "ozgunluk_yenilikcilik",
+            "name": "Özgünlük ve Yenilikçilik",
+            "max_score": 30.0,
+            "description": "Projenin literatürdeki yeri, farklılığı ve yenilikçi yönü.",
+            "guiding_questions": [
+              "Proje fikri mevcut çözümlerden farklı mı? Literatür taraması yapılmış ve projenin yenilikçi/özgün yönü bilimsel bir temele oturtulmuş mu?",
+              "HAKEM KONTROLÜ: Rapor içinde marka/firma ismi reklamı yapılmış mı veya daha önce ticarileşmiş bir ürün mü sunuluyor?"
+            ]
+          },
+          {
+            "id": "yontem_ve_surec",
+            "name": "Yöntem ve Süreç",
+            "max_score": 25.0,
+            "description": "Araştırmada izlenen bilimsel yöntem, deneyler, veri toplama ve analiz süreci.",
+            "guiding_questions": [
+              "Araştırmada kullanılan yöntem (deney, anket, prototip üretimi, algoritma vb.) bilimsel araştırmaya uygun mu ve detaylıca açıklanmış mı?",
+              "HAKEM KONTROLÜ: Etik ihlal (izinsiz insan/hayvan deneyi, kaynakçasız alıntı) var mı?"
+            ]
+          },
+          {
+            "id": "uygulanabilirlik",
+            "name": "Uygulanabilirlik ve/veya Kullanılabilirlik",
+            "max_score": 25.0,
+            "description": "Proje çıktısının hayata geçirilebilirliği ve hedef kitleye uygunluğu.",
+            "guiding_questions": [
+              "Projenin sonuçları gerçek hayatta kolayca uygulanabilir veya kullanılabilir nitelikte mi? Prototip veya kavramsal kanıt inandırıcı mı?"
+            ]
+          },
+          {
+            "id": "katma_deger",
+            "name": "Katma Değer ve/veya Yaygın Etki",
+            "max_score": 20.0,
+            "description": "Projenin toplumsal, ekonomik veya bilimsel alana sağlayacağı fayda.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Rapor uzunluğu en az 2, en fazla 20 sayfa kuralına uygun mu? Özet 150-300 kelime aralığında mı?",
+              "Proje geniş bir kitleye (ekonomik veya sosyal) fayda sağlama ve yaygın etki yaratma potansiyeli taşıyor mu?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 2,
+        "max_pages": 20
+      }
+    }
+  ]
+}

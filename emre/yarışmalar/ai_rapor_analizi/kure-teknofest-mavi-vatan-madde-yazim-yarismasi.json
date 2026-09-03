@@ -1,0 +1,124 @@
+{
+  "slug": "kure-teknofest-mavi-vatan-madde-yazim-yarismasi",
+  "name": "KÜRE | TEKNOFEST Mavi Vatan Madde ve Blog Yazım Yarışması",
+  "specifications": [
+    "KURE_TEKNOFEST_Mavi_Vatan_Madde_Yazim_Yarismasi_2026_TR._e9LOj.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "kure-teknofest-mavi-vatan-madde-yazim-yarismasi",
+    "kategori_adi": "KÜRE Teknofest Mavi Vatan Madde Yazım Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Ön Lisans, Lisans, Lisansüstü, Mezun (Herkese Açık)",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 1
+    },
+    "danisman_sarti": "Danışman zorunluluğu bulunmamaktadır. Bireysel başvuru esastır.",
+    "dil_gereksinimi": "Türkçe (Türkçenin doğru, etkili ve kurallarına uygun kullanımı zorunludur)",
+    "keywords": [
+      "Mavi Vatan",
+      "deniz yetki alanları",
+      "karasuları",
+      "kıta sahanlığı",
+      "münhasır ekonomik bölge",
+      "ansiklopedi",
+      "blog",
+      "KÜRE",
+      "denizcilik",
+      "Türk Boğazları"
+    ],
+    "oncelikli_gorevler": [
+      "Mavi Vatan teması ile doğrudan ilişkili ansiklopedi maddesi (biyografi dahil) veya blog yazısı üretmek",
+      "KÜRE içerik platformunun yayın ilkelerine ve yapısına (bölümleme, bilgi kutusu, referans) uygun dijital içerik hazırlamak",
+      "Görsel ve kaynak (referans) kullanımını telif haklarına uygun ve güvenilir biçimde sağlamak"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Tema Uyumsuzluğu (Kritik İhlal): İçeriğin 'Mavi Vatan' temasıyla doğrudan bağlantılı olmaması durumunda eser doğrudan değerlendirme dışı (Pass/Fail) kalır.",
+      "Eski İçerik Yasağı (Kritik): 25 Temmuz 2026 tarihinden önce sisteme yüklenmiş veya yayına alınmış eski maddeler/bloglar kullanılamaz; tespiti iptal sebebidir.",
+      "İntihal ve Telif Yasağı (Kritik): İntihal (kopyala-yapıştır), telif ihlali yapan görsellerin kullanılması, kaynak uydurma veya başkasına ait eseri sunma durumları diskalifiye nedenidir.",
+      "İçerik Sınırı: Bir yarışmacı her kategoriye (Ansiklopedi veya Blog) en fazla bir içerikle başvurabilir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Dil Bilgisi ve Format: Metnin Türkçe yazım/noktalama kurallarına, ansiklopedik veya edebi (blog) üsluba uyup uymadığının denetlenmesi.",
+      "KÜRE Yapısına Uygunluk: İçeriğin standart bir ansiklopedi maddesi gibi Giriş (Özet), Ana Başlıklar, Alt Başlıklar, İlgili Görseller ve Kaynakça bölümlerine sahip olması.",
+      "Kaynak Güvenilirliği: Yararlanılan kaynakların (kitap, akademik makale, resmi belgeler vb.) doğrulabilirliği, çeşitliliği ve metin içindeki atıf düzeninin denetimi.",
+      "Görsel Nitelik: Eklenen görsellerin içeriğe katkı sunması, çözünürlük kalitesi ve alt yazılarının (telif durumu dahil) doğru belirtilmesi."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Yarışmacının sunduğu dosyanın/metnin KÜRE dijital bilgi platformuna yüklenebilecek standartlarda nitelikli bir Mavi Vatan ansiklopedi maddesi veya blog yazısı formatında olması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "ODR",
+      "template": "Sistemde spesifik bir word şablonu bulunmamaktadır. Değerlendirme KÜRE platformu genel standartlarına göre yapılır.",
+      "rubric": {
+        "category_name": "kure-teknofest-mavi-vatan-madde-yazim-yarismasi",
+        "stage": "ODR",
+        "description": "Değerlendirme; AI 4. Göz Gerekçe Formatı kullanılarak Puan ve Gerekçe şeklinde sunulmalı, en sonda da Yarışmacı Gelişim Karnesi (🟢 Güçlü Yönler, 🔴 Kritik Eksikler, 🟡 Somut İyileştirme Tavsiyeleri) başlıklarıyla raporlanmalıdır.",
+        "criteria": [
+          {
+            "id": "kure_yapisina_uygunluk",
+            "name": "KÜRE Yapısına Uygunluk",
+            "max_score": 30.0,
+            "description": "İçeriğin KÜRE içerik türüne (Ansiklopedi/Blog), şablonuna, bölümleme düzenine, bilgi kutusuna ve yayın ilkelerine uygunluğu.",
+            "guiding_questions": [
+              "İçerik standart bir ansiklopedi (veya blog) hiyerarşisine, alt başlıklara ve objektif üsluba sahip mi?"
+            ]
+          },
+          {
+            "id": "bilgi_dogrulugu_ve_eksiksizligi",
+            "name": "Bilgi Doğruluğu Ve Eksiksizliği",
+            "max_score": 30.0,
+            "description": "Bilgilerin doğrulanabilirliği, Mavi Vatan konu kapsamı, kavramsal açıklık ve temel unsurların yeterliliği.",
+            "guiding_questions": [
+              "Sunulan coğrafi, tarihi, hukuki veya stratejik bilgiler (Mavi Vatan bağlamında) nesnel ve eksiksiz mi?"
+            ]
+          },
+          {
+            "id": "ozgunluk",
+            "name": "Özgünlük",
+            "max_score": 10.0,
+            "description": "İçeriğin konuya yaklaşımı, anlatım değeri ve özgün (kopya olmayan) içerik üretimi niteliği.",
+            "guiding_questions": [
+              "İçerik diğer dijital kaynaklardan farklı, özgün bir değer katıyor mu?"
+            ]
+          },
+          {
+            "id": "turkcenin_kullanimi",
+            "name": "Türkçenin Kullanımı",
+            "max_score": 10.0,
+            "description": "Dil bilgisi, anlatım açıklığı, terim kullanımı (denizcilik vb.), yazım ve noktalama kurallarına uyum.",
+            "guiding_questions": [
+              "Yazım yanlışları, düşük cümleler veya noktalama hataları mevcut mu?"
+            ]
+          },
+          {
+            "id": "gorsel_kullanimi",
+            "name": "Görsel Kullanımı",
+            "max_score": 10.0,
+            "description": "Görsellerin konuya uygunluğu, teknik niteliği, telif durumu, açıklaması ve metne katkısı.",
+            "guiding_questions": [
+              "Görseller metni destekliyor mu ve kaynakları/altyazıları doğru belirtilmiş mi?"
+            ]
+          },
+          {
+            "id": "kaynak_kullanimi",
+            "name": "Kaynak Kullanımı",
+            "max_score": 10.0,
+            "description": "Kaynakların güvenilirliği, çeşitliliği, güncelliği, atıf düzeni ve kaynakçanın yeterliliği.",
+            "guiding_questions": [
+              "Akademik referanslar, resmi kurum belgeleri veya güvenilir kitaplar kaynak gösterilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "ozet_giris": "Giriş / Özet (Ansiklopedik Tanım)",
+          "ana_metin": "Ana Metin ve Alt Başlıklar",
+          "gorseller": "İlgili Görseller ve Ekler",
+          "kaynakca": "Kaynakça ve Referanslar"
+        },
+        "max_pages": 0
+      }
+    }
+  ]
+}

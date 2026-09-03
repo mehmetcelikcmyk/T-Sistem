@@ -1,0 +1,107 @@
+{
+  "slug": "teknofest-mimari-ve-gorsel-tasarim-yarismasi",
+  "name": "TEKNOFEST Mimari ve Görsel Tasarım Yarışması",
+  "specifications": [
+    "2026-TEKNOFEST_Mimari_ve_G_C3_B6rsel_Tasar_C4_B1m_Yar_C4_B1_C5_9Fmas_C4_B1_T_C3_BCrk_C3_A7e__C5_9Eartname_k1oIh.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "teknofest-mimari-ve-gorsel-tasarim-yarismasi",
+    "kategori_adi": "TEKNOFEST Mimari ve Görsel Tasarım Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Üniversite (Ön Lisans, Lisans ve Lisansüstü) öğrencileri ve mezunlar.",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": true,
+      "final_alani_kisi_siniri": "",
+      "mezuniyet_kurali": "",
+      "gorev_dagilimi_kurali": ""
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Bireysel veya takım katılımlarında danışman dahil edilebilir ancak zorunlu bir şart değildir.",
+      "limit": "Her takımın en fazla 1 danışmanı olabilir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "1. Ana Sahne Tasarımı: Festival ana sahnesi (Maks 55x25x14m).",
+      "2. Ödül Heykelciği Tasarımı: 3D render veya 1/1 fiziksel maket.",
+      "3. Grafik Konsept Tasarımı: İç/dış mekan (billboard, poster) kurumsal kimlik tasarımı."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Her katılımcı en fazla 3 farklı konsept ile başvurabilir.",
+      "Gönderilecek tasarımlar tamamen özgün olmalı, daha önce ödül almamış veya sergilenmemiş olmalıdır.",
+      "Ana Sahne Kategorisi için alan kullanım sınırlarına (Genişlik 55m, Derinlik 25m, Yükseklik 14m) ve podyum kotlarına (1.5m) kesinlikle uyulmalıdır.",
+      "Görsel veya konsept intihali (kopya) tespiti doğrudan başvuru iptali sebebidir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Başvuru dosyaları 50x70 ölçülerinde 4 pafta halinde PDF ve 4K JPEG formatında olmalıdır.",
+      "Ödül Heykelciği için 3D render alanlar en az 4, en fazla 6 render eklemelidir."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "itiraz_kurali": "Elenen takımların sonuç açıklandıktan sonra 48 saat içinde KYS üzerinden itiraz hakkı vardır.",
+      "degerlendirme_kurali": "Projeler jüri tarafından puanlanır, ayrı bir final oturumu (sunum) yapılmaz."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Başvuru Değerlendirmesi": "%100"
+    },
+    "gorev_puanlamasi": {}
+  },
+  "stages": [
+    {
+      "stage": "Başvuru ve Pafta Teslimi",
+      "document": "",
+      "format_rules": {
+        "max_pages": 4,
+        "must_not_contain_personal_info": true,
+        "layout_rules": "Projeler 50x70 ölçülerinde 4 pafta halinde PDF formatında plan dosyasına ek olarak 4K çözünürlükte JPEG dosyalarıyla iletilmelidir. Fiziksel teslim (Ödül heykelciği) yapılacaksa üzerine sadece ID numarası yazılmalı, isim yazılmamalıdır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_ozgunluk",
+            "name": "Özgünlük ve yenilikçi yaklaşım",
+            "max_score": 20,
+            "description": "Tasarımın intihal içermemesi ve yenilikçi bir perspektif sunması."
+          },
+          {
+            "id": "2_kavramsal_tutarlilik",
+            "name": "Kavramsal tutarlılık ve tema uyumu",
+            "max_score": 10,
+            "description": "Tasarımın TEKNOFEST ruhuna, milli teknoloji hamlesine ve kültürel dokuya (tema) uygunluğu."
+          },
+          {
+            "id": "3_uygulanabilirlik",
+            "name": "Uygulanabilirlik ve ölçeklenebilirlik",
+            "max_score": 20,
+            "description": "Tasarımın festival alanında (veya 3D olarak) fiziksel olarak üretilebilirliği, malzeme tedariki ve güvenlik/statik kurallarına uygunluğu."
+          },
+          {
+            "id": "4_evrensel_tasarim",
+            "name": "Evrensel tasarım ilkelerine uyum",
+            "max_score": 10,
+            "description": "Tasarımın evrensel estetik ve mimari ilkelere uygun olması."
+          },
+          {
+            "id": "5_festival_katkisi",
+            "name": "Festival deneyimine katkı",
+            "max_score": 20,
+            "description": "Kullanıcı/ziyaretçi deneyimini zenginleştirme ve seyirci-sahne ilişkisini güçlü kurabilme potansiyeli."
+          },
+          {
+            "id": "6_teknik_kalite",
+            "name": "Teknik kalite",
+            "max_score": 10,
+            "description": "Render, teknik çizim, pafta düzeni ve 3D modelleme kalitesi."
+          },
+          {
+            "id": "7_gorsel_etki",
+            "name": "Görsel etki ve marka ile uyum",
+            "max_score": 10,
+            "description": "Marka kimliğiyle uyumlu yüksek görsel etki yaratma becerisi."
+          }
+        ]
+      }
+    }
+  ]
+}

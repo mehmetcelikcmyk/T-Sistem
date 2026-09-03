@@ -1,0 +1,144 @@
+{
+  "slug": "pardus-hata-yakalama-ve-oneri-yarismasi",
+  "name": "TEKNOFEST Pardus Hata Yakalama ve Öneri Yarışması",
+  "specifications": [
+    "2026-TR-PardusHataYakalamaOneriYarismasi-TeknikSartname_V1.3_IwHMa.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "pardus-hata-yakalama-ve-oneri",
+    "kategori_adi": "Pardus Hata Yakalama ve Öneri Yarışması",
+    "hedef_egitim_seviyesi": "İlkokul, Ortaokul, Lise, Üniversite ve Üzeri (Açık öğretim dahil)",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 6
+    },
+    "danisman_sarti": "18 yaş altı (İlkokul, Ortaokul, Lise) katılımcılar için 1 danışman ZORUNLU. Takım üye sayısına (1-6) danışman DAHİL EDİLMEZ. Her takımın en fazla 1 danışmanı olabilir.",
+    "keywords": [
+      "Pardus",
+      "Liderahenk",
+      "Hata Yakalama",
+      "Bug Bounty",
+      "Pull Request",
+      "GitHub",
+      "Güvenlik Zafiyeti",
+      "Performans",
+      "Yerelleştirme",
+      "Fonksiyonel Hata"
+    ],
+    "oncelikli_gorevler": [
+      "Öneri/Hata Yakalama Kategorisi: Pardus işletim sistemi ve Liderahenk Merkezi Yönetim Sistemi uygulamalarında hata tespiti yapmak veya geliştirme önerisi sunmak.",
+      "Geliştirme Kategorisi: Pardus ekosistemi için yeni bir yazılım (halka açık repo) geliştirmek veya mevcut yazılımlar üzerinde github.com/pardus'a 'Pull Request' (PR) açarak iyileştirme yapmak."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Talep Sınırı ve Öneri Zorunluluğu: Yarışma kapsamında 1 yarışmacı/takım tarafından EN FAZLA 10 talep girilebilir. Bu taleplerden EN AZ 2 tanesinin 'Öneri' olması ZORUNLUDUR.",
+      "En Yüksek 3 Kuralı (Puanlama): Gönderilen talepler (en fazla 10) içerisinden jüri puanlamasında EN YÜKSEK PUAN ALAN 3 hata / öneri final değerlendirmesine dahil edilecektir.",
+      "Talep Ayrımı (İzole Raporlama): Her hata veya öneri, birbirinden ayrı, tekil hata/öneri raporu olarak açılmalıdır. Aynı raporda birden fazla hata birleştirilemez.",
+      "Tekrarlanabilirlik Şartı: Bildirilen hata, sağlanan senaryo adımları izlendiğinde Pardus ekibi tarafından yeniden oluşturulabiliyor (reproducible) olmalıdır. Tekrarlanamayan hatalar reddedilir.",
+      "Geliştirme Şartı (Kod Zorunluluğu): Geliştirme Kategorisi'nde talep açılıyorsa çözüm olarak mutlaka kod geliştirilmesi yapılmalı ve repo/Pull Request bağlantısı rapora yazılmalıdır.",
+      "Kopya ve Benzerlik: Benzer ya da taklit olduğu tespit edilen talepler iptal edilir. Geçmiş yılların TEKNOFEST raporlarından alıntı varsa mutlaka APA/IEEE formatına benzer standartta kaynak belirtilmelidir.",
+      "Kategori Çakışması Kuralı: Geliştirme kategorisinde maddi ödül almaya hak kazanan yarışmacıların Öneri/Hata Yakalama kategorisindeki talepleri değerlendirme DIŞINDA bırakılır."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Oneri_Hata_Yakalama_Kategorisi",
+      "template": "Talep_Formu_Hata",
+      "rubric": {
+        "category_name": "pardus-hata-yakalama-ve-oneri",
+        "stage": "Oneri_Hata_Yakalama_Kategorisi",
+        "description": "Pardus Hata Yakalama ve Öneri Bildirimi Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "hata_tanimi_ve_tekrar",
+            "name": "Hatanın/Önerinin Eksiksiz Tanımı ve Yeniden Oluşturulabilirliği",
+            "max_score": 40.0,
+            "description": "Hatanın oluşum senaryosunun (reproducible adımların) raporlanması.",
+            "guiding_questions": [
+              "Hata oluşum senaryosu (adımları) yeniden oluşturulabilecek seviyede tüm detaylarıyla yazılmış mı? Öneri ise yeri eksiksiz belirtilmiş mi?"
+            ]
+          },
+          {
+            "id": "ekran_goruntusu",
+            "name": "Ekran Görüntüsü ile Sunum",
+            "max_score": 20.0,
+            "description": "Sorunu görsel kanıtlarla destekleme.",
+            "guiding_questions": [
+              "Raporda veya talepte, ilgili hatayı ya da önerilen arayüz yerini gösteren açıklayıcı ekran görüntüleri mevcut mu?"
+            ]
+          },
+          {
+            "id": "cozum_onerisi",
+            "name": "Mümkünse Çözüm veya Çözüm Önerisi",
+            "max_score": 20.0,
+            "description": "Hatanın nasıl giderileceğine veya önerinin nasıl uygulanacağına dair yaklaşım.",
+            "guiding_questions": [
+              "Hatanın çözümü veya iyileştirmenin yapısı hakkında teorik olarak uygulanabilir bir fikir / algoritma sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "onem_derecesi_etkisi",
+            "name": "Hatanın Önem Derecesi ve Sisteme Etkisi",
+            "max_score": 20.0,
+            "description": "Düşük, Orta, Yüksek veya Kritik (sistemi durduran) hata tespiti etkisi.",
+            "guiding_questions": [
+              "Bu hata Pardus/Liderahenk sisteminin ne kadarını etkiliyor? (Tüm sistemi çökerten kritik bir açık mı yoksa basit bir yerelleştirme / kozmetik eksiği mi?)"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 1,
+        "max_pages": 50
+      }
+    },
+    {
+      "stage": "Gelistirme_Kategorisi",
+      "template": "Talep_Formu_Gelistirme",
+      "rubric": {
+        "category_name": "pardus-hata-yakalama-ve-oneri",
+        "stage": "Gelistirme_Kategorisi",
+        "description": "Pardus Geliştirme (Kod & PR) Kategorisi Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "kod_icerigi_ve_kalitesi",
+            "name": "Geliştirilen Kod İçeriği ve Kalitesi",
+            "max_score": 50.0,
+            "description": "Yazılan kodun kalitesi ve işlevselliği.",
+            "guiding_questions": [
+              "Çözüm olarak yazılan kod (veya yamalar) temiz, stabil ve Pardus reposunun genel standartlarıyla uyumlu olarak çalışıyor mu?"
+            ]
+          },
+          {
+            "id": "github_pr_link",
+            "name": "Açık Kaynak Repo veya Pull Request (PR) Bağlantısı",
+            "max_score": 20.0,
+            "description": "Geliştirmenin paylaşıldığı Github PR veya public repo linkinin kontrolü.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Çözüm önerisi kapsamında halka açık bir repo linki veya 'github.com/pardus' üzerinde açılmış bir Pull Request (PR) linki sunulmuş mu? PR linki YOKSA geçersiz sayılır."
+            ]
+          },
+          {
+            "id": "hata_tanimi",
+            "name": "Problemin Eksiksiz Tanımı ve Ekran Görüntüsü",
+            "max_score": 15.0,
+            "description": "Kod geliştirilmeden önceki problemin teşhisi ve görsel sunumu.",
+            "guiding_questions": [
+              "Geliştirmenin (kodun) çözüm getirdiği sorun veya yeni özellik net biçimde tanımlanıp ekran görüntüleriyle (before/after şeklinde) raporlanmış mı?"
+            ]
+          },
+          {
+            "id": "sisteme_katkisi",
+            "name": "Geliştirmenin Önem Derecesi ve Katkısı",
+            "max_score": 15.0,
+            "description": "Yazılan kodun sisteme getirdiği kritik fayda.",
+            "guiding_questions": [
+              "Yapılan kod geliştirmesi Pardus ekosisteminde kritik, yüksek ya da orta dereceli bir yarar sağlıyor mu?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 1,
+        "max_pages": 50
+      }
+    }
+  ]
+}

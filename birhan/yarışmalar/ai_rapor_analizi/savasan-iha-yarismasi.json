@@ -1,0 +1,420 @@
+{
+  "slug": "savasan-iha-yarismasi",
+  "name": "Savaşan İHA Yarışması",
+  "specifications": [
+    "2026_SAVASAN__C4_B0HA_YARISMA_SARTNAMES_C4_B0_TR_v1.4_Q373N.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "savasan-iha-yarismasi",
+    "kategori_adi": "Savaşan İHA Yarışması",
+    "hedef_egitim_seviyesi": "Lise / Ön lisans / Lisans / Yüksek Lisans / Doktora / Açık Öğretim / Mezun",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 15,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "Yarışmanın final aşamasına en fazla 10 kişi katılabilir.",
+      "mezuniyet_kurali": "Lise mezunu üyelerin mezuniyet tarihinden itibaren en fazla 3 (üç) yıl geçmiş olması şartı aranmaktadır.",
+      "gorev_dagilimi_kurali": "Güvenlik pilotu ile Yer Kontrol İstasyonu (YKİ) operatörü kesinlikle aynı kişi olamaz. Yapay zeka bu kuralı KTR '2. Organizasyon Özeti' başlığında denetlemelidir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Lise seviyesindeki takımlar bir danışman almak zorundadır. Üniversite ve üzeri için zorunlu değildir ancak istenirse alınabilir.",
+      "limit": "Bir takımın en fazla 1 danışmanı olabilir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Otonom kalkış, otonom uçuş ve otonom iniş görevlerinin icra edilmesi.",
+      "Savaşan İHA görevi (rakip hava araçlarına otonom kilitlenme ve agresif manevralarla kilitlenmeden kaçınma).",
+      "Kamikaze İHA görevi (Yerdeki QR koda otonom dalış, şifrenin okunması ve çarpışmadan pas geçme).",
+      "Hava savunma sistemleri ve sinyal karıştırma bölgelerinden (sanal silindirler) otonom kaçınma."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Hava aracının kalkış ağırlığı 12 kg'ı geçemez.",
+      "Hazır güdüm yazılımları kullanılamaz; görev yazılımları özgün olmalıdır.",
+      "Kilitlenme kamerası hava aracının burnunda ve yatay eksene paralel/sabit olmalıdır (Stereo, 360, Lidar veya Radar kullanılamaz).",
+      "Kilitlenmeler arası süre: Aynı araca tekrar kilitlenmek için arada en az bir farklı araca kilitlenilmesi şarttır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Arayüz (UI) Harita Zorunluluğu: Yer Kontrol İstasyonu kullanıcı arayüzündeki haritada yarışma sınırlarının, hava savunma bölgelerinin ve hedef hava araçlarının anlık konumunun gösterilmesi zorunludur.",
+      "Görsel Kilitleme Mesafe ve Piksel Kısıtları: Kilitlenme dörtgeninin merkezi ile hedef İHA'nın merkezi arasındaki mesafe, yatayda/dikeyde İHA genişliğinin/yüksekliğinin yarısından fazla olamaz. Çizgiler en fazla 3 piksel olmalıdır.",
+      "Görsel Kilitleme %5 Alan Kuralı: Hedef İHA'nın kamera görüntüsünün yatay veya dikey eksenlerinden en az birinde en az %5'ini kaplaması zorunludur.",
+      "Kilitlenme Zaman ve Frame Toleransı: 4 saniyelik kesintisiz kilitlenme isteri için 1 saniyelik tolerans payı mevcuttur. Değerlendirme (sliding window) takımın bildirdiği bitiş zamanından geriye doğru 5 saniye sarılarak yapılır; bu 5 saniyelik dilim içinde 4 saniye kilitlenme aranır. Ayrıca başarılı kilitlenmedeki donanım kaynaklı kare (frame) kayıpları için maksimum %5 (200 ms) frame toleransı vardır.",
+      "Failsafe Zorunluluğu: 10 saniye haberleşme kesintisi durumunda aracın otonom modda 'Return-to-launch' (RTL) moduna girmesi aranmalıdır. Manuel moddaysa spesifik olarak şu uçuş sonlandırma komutları çalışmalıdır: 'Gazın kesilmesi, Tam yukarı irtifa, Tam sağ dümen, Tam sağ (sol) Kanatçık'. KTR 9. Güvenlik bölümünde bu komut dizilimi kesinlikle aranmalıdır.",
+      "Kamikaze Dalış İrtifası ve QR: Kamikaze görevinde dalış başlangıç irtifası kalkış pistine göre en az 100 m olmalıdır. Hedefteki QR kodun boyutları 2m x 2m'dir. Tasarım ve simülasyon değerlendirmelerinde bu eşikler kullanılmalıdır."
+    ],
+    "etik_ve_ozgunluk_kurallari": [
+      "Daha önce katıldığı proje raporu/fikrinin aynısı ve/veya kopyası olan projeler yarışmadan diskalifiye edilir.",
+      "Geçmiş yıl raporlarından alıntı yapılması halinde zorunlu format: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı). Yapay zeka bu dizilimi algoritmik olarak kontrol etmelidir."
+    ],
+    "video_rules": {
+      "naming_format": "[Müsabaka No] [Takım Adı] [Tarih(gg/aa/yyyy)]",
+      "naming_example": "2_Anadolu_IHA_Takimi_14_07_2026.mp4",
+      "regex_validation": "^[0-9]+_[A-Za-z0-9_]+_\\d{2}_\\d{2}_\\d{4}\\.(mp4|mpg)$",
+      "character_restrictions": "Özel karakterler ([*], [,], [!], [:] vb.) veya Türkçe karakter bulunmamalıdır.",
+      "visual_requirements": "Sağ üst tarafta milisaniye hassasiyetinde sunucu saati, sol altta HUD ve sağ altta kumanda görüntüsü bulunmalıdır. Görüntü 4:3, 5:4 veya 16:9 olmalı ve OpenCV 4.5 / FFPLAY ile açılabilmelidir."
+    },
+    "sartname_dosyasi": "2026_SAVASAN__C4_B0HA_YARISMA_SARTNAMES_C4_B0_TR_v1.4_Q373N.pdf"
+  },
+  "mission_scoring": {
+    "final_score_formula": "Ölçeklendirilmiş Toplam Görev Puanı * 0.70 + STV * 0.15 + KTR * 0.15",
+    "tasks": [
+      {
+        "name": "Otonom başarılı kilitleme",
+        "score": 500
+      },
+      {
+        "name": "Manuel başarılı kilitlenme",
+        "score": 50
+      },
+      {
+        "name": "Kamikaze Görev Puanı",
+        "score": 300
+      },
+      {
+        "name": "Otonom iniş",
+        "score": 100
+      },
+      {
+        "name": "Otonom kalkış",
+        "score": 50
+      },
+      {
+        "name": "Gerçek Zamanlı Görüntü Aktarımı",
+        "score": 50
+      }
+    ],
+    "penalties": [
+      {
+        "name": "İletilemeyen/hatalı telemetri paketi (saniye başına)",
+        "score": -0.2
+      },
+      {
+        "name": "Hatalı Kilitlenme/ Kamikaze tespiti",
+        "score": -30
+      },
+      {
+        "name": "Manuel Mod Limit Aşımı",
+        "score": -10,
+        "free_limit": 3,
+        "description": "Bir tur içerisinde manuel moda geçiş limiti 3'tür. Eksi 10 ceza puanı 4. geçişten itibaren her bir geçiş için uygulanır."
+      },
+      {
+        "name": "Hava Savunma Sistemi İhlali (saniye başına)",
+        "score": -5
+      },
+      {
+        "name": "Alan İşgal Cezası",
+        "score": -150
+      },
+      {
+        "name": "Sınırların Dışına Çıkılması Cezası",
+        "score": -200
+      },
+      {
+        "name": "İhraç Cezası",
+        "score": -75
+      }
+    ],
+    "limits_and_thresholds": {
+      "per_mission_max_penalty_cap": -150,
+      "total_max_penalty_cap": -400,
+      "minimum_autonomy_percentage": 75,
+      "autonomy_rule_description": "Puan alabilmek için ilgili müsabakanın süresinin en az %75'i otonom uçulmalıdır."
+    }
+  },
+  "stages": [
+    {
+      "stage": "TYF",
+      "stage_name": "Teknik Yeterlilik Formu",
+      "template": "TEKNOFEST26_Savasan_IHA_TYF_TR_zMqMG.docx",
+      "format_rules": {
+        "special_requirements": "Bu form dosya olarak sisteme yüklenmeyecek, KYS platformundaki alanlara metin olarak girilecektir.",
+        "form_fields": [
+          {
+            "question": "Yarışmaya Katılacak Olan Hava Aracının Tipi Nedir?",
+            "type": "multiple_choice",
+            "options": [
+              "Sabit Kanat",
+              "VTOL"
+            ]
+          },
+          {
+            "question": "Yarışmaya Katılacak Olan Hava Aracını Tanıtınız.",
+            "type": "paragraph",
+            "max_chars": 500
+          },
+          {
+            "question": "Hava Aracının Kalkış Ağırlığı Nedir?",
+            "type": "number",
+            "expected_unit": "gram (g)"
+          },
+          {
+            "question": "Hava Aracının Uzunluğu Nedir?",
+            "type": "number",
+            "expected_unit": "milimetre (mm)"
+          },
+          {
+            "question": "Hava Aracının Eni Nedir?",
+            "type": "number",
+            "expected_unit": "milimetre (mm)"
+          },
+          {
+            "question": "Hava Aracının Yüksekliği Nedir?",
+            "type": "number",
+            "expected_unit": "milimetre (mm)"
+          },
+          {
+            "question": "Hava Aracının Kalkış Türü Nedir?",
+            "type": "multiple_choice",
+            "options": [
+              "Elden Atmalı",
+              "İniş Takımlı",
+              "Katapult",
+              "VTOL",
+              "Diğer"
+            ]
+          },
+          {
+            "question": "Hava aracının kalkışını açıklayınız.",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "Hava aracının iniş türü nedir?",
+            "type": "multiple_choice",
+            "options": [
+              "Gövde Üstü",
+              "İniş Takımlı",
+              "Diğer"
+            ]
+          },
+          {
+            "question": "Hava aracının inişini açıklayınız.",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "Sistem mimarinizi açıklayınız. (Kullanacağınız sistem mimarisini görsel olarak sisteme yükleyiniz...)",
+            "type": "file_upload_image"
+          },
+          {
+            "question": "Hava aracının batarya türü nedir?",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "Hava aracının güç sistemini açıklayınız.",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "Kullanılacak itki sistemini kısaca açıklayınız.",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "Otopilot sisteminizi tanımlayınız.",
+            "type": "paragraph",
+            "max_chars": 500
+          },
+          {
+            "question": "Kullanılacak görüntüleme sistemini kısaca açıklayınız.",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "RF Cihazlarınızı tanımlayınız.",
+            "type": "paragraph",
+            "max_chars": 300
+          },
+          {
+            "question": "Yer kontrol istasyonunu tanımlayınız.",
+            "type": "paragraph",
+            "max_chars": 500
+          },
+          {
+            "question": "Görüntü işleme ve aktarım sistemlerini tanımlayınız.",
+            "type": "paragraph",
+            "max_chars": 500
+          },
+          {
+            "question": "Kamikaze görevinin nasıl yapılacağı hakkında bilgi veriniz.",
+            "type": "paragraph",
+            "max_chars": 500
+          },
+          {
+            "question": "Rakip hava aracına yaklaşma ve takip görevinin nasıl yapılacağı hakkında bilgi veriniz.",
+            "type": "paragraph",
+            "max_chars": 500
+          },
+          {
+            "question": "Uçuşa yasaklı alanlardan kaçış için nasıl bir yol izleneceği hakkında bilgi veriniz.",
+            "type": "paragraph",
+            "max_chars": 500
+          }
+        ]
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yarismasi",
+        "stage": "TYF",
+        "evaluation_type": "pass_fail",
+        "criteria": [
+          {
+            "id": "tyf_all",
+            "name": "TYF Form Alanları Geçerliliği",
+            "is_required": true,
+            "description": "Tüm form alanlarının kurallara ve karakter sınırlarına uygun olarak doldurulması."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu",
+      "template": "SIHA_KTR_2026_TR_v2_KBa6W.docx",
+      "format_rules": {
+        "max_pages": 25,
+        "font_family": "Arial",
+        "font_size": "12 pt",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "2.5 cm",
+        "requires_cover_page": true,
+        "requires_table_of_contents": true,
+        "requires_references": true,
+        "special_requirements": "Kapak hariç sayfaların alt bilgisinde takım adı ve sayfa numarası, üst bilgisinde 'Savaşan İHA Yarışması 2026' yazılmalıdır.",
+        "must_not_contain_personal_info": true
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yarismasi",
+        "stage": "KTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_temel_sistem",
+            "name": "1. Temel Sistem Özeti",
+            "max_score": 5.0,
+            "description": "Tasarlanan donanımsal ve yazılımsal mimarinin özeti."
+          },
+          {
+            "id": "2_organizasyon",
+            "name": "2. Organizasyon Özeti",
+            "max_score": 4.0,
+            "description": "Takım yapısı, görev dağılımı (YKİ ve Pilot ayrımı). Ekip üyelerinin isim, soyisim ve fotoğraf gibi kişisel kimlik bilgilerine yer verilmemelidir (Kör hakem değerlendirmesi)."
+          },
+          {
+            "id": "3_detayli_tasarim",
+            "name": "3. Detaylı Tasarım Özeti",
+            "max_score": 15.0,
+            "description": "Mekanik ve elektronik sistem tasarımları."
+          },
+          {
+            "id": "4_otonom_gorevler",
+            "name": "4. Otonom Görevler",
+            "max_score": 25.0,
+            "description": "Savaşan İHA otonomi algoritmaları ve Kamikaze hedef tespiti, pas geçme stratejileri."
+          },
+          {
+            "id": "5_hava_savunma",
+            "name": "5. Hava Savunma Sistemi",
+            "max_score": 5.0,
+            "description": "Sanal engellerden kaçınma yöntemleri."
+          },
+          {
+            "id": "6_yki_haberlesme",
+            "name": "6. Yer Kontrol İstasyonu, Haberleşme ve Kullanıcı Arayüzü",
+            "max_score": 12.0,
+            "description": "Haberleşme mimarisi ve YKİ harita arayüzü tasarımı."
+          },
+          {
+            "id": "7_entegrasyon",
+            "name": "7. Hava Aracı Entegrasyonu",
+            "max_score": 10.0,
+            "description": "Yapısal, mekanik ve elektronik donanım entegrasyonu."
+          },
+          {
+            "id": "8_test_simulasyon",
+            "name": "8. Test ve Simülasyon",
+            "max_score": 15.0,
+            "description": "Alt sistem testleri, uçuş listesi ve HITL/SITL simülasyonları."
+          },
+          {
+            "id": "9_guvenlik",
+            "name": "9. Güvenlik",
+            "max_score": 5.0,
+            "description": "Risk tespiti, Failsafe senaryoları ve acil durum adımları."
+          },
+          {
+            "id": "10_rapor_duzeni",
+            "name": "10. Rapor Düzeni",
+            "max_score": 4.0,
+            "description": "Biçimsel kurallar, alıntı formatları, sayfa sınırları."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "STV",
+      "stage_name": "Sistem Tanımlama Videosu",
+      "format_rules": {
+        "special_requirements": "Video 10 dakikayı geçmemeli, en az 720p olmalı. Araç tanıtımı, haberleşme testi, geliştirme testleri ve otonom görev testleri içermelidir."
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yarismasi",
+        "stage": "STV",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_sistem_ozeti",
+            "name": "Sistem Özeti",
+            "max_score": 20.0,
+            "description": "Aracın genel özellikleri (uçuş süresi, ağırlığı)."
+          },
+          {
+            "id": "2_haberlesme",
+            "name": "Haberleşme RF Bant Seçimi",
+            "max_score": 10.0,
+            "description": "Haberleşme cihazlarının atanan frekanslarda ayarlandığının gösterilmesi."
+          },
+          {
+            "id": "3_gelistirme_test",
+            "name": "Geliştirme Testleri",
+            "max_score": 35.0,
+            "description": "Mekanik, elektronik alt parçaların (kanat, itki, vb.) ve simülasyon ortamlarının testleri."
+          },
+          {
+            "id": "4_gorev_testi",
+            "name": "Tüm Görev Testi",
+            "max_score": 35.0,
+            "description": "Otonom uçuş, kilitlenme ve kamikaze algoritmalarının araç üzerindeki testleri."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "UPKV",
+      "stage_name": "Uçuş ve Pilot Kanıt Videosu",
+      "format_rules": {
+        "special_requirements": "Uçuş Kanıt Videosu en fazla 5 dakika, en az 3 dakikası otonom olmalıdır. Pilot Kanıt Videosu pilot başına en fazla 5 dakika olmalıdır. Her iki videoda ekranın üst kısmında uçuş kaydı, sol alt köşede HUD, sağ alt köşede kumanda görünümü zorunludur."
+      },
+      "rubric": {
+        "category_name": "savasan-iha-yarismasi",
+        "stage": "UPKV",
+        "evaluation_type": "pass_fail",
+        "criteria": [
+          {
+            "id": "ukv_check",
+            "name": "Uçuş Kanıt Videosu Gereksinimleri",
+            "is_required": true,
+            "description": "3 dk otonom uçuş, HUD ve kumanda ekranlarının bulunması."
+          },
+          {
+            "id": "pkv_check",
+            "name": "Pilot Kanıt Videosu Gereksinimleri",
+            "is_required": true,
+            "description": "Güvenlik pilotunun kalkış ve inişi manuel yaptığı, HUD ve kumanda ekranı içeren video kaydı."
+          }
+        ]
+      }
+    }
+  ]
+}

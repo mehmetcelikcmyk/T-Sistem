@@ -1,0 +1,295 @@
+{
+  "slug": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi",
+  "name": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması",
+  "specifications": [
+    "2026_5G_YAPAY_ZEKA_İLE_AKILLI_YOL_GÜVENLİĞİ_YARISMASI_SARTNAMESI_2_PORZ6.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi",
+    "kategori_adi": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması",
+    "yurutucu_kurum": "Turkcell & Türkiye Teknoloji Takımı Vakfı (T3 Vakfı)",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Lisans / Yüksek Lisans / Doktora / Açık Öğretim Öğrencileri",
+    "takim_kurallari": {
+      "uye_sayisi_min": 2,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "Finalist takımlar yarışma sırasında alanda aynı anda takım başına en fazla 3 yarışmacı ile bulunabilir; 3'ten fazla üyesi olan takımlar oturumlarda dönüşümlü yer alabilir.",
+      "aciklama": "Takımlar en az 2, en fazla 5 kişiden oluşmalıdır. Bu kişilerden biri İletişim Sorumlusu olarak belirlenmelidir (Danışman bu sayıya dâhil değildir)."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "İsteğe bağlı olarak 1 danışman (Öğretim Üyesi/Görevlisi veya Araştırma Görevlisi) bulundurulabilir.",
+      "limit": "Bir danışman sadece 1 takıma danışmanlık yapabilir ve onaylı danışmanlık belgesi sunmalıdır."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "temel_teknik_isterler": [
+      "Canlı kamera video akışından araç, plaka, hız, araç içi nesneler ve sürücü eylemlerinin anlık tespiti ve sınıflandırılması",
+      "5G Ağ API Entegrasyonu 1: Number Verification API (mobil uygulama girişinde şebeke tabanlı sessiz kimlik doğrulama)",
+      "5G Ağ API Entegrasyonu 2: Quality on Demand (QoD) API (araç yaklaştığında veya kritik durumda dinamik olarak yüksek bant genişliği/QoS talebi tetikleme)",
+      "Plaka Tanıma Sistemi ile Türkiye plaka formatına uygun regex kontrolü ve metin dönüştürme",
+      "Dockerize edilmiş model mimarisi ile Tesla T4 üzerinde 10 dakika içinde çıkarım (inference) tamamlama"
+    ],
+    "etik_ve_ozgunluk_kurallari": [
+      "Takım şeması tablosunda ve rapor genelinde kişisel verilere (isim, soyisim, T.C. kimlik numarası, iletişim bilgileri vb.) kesinlikle yer verilmemelidir (Kör hakem kuralı, ihlalde diskalifiye).",
+      "Alıntı yapılan geçmiş yıl raporları ALINTI FORMATINA uygun şekilde kaynak gösterilmelidir.",
+      "Kod içerisinde ortam değişkeni (env), hostname, IP adresi veya dosya varlığı kontrolüyle test ortamı manipülasyonu yapılması kesinlikle yasaktır."
+    ],
+    "oduller": {
+      "dereceler": {
+        "birincilik": {
+          "takim_odulu": "175.000 ₺",
+          "danisman_odulu": "15.000 ₺"
+        },
+        "ikincilik": {
+          "takim_odulu": "150.000 ₺",
+          "danisman_odulu": "12.000 ₺"
+        },
+        "ucunculuk": {
+          "takim_odulu": "125.000 ₺",
+          "danisman_odulu": "10.000 ₺"
+        }
+      },
+      "prestij_odulleri": [
+        {
+          "odul": "En İyi Uygulama Mimarisi Ödülü",
+          "aciklama": "Modern yazılım geliştirme prensiplerine, yazılım hayat döngüsüne ve mimari tasarıma en iyi uyum sağlayan takıma verilir."
+        },
+        {
+          "odul": "En İyi Sunum Ödülü",
+          "aciklama": "Sorulara verilen doğru cevaplar, beden dili, dinleyicilere karşı tutum ve sunum akıcılığını en iyi sergileyen takıma verilir."
+        },
+        {
+          "odul": "Turkcell Özel Ödülü",
+          "aciklama": "Hedef noktaları doğru ve hızlı tespit eden ancak ilk 3 dereceye giremeyen takıma verilir."
+        }
+      ],
+      "birincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ikincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ucunculuk": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir"
+    },
+    "sartname_dosyasi": "2026_5G_YAPAY_ZEKA_İLE_AKILLI_YOL_GÜVENLİĞİ_YARISMASI_SARTNAMESI_2_PORZ6.pdf"
+  },
+  "stages": [
+    {
+      "stage": "OTR",
+      "stage_name": "Ön Tasarım Raporu",
+      "template": "2026_5G_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_ÖTR_Şablon_TR_rYLTN.docx",
+      "format_rules": {
+        "min_pages": 3,
+        "max_pages": 10,
+        "total_page_limit_description": "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en az 3 en fazla 10 sayfa olacaktır.",
+        "font_family": "Arial (Başlıklar: Arial Black)",
+        "font_size": "12 pt (Başlıklar: 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt: 2.5 cm, Sağ: 2.5 cm, Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak ve İçindekiler' başlıkları için 2 ayrı sayfa içermelidir. Kişisel veri içermemelidir."
+      },
+      "rubric": {
+        "category_name": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi",
+        "stage": "OTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_ozeti",
+            "name": "1. Proje Özeti",
+            "max_score": 5.0,
+            "description": "Proje kapsamında yürütülen faaliyetlerle ilgili özet bilgi sunulur."
+          },
+          {
+            "id": "2_takim_semasi",
+            "name": "2. Takım Şeması",
+            "max_score": 0.0,
+            "is_mandatory": true,
+            "description": "Görev isterlerine uygun ekip olduğu tablo olarak gösterilmeli, farklı disiplinlerde üyeler olmalıdır. Kişisel veriler (isim, TC, iletişim vb.) eklenmemelidir."
+          },
+          {
+            "id": "3.1_genel_sistem_mimarisi",
+            "name": "3.1. Genel Sistem Mimarisi ve Veri Akış Şeması",
+            "max_score": 15.0,
+            "description": "Mobil uygulama, sunucu, yapay zeka modeli ve dış API'lerin iletişimini gösteren kapsamlı sistem blok şeması. Canlı video aktarımı, YZ işleme ve darboğaz yaratmayan akış."
+          },
+          {
+            "id": "3.2_yapay_zeka_modeli",
+            "name": "3.2. Yapay Zeka Modeli ve Çıkarım Tasarımı",
+            "max_score": 20.0,
+            "description": "Canlı video çıkarım mimarisi, temel model (foundational model), fine-tuning, doğruluk-gecikme dengesi, çıkarım süresi optimizasyonu (quantizasyon) ve uçtan uca inference iş hattı."
+          },
+          {
+            "id": "3.3_yazilim_mimari_tasarimi",
+            "name": "3.3. Yazılım Mimari Tasarımı",
+            "max_score": 20.0,
+            "description": "Mobil (ön yüz) ve sunucu (arka yüz) yazılım bileşenleri, canlı video aktarım çatıları, eşzamanlı istek yönetimi ve wireframe taslakları (kod paylaşılmayacaktır)."
+          },
+          {
+            "id": "4_yontem",
+            "name": "4. Yöntem",
+            "max_score": 20.0,
+            "description": "Şartnamedeki aşama görevlerinin yerine getirilmesinde izlenecek çalışma kurgularının akış diyagramı ile anlatımı (her aşama ayrı)."
+          },
+          {
+            "id": "5_ozgunluk",
+            "name": "5. Özgünlük",
+            "max_score": 10.0,
+            "description": "Mevcut çözümlere ve literatüre kıyasla getirilen yenilik, verimlilik artıran mimari yaklaşımlar ve geleceğe dönük yenilikçi ürün fikirleri."
+          },
+          {
+            "id": "6_zaman_planlamasi",
+            "name": "6. Zaman Planlaması",
+            "max_score": 5.0,
+            "description": "Tahmini geliştirme ve test süreçlerini içeren zaman planlaması ve proje takip yöntemi (Proje Takip Aracı kullanımı)."
+          },
+          {
+            "id": "7_rapor_duzeni_ve_kaynakca",
+            "name": "7. Proje Rapor Düzeni ve Kaynakça",
+            "max_score": 5.0,
+            "description": "Sayfa sınırlarına, akademik yazım kurallarına, içindekiler ve standart kaynakça formatına uyum."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "FTR",
+      "stage_name": "Final Tasarım Raporu ve Model Teslimi",
+      "template": "2026_5G_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_FTR_Şablon_TR_1_e4PVw.docx",
+      "technical_guide": "5G_ve_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_Yarışması_-_FTR_Aşaması_Teslim_D.pdf",
+      "format_rules": {
+        "min_pages": 3,
+        "max_pages": 10,
+        "total_page_limit_description": "Final Tasarım Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en az 3 en fazla 10 sayfa olacaktır.",
+        "font_family": "Arial (Başlıklar: Arial Black)",
+        "font_size": "12 pt (Başlıklar: 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt: 2.5 cm, Sağ: 2.5 cm, Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak ve İçindekiler' başlıkları için 2 ayrı sayfa içermelidir."
+      },
+      "rubric": {
+        "category_name": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi",
+        "stage": "FTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_ozeti",
+            "name": "1. Proje Özeti",
+            "max_score": 5.0,
+            "description": "Proje kapsamında yürütülen faaliyetlerle ilgili özet bilgi."
+          },
+          {
+            "id": "2_veriseti_olusturulmasi",
+            "name": "2. Veriseti Oluşturulması",
+            "max_score": 20.0,
+            "description": "Model eğitimi ve testi için verilerin toplanması, etiketlenmesi, veri dengeleme (data balancing), veri artırma (augmentation) ve train/val/test oranları."
+          },
+          {
+            "id": "3.1_problemin_analizi",
+            "name": "3.1. Problemin Analizi",
+            "max_score": 15.0,
+            "description": "Video üzerinden araç, plaka, hız ve riskli durum tespitinde ışık değişimleri, hareket bulanıklığı, oklüzyon problemleri ve izlenen çözüm yolu gerekçeleri."
+          },
+          {
+            "id": "3.2_cozum_mimarisi",
+            "name": "3.2. Çözüm Mimarisi",
+            "max_score": 15.0,
+            "description": "Yapay zeka sisteminin kuşbakışı mimarisi; ham videodan etiketlenmiş çıktılara kadar olan sürecin diyagramlar ve bileşenlerle görselleştirilmesi."
+          },
+          {
+            "id": "3.3_cozum_detaylari",
+            "name": "3.3. Çözüm Detayları",
+            "max_score": 20.0,
+            "description": "Kullanılan derin öğrenme algoritmaları, sinir ağı mimarileri (YOLO, Faster R-CNN vb.), ön/son işleme adımları ve yazılım/donanım çatıları."
+          },
+          {
+            "id": "4_cozumin_sinanmasi",
+            "name": "4. Çözümün Sınanması",
+            "max_score": 20.0,
+            "description": "Hazırlanan veri seti ile modelin test kanıtları; Accuracy, Precision, Recall, F1-Score, FPS metriklerinin tablo ve grafiklerle somut sunumu."
+          },
+          {
+            "id": "5_kaynakca",
+            "name": "5. Kaynakça",
+            "max_score": 5.0,
+            "description": "Kullanılan tüm akademik makaleler, GitHub repoları ve teknik dokümanların standart listesi."
+          }
+        ]
+      },
+      "technical_specifications": {
+        "docker_environment": {
+          "gpu": "NVIDIA Tesla T4",
+          "vcpu": "4.0 vCPU",
+          "ram": "16 GB RAM",
+          "shm": "2 GB",
+          "base_image": "nvidia/cuda:12.1.0-base-ubuntu22.04",
+          "max_image_size": "8 GB",
+          "max_execution_time": "10 dakika (Dockerfile build süresi hariç)",
+          "input_path": "/app/data/input/video.mp4",
+          "output_path": "/app/data/output/results.json",
+          "models_path": "/app/models/"
+        },
+        "target_labels": {
+          "arac_bilgisi": {
+            "tip": [
+              "sedan",
+              "suv",
+              "hatchback",
+              "pickup",
+              "minibus",
+              "panelvan",
+              "kamyon"
+            ],
+            "renk": [
+              "beyaz",
+              "siyah",
+              "gri",
+              "kirmizi",
+              "mavi",
+              "sari",
+              "yesil",
+              "turuncu",
+              "kahverengi"
+            ],
+            "plaka_regex": "^(0[1-9]|[1-7][0-9]|8[01])((\\s?[a-zA-Z]\\s?)(\\d{4,5})|(\\s?[a-zA-Z]{2}\\s?)(\\d{3,4})|(\\s?[a-zA-Z]{3}\\s?)(\\d{2,3}))$"
+          },
+          "tespitler": {
+            "sofor_eylemi": [
+              "arkaya_bakma",
+              "esneme",
+              "sigara_icme",
+              "su_icme",
+              "telefonla_konusma",
+              "slalom",
+              "etrafa_bakinma",
+              "emniyet_kemeri_ihlali"
+            ],
+            "nesneler": [
+              "teknocan",
+              "bilgisayar"
+            ],
+            "yolcular": [
+              "arka_koltuk_1",
+              "arka_koltuk_2",
+              "on_koltuk"
+            ]
+          }
+        },
+        "output_json_schema": {
+          "video_id": "string",
+          "arac_bilgisi": {
+            "tip": "sedan | suv | hatchback | pickup | minibus | panelvan | kamyon",
+            "plaka": "string (regex uyumlu / birleşik örn: 34ABC123)",
+            "renk": "beyaz | siyah | gri | kirmizi | mavi | sari | yesil | turuncu | kahverengi",
+            "confidence_score": "float (0.0 - 1.0)"
+          },
+          "tespitler": [
+            {
+              "zaman_saniye": "float",
+              "kategori": "sofor_eylemi | nesneler | yolcular",
+              "etiket": "string",
+              "confidence_score": "float (0.0 - 1.0)"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

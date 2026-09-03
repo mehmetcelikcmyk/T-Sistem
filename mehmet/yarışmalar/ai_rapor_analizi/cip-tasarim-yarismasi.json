@@ -1,0 +1,305 @@
+{
+  "slug": "cip-tasarim-yarismasi",
+  "name": "Çip Tasarım Yarışması",
+  "specifications": [
+    "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "cip-tasarim-yarismasi",
+    "kategori_adi": "Çip Tasarım Yarışması",
+    "yurutucu_kurum": "TÜBİTAK BİLGEM, Yongatek Mikroelektronik, T3 Vakfı & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Ön Lisans / Lisans / Yüksek Lisans Öğrencileri",
+    "kategori_yapisi": [
+      {
+        "kategori_adi": "Analog Tasarım Kategorisi",
+        "teknoloji": "TSMC 65nm CMOS veya IHP SG13G2 (130nm SiGe BiCMOS)",
+        "tasarim_bloklari": "Bant Aralığı Referans Gerilim Devresi (Bandgap Reference - BGR) ve Analog Ön-Uç (Analog Front-End - AFE) Devresi (PCIe 3.0 / 8 Gbps)",
+        "puanlama_formulu": "Toplam Puan = (0.15 * OTR) + (0.25 * DTR) + (0.35 * Sunum) + (0.25 * Basarim_Kriterleri)"
+      },
+      {
+        "kategori_adi": "Mikrodenetleyici Tasarım Kategorisi",
+        "mimari": "RISC-V 32-bit (CV32E40P Çekirdeği) + TFLite Micro Speech YZ Donanım Hızlandırıcısı + Çevre Birimleri (GPIO, Timer, UART, I2C, QSPI, Opsiyonel JTAG)",
+        "puanlama_formulu": "Toplam Puan = (0.10 * OTR) + (0.15 * DTR) + (0.05 * Sunum) + (0.10 * Demo) + (0.40 * Tasarim_ve_Dogrulama) + (0.20 * Cip_Akisi)"
+      }
+    ],
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 5,
+      "bireysel_basvuru": true,
+      "yuksek_lisans_kurali": "Takımlardaki yüksek lisans öğrenci sayısı en fazla 2 olabilir.",
+      "final_destek_limiti": "Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği takım başı en fazla 3 kişi (danışman dâhil) ile sınırlıdır.",
+      "aciklama": "Yarışmaya bireysel olarak veya en fazla 5 kişilik takımlar halinde başvurulabilir (Danışman hariçtir). TÜBİTAK ve Yongatek çalışanları katılamaz."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar, ilgili alanda görev yapan bir akademisyen ya da profesyonelden danışmanlık alabilir (İsteğe Bağlı).",
+      "limit": "Her takımın en fazla 1 danışmanı olabilir. Onaylı danışmanlık belgesi KYS'ye yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "analog_teknik_isterler": {
+      "besleme": "Tüm devreler tek bir 1.8 V (+/-%10) ideal gerilim kaynağından beslenmelidir.",
+      "bgr_isterleri": {
+        "vref": "1.25 V referans gerilimi",
+        "iref": "16 µA kutuplama/referans akımı",
+        "sicaklik_katsayisi": "-40°C ila 125°C aralığında maksimum 15 ppm/°C",
+        "psrr": "1 Hz - 10 GHz aralığında 0 dB'nin altında olmalı",
+        "start_up": "Devrenin açılış problemlerini önlemek için başlatıcı (start-up) devre bulunmalıdır."
+      },
+      "afe_isterleri": {
+        "standart": "PCIe 3.0 (8 Gbps) standardı desteklenmelidir (1 UI = 125 ps).",
+        "kanal_kaybi": "4 GHz frekansta 10 dB ve 20 dB olmak üzere iki farklı kanal kaybı desteklenmelidir (Seri 250 nF CAC AC-kuplajlı).",
+        "goz_acikligi": "Karar verici girişinde göz yüksekliği 250 mVpp,diff +/-%10; minimum göz genişliği 0.35 UI olmalıdır.",
+        "empedans": "50 ohm tek uçlu veya 100 ohm farksal terminasyon (Rterm); S11 <= -10 dB (0 Hz - 4 GHz)."
+      }
+    },
+    "oduller": {
+      "analog_tasarim_kategorisi": {
+        "birincilik": "200.000,00 ₺ (Danışman: 20.000,00 ₺)",
+        "ikincilik": "175.000,00 ₺ (Danışman: 15.000,00 ₺)",
+        "ucunculuk": "150.000,00 ₺ (Danışman: 12.000,00 ₺)"
+      },
+      "mikrodenetleyici_tasarim_kategorisi": {
+        "birincilik": "200.000,00 ₺ (Danışman: 20.000,00 ₺)",
+        "ikincilik": "175.000,00 ₺ (Danışman: 15.000,00 ₺)",
+        "ucunculuk": "150.000,00 ₺ (Danışman: 12.000,00 ₺)"
+      },
+      "birincilik": "Analog: 200.000,00 ₺ (Danışman: 20.000,00 ₺) | MCU: 200.000,00 ₺ (Danışman: 20.000,00 ₺)",
+      "ikincilik": "Analog: 175.000,00 ₺ (Danışman: 15.000,00 ₺) | MCU: 175.000,00 ₺ (Danışman: 15.000,00 ₺)",
+      "ucunculuk": "Analog: 150.000,00 ₺ (Danışman: 12.000,00 ₺) | MCU: 150.000,00 ₺ (Danışman: 12.000,00 ₺)"
+    },
+    "sartname_dosyasi": "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf"
+  },
+  "stages": {
+    "analog_tasarim_kategorisi": [
+      {
+        "stage": "OTR",
+        "stage_name": "Analog Ön Tasarım Raporu",
+        "weight_in_total": "%15",
+        "template": "2026_OTR_Cip_Tasarim_Yarismasi_Analog_Tasarim_xuMTS.docx",
+        "format_rules": {
+          "max_pages": 9,
+          "total_page_limit_description": "Toplam sayfa sayısı 9'u geçmemelidir. Sayfa sınırı aşıldığı takdirde ilk 9 sayfa dikkate alınır."
+        },
+        "sections": [
+          "1. Giriş (Çalışmanın amacı ve ana hatları)",
+          "2. Sistem Mimarisi (İsterler, hedeflenen devre topolojileri, hedeflenen performans değerleri)",
+          "3. Tasarım Detayları (Blok diyagram, alt blok ilişkileri, topoloji ayrıntıları, çip tasarım akışı)",
+          "4. Takım Organizasyonu ve İş Planı (Üye bilgileri, görev dağılımı, zaman planlaması)",
+          "5. Kaynakça ve Ekler"
+        ]
+      },
+      {
+        "stage": "DTR",
+        "stage_name": "Analog Detay Tasarım Raporu",
+        "weight_in_total": "%25",
+        "template": "2026_DTR_Çip_Tasarım_Yarışması_Analog_v1_1Vl3m.docx",
+        "format_rules": {
+          "max_pages": 30,
+          "total_page_limit_description": "Kapak sayfaları hariç en fazla 30 sayfa olmalıdır.",
+          "font_family": "Aptos",
+          "font_size": "12 pt",
+          "line_spacing": 1.0,
+          "special_requirements": "Her rapor Kapak, İçindekiler ve Kaynakça içermelidir."
+        },
+        "rubric": {
+          "total_score": 100.0,
+          "criteria": [
+            {
+              "id": "1_proje_mevcut_durum_degerlendirmesi",
+              "name": "1. Proje Mevcut Durum Değerlendirmesi",
+              "max_score": 5.0,
+              "description": "Özet faaliyetler, ÖTR değerlendirmesi ve ÖTR sonrası yapılan değişikliklerin gerekçeleri."
+            },
+            {
+              "id": "2.1_sistem_mimarisi",
+              "name": "2.1. Sistem Mimarisi",
+              "max_score": 5.0,
+              "description": "Üst seviye blok şeması, işaret/güç giriş-çıkışları, bağlantılar ve şartname uyumu."
+            },
+            {
+              "id": "2.2_bant_araligi_referans_devresi",
+              "name": "2.2. Bant Aralığı Referans Gerilim Devresi (BGR)",
+              "max_score": 15.0,
+              "description": "BGR devre topolojisi gerekçesi, ayrıntılı şematik çizimleri (transistör boyutları, R/C değerleri, düğüm gerilimleri) ve şematik benzetim sonuçları (1.25V Vref, 16uA Iref, TC <= 15 ppm/C, PSRR < 0dB)."
+            },
+            {
+              "id": "2.3_analog_on_uc_devresi",
+              "name": "2.3. Analog Ön-Uç (AFE) Devresi",
+              "max_score": 40.0,
+              "description": "AFE devre topolojisi gerekçesi, ayrıntılı şematik çizimleri, PCIe 3.0 (8 Gbps) başarım kriterleri, 10dB ve 20dB kanal kaybı göz açıklığı şematik seviye benzetim sonuçları."
+            },
+            {
+              "id": "3_test_ortami",
+              "name": "3. Test Ortamı",
+              "max_score": 10.0,
+              "description": "Blokların optimizasyonu ve doğrulanması için kurulan test şematikleri ve simülasyon ayarları."
+            },
+            {
+              "id": "4_cip_tasarim_akisi",
+              "name": "4. Çip Tasarım Akışı",
+              "max_score": 10.0,
+              "description": "EDA akış şeması, kullanılan yazılımların amaçları, karşılaşılan yazılımsal/tasarımsal problemler ve çözüm yöntemleri."
+            },
+            {
+              "id": "5_takim_organizasyonu",
+              "name": "5. Takım Organizasyonu",
+              "max_score": 5.0,
+              "description": "Nihai takım üyeleri/danışman bilgisi ve DTR tamamlanan işlerdeki görev dağılımı."
+            },
+            {
+              "id": "6_is_plani_ve_risk_planlamasi",
+              "name": "6. İş Planı ve Risk Planlaması",
+              "max_score": 5.0,
+              "description": "ÖTR iş planı gerçekleşme durumu, güncel takvim ve tamamlanmamış işler için risk analizi."
+            },
+            {
+              "id": "7_kaynakca",
+              "name": "7. Kaynakça",
+              "max_score": 5.0,
+              "description": "Kullanılan tüm akademik ve teknik referanslar."
+            }
+          ]
+        }
+      },
+      {
+        "stage": "FINAL_SUNUM_VE_DEMO",
+        "stage_name": "Analog Final Sunum ve Başarım Değerlendirmesi",
+        "weight_in_total": "%60",
+        "format_rules": {
+          "sunum_orani": "%35",
+          "basarim_kriterleri_orani": "%25",
+          "special_requirements": "Serim sonrası (post-layout) benzetimler, GDSII çıktısı, DRC/LVS raporları, göz açıklığı, alan ve güç tüketimleri üzerinden jüri değerlendirmesi."
+        }
+      }
+    ],
+    "mikrodenetleyici_tasarim_kategorisi": [
+      {
+        "stage": "OTR",
+        "stage_name": "Mikrodenetleyici Ön Tasarım Raporu",
+        "weight_in_total": "%10",
+        "template": "2026_OTR_Cip_Tasarim_Yarismasi_Mikrodenetleyici_Tasarim_Hd5WJ.docx",
+        "format_rules": {
+          "max_pages": 9,
+          "total_page_limit_description": "Toplam sayfa sayısı 9'u geçmemelidir. Sayfa sınırı aşıldığı takdirde ilk 9 sayfa dikkate alınır."
+        },
+        "sections": [
+          "1. Giriş (Çalışmanın amacı ve ana hatları)",
+          "2. Sistem Mimarisi (MCU tanımı, alt bloklar, tasarım ve doğrulama araçları)",
+          "3. Tasarım Detayları (Bus, bellek, boot, CV32E40P RISC-V çekirdek, UVM doğrulama, Tiny Conv YZ hızlandırıcı, ASIC akışı)",
+          "4. Takım Organizasyonu ve İş Planı (Üye bilgileri, görev dağılımı, zaman planlaması)",
+          "5. Kaynakça ve Ekler"
+        ]
+      },
+      {
+        "stage": "DTR",
+        "stage_name": "Mikrodenetleyici Detay Tasarım Raporu",
+        "weight_in_total": "%15",
+        "template": "2026_Mikrodenetleyici_Tasarim_DTR_Sablonu_1_w0HlD.docx",
+        "format_rules": {
+          "max_pages": 30,
+          "total_page_limit_description": "Kapak, İçindekiler ve Kaynakça bölümleri 30 sayfa sınırının dışındadır.",
+          "font_family": "Calibri",
+          "font_size": "11 pt (Başlıklar: 14 pt)",
+          "line_spacing": 1.15,
+          "alignment": "İki yana yaslı",
+          "eleme_testbench_kurali": "Vivado 2021.2 demo testbench ortamında çekirdek ve UART bağlantılarını çalıştıramayan tasarımlar DTR'den 0 puan alarak elenir."
+        },
+        "rubric": {
+          "total_score": 100.0,
+          "criteria": [
+            {
+              "id": "1_sistem_tanimi_ve_ozet",
+              "name": "1. Sistem Tanımı ve Temel Tasarım Özeti",
+              "max_score": 5.0,
+              "description": "Sistemin genel tanımı, yürütülen faaliyetler (RTL tasarımı, doğrulama, çip akışı vb. tamamlanma oranları)."
+            },
+            {
+              "id": "2.1_sistem_mimarisi",
+              "name": "2.1. Sistem Mimarisi",
+              "max_score": 15.0,
+              "description": "Nihai SoC blok şeması, alt bloklar, bus yapısı, boot sekansı, çevre birimi bağlantıları, yazılım çalışmaları, linker script, FPGA/ASIC farkları."
+            },
+            {
+              "id": "2.2.1_islemci_ve_bus_yapisi",
+              "name": "2.2.1. İşlemci ve Bus Yapısının Tasarımı",
+              "max_score": 10.0,
+              "description": "CV32E40P işlemci port bağlantıları, seçilen bus yapısı, işlemci ve çevre birimi bus bağlantıları, artı/eksi analizleri ve çözülen zorluklar."
+            },
+            {
+              "id": "2.2.2_cevre_birim_tasarimi",
+              "name": "2.2.2. Çevre Birim Tasarım Detayları",
+              "max_score": 8.0,
+              "description": "Tanımlanan çevre birimlerinin (GPIO, Timer, UART, I2C, QSPI) tasarım detayları, C sürücüleri/başlık dosyaları ve UART tam entegrasyonu."
+            },
+            {
+              "id": "2.2.3_yz_hizlandirici_tasarimi",
+              "name": "2.2.3. YZ Hızlandırıcı Tasarım Detayları",
+              "max_score": 11.0,
+              "description": "TFLite Micro Speech modelleme aktiviteleri, modelden RTL gerçekleme akışı, veri akış şeması ve karşılaşılan zorluklar."
+            },
+            {
+              "id": "2.3_boot",
+              "name": "2.3. Boot",
+              "max_score": 6.0,
+              "description": "Derlenen C/Assembly kodunun simülasyon ortamında boot/flash belleğe yüklenmesi ve çekirdek tarafından çalıştırılması detayları."
+            },
+            {
+              "id": "2.4_fpga_prototipleme",
+              "name": "2.4. FPGA Prototipleme",
+              "max_score": 5.0,
+              "description": "FPGA üzerinde işlemcide yazılım koşturulması, çevre birimi testleri ve simülasyon/FPGA görsel sonuçları."
+            },
+            {
+              "id": "3_cip_tasarim_akisi",
+              "name": "3. Çip Tasarım Akışı",
+              "max_score": 5.0,
+              "description": "Tasarım akışı aşamaları hakkında teknik bilgi, süreç planları, öncül çalışmalar ve topluluk/Slack kaynakları."
+            },
+            {
+              "id": "4_test",
+              "name": "4. Test",
+              "max_score": 25.0,
+              "description": "En az bir çekirdek ve çevre birimi/hızlandırıcı sistem testi ile kapsamlı çevre birimi/hızlandırıcı tekil testleri (UART farklı baud rate TX/RX vb.)."
+            },
+            {
+              "id": "5.1_takim_tanimi",
+              "name": "5.1. Takım Tanımı",
+              "max_score": 1.0,
+              "description": "Takım üyeleri ve varsa danışman bilgileri (İsim, soyisim, okul, bölüm, sınıf)."
+            },
+            {
+              "id": "5.2_gorev_dagilimi",
+              "name": "5.2. Görev Dağılımı",
+              "max_score": 2.0,
+              "description": "Görev dağılımı, ekip organizasyonu ve ÖTR planlamasına kıyasla değişiklik gerekçeleri."
+            },
+            {
+              "id": "6_is_plani_ve_risk_planlamasi",
+              "name": "6. İş Planı ve Risk Planlaması",
+              "max_score": 5.0,
+              "description": "FPGA prototipleme ve çip akışı aşamaları için zaman akış çizelgesi, tamamlanma durumları ve risk analizi."
+            },
+            {
+              "id": "7_kaynakca",
+              "name": "7. Kaynakça",
+              "max_score": 2.0,
+              "description": "Raporda kullanılan tüm referansların tutarlı akademik formatta listelenmesi."
+            }
+          ]
+        }
+      },
+      {
+        "stage": "FINAL_SUNUM_DEMO_ASIC",
+        "stage_name": "Mikrodenetleyici Final Demo, Sunum ve Çip Akışı Değerlendirmesi",
+        "weight_in_total": "%75",
+        "format_rules": {
+          "sunum_orani": "%5",
+          "fpga_demo_orani": "%10",
+          "tasarim_ve_dogrulama_orani": "%40",
+          "cip_akisi_gds_orani": "%20",
+          "special_requirements": "FPGA kartı üzerinde canlı ses sınıflandırma demosu, GitHub üzerinden RTL kodları ve üretime hazır GDSII/DRC/LVS çıktılarının doğrulanması."
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "slug": "kuantum-teknolojileri-yarismasi",
+  "name": "Kuantum Teknolojileri Yarışması (Donanım Kategorisi)",
+  "specifications": [
+    "2026_Kuantum_Teknolojileri_Yar_C4_B1smas_C4_B1_Donan_C4_B1m_Kategorisi_Sartnamesi_SQquS.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "kuantum-teknolojileri-yarismasi",
+    "kategori_adi": "Kuantum Teknolojileri Yarışması - Donanım Kategorisi",
+    "hedef_egitim_seviyesi": "Lisans, Yüksek Lisans (Yüksek lisans öğrencisi sayısı 2'yi geçmemelidir)",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 5
+    },
+    "danisman_sarti": "Danışmanlar, öğretim üyesi/görevlisi, araştırma görevlisi, doktora öğrencisi veya doktora mezunu olmak zorundadır.",
+    "dil_gereksinimi": "Türkçe veya İngilizce (Şartname Madde 6.2.3 gereği iki dilde de yazılabilir)",
+    "keywords": [
+      "transmon",
+      "kübit",
+      "qubit",
+      "rezonatör",
+      "düzlemdeş kılavuz",
+      "coplanar waveguide",
+      "feedline",
+      "seyreltili soğutucu",
+      "dilution refrigerator",
+      "mikrodalga bileşenler",
+      "superiletken",
+      "okuma elektroniği",
+      "Qiskit Metal",
+      "HFSS",
+      "Anharmonisite",
+      "Josephson",
+      "Cross-Kerr"
+    ],
+    "oncelikli_gorevler": [
+      "İki farklı transmon çipinin analitik ve/veya benzetim (simülasyon) yöntemleri kullanılarak tasarlanması",
+      "Besleme hattı (feedline), rezonatör ve transmon kübit etkileşimlerinin tasarlanması ve simüle edilmesi",
+      "Süperiletken kübit üretim adımları, soğutma ve mikrodalga/okuma donanımlarının teknik analizinin sunulması"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Sayfa, Boyut ve Tipografi Sınırı (Kritik): Rapor Calibri 11 punto, 1.15 satır aralığı ve 2.5 cm kenar boşlukları ile yazılmalı, kapak/resim/tablo/referans dahil en fazla 9 sayfa olmalıdır. Dosya boyutu maksimum 60 MB PDF olmalıdır.",
+      "Alt Başlık Sayfa Sınırları: Süperiletken Kübit Üretimi, Seyreltili Soğutucu Sistemi, Mikrodalga Bileşenler ve Kontrol/Okuma Elektroniği bölümlerinin her biri kendi içinde en fazla 2 sayfa olabilir.",
+      "Simülasyon Kodları ve ZIP/RAR Zorunluluğu (Madde 6.2.3): Kullanılan tüm analiz, tasarım ve simülasyon kodları (Qiskit Metal, SQDMetal, Gmsh, Palace, openEMS, HFSS vb.) KYS sistemine ZIP veya RAR formatında ek olarak yüklenmek zorundadır. Raporda bu gereklilik hatırlatılmalıdır.",
+      "Kör Hakemlik İhlali (Kritik): Metin içinde, kapakta veya takım tanıtımlarında kişisel isim, okul adı veya takım üyesi fotoğrafları (şablonda istenmediği sürece) bulunmamalıdır.",
+      "Yüksek Lisans Kısıtı: Takımdaki yüksek lisans öğrencisi sayısı 2'yi kesinlikle geçemez.",
+      "Format Kuralı: Şablon kuralı gereği başlıkların yanında yer alan puan ibarelerinin (örn: (5 PUAN)) yarışmacılar tarafından silinmiş olması gerekir. AI başlık eşleşmelerini regex ile (puanları göz ardı ederek) esnek yapmalıdır.",
+      "TÜBİTAK UME Kurumsal Kısıtı (Madde 4): TÜBİTAK Ulusal Metroloji Enstitüsü (UME) çalışanlarının yarışmaya başvuruları doğrudan geçersiz sayılır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Kübit Frekansları: 1. Kübit için 4.5 - 4.7 GHz, 2. Kübit için 5.0 - 5.2 GHz hedefleri sağlanmalıdır.",
+      "Rezonatör Frekansları: 1. Rezonatör için 6.0 - 6.2 GHz, 2. Rezonatör için 7.0 - 7.2 GHz hedefleri sağlanmalıdır.",
+      "Transmon Rejimi (Ej/Ec Oranı): Her iki tasarım için Ej / Ec oranı 50 ile 100 aralığında olmalıdır.",
+      "Anharmonisite (alpha): Çalışma frekansının en az %5'inden büyük olmalıdır (alpha > 0.05 * f_q).",
+      "Cross-Kerr Parametresi (chi): > 1 MHz olmalıdır.",
+      "IEEE Referans Formatı Zorunluluğu (Madde 6.2.3): Akademik kaynak ve literatür atıflarının IEEE formatında sunulması zorunludur. İntihal veya formata aykırı alıntı durumunda rapor doğrudan değerlendirme dışı kalır."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin Kuantum Teknolojileri - Donanım Kategorisi isterlerine uygun olarak süperiletken transmon kübit çip tasarımı, üretimi ve kriyojenik okuma sistemlerine yönelik analitik ve benzetim tabanlı donanım mimarisini içermesi."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "OAR",
+      "template": "2026-Kuantum_teknofest-On_Asama_Sablonu_C0RqB.docx",
+      "rubric": {
+        "category_name": "kuantum-teknolojileri-yarismasi",
+        "stage": "OAR",
+        "description": "Değerlendirme 100 üzerinden şablondaki açık puan dağılımına göre yapılarak, AI 4. Göz Gerekçe Formatında sunulmalı; ardından Yarışmacı Gelişim Karnesi (🟢 Güçlü Yönler, 🔴 Kritik Eksikler, 🟡 Somut İyileştirme Tavsiyeleri) başlıklarıyla raporlanmalıdır.",
+        "criteria": [
+          {
+            "id": "duzlemdes_kilavuz_tasarimi",
+            "name": "Düzlemdeş Kılavuz Tasarımı",
+            "max_score": 5.0,
+            "description": "CPW iz genişliği (w), boşluk (s), dielektrik malzeme (epsilon_r), karakteristik empedans (Z_0 ~ 50 Ohm).",
+            "guiding_questions": [
+              "50 Ohm karakteristik empedans için analitik konformal dönüşüm ve HFSS/openEMS simülasyon çıktısı uyumlu mu?"
+            ]
+          },
+          {
+            "id": "rezonator_tasarimi",
+            "name": "Rezonator Tasarımı",
+            "max_score": 10.0,
+            "description": "Lambda/4 veya Lambda/2 rezonatör geometrisi, 6.0-6.2 GHz ve 7.0-7.2 GHz frekans doğrulaması, Q_int ve Q_ext kalite faktörleri.",
+            "guiding_questions": [
+              "1. ve 2. rezonatör frekans hedefleri (6-6.2 GHz / 7-7.2 GHz) yakalanmış, meander hat kıvrım optimizasyonu gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "besleme_rezonator_etkilesimi",
+            "name": "Besleme hattı - Rezonator Etkileşimi Tasarımı",
+            "max_score": 5.0,
+            "description": "Feedline ile rezonatör arasındaki kapasitif/indüktif kuplaj boşluğu ve S_21 iletim parametresi analizi.",
+            "guiding_questions": [
+              "S_21 rezonans çentik derinliği ve kuplaj kapasitansı hesaplanmış mı?"
+            ]
+          },
+          {
+            "id": "transmon_kubit_tasarimi",
+            "name": "Transmon Kübit Tasarımı",
+            "max_score": 25.0,
+            "description": "Josephson eklemi (E_j, I_c), şönt kapasite (E_c, C_Sigma), E_j/E_c [50, 100], 4.5-4.7 GHz ve 5.0-5.2 GHz frekansları, Anharmonisite > %5.",
+            "guiding_questions": [
+              "Qiskit Metal ve EPR/LOM analizleriyle kübit frekansları, Josephson enerjileri ve şönt kapasite geometrileri eksiksiz modellenmiş mi?"
+            ]
+          },
+          {
+            "id": "kubit_rezonator_etkilesimi",
+            "name": "Kübit – Rezonator Etkileşimi Tasarımı",
+            "max_score": 5.0,
+            "description": "Kuplaj katsayısı (g/2pi), dispersif rejim şartı (|Delta| >> g) ve Cross-Kerr (chi > 1 MHz) analizi.",
+            "guiding_questions": [
+              "g kuplaj kuvveti hesaplanmış ve dispersif kayma (chi) 1 MHz eşiğinin üzerinde doğrulanmış mı?"
+            ]
+          },
+          {
+            "id": "teknik_isterlerle_karsilastirma",
+            "name": "Teknik İsterlerle Karşılaştırma",
+            "max_score": 20.0,
+            "description": "Şartnamedeki tüm frekans, anharmonisite, E_j/E_c ve T_1/T_2 hedeflerinin toplu karşılaştırma tablosu.",
+            "guiding_questions": [
+              "2 çip için analitik vs simülasyon değerleri şartname isterleriyle tek tabloda şeffafça kıyaslanmış mı?"
+            ]
+          },
+          {
+            "id": "superiletken_kubit_uretimi",
+            "name": "Süperiletken Kübit Üretimi",
+            "max_score": 8.0,
+            "description": "Silikon/safir alttaş hazırlığı, elektron demeti litografisi (EBL), Dolan köprüsü, Al/AlOx/Al çift açılı buharlaştırma (en fazla 2 sayfa).",
+            "guiding_questions": [
+              "Josephson tünel bariyeri oksitlenme adımları ve lift-off süreçleri net açıklanmış mı?"
+            ]
+          },
+          {
+            "id": "seyreltili_sogutucu_sistemi",
+            "name": "Seyreltili Soğutucu Sistemi",
+            "max_score": 8.0,
+            "description": "3He/4He karışım prensibi, Pulse Tube (4K), Still (0.8K), Cold Plate (100mK) ve Mixing Chamber (10-20mK) katmanları (en fazla 2 sayfa).",
+            "guiding_questions": [
+              "Faz ayrışma eğrisi ve mK sıcaklık basamakları şematik diyagramlarla doğru aktarılmış mı?"
+            ]
+          },
+          {
+            "id": "mikrodalga_bilesenler",
+            "name": "Mikrodalga Bileşenler",
+            "max_score": 7.0,
+            "description": "Giriş hattı zayıflatıcıları (termalizasyon için 20dB/10dB/30dB), sirkülatör/izolatörler, kriyojenik HEMT amplifikatörü ve TWPA (en fazla 2 sayfa).",
+            "guiding_questions": [
+              "Gürültü sıcaklığı (Johnson-Nyquist) ve termal foton bastırma zayıflatıcı zinciri modellenmiş mi?"
+            ]
+          },
+          {
+            "id": "kontrol_ve_okuma_elektronigi",
+            "name": "Kontrol ve Okuma Elektroniği",
+            "max_score": 7.0,
+            "description": "AWG, IQ karıştırıcı (up/down conversion), LO kaynağı, ADC, FPGA ve Qblox/Zurich Instruments mimarisi (en fazla 2 sayfa).",
+            "guiding_questions": [
+              "Mikrodalga atım şekillendirme (Gaussian/DRAG) ve demodülasyon zinciri blok şemada gösterilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "tanimlar": "TANIMLAR",
+          "giris": "Giriş",
+          "transmon_kubit_cipi_tasarimi": "Transmon Kübit Çipi Tasarımı",
+          "duzlemdes_kilavuz_tasarimi": "Düzlemdeş Kılavuz Tasarımı",
+          "rezonator_tasarimi": "Rezonator Tasarımı",
+          "besleme_hatti_rezonator_etkilesimi": "Besleme hattı - Rezonator Etkileşimi Tasarımı",
+          "transmon_kubit_tasarimi_alt": "Transmon Kübit Tasarımı",
+          "kubit_rezonator_etkilesimi": "Kübit – Rezonator Etkileşimi Tasarımı",
+          "teknik_isterlerle_karsilastirma": "Teknik İsterlerle Karşılaştırma",
+          "superiletken_kubit_uretimi_ve_olcumu": "Süperiletken Kübit Üretimi ve Ölçümü",
+          "superiletken_kubit_uretimi_alt": "Süperiletken Kübit Üretimi",
+          "seyreltili_sogutucu_sistemi": "Seyreltili Soğutucu Sistemi",
+          "mikrodalga_bilesenler": "Mikrodalga Bileşenler",
+          "kontrol_ve_okuma_elektronigi": "Kontrol ve Okuma Elektroniği"
+        },
+        "max_pages": 9
+      }
+    }
+  ]
+}

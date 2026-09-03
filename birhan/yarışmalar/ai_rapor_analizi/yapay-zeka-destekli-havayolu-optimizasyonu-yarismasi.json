@@ -1,0 +1,96 @@
+{
+  "slug": "yapay-zeka-destekli-havayolu-optimizasyonu-yarismasi",
+  "name": "TEKNOFEST Yapay Zeka Destekli Havayolu Optimizasyonu Yarışması",
+  "specifications": [
+    "2026_Yapay_Zeka_Destekli_Havayolu_Optimizasyonu_Yarışması_Şartname_s6aWG.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "yapay-zeka-destekli-havayolu-optimizasyonu",
+    "kategori_adi": "Yapay Zeka Destekli Havayolu Optimizasyonu Yarışması",
+    "hedef_egitim_seviyesi": "Lisans, Yüksek Lisans, Doktora Öğrencileri ve Mezunlar",
+    "takim_uye_sayisi": {
+      "min": 2,
+      "max": 4
+    },
+    "danisman_sarti": "Takım kaptanı zorunludur. Danışman şartı belirtilmemiştir.",
+    "keywords": [
+      "Havayolu Optimizasyonu",
+      "Turkish Technology",
+      "Uçuş Ağı",
+      "Yöneylem Araştırması",
+      "Veri Bilimi",
+      "THY"
+    ],
+    "oncelikli_gorevler": [
+      "Havayolu taşımacılığında uçuş ağı planlaması ve bağlantı optimizasyonu.",
+      "Zaman kaydırma sınırları dahilinde bağlantı kalitesinin iyileştirilmesi ve rekabetçi O&D sayısının artırılması."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Tema Zorunluluğu: Sadece 'Rekabetçi Uçtan Uca Ağ Yapısı Optimizasyonu' teması kabul edilir.",
+      "Veri Gizliliği: Sağlanan veri setleri yalnızca yarışma amacıyla kullanılabilir, üçüncü kişilerle paylaşılamaz.",
+      "Çoklu Katılım Kısıtı: Aynı çözüm ile başka bir yarışmaya katılım sağlanmışsa, yarışma adı, tarihi ve sonucu bildirilmelidir.",
+      "Orijinallik Şartı: Çözümler tamamen özgün olmalıdır. Fikri mülkiyet ihlali yapan projeler değerlendirme dışı bırakılır."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Cozum_ve_Sonuc_Raporu",
+      "template": "Cozum_Raporu",
+      "rubric": {
+        "category_name": "yapay-zeka-destekli-havayolu-optimizasyonu",
+        "stage": "Cozum_ve_Sonuc_Raporu",
+        "description": "Havayolu Optimizasyonu Çözüm ve Sonuç Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "optimizasyon_performansi",
+            "name": "Optimizasyon Performansı",
+            "max_score": 40.0,
+            "description": "Veri seti üzerinde elde edilen sayısal optimizasyon başarısı.",
+            "guiding_questions": [
+              "Geliştirilen çözüm, zaman kaydırma sınırları dahilinde rekabetçi O&D sayısını artırıp bağlantı kalitesini iyileştiriyor mu?"
+            ]
+          },
+          {
+            "id": "yontem_ve_model",
+            "name": "Yöntem ve Model Tasarımı",
+            "max_score": 20.0,
+            "description": "Probleme yaklaşım biçimi ve yöneylem araştırması modelleri.",
+            "guiding_questions": [
+              "Seçilen optimizasyon modeli ve yöntemi havacılık ağı problemleri için uygun ve doğru tasarlanmış mı?"
+            ]
+          },
+          {
+            "id": "yapay_zeka_ve_analitik",
+            "name": "Yapay Zekâ ve İleri Analitik Kullanımı",
+            "max_score": 20.0,
+            "description": "Yapay zeka ve veri analitiği tekniklerinin projeye entegrasyonu.",
+            "guiding_questions": [
+              "Çözümde veri bilimi, ileri analitik veya yapay zeka algoritmaları etkili ve yenilikçi bir şekilde kullanılmış mı?"
+            ]
+          },
+          {
+            "id": "uygulanabilirlik_ve_operasyonel",
+            "name": "Uygulanabilirlik ve Operasyonel Uyum",
+            "max_score": 10.0,
+            "description": "Çözümün gerçek dünya havayolu operasyonlarına entegre edilebilirliği.",
+            "guiding_questions": [
+              "Modelin sonuçları Türk Hava Yolları operasyonel kısıtlarına uyumlu ve gerçek hayatta uygulanabilir nitelikte mi?"
+            ]
+          },
+          {
+            "id": "sunum_basarisi",
+            "name": "Sunum Başarısı",
+            "max_score": 10.0,
+            "description": "Bulguların ve kodun jüriye etkili bir şekilde aktarılması.",
+            "guiding_questions": [
+              "Proje sonuçları, metotlar ve elde edilen kazanımlar rapor/sunum üzerinden ne kadar açık ve anlaşılır ifade edilmiş?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 0,
+        "max_pages": 0
+      }
+    }
+  ]
+}

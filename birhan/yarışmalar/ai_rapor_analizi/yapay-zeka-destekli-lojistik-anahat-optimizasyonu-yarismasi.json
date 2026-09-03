@@ -1,0 +1,95 @@
+{
+  "slug": "yapay-zeka-destekli-lojistik-anahat-optimizasyonu-yarismasi",
+  "name": "TEKNOFEST Yapay Zeka Destekli Lojistik Anahat Optimizasyonu Yarışması",
+  "specifications": [
+    "Sartname_Bulunamadi_Standart_Optimizasyon_Sablonu.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "yapay-zeka-destekli-lojistik-anahat-optimizasyonu",
+    "kategori_adi": "Yapay Zeka Destekli Lojistik Anahat Optimizasyonu Yarışması",
+    "hedef_egitim_seviyesi": "Lisans, Yüksek Lisans, Doktora Öğrencileri ve Mezunlar",
+    "takim_uye_sayisi": {
+      "min": 2,
+      "max": 4
+    },
+    "danisman_sarti": "Takım kaptanı zorunludur.",
+    "keywords": [
+      "Lojistik Optimizasyonu",
+      "Anahat Planlama",
+      "Yöneylem Araştırması",
+      "Veri Bilimi",
+      "Tedarik Zinciri",
+      "Rota Optimizasyonu"
+    ],
+    "oncelikli_gorevler": [
+      "Yapay zeka ve yöneylem araştırması kullanılarak lojistik anahat ağı ve kargo planlaması optimizasyonu.",
+      "Maliyetleri düşürmek, teslimat sürelerini optimize etmek ve taşıma kapasitesini maksimize etmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Veri Gizliliği: Sağlanan lojistik veri setleri yalnızca yarışma amacıyla kullanılabilir, üçüncü kişilerle paylaşılamaz.",
+      "Orijinallik Şartı: Çözümler tamamen özgün olmalıdır. Fikri mülkiyet ihlali yapan projeler değerlendirme dışı bırakılır.",
+      "Kod Teslimi: Geliştirilen algoritmalar yarışma komitesine değerlendirme için çalışır halde teslim edilmelidir."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Cozum_ve_Sonuc_Raporu",
+      "template": "Cozum_Raporu",
+      "rubric": {
+        "category_name": "yapay-zeka-destekli-lojistik-anahat-optimizasyonu",
+        "stage": "Cozum_ve_Sonuc_Raporu",
+        "description": "Lojistik Optimizasyonu Çözüm ve Sonuç Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "optimizasyon_performansi",
+            "name": "Optimizasyon Performansı",
+            "max_score": 40.0,
+            "description": "Veri seti üzerinde elde edilen lojistik ağ verimliliği başarısı.",
+            "guiding_questions": [
+              "Geliştirilen çözüm, kısıtlar dahilinde maliyetleri minimize edip kapasite kullanımını maksimize edebiliyor mu?"
+            ]
+          },
+          {
+            "id": "yontem_ve_model",
+            "name": "Yöntem ve Model Tasarımı",
+            "max_score": 20.0,
+            "description": "Probleme yaklaşım biçimi ve yöneylem araştırması modelleri.",
+            "guiding_questions": [
+              "Seçilen optimizasyon modeli tedarik zinciri ve lojistik problemleri için literatüre uygun tasarlanmış mı?"
+            ]
+          },
+          {
+            "id": "yapay_zeka_ve_analitik",
+            "name": "Yapay Zekâ ve İleri Analitik Kullanımı",
+            "max_score": 20.0,
+            "description": "Yapay zeka ve veri analitiği tekniklerinin projeye entegrasyonu.",
+            "guiding_questions": [
+              "Çözümde veri bilimi, ileri analitik veya makine öğrenmesi algoritmaları etkili şekilde kullanılmış mı?"
+            ]
+          },
+          {
+            "id": "uygulanabilirlik_ve_operasyonel",
+            "name": "Uygulanabilirlik ve Operasyonel Uyum",
+            "max_score": 10.0,
+            "description": "Çözümün gerçek dünya operasyonlarına entegre edilebilirliği.",
+            "guiding_questions": [
+              "Modelin sonuçları operasyonel gerçekliğe ve saha operasyon kısıtlarına ne kadar uygun?"
+            ]
+          },
+          {
+            "id": "sunum_basarisi",
+            "name": "Sunum Başarısı",
+            "max_score": 10.0,
+            "description": "Bulguların ve sonuçların jüriye etkili bir şekilde aktarılması.",
+            "guiding_questions": [
+              "Proje sonuçları ve matematiksel altyapı rapor/sunum üzerinden ne kadar açık ifade edilmiş?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 0,
+        "max_pages": 0
+      }
+    }
+  ]
+}

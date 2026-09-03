@@ -1,0 +1,127 @@
+{
+  "slug": "uluslararasi-insansiz-hava-araci-yarismasi",
+  "name": "Uluslararası İnsansız Hava Aracı Yarışması",
+  "specifications": [
+    "2026__C4_B0HA_Yar_C4_B1_C5_9Fmalar_C4_B1__C5_9Eartnamesi_TR_v6_CJbHl.pdf",
+    "2026_Uluslararas_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_KbbQ9.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "uluslararasi-insansiz-hava-araci-yarismasi",
+    "kategori_adi": "Uluslararası İHA Yarışması",
+    "hedef_egitim_seviyesi": "Ulusal ve uluslararası ön lisans, lisans, yüksek lisans ve doktora öğrencileri. Lise öğrencileri ile karma takım kurulabilir ancak lise öğrencisi sayısı toplam üye sayısının yarısından az olmalıdır.",
+    "takim_kurallari": {
+      "uye_sayisi_min": 5,
+      "uye_sayisi_max": 10,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "4 (Yarışma alanına en fazla 4 üye girebilir, danışman giremez)",
+      "mezuniyet_kurali": "Takım üyelerinin tamamının yarışma başvuru sürecinde aktif öğrenci olması zorunludur. Mezun olanlar yarışma haftası hariç katılamaz.",
+      "gorev_dagilimi_kurali": "Takım Sorumlusu üniversite öğrencisi olmak zorundadır. Takımda pilotluk yapacak öğrenci (danışman pilot olamaz) bulunmalıdır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Danışman bulunması zorunlu değildir, isteğe bağlıdır. Danışman, takımın temsil ettiği kurumda görev yapan akademisyen veya uzman kişi olabilir. Danışman kesinlikle uçuş/pilotluk yapamaz ve uçuş alanına giremez.",
+      "limit": "En fazla 1 danışman"
+    },
+    "dil_gereksinimi": "Türkçe (Yurt içi takımlar için rapor ve videolar Türkçe olmalıdır)",
+    "oncelikli_gorevler": [
+      "1. Sabit Kanat: Otonom uçuş, hedef tespiti ve hedef alanına yüksüz/yüklü isabetli uçuş ve bırakma manevraları.",
+      "2. Döner Kanat: Otonom uçuş, hedef tespiti, altıgen ve üçgen hedeflere yük bırakma ve yerden yük alma.",
+      "3. Serbest Görev: Her türlü İHA (VTOL, çırpan kanat vb.) ile takımların kendi belirlediği özgün ve teknolojik bir görevin havada icra edilmesi."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Aynı kişi yalnızca bir (1) İHA Yarışması takımında yer alabilir.",
+      "Sabit ve Döner Kanat kategorilerinde maksimum İHA kalkış ağırlığı 4 kg'dır. Serbest Görev'de maksimum 25 kg'dır.",
+      "DİKY (VTOL) tipi İHA'lar Sabit veya Döner kanat kategorisinde yarışamaz, SADECE Serbest Görev kategorisinde yarışabilir.",
+      "Sabit ve Döner Kanat İHA'larda uçtan uca şifrelemeye sahip telemetri sistemi kullanılması ZORUNLUDUR.",
+      "Hazır satın alınan İHA'lar veya kopya tasarımlarla yarışmaya katılan takımlar doğrudan elenir.",
+      "Tüm piller yarışma alanı boyunca LiPo Safe Bag (yanmaz torba) içinde taşınmalı ve saklanmalıdır.",
+      "Geometrik ve Renk Eşleşmeleri: Sabit kanat İHA'lar 4x4m mavi hedefe kırmızı yük, 2x2m kırmızı hedefe mavi yük bırakmalıdır. Döner kanat İHA'lar kenarı 2m mavi altıgen hedefe kırmızı yük, kenarı 1m kırmızı eşkenar üçgen hedefe mavi yük bırakmalıdır.",
+      "Yarışma sırasında sinyal karışması (jamming), GPS bozucu (spoofing) girişimi ya da kasıtlı frekans müdahalesi yapan takımlar tespit edildiği an yarışmadan doğrudan elenir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Radyo Arıza Emniyet Sistemi (Fail-safe): Sabit Kanat için: gazın kesilmesi, tam yukarı irtifa, tam sağ dümen, tam sağ eleron, flaplar tam aşağı. Döner Kanat için: yarım gaz kontrollü iniş ve komutla gaz kesilmesi. DİKY (VTOL) için: döner kanat moduna geçerek yarım gazla kontrollü iniş. Bu komut dizilimleri teknik kontrolde aranacaktır.",
+      "Acil Durum Güç Kesme Mekanizması: İHA üzerinde dışarıdan kolayca erişilebilen ve gücü en fazla 2 saniye içinde tamamen kesebilen donanımsal bir Power On/Off anahtarı (şalteri) bulunmalıdır."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "sure_ve_alan_kısıtlari": "Kurulum ve uçuşa hazırlık süresi maksimum 8 dakikadır. Sabit ve döner kanat uçuş süreleri Görev 1 için max 5 dk, Görev 2 için max 10 dk'dır.",
+      "ceza_kurallari": "Direği dışından değil içinden dönmek (-10 puan). Hazır/kopya ürün kullanımı veya centilmenlik dışı davranışlar (Diskalifiye veya ceza puanı).",
+      "itiraz_kurali": "Yalnızca aldıkları puan, baraj puanının en fazla 25 puan altında olan takımlar itiraz hakkına sahiptir.",
+      "cevresel_kisitlar": "İHA'lar için üst irtifa limiti yer seviyesinden (AGL) 120 metredir. Uçuşların durdurulmasına sebep olacak rüzgâr hızı eşik değeri ise 25 km/h olarak belirlenmiştir."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Proje Sunum Raporu (PSR)": "100 Puan (Baraj: İlan edilecek)",
+      "Hazırlık ve Görev Videosu": "100 Puan"
+    },
+    "gorev_puanlamasi": {
+      "Uçuş Görevleri Puanı (PG1, PG2)": "Matematiksel Puanlama Formülleri: Görev 1 (PG1) = c * [6*(Vol_min/Vol_tk) + 6*(t_min_haz/t_tk_haz) + 6*(W_0_min/W_0_tk) + 12*(t_min_ucus/t_tk_ucus)] - Ceza Puanı. Görev 2 Sabit Kanat (PG2) = c * [4*(Vol_min/Vol_tk) + 4*(t_min_haz/t_tk_haz) + 4*(W_0_min/W_0_tk) + 20*(W_yuk_tk/W_yuk_max) + 10*(d_4x4_min/d_4x4_tk) + 20*(d_2x2_min/d_2x2_tk) + 8*(t_min_ucus/t_tk_ucus)] - Ceza Puanı. Görev 2 Döner Kanat (PG2) = c * [4*(Vol_min/Vol_tk) + 4*(t_min_haz/t_tk_haz) + 4*(W_0_min/W_0_tk) + 20*(W_yuk_tk/W_yuk_max) + 8*(d_altg_min/d_altg_tk) + 12*(d_ucg_min/d_ucg_tk) + 10*(AY+BY) + 8*(t_min_ucus/t_tk_ucus)] - Ceza Puanı. Performans Birincilik Ödülü 250.000 TL, İkincilik 200.000 TL, Üçüncülük 175.000 TL.",
+      "Otonomi Katsayısı (c)": "Manuel kalkış ve/veya iniş ile otonom uçuş yapılırsa c=0.7; tamamen otonom kalkış, uçuş ve iniş durumunda c=1 olarak formüle dahil edilir.",
+      "Maksimum Puanlar ve Bonus": "Sabit Kanat toplam puanı maks 110. Döner Kanat kategorisindeki takımlar, üçüncü görevi (yerdeki yükü alıp diğer hedefe bırakma) tamamlarsa bonus puan alır ve toplam puan 120 üzerinden hesaplanır.",
+      "Serbest Görev Kriterleri": "Değerlendirme 8 ana başlıkta 100 üzerinden yapılır: Otonomi, Kararlılık, Kabiliyet, Görev Etkinliği & Demo Kalitesi, Yerli Ürün Kullanımı, Yenilikçilik & Özgünlük, Ekonomiklik & Sadelik, Takım Bilinci."
+    }
+  },
+  "stages": [
+    {
+      "stage": "Proje Sunum Raporu (PSR)",
+      "document": "2026_Uluslararas_C4_B1__C4_B0HA_Serbest_G_C3_B6rev_PSR__C5_9Eablonu_KbbQ9.docx",
+      "format_rules": {
+        "max_pages": 17,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Şablonun başındaki ve sonundaki TEKNOFEST kapakları ile ekler dahil olmak üzere maksimum 17 sayfayı geçmemelidir."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_ozet",
+            "name": "Özet",
+            "max_score": 8,
+            "description": "Takım organizasyonu ve özet bilgileri."
+          },
+          {
+            "id": "2_gorev_bilgileri",
+            "name": "Görev Bilgileri",
+            "max_score": 28,
+            "description": "Görev başlığı, uçuş görevinin tanımı ve görevin özgünlüğü."
+          },
+          {
+            "id": "2_iha_bilgileri",
+            "name": "İHA Bilgileri (54 Puan)",
+            "max_score": 54,
+            "description": "Tasarım (10), Donanım (10), Yazılım (10), Özgünlük-Takım Üretimi ve Yerli Ürün Kullanımı (24)."
+          },
+          {
+            "id": "3_maliyet_analizi",
+            "name": "Maliyet Analizi ve Bütçe Tablosu",
+            "max_score": 5,
+            "description": "Maksimum 120.000 TL sınırına sahip olan proje malzeme desteği talebine ait kalemlerin gerekçelendirilmesi (Örnek tabloda 5 puanlık bütçe tablosu + genel değerlendirme puanı bulunur). Dayanıklı taşınır (3D yazıcı, cihaz vb.) niteliğindeki donanımların yarışma sonunda okula/üniversiteye hibe edilmesi (devredilmesi) zorunludur. Yapay zeka bütçe tablosundaki bu tür cihaz alımlarını 'hibe şartı' ile etiketlemelidir."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Hazırlık ve Görev Videosu",
+      "document": "",
+      "format_rules": {
+        "max_pages": 0,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Videonun toplam uzunluğu en fazla 20 dakika olabilir. Uçuş görevi: Serbest Görev'de maks 10 dk, Sabit/Döner'de maks 5 dk. Hazırlık kısmı: Serbest Görev'de maks 10 dk, Sabit/Döner'de maks 15 dk. Video kesinlikle 3 parçaya bölünmüş olmalıdır (hava aracı uçuş videosu, pilot ekranı, otonomi-yer istasyonu). Arka plan müziği olmamalıdır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_hazirlik_ve_bilgilendirme",
+            "name": "Hazırlık / Bilgilendirme Bölümü",
+            "max_score": 50,
+            "description": "Takımın deneyimi, aracın geliştirme aşamaları, malzeme/bütçe kullanımı ve test süreçlerinin hızlandırılmış video kaydı."
+          },
+          {
+            "id": "2_ucus_gorevi_ve_gerceklestirme",
+            "name": "Uçuş Görevi ve Gerçekleştirme",
+            "max_score": 50,
+            "description": "Yarışma alanında yapılacak görevin kesintisiz, kırımsız ve otonom/manuel olarak gerçekleştirildiğini gösteren, pilot komutları ve yer istasyonunu (OSD/telemetri) eş zamanlı gösteren ekran kaydı (kesme/kırpma yapılamaz)."
+          }
+        ]
+      }
+    }
+  ]
+}

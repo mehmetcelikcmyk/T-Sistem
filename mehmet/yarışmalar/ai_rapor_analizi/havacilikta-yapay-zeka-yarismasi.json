@@ -1,0 +1,187 @@
+{
+  "slug": "havacilikta-yapay-zeka-yarismasi",
+  "name": "Havacılıkta Yapay Zeka Yarışması",
+  "specifications": [
+    "2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "havacilikta-yapay-zeka-yarismasi",
+    "kategori_adi": "Havacılıkta Yapay Zeka Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, BAYKAR & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Lise, Ön Lisans, Lisans, Lisansüstü Öğrencileri ve Mezunlar",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 5,
+      "danisman_dahil_mi": false,
+      "alan_ekip_siniri": "Yarışma oturumlarında masada aynı anda en fazla 3 yarışmacı yer alabilir (Danışman varsa 2 öğrenci + 1 danışman).",
+      "bireysel_basvuru": false,
+      "kural_detayi": "Yarışmaya takım olarak başvuru yapılır (bireysel veya takım). Raporlarda ve takım şemalarında isim/soyisim gibi kişisel bilgilere yer verilemez (Anonimlik esastır: Kaptan, Üye 1 vb.)."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Her takım için en fazla 1 danışman yer alabilir (İsteğe Bağlı).",
+      "limit": "Danışman yarışma alanında en fazla 3 kişilik masa kontenjanından 1 kişi olarak yer alabilir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "yarisma_gorevleri": {
+      "gorev_1": "Nesne Tespiti (Taşıt [hareketli/hareketsiz], İnsan, UAP [inişe uygun/değil], UAİ [inişe uygun/değil]) - mAP metriği (IoU >= 0.50)",
+      "gorev_2": "Pozisyon Kestirimi (Zamana bağlı 3D koordinat [X, Y, Z] ortalama hata formülü)",
+      "gorev_3": "Görüntü Eşleştirme (Referans nesnelerin hava aracı görüntülerinde mAP ile tespiti ve eşleştirilmesi)"
+    },
+    "genel_puanlama_dagilimi": {
+      "formul": "Genel Yarışma Puanı = (0.25 * Birinci_Gorev) + (0.40 * Ikinci_Gorev) + (0.25 * Ucuncu_Gorev) + (0.05 * FTR) + (0.05 * Yarisma_Sunumu)",
+      "puan_kalemleri": {
+        "birinci_gorev_yuzdesi": "%25 (Nesne Tespiti)",
+        "ikinci_gorev_yuzdesi": "%40 (Pozisyon Kestirimi)",
+        "ucuncu_gorev_yuzdesi": "%25 (Görüntü Eşleştirme)",
+        "ftr_yuzdesi": "%5 (Final Tasarım Raporu)",
+        "sunum_yuzdesi": "%5 (Teknik Jüri Sunumu - 5 Dakika)"
+      },
+      "otr_durumu": "ÖTR teslimi zorunludur ve çevrimiçi simülasyon eleme barajıdır; ancak nihai genel yarışma puanına katılmaz (%0)."
+    },
+    "teknik_ve_donanim_kurallari": [
+      "Takımlar kendi bilgisayarlarıyla yarışır; bilgisayarlarda kablolu Ethernet girişi bulunması zorunludur.",
+      "Yarışma esnasında sunucu ile yerel ağ üzerinden JSON REST API ile haberleşilir; internet bağlantısı kesinlikle yasaktır.",
+      "Donanım hızı puanlama kriteri değildir; saniyede 1 görüntü karesi işleyebilecek güçte olması yeterlidir."
+    ],
+    "oduller": {
+      "durum_notu": "Teknik şartnamede net para ödülü miktarları belirtilmemiş olup resmi ödül miktarları TEKNOFEST ana duyurusu ve web sitesi üzerinden ilan edilecektir.",
+      "birincilik": "Resmi ödül TEKNOFEST duyurusu ile ilan edilecektir",
+      "ikincilik": "Resmi ödül TEKNOFEST duyurusu ile ilan edilecektir",
+      "ucunculuk": "Resmi ödül TEKNOFEST duyurusu ile ilan edilecektir"
+    },
+    "sartname_dosyasi": "2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf"
+  },
+  "stages": [
+    {
+      "stage": "OTR",
+      "stage_name": "Ön Tasarım Raporu",
+      "weight_in_total": "%0 (Eleme Barajı)",
+      "template": "2026_HYZ_OTR_Sablon_TR_RKgye.docx",
+      "format_rules": {
+        "min_pages": 6,
+        "max_pages": 15,
+        "total_page_limit_description": "Toplam sayfa sayısı en az 6 sayfa, en fazla 15 sayfa olmalıdır. Kapak, İçindekiler, Şekil Listesi, Tablo Listesi ve Kısaltmalar hariç rapor gövdesi 10 sayfayı geçmemelidir.",
+        "font_family": "Arial",
+        "font_size": "12 pt (Başlıklar: Arial Black 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Takım şemasında üyelerin kişisel bilgilerine (İsim, Soyisim vb.) kesinlikle yer verilmemelidir (Kaptan, Üye 1, Üye 2 vb. anonim yazılmalıdır)."
+      },
+      "rubric": {
+        "category_name": "havacilikta-yapay-zeka-yarismasi",
+        "stage": "OTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_mevcut_durum_degerlendirmesi",
+            "name": "1. Proje Mevcut Durum Değerlendirmesi",
+            "max_score": 10.0,
+            "description": "Projenin değerlendirmesi ve şu ana kadar yapılan çalışmaların özeti."
+          },
+          {
+            "id": "2.1_veri_setleri",
+            "name": "2.1. Veri Setleri",
+            "max_score": 10.0,
+            "description": "Kullanılacak veri setlerinin açıklaması, seçim gerekçeleri ve eğitilen model üzerindeki farklılıkları."
+          },
+          {
+            "id": "2.2_algoritmalar",
+            "name": "2.2. Algoritmalar",
+            "max_score": 15.0,
+            "description": "Problemin çözümünde kullanılacak algoritmaların seçilme nedenleri ve mimari farklılıkları."
+          },
+          {
+            "id": "2.3_akis_semasi",
+            "name": "2.3. Akış Şeması",
+            "max_score": 5.0,
+            "description": "Yarışma görevini gerçekleştirmek için geliştirilen tüm sistemin uçtan uca akış şeması."
+          },
+          {
+            "id": "3_ozgunluk",
+            "name": "3. Özgünlük",
+            "max_score": 10.0,
+            "description": "Veri setleri, algoritma ve yazılım mimarisi açısından geliştirilen yöntemlerin özgünlüğü ve literatüre katkısı."
+          },
+          {
+            "id": "4_proje_takvimi",
+            "name": "4. Proje Takvimi",
+            "max_score": 10.0,
+            "description": "Projedeki kilometre taşlarının açıklanması ve tarih planlaması."
+          },
+          {
+            "id": "5_sonuclar_ve_inceleme",
+            "name": "5. Sonuçlar ve İnceleme",
+            "max_score": 30.0,
+            "description": "Geliştirilen sistemin elde edilmiş test sonuçları, performans incelemesi, uygulanan test senaryoları, yaşanan sorunlar, hatalar ve edinilen tecrübeler."
+          },
+          {
+            "id": "6_kaynakca",
+            "name": "6. Kaynakça",
+            "max_score": 5.0,
+            "description": "Raporda kullanılan standart referans formatındaki akademik ve teknik kaynaklar."
+          },
+          {
+            "id": "7_genel_rapor_duzeni",
+            "name": "7. Genel Rapor Düzeni",
+            "max_score": 5.0,
+            "description": "Raporun genel düzeni, anonim takım şeması, şekil/tablo yerleşimi ve yazım kuralları uyumu."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "CEVRIMICI_SIMULASYON",
+      "stage_name": "Çevrimiçi Yarışma Simülasyonu",
+      "weight_in_total": "Eleme Aşaması",
+      "format_rules": {
+        "special_requirements": "ÖTR sonrası takımların uzaktan API ile bağlanarak nesne tespiti ve pozisyon kestirimi gerçekleştirdiği eleme aşaması."
+      }
+    },
+    {
+      "stage": "GOREV_1",
+      "stage_name": "Birinci Görev: Nesne Tespiti",
+      "weight_in_total": "%25",
+      "format_rules": {
+        "metric": "mAP (IoU >= 0.50 eşik değeri)",
+        "special_requirements": "Taşıt (hareketli/hareketsiz: 0/1), İnsan (-1), UAP (iniş durumu: 1/0) ve UAİ (iniş durumu: 1/0) sınıflarının tespiti."
+      }
+    },
+    {
+      "stage": "GOREV_2",
+      "stage_name": "İkinci Görev: Pozisyon Kestirimi",
+      "weight_in_total": "%40",
+      "format_rules": {
+        "metric": "3D Ortalama Öklid Pozisyon Hatası (E formülü)",
+        "special_requirements": "GPS arızası durumunda hava aracının 3 eksendeki (X, Y, Z) yer değiştirmesinin ardışık görüntülerden kestirimi."
+      }
+    },
+    {
+      "stage": "GOREV_3",
+      "stage_name": "Üçüncü Görev: Görüntü Eşleştirme (Referans Obje Tespiti)",
+      "weight_in_total": "%25",
+      "format_rules": {
+        "metric": "mAP Metriği",
+        "special_requirements": "Görev başlangıcında paylaşılan referans nesnelerin hava aracı görüntülerinde tespiti ve eşleştirilmesi."
+      }
+    },
+    {
+      "stage": "FTR",
+      "stage_name": "Final Tasarım Raporu",
+      "weight_in_total": "%5",
+      "format_rules": {
+        "special_requirements": "Literatür çalışmaları, kullanılan algoritmalar, yapılan testler ve teknik analizleri içeren final raporu."
+      }
+    },
+    {
+      "stage": "TEKNIK_SUNUM",
+      "stage_name": "Teknik Yarışma Sunumu",
+      "weight_in_total": "%5",
+      "format_rules": {
+        "duration": "Maksimum 5 dakika",
+        "special_requirements": "Yarışma alanında 3 kişilik hakem heyetine iletişim sorumlusu tarafından yapılan teknik sunum."
+      }
+    }
+  ]
+}

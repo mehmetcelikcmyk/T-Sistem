@@ -1,0 +1,186 @@
+{
+  "slug": "saglikta-yapay-zeka-yarismasi",
+  "name": "TEKNOFEST Sağlıkta Yapay Zeka Yarışması",
+  "specifications": [
+    "2026-_Sağlıkta_Yapay_Zeka_Türkçe_Şartname.pdf",
+    "2026_Sağlıkta_Yapay_Zeka_PSR_Lise.docx",
+    "2026_Sağlıkta_Yapay_Zeka_PSR_Universite.docx",
+    "2026_Sağlıkta_Yapay_Zeka_PDR_Lise.docx",
+    "2026_Sağlıkta_Yapay_Zeka_PDR_Universite.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "saglikta-yapay-zeka",
+    "kategori_adi": "Sağlıkta Yapay Zeka Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Üniversite ve Üzeri (Lisans, YL, Doktora vb.)",
+    "takim_uye_sayisi": {
+      "min": 2,
+      "max": 5
+    },
+    "danisman_sarti": "Lise seviyesi için en az 1 danışman ZORUNLU. Üniversite ve Üzeri için isteğe bağlı. Danışman takım üyesi olarak eklenemez, eser sahibi veya fikir üreticisi olamaz. Final aşamasında danışmanların takımlarla alanda bulunması beklenir.",
+    "keywords": [
+      "Sağlık",
+      "Yapay Zeka",
+      "EKG",
+      "PhysioNet",
+      "Kardiyoloji",
+      "Genetik",
+      "Varyant",
+      "Patojenik",
+      "Benign",
+      "ACMG",
+      "Sınıflandırma",
+      "Macro F1",
+      "MCC",
+      "Gizlilik Taahhütnamesi"
+    ],
+    "oncelikli_gorevler": [
+      "Lise Seviyesi (1. Aşama): 12 derivasyonlu EKG sinyallerinden Ritim Bozuklukları, İletim Bozuklukları ve Normal durumlarını (Macro F1 skoru ile) sınıflandırmak.",
+      "Lise Seviyesi (2. Aşama): Ritim (AFIB, AFL, AT, SVT, APB, VPB vb.) ve İletim (LBBB, RBBB, AV blok tipleri) alt gruplarının ince detaylı sınıflandırılması.",
+      "Üniversite Seviyesi: Missense genetik varyantları Patojenik veya Benign olarak sınıflandırmak. (Kromozom ve pozisyon gizli; AL_, AA_, EK_, CAT_ özellikleri üzerinden)."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Rapor Sayfa Limiti: Kapak ve İçindekiler hariç EN FAZLA 10 SAYFA olmalıdır. 10 sayfayı geçen (11. sayfa) raporlar DOĞRUDAN DEĞERLENDİRME DIŞI bırakılır.",
+      "Rapor Formatı: Yazı tipi Aptos 12 Punto, Başlıklar Aptos 14 Punto, Satır Aralığı 1.15, İki tarafa yaslı, Kenar boşlukları (Üst 2.8cm, Alt-Sağ-Sol 2.5cm) olmalıdır.",
+      "Referans Formatı: Kaynakça ve metin içi atıflar KESİNLİKLE IEEE formatında olmalıdır (örn. [1]).",
+      "Genomik Adres Gizliliği ve Tersine Mühendislik (Üniv): Dış veri kaynaklarından (ClinVar vb.) etiketlerin doğrudan bulunmasını engellemek için genomik adresler (kromozom/pozisyon) kasıtlı olarak gizlenmiştir.",
+      "Klinik Stres Testi / Asimetrik Veri (Üniv): Eğitim setinde patojenik varyantlar ağırlıkta iken, test setinde benign varyantların baskın olduğu asimetrik (dengesiz) yapı kurulmuştur.",
+      "Panel Bazlı Değerlendirme ve Metrikler (Üniv): Başarılar yalnızca genel veri kümesi üzerinde değil; MASTER, Kalıtsal Kanser, PAH ve CFTR panelleri bazında ayrı ayrı raporlanmalı; F1 Skoru, MCC, ROC-AUC ve PR-AUC ölçütleri zorunlu olarak verilmelidir.",
+      "Gizlilik ve Etik Kısıt: Katılımcıların verileri kullanabilmesi için 'Kurumsal Gizlilik Taahhütnamesi' imzalaması zorunludur. Modeller klinik tanı aracı olarak ASLA kullanılamaz.",
+      "Ön Elemelerin Puan Etkisizliği: PSR ve PDR rapor puanları SADECE eleme amaçlıdır, final başarı puanına ETKİ ETMEZ. Lise için nihai puan %90 görev performansı + %10 sunumdur.",
+      "İtiraz Sınırı: Rapor sonuçlarına itirazlar YALNIZCA PSR/PDR baraj puanının en fazla 15 puan altında kalan takımlar tarafından yapılabilir; 15 puandan fazla altında kalanların itiraz hakkı YOKTUR.",
+      "Finalist Ulaşım Kısıtı: Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği takım başına EN FAZLA 3 KİŞİ (danışman dahil) ile sınırlıdır."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "PSR_PDR_Lise",
+      "template": "Lise_Raporlari",
+      "rubric": {
+        "category_name": "saglikta-yapay-zeka",
+        "stage": "PSR_PDR_Lise",
+        "description": "Lise Seviyesi EKG Sınıflandırma Rapor Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "literatur_ozeti",
+            "name": "Probleme En Yakın Çözüm Sunan Uluslararası Makalelerin Özeti",
+            "max_score": 10.0,
+            "description": "En az 5-10 uluslararası EKG/sınıflandırma makalesinin özeti, yöntemi, sınırlılıkları ve model tasarımına yansıyan 2-3 karar.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Rapor IEEE formatında 5-10 uluslararası akademik çalışma içeriyor mu? Kendi tasarımlarına entegre ettikleri 2-3 tasarım kararı net biçimde yazılmış mı?"
+            ]
+          },
+          {
+            "id": "veri_ve_yontem_lise",
+            "name": "Veri ve Yöntem",
+            "max_score": 20.0,
+            "description": "Kullanılan Veri Seti (5), Etiket Güvenilirliği (5), Veri Dengesizliği (5), Veri Bölme (5).",
+            "guiding_questions": [
+              "PhysioNet EKG veri setinin kullanımı, çapraz doğrulama/veri bölme stratejisi (stratified vb.) ve sınıf dengesizliğine karşı alınan önlemler net mi?"
+            ]
+          },
+          {
+            "id": "deney_ve_sonuclar_lise",
+            "name": "Deney Tasarımı, Sonuçlar ve İnceleme",
+            "max_score": 20.0,
+            "description": "Sinyal/Zaman seçimi (5), Performans Metrikleri/Macro F1 (5), Açıklanabilirlik (5), Yanlış Sınıflanan Örnekler (5).",
+            "guiding_questions": [
+              "Pencere uzunluğu ve ön işleme adımları açıklanmış mı? Karışıklık matrisi, Macro F1 sonuçları ve en az bir AÇIKLANABİLİRLİK yöntemi (Attention, Saliency, Grad-CAM vb.) ile vaka (hata) analizi sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "yaklasim_ve_gerekce_lise",
+            "name": "Yaklaşımın Gerekçesi, Teknik Evrim ve Kaynak Kullanımı",
+            "max_score": 40.0,
+            "description": "Neden bu mimari (8), Alternatifler neden elendi (8), Parametre seçimi (8), Teknik evrim (8), Kaynaklar/Çalıştırılabilirlik (8).",
+            "guiding_questions": [
+              "Seçilen mimarinin (örn. CNN, RNN, Transformer) neden en iyi olduğu ve elenen alternatifler açıklanmış mı? Eğitim hiperparametreleri (learning rate, epoch) ve kullanılan donanım/hesaplama süreleri detaylandırılmış mı?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "Genel Rapor Düzeni",
+            "max_score": 10.0,
+            "description": "10 sayfa limiti, Aptos 12, İçindekiler, IEEE Referanslar.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Rapor Kapak ve İçindekiler hariç 10 sayfayı geçiyor mu? Geçiyorsa DEĞERLENDİRMEYE ALMAYIN. Font Aptos 12, satır aralığı 1.15, iki yana yaslı mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "takim_semasi_regex": "(?i)(TAKIM ŞEMASI|Takım Şeması)",
+          "literatur_regex": "(?i)(ULUSLARARASI MAKALELERİN ÖZETİ|Makalelerin Özeti|Literatür)",
+          "veri_ve_yontem_regex": "(?i)(VERİ VE YÖNTEM|Veri ve Yöntem)",
+          "deney_tasarimi_regex": "(?i)(DENEY TASARIMI, SONUÇLAR VE İNCELEME|Deney Tasarımı)",
+          "yaklasim_gerekcesi_regex": "(?i)(YAKLAŞIMIN GEREKÇESİ|Yaklaşımın Gerekçesi)",
+          "referanslar_regex": "(?i)(REFERANSLAR|KAYNAKÇA|Referanslar)"
+        },
+        "max_pages": 10
+      }
+    },
+    {
+      "stage": "PSR_PDR_Universite",
+      "template": "Universite_Raporlari",
+      "rubric": {
+        "category_name": "saglikta-yapay-zeka",
+        "stage": "PSR_PDR_Universite",
+        "description": "Üniversite Seviyesi Varyant Sınıflandırma Rapor Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "literatur_ozeti_univ",
+            "name": "Probleme En Yakın Çözüm Sunan Uluslararası Makalelerin Özeti",
+            "max_score": 10.0,
+            "description": "5-10 missense varyant/patojenite tahmini çalışması özeti. IEEE referans stili.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: ClinVar/gnomAD tabanlı benzer genetik/patojenite tahmin çalışmaları incelenmiş ve kendi yaklaşımlarıyla ilişkilendirilmiş mi?"
+            ]
+          },
+          {
+            "id": "veri_ve_yontem_univ",
+            "name": "Veri ve Yöntem",
+            "max_score": 30.0,
+            "description": "Veri Seti (5), Etikete Erişim Kısıtları (5), Ön İşleme (5), Kalite Kontrol (5), Sınıf Dengesi/Risk (5), Algoritma (5).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Yarışmacı genomik adres gizliliğine uyduğunu ve etiketleri dış kaynaklardan (tersine mühendislikle) çekmediğini beyan etmiş mi? Klinik Stres Testi (Asimetrik Eğitim-Test) ve AL_, AA_, EK_, CAT_ özellikleri nasıl işlenmiş?"
+            ]
+          },
+          {
+            "id": "deney_ve_sonuclar_univ",
+            "name": "Deney Tasarımı, Sonuçlar ve İnceleme",
+            "max_score": 25.0,
+            "description": "Deney Protokolü (5), Panel Bazlı Performans (5), Hata Analizi (5), Açıklanabilirlik (5), Teknik Evrim (5).",
+            "guiding_questions": [
+              "Panel bazlı (MASTER, Kalıtsal Kanser, PAH, CFTR) performanslar F1 Skoru, MCC, ROC-AUC ve PR-AUC ölçütleriyle AYRI AYRI raporlanmış mı? Kararın hangi özellik gruplarından etkilendiği gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "yaklasim_ve_gerekce_univ",
+            "name": "Yaklaşımın Gerekçesi, Kaynak Kullanımı ve Özgünlük",
+            "max_score": 25.0,
+            "description": "Neden bu algoritma (5), Alternatif elenmesi (5), Parametre ayarları (5), Hesaplama Kaynakları (5), Özgünlük (5).",
+            "guiding_questions": [
+              "Algoritmanın asimetrik veri yapısına karşı direnci ve donanım limitleri çerçevesindeki uygulanabilirliği/maliyeti açıklanmış mı?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "Genel Rapor Düzeni",
+            "max_score": 10.0,
+            "description": "10 sayfa limiti, Aptos 12, İçindekiler, IEEE Referanslar.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Rapor Kapak ve İçindekiler hariç 10 sayfayı geçiyor mu? Geçiyorsa DEĞERLENDİRMEYE ALMAYIN. Font Aptos 12, satır aralığı 1.15, iki yana yaslı mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "takim_semasi_regex": "(?i)(TAKIM ŞEMASI|Takım Şeması)",
+          "literatur_regex": "(?i)(ULUSLARARASI MAKALELERİN ÖZETİ|Makalelerin Özeti|Literatür)",
+          "veri_ve_yontem_regex": "(?i)(VERİ VE YÖNTEM|Veri ve Yöntem)",
+          "deney_tasarimi_regex": "(?i)(DENEY TASARIMI, SONUÇLAR VE İNCELEME|Deney Tasarımı)",
+          "yaklasim_gerekcesi_regex": "(?i)(YAKLAŞIMIN GEREKÇESİ|Yaklaşımın Gerekçesi)",
+          "referanslar_regex": "(?i)(REFERANSLAR|KAYNAKÇA|Referanslar)"
+        },
+        "max_pages": 10
+      }
+    }
+  ]
+}

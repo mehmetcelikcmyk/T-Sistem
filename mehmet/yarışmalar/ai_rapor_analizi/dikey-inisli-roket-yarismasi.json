@@ -1,0 +1,254 @@
+{
+  "slug": "dikey-inisli-roket-yarismasi",
+  "name": "Dikey İnişli Roket Yarışması",
+  "specifications": [
+    "TÜBİTAK_SAGE_Dikey_Inisli_Roket_Yarısması_Sartnamesi_2026_Qu4ap.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "dikey-inisli-roket-yarismasi",
+    "kategori_adi": "Dikey İnişli Roket Yarışması",
+    "yurutucu_kurum": "TÜBİTAK SAGE, T3 Vakfı & TEKNOFEST",
+    "etkinlik_yeri": "Deneme ve Yarışma Atışları: TÜBİTAK SAGE Yerleşkesi (Ankara) / Festival: TEKNOFEST Şanlıurfa",
+    "hedef_egitim_seviyesi": "Ön Lisans / Lisans / Lisansüstü Öğrencileri ve Mezunlar",
+    "takim_kurallari": {
+      "uye_sayisi_min": 4,
+      "uye_sayisi_max": 10,
+      "bireysel_basvuru": false,
+      "zorunlu_disiplinler": [
+        "En az 1 Makine Mühendisliği veya Havacılık/Uzay Mühendisliği öğrencisi (lisans veya lisansüstü)",
+        "En az 1 Elektrik-Elektronik Mühendisliği öğrencisi (lisans veya lisansüstü)"
+      ],
+      "mezun_siniri": "Takımlarda en fazla 1/4 oranında mezun yer alabilir.",
+      "kural_detayi": "Yarışmaya 4-10 kişilik takımlar halinde katılım zorunludur (Bireysel başvuru kabul edilmez). Her yarışmacı yalnızca 1 takımda yer alabilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlarda en az 1, en fazla 2 danışman yer alabilir.",
+      "nitelik_sarti": "İlgili mühendislik alanlarında (Makine, Havacılık/Uzay, Elektrik-Elektronik, Kontrol, Bilgisayar, Endüstri, Mekatronik, Uçak, Enerji Sistemleri) en az Doktora derecesine sahip akademisyen veya en az 10 yıl mesleki tecrübeye sahip mühendis olmalıdır.",
+      "belge": "Görevlendirme belgesi, özgeçmiş, diploma ve danışmanlık taahhütnamesi ÖTR ile birlikte sisteme yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_dagilimi": {
+      "formul": "Nihai Puan = (0.40 * Asama_1_Yarisma_Oncesi) + (0.60 * Asama_2_Yarisma_Asamasi) + Bonus",
+      "asama_1_yarisma_oncesi_yuzde": "%40",
+      "asama_1_kirilimi": {
+        "otr_yuzdesi": "%30",
+        "ktr_yuzdesi": "%40",
+        "ahr_yuzdesi": "%30"
+      },
+      "asama_2_yarisma_asamasi_yuzde": "%60",
+      "asama_2_kirilimi": {
+        "deneme_atislari_performansi": "%30",
+        "yarisma_atisi_performansi": "%70"
+      },
+      "bonus": "Açısal Bozucu Etkili İniş Ek Puanı (+%20 - Yalnızca yumuşak iniş senaryosunu başarıyla tamamlayan takımlara verilir)"
+    },
+    "teknik_ve_arac_isterleri": [
+      "Roket kütlesi basınçlı tüp içerisindeki gaz hariç en fazla 32 kg olmalıdır.",
+      "Roket boyutları en fazla 1.2 m x 1.2 m x 1.2 m ölçülerindeki bir küp içine yerleşecek hacimde olmalıdır.",
+      "Her takım yalnızca TÜBİTAK SAGE tarafından tahsis edilecek 1 adet 9 litrelik basınçlı tüpü kullanmalıdır.",
+      "Yumuşak iniş kriteri: Yere temas hızının 0.2 m/s'den daha düşük olması, hedef alana dik inmesi ve roket bütünlüğünün bozulmaması.",
+      "Roket üzerinde 180 derece aralıkla Takım Adı, Üniversite Adı ve Şehir yazılı olmalıdır."
+    ],
+    "maddi_destekler": {
+      "hazirlik_destegi_toplam": "100.000,00 ₺",
+      "birinci_dilim": "70.000,00 ₺ (KTR aşamasını geçen takımlara)",
+      "ikinci_dilim": "30.000,00 ₺ (AHR aşamasını geçen takımlara)"
+    },
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "300.000,00 ₺",
+        "danisman_odulu": "20.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "250.000,00 ₺",
+        "danisman_odulu": "15.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "200.000,00 ₺",
+        "danisman_odulu": "12.000,00 ₺"
+      }
+    },
+    "sartname_dosyasi": "TÜBİTAK_SAGE_Dikey_Inisli_Roket_Yarısması_Sartnamesi_2026_Qu4ap.pdf"
+  },
+  "stages": [
+    {
+      "stage": "OTR",
+      "stage_name": "Ön Tasarım Raporu",
+      "weight_in_stage1": "%30",
+      "format_rules": {
+        "special_requirements": "Proje planı, bütçe, kontrol listesi, gereksinim karşılama matrisi (Compliance Matrix), 3B CAD çizimi, kütle bütçesi/ağırlık merkezi, temel aviyonik blok diyagramı ve algoritma tanımları."
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu ve Sunuşu",
+      "weight_in_stage1": "%40",
+      "template": "Dikey_İnişli_Roket-Kritik_Tasarım_Raporu_Formatı-2026_V01.1_uGBGj.pptx",
+      "supplementary_template": "Dikey_İnişli_Roket-Kritik_Tasarım_Raporu_Formatı-2026_EkRapor_V02_ezCHz.docx",
+      "format_rules": {
+        "presentation_format": "KTR Sunuşu şablonu PDF formatına çevrilerek KYS'ye yüklenmelidir (pptx/ppt kabul edilmez). Şablondaki yansı başlıkları değiştirilemez. Yazı tipi: Calibri 18 pt (Tablolarda en az 14 pt).",
+        "supplementary_report_format": "KTR Ek Raporu Word formatında teslim edilir. Başlıklar Arial Black 14 pt, metin Arial 12 pt, 1.0 satır aralığı, iki yana yaslı."
+      },
+      "rubric": {
+        "category_name": "dikey-inisli-roket-yarismasi",
+        "stage": "KTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_genel_tasarim",
+            "name": "1. Genel Tasarım",
+            "max_score": 4.0,
+            "description": "Yarışma roketi 3B CAD genel görünümü, patlatılmış montaj görselleri, fiziksel boyutlar ve ÖTR sonrası güncellemeler."
+          },
+          {
+            "id": "2_pnomatik_sistem_tasarimi",
+            "name": "2. Pnömatik Sistem Tasarımı",
+            "max_score": 30.0,
+            "description": "Pnömatik devre şeması, borulama ve manifoldlar, tank dolum arayüzü CAD tasarımı, tank basıncı-zaman grafikleri, lüle analizleri ve CFD akış analizleri."
+          },
+          {
+            "id": "3_mekanik_yapi_ve_gudum_kontrol",
+            "name": "3. Mekanik Yapı Görünümü ve Güdüm Kontrol Sisteminin Görünümü",
+            "max_score": 15.0,
+            "description": "Mekanik yapı 3B CAD yerleşimi, tank montaj stratejisi ve eyleyicilerin montaj/bağlantı detayları."
+          },
+          {
+            "id": "4_inis_takimi",
+            "name": "4. İniş Takımı",
+            "max_score": 4.0,
+            "description": "İniş takımı mekanik görünümü, sönümleme yapısı, kinematik tasarımı ve detay hesapları."
+          },
+          {
+            "id": "5_yapisal_analizler_ve_testler",
+            "name": "5. Yapısal Analizler ve Testler",
+            "max_score": 5.0,
+            "description": "Gövde ve kritik bileşenlerin sonlu elemanlar (FEA) yapısal dayanım analizleri ve test sonuçları."
+          },
+          {
+            "id": "6_butunlesik_sistemin_3b_gorunumu",
+            "name": "6. Bütünleşik Sistemin 3B Görünümü",
+            "max_score": 3.0,
+            "description": "Roket bütünleştirme stratejisi ve eksiksiz bütünleşik sistem montaj görseli."
+          },
+          {
+            "id": "7_6dof_ucus_benzetimi",
+            "name": "7. 6 Serbestlik Dereceli Uçuş Benzetimi (6-DoF)",
+            "max_score": 10.0,
+            "description": "6 Serbestlik Dereceli dinamik/kinematik matematiksel modelleme, uçuş profili simülasyonları ve yörünge kestirimleri."
+          },
+          {
+            "id": "8_gudum_kontrol_sistemi",
+            "name": "8. Güdüm Kontrol Sistemi",
+            "max_score": 10.0,
+            "description": "Güdüm algoritmaları, otopilot mimarisi, kontrolcü kazançları (PID, LQR vb.) ve tepki analizleri."
+          },
+          {
+            "id": "9_aviyonik_sistem",
+            "name": "9. Aviyonik Sistem",
+            "max_score": 7.0,
+            "description": "Uçuş bilgisayarı tasarımı/seçimi, sensör yerleşimi, veri filtreleme (Kalman vb.) ve serbest düşüş güvenli ayrılma tetikleme arayüzü."
+          },
+          {
+            "id": "10_kutle_butcesi",
+            "name": "10. Kütle Bütçesi",
+            "max_score": 3.0,
+            "description": "Ürün ağacı tabanlı detaylı kütle bütçesi (maksimum 32 kg sınırı) ve ağırlık merkezi hesabı."
+          },
+          {
+            "id": "11_hata_turleri_ve_etkileri_analizi",
+            "name": "11. Hata Türleri ve Etkileri Analizi (HTEA / FMEA)",
+            "max_score": 5.0,
+            "description": "Sistem ömür evrelerine göre Şiddet Puanı (S) hesaplı HTEA tablosu ve alınan önleyici/düzeltici tasarım tedbirleri."
+          },
+          {
+            "id": "12_proje_takvimi_ve_butcesi",
+            "name": "12. Proje Takvimi ve Bütçesi",
+            "max_score": 4.0,
+            "description": "Detaylı proje iş-zaman planı, malzeme/hizmet maliyet bütçesi tablosu."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "AHR",
+      "stage_name": "Atışa Hazırlık Raporu ve Çevrimiçi Sunum",
+      "weight_in_stage1": "%30",
+      "template": "Dikey_İnişli_Roket-Atışa_Hazırlık_Raporu_Formatı-2026_V01_JRjVs.pptx",
+      "format_rules": {
+        "presentation_format": "29 slaytlık resmi AHR şablonu üzerinden çevrimiçi jüriye sunum gerçekleştirilir. Tüm üyelerin katılımı zorunludur."
+      },
+      "rubric": {
+        "category_name": "dikey-inisli-roket-yarismasi",
+        "stage": "AHR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_operasyon_konsepti",
+            "name": "1. Operasyon Konsepti",
+            "max_score": 15.0,
+            "description": "Atış öncesi süreç tablosu, operasyon süreç tablosu, iniş sonrası süreç tablosu, yedek parça envanteri tablosu, görev dağılımı tablosu."
+          },
+          {
+            "id": "2_pnomatik_devre_semasi",
+            "name": "2. Pnömatik Devre Şeması",
+            "max_score": 2.0,
+            "description": "İmal edilmiş ve test edilmiş güncel nihai pnömatik devre şeması."
+          },
+          {
+            "id": "3_pnomatik_sistem_urun_agaci",
+            "name": "3. Pnömatik Sistem Ürün Ağacı Tablosu",
+            "max_score": 3.0,
+            "description": "Kullanılan pnömatik elemanlar, bağlantı parçaları ve ürün ağacı listesi."
+          },
+          {
+            "id": "4_sizdirmazlik_testi",
+            "name": "4. Sızdırmazlık Testi",
+            "max_score": 7.0,
+            "description": "Basınçlı tüp ve pnömatik devrenin basınç altında sızdırmazlık test sonuçları ve görsel kanıtları."
+          },
+          {
+            "id": "5_ana_itki_islevsellik_testi",
+            "name": "5. Ana İtki İşlevsellik Testi",
+            "max_score": 7.0,
+            "description": "Ana soğuk gaz itki lülelerinin basınçlı akış ve itki üretme işlevsellik testleri."
+          },
+          {
+            "id": "6_ikincil_sistem_islevsellik_testleri",
+            "name": "6. İkincil Sistem İşlevsellik Testleri",
+            "max_score": 7.0,
+            "description": "Yönlendirme lüleleri, eyleyiciler ve ikincil kontrol mekanizmalarının işlevsellik testleri."
+          },
+          {
+            "id": "7_tasarim_fonksiyonellik_testi",
+            "name": "7. Tasarım Fonksiyonellik Testi",
+            "max_score": 9.0,
+            "description": "Tüm alt sistemlerin bütünleşik fonksiyonellik testleri."
+          },
+          {
+            "id": "8_yapisal_butunluk_testi",
+            "name": "8. Yapısal Bütünlük Testi",
+            "max_score": 25.0,
+            "description": "Gövde ve iniş takımı darbe/dayanım ve mekanik bütünlük fiziki test sonuçları."
+          },
+          {
+            "id": "9_gudum_navigasyon_kontrol_ve_aviyonik",
+            "name": "9. Güdüm Navigasyon Kontrol ve Aviyonik Testleri",
+            "max_score": 25.0,
+            "description": "Donanım-içinde-çevrim (HIL) testleri, aviyonik veri toplama, filtreleme, tetikleme ve otopilot döngü testleri."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "DENEME_VE_YARISMA_ATISLARI",
+      "stage_name": "Deneme Atışları ve Yarışma Performansı",
+      "weight_in_total": "%60",
+      "format_rules": {
+        "deneme_atislari_orani": "%30",
+        "yarisma_atisi_orani": "%70",
+        "bonus_puani": "+%20",
+        "special_requirements": "TÜBİTAK SAGE kampüsünde vinçten bırakılarak gerçekleştirilen serbest düşüş ve soğuk gaz kontrollü dikey iniş denemesi. İlk denemede başarı tam puan, sonraki her hak için %30 kesinti."
+      }
+    }
+  ]
+}

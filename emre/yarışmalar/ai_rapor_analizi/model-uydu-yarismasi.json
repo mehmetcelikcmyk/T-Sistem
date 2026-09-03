@@ -1,0 +1,117 @@
+{
+  "slug": "model-uydu-yarismasi",
+  "name": "TEKNOFEST TÜRKSAT Model Uydu Yarışması",
+  "specifications": [
+    "2026_Model_Uydu_Yarışması_Şartnamesi_xu1ZC.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "model-uydu-yarismasi",
+    "kategori_adi": "Model Uydu Yarışması",
+    "hedef_egitim_seviyesi": "Üniversite (Ön lisans, Lisans, YL) ve Lisansüstü takımları",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 10
+    },
+    "danisman_sarti": "Danışman (Dr. Öğr. Üyesi / Doç. Dr. / Prof. Dr.) eklenebilir, zorunlu değildir.",
+    "dil_gereksinimi": "Türkçe (Teknik terminoloji İngilizce kalabilir)",
+    "keywords": [
+      "model uydu",
+      "cansat",
+      "türksat",
+      "telemetri",
+      "pdr",
+      "cdr",
+      "qr",
+      "iniş hızı",
+      "sigma sistemi",
+      "taşıyıcı",
+      "görev yükü",
+      "sensör füzyonu"
+    ],
+    "oncelikli_gorevler": [
+      "Bir uzay/uydu projesinin gerçeğe en yakın küçük ölçekli (Model Uydu) sistem mühendisliği tasarımını yapmak.",
+      "Roket/Drone ile yaklaşık 1000 metre irtifaya çıkarılacak uydunun sensör, ayrılma ve telemetri görevlerini başarmak."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Kütle Sınırı (Kritik): Model uydunun ağırlığı tam olarak 1800 +/- 90 gr (1710 gr - 1890 gr) aralığında olmak ZORUNDADIR. Dışına çıkan kütle tasarımları doğrudan hata olarak işaretlenmelidir.",
+      "İniş Hızı - Aşama 1 (Kritik): 1000 metre irtifada taşıyıcı+görev yükü beraberken pasif iniş sistemi ile 12-14 m/s hız aralığında inmelidir.",
+      "İniş Hızı - Aşama 2 (Kritik): Ayrılmadan sonra Görev Yükü, Sigma Sistemi ile 8-10 m/s hızla yere inmelidir. Acil durum/hovering hızları 0-1 m/s olabilir.",
+      "Telemetri Sıklığı: Görev yükü tüm uçuş süresince yer istasyonuna 'saniyede 1 kez (1 Hz)' telemetri paketi göndermek zorundadır.",
+      "Titreşim ve Şok Sınırı: Model uydu tasarımı roket içerisindeki yüksek şoka (10G) ve 150-200 Hz titreşime dayanıklı olmalı, raporun mekanik bölümünde bu test/simülasyon gösterilmelidir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Sistem Mimarisinin 2 Aşamalı Ayrılması: Tasarımın 'Taşıyıcı' ve 'Görev Yükü' (Sigma Sistemi dahil) olarak 2 modülden oluştuğunun teyidi.",
+      "Grafiksel Veri İzleme: Telemetri verilerinin yer istasyonu yazılımı arayüzünde (GUI) gerçek zamanlı grafiklere (Zaman-İrtifa, Zaman-Hız, Sıcaklık, 3 Eksen GYRO) dökülebileceği doğrulanmalıdır.",
+      "Geri Sayım/Recovery (Kurtarma) Bileşeni: Uydu yere indikten sonra yerinin tespiti için (GPS/Buzzer vb.) kurtarma mekanizmalarının varlığı."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "PDR (Ön Tasarım) ve CDR (Kritik Tasarım) evrelerinde sistem mühendisliği standartlarına uygun bütçe, risk yönetimi ve donanım testlerinin eksiksiz projelendirilmesi."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Tasarim_Raporlari_PDR_CDR",
+      "template": "ModelUydu_Evrensel_Sablon",
+      "rubric": {
+        "category_name": "model-uydu-yarismasi",
+        "stage": "Tasarim_Raporlari_PDR_CDR",
+        "description": "Model Uydu Ön ve Kritik Tasarım Raporları Evrensel Rubriği (AI değerlendirmesinde 100 tam puan üzerinden normalize edilmiştir).",
+        "criteria": [
+          {
+            "id": "sistem_muhendisligi",
+            "name": "Sistem Mühendisliği ve Proje Planı",
+            "max_score": 15.0,
+            "description": "Görev dağılımı, zaman/bütçe planı, risk analiz matrisi (PDR/CDR beklentileri).",
+            "guiding_questions": [
+              "Risk matrisi yapılmış mı? Bütçe, zaman çizelgesi ve görev dağılımları profesyonel bir uzay projesi gibi planlanmış mı?"
+            ]
+          },
+          {
+            "id": "mekanik_tasarim",
+            "name": "Mekanik Sistem ve Ayrılma Tasarımı",
+            "max_score": 25.0,
+            "description": "Boyut/Kütle bütçesi (1800+/-90g), yapısal tasarım, ayırıcı mekanizma ve 10G/200Hz dayanım simülasyonları.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Kütle (1800 +/- 90 gr) sınırına uyulmuş mu? Statik ve titreşim simülasyon analizleri raporda gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "inis_ve_parasut",
+            "name": "İniş Sistemi ve Paraşüt",
+            "max_score": 20.0,
+            "description": "Pasif iniş sistemi (12-14 m/s) ve Sigma Sistemi (8-10 m/s) iniş profillerinin akışkanlar/aerodinamik doğrulaması.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Paraşüt alan hesaplamaları 12-14 m/s (taşıyıcı) ve 8-10 m/s (görev yükü) kurallarını kanıtlayacak şekilde formülize edilmiş mi?"
+            ]
+          },
+          {
+            "id": "elektronik_tasarim",
+            "name": "Elektronik ve Sensör Mimarisi",
+            "max_score": 20.0,
+            "description": "Güç bütçesi, kablolama (harness), 3 Eksen GYRO, GPS ve batarya sistemleri.",
+            "guiding_questions": [
+              "Güç bütçesi tablosu var mı? Sensörlerin yerleşimi ve 1 Hz frekansta telemetri çekme yeteneği blok diyagramlarla kanıtlanmış mı?"
+            ]
+          },
+          {
+            "id": "yer_istasyonu_yazilim",
+            "name": "Yer İstasyonu ve Uçuş Yazılımı",
+            "max_score": 20.0,
+            "description": "Telemetri veri pakedi mimarisi, gerçek zamanlı grafik arayüzü ve kurtarma algoritması.",
+            "guiding_questions": [
+              "Uçuş yazılımının algoritma akış şeması verilmiş mi? Yer istasyonunda verilerin (Zaman, GYRO, Hız) nasıl grafikleştirileceği UI tasarımıyla gösterilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "sistem_muhendisligi": "Sistem Mühendisliği ve Yönetimi",
+          "mekanik": "Mekanik Tasarım ve Simülasyon",
+          "inis_sistemi": "İniş ve Ayrılma Sistemi Tasarımı",
+          "elektronik": "Elektronik Sistem Tasarımı",
+          "yazilim": "Yazılım ve Yer İstasyonu Arayüzü"
+        },
+        "max_pages": 150
+      }
+    }
+  ]
+}

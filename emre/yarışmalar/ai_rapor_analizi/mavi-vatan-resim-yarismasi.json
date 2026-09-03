@@ -1,0 +1,95 @@
+{
+  "slug": "mavi-vatan-resim-yarismasi",
+  "name": "TEKNOFEST Mavi Vatan Resim Yarışması",
+  "specifications": [
+    "2026_Mavi_Vatan_Resim_Şartnamesi_V2_xMI7u.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "mavi-vatan-resim-yarismasi",
+    "kategori_adi": "Mavi Vatan Resim Yarışması",
+    "hedef_egitim_seviyesi": "İlkokul ve Ortaokul Öğrencileri",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 1
+    },
+    "danisman_sarti": "Katılım TAMAMEN BİREYSELDİR. Takım başvuruları kabul edilmez.",
+    "dil_gereksinimi": "Türkçe",
+    "keywords": [
+      "mavi vatan",
+      "resim",
+      "denizcilik kültürü",
+      "nsosyal",
+      "ilkokul",
+      "ortaokul",
+      "sulu boya",
+      "pastel boya",
+      "akrilik boya",
+      "tuval",
+      "dijital sanat yasağı"
+    ],
+    "oncelikli_gorevler": [
+      "Türkiye'nin deniz yetki alanları, donanması ve denizcilik vizyonunu (Mavi Vatan) fiziksel resim sanatıyla ifade etmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Dijital Çizim Yasağı (Kritik - Pass/Fail): Eserler dijital ortamda (tablet, grafik tablet, bilgisayar vb.) çizilmiş OLMAMALIDIR. Yapay zeka veya Procreate gibi çizim araçları KESİNLİKLE yasaktır. Sadece sulu boya, pastel, akrilik vb. fiziksel teknikler kullanılmalıdır.",
+      "İmza Kuralı (Kritik): Eserin ÖN SAĞ ALT KÖŞESİNE öğrencinin Adı ve Soyadı mutlak surette yazılmış olmalıdır.",
+      "Fotoğraf ve Başvuru Kuralı: Sisteme bir belge değil, 2 adet JPEG/PNG fotoğraf yüklenir: (1) Sadece resmin yüksek çözünürlüklü karesi, (2) Öğrencinin resmi elinde tuttuğu kare.",
+      "NSosyal Paylaşım Zorunluluğu: Resim, Türkiye'nin yerli sosyal medyası NSosyal'de '#TEKNOFESTMaviVatanYarsmas' etiketiyle paylaşılmak ve linki iletilmek zorundadır. Paylaşım yoksa eser değerlendirmeye alınmaz.",
+      "İtiraz Yasağı: Sanatsal değerlendirme olduğu için bu yarışmada itiraz hakkı kesinlikle YOKTUR."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Tema Uygunluğu Teyidi (Vision AI): Yüklenen fotoğrafın Mavi Vatan (Denizaltı, Türk donanması, deniz yetki alanları, TCG Anadolu vb.) temasını içerip içermediğinin görsel olarak teyit edilmesi.",
+      "Fiziksel Eser Teyidi (Vision AI): Görselin bir yapay zeka (Midjourney, DALL-E vs.) sentetik çıktısı veya düz bir dijital çizim olmadığının, fiziksel bir kâğıt/tuval üzerinde fırça/kalem darbeleriyle yapıldığının teyidi."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "İlkokul veya ortaokul yaş grubunun pedagojik gelişimine uygun düzeyde bir sanatsal vizyon sunulması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Eser_Teslimi",
+      "template": "Gorsel_Yukleme",
+      "rubric": {
+        "category_name": "mavi-vatan-resim-yarismasi",
+        "stage": "Eser_Teslimi",
+        "description": "Mavi Vatan Resim Yarışması Jüri Görsel Değerlendirme Rubriği (Şartnamedeki 3 ana kriter 100 tam puan üzerinden dengelenmiştir).",
+        "criteria": [
+          {
+            "id": "tema_ve_mesaj_uyumu",
+            "name": "Tema ve Mesaj Uyumu",
+            "max_score": 40.0,
+            "description": "Eserin Mavi Vatan (Denizcilik, egemenlik, milli güvenlik vizyonu) temasını yansıtma gücü.",
+            "guiding_questions": [
+              "Görselde denizcilik, Türk donanması veya Mavi Vatan'ı destekleyen semboller etkili kullanılmış mı?",
+              "HAKEM KONTROLÜ: Eserin ön sağ alt köşesinde öğrencinin Adı-Soyadı fiziksel olarak yazılmış mı? (Yoksa puan kırın)."
+            ]
+          },
+          {
+            "id": "hayal_gucu",
+            "name": "Hayal Gücü",
+            "max_score": 30.0,
+            "description": "İlkokul veya ortaokul düzeyindeki öğrencinin duygu ve vizyonunu renklerle yansıtması.",
+            "guiding_questions": [
+              "Eserde öğrencinin yaşına uygun, sınırları zorlayan zengin bir hayal gücü ve duygusal ifade yer alıyor mu?"
+            ]
+          },
+          {
+            "id": "ozgunluk",
+            "name": "Özgünlük",
+            "max_score": 30.0,
+            "description": "Eserin kopya olmayan, dijital araçlardan (AI/Tablet) uzak tamamen fiziksel ve benzersiz kompozisyonu.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (Pass/Fail): Resim tamamen fiziksel/manuel mi? Dijital bir fırça (Procreate vb.) veya yapay zeka jenerasyonu hissi var mı? Dijitalse doğrudan DİSKALİFİYE EDİN.",
+              "Başka bir bilindik eserin veya stok görselin kopyası mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "resim_karesi": "1. FOTOĞRAF (Sadece Resim)",
+          "ogrenci_karesi": "2. FOTOĞRAF (Öğrenci ve Resim)"
+        },
+        "max_pages": 2
+      }
+    }
+  ]
+}

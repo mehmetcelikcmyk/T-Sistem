@@ -1,0 +1,243 @@
+{
+  "slug": "teknofest-robolig-yarismasi",
+  "name": "TEKNOFEST Robolig Yarışması",
+  "specifications": [
+    "TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf",
+    "TEKNOFEST_2026_robolig_ODR_rapor_şablon_21.02.26v1.0_TR_qYHzY.docx",
+    "TEKNOFEST_2026_robolig_proje_rapor_şablon_K3wkU.docx",
+    "TEKNOFEST_2026_video_kılavuz_TR_robolig_w8lkn.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "teknofest-robolig-yarismasi",
+    "kategori_adi": "TEKNOFEST Robolig Yarışması",
+    "hedef_egitim_seviyesi": "Ortaokul, Lise, Üniversite ve Üzeri",
+    "takim_uye_sayisi": {
+      "min": 2,
+      "max": 5
+    },
+    "danisman_sarti": "Ortaokul ve lise seviyesindeki takımlar, en fazla 1 danışman bulundurmak ZORUNDADIR. Üniversite takımları için zorunluluk yoktur. VİDEO YASAĞI: Projeyi ve aracı anlatan kişi kesinlikle takım danışmanı olamaz.",
+    "keywords": [
+      "Robolig",
+      "Deneyap Kart",
+      "E-Stop",
+      "Acil Durdurma",
+      "Zipline",
+      "Kara Aracı"
+    ],
+    "oncelikli_gorevler": [
+      "Deneyap Kart kullanarak, zorlu arazi koşullarına uygun tekerlekli ve/veya paletli bir kara aracı mimarisinde robot geliştirmek.",
+      "Otonom veya kontrollü sürüş ile belirlenen görevleri (koli taşıma, vana açma, zipline) başarıyla yerine getirmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Fiziksel Ölçüler ve Ağırlık (KRİTİK): Araç, başlangıç alanında maksimum 60x60 cm taban alanına, maksimum 60 cm yüksekliğe (60x60x60) ve en fazla 20 kg ağırlığa sahip olmalıdır.",
+      "Güvenlik Bileşenleri (KRİTİK): Araç üzerinde fiziksel bir Acil Durdurma (E-Stop) butonu, yalıtımlı kablolama ve güvenli pil/güç dağıtım bileşenleri zorunludur ve videoda gösterilmelidir.",
+      "Bütünleşik Prototip Şartı: Ayrı ayrı çalışan modüller KABUL EDİLMEZ. PDR'de beyan edilen (robot kol, zipline, taşıma) tüm mekanizmalar robota tam monte ve entegre çalışır durumda olmalıdır.",
+      "Video Süre Kısıtı (GİYOTİN): Proje Tanıtım Videosu KESİNLİKLE 1.5 dakika ile 3 dakika (01:30 - 03:00) arasında olmalıdır. Bu sınır dışındakiler değerlendirilmez (Başarısız).",
+      "Yürür Aksam Testi: Robotun tekerleklerinin/paletlerinin havada boşta döndüğü sahneler geçersizdir. Araç kendi ağırlığını taşıyarak yerde aktif hareket etmelidir (ileri, geri, sağ, sol dönüşler sözlü/yazılı beyan edilmelidir).",
+      "Video Yükleme Kuralları: YouTube 'Liste Dışı' olarak yüklenmeli ve adı 'Yarisma_Adı_ID_Kategori_Seviye_Takım_Adı' formatında olmalıdır. Danışman sunucu OLA-MAZ.",
+      "Rapor Biçimi ve Sayfa Limitleri: ODR max 7, PDR max 11 sayfa (Kapak, İçindekiler, Kaynakça dahil). İlk 2 sayfa mutlaka Kapak ve İçindekiler olmalıdır. Metin Arial 12pt, Başlıklar Arial Black 14pt, satır aralığı 1.15, kenarlar 2.5 cm.",
+      "Alıntı Kuralı: Geçmiş TEKNOFEST raporlarından yararlanıldıysa: 'Alıntı Cümle' (Yıl, Yarışma Adı, Kategori, Takım Adı) formatı zorunludur."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "Proje_On_Degerlendirme_Raporu_ODR",
+      "template": "ODR_Sablonu",
+      "rubric": {
+        "category_name": "teknofest-robolig-yarismasi",
+        "stage": "Proje_On_Degerlendirme_Raporu_ODR",
+        "description": "Robolig Ön Değerlendirme Raporu",
+        "criteria": [
+          {
+            "id": "proje_ozeti",
+            "name": "Proje Özeti",
+            "max_score": 6.0,
+            "description": "Robotun genel yapısı, görev organizasyonu ve mevcut durum.",
+            "guiding_questions": [
+              "Robotun parkur görevlerini nasıl organize edeceği özetlenmiş mi?"
+            ]
+          },
+          {
+            "id": "takim_semasi",
+            "name": "Takım Şeması",
+            "max_score": 6.0,
+            "description": "Takım görev dağılımı ve organizasyon şeması.",
+            "guiding_questions": [
+              "Takım üyelerinin bilgileri, yetkinlikleri ve görev dağılımı görselleştirilmiş mi?"
+            ]
+          },
+          {
+            "id": "arac_on_tasarimi",
+            "name": "Araç Ön Tasarımı",
+            "max_score": 39.0,
+            "description": "Deneyap(10p), Sistem(8p), Mekanik(7p), Elektronik(7p), Yazılım(7p).",
+            "guiding_questions": [
+              "Tekerlekli/paletli kara aracı mimarisi açıklanmış mı? Deneyap Kart görevi net mi?"
+            ]
+          },
+          {
+            "id": "yontem",
+            "name": "Yöntem",
+            "max_score": 25.0,
+            "description": "Görevleri yerine getirme stratejisi ve risk planları.",
+            "guiding_questions": [
+              "Olası risk durumlarında kurtarma planları mantıklı mı?"
+            ]
+          },
+          {
+            "id": "tahmini_maliyet_ve_zaman",
+            "name": "Tahmini Maliyet ve Zaman Planlaması",
+            "max_score": 12.0,
+            "description": "Bütçe ve zaman tabloları.",
+            "guiding_questions": [
+              "Tablolar iş-zaman akışına uygun mu?"
+            ]
+          },
+          {
+            "id": "kaynakca",
+            "name": "Kaynakça",
+            "max_score": 6.0,
+            "description": "Bilimsel atıf, TEKNOFEST alıntı kuralı.",
+            "guiding_questions": [
+              "Geçmiş rapor alıntısı formatı doğru uygulanmış mı?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "Rapor Düzeni",
+            "max_score": 6.0,
+            "description": "Biçim ve sayfa sınırları uyumluluğu.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Rapor max 7 sayfa mı? İlk iki sayfa Kapak ve İçindekiler mi? Arial 12pt / Arial Black 14pt kurallarına uyulmuş mu?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 1,
+        "max_pages": 7
+      }
+    },
+    {
+      "stage": "Proje_Detay_Raporu_PDR",
+      "template": "PDR_Sablonu",
+      "rubric": {
+        "category_name": "teknofest-robolig-yarismasi",
+        "stage": "Proje_Detay_Raporu_PDR",
+        "description": "Robolig Proje Detay Raporu",
+        "criteria": [
+          {
+            "id": "proje_ozeti",
+            "name": "Proje Özeti",
+            "max_score": 5.0,
+            "description": "Yenilikçi yönler ve test sonuçları.",
+            "guiding_questions": [
+              "Test sonuçları ve araç stratejisi güncellenmiş mi?"
+            ]
+          },
+          {
+            "id": "takim_semasi",
+            "name": "Takım Şeması",
+            "max_score": 5.0,
+            "description": "Ekip dağılımı ve yetkinlikler.",
+            "guiding_questions": [
+              "Takım şeması eksiksiz verilmiş mi?"
+            ]
+          },
+          {
+            "id": "arac_detay_tasarimi",
+            "name": "Araç Detay Tasarımı",
+            "max_score": 55.0,
+            "description": "Deneyap(10p), Sistem(6p), Mekanik(19p), Elektronik+Yazılım(20p).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Robot 60x60 cm taban alanı, 60 cm yükseklik ve max 20kg ağırlık sınırını sağladığını beyan etmiş mi?",
+              "E-Stop (Acil Durdurma) mekanizması ve yalıtımlı kablo altyapısı elektronik/mekanik tasarımda net olarak açıklanmış mı?"
+            ]
+          },
+          {
+            "id": "yontem",
+            "name": "Yöntem",
+            "max_score": 15.0,
+            "description": "Saha görevi çözüm stratejisi.",
+            "guiding_questions": [
+              "Zipline veya görev nesneleri için otonom/kontrollü işleyiş yöntemleri sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "guncel_maliyet_ve_uretim",
+            "name": "Güncel Maliyet ve Üretim Planlaması",
+            "max_score": 10.0,
+            "description": "Nihai bütçe ve iş zaman planı.",
+            "guiding_questions": [
+              "Bütçe limitleri mantıklı oluşturulmuş mu?"
+            ]
+          },
+          {
+            "id": "kaynakca",
+            "name": "Kaynakça",
+            "max_score": 5.0,
+            "description": "Alıntı ve referanslar.",
+            "guiding_questions": [
+              "Belirtilen özel alıntı formatı kullanılmış mı?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "Rapor Düzeni",
+            "max_score": 5.0,
+            "description": "Format ve sayfa sınırları kontrolü.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Rapor max 11 sayfa mı? İlk iki sayfa Kapak ve İçindekiler olarak ayrılmış mı? Biçim kuralları tam mı?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 1,
+        "max_pages": 11
+      }
+    },
+    {
+      "stage": "Proje_Tanitim_Videosu",
+      "template": "Video_Degerlendirme",
+      "rubric": {
+        "category_name": "teknofest-robolig-yarismasi",
+        "stage": "Proje_Tanitim_Videosu",
+        "description": "Robolig Proje Tanıtım Videosu (Başarılı / Başarısız)",
+        "criteria": [
+          {
+            "id": "video_suresi_ve_format",
+            "name": "Video Süresi, Sunucu ve Yükleme Kuralları",
+            "max_score": 0.0,
+            "description": "Giyotin Kuralı: Video 1.5 - 3 dk arasında olmalı ve danışman tarafından SUNULMAMALIDIR.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Video uzunluğu 01:30 - 03:00 dakika aralığında mı? Aksi halde BAŞARISIZ verin.",
+              "Videoyu anlatan kişi öğrenci mi (kaptan/üye)? Danışman anlatıyorsa BAŞARISIZ verin.",
+              "YouTube'a 'Liste Dışı' olarak ve doğru dosya ismiyle mi yüklenmiş?"
+            ]
+          },
+          {
+            "id": "prototip_ve_guvenlik",
+            "name": "Bütünleşik Prototip ve Güvenlik (E-Stop)",
+            "max_score": 0.0,
+            "description": "Fiziksel doğrulama kontrolleri.",
+            "guiding_questions": [
+              "Araçta fiziksel Acil Durdurma (E-Stop) butonu ve güvenli/yalıtımlı kablolama videoda net olarak gösteriliyor mu?",
+              "PDR'de beyan edilen mekanizmalar (Zipline vb.) ayrı parçalar halinde değil, TAM MONTE ve bütünleşik çalışır şekilde gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "yurur_aksam_testi",
+            "name": "Saha Yürüyüş Testi (Ağırlık Taşıma)",
+            "max_score": 0.0,
+            "description": "Robotun mekanik aktarım doğrulaması.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Robotun tekerlek/paletleri havada boşta mı dönüyor? Eğer havadaysa BAŞARISIZ verin. Araç yerde, kendi ağırlığını taşıyarak ileri-geri-sağ-sol hareketleri yapabiliyor mu?"
+            ]
+          }
+        ],
+        "required_sections": {},
+        "min_pages": 0,
+        "max_pages": 0
+      }
+    }
+  ]
+}

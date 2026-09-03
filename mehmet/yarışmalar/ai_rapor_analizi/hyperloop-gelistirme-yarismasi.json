@@ -1,0 +1,197 @@
+{
+  "slug": "hyperloop-gelistirme-yarismasi",
+  "name": "Hyperloop Geliştirme Yarışması",
+  "specifications": [
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_1_TR_V2.5_2lEkO.pdf",
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_2_TR_V1_89EpH.pdf",
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_3_TR_V3_deWa5.pdf",
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_4_TR_V1_z4YQs.pdf",
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_5_TR_V1_OQJqr.pdf",
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_6_TR_V1.2_xhMoF.pdf",
+    "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_9_TR_V1.1_NP9Dl.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "hyperloop-gelistirme-yarismasi",
+    "kategori_adi": "Hyperloop Geliştirme Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, TÜBİTAK RUTE, TCDD & TEKNOFEST",
+    "etkinlik_yeri": "TÜBİTAK RUTE Gebze Yerleşkesi (208 Metrelik Hyperloop Test Tüneli)",
+    "hedef_egitim_seviyesi": "Lisans, Yüksek Lisans, Doktora Öğrencileri ve Mezunlar",
+    "kategoriler": [
+      "Performans Kategorisi",
+      "Teknoloji Gösterim Kategorisi (Levitasyon ve İtki)",
+      "Tanımlı Problem Çözümü Kategorisi"
+    ],
+    "takim_kurallari": {
+      "uye_sayisi_min": 8,
+      "uye_sayisi_max": 50,
+      "danisman_kaptan_dahil": true,
+      "lisans_1_ve_2_sinif_kotasi": "Takım üye sayısının en az %20'si lisans 1. ve 2. sınıf öğrencilerinden oluşmalıdır (Yurt dışı takımlar muaftır).",
+      "alan_kontenjani": {
+        "performans_ve_teknoloji_gosterim": "Yarışma alanına en fazla 15 üye kabul edilir (Alandaki 15 kişinin de %20'si lisans 1-2. sınıf olmalıdır).",
+        "tanimli_problem_cozumu": "Yarışma alanına en fazla 4 üye kabul edilir."
+      },
+      "bireysel_basvuru": false,
+      "kural_detayi": "Takımlar kaptan ve danışman dahil en az 8, en fazla 50 üyeden oluşur. Her takımda 1 danışman bulunması zorunludur."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Her takımda 1 akademik danışman bulunması ZORUNLUDUR.",
+      "odul_hakki": "Danışman ödülü yalnızca Performans Kategorisinde dereceye giren takımların danışmanlarına verilir."
+    },
+    "dil_gereksinimi": "Türkçe veya İngilizce",
+    "genel_puanlama_dagilimi": {
+      "performans_kategorisi": {
+        "formul": "Toplam Performans Puanı = TTR_Puani (Maks 500) + Tunel_Yarisma_Puani (Maks 1000) = 1500 Puan",
+        "ttr_puani_maks": 500.0,
+        "tunel_puani_maks": 1000.0,
+        "tunel_kirilimi": {
+          "itki": "300 Puan",
+          "hiz": "300 Puan (min(⌊Ortalama_Hız * 300 / 60⌋, 300))",
+          "konum": "225 Puan (min(⌊Mesafe * 225 / 186⌋, 225))",
+          "haberlesme": "175 Puan",
+          "guvenlik_bolgesi_cezasi": "186. metreden sonra duran araçlara metre başına -10 puan düşülür."
+        }
+      }
+    },
+    "itiraz_kurali": "TTR değerlendirmesinde belirlenen alt baraj puanının en fazla %10 altında kalan ve üzerindeki takımlar 48 saat içerisinde KYS üzerinden itiraz edebilir.",
+    "oduller": {
+      "performans_kategorisi": {
+        "birincilik": "300.000 ₺ (Danışman: 20.000 ₺)",
+        "ikincilik": "250.000 ₺ (Danışman: 15.000 ₺)",
+        "ucunculuk": "200.000 ₺ (Danışman: 12.000 ₺)"
+      },
+      "teknoloji_gosterim_kategorisi": {
+        "levitasyon_gosterimi_ust_limit": "150.000 ₺",
+        "itki_gosterimi_ust_limit": "150.000 ₺"
+      },
+      "tanimli_problem_cozumu_kategorisi": {
+        "birincilik": "100.000 ₺",
+        "ikincilik": "75.000 ₺",
+        "ucunculuk": "50.000 ₺"
+      },
+      "kurul_ozel_odulu": "25.000 ₺",
+      "birincilik": "300.000,00 ₺ (Performans) / 100.000,00 ₺ (Problem Çözümü) / 150.000,00 ₺ (Teknoloji Gösterim)",
+      "ikincilik": "250.000,00 ₺ (Performans) / 75.000,00 ₺ (Problem Çözümü)",
+      "ucunculuk": "200.000,00 ₺ (Performans) / 50.000,00 ₺ (Problem Çözümü)"
+    },
+    "sartname_dosyalari": [
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_1_TR_V2.5_2lEkO.pdf",
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_2_TR_V1_89EpH.pdf",
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_3_TR_V3_deWa5.pdf",
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_4_TR_V1_z4YQs.pdf",
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_5_TR_V1_OQJqr.pdf",
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_6_TR_V1.2_xhMoF.pdf",
+      "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_9_TR_V1.1_NP9Dl.pdf"
+    ]
+  },
+  "stages": [
+    {
+      "stage": "TTR",
+      "stage_name": "Teknik Tasarım Raporu (Performans Kategorisi)",
+      "weight_in_performance": "500 Puan / 1500 Toplam Puan",
+      "template": "Teknik_Tasarım_Rapor_Sablonu_UAgsr.docx",
+      "format_rules": {
+        "max_pages": 200,
+        "max_file_size_mb": 60,
+        "total_page_limit_description": "Raporun toplam uzunluğu, kapak sayfası, içindekiler, kaynakça ve ekler dahil olmak üzere 200 sayfayı aşmamalıdır.",
+        "font_family": "Arial",
+        "font_size": "11 pt",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+        "file_formats": "Word (.docx) ve PDF (.pdf) formatlarında sisteme yüklenmelidir."
+      },
+      "rubric": {
+        "category_name": "hyperloop-gelistirme-yarismasi",
+        "stage": "TTR",
+        "total_score": 500.0,
+        "criteria": [
+          {
+            "id": "1_kapsul_mekanik_tasarim_ve_analizler",
+            "name": "1. Kapsül Mekanik Tasarım Ve Performans Analizleri",
+            "max_score": 80.0,
+            "description": "Detaylı mekanik tasarım, boyutlar, ağırlık, malzemeler, yapısal/akışkan/ısıl analizler, vakum dayanımı ve üretim aşamaları."
+          },
+          {
+            "id": "2_kapsul_guc_tuketimi_ve_enerji",
+            "name": "2. Kapsül Güç Tüketimi Ve Enerji Kaynakları",
+            "max_score": 40.0,
+            "description": "Batarya paketi fiziksel ve elektriksel özellikleri, batarya yönetim sistemi (BMS), termal yönetim ve fail-safe senaryoları."
+          },
+          {
+            "id": "3_kapsul_itki_ve_stabilite_sistemi",
+            "name": "3. Kapsül İtki Ve Stabilite Sistemi",
+            "max_score": 80.0,
+            "description": "Lineer motor, itki mekanizması, manyetik veya tekerlekli stabilite ve yönlendirme sistemleri."
+          },
+          {
+            "id": "4_kapsul_fren_sistemi",
+            "name": "4. Kapsül Fren Sistemi",
+            "max_score": 50.0,
+            "description": "Fren sistemi mekanik/pnömatik yapısı, acil durum freni, ivme/hız/mesafe-zaman hesaplamaları ve grafikleri."
+          },
+          {
+            "id": "5_kapsul_navigasyon_ve_sensorler",
+            "name": "5. Kapsül Navigasyon Sistemi Ve Sensör Bilgileri",
+            "max_score": 30.0,
+            "description": "Tünel içi konum/hız algılama sensörleri, optik/manyetik şerit okuyucular, IMU ve konum hesaplama algoritmaları."
+          },
+          {
+            "id": "6_haberlesme_ve_goruntu_aktarimi",
+            "name": "6. Haberleşme Ve Görüntü Aktarımı",
+            "max_score": 80.0,
+            "description": "Kapsül ile kontrol istasyonu arasındaki kablosuz veri haberleşmesi, telemetri paketi ve canlı kamera görüntü aktarımı."
+          },
+          {
+            "id": "7_guvenlik_ve_devreye_girme",
+            "name": "7. Kapsül Güvenlik Ekipmanları Ve Devreye Girme Prosedürleri",
+            "max_score": 90.0,
+            "description": "Fail-safe mekanizmaları, acil durdurma devreleri, basınç/sıcaklık emniyeti ve tünel içi acil durum prosedürleri."
+          },
+          {
+            "id": "8_butce_ve_is_plani",
+            "name": "8. Bütçe Ve İş Planı",
+            "max_score": 30.0,
+            "description": "Detaylı bütçe tablosu, iş paketleri takvimi, başarı ölçütleri ve risk matrisi."
+          },
+          {
+            "id": "9_rapor_duzeni",
+            "name": "9. Rapor Düzeni",
+            "max_score": 20.0,
+            "description": "Akademik yazım kuralları, kapak, içindekiler, kısaltmalar, şekil/tablo yerleşimi ve format uyumu."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "TEST_VIDEOSU",
+      "stage_name": "Test Videosu ve Açıklama Belgesi",
+      "format_rules": {
+        "special_requirements": "Kapsülün hareket, itki ve fren sistemlerinin test edildiğini gösteren video ve en fazla 5 sayfalık açıklama belgesi."
+      }
+    },
+    {
+      "stage": "TGR",
+      "stage_name": "Teknoloji Gösterim Raporu (Teknoloji Gösterim Kategorisi)",
+      "template": "Teknoloji_Gösterim_Rapor_Sablonu_TR_v2_Ndj16.docx",
+      "format_rules": {
+        "special_requirements": "Levitasyon veya İtki sistemi tasarımı, matematiksel modelleme, simülasyon ve test planını içeren teknik rapor."
+      }
+    },
+    {
+      "stage": "TPCK",
+      "stage_name": "Tanımlı Problem Çözümü Raporu ve Sunumu",
+      "template": "TPÇK_Raporu_Şablonu_TR_V2_kZt8e.docx",
+      "format_rules": {
+        "special_requirements": "DDK tarafından ilan edilen Hyperloop problemine yönelik teknik çözüm raporu ve yarışma alanında jüri sunumu."
+      }
+    },
+    {
+      "stage": "TUNEL_PERFORMANS_YARISI",
+      "stage_name": "Tünel İçi Performans Final Yarışı",
+      "weight_in_performance": "1000 Puan / 1500 Toplam Puan",
+      "format_rules": {
+        "special_requirements": "208 metrelik Gebze Hyperloop Test Tünelinde düşük basınç altında otonom koşu (İtki 300p, Hız 300p, Konum 225p, Haberleşme 175p)."
+      }
+    }
+  ]
+}

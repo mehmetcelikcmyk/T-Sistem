@@ -1,0 +1,148 @@
+{
+  "slug": "elektronik-harp-yarismasi",
+  "name": "Elektronik Harp Yarışması",
+  "specifications": [
+    "2026_ELEKTRONIK_HARP_SARTNAMESI_TR_Güncel_jjwso.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "elektronik-harp-yarismasi",
+    "kategori_adi": "Elektronik Harp Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, ASELSAN & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Üniversite ve Üzeri (Ön Lisans, Lisans, Lisansüstü ve Açık Öğretim Öğrencileri)",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 8,
+      "final_uye_limiti": 5,
+      "bireysel_basvuru": false,
+      "kural_detayi": "Yarışmaya 3-8 kişilik takımlar halinde başvurulabilir (Bireysel başvuru kabul edilmez). Takımlar final aşamasına en fazla 5 üye ile katılabilir. Piyasadan tedarik edilmiş hazır ticari bitmiş sistemle katılım yasaktır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar en fazla 1 öğretim görevlisini/üyesini veya araştırma görevlisini danışman olarak alabilir (İsteğe Bağlı).",
+      "zorunluluk": "Üniversite ve üzeri seviyesinde danışman zorunlu değildir ve danışmanlar finale gelmek zorunda değildir. Danışman varsa ıslak imzalı onaylı görevlendirme belgesi sisteme yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_dagilimi": {
+      "formul": "Toplam Puan = (0.15 * KTR) + (0.15 * STV) + (0.70 * Olceklendirilmis_Gorev_Puani)",
+      "puan_kalemleri": {
+        "ktr_yuzdesi": "%15 (Kritik Tasarım Raporu)",
+        "stv_yuzdesi": "%15 (Sistem Tanımlama Videosu)",
+        "gorev_puanlamasi_yuzdesi": "%70 (Saha Elektronik Destek ve Elektronik Taarruz Görevleri)"
+      },
+      "asgari_basari_kriteri": "Ödül sıralamasına girebilmek için ED görevlerinden en az Sinyal Tespiti, Parametre Çıkarımı ve Yön Bulma (DF); ET görevlerinden ise en az birer Karıştırma ve Aldatma (Örn. Sürekli Karıştırma ve Analog Telsiz Aldatma) görevini sahada başarıyla tamamlamak zorunludur."
+    },
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "500.000,00 ₺",
+        "danisman_odulu": "15.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "400.000,00 ₺",
+        "danisman_odulu": "12.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "300.000,00 ₺",
+        "danisman_odulu": "10.000,00 ₺"
+      },
+      "prestij_odulleri": [
+        "En İyi Takım Ruhu Ödülü",
+        "ED Alanında En İyi Sistem Mimarisi Ödülü",
+        "ET Alanında En İyi Sistem Mimarisi Ödülü",
+        "En İyi Yapay Zekâ Teknoloji Uygulamaları Ödülü",
+        "En İyi Kullanıcı Arayüz Yazılımı Ödülü"
+      ]
+    },
+    "sartname_dosyasi": "2026_ELEKTRONIK_HARP_SARTNAMESI_TR_Güncel_jjwso.pdf"
+  },
+  "stages": [
+    {
+      "stage": "TYF",
+      "stage_name": "Takım Yapılanma Formu",
+      "template": "TEKNOFEST26_ElektronikHarp_TYF_TR_2ieWj.pdf",
+      "format_rules": {
+        "special_requirements": "Sistem mimarisi, platform entegrasyonu, ED ve ET çalışma frekans bantları, almaç bant genişlikleri, sinyal işleme algoritmaları, GNSS servisleri ve SWaP (Boyut, Ağırlık, Güç) bildirim formu."
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu",
+      "weight_in_total": "%15",
+      "template": "260503_Teknofest26_ElektronikHarp_KTR_TR_v1_lqE5E.docx",
+      "format_rules": {
+        "max_pages": 25,
+        "total_page_limit_description": "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+        "font_family": "Arial",
+        "font_size": "12 pt",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "A4 tipi, 2.5 cm kenar boşlukları",
+        "header_footer": "Kapak hariç alt bilgide takım adı ve sayfa numarası, üst bilgide 'ELEKTRONİK HARP YARIŞMASI 2026' yazılmalıdır."
+      },
+      "rubric": {
+        "category_name": "elektronik-harp-yarismasi",
+        "stage": "KTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_temel_sistem_ozeti",
+            "name": "1. Temel Sistem Özeti",
+            "max_score": 10.0,
+            "description": "Sistem Tanımı, Sistem Blok Şeması, Platform Entegrasyonu, Çalışma Frekans Bandı (ED & ET) ve SWaP (Size, Weight and Power) bilgileri."
+          },
+          {
+            "id": "2_organizasyon_ozeti",
+            "name": "2. Organizasyon Özeti",
+            "max_score": 5.0,
+            "description": "Takım Organizasyonu, Görev Dağılımı, Proje Takvimi (Gantt Şeması), Bütçe ve Risk Yönetimi (Risk Matrisi)."
+          },
+          {
+            "id": "3_detayli_tasarim_ozeti",
+            "name": "3. Detaylı Tasarım Özeti",
+            "max_score": 25.0,
+            "description": "Donanım Tasarımı (Antenler, Almaç/Göndermeç, SDR, Güç/RF Yükselteç, Kontrol Birimi), Yazılım Tasarımı (ED/ET Algoritmaları, Sinyal İşleme, Yapay Zekâ) ve Komuta Kontrol Kullanıcı Arayüzü (GUI)."
+          },
+          {
+            "id": "4_ed_gorevleri_ve_ekran_gorselleri",
+            "name": "4. ED Görevleri ve Ekran Görselleri",
+            "max_score": 20.0,
+            "description": "Sinyal Tespiti, Parametre Çıkarımı, Sinyal İzleme/Dinleme (Analog & Sayısal), Yön Bulma (DF) ve Konum Belirleme (TDoA, AoA vb.) görevlerinin akış şemaları ve kullanıcı arayüz ekranları."
+          },
+          {
+            "id": "5_et_gorevleri_ve_ekran_gorselleri",
+            "name": "5. ET Görevleri ve Ekran Görselleri",
+            "max_score": 20.0,
+            "description": "Sürekli Karıştırma (Spot, Barrage), Arabakışlı Karıştırma (Look-through), Analog Telsiz Aldatma ve GNSS Aldatma (GPS L1/L2/L5, GLONASS, GALILEO, BEIDOU) görevlerinin akış şemaları ve kullanıcı arayüz ekranları."
+          },
+          {
+            "id": "6_simulasyon_ve_test",
+            "name": "6. Simülasyon ve Test",
+            "max_score": 15.0,
+            "description": "Etkinlik Simülasyonları (Hassasiyet/Duyarlılık, Yerleşim, Karıştırma ve Aldatma Analizleri), Alt Sistem Geliştirme Testleri ve Görev Testleri (SITL/HITL ve saha test planı)."
+          },
+          {
+            "id": "7_rapor_duzeni",
+            "name": "7. Rapor Düzeni",
+            "max_score": 5.0,
+            "description": "Akademik rapor standartları, yazım kuralları, sayfa numaralandırma, üst/alt bilgi ve şablon uyumu."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "STV",
+      "stage_name": "Sistem Tanımlama Videosu",
+      "weight_in_total": "%15",
+      "format_rules": {
+        "special_requirements": "Geliştirilen ED ve ET alt sistemlerinin, kullanıcı arayüzünün ve algoritmaların saha öncesi çalışırlığını gösteren video kanıtı."
+      }
+    },
+    {
+      "stage": "SAHA_GOREVLERI",
+      "stage_name": "Saha Elektronik Destek ve Elektronik Taarruz Görev İcrası",
+      "weight_in_total": "%70",
+      "format_rules": {
+        "special_requirements": "ED ve ET parkurundaki saha performansı; en yüksek puanı alan takım 100 puana normalize edilerek diğer takımlar bu orana göre ölçeklendirilir."
+      }
+    }
+  ]
+}

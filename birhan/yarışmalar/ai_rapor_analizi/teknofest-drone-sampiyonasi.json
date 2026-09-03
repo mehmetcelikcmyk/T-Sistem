@@ -1,0 +1,89 @@
+{
+  "slug": "teknofest-drone-sampiyonasi",
+  "name": "TEKNOFEST Drone Şampiyonası",
+  "specifications": [
+    "2026_-TEKNOFEST_Drone__C5_9Eampiyonas_C4_B1__C5_9Eartname_oVnim.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "teknofest-drone-sampiyonasi",
+    "kategori_adi": "TEKNOFEST Drone Şampiyonası",
+    "hedef_egitim_seviyesi": "Belirli bir yaş aralığı veya öğrenim düzeyi şartı bulunmamaktadır. Türkiye ve KKTC sporcuları.",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 1,
+      "bireysel_basvuru": true,
+      "final_alani_kisi_siniri": "1",
+      "mezuniyet_kurali": "",
+      "gorev_dagilimi_kurali": "Bireysel katılım zorunludur, sporcu bir takımı/kulübü temsil edebilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Danışman şartı aranmamaktadır.",
+      "limit": ""
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "FPV (First Person View) kullanılarak, hazırlanan engelli pist/parkuru en kısa sürede, kaza yapmadan ve kapıları doğru sırayla geçmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "İHA ebatları motordan motora 180-250mm arasında olmalıdır.",
+      "En fazla 5.5 inç (140 mm) çapında pervane kullanılabilir.",
+      "En fazla 6 hücreli lityum polimer pil kullanılabilir.",
+      "Kumandalar 800 MHz ile 2.4 GHz bandında olmalıdır.",
+      "LOS (görüş hattı ile uçuş) yasaktır, sadece FPV ile uçulacaktır.",
+      "Görüntü aktarımı için Analog SD veya HD ZERO verici kullanılabilir. VTX çıkış gücü iç mekanda maks 25mW, dış mekanda maks 200mW olmalıdır.",
+      "Tüm İHA'larda OSD (On Screen Display) açık olmalı ve yarışmacının ismi sürekli ekranda yayınlanmalıdır.",
+      "Bir pilotun itiraz edebilmesi için o ayağın halen devam ediyor olması ve pilotun elinde itirazını destekleyecek bir 'DVR kaydının' bulunması zorunludur. Kanıtsız sözlü itirazlar geçersizdir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Tüm kumandalarda motoru durdurma (ARMİNG/failsafe/cut) düğmesi olmalı ve çalışmalıdır.",
+      "Piller LiPo güvenli torba (Safe Bag) veya yangına dayanıklı kap içinde taşınmalıdır.",
+      "Teknik kontrol: ölçü sınıfı (180-250mm), pervane/pil sınırları, failsafe ayarı, VTX gücü ve OSD ayarı yarış öncesinde yapılacaktır."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "etap_gecis_kurallari": "Sıralama turunda ardışık 3 tam tur atanlar eleme turlarına (ilk 32 veya 16) kalır. 1. Etabı ilk 24 bitiren 2. Etaba, 2. Etabı ilk 16 bitiren Final Etabına kalır."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Başvuru DVR Videosu": "Ön Eleme şartı olarak yarışmacının drone uçuşuna ait video kaydı (DVR) istenir (Simülasyon kabul edilmez)."
+    },
+    "gorev_puanlamasi": {
+      "Yarış Performansı": "En iyi ardışık 3 tur zamanına ve eleme usulü ikili/dörderli yarışlara (üst eleme/alt eleme grubu) göre belirlenir."
+    },
+    "penalties_and_disqualification": {
+      "izinsiz_ucus": "Doğrudan diskalifiye.",
+      "talimat_disi_vtx_calistirma": "Doğrudan diskalifiye.",
+      "cagri_aninda_pistte_olmama": "Doğrudan diskalifiye.",
+      "vtx_guc_manipulasyonu": "Ofset ya da çeşitli ayarlarla VTX çıkış gücünü artırmak kesinlikle yasaktır, tespiti halinde yarışmacı o etaptan diskalifiye edilir.",
+      "engeli_atlama": "Engeli atlayıp geri dönmeyen pilotun o turu geçersiz sayılır.",
+      "kalkista_erken_dusme": "Kalkışta kaza yapmadan başlangıç kapısından önce düşen pilot doğrudan sonuncu olur."
+    },
+    "rewards_and_advancement": {
+      "1_etap_odulleri": "Birinciye 40.000 TL, İkinciye 30.000 TL, Üçüncüye 20.000 TL",
+      "2_etap_odulleri": "Birinciye 40.000 TL, İkinciye 30.000 TL, Üçüncüye 20.000 TL",
+      "final_etabi_odulleri": "Birinciye 40.000 TL, İkinciye 30.000 TL, Üçüncüye 20.000 TL",
+      "world_drone_cup_katilimi": "Final etabında birinci olan yarışmacı 'World Drone Cup' yarışmasına katılmaya hak kazanır."
+    }
+  },
+  "stages": [
+    {
+      "stage": "Başvuru",
+      "document": "",
+      "format_rules": {
+        "max_pages": 0,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Yazılı rapor aşaması yoktur. Drone uçuşuna ait video kaydı (DVR) veya bağlantısı başvuru esnasında yüklenmelidir."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_dvr_videosu",
+            "name": "DVR Uçuş Videosu",
+            "max_score": 100,
+            "description": "Yarışmacının gerçek bir uçuşuna ait DVR kaydı (simülasyon kabul edilmez). Pilotaj yeteneğinin ön değerlendirmesi için kullanılır."
+          }
+        ]
+      }
+    }
+  ]
+}

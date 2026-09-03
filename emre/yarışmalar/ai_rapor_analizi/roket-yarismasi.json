@@ -1,0 +1,248 @@
+{
+  "slug": "roket-yarismasi",
+  "name": "TEKNOFEST Roket Yarışması",
+  "specifications": [
+    "TEKNOFEST-2026_Roket_Yarışması_Şartnamesi_ToMuI.pdf",
+    "A1_Lise_AHR_Şablonu.docx",
+    "A2_A3_Orta_Yüksek_AHR.docx",
+    "B1_B2_B3_B4_ÖTR_KTR.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "roket-yarismasi",
+    "kategori_adi": "Roket Yarışması",
+    "hedef_egitim_seviyesi": "A1 Lise. A2-A7 ve B1-B4 Üniversite ve Mezunlar.",
+    "takim_uye_sayisi": {
+      "min": 4,
+      "max": 20
+    },
+    "danisman_sarti": "Lise takımlarında (A1) en az 1 danışman zorunlu. Üniversite takımlarında isteğe bağlı.",
+    "dil_gereksinimi": "Türkçe (A4 Uluslararası kategorisi İngilizce'dir).",
+    "keywords": [
+      "roket",
+      "aerodinamik",
+      "aviyonik",
+      "kurtarma",
+      "faydalı yük",
+      "apogee",
+      "statik marjin",
+      "hibrit motor",
+      "sıvı motor",
+      "roketsim",
+      "aktif kontrol"
+    ],
+    "oncelikli_gorevler": [
+      "A Grubu: 4.000 ile 15.000 feet arası irtifalara özgün, çift paraşütlü ve faydalı yüklü roket fırlatmak.",
+      "B Grubu: Hibrit/Sıvı Motor, Aktif Kontrol veya RoketSim yazılımı geliştirmek."
+    ],
+    "puanlama_ve_katsayilar": [
+      "Uçuş Performans Puanı (200p): 200 * x * y. x = 1 - (|Hedef - Gerçekleşen| / Hedef). y = 1 - (Max_Kategori_İrtifa - Gerçekleşen) / Max_Kategori_İrtifa.",
+      "Kritik Uçuş Kuralı: Gerçekleşen irtifa hedef irtifadan ± %15'ten fazla saparsa x=0 olur ve Uçuş Performans Puanı DOĞRUDAN SIFIR (0) verilir.",
+      "Kurtarma Puanı (200p): Roket Gövdesi 100p (Burun 25 + Gövde 25 + Motor Kundağı 25 + Kanatçık 25) + Görev Yükü 100p.",
+      "Kritik Kurtarma İptali: Roket bileşenlerinden BİRİ DAHİ kurtarılamazsa roket kurtarma puanı DOĞRUDAN 0 OLUR. Parçalar fırlatmadan sonra en geç 1 saat içinde getirilmelidir.",
+      "Kısmi Başarı Cezası: Paraşüt geç/dolanarak açılırsa sahadaki 600 puanın sadece %50'si verilir.",
+      "Bonuslar: Kadın üye oranı >= %25 ise +50p (A4'te >= %50 ise +100p). A1 Özgün UKB +100p. A6/A7 PMF >= 0.41 ise +150p. Erken montaj +100p. Bilimsel görev yükü sensörüne göre +50, +100, +150p.",
+      "%85 Baraj Şartı (Kritik): A Grubu kategorilerinde kontenjana girmek için aşama puanının en az %85'i (ÖTR 85/100, KTR 170/200) alınmalıdır.",
+      "Hakem Altimetresi Veri Kaybı: Hakem altimetresinin şarjı/gücü takımların sorumluluğundadır. Eğer uçuşta kapanır ve irtifa okunamazsa takımın İrtifa Puanı 0 (Sıfır) sayılır."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Takım/Saha Kontenjanı: A Grubu (A1-A7) takım büyüklüğü 6-15 üye; Sahaya A1-A3 için 4-8 kişi, A4 için 4-6 kişi, A5-A7 için 6-10 kişi gidebilir. B Grubu 10-20 üye.",
+      "Özet Karakter Limiti (Kritik Eleme): 'Özet (Abstract)' BOLD karakterlerle, TEK PARAGRAF, MAX 1.500 KARAKTER (1501=Elenme). Referans içeremez.",
+      "Giriş Karakter Limiti (Kritik Eleme): 'Giriş' bölümü MAX 5.000 KARAKTER olmalı, Ters Üçgen kurgusuyla yazılmalı ve takım organizasyon şeması içermelidir.",
+      "APA Format Zorunluluğu: Metin içi atıflar ve kaynakça KESİNLİKLE 'APA' referans standardına (Yazar, Yıl) uygun olmalıdır. Uygunsuzluk puan kırıcı nedendir.",
+      "İrtifa Tutarlılık Kilidi (A1-A4): OTR -> KTR geçişinde irtifa ± %5 sapabilir. KTR -> AHR geçişinde BİREBİR AYNI (0 sapma) olmalıdır.",
+      "İrtifa Beyanı İstisnası (A5-A7): A5, A6 ve A7 kategorilerinde hedef irtifa AHR'de KİLİTLENMEZ; Aksaray atış alanındaki montaj sonrası hakeme yazılı teslim edilir.",
+      "Kütle Bütçesi Tutarlılığı (Kritik): .xlsx Kütle Bütçesi dosyasındaki ağırlık verileri ile .ork OpenRocket tasarım çıktısındaki ağırlık verileri BİREBİR AYNI olmalıdır.",
+      "Ayrılma Emniyeti (GPS/Timer Yasağı): Paraşüt ayrılma kararı SADECE GPS veya SAYAÇ (Timer) devresine dayandırılamaz; barometre+ivmeölçer füzyonu ŞARTTIR (Apogee'den sonra EN FAZLA 2 Saniye).",
+      "Li-Po Safe Bag (Güvenlik Çantası): Aviyonik/Ayrılma sistemlerinde lityum-polimer batarya kullanan takımlar, bunları yanmaz 'Li-Po Safe Bag' ile kullandıklarını ispatlamak ZORUNDADIR.",
+      "Malzeme/RF Yasakları: Gövde/burun/kanatçıklarda PVC/PLA/Kraft KESİNLİKLE YASAKTIR. Metal burun konisi yasaktır. Karbon fiber aviyonikte RF penceresi ŞARTTIR. Tek parça çelik mapa zorunludur.",
+      "Mekanik Anahtar Mesafesi: FCC ve Görev Yükü güç anahtarları (Key Switch / RBF), A5 hariç tüm roketlerde nozuldan EN FAZLA 2.5 METRE mesafede olmalı ve gövdeye gömülü olmalıdır.",
+      "Sosyal Medya İtiraz Yasağı: İtirazlar sonuç ilanından itibaren 48 SAAT içinde sadece KYS üzerinden yapılabilir. Sosyal medyadan itiraz/sonuç paylaşan takımlar DİSKALİFİYE edilir."
+    ],
+    "dosya_adlandirma_matrisi": [
+      "A1-A3, A5-A7 (AHR): hedefirtifa_kategori_takimadi_takimID_AHR.pdf (Sadece .pdf)",
+      "A4 Uluslararası (FRR): targetaltitude_A4_teamname_teamID_FRR.pdf (Sadece .pdf)",
+      "Kütle Bütçesi (Tümü): hedefirtifa_kategori_takimadi_takimID_kutlebutcesi.xlsx (Sadece .xlsx)",
+      "OpenRocket Çıktısı (A Grubu): hedefirtifa_kategori_takimadi_takimID_tasarimciktisi.pdf (Sadece .pdf)",
+      "B Grubu İş Planı: hedefirtifa_kategori_takimadi_takimID_isplani.mpp (.mpp formatı)",
+      "KURAL: İrtifa feet cinsinden tam sayı olmalı (m kullanılmamalı). Takım adında Türkçe karakter, boşluk, noktalama işareti ASLA OLMAMALIDIR."
+    ],
+    "video_sure_kisitlari_AHR": [
+      "Genel Montaj: Max 60s",
+      "Atışa Hazırlık (Rampa): Max 60s",
+      "Motor Montajı: Max 30s",
+      "Altimetre Montaj Prosedürü: Max 30s",
+      "Shear-Pin Yer Ayrılma Testi: Max 30s",
+      "Paraşüt Drop Testi (Yüksekten Bırakma): Max 30s",
+      "Özgün UKB Eğim/Vakum Algoritma Testi: Max 45s",
+      "Telemetri/Haberleşme Testi (Bölünmüş ekran, >= 1500m): Max 45s",
+      "ROKETSAN SUT/SIT Arayüz Testi: Max 120s",
+      "Sky Logic V2 Fonksiyonellik Testi: Max 60s",
+      "A5 Zorlu Görev Özel: Kademe Ayırma Mekanizması (max 30s), EGÜ-UKB Ateşleme (max 30s), Kademe Ayrılma Dayanım Testi (max 30s)"
+    ],
+    "kategori_teknik_esikleri": [
+      "OpenRocket Zorunlu Sabitleri: Rüzgar 6 m/s (Sapma 0.6 m/s, Türbülans %10, Yön 180 derece). Rampa boyu 600 cm, 5 derece açı. Atmosfer ISA (970m rakım, 15C, 3mbar sapma). Yüzey Regular Paint (60um).",
+      "Rampada Telemetri Süresi: Mekanik sistem açıldıktan sonra Yer İstasyonu bağlantısı; A1-A4 için MAX 2 DAKİKA, A5-A7 için MAX 5 DAKİKA içinde kurulmalıdır.",
+      "A Grubu İniş Hızları: A1(Lise): 5-9 m/s. A2-A7 Birincil (Drogue) paraşüt: 9-20 m/s. A2-A7 İkincil (Main) paraşüt: 5-9 m/s. Görev Yükü: 9-20 m/s.",
+      "A Grubu Aerodinamik: Statik Marjin (0.3 Mach) kesinlikle 1.5 ile 2.5 cal aralığında olmalı ve Ağırlık Merkezi 2 ray butonu arasında kalmalıdır.",
+      "A Grubu Lift-off (Çıkış) Hızı: A1 >= 15 m/s, A2/A4 >= 25 m/s, A3 >= 30 m/s, A5/A6/A7 >= 20 m/s.",
+      "Görev Yükü (Payload): En az 4.0 kg olmalı, Turuncu paraşüt kullanmalı, OpenRocket'ta 'PAYLOAD' adıyla girilmeli (Unspecified yasak).",
+      "B1 Aktif Kontrol (AKS): Sapma >= ±15 derece, hata <= ±2 derece, >= 4 Hz bant genişliği, 5 Nm momentte >= 100 deg/s hız.",
+      "B2/B3 Hibrit ve Sıvı Motor: 100 N itki, 10 bar Pc, NASA CEA çıktıları, A4/A3 P&ID şeması, Uluslararası Oksijen Temizliği standartları.",
+      "B4 RoketSİM: Win11 uyumlu, 6-DOF RK4 integratörü, Monte Carlo, OpenRocket ile <1000 kelimelik teknik karşılaştırma zorunlu."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "OTR_A_Grup_Roket",
+      "template": "A_Grup_OTR",
+      "rubric": {
+        "category_name": "roket-yarismasi",
+        "stage": "OTR_A_Grup_Roket",
+        "description": "Roket A Grubu (A1-A7) Uçuşlu Roket Ön Tasarım Raporu Değerlendirmesi",
+        "criteria": [
+          {
+            "id": "format_ve_karakter_limiti",
+            "name": "Format, Karakter Limiti, APA ve Şablon Kuralları",
+            "max_score": 25.0,
+            "description": "Özet 1500 krkt (bold), Giriş 5000 krkt (ters üçgen), APA Referans formatı ve Sayaç beyanları.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Özet (Abstract) bölümü MAX 1500 karakter mi? Giriş MAX 5000 karakter mi? (Aşıldıysa değerlendirme dışı bırakın). Şablondaki orijinal metinler silinmiş mi?",
+              "HAKEM KONTROLÜ: Metin içi ve kaynakça atıfları APA formatında (Yazar, Yıl) mı hazırlanmış?"
+            ]
+          },
+          {
+            "id": "aerodinamik_esikler",
+            "name": "Statik Marjin, Lift-off ve Malzeme Sınırları",
+            "max_score": 30.0,
+            "description": "0.3 Mach için SM, kategori bazlı çıkış hızı ve Omuzluk oranları.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): 0.3 Mach hızındaki Statik Marjin 1.5 - 2.5 arasında mı? Ağırlık merkezi iki ray butonu arasında kalıyor mu? Rampa çıkış hızı kategori limitini (Örn A3>=30m/s) geçiyor mu?"
+            ]
+          },
+          {
+            "id": "donanim_payload_ve_basinc",
+            "name": "Faydalı Yük, Gövde Basınç Delikleri ve RF Pencereleri",
+            "max_score": 25.0,
+            "description": "PVC/PLA/Metal Burun yasağı kontrolü, 3 adet basınç deliği, 4.0 kg Payload.",
+            "guiding_questions": [
+              "Faydalı yük kütlesi en az 4.0 kg olarak beyan edilmiş ve OpenRocket'ta 'PAYLOAD' yapılmış mı? Karbon aviyonik gövdelerinde RF pencereleri açılmış mı?"
+            ]
+          },
+          {
+            "id": "matris_ve_proje_yonetimi",
+            "name": "Proje Yönetimi, Kütle Bütçesi ve Dosya Formatı",
+            "max_score": 20.0,
+            "description": "Compliance matrix, Kütle Bütçesi vs OpenRocket tutarlılığı.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Şartname EK-12 Uyumluluk Matrisi doldurulmuş mu?",
+              "HAKEM KONTROLÜ (KRİTİK): .xlsx Kütle Bütçesi dosyasındaki ağırlık/kütle verileri ile OpenRocket (.ork) simülasyonundaki ağırlıklar BİREBİR EŞLEŞİYOR MU?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "ozet_regex": "(?i)(ÖZET|Özet)",
+          "giris_regex": "(?i)(GİRİŞ|Giriş)",
+          "sistem_mimarisi_regex": "(?i)(SİSTEM MİMARİSİ|Sistem Mimarisi)",
+          "aerodinamik_regex": "(?i)(AERODİNAMİK TASARIM|Aerodinamik Tasarım)",
+          "aviyonik_regex": "(?i)(AVİYONİK VE KURTARMA|Aviyonik ve Kurtarma)",
+          "proje_yonetimi_regex": "(?i)(PROJE YÖNETİMİ VE BÜTÇE|Proje Yönetimi ve Bütçe)"
+        },
+        "max_pages": 0
+      }
+    },
+    {
+      "stage": "OTR_B_Grup_Sistem",
+      "template": "B_Grup_OTR",
+      "rubric": {
+        "category_name": "roket-yarismasi",
+        "stage": "OTR_B_Grup_Sistem",
+        "description": "Roket B Grubu (B1, B2, B3, B4) Alt Sistem Ön Tasarım Raporu",
+        "criteria": [
+          {
+            "id": "sistem_mimarisi",
+            "name": "B Grubu Kategorik İsterleri (B1 AKS, B2/B3 Motor, B4 Yazılım)",
+            "max_score": 50.0,
+            "description": "B1: 15° kanat / 4Hz, B2/B3: 100N İtki / 10 bar Pc, B4: 6-DOF / RK4.",
+            "guiding_questions": [
+              "B1 ise: ±15 derece sapma, <= ±2 derece hata, 5 Nm momentte >= 100 deg/s hız analizleri var mı? (Geri besleme sensörleri avantaj/dezavantaj tablosu konmuş mu?)",
+              "B2/B3 ise: Yanma Odası Basıncı 10 bar, CFD iç balistik analizi, NASA CEA çıktıları, tam sayfa P&ID sızıntısız tesisat planı mevcut mu?",
+              "B4 ise: 6-DOF denklemleri, RK4 sayısal integratörü, Barrowman vs CFD katsayı türetimi, ISA atmosferi ve OpenRocket ile <1000 kelimelik sayısal kıyaslama tablosu verilmiş mi?"
+            ]
+          },
+          {
+            "id": "proje_yonetimi_b_grup",
+            "name": "MS Project, Format, APA ve Sayaçlar",
+            "max_score": 50.0,
+            "description": "Özet (1500) / Giriş (5000) karakter sınırları, APA Referansları, MS Project.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Özet/Giriş karakter limitlerine ve APA kaynakça formatına uyulmuş mu? Takım zaman planlamasını zorunlu olan MS Project ile yapıp ekran görüntüsü koymuş mu?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "urun_agaci_ve_literatur_b_grup_ortak_regex": "(?i)(Ürün Ağacı|Kimyasal Roket Motorları|Uçuş Benzetim Prensipleri)",
+          "performans_regex": "(?i)(Performans Hesapları|Performans)",
+          "on_tasarim_b_grup_ortak_regex": "(?i)(KB Ön Tasarımı|Motor Ön Tasarımı|Sistem Mimarisi)",
+          "test_duzenegi_b_grup_ortak_regex": "(?i)(Test Düzeneği Tasarımı|Test Düzeneği|Fiziksel Modelleme)",
+          "proje_yonetimi_regex": "(?i)(Proje Planı ve Bütçe|Bütçe)"
+        },
+        "max_pages": 0
+      }
+    },
+    {
+      "stage": "Atisa_Hazirlik_Raporu_AHR",
+      "template": "AHR_Videolu_Rapor",
+      "rubric": {
+        "category_name": "roket-yarismasi",
+        "stage": "Atisa_Hazirlik_Raporu_AHR",
+        "description": "Roket AHR (Atışa Hazırlık) Raporu ve Katı Video Süre Denetimleri",
+        "criteria": [
+          {
+            "id": "genel_montaj_ve_saha_videolari",
+            "name": "Montaj, Kurtarma, Sıkı Geçme Yasağı ve RBF",
+            "max_score": 30.0,
+            "description": "Shear-pin kullanımı, Tek parça çelik mapa, RBF mesafesi (Max 2.5m).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: RBF (Key Switch) anahtarları roket nozulundan EN FAZLA 2.5 metre mesafede mi? Shear-Pin testi ve Paraşüt Drop testi süre limitine (30s) uyuyor mu? Lipo bataryalar için 'Li-Po Safe Bag' ispatlanmış mı?"
+            ]
+          },
+          {
+            "id": "elektronik_ve_ukb_videolari",
+            "name": "Aviyonik Emniyeti, Sensör Füzyonu ve Telemetri",
+            "max_score": 30.0,
+            "description": "GPS/Timer yasağı, 2 saniye kuralı, Sky Logic V2 videosu.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Paraşüt ayrılma kararı YALNIZCA zamanlayıcı (timer) veya GPS'e mi bağlanmış? (Evetse elenir). Tepe noktası (apogee) geçildikten sonra EN FAZLA 2 SANİYE içinde ayrılma (ejection) olacağı ispatlanmış mı? Sky Logic V2 Test Videosu (Max 60s) var mı?"
+            ]
+          },
+          {
+            "id": "format_sayac_ve_irtifa",
+            "name": "İrtifa İstisnası, OpenRocket Sabitleri ve 10. Bölüm",
+            "max_score": 40.0,
+            "description": "AHR/KTR irtifa uyumu (A1-A4 için), Hakem altimetresi, Özel Ek Bölümler.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (KRİTİK): Kategori A1-A4 ise AHR'deki hedef irtifa KTR ile BİREBİR AYNI MI? A4 raporu '_FRR.pdf' ile mi bitiyor?",
+              "HAKEM KONTROLÜ (KATEGORİ ÖZEL BAŞLIĞI): Rapor A5, A6 veya A7 kategorisinde ise zorunlu olan 10. Bölüm başlığı (örn: X. Zorlu Görev Gereksinimleri) mevcut mu?",
+              "OpenRocket parametreleri (6m rampa, rüzgar 6 m/s, Yüzey Regular Paint 60um, ISA 970m, 15C, 3mbar) eksiksiz girilmiş mi?",
+              "HAKEM KONTROLÜ (KRİTİK): .xlsx Kütle Bütçesi dosyasındaki ağırlık/kütle verileri ile OpenRocket (.ork) simülasyonundaki ağırlıklar BİREBİR EŞLEŞİYOR MU?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "i_terimler_regex": "(?i)(I.Terimler|I. Terimler)",
+          "ii_giris_regex": "(?i)(II.Giriş|II. Giriş)",
+          "iii_genel_hususlar_regex": "(?i)(III.Genel Hususlar|III. Genel Hususlar)",
+          "iv_operasyonel_konsept_regex": "(?i)(IV.Operasyonel Konsept|IV. Operasyonel Konsept)",
+          "v_kurtarma_sistemi_regex": "(?i)(V.Kurtarma Sistemi|V. Kurtarma Sistemi)",
+          "vi_gorev_yuku_regex": "(?i)(VI.Görev Yükü|VI. Görev Yükü)",
+          "vii_aerodinamik_regex": "(?i)(VII.Aerodinamik|VII. Aerodinamik)",
+          "viii_yapisal_regex": "(?i)(VIII.Yapısal|VIII. Yapısal)",
+          "ix_ucus_kontrol_regex": "(?i)(IX.Uçuş Kontrol Bilgisayarı|IX. Uçuş Kontrol Bilgisayarı)",
+          "x_ozel_kategori_regex": "(?i)(X. Zorlu Görev Gereksinimleri|ÖZGÜN HİBRİT YAKIT MOTORLU ROKET GÖREV ve SİSTEM GEREKSİNİMLERİ|ÖZGÜN SIVI YAKIT MOTORLU ROKET GÖREV ve SİSTEM GEREKSİNİMLERİ|Ekler)",
+          "ekler_regex": "(?i)Ekler"
+        },
+        "max_pages": 0
+      }
+    }
+  ]
+}

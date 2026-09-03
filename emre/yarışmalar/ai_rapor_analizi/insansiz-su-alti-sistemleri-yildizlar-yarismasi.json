@@ -1,0 +1,167 @@
+{
+  "slug": "insansiz-su-alti-sistemleri-yildizlar-yarismasi",
+  "name": "İnsansız Su Altı Sistemleri Yıldızlar Yarışması",
+  "specifications": [
+    "2026__C4_B0nsans_C4_B1z_Su_Alt_C4_B1_Sistemleri_Y_C4_B1ld_C4_B1zlar_Sartname_3_D_C3_BCzeltilmi_C5_9F_oASWa.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "insansiz-su-alti-sistemleri-yildizlar-yarismasi",
+    "kategori_adi": "İnsansız Su Altı Sistemleri Yıldızlar Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Ön Lisans, Lisans, Lisansüstü (Karma Takımlar)",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 15
+    },
+    "danisman_sarti": "Lise takımları için zorunlu, yükseköğretim takımları için isteğe bağlı",
+    "dil_gereksinimi": "Türkçe (Teknik terimler ve akademik ifadeler orijinal dillerinde, parantez içinde veya standart kullanımlarıyla eklenebilir)",
+    "keywords": [
+      "mini rov",
+      "o-ring",
+      "glend",
+      "itki",
+      "torpido",
+      "şamandıra",
+      "otonom navigasyon",
+      "PID",
+      "state machine",
+      "ROV",
+      "AUV",
+      "sızdırmazlık",
+      "basınç dayanımı",
+      "kablosuz haberleşme",
+      "pinger",
+      "akustik",
+      "waypoint"
+    ],
+    "oncelikli_gorevler": [
+      "1. Görev: Waypoint'leri Kamera Konfigürasyonuyla Tamamlamak (3 adet karesel alanın otonom gezilmesi)",
+      "2.1 Görev: Hedeften Başarılı Geçiş ve Yüzeyin Doğru Açılımı",
+      "2.2 Görev: Pingerli (Akustik) veya Dairesel Hedeften Başarılı Geçiş"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Sayfa ve Biçim Sınırı (Kritik): Raporun toplam sayfa sayısı 30 sayfayı aşmamalıdır (KTR formatı dahilinde). Aşması geçersiz sayılma riskidir.",
+      "Kör Hakemlik İhlali (Kritik): Metin ve şemalarda kişisel isim, okul adı, takım üyesi isimleri veya öğrenci fotoğrafı bulunması kesinlikle yasaktır.",
+      "Güvenlik ve Donanım Yasakları: 220 VAC su altı iletimi, hidrolik sistem kullanımı ve 50 VDC üzeri gerilim kullanımı yasaktır.",
+      "Haberleşme Kuralı (Kritik): Araçlar kablosuz (wireless / akustik) olarak yarıştırılacaktır, kablolu (tethered) kontrol yasaktır.",
+      "Çevresel Kural: Deniz/Havuz suyunun kirletilmesine sebep verecek durumlar kesinlikle yasaktır (Sızıntı, yağ, kimyasal)."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "20m basınç dayanımı hesaplamalarının (simülasyon/analiz) dosyada mevcut olması.",
+      "Kablosuz haberleşme (akustik, optik veya RF vb.) mimarisinin blok şemalarla detaylandırılması.",
+      "Gövde CAD modelleri, teknik resimleri ve O-ring/glend gibi sızdırmazlık detaylarının gösterilmesi.",
+      "Güç dağıtım blok şeması, sigorta yerleşimi ve motor sürücülerin şemada gösterilmesi.",
+      "Otonom intikal, Waypoint takibi ve Pinger (Akustik) algoritmalarının durum makinesi (State Machine) veya akış diyagramı olarak sunulması.",
+      "Araca bağlanacak olan güvenlik/kurtarma halatının (minimum 50 metre) mekanik montaj noktasının CAD tasarımında yer alması.",
+      "Pervane nozül korumalarının tasarım çizimlerinde yer alması.",
+      "Acil durdurma (kill-switch) butonunun ve röle kesme devresinin şematik olarak gösterilmesi."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin yarışma şartnamesindeki kablosuz su altı görevlerini, otonom waypoint takibini ve pinger algılamayı gerçekleştirebilecek bir İnsansız Su Altı Aracı olması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "KTR",
+      "template": "Sistemde KTR sablonu klasoru bos oldugundan, katilimcilarin kullandigi standart Su Alti KTR sablonu referans alinmistir.",
+      "rubric": {
+        "category_name": "insansiz-su-alti-sistemleri-yildizlar-yarismasi",
+        "stage": "KTR",
+        "description": "Değerlendirme; AI 4. Göz Gerekçe Formatı kullanılarak Puan ve Gerekçe (İncelenen Zorunlu Varlıklar dikkate alınarak) şeklinde sunulmalı, en sonda da Yarışmacı Gelişim Karnesi (🟢 Güçlü Yönler, 🔴 Kritik Eksikler, 🟡 Somut İyileştirme Tavsiyeleri) başlıklarıyla raporlanmalıdır.",
+        "criteria": [
+          {
+            "id": "sistem_ve_mekanik",
+            "name": "Sistem ve Mekanik Tasarım",
+            "max_score": 25.0,
+            "description": "20m basınç dayanımı, CAD render/teknik resim, malzeme seçimi, halat (50m) bağlantı kilit mekanizması detayları.",
+            "guiding_questions": [
+              "Gövde CAD modelleri ve 20m derinlik basınç hesapları tutarlı mı?",
+              "Kurtarma halatı bağlantı noktası teknik tasarımda uygun mu?"
+            ]
+          },
+          {
+            "id": "elektronik_algoritma_yazilim",
+            "name": "Elektronik, Algoritma ve Yazılım (Kablosuz Haberleşme Odaklı)",
+            "max_score": 25.0,
+            "description": "Güç kartı blok şeması, motor sürücüler, otonom waypoint takibi akış şemaları (State Machine), kablosuz (akustik/RF) kontrol mimarisi.",
+            "guiding_questions": [
+              "Kablosuz haberleşme altyapısı su altı şartlarına uygun şekilde modellenmiş mi?",
+              "Waypoint takibi ve Pinger yönelimi için otonom görev/durum makinesi algoritmaları mevcut mu?"
+            ]
+          },
+          {
+            "id": "guvenlik_ve_sizdirmazlik",
+            "name": "Güvenlik ve Sızdırmazlık",
+            "max_score": 15.0,
+            "description": "O-ring/glend detayları, kill-switch acil durdurma devresi, pervane nozül korumaları.",
+            "guiding_questions": [
+              "O-ring conta yuvası toleransları ve glend giriş detayları teknik resimlerle desteklenmiş mi?",
+              "Acil durdurma butonunun (kill-switch) röle kesme devresi gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "test_ve_tecrube",
+            "name": "Test ve Tecrübe",
+            "max_score": 10.0,
+            "description": "Havuz/basınç testleri, kablosuz sinyal testleri, simülasyon çıktıları, yaşanan teknik arızalar.",
+            "guiding_questions": [
+              "Havuz veya simülasyon ortamında kablosuz iletişim/sinyal kopma senaryoları test edilmiş mi?",
+              "Basınç ve sızdırmazlık test sonuçları mevcut mu?"
+            ]
+          },
+          {
+            "id": "zaman_butce_risk",
+            "name": "Zaman, Bütçe ve Risk Planlaması",
+            "max_score": 10.0,
+            "description": "Gantt takvimi, bütçe tablosu, teknik risk matrisi ve B planları (haberleşme kopması senaryoları).",
+            "guiding_questions": [
+              "Sinyal kopması, sızdırmazlık kaybı gibi kritik görev riskleri için B planı belirlenmiş mi?"
+            ]
+          },
+          {
+            "id": "ozgunluk_ve_yerlilik",
+            "name": "Özgünlük ve Yerlilik",
+            "max_score": 10.0,
+            "description": "Özgün şasi tasarımı, kablosuz haberleşme kartlarının yerliliği, hazır komponent ayrımı.",
+            "guiding_questions": [
+              "Kablosuz kontrolcü ve elektronik modüller takıma mı ait, hazır paket mi?"
+            ]
+          },
+          {
+            "id": "raporlama_kalitesi",
+            "name": "Raporlama Kalitesi ve Format",
+            "max_score": 5.0,
+            "description": "Sayfa düzeni, akademik kaynakça atıfları, içindekiler ve KTR şablon uyumu.",
+            "guiding_questions": [
+              "IEEE vb. formatta akademik kaynak atıfı yapılmış mı, şablon başlık sırası korunmuş mu?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "rapor_ozeti": "RAPOR ÖZETİ",
+          "takim_semasi": "TAKIM ŞEMASI",
+          "proje_mevcut_durum": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+          "arac_tasarimi": "ARAÇ TASARIMI",
+          "sistem_tasarimi": "Sistem Tasarımı",
+          "aracin_mekanik_tasarimi": "Aracın Mekanik Tasarımı",
+          "mekanik_tasarim_sureci": "Mekanik Tasarım Süreci",
+          "malzemeler": "Malzemeler",
+          "uretim_yontemleri": "Üretim Yöntemleri",
+          "fiziksel_ozellikler": "Fiziksel Özellikler",
+          "elektronik_algoritma_yazilim_tasarimi": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+          "elektronik_tasarim_sureci": "Elektronik Tasarım Süreci",
+          "algoritma_tasarim_sureci": "Algoritma Tasarım Süreci",
+          "yazilim_tasarim_sureci": "Yazılım Tasarım Süreci",
+          "dis_arayuzler": "Dış Arayüzler",
+          "guvenlik": "GÜVENLİK",
+          "test": "TEST",
+          "tecrube": "TECRÜBE",
+          "planlama": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+          "ozgunluk": "ÖZGÜNLÜK",
+          "yerlilik": "YERLİLİK",
+          "kaynakca": "KAYNAKÇA"
+        },
+        "max_pages": 30
+      }
+    }
+  ]
+}

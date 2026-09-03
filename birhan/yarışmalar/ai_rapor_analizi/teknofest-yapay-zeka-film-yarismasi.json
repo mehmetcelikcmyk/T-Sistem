@@ -1,0 +1,109 @@
+{
+  "slug": "teknofest-yapay-zeka-film-yarismasi",
+  "name": "TEKNOFEST Yapay Zeka Film Yarışması",
+  "specifications": [
+    "2026_YAPAY_ZEKA_F_C4_B0LM_YARI_C5_9EMASI_SARTNAMES_C4_B0_TR_ykE9M.pdf",
+    "TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "teknofest-yapay-zeka-film-yarismasi",
+    "kategori_adi": "TEKNOFEST Yapay Zeka Film Yarışması",
+    "hedef_egitim_seviyesi": "Türkiye Cumhuriyeti vatandaşlığına sahip, Türkiye ve yurt dışında öğrenim gören üniversite öğrencileri (Lisans, Ön lisans, Yüksek Lisans, Doktora ve Açık Öğretim dahil) ve mezunlar.",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 4,
+      "bireysel_basvuru": true,
+      "final_alani_kisi_siniri": "",
+      "mezuniyet_kurali": "",
+      "gorev_dagilimi_kurali": ""
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Danışman zorunlu değildir. Üniversite seviyesi ve üzeri takımlar 1 danışman alabilir ancak içerik üretimine doğrudan katkı sağlaması önerilmez.",
+      "limit": "En fazla 1 danışman."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "'Yapay Zeka Çağında İnsan Faktörü' teması doğrultusunda, Google Gemini ve Veo 3 araçları kullanılarak 2-5 dakikalık özgün kısa filmlerin üretilmesi."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Müzik, efekt, görsel ve senaryo dahil hiçbir içerikte telif hakkı ihlali bulunmamalıdır.",
+      "Filmin tüm AI bileşenleri SADECE Google üretken yapay zeka teknolojileri (Gemini, Veo 3) kullanılarak yarışmacı tarafından üretilmiş olmalıdır.",
+      "Irk, cinsiyet, din, dil, etnik köken ayrımcılığı yapan; ötekileştirici veya siyasi propaganda içeren projeler geçersiz sayılacaktır.",
+      "Deepfake benzeri manipülatif teknikler varsa, bunun bir kurgu öğesi olduğu açıkça belirtilmelidir.",
+      "Başkalarına ait senaryo veya görsel kopya edilemez, esinlenilmişse başvuru dosyasında açıkça belirtilmelidir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Öneri Raporu format kurallarına (Arial 12 vb.) uygun olmalı.",
+      "Kısa filmin süresi kesinlikle 2 ile 5 dakika arasında olmalıdır."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "oduller": "Birincilik: 180.000 TL, İkincilik: 150.000 TL, Üçüncülük: 120.000 TL. Ek olarak prestij niteliğinde 'En İyi Film Afişi Ödülü' verilir.",
+      "on_eleme_baraji": "Proje Öneri Raporu sonucunda seçilen finalist takımlar, Google workshop sürecine katılarak final filmlerini üretmeye hak kazanır."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Proje Öneri Raporu": "Ön Eleme Puanı",
+      "Final Projesi (Kısa Film)": "Final Puanı"
+    },
+    "gorev_puanlamasi": {}
+  },
+  "stages": [
+    {
+      "stage": "Proje Öneri Raporu (Senaryo)",
+      "document": "TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx",
+      "format_rules": {
+        "max_pages": 4,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Kapak ve İçindekiler bölümleri 2 ayrı sayfa içermelidir. Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8, alt-sağ-sol 2.5 olmalıdır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_tema_uyumu",
+            "name": "Tema ve Çıkan Ürünün Uyumu",
+            "max_score": 25,
+            "description": "'Yapay Zeka Çağında İnsan Faktörü' temasına uygun, teknolojik bağımlılık yerine insan iradesi ve toplumsal faydayı merkeze alan bir vizyon sunması."
+          },
+          {
+            "id": "2_gorsel_dil_ve_yaratici_yaklasim",
+            "name": "Görsel Dil ve Yaratıcı Yaklaşım",
+            "max_score": 25,
+            "description": "Filmin atmosferinin, sinematik estetiğinin ve görsel anlatım dilinin gücü."
+          },
+          {
+            "id": "3_ai_entegrasyonu",
+            "name": "Üretken Yapay Zekâ Kullanımı ve Teknoloji Entegrasyonunda Yönlendirme Etkisi",
+            "max_score": 25,
+            "description": "Google Gemini ve Veo 3 araçlarının üretim aşamalarında (senaryo, prompt, kurgu vb.) ne kadar yenilikçi ve etkili entegre edildiği."
+          },
+          {
+            "id": "4_yaraticilik_ve_yenilikcilik",
+            "name": "Yaratıcılık ve Yenilikçilik",
+            "max_score": 25,
+            "description": "Kısa film senaryosunun özgünlüğü, hikayenin ve karakterin yenilikçi/düşündürücü bir tarzda kurgulanması."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "Final Projesi (Kısa Film)",
+      "document": "",
+      "format_rules": {
+        "max_pages": 0,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Ek bir yazılı rapor istenmemektedir. Çıktı, 2 ila 5 dakika uzunluğunda sadece Google araçlarıyla üretilmiş bir kısa film olmalıdır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_film_degerlendirmesi",
+            "name": "Final Kısa Film Değerlendirmesi",
+            "max_score": 100,
+            "description": "Filmin teknik, yaratıcı ve anlatımsal bütünlüğü ile En İyi Film Afişi tasarımı Ana Jüri tarafından değerlendirilir."
+          }
+        ]
+      }
+    }
+  ]
+}

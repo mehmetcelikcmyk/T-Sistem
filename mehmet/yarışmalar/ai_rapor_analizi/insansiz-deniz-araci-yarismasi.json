@@ -1,0 +1,258 @@
+{
+  "slug": "insansiz-deniz-araci-yarismasi",
+  "name": "İnsansız Deniz Aracı Yarışması",
+  "specifications": [
+    "2026_İnsansız_Deniz_Araci_Şartnamesi_TR_18_05___QqiGV.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "insansiz-deniz-araci-yarismasi",
+    "kategori_adi": "İnsansız Deniz Aracı Yarışması",
+    "yurutucu_kurum": "T3 Vakfı & TEKNOFEST",
+    "etkinlik_yeri": "Final: Gölcük Tersanesi Komutanlığı (20-23 Ağustos 2026) + TEKNOFEST Şanlıurfa (30 Eylül – 4 Ekim 2026)",
+    "hedef_egitim_seviyesi": "Yükseköğretim Öğrencileri (Ön lisans, Lisans, Yüksek Lisans, Doktora)",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 15,
+      "danisman_dahil_mi": false,
+      "bireysel_basvuru": false,
+      "tek_takim_kurali": "Bu yarışma için bir kişi (danışman, kaptan veya takım üyesi olarak) yalnızca bir takımda bulunabilir.",
+      "kural_detayi": "Yarışmaya Türkiye ve yurt dışında öğrenim gören tüm ön lisans, lisans, yüksek lisans ve doktora öğrencileri takım halinde katılabilir. Takımlar en az 3, en fazla 15 öğrenciden oluşur (danışman hariç). Bireysel katılım sağlanamaz. Takım kaptanı bulunmalıdır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Danışman zorunluluğu yoktur. Danışman olursa en fazla 1 kişi olabilir. Birden fazla danışman bulunursa başvuru geçersiz sayılır.",
+      "nitelik": "Danışman öğretim görevlisi, öğretim üyesi veya araştırma görevlisi olabilir.",
+      "belge": "Danışman taahhütnamesi ıslak imzalı olarak TEKNOFEST tarafından açıklanacak tarihte sisteme yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "sistem_tipi": "İnsansız Deniz Aracı (İDA) - Otonom yüzey aracı. İsteğe bağlı olarak İHA (İnsansız Hava Aracı) ile desteklenebilir.",
+    "genel_puanlama_dagilimi": {
+      "formul": "Nihai Puan = KTR Raporu (15p) + Parkur-1 (maks 55p) + Parkur-2 (maks 100p) + Parkur-3 (maks 145p) - Ceza Puanları + Bonus Puanlar",
+      "toplam_maksimum": 315,
+      "odul_siralamasina_girebilmek_icin": "Ödül sıralamasına girebilmek için takımların en az Parkur 1 ve Parkur 2 görevlerini başarıyla tamamlamış olması zorunludur."
+    },
+    "itiraz_kurali": "Yarışma alanında itirazlar Takım Kaptanı tarafından yazılı olarak yapılır. Her takımın en fazla 2 itiraz hakkı vardır; itirazlardan en az biri takımın kendi yarışması ile ilgili olmalıdır. Rapor itirazları şartnamenin genel kurallar bölümünde tanımlı esaslara göre yürütülür.",
+    "etik_kurallari": {
+      "genel": "Kendi takım arkadaşlarına, diğer takım üyelerine, Hakem Kuruluna, organizasyon heyetine veya ziyaretçilere etik olmayan davranış sergileyen bireylerin takımlarına ceza puanı uygulanır. Ceza miktarı konusunda Hakem Kurulu yetkilidir.",
+      "prestij_kisiti": "Etik davranış cezası alan takımlar Hakem Kurulu tarafından 'En İyi Takım Ruhu', 'En Özgün Yazılım' ve 'En İyi Tasarım' ödüllerinden herhangi birine aday gösterilmeyecektir."
+    },
+    "oduller": {
+      "birincilik": "300.000 TL (Danışman: 20.000 TL)",
+      "ikincilik": "250.000 TL (Danışman: 15.000 TL)",
+      "ucunculuk": "200.000 TL (Danışman: 12.000 TL)",
+      "odul_notu": "Derece ödülleri, takım üyeleri toplam sayısına göre eşit miktarda bölünerek her şahsın belirteceği banka hesabına yatırılır.",
+      "prestij_odulleri": [
+        {
+          "odul_adi": "En İyi Takım Ruhu Ödülü",
+          "aciklama": "Alandaki iş planını ve enerjisini en iyi yansıtan, takım içi ve takımlar arası iletişimi güçlü takıma verilir. Maddi karşılığı yoktur (Prestij).",
+          "engel_durumu": "Etik davranış cezası alan takımlar aday gösterilmez."
+        },
+        {
+          "odul_adi": "En Özgün Yazılım Ödülü",
+          "aciklama": "İşlevsellik, güvenilirlik, yüksek teknolojiyle uyumlu altyapı ve sistem mimarisine sahip en özgün yazılımı geliştiren takıma verilir. Maddi karşılığı yoktur (Prestij).",
+          "engel_durumu": "Etik davranış cezası alan takımlar aday gösterilmez."
+        },
+        {
+          "odul_adi": "En İyi Tasarım Ödülü",
+          "aciklama": "İDA tasarımı ve üretiminde kendi özgün tasarımını yapıp üreten takımlara verilir. Maddi karşılığı yoktur (Prestij).",
+          "engel_durumu": "Etik davranış cezası alan takımlar aday gösterilmez."
+        }
+      ]
+    },
+    "sartname_dosyasi": "2026_İnsansız_Deniz_Araci_Şartnamesi_TR_18_05___QqiGV.pdf"
+  },
+  "stages": [
+    {
+      "stage": "TYR",
+      "stage_name": "Teknik Yeterlilik Raporu",
+      "weight_in_total": "Ön Eleme Barajı (Puan açıklanmaz, Başarılı / Başarısız olarak değerlendirilir)",
+      "son_teslim_tarihi": "24.03.2026 17:00",
+      "sonuc_aciklama_tarihi": "31.03.2026",
+      "template": "2026_Insansız_Deniz_Araci_TYR_Sablonu_TR_KLBrN.docx",
+      "format_rules": {
+        "font_family": "Arial",
+        "font_size": "12 pt (Başlıklar: Arial Black 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor kapak ve içindekiler için 2 ayrı sayfa içermelidir. Rapor şablonuna uymayan TYR'ler değerlendirmeye alınmayacaktır."
+      },
+      "rubric": {
+        "stage": "TYR",
+        "degerlendirme_tipi": "Teknik yeterlilik olarak Başarılı / Başarısız şeklinde sonuç açıklanır; puan açıklanmaz.",
+        "kapsam": [
+          "İDA mekanik tasarımı",
+          "Elektronik donanım tasarımı",
+          "Algoritma ve yazılım tasarımı",
+          "Temel sistem mimarisi ve blok şema"
+        ]
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu",
+      "weight_in_total": "15 puan (Final Nihai Puanına dahil)",
+      "son_teslim_tarihi": "20.05.2026 17:00",
+      "sonuc_aciklama_tarihi": "08.06.2026",
+      "template": "2026_Insansız_Deniz_Araci_KTR_Sablonu_iedLX.docx",
+      "format_rules": {
+        "max_pages": 30,
+        "total_page_limit_description": "Kapak, içindekiler ve referanslar dahil en fazla 30 sayfa. Sayfa sınırına uymayan raporlar değerlendirmeye alınmayacaktır.",
+        "font_family": "Arial",
+        "font_size": "12 pt (Başlıklar: Arial Black 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst: 2.8 cm, Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor kapak ve içindekiler için 2 ayrı sayfa içermelidir. KTR şablonuna uymayan raporlar değerlendirmeye alınmayacaktır."
+      },
+      "rubric": {
+        "stage": "KTR",
+        "total_score": 100.0,
+        "final_agirlik_puani": 15.0,
+        "criteria": [
+          {
+            "id": "ktr_1_proje_ozeti",
+            "name": "PROJE ÖZETİ",
+            "max_score": 5.0,
+            "description": "Proje kapsamında yürütülen faaliyetlerle ilgili özet bilgi verilmesi."
+          },
+          {
+            "id": "ktr_2_ida_platform_tasarimi",
+            "name": "İDA PLATFORM TASARIMI",
+            "max_score": 15.0,
+            "description": "İtki ve sevk-idare sistemi detay ve nihai tasarımı, nihai platform detayları, alt sistem ağırlık kırılım tablosu, teknik çizim ve yerleşim planı, en az 2 adet 3D mekanik görsel/render/fotoğraf ve TYF sonrası yapılan değişiklikler/gerekçeleri."
+          },
+          {
+            "id": "ktr_3_sistem_mimarisi",
+            "name": "SİSTEM MİMARİSİ",
+            "max_score": 20.0,
+            "description": "Genel sistem bileşenleri ve katmanları (İDA ve varsa İHA güç ve veri aktarım hatlarını içeren detaylı blok şema), yazılım mimarisi katmanları, donanım-yazılım entegrasyonu (protokoller) ve TYF sonrası sistem mimarisi değişiklikleri."
+          },
+          {
+            "id": "ktr_4_uctan_uca_sistem_akisi",
+            "name": "UÇTAN UCA SİSTEM AKIŞI",
+            "max_score": 15.0,
+            "description": "İDA'ya güç verilmesinden görev yükleme, başlatma, parkur görevleri, geçişler ve görevin sonlandırılmasına kadarki akışın detaylı görselleştirilmesi/anlatımı ve TYF sonrası değişiklikler."
+          },
+          {
+            "id": "ktr_5_algoritma_tasarimlari",
+            "name": "ALGORİTMA TASARIMLARI",
+            "max_score": 25.0,
+            "description": "Sensör verilerinin kullanımı, algoritma akış tasarımı, hata yakalama ve düzeltme yapıları, 3 parkur görevi için geliştirilen algoritma ve kontrolcülerin pseudo kod veya diyagramlarla sunumu ve TYF sonrası değişiklikler."
+          },
+          {
+            "id": "ktr_6_haberlesme_cozumu",
+            "name": "HABERLEŞME ÇÖZÜMÜ",
+            "max_score": 10.0,
+            "description": "İDA-YKİ ve varsa İHA-YKİ/İHA-İDA haberleşme çözümü, aktarılacak temel veriler, gönderme-alma frekansları, frekans değiştirme özellikleri ve TYF sonrası değişiklikler."
+          },
+          {
+            "id": "ktr_7_takim_yapisi",
+            "name": "TAKIM YAPISI",
+            "max_score": 5.0,
+            "description": "Görev isterlerine uygun, planlama ihtiyaçlarını karşılayan, farklı disiplinlerde üyelerden oluşan ekibin iş dağılımının görsel olarak sunulması."
+          },
+          {
+            "id": "ktr_8_proje_rapor_duzeni",
+            "name": "PROJE RAPOR DÜZENİ",
+            "max_score": 5.0,
+            "description": "Sayfa sınırlarına uyum (maksimum 30 sayfa), akademik yazım kuralları, kaynakça ve içindekiler düzeni."
+          }
+        ],
+        "not": "KTR şablonunda yer alan 8 kriterin toplamı 100 puandır. Yarışma genel puanlamasında KTR doğrudan 15 nihai puan olarak hesaba katılır (Tablo 4 ve Tablo 6)."
+      }
+    },
+    {
+      "stage": "OTONOMI_VIDEO",
+      "stage_name": "Sistem Kabiliyeti (Otonomi Kabiliyeti Gösterimi) Videosu",
+      "weight_in_total": "Eleme Aşaması (Finalist Olma Şartı - Nihai puana katkısı %0)",
+      "son_teslim_tarihi": "21.07.2026 17:00",
+      "finalist_aciklama": "27.07.2026",
+      "format_rules": {
+        "cozunurluk": "Minimum 720p",
+        "sure": "Minimum 2 dakika, Maksimum 5 dakika",
+        "platform": "YouTube (Yalnızca YouTube kabul edilir, 'Liste Dışı' olarak yüklenebilir)",
+        "video_ekrani": "3 ekrana bölünmüş: 1. YKİ ekran görüntüsü | 2. Temel grafikler (hız, heading/yaw, thruster kuvvet talepleri) | 3. Dış kamera görüntüsü (RC kumanda, İDA suda hareketi, İDA iç görüntüsü vb.)",
+        "zorunlu_adimlar": [
+          "İDA ve YKİ arasında kablosuz bağlantının sağlanması ve telemetrinin YKİ'de gösterilmesi",
+          "YKİ üzerinden dikdörtgen oluşturacak şekilde 4 noktalı otonom görev tanımlanıp İDA'ya gönderilmesi",
+          "YKİ veya RC kumandadan komutla görevin başlatılması ve 4. noktaya ulaşıldığında otonom görevin tamamlanması",
+          "Başlangıç noktasına dönüş akabinde İDA motorlarının güvenlik anahtarı/butonu ile kapatılması ve kumandadan komut verilse de dönmediğinin gösterilmesi",
+          "İDA kapakları açılarak su sızdırmazlığının (su almadığının) net olarak gösterilmesi"
+        ],
+        "elenme_sebepleri": "İstemsiz ve yönden bağımsız dönüşler, görüntünün net olmaması veya link sorunları elenme sebebidir."
+      }
+    },
+    {
+      "stage": "FINAL_GOREVLERI",
+      "stage_name": "Final Parkur Görevleri",
+      "weight_in_total": "300 Görev Puanı (Toplam Puan = 15 KTR + 300 Parkur - Cezalar + Bonuslar = 315 Maksimum)",
+      "final_tarihi": "20-23 Ağustos 2026 (Gölcük Tersanesi Komutanlığı)",
+      "format_rules": {
+        "sure": "20 dakika (Parkur-3 sonrası başlangıca dönüş süresi dahil değildir)",
+        "yeniden_baslama": "1 kez yeniden başlama hakkı vardır (Toplanan puanlar sıfırlanır, süre durmaksızın devam eder)",
+        "pas_gecme": "1 kez pas geçme hakkı vardır (10 ceza puanı uygulanır, takım kura sırasının en sonuna geçer)",
+        "iha_kullanimi": "İsteğe bağlıdır (Girişte beyan edilir, yeniden başlama hakkı kullanıldığında İHA'sız devam edilebilir)"
+      },
+      "rubric": {
+        "stage": "FINAL_GOREVLERI",
+        "parkurlar": [
+          {
+            "parkur": "Parkur-1 (Temel Manevra)",
+            "max_score": 55,
+            "kriterler": [
+              {"kriter": "Başlama, Motor Çalıştırma ve Hareket", "puan": 2},
+              {"kriter": "Parkur-1'e Giriş Yapma (İDA'nın birinci duba ikilisinin %100'ünü geçmiş olması)", "puan": 3},
+              {"kriter": "Duba Arası Geçiş Puanı", "formul": "(G1 / KD1) x 10", "aciklama": "G1: Farklı karşılıklı kenar dubaları arasından geçiş sayısı, KD1: Karşılıklı kenar dubası sayısı"},
+              {"kriter": "Çarpma Puanı", "formul": "((-16 x Ç1) / KD1) + 16, Ç1 ∈ [0 : KD1]; Ç1 > KD1 ise 0", "aciklama": "Ç1: Çarpılan duba sayısı (aynı dubaya 30 sn temas 2 çarpma sayılır)"},
+              {"kriter": "Parkur Dışına Çıkma Puanı", "formul": "(((-24 x PDÇ1) / 4) + 24), PDÇ1 ∈ [0 : 4]; PDÇ1 > 4 ise 0", "aciklama": "PDÇ1: Parkurdan çıkış sayısı (dışarıda 40 sn kalma 2 çıkış sayılır)"}
+            ]
+          },
+          {
+            "parkur": "Parkur-2 (Engelli Manevra)",
+            "max_score": 100,
+            "kriterler": [
+              {"kriter": "Duba Arası Geçiş Puanı", "formul": "(G2 / KD2) x 40", "aciklama": "G2: Karşılıklı kenar dubaları arasından geçiş sayısı, KD2: Karşılıklı kenar dubası sayısı"},
+              {"kriter": "Çarpma Puanı (Duba + Engel)", "formul": "((-30 x Ç2) / (KD2 + ED2)) + 30, Ç2 ∈ [0 : (KD2 + ED2)]; Ç2 > (KD2 + ED2) ise 0", "aciklama": "Ç2: Çarpılan duba/engel sayısı, ED2: İkinci parkurdaki engel duba sayısı"},
+              {"kriter": "Parkur Dışına Çıkma Puanı", "formul": "((-30 x PDÇ2) / 5) + 30, PDÇ2 ∈ [0 : 5]; PDÇ2 > 5 ise 0", "aciklama": "PDÇ2: Parkurdan çıkış sayısı"}
+            ]
+          },
+          {
+            "parkur": "Parkur-3 (Hedef Tespiti ve Angajman)",
+            "max_score": 145,
+            "kriterler": [
+              {
+                "kriter": "Başarılı Angajman Puanı",
+                "detay": {
+                  "TS3_0": "100 puan (TS3 = 0, direkt doğru hedefe temas)",
+                  "TS3_1": "50 puan (TS3 = 1, hedefe vurmadan önce 1 farklı hedefe temas)",
+                  "TS3_2": "5 puan (TS3 = 2, hedefe vurmadan önce 2 farklı hedefe temas)",
+                  "TS3_3_to_8": "2 puan (2 < TS3 <= 8)",
+                  "TS3_above_8": "1 puan (TS3 > 8)"
+                },
+                "aciklama": "TS3: Angaje olunacak hedefe vurduğu andan önce farklı hedeflere temas sayısı."
+              },
+              {
+                "kriter": "Başarılı Angajman Koşuluyla İHA Kullanımı",
+                "puan": 45,
+                "aciklama": "İHA kıyıdaki hedef plaka rengini (3 renkten biri) otonom algılar; İDA bu renkteki hedefe başarılı angajman yaparsa verilir."
+              }
+            ]
+          }
+        ],
+        "ceza_puanlari": [
+          {"madde": "5.5.4.3.1", "tanim": "Pas Geçme Cezası", "puan": -10, "kapsam": "Tek seferlik (1 defaya mahsus pas geçme hakkı)"},
+          {"madde": "5.5.4.3.2", "tanim": "Haberleşme Ortamı İhlal Cezası (2.4-2.8 GHz / 5.15-5.85 GHz bant veya dahili Wi-Fi kullanımı)", "puan": -150, "kapsam": "Vaka başına"},
+          {"madde": "5.5.4.3.2", "tanim": "Yasak Frekans Kullanım Cezası (Şartnamede belirtilmeyen frekans kullanımı)", "puan": -55, "kapsam": "Vaka başına"},
+          {"madde": "5.5.4.3.3", "tanim": "Görev, Komut, Aktarım ve Diğer Parkur İhlal Cezaları", "puan": -50, "kapsam": "Vaka başına"},
+          {"madde": "5.5.4.3.4", "tanim": "Deniz Alanı Kirletme Cezası", "puan": -20, "kapsam": "Tek seferlik"},
+          {"madde": "5.5.4.3.5", "tanim": "Video ve Veri Teslim Cezası (İDA karaya alındıktan 20 dk içinde teslim edilmeyen her dosya için)", "puan": -5, "kapsam": "Dosya başına"},
+          {"madde": "5.5.4.3.6", "tanim": "Teknik Kontroller Süre Aşımı Cezası (Anons sonrası 3 dk içinde çadıra gelmeme)", "puan": -5, "kapsam": "Tek seferlik"},
+          {"madde": "5.5.4.3.7", "tanim": "Etik Davranış Cezası", "puan": "Hakem Kurulu yetkisindedir", "kapsam": "Vaka başına (Prestij ödüllerine adaylığı engeller)"}
+        ],
+        "bonus_puanlar": [
+          {"madde": "5.5.4.3.8", "tanim": "Gönüllü İlk Yarışmacı Bonusu", "puan": 15, "aciklama": "Yarışma başlangıcında tüm takımların pas geçmek istemesi ve yalnızca bir takımın gönüllü ilk yarışmak istemesi durumunda verilir."}
+        ]
+      }
+    }
+  ]
+}

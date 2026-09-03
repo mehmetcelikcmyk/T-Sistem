@@ -1,0 +1,100 @@
+{
+  "category_name": "Savasan Iha Avci Drone Yarismasi",
+  "stage": "GENEL",
+  "keywords": [
+    "kilitlenme",
+    "hakem",
+    "olarak",
+    "puan)",
+    "ilgili",
+    "takip",
+    "toplam",
+    "belirtilen",
+    "haberleşme",
+    "tespit",
+    "tasarım",
+    "takımlar",
+    "gerekmektedir.",
+    "üzerinden",
+    "raporu",
+    "teknofest",
+    "otonom",
+    "algoritma",
+    "yarışma",
+    "rapor"
+  ],
+  "criteria": [
+    {
+      "id": "crit_0",
+      "name": "Temel Si̇stem Özeti̇",
+      "max_score": 5.0,
+      "description": "Temel Si̇stem Özeti̇ bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_1",
+      "name": "Organi̇zasyon Özeti̇",
+      "max_score": 5.0,
+      "description": "Organi̇zasyon Özeti̇ bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_2",
+      "name": "Detayli Algori̇tma Özeti̇",
+      "max_score": 40.0,
+      "description": "Detayli Algori̇tma Özeti̇ bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_3",
+      "name": "Yasakli Uçuş Bölgesi̇ Ve Aci̇l Durum",
+      "max_score": 10.0,
+      "description": "Yasakli Uçuş Bölgesi̇ Ve Aci̇l Durum bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_4",
+      "name": "Haberleşme Ve Kullanici Arayüzü",
+      "max_score": 20.0,
+      "description": "Haberleşme Ve Kullanici Arayüzü bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_5",
+      "name": "Test Ve Uçuş Kontrolü",
+      "max_score": 10.0,
+      "description": "Test Ve Uçuş Kontrolü bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_6",
+      "name": "Güvenli̇k",
+      "max_score": 5.0,
+      "description": "Güvenli̇k bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    },
+    {
+      "id": "crit_7",
+      "name": "Organi̇zasyon\n Özeti̇",
+      "max_score": 5.0,
+      "description": "Organi̇zasyon\n Özeti̇ bölümü analizi.",
+      "guiding_questions": [
+        "Şartnameye uygun mu?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "slug": "nukleer-enerji-teknolojileri-tasarim-yarismasi",
+  "name": "TEKNOFEST Nükleer Enerji Teknolojileri Tasarım Yarışması",
+  "specifications": [
+    "2026_Nukleer_Enerji_Teknolojilleri_Tasarım_Yarısması_Sartnamesi_TR_4kjmi.pdf",
+    "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "nukleer-enerji-teknolojileri-tasarim-yarismasi",
+    "kategori_adi": "Nükleer Enerji Teknolojileri Tasarım Yarışması",
+    "hedef_egitim_seviyesi": "Lisans (açık öğretim dahil), Yüksek Lisans, Doktora öğrencileri, Mezunlar, Akademisyenler ve Sektör Çalışanları.",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 25
+    },
+    "danisman_sarti": "Lisans ve Okul takımlarında 1 danışman zorunludur. Mezun veya profesyonel takımlarda aranmaz.",
+    "dil_gereksinimi": "Türkçe",
+    "keywords": [
+      "nükleer enerji",
+      "smr",
+      "mmr",
+      "modüler reaktör",
+      "araştırma reaktörü",
+      "reaktör kor tasarımı",
+      "toryum",
+      "kaza toleranslı yakıt (atf)",
+      "nükleer atık yönetimi",
+      "hidrojen üretimi",
+      "radyasyondan korunma"
+    ],
+    "oncelikli_gorevler": [
+      "Küçük Modüler Reaktörler (SMR/MMR) veya Araştırma Reaktörleri için güvenli, verimli ve yenilikçi kavramsal veya detay tasarımlar yapmak."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Takım Büyüklüğü (Kritik): Bu yarışma çok geniş çaplı bir mühendislik projesi gerektirdiği için takımlar en az 3, en fazla 25 kişiden oluşmalıdır.",
+      "Sayfa Limiti (Kritik): Final Değerlendirme Raporu (FDR) ana metni en fazla 120 sayfa olmalıdır (Kapak, İçindekiler, Kaynakça ve Ekler hariçtir).",
+      "Tipografi ve 3 Bağımsız Sayfa: Arial 12pt, başlıklar Arial Black 14pt, 1.15 satır aralığı. Kapak, İçindekiler ve Kaynakça ana metinle birleştirilmeden 3 AYRI BAĞIMSIZ SAYFA olarak düzenlenmelidir.",
+      "Dijital Veri Eki Kuralı: Simülasyon girdi/çıktıları, CAD çizimleri veya yazılım kodları rapora sığmayacağı için ZIP olarak yüklenmeli; ancak raporun 'DİJİTAL EKLER' kısmında indeks listesi mutlaka verilmelidir.",
+      "İntihal ve Veri Kopyalama Yasağı: Başka santrallere ait verilerin birebir (atıfsız) kopyalanması diskalifiye sebebidir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Nükleer Güvenlik Sistemleri: SMR veya araştırma reaktörünün tasarımında 'Pasif Güvenlik Sistemleri'nin (enerji kesilse dahi erimeyi durduran sistemler) simülasyonları ve termal-hidrolik akış şemaları doğrulanmalıdır.",
+      "Atık Yönetimi (Back-end): Reaktörden çıkan nükleer atığın miktarını ve radyoaktivitesini azaltmaya yönelik (kapalı yakıt çevrimi, ileri geri kazanım) mühendislik çözümleri raporda bulunmalıdır.",
+      "Modüler Reaktör Bonus Kriterleri (AI Kontrolü): SMR kategorisinde yarışan takımlara şu konulardan herhangi biri teknik/simülasyon analiziyle sunulursa ekstra puan verilecektir: 1) Toryum yakıt çevrimi, 2) Kaza Toleranslı Yakıt (ATF), 3) Yüksek kapasiteli hidrojen üretimi entegrasyonu."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Tasarımın OpenMC, MCNP, ANSYS veya benzeri nükleer/termal/mekanik simülasyon yazılımları ile desteklenmiş mühendislik kalibrasyonlarına sahip olması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "FDR_Kavramsal_Tasarim",
+      "template": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx",
+      "rubric": {
+        "category_name": "nukleer-enerji-teknolojileri-tasarim-yarismasi",
+        "stage": "FDR_Kavramsal_Tasarim",
+        "description": "Nükleer Enerji Kavramsal Tasarım Raporu Rubriği (AI analizinde ana disiplinlere göre 100 üzerinden dengelenmiştir. Uygun SMR tasarımlarına +15 bonusa kadar ek puan verilebilir).",
+        "criteria": [
+          {
+            "id": "reaktor_kor_tasarimi",
+            "name": "Reaktör Kor ve Nötronik Tasarım",
+            "max_score": 25.0,
+            "description": "Yakıt çubukları dizilimi, nötronik (k-eff) analizleri, sıcaklık katsayıları ve kontrol çubuğu reaktivite değerleri.",
+            "guiding_questions": [
+              "Fiziksel reaktör koru tasarımı ve OpenMC/MCNP gibi araçlarla nötronik hesaplamalar detaylı gösterilmiş mi?"
+            ]
+          },
+          {
+            "id": "termal_hidrolik",
+            "name": "Termal-Hidrolik ve Enerji Çevrimi",
+            "max_score": 20.0,
+            "description": "Isı transferi, soğutucu akışkan dinamikleri ve türbin/jeneratör enerji çevrim verimliliği.",
+            "guiding_questions": [
+              "ANSYS vb. analizlerle termal sınırların aşılmadığı kanıtlanmış mı? Santral çevrim şeması var mı?"
+            ]
+          },
+          {
+            "id": "pasif_guvenlik_sistemleri",
+            "name": "Pasif Güvenlik Sistemleri (Safety)",
+            "max_score": 25.0,
+            "description": "Kaza senaryolarında insan müdahalesi gerektirmeyen (yerçekimi, doğal sirkülasyon) güvenlik tahliye sistemleri.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Tasarım aktif güç kesildiğinde kendi kendini soğutabiliyor mu? Kaza analizleri sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "atik_yonetimi_ve_yerlesim",
+            "name": "Nükleer Atık Yönetimi ve Tesis Yerleşimi",
+            "max_score": 20.0,
+            "description": "Yakıt son çevrim (back-end), radyasyondan korunma kalkanları ve tesis CAD yerleşimi.",
+            "guiding_questions": [
+              "Atık hacmini düşüren yenilikçi çözümler ve santral 3 boyutlu tesis genel planı (CAD) sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "proje_yonetimi_format",
+            "name": "Format, Proje Yönetimi ve Dijital Ekler",
+            "max_score": 10.0,
+            "description": "120 sayfa kuralı, 3 bağımsız sayfa düzeni ve ZIP dosyasına atıf yapan dijital ekler tablosu.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Ana metin 120 sayfayı aşıyor mu? 'DİJİTAL EKLER' başlığı altında simülasyon dosyaları listelenmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "reaktor_kor": "Reaktör Kor Tasarımı",
+          "termal_hidrolik": "Termal-Hidrolik Tasarım",
+          "guvenlik": "Pasif Güvenlik Sistemleri Tasarımı",
+          "yardimci_sistemler": "Yardımcı Sistemler",
+          "enerji_cevrimi": "Enerji Çevrimi ve Entegre Sistemler",
+          "yerlesim": "Tesisin Genel Tanımı ve Yerleşim Tasarımı",
+          "atik_yonetimi": "Nükleer Atık Yönetimi",
+          "dijital_ekler": "DİJİTAL EKLER"
+        },
+        "max_pages": 120
+      }
+    }
+  ]
+}

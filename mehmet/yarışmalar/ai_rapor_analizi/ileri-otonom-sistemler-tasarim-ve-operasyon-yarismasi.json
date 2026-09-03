@@ -1,0 +1,254 @@
+{
+  "slug": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+  "name": "İleri Otonom Sistemler Tasarım ve Operasyon Yarışması",
+  "specifications": [
+    "Ileri_Otonom_Sistemler_Tasarım_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+    "kategori_adi": "İleri Otonom Sistemler Tasarım ve Operasyon Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, TUSAŞ & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Üniversite ve Üzeri (Ön Lisans, Lisans, Lisansüstü Öğrencileri ve Mezunlar)",
+    "takim_kurallari": {
+      "uye_sayisi_min": 6,
+      "uye_sayisi_max": 10,
+      "danisman_dahil_mi": false,
+      "bireysel_basvuru": false,
+      "anonimlik_kurali": "Raporlarda ve takım şemalarında üyelerin isim, soyisim, fotoğraf gibi kişisel verilerine kesinlikle yer verilmemelidir (Rol bazlı anlatım esastır).",
+      "kural_detayi": "Takımlar danışman hariç en az 6, en fazla 10 kişiden oluşur (Bireysel başvuru kabul edilmez). Her yarışmacı yalnızca 1 takımda yer alabilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar en fazla 1 öğretim görevlisi/üyesi veya sektör uzmanını danışman olarak alabilir (İsteğe Bağlı).",
+      "limit": "Danışman takım üyesi olarak eklenmez; varsa onaylı görevlendirme belgesi sisteme yüklenir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_dagilimi": {
+      "formul": "Nihai Puan = (0.65 * Puan2_Ucus_Performansi) + (0.20 * P_Saha_Katilimi) + (0.15 * Puan1_Rapor_Performansi)",
+      "puan1_rapor_kirilimi": {
+        "formul": "Puan1 = (0.10 * ODR) + (0.25 * DDR) + (0.55 * FDA) + (0.10 * UHDR)",
+        "odr": "%10",
+        "ddr": "%25",
+        "fda": "%55",
+        "uhdr": "%10"
+      },
+      "puan2_ucus_kirilimi": {
+        "formul": "Puan2 = K_zorluk * [P_gorev (600p) + (25000-m_IHA)/10 + (900-t_IHA)/5 + (900-t_hazirlik)/30 + (10000-m_IKA)/15 + (m_yuk*0.01) + (600-t_IKA)/15 - C_ceza]"
+      },
+      "p_saha_katilimi_kirilimi": {
+        "formul": "P = P_Teknik_Muayene (100p/50p) + P_Ucus_Basarisi (her senaryo 200p) + P_Centilmenlik (maks 50p)"
+      }
+    },
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "750.000,00 ₺",
+        "danisman_odulu": "50.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "600.000,00 ₺",
+        "danisman_odulu": "40.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "500.000,00 ₺",
+        "danisman_odulu": "30.000,00 ₺"
+      },
+      "tusas_ozel_odulu": "Genel sıralamada ilk 3 dereceye giren takımların üyelerine TUSAŞ Ankara tesislerinde yaz dönemi staj programı hakkı."
+    },
+    "sartname_dosyasi": "Ileri_Otonom_Sistemler_Tasarım_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf"
+  },
+  "stages": [
+    {
+      "stage": "ODR",
+      "stage_name": "Ön Değerlendirme Raporu",
+      "weight_in_puan1": "%10",
+      "template": "İleri_Otonom_Sistemler_Tsarım_ve_Operasyon_Yarışması_ÖDR_Şablonu_TR_13.04.docx",
+      "format_rules": {
+        "max_pages": 8,
+        "total_page_limit_description": "Hazırlanacak raporun uzunluğu, referanslar dizini dahil olmak üzere toplam 8 sayfayı aşmamalıdır (Önlü-arkalı kullanımı kapsar).",
+        "special_requirements": "Raporun objektif değerlendirme kriterleri uyarınca, üyelerin kişisel verilerinden (isim, görsel vb.) arındırılmış, tamamen rol bazlı bir anlatım tercih edilmelidir."
+      },
+      "rubric": {
+        "category_name": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+        "stage": "ODR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_ozet",
+            "name": "Bölüm 1. Özet",
+            "max_score": 10.0,
+            "description": "Projenin teknik vizyonu ve operasyonel kabiliyetini yansıtan stratejik özet (en fazla 500 kelime), özgün sistem mimarisi ve görev entegrasyonu."
+          },
+          {
+            "id": "2_organizasyonel_yapi",
+            "name": "Bölüm 2. Organizasyonel Yapı",
+            "max_score": 5.0,
+            "description": "Kişisel verilerden arındırılmış, rol bazlı ve profesyonel takım organizasyon şeması."
+          },
+          {
+            "id": "3_proje_takvimi",
+            "name": "Bölüm 3. Proje Takvimi",
+            "max_score": 5.0,
+            "description": "Kavramsal tasarım, detay tasarım, prototip faaliyetleri ve iş paketlerini içeren analitik teknik takvim."
+          },
+          {
+            "id": "4_butce_analizi",
+            "name": "Bölüm 4. Bütçe Analizi",
+            "max_score": 5.0,
+            "description": "Maliyet kalemleri, tedarik planlaması, bileşen teknik tanımları ve sistem mimarisindeki fonksiyonel gereklilikleri."
+          },
+          {
+            "id": "5_kavramsal_tasarim_yaklasimi",
+            "name": "Bölüm 5. Kavramsal Tasarım Yaklaşımı",
+            "max_score": 25.0,
+            "description": "İHA, İKA ve mancınık fırlatma sistemlerinin tasarım felsefesi, konfigürasyon avantajları, teknik ikilemler ve disiplinler arası mühendislik yaklaşımları."
+          },
+          {
+            "id": "6_fayda_analizi_calismalari",
+            "name": "Bölüm 6. Fayda Analizi Çalışmaları",
+            "max_score": 20.0,
+            "description": "Görev senaryoları özelinde operasyonel kazanımlar, süre/enerji/doğruluk optimizasyonu ve görev başarım matrisi."
+          },
+          {
+            "id": "7_uretim_plani",
+            "name": "Bölüm 7. Üretim Planı",
+            "max_score": 10.0,
+            "description": "İmalat teknolojileri, montaj stratejileri, mekanik malzeme özellikleri (ağırlık/dayanım dengesi) ve birleştirme yöntemleri."
+          },
+          {
+            "id": "8_sistem_entegrasyon_ve_test",
+            "name": "Bölüm 8. Sistem Entegrasyonu ve Test Planı",
+            "max_score": 20.0,
+            "description": "Fiziksel Dönüşüm ve Entegrasyon (kavramsal tasarımların fiziksel platforma dönüştürülmesi ve ana/alt sistemlerin bir araya getirilmesi), Bütünleşik Çalışma ve Operasyonel Yetkinlik (bütünleşik çalışma prensipleri, operasyonel test/doğrulama/geçerli kılma stratejileri), Test Faaliyetleri ve Başarı Kriterleri (görev gereksinimlerinin karşılandığının teknik ispatı ve her test için tanımlanan başarı kriterleri)."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "DDR",
+      "stage_name": "Detay Değerlendirme Raporu",
+      "weight_in_puan1": "%25",
+      "template": "DDR_Sablon_TR_BhrGu.pdf",
+      "format_rules": {
+        "max_pages": 40,
+        "special_requirements": "Detaylı mekanik (İHA, İKA, Mancınık), yapısal analizler, aerodinamik/kararlılık, aviyonik/yazılım mimarisi, test faaliyetleri ve MoC (Means of Compliance) izlenebilirlik matrisi."
+      },
+      "rubric": {
+        "category_name": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+        "stage": "DDR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "ddr_1_ozet",
+            "name": "Bölüm 1. Özet",
+            "max_score": 5.0,
+            "description": "Projenin teknik vizyonu, detay tasarım aşamasındaki güncellemeler ve operasyonel kabiliyet özeti."
+          },
+          {
+            "id": "ddr_2_organizasyon_ve_takvim",
+            "name": "Bölüm 2. Organizasyonel Yapı ve Proje Takvimi",
+            "max_score": 5.0,
+            "description": "Rol bazlı anonim takım yapısı ve güncellenmiş detaylı iş-zaman takvimi."
+          },
+          {
+            "id": "ddr_3_genel_sistem_spesifikasyonlari",
+            "name": "Bölüm 3. Genel Sistem Spesifikasyonları",
+            "max_score": 60.0,
+            "description": "3.1 Uçuş Bilimleri/İHA Tasarımı (Ağırlık-denge, aerodinamik, kararlılık, uçuş zarfı, performans/yük hesapları), 3.2 Yapısal Tasarım ve Analiz (İHA, İKA, Mancınık analizleri), 3.3 Aviyonik ve Yazılım (Donanım seçimi/BOM, kablolama/AWG/EMI, batarya/güç analizi, görüntü işleme/rota tespiti ve haberleşme)."
+          },
+          {
+            "id": "ddr_4_test_faaliyetleri",
+            "name": "Bölüm 4. Test Faaliyetleri",
+            "max_score": 10.0,
+            "description": "Kabul testleri, entegrasyon süreçleri, yer testleri görselleri/sonuçları ve gelecek test programı."
+          },
+          {
+            "id": "ddr_5_gereksinim_izlenebilirligi",
+            "name": "Bölüm 5. Gereksinim İzlenebilirliği ve Değerlendirme",
+            "max_score": 10.0,
+            "description": "MoC (Means of Compliance) metodolojisine dayalı gereksinim doğrulama ve izlenebilirlik matrisi."
+          },
+          {
+            "id": "ddr_6_rapor_duzeni",
+            "name": "Bölüm 6. Rapor Düzeni",
+            "max_score": 10.0,
+            "description": "Akademik yazım kuralları, format uyumu, şekil ve tablo düzeni."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "FDA",
+      "stage_name": "Final Değerlendirme Aşaması (FDR)",
+      "weight_in_puan1": "%55",
+      "template": "FDR_2_qNiVF.pdf",
+      "format_rules": {
+        "special_requirements": "Üretimi tamamlanan sistemlerin nihai spesifikasyonları, üretim faaliyetleri, test çıktıları, bütçe gerçekleşme analizi ve jüri sunumu."
+      },
+      "rubric": {
+        "category_name": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+        "stage": "FDA",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "fdr_1_ozet",
+            "name": "Bölüm 1. Özet",
+            "max_score": 5.0,
+            "description": "Nihai üretilen sistemlerin operasyonel kabiliyet özeti."
+          },
+          {
+            "id": "fdr_2_organizasyon_ve_takvim",
+            "name": "Bölüm 2. Organizasyonel Yapı ve Proje Takvimi",
+            "max_score": 5.0,
+            "description": "Takım yapılanması ve gerçekleşen proje takvimi analizi."
+          },
+          {
+            "id": "fdr_3_genel_sistem_spesifikasyonlari",
+            "name": "Bölüm 3. Genel Sistem Spesifikasyonları",
+            "max_score": 40.0,
+            "description": "Üretilen nihai sistemlerin uçuş bilimleri, yapısal tasarım/analiz doğrulamaları ve aviyonik/yazılım simülasyonları."
+          },
+          {
+            "id": "fdr_4_test_faaliyetleri",
+            "name": "Bölüm 4. Test Faaliyetleri",
+            "max_score": 15.0,
+            "description": "Gerçekleştirilen saha, uçuş ve yer testlerinin kanıtları, test çıktıları ve analizleri."
+          },
+          {
+            "id": "fdr_5_uretim_faaliyetleri",
+            "name": "Bölüm 5. Üretim Faaliyetleri",
+            "max_score": 15.0,
+            "description": "Platformların (İHA, İKA, Mancınık) imalat yöntemleri, parça üretim ve montaj kanıtları."
+          },
+          {
+            "id": "fdr_6_gereksinim_izlenebilirligi",
+            "name": "Bölüm 6. Gereksinim İzlenebilirliği ve Değerlendirme",
+            "max_score": 10.0,
+            "description": "Tüm şartname gereksinimlerinin doğrulandığını gösteren nihai MoC izlenebilirlik matrisi."
+          },
+          {
+            "id": "fdr_7_butce_gercekleme",
+            "name": "Bölüm 7. Bütçe Gerçekleme Analizi",
+            "max_score": 10.0,
+            "description": "Öngörülen vs gerçekleşen harcama kalemleri ve maliyet analizi."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "UHDR",
+      "stage_name": "Uçuşa Hazırlık Değerlendirme Raporu",
+      "weight_in_puan1": "%10",
+      "format_rules": {
+        "special_requirements": "Saha öncesi sistemlerin operasyonel güvenliği ve uçuşa hazırlık kontrollerini belgeleyen rapor."
+      }
+    },
+    {
+      "stage": "SAHA_GOREV_OPERASYONU",
+      "stage_name": "Saha Otonom İHA-İKA Ortak Görev Operasyonu",
+      "weight_in_total": "%85 (Uçuş Performansı: %65 + Saha Katılımı: %20)",
+      "format_rules": {
+        "special_requirements": "Mancınıkla fırlatılan İHA'nın havadan yol güzergahını otonom tespiti, yer istasyonuna canlı aktarımı, paraşütle inişi ve ardından İKA'nın engelli parkuru tam otonom geçerek yükü hedefe ulaştırması."
+      }
+    }
+  ]
+}

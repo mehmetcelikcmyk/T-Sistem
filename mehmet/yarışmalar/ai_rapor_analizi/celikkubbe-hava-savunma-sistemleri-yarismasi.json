@@ -1,0 +1,207 @@
+{
+  "slug": "celikkubbe-hava-savunma-sistemleri-yarismasi",
+  "name": "Çelikkubbe Hava Savunma Sistemleri Yarışması",
+  "specifications": [
+    "28.07.2026_-_2026_Şartname_TR_v1.5_CtfFw.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "celikkubbe-hava-savunma-sistemleri-yarismasi",
+    "kategori_adi": "Çelikkubbe Hava Savunma Sistemleri Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, ASELSAN, TÜBİTAK SAGE & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Ön Lisans / Lisans / Yüksek Lisans Öğrencileri",
+    "takim_kurallari": {
+      "uye_sayisi_min": 3,
+      "uye_sayisi_max": 15,
+      "bireysel_basvuru": false,
+      "kural_detayi": "Yarışmaya takım halinde katılmak zorunludur. Takımlar en az 3, en fazla 15 kişiden oluşmalıdır (Danışman dâhil değildir). Her katılımcı en fazla 1 takımda yer alabilir.",
+      "iletisim_sorumlusu": "Her takım bir iletişim sorumlusu belirlemelidir; bilgilendirmeler KYS kayıtlı e-posta üzerinden yapılır."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar, bir öğretim görevlisini/üyesini veya araştırma görevlisini danışman olarak alabilir (İsteğe Bağlı).",
+      "belge": "Onaylı ıslak imzalı danışmanlık belgesi KYS sistemine yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_dagilimi": {
+      "toplam_puan": 500.0,
+      "puan_kalemleri": {
+        "raporlar_ve_sunum_puanlamasi": "100 Puan (ÖTR: 10p, KTR: 50p, Final Sunum: 40p)",
+        "ebat_puanlamasi": "20 Puan (En uzun boyut <= 60 cm ise 20p, 60-100 cm ise 0p)",
+        "asama_1_duran_hedef_imhasi": "100 Puan (80p görev + 20p kalan süre bonusu, Baraj: 20p)",
+        "asama_2_suru_saldirisi_imhasi": "120 Puan (4 tur otonom sürü imhası, Baraj: 20p)",
+        "asama_3_katmanli_hareketli_hedef_imhasi": "160 Puan (8 tur otonom dost/düşman ayrımı ve imha, Baraj: 10p)"
+      },
+      "odul_siralama_kriteri": "Ödül sıralamasına girebilmek için takımların 3. Aşamadan en az 10 puan almaları zorunludur."
+    },
+    "itiraz_kurali": "Rapor itirazları sonuçlar açıklandıktan sonraki 48 saat içerisinde KYS üzerinden takım danışmanı veya kaptanı tarafından yapılır.",
+    "sistem_ve_guvenlik_isterleri": [
+      "Sistem boyutları (E x B x D) dış kablaj hariç 100 cm'den küçük olmalıdır.",
+      "Sistemde acil durdurma (E-Stop) butonu (basmalı/çevirmeli/manyetik) dış kablo ile güvenli konumda yer almalıdır; acil durdurma fonksiyonu olmayan sistemler yarışamaz.",
+      "Sistemde hem 'harekete yasak alan' hem de 'atışa yasak alan' fonksiyonları bulunmalıdır (sadece hedeflerin olduğu yöne bakabilir).",
+      "Hedef imha çözümlerinde patlayıcı kullanılması kesinlikle yasaktır.",
+      "Durağan hedefler ve yaklaşan hedefler altında yer alan kırmızı balonların patlatılması ile imha değerlendirilir.",
+      "Sistem 220 VAC enerji tedariki ile çalışmalı, EMI gereklerini kendisi sağlamalıdır."
+    ],
+    "etik_ve_gizlilik_kurallari": [
+      "Takım Şeması tablosunda ve rapor metninde kişisel verilere (isim, soyisim, T.C. kimlik numarası, iletişim bilgileri vb.) kesinlikle yer verilmemelidir (Kör hakem kuralı).",
+      "Raporlarda intihal/benzerlik tespit edilen projeler diskalifiye edilir.",
+      "Alıntı yapılan geçmiş yıl raporları standart alıntı formatına uygun şekilde kaynak gösterilmelidir."
+    ],
+    "oduller": {
+      "dereceler": {
+        "birincilik": {
+          "takim_odulu": "300.000,00 TL",
+          "danisman_odulu": "20.000,00 TL"
+        },
+        "ikincilik": {
+          "takim_odulu": "250.000,00 TL",
+          "danisman_odulu": "15.000,00 TL"
+        },
+        "ucunculuk": {
+          "takim_odulu": "200.000,00 TL",
+          "danisman_odulu": "12.000,00 TL"
+        }
+      },
+      "prestij_odulleri": [
+        {
+          "odul": "En İyi Tasarım Ödülü",
+          "aciklama": "Tasarımın işlevselliği, güvenilirliği, sistem mimarisi, gerçek hava savunma sistemlerine benzerliği, kullanıcı dostu yapısı ve kullanıcı arayüz yazılımının işlevselliğine göre 1 takıma verilir (Maddi karşılığı yoktur)."
+        },
+        {
+          "odul": "En İyi Takım Ruhu Ödülü",
+          "aciklama": "Yarışma alanında üstlenilen görevleri ve iş planlarını en iyi şekilde sonuçlandırmayı hedefleyen, alandaki çaba, beceri, takım içi/arası iletişim ve enerjiyi en iyi yansıtan takıma verilir (Maddi karşılığı yoktur)."
+        }
+      ],
+      "birincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ikincilik": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir",
+      "ucunculuk": "Resmi ödül TEKNOFEST ana duyurusu ile ilan edilecektir"
+    },
+    "sartname_dosyasi": "28.07.2026_-_2026_Şartname_TR_v1.5_CtfFw.pdf"
+  },
+  "stages": [
+    {
+      "stage": "OTR",
+      "stage_name": "Ön Tasarım Raporu",
+      "weight_in_reports": "10 Puan",
+      "format_rules": {
+        "max_pages": 10,
+        "total_page_limit_description": "Ön Tasarım Raporu Kapak, İçindekiler, görseller ve referanslar dahil olmak üzere en fazla 10 sayfa olacaktır."
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu",
+      "weight_in_reports": "50 Puan",
+      "template": "2026_Çelikkubbe_HavaSavunmaSistemleri_KTR_şablon_TR_eE7lb.docx",
+      "format_rules": {
+        "max_pages": 30,
+        "total_page_limit_description": "Açıklama, Kapak, İçindekiler ve görsel (teknik resim vs.) olmak üzere en fazla 30 sayfa olacaktır. 30 sayfayı geçen raporlar değerlendirmeye alınmaz.",
+        "font_family": "Arial",
+        "font_size": "12 pt (Başlıklar: 14 pt)",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak' ve 'İçindekiler' olacak şekilde iki ayrı sayfa içermelidir. Kişisel veri eklenmemelidir."
+      },
+      "rubric": {
+        "category_name": "celikkubbe-hava-savunma-sistemleri-yarismasi",
+        "stage": "KTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_proje_mevcut_durum_degerlendirmesi",
+            "name": "1. Proje Mevcut Durum Değerlendirmesi",
+            "max_score": 5.0,
+            "description": "Ön Tasarım Raporunun değerlendirmesi, ön tasarımdan sonra yapılan değişiklikler ve nedenleri."
+          },
+          {
+            "id": "2.1_mekanik_tasarim",
+            "name": "2.1. Mekanik Tasarım",
+            "max_score": 20.0,
+            "description": "Mekanik tasarım süreçleri, teknik resimler, prototip fotoğrafları; kullanılan malzemeler (hazır/özgün bileşenler), üretim yöntemleri ve fiziksel özellikler (boyut, ağırlık, hacim)."
+          },
+          {
+            "id": "2.2_elektronik_ve_yazilim_tasarimi",
+            "name": "2.2. Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+            "max_score": 20.0,
+            "description": "Elektronik bileşenler (sensörler, kameralar, motor sürücüler, güç kartları vb.); kullanıcı arayüz yazılımları, algoritmaların uygulama yöntemleri, Atış Kontrol Yazılımı (hedef tespit, takip, angajman, yönlenme, imha) ve programlama dilleri."
+          },
+          {
+            "id": "2.3_arayuzler",
+            "name": "2.3. Arayüzler",
+            "max_score": 10.0,
+            "description": "Dış arayüzler, elektronik güç/sinyal arayüzleri (12VDC, RS422 vb.), yazılımsal mesaj arayüzleri ve protokoller (TCP-IP), kontrol istasyonu arayüzü."
+          },
+          {
+            "id": "2.4_sistem_isleyis_senaryolari",
+            "name": "2.4. Sistem İşleyiş Senaryoları",
+            "max_score": 10.0,
+            "description": "Kara kutu sistem kullanım durumları (use cases), sistem çalışma mod ve durumları (states), hata ve kötü gün senaryoları (rainy-day), aktivite ve sekans diyagramları."
+          },
+          {
+            "id": "3_test",
+            "name": "3. Test",
+            "max_score": 10.0,
+            "description": "Sisteme uygulanan test senaryoları, test sonuçları, tasarım ile uyumluluk karşılaştırması ve planlanan test süreçleri."
+          },
+          {
+            "id": "4_guvenlik",
+            "name": "4. Güvenlik",
+            "max_score": 5.0,
+            "description": "Güvenlik ihtiyaçları için alınan önlemler ve donanım/yazılım çözümleri. (Acil DURDUR yeteneği olmayan sistemler puan alamaz)."
+          },
+          {
+            "id": "5_tecrube",
+            "name": "5. Tecrübe",
+            "max_score": 5.0,
+            "description": "Tasarım, üretim ve test aşamalarında karşılaşılan problemler, kazalar, hatalar, çözüm yolları ve edinilen tecrübeler."
+          },
+          {
+            "id": "6_zaman_butce_risk_planlamasi",
+            "name": "6. Zaman, Bütçe ve Risk Planlaması",
+            "max_score": 5.0,
+            "description": "Kritik tasarım/üretim/test zaman planı, ön tasarım ile nihai bütçe karşılaştırması ve risk analizi."
+          },
+          {
+            "id": "7_ozgunluk",
+            "name": "7. Özgünlük",
+            "max_score": 5.0,
+            "description": "Mekanik, elektronik ve yazılım alt sistemlerinde geliştirilen özgün yaklaşımlar ve teknik yenilikler."
+          },
+          {
+            "id": "8_kaynakca",
+            "name": "8. Kaynakça",
+            "max_score": 5.0,
+            "description": "Raporda kullanılan tüm dijital, teknik bileşen ve akademik kaynakların standart referans listesi."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "GOREV_KABILIYET_VIDEOSU",
+      "stage_name": "Sistem Görev Kabiliyet Gösterim Videosu",
+      "format_rules": {
+        "duration": "2 - 5 dakika",
+        "resolution": "En az 720p",
+        "platform": "YouTube (Liste dışı)",
+        "content_order": [
+          "Yetenek 1: Arayüz ve komut sistemleri gösterimi (Kullanıcı arayüz yazılımı, joystick vb.)",
+          "Yetenek 2: 15 m mesafedeki durağan balonu ateş ederek patlatma",
+          "Yetenek 3: Yan ve yükseliş ekseninde hareket ederken Acil Durdur ile durma",
+          "Yetenek 4: Ateş ederken Acil Durdur ile ateşi kesme",
+          "Yetenek 5: Yan ve yükseliş ekseninde hareket eden hedefi takip etme",
+          "Yetenek 6: 5m, 10m, 15m mesafelerde hedef tespiti ve sınıflandırma (F16, İHA, Füze, Helikopter)",
+          "Yetenek 7 (Opsiyonel): 10m mesafede 1 düşman (kırmızı) / 2 dost (mavi) hedef arasından otonom düşmanı vurup dost unsura ateş etmeme"
+        ]
+      }
+    },
+    {
+      "stage": "FINAL_DEGERLENDIRME_SUNUMU",
+      "stage_name": "Final Değerlendirme Sunumu ve Mülakat",
+      "weight_in_reports": "40 Puan",
+      "format_rules": {
+        "special_requirements": "Hakem heyeti ile yüz yüze mülakat ve teknik değerlendirme sunumu (Danışmanlar mülakata katılamaz)."
+      }
+    }
+  ]
+}

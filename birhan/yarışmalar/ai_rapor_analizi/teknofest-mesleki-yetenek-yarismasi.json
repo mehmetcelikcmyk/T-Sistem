@@ -1,0 +1,85 @@
+{
+  "slug": "teknofest-mesleki-yetenek-yarismasi",
+  "name": "Mesleki Yetenek Yarışması",
+  "specifications": [
+    "AKILLI_FABR_C4_B0KA_S_C4_B0STEMLER_C4_B0_PROGRAMLAMAYARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_Du4UI.pdf",
+    "MESLEKI_YETENEK_YARISMASI_MARANGOZLUK_KATEGORISI_SARTNAMESI_oCFQT.pdf",
+    "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_ELEKTR_C4_B0K_KUMANDA_PANOSU_TASARIMI_VE_UYGULAMA_KAT.pdf",
+    "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_ELEKTR_C4_B0K_TES_C4_B0SATI_VE_PANO_MONTORL_C3_9C_C4_9E_C3_9C_KATEGOR_C4_B0S_C4_B0.pdf",
+    "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_KAYNAK_C3_87ILIK_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_VPv8v.pdf",
+    "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_MEKATRON_C4_B0K_TEKNOLOJ_C4_B0LER_C4_B0_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0.pdf",
+    "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_ORTA_GER_C4_B0L_C4_B0M_TEKNOLOJ_C4_B0LER_C4_B0_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAM.pdf",
+    "MESLEK_C4_B0_YETENEK_YARI_C5_9EMASI_SU_TES_C4_B0SAT_C3_87ILI_C4_9EI_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_TXRIu.pdf",
+    "MYY_PCB_MONTAJ_KATEGOR_C4_B0S_C4_B0__C5_9EARTNAMES_C4_B0_nr64w.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "teknofest-mesleki-yetenek-yarismasi",
+    "kategori_adi": "Mesleki Yetenek Yarışması",
+    "hedef_egitim_seviyesi": "Lise ve Üniversite (Ön lisans, Lisans) ile Serbest Seviye. Meslek lisesi dışından lise katılımcıları için çıraklık/kalfalık/ustalık belgesi zorunludur.",
+    "takim_kurallari": {
+      "uye_sayisi_min": 2,
+      "uye_sayisi_max": 4,
+      "bireysel_basvuru": false,
+      "final_alani_kisi_siniri": "",
+      "mezuniyet_kurali": "Lise mezunları için mezuniyetin üzerinden en fazla 3 yıl geçmiş olmalıdır.",
+      "gorev_dagilimi_kurali": ""
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Lise seviyesindeki takımlar için danışman bulundurulması zorunludur. Üniversite seviyesi için zorunlu değildir.",
+      "limit": "En fazla 1 danışman."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "oncelikli_gorevler": [
+      "Akıllı Fabrika Sistemleri Programlama",
+      "Marangozluk",
+      "Elektrik Kumanda Panosu Tasarımı ve Uygulama",
+      "Elektrik Tesisatı ve Pano Montörlüğü",
+      "Kaynakçılık",
+      "Mekatronik Teknolojileri",
+      "Orta Gerilim Teknolojileri",
+      "Su Tesisatçılığı",
+      "PCB Montaj"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Yarışmaya bireysel katılım kabul edilmez, yalnızca takım olarak başvurulabilir.",
+      "Bir takım üyesi bu yarışmada yalnızca tek bir kategoride ve tek bir takımda yer alabilir.",
+      "Lise seviyesindeki takımlar aynı okulda öğrenim gören öğrencilerden oluşmalıdır.",
+      "Danışmanlar proje faaliyetlerinde fiilen yer alamaz ve sadece 1 takıma danışmanlık yapabilir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Finale kalan takımlar zorunlu İSG (İş Sağlığı ve Güvenliği) çevrimiçi eğitimini almalıdır.",
+      "Final yarışma alanında kişisel koruyucu donanım (KKD) kullanımı zorunludur."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "on_eleme_baraji": "Ön Değerlendirme (Online) Sınavı %0 ağırlıklıdır ancak Yarı Finale geçiş barajını belirler."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Ön Değerlendirme Sınavı": "%0",
+      "Yarı Final (Proje Sunumu/Dosya Teslimi)": "%15"
+    },
+    "gorev_puanlamasi": {
+      "Yarışma Finali (Uygulama Performansı)": "%85"
+    }
+  },
+  "stages": [
+    {
+      "stage": "Yarı Final Teslimi",
+      "document": "",
+      "format_rules": {
+        "description": "Kategoriye özel olarak video sunumu (ör. Marangozluk için 5-10 dk video) veya yazılım dosyası teslimi (ör. Akıllı Fabrika için PLC/Python/HMI dosyaları ve algoritma raporu) yapılır."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_kategori_uygunlugu",
+            "name": "Kategoriye Özel Ön Tasarım/Video Sunumu",
+            "max_score": 100,
+            "description": "Katılımcıların ilgili mesleki kategorideki teknik bilgisi, üretim süreci planlaması ve sunum/kod kalitesi değerlendirilir."
+          }
+        ]
+      }
+    }
+  ]
+}

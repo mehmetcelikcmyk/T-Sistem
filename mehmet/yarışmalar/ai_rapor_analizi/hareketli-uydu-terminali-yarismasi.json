@@ -1,0 +1,191 @@
+{
+  "slug": "hareketli-uydu-terminali-yarismasi",
+  "name": "Hareketli Uydu Terminali Yarışması",
+  "specifications": [
+    "Teknofest_Hareketli_Uydu_Terminali_Yarısması_Sartnamesi_TR_4d8Az.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "hareketli-uydu-terminali-yarismasi",
+    "kategori_adi": "Hareketli Uydu Terminali Yarışması",
+    "yurutucu_kurum": "T3 Vakfı, CTech Bilişim Teknolojileri & TEKNOFEST",
+    "etkinlik_yeri": "TEKNOFEST 2026 - Şanlıurfa",
+    "hedef_egitim_seviyesi": "Üniversite ve Üzeri (Ön Lisans, Lisans, Lisansüstü Öğrencileri ve Mezunlar)",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 10,
+      "bireysel_basvuru": true,
+      "final_destek_limiti": "Finale kalan takımlara sağlanacak ulaşım ve konaklama desteği takım başı en fazla 3 kişi (danışman dâhil) ile sınırlıdır.",
+      "kural_detayi": "Yarışmaya bireysel olarak (tek kişilik takım) veya en fazla 10 kişilik takımlar halinde başvurulabilir (Danışman bu sayıya dâhil değildir). Her yarışmacı yalnızca 1 takımda yer alabilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Takımlar en fazla 1 öğretmen, akademisyen veya ilgili alanda çalışan mühendis/uzmanı danışman olarak alabilir (İsteğe Bağlı).",
+      "limit": "Danışman takım üyesi olarak eklenmez; varsa onaylı görevlendirme belgesi sisteme yüklenmelidir."
+    },
+    "dil_gereksinimi": "Türkçe",
+    "genel_puanlama_dagilimi": {
+      "asama_1_yarisma_oncesi": {
+        "toplam_puan": 100.0,
+        "kirilim": {
+          "otr_yuzdesi": "%30 (Ön Tasarım Raporu)",
+          "ktr_yuzdesi": "%70 (Kritik Tasarım Raporu)"
+        }
+      },
+      "asama_2_yarisma_alani": {
+        "toplam_puan": 100.0,
+        "kirilim": {
+          "model_sunumu_yuzdesi": "%20 (Model Sunumu)",
+          "yarisma_performansi_yuzdesi": "%80 (Saha Hareket Platformu Uydu Takip Performansı)"
+        }
+      }
+    },
+    "itiraz_kurali": "Takımların ÖTR ve KTR değerlendirmesinde baraj puanından en fazla 25 puan altında kalması durumunda sonuçlar açıklandıktan sonraki 48 saat içerisinde KYS üzerinden itiraz hakkı bulunur.",
+    "etik_ve_gizlilik_kurallari": [
+      "Raporlarda intihal, kopyalama veya taklit tespit edilen projeler diskalifiye edilir.",
+      "Geçmiş yıl raporlarından yapılan alıntılarda standart alıntı formatı kullanılmalıdır."
+    ],
+    "oduller": {
+      "birincilik": {
+        "takim_odulu": "300.000,00 ₺",
+        "danisman_odulu": "15.000,00 ₺"
+      },
+      "ikincilik": {
+        "takim_odulu": "250.000,00 ₺",
+        "danisman_odulu": "12.000,00 ₺"
+      },
+      "ucunculuk": {
+        "takim_odulu": "200.000,00 ₺",
+        "danisman_odulu": "10.000,00 ₺"
+      }
+    },
+    "sartname_dosyasi": "Teknofest_Hareketli_Uydu_Terminali_Yarısması_Sartnamesi_TR_4d8Az.pdf"
+  },
+  "stages": [
+    {
+      "stage": "OTR",
+      "stage_name": "Ön Tasarım Raporu",
+      "weight_in_stage1": "%30",
+      "template": "2026_Hareketli_Uydu_Terminali_OTR_CeQC4.docx",
+      "format_rules": {
+        "max_pages": 10,
+        "total_page_limit_description": "Ön Tasarım Raporu Kapak, İçindekiler, Kaynakça ve Ekler dahil olmak üzere en fazla 10 sayfa olacaktır.",
+        "font_family": "Arial",
+        "font_size": "10 pt",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "Üst-Alt-Sağ-Sol: 2.5 cm",
+        "special_requirements": "Her rapor 'Kapak ve İçindekiler' başlıkları için 2 ayrı sayfa içermelidir."
+      },
+      "rubric": {
+        "category_name": "hareketli-uydu-terminali-yarismasi",
+        "stage": "OTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_ozet",
+            "name": "1. Özet",
+            "max_score": 5.0,
+            "description": "Proje raporunun özeti (en fazla 250 kelime)."
+          },
+          {
+            "id": "2_organizasyon_semasi_ve_takvim",
+            "name": "2. Organizasyon Şeması ve Proje Takvimi",
+            "max_score": 10.0,
+            "description": "Takım üyeleri, görev dağılımları ve proje takvimi."
+          },
+          {
+            "id": "3_hareketli_uydu_terminali_tasarimi",
+            "name": "3. Hareketli Uydu Terminali Tasarımı",
+            "max_score": 40.0,
+            "description": "Terminalin ön tasarımı (materyal, ağırlık merkezi, yerleşim), blok şemalar, kullanılacak sayısal kartlar ve mekanik ekipmanların kullanım amaçları."
+          },
+          {
+            "id": "4_sistem_mimarisi_ve_algoritma",
+            "name": "4. Sistem Mimarisi ve Algoritma Tasarımı",
+            "max_score": 40.0,
+            "description": "Sistem mimari şeması, çalışma prensibi, stabilizasyon/takip kriterleri ve algoritmik akış diyagramı (açılış, takip, stabilizasyon adımları)."
+          },
+          {
+            "id": "5_kaynakca",
+            "name": "5. Kaynakça",
+            "max_score": 5.0,
+            "description": "Literatürde yararlanılan akademik ve teknik çalışmaların standart formatta listesi."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "KTR",
+      "stage_name": "Kritik Tasarım Raporu",
+      "weight_in_stage1": "%70",
+      "template": "2026_Hareketli_Uydu_Terminali_KTR_Sablon_TR_1_5awSB.docx",
+      "format_rules": {
+        "max_pages": 25,
+        "total_page_limit_description": "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+        "font_family": "Arial",
+        "font_size": "12 pt",
+        "line_spacing": 1.15,
+        "alignment": "İki tarafa yaslı",
+        "margins": "A4 Tipi, 2.5 cm kenar boşlukları",
+        "header_footer": "Kapak hariç üst bilgide 'Hareketli Uydu Terminali Yarışması 2026', alt bilgide takım adı ve sayfa numarası yer almalıdır."
+      },
+      "rubric": {
+        "category_name": "hareketli-uydu-terminali-yarismasi",
+        "stage": "KTR",
+        "total_score": 100.0,
+        "criteria": [
+          {
+            "id": "1_temel_sistem_ozeti",
+            "name": "1. Temel Sistem Özeti",
+            "max_score": 5.0,
+            "description": "Uydu haberleşme sisteminin görev tanımı, özellikleri, stabilizasyon yeteneği ve bileşen tanımları."
+          },
+          {
+            "id": "2_organizasyon_ozeti",
+            "name": "2. Organizasyon Özeti",
+            "max_score": 5.0,
+            "description": "Takım Organizasyonu, gerçekleşen vs planlanan Zaman Akış Çizelgesi ve detaylı Malzeme Maliyet Analizi."
+          },
+          {
+            "id": "3_detayli_tasarim_ozeti",
+            "name": "3. Detaylı Tasarım Özeti",
+            "max_score": 30.0,
+            "description": "Uydu Haberleşme Sistemi Tasarımı (yerleşim/blok şemalar), Elektronik Tasarım ve analizler, Mekanik Tasarım (reflektör, materyal, 3D çizim, Stewart bağlantısı), Nihai Sistem Mimarisi (kablo/güç/hatlar, marka-model) ve Ağırlık Dağılımı."
+          },
+          {
+            "id": "4_algoritma_tasarimi",
+            "name": "4. Algoritma Tasarımı",
+            "max_score": 25.0,
+            "description": "Stabilizasyon, takip algoritması, hata toleransı, gerçek zamanlılık, literatür karşılaştırması ve detaylı algoritmik akış diyagramı."
+          },
+          {
+            "id": "5_simulasyon_ve_test",
+            "name": "5. Simülasyon ve Test",
+            "max_score": 25.0,
+            "description": "Simülasyon ortamı doğrulamaları, dinamik davranış/stabilizasyon analiz yorumları, test platformu adımları ve test sonuçları."
+          },
+          {
+            "id": "6_guvenlik",
+            "name": "6. Güvenlik",
+            "max_score": 5.0,
+            "description": "Olası risklerin tespiti, güvenlik önlemleri, kablaj emniyeti ve acil durum kontrol adımları."
+          },
+          {
+            "id": "7_referanslar",
+            "name": "7. Referanslar",
+            "max_score": 5.0,
+            "description": "Rapor içerisinde atıf yapılan tüm akademik ve teknik kaynakların standart referans listesi."
+          }
+        ]
+      }
+    },
+    {
+      "stage": "ASAMA_2_FINAL",
+      "stage_name": "Aşama 2: Model Sunumu ve Yarışma Performansı",
+      "format_rules": {
+        "model_sunumu_orani": "%20",
+        "yarisma_performansi_orani": "%80",
+        "special_requirements": "Yarışma alanında jüri önünde Model Sunumu ve ardından hareketli test platformunda otonom stabilizasyon ve uydu takibi saha performansı."
+      }
+    }
+  ]
+}

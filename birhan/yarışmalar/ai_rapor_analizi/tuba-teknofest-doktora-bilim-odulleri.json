@@ -1,0 +1,86 @@
+{
+  "slug": "tuba-teknofest-doktora-bilim-odulleri",
+  "name": "TÜBA-TEKNOFEST Doktora Bilim Ödülleri",
+  "specifications": [
+    "TUBA-TEKNOFEST_Doktora_Bilim_Odulu_Esaslar_C4_B1_oOqfa_e4tfn.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "tuba-teknofest-doktora-bilim-odulleri",
+    "kategori_adi": "TÜBA-TEKNOFEST Doktora Bilim Ödülleri",
+    "hedef_egitim_seviyesi": "Doktora Mezunları (TEKNOFEST'in düzenlendiği yıldan önceki iki yıl içerisinde YÖK sisteminde doktora tezini tamamlamış yazarlar).",
+    "takim_kurallari": {
+      "uye_sayisi_min": 1,
+      "uye_sayisi_max": 1,
+      "bireysel_basvuru": true,
+      "final_alani_kisi_siniri": "1",
+      "mezuniyet_kurali": "Tezin son 2 yıl içerisinde tamamlanmış olması şarttır.",
+      "gorev_dagilimi_kurali": "Sadece bireysel başvuru yapılabilir."
+    },
+    "danisman_kurallari": {
+      "genel_kural": "Aday ve Tez Danışmanı imzalı başvuru formu gereklidir.",
+      "limit": "Yalnızca tez danışmanı."
+    },
+    "dil_gereksinimi": "Türkçe (Özgeçmiş vb. için zorunlu Türkçe belirtilmiş)",
+    "oncelikli_gorevler": [
+      "TEKNOFEST'in öncelikli alanları özelinde hazırlanmış, Türkiye'nin Milli Teknoloji Hamlesi vizyonuna doğrudan katkı sağlayan ve yüksek bilimsel nitelik taşıyan doktora tezlerinin teşvik edilmesi."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "TÜBA Üyeleri ve TÜBA çalışanları ödüle başvuramaz.",
+      "Eksik belge ile (Başvuru formu, YÖKSİS kaydı, etik izni, yayınlar vb.) yapılan başvurular değerlendirmeye alınmaz.",
+      "Tezin Türkiye'deki kurumlarda çalışılmış/yürütülmüş olduğu belgelendirilmelidir.",
+      "Daha önce başvurmuş ancak kazanamamış adaylar, tezden çıkan yeni bir yayın, patent veya ürün belgelemek şartıyla tekrar başvurabilir."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Başvuru dosyasında bilimsel etik izni, tezin tam sureti ve tezden çıkan yayınlar (veya patentler) eksiksiz olmalıdır.",
+      "Ödülü kazanan adaylar, TEKNOFEST alanında en az 3 gün bulunmayı ve sunum yapmayı taahhüt eder."
+    ]
+  },
+  "mission_scoring": {
+    "limits_and_thresholds": {
+      "degerlendirme_sistemi": "Başvurular Akademi Konseyi'nce oluşturulan, uzman bilim insanlarından (tercihen TÜBA üyeleri, GEBİP ödülleri) oluşan 5-7 kişilik Ödül Değerlendirme Komitesi ve dış hakemler tarafından değerlendirilir."
+    },
+    "rapor_ve_video_puanlamasi": {
+      "Tez Değerlendirmesi": "%100"
+    },
+    "gorev_puanlamasi": {}
+  },
+  "stages": [
+    {
+      "stage": "Başvuru ve Tez Değerlendirmesi",
+      "document": "",
+      "format_rules": {
+        "max_pages": 0,
+        "must_not_contain_personal_info": false,
+        "layout_rules": "Başvuru dijital olarak (pdf formatında) yapılır. İstenenler: Aday ve danışman imzalı form, başvuru gerekçesi, Türkçe özgeçmişler, tezin tam sureti, YÖKSİS kayıt bilgisi, tezden çıkan yayınlar listesi, etik izin belgesi, tezin yürütüldüğü enstitü belgeleri."
+      },
+      "rubric": {
+        "criteria": [
+          {
+            "id": "1_akademik_ozgecmis_yetkinlik",
+            "name": "Akademik Özgeçmiş ve Araştırmacılık Yetkinliği",
+            "max_score": 25,
+            "description": "Adayın akademik geçmişi, bağımsız araştırmacılık yetkinliği ve bilimsel alandaki başarısı."
+          },
+          {
+            "id": "2_bilimsel_calisma_niteligi",
+            "name": "Bilimsel Çalışma ve Yayınların Niteliği",
+            "max_score": 25,
+            "description": "Tez çalışmasından üretilen makalelerin, patentlerin veya bilimsel ürünlerin ulusal/uluslararası alandaki niteliği ve etkisi."
+          },
+          {
+            "id": "3_tezin_bilimsel_niteligi",
+            "name": "Tezin Bilimsel Niteliği",
+            "max_score": 25,
+            "description": "TEKNOFEST'in öncelikli alanlarına dair yürütülen tezin içeriğindeki bilimsellik, geçerlilik ve metodolojik yaklaşım."
+          },
+          {
+            "id": "4_milli_teknoloji_katkisi",
+            "name": "Milli Teknoloji Hamlesi Vizyonuna Katkı",
+            "max_score": 25,
+            "description": "Tezin, Türkiye'nin 'Milli Teknoloji Hamlesi' vizyonuna ve yerli/milli üretime ne denli doğrudan ve yenilikçi bir katkı sunduğu."
+          }
+        ]
+      }
+    }
+  ]
+}

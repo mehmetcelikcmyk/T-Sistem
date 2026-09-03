@@ -1,0 +1,168 @@
+{
+  "slug": "jet-motor-tasarim-yarismasi",
+  "name": "Jet Motor Tasarım Yarışması",
+  "specifications": [
+    "2026_JET_MOTOR_TASARIM_YARI_C5_9EMASI__C5_9EARTNAMES_C4_B0_TR_V1.5_4bcs0.pdf"
+  ],
+  "ai_rules": {
+    "kategori_slug": "jet-motor-tasarim-yarismasi",
+    "kategori_adi": "Jet Motor Tasarım Yarışması",
+    "hedef_egitim_seviyesi": "Lisans, Yüksek Lisans (Azami 2 kişi), Doktora (Azami 1 kişi)",
+    "takim_uye_sayisi": {
+      "min": 1,
+      "max": 10
+    },
+    "danisman_sarti": "Yükseköğretim seviyesi olduğu için zorunlu değil, ancak en fazla 1 akademik danışman (akademisyen/araştırma görevlisi) alınabilir.",
+    "dil_gereksinimi": "Türkçe (Teknik terimler ve akademik ifadeler orijinal dillerinde kullanılabilir)",
+    "keywords": [
+      "aksisimetrik yakınsak-ıraksak lüle",
+      "aerodinamik",
+      "INCO718",
+      "yapısal analiz",
+      "eyleyici",
+      "mekanizma",
+      "FEA",
+      "CFD",
+      "jet motoru",
+      "flap",
+      "termal gerilme",
+      "A8 boğaz alanı",
+      "A9 çıkış alanı",
+      "LCF yorulma ömrü",
+      "Clearance",
+      "Cd katsayısı",
+      "Cfg katsayısı",
+      "Parasolid",
+      "shell model",
+      "beam model"
+    ],
+    "oncelikli_gorevler": [
+      "SLS ISA koşullarında 6000 lbf itkili turbofan için aksisimetrik yakınsak-ıraksak lüle (nozzle) modülünün aeromekanik tasarımı",
+      "Performans, aerodinamik, yapısal ve eyleyici/hidrolik analizlerinin (CFD, FEA, Kinematik) eksiksiz yapılması",
+      "En kısa boyda ve en hafif ağırlıkta isterleri sağlayan INCO718 tabanlı lüle/mekanizma tasarımı"
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Sayfa ve Biçim Sınırı (Kritik): Detay Tasarım Raporu (DTR) Kapak, İçindekiler, Kaynakça ve Ekler dahil toplam en fazla 80 sayfa olmalıdır. Sınır aşılırsa rapor değerlendirme riski altındadır.",
+      "Clearance (Boşluk) Kuralı (Kritik): Hareketli parçalar ile hareketsiz parçalar arasındaki minimum mesafe (clearance) hareket boyunca en az 2 mm olmak zorundadır.",
+      "Dış Kabuk (Outer Fairing) Muafiyeti: Dış kabuk parçasının tasarımı ve mühendislik hesaplamaları şartname kapsamında beklenmemektedir; raporda bu analizler aranmamalıdır.",
+      "Etik ve İntihal Yasağı: Bilimsel etiğe aykırı intihal/kopya yapılması yasaktır. Referans gösterilmeden kullanılan her bilgi için 10 ceza puanı uygulanır veya doğrudan diskalifiye edilir.",
+      "Yeni Mezun Kuralı (Madde 2): Takımlara mezunlar dahil olabilir ancak mezuniyetin üzerinden en fazla 3 yıl geçmiş olması ve kişinin profesyonel olarak mühendislik icra etmiyor olması zorunludur.",
+      "Sektör Çalışanı / Stajyer Yasağı (Madde 2): Havacılık motoru firmalarının çalışanları ve uzun dönem stajyerleri yarışmaya katılamaz; tespiti diskalifiye sebebidir.",
+      "Sponsorluk ve Dış Tasarım Desteği Yasağı (Madde 2): Takımlar sponsorluk kapsamında yalnızca yazılım lisansı alabilir; firmalardan teknik tasarım/analiz desteği almaları kesinlikle yasaktır (diskalifiye nedenidir).",
+      "Format Kuralı: Kapak Sayfası, İçindekiler, Kaynakça ve Ekler başlıkları zorunlu olarak yeni (ayrı) bir sayfadan başlamak zorundadır.",
+      "Şablon Puan Başlığı Kuralı (Şablon Notları): Şablon kuralı gereği öğrencilerin teslim öncesinde rapor başlıklarının yanında yer alan puan ibarelerini (örn: (5 PUAN)) silmiş olmaları gerekir. AI başlık eşleşmelerini esnek regex kuralları ile taramalıdır."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Parasolid Formatı ve Kinematik Hareket Senaryoları (Madde 4.3): 3B CAD modeli .x_t / .x_b (Parasolid) formatında sunulmalı; mekanizma hareketi 3 senaryoda (Min A8 -> Max A8, Min A9 -> Max A9 ve 7 performans durum noktası geçişleri) doğrulanmalıdır.",
+      "Sonlu Elemanlar (FEA) Modelleme Standartları (Madde 4.3 Notları): Yapısal analizlerde geniş/ince cidarlı parçalar kabuk (shell), uzun/ince parçalar çubuk (beam) olarak modellenmeli; analizler en az 1 flap içerecek şekilde sektörel (sector modeling) yapılmalıdır.",
+      "Fiziksel Flanş ve Civata Arayüzü: Lüle giriş arayüzü R=265 mm yarıçapında olmalı, çevreye eşit aralıklı 36 adet 0.25 inç çapında standart AS485xx civata ve AS20625 somun montajına uygun flanş tasarlanmalıdır.",
+      "Alan Zarfı Kontrolü (A8 ve A9): A8 boğaz alanı 0.05273 m^2 ile 0.16865 m^2 arasında; A9 çıkış alanı 0.06314 m^2 ile 0.26874 m^2 arasında; A9/A8 genişleme oranı 1.1 ile 2.0 arasında sınırlandırılmış olmalıdır.",
+      "CFD Katsayı Doğrulaması: 7 farklı çalışma durumu için Cd (Discharge) katsayısı ±0.02 toleransla sağlanmalı, Cfg (Gross Thrust) katsayıları eşik değerleri aşmalıdır.",
+      "Mukavemet ve Yorulma Ömrü (LCF): 7 noktada akma (sigma_max < sigma_akma), basınç yükleri 1.5x emniyet katsayısı ile çarpıldığında çekme (sigma_max < sigma_cekme) ve burkulma (buckling) analizleri ile DP noktasında en az 500 çevrim LCF (Düşük Çevrimli Yorulma) doğrulanmalıdır.",
+      "Eyleyici ve Hidrolik Analizleri: A8/A9 hareketinin 1.5 saniyede sağlanması için ayrı servo valf debi/basınç hesabı ve her ikisini sürecek tek eksenel pistonlu pompa (axial piston pump) boyutlandırması bulunmalıdır."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Projenin jet motoru itki ve lüle aerodinamiğine uygun olarak aksisimetrik yakınsak-ıraksak nozülün aerotermal, kinematik ve yapısal analizlerini CFD ve FEA yöntemleriyle içermesi."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "DTR",
+      "template": "DTR_TR_JetMotorTasar_C4_B1m2026_jLHzz.docx",
+      "rubric": {
+        "category_name": "jet-motor-tasarim-yarismasi",
+        "stage": "DTR",
+        "description": "Değerlendirme 100 üzerinden şablondaki açık puan dağılımına göre yapılarak, AI 4. Göz Gerekçe Formatında sunulmalı; ardından Yarışmacı Gelişim Karnesi (🟢 Güçlü Yönler, 🔴 Kritik Eksikler, 🟡 Somut İyileştirme Tavsiyeleri) başlıklarıyla raporlanmalıdır.",
+        "criteria": [
+          {
+            "id": "ozet_ve_giris",
+            "name": "Özet ve Giriş",
+            "max_score": 5.0,
+            "description": "SLS ISA koşullarında 6000 lbf itkili turbofan lüle tasarım hedeflerinin özeti.",
+            "guiding_questions": [
+              "Proje hedefi ve genel tasarım isterleri (6000 lbf itki hedefi) açıkça belirtilmiş mi?"
+            ]
+          },
+          {
+            "id": "detay_tasarim_gelistirme",
+            "name": "Detay Tasarım Geliştirme Ve Fizibilite Çalışmaları",
+            "max_score": 70.0,
+            "description": "2D CFD aerotermal analizler, 7 durum için Cd / Cfg değerleri, kinematik link hesapları, INCO718 3D FEA gerilme/burkulma/500 çevrim yorulma analizleri, 1.5 sn servo valf ve hidrolik pompa hesapları, montaj/imalat değerlendirmesi.",
+            "guiding_questions": [
+              "7 analiz noktası için aerodinamik katsayılar (Cd, Cfg) hesaplanmış mı?",
+              "Mukavemet analizlerinde akma, 1.5x burkulma ve DP için 500 çevrim LCF limitleri doğrulanmış mı?",
+              "Yapısal analizlerde geniş cidarlar Shell, ince/uzun parçalar Beam olarak, en az 1 flap sektörel modellenmiş mi?",
+              "Eyleyici için 1.5s hedefini sağlayan hidrolik pompa / valf debi hesapları mevcut mu?",
+              "Mekanizma hareketi Min A8->Max A8, Min A9->Max A9 ve 7 performans geçiş senaryosunda doğrulanmış mı?"
+            ]
+          },
+          {
+            "id": "detay_tasarimin_degerlendirilmesi",
+            "name": "Detay Tasarımın Değerlendirilmesi",
+            "max_score": 10.0,
+            "description": "En kısa eksenel boy ve en hafif INCO718 kütle optimizasyonu; mekanik, eyleyici ve performans isterleriyle doğrudan kıyaslama tablosu.",
+            "guiding_questions": [
+              "Mekanik bağlantı kısıtlarına (Flanş, 36 cıvata) ve A8/A9 alan toleranslarına (%1.1 - 2.0 genişleme oranı) uyulmuş mu?",
+              "Kısa boy ve düşük ağırlık optimizasyonları isterlerle kıyaslanmış mı?"
+            ]
+          },
+          {
+            "id": "risk_analizi",
+            "name": "Risk Analizi",
+            "max_score": 2.5,
+            "description": "Termal gerilmeler, sızıntı, kinematik kilitlenme ve hidrolik basınç kayıplarına yönelik risk matrisi.",
+            "guiding_questions": [
+              "Yüksek sıcaklık termal gerilmeleri veya servo hidrolik basınç kayıpları gibi risklere değinilmiş mi?"
+            ]
+          },
+          {
+            "id": "kaynakca",
+            "name": "Kaynakça",
+            "max_score": 2.5,
+            "description": "IEEE veya bilimsel formatta akademik makale ve malzeme veri sayfası (datasheet) atıfları.",
+            "guiding_questions": [
+              "Kaynaklar bilimsel formata uygun olarak verilmiş ve metinde atıf yapılmış mı?"
+            ]
+          },
+          {
+            "id": "ekler",
+            "name": "Ekler",
+            "max_score": 10.0,
+            "description": "A3/A4 formatında teknik resimler, hesaplama detayları, Excel / MATLAB script içerikleri ve Parasolid modelleri.",
+            "guiding_questions": [
+              "Teknik resimler net mi? CAD modeli Parasolid (.x_t / .x_b) formatında belirtilmiş mi?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "simgeler_kisaltmalar": "SİMGELER ve KISALTMALAR DİZİNİ",
+          "takim_tanitimi": "TAKIM TANITIMI VE GÖREV DAĞILIMI",
+          "ozet_giris": "ÖZET VE GİRİŞ",
+          "detay_tasarim_gelistirme": "DETAY TASARIM GELİŞTİRME VE FİZİBİLİTE ÇALIŞMALARI",
+          "detay_tasarimin_tarif_edilmesi": "Detay tasarımın tarif edilmesi",
+          "performans_aerodinamik": "Performans ve Aerodinamik hesaplamalar",
+          "mekanik_tasarim_detaylari": "Mekanik tasarım detayları",
+          "mekanizma_tasarim_detaylari": "Mekanizma tasarım detayları ve hesaplamaları",
+          "yapisal_analiz_detaylari": "Yapısal analiz detayları",
+          "eyleyici_tasarim_detaylari": "Eyleyici tasarım detayları ve hesaplamaları",
+          "montaj_edilebilirlik": "Montaj edilebilirlik değerlendirmesi",
+          "imal_edilebilirlik": "İmal edilebilirlik değerlendirmesi",
+          "detay_tasarimin_degerlendirilmesi": "DETAY TASARIMIN DEĞERLENDİRİLMESİ",
+          "toplam_agirlik": "Parçaların toplam ağırlığı",
+          "lule_uzunlugu": "Lüle en açık konumdayken toplam uzunluğu",
+          "performans_kiyaslama": "Performans isterleriyle kıyaslama",
+          "mekanik_kiyaslama": "Mekanik tasarım isterleriyle kıyaslama",
+          "mekanizma_kiyaslama": "Mekanizma isterleriyle kıyaslama",
+          "eyleyici_kiyaslama": "Eyleyici isterleriyle kıyaslama",
+          "risk_analizi": "RİSK ANALİZİ",
+          "kaynakca": "KAYNAKÇA",
+          "ekler": "EKLER",
+          "teknik_resimler": "Detay tasarım ile ilgili teknik resimler",
+          "hesaplama_detaylari": "Hesaplama yöntemleri ile ilgili detay bilgiler",
+          "hesaplama_araclari": "Hesaplama araçlarının Excel/Matlab/vb.. rapora eklenmesi"
+        },
+        "max_pages": 80
+      }
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "slug": "robotaksi-binek-otonom-arac-yarismasi",
+  "name": "TEKNOFEST Robotaksi-Binek Otonom Araç Yarışması",
+  "specifications": [
+    "2026_Robotaksi_Binek_Otonom_Arac_Yarışması_Sartnamesi_SvtF2.pdf",
+    "Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+    "Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+    "Robotaksi_Simülasyon_Şablon_rjtpc_bi9so.docx"
+  ],
+  "ai_rules": {
+    "kategori_slug": "robotaksi-binek-otonom-arac-yarismasi",
+    "kategori_adi": "Robotaksi-Binek Otonom Araç Yarışması",
+    "hedef_egitim_seviyesi": "Lise, Üniversite (Ön lisans, Lisans, YL, Doktora) ve Mezunlar.",
+    "takim_uye_sayisi": {
+      "min": 3,
+      "max": 25
+    },
+    "danisman_sarti": "Lise takımlarının en az 1 danışman bulundurması zorunludur. Üniversite ve mezun takımları için zorunlu değildir.",
+    "dil_gereksinimi": "Türkçe (Teknik kod/mimari terimleri İngilizce kalabilir)",
+    "keywords": [
+      "robotaksi",
+      "otonom",
+      "binek araç",
+      "hazır araç",
+      "özgün araç",
+      "ros",
+      "lidar",
+      "kamera",
+      "state machine",
+      "ums-1",
+      "e-stop",
+      "harness",
+      "gazebo",
+      "can bus",
+      "sensör füzyonu"
+    ],
+    "oncelikli_gorevler": [
+      "Şehiriçi trafik koşullarını (şerit, ışık, tabela, park) simüle eden bir parkurda tamamen sürücüsüz ilerleyebilen araç yazılımı ve/veya donanımı geliştirmek."
+    ],
+    "sartname_kisitlari_ve_yasaklar": [
+      "Kategori Takım Sınırı (Kritik): Hazır Araç kategorisi için EN AZ 3, Özgün Araç kategorisi için EN AZ 5 üye olmak zorundadır. Özel sektör/şirket tüzel kişiliği ile başvuru yapılamaz.",
+      "Seyahat ve Konaklama Desteği: Finalist takımlara sağlanacak maddi ulaşım/konaklama desteği takım büyüklüğünden bağımsız olarak en fazla 3 kişi (danışman dahil) ile sınırlıdır.",
+      "Özgün Araç Boyutsal Limitleri (Kritik): Genişlik 120-180 cm, Boy 200-425 cm. Yükseklik minimum 100 cm, maksimum (Genişlik x 1.25) olmalıdır. Dingil mesafesi min 130 cm, Yerden yükseklik min 45 mm, Ön Teker Açıklığı min 100 cm, Arka Teker Açıklığı min 80 cm.",
+      "Gövde ve Kabuk Kuralı: Mekanik ve elektriksel parçalar gövde kalıbı içinde kalmalı, sürüş alanı dışarıdan net görülmelidir.",
+      "UMS-1 ve Acil Durdurma Kuralı (Kritik Emniyet): Araç üzerindeki E-Stop veya Uzaktan Müdahale (UMS-1) butonuna basıldığında araç EN FAZLA 2 METRE içinde durmak zorundadır.",
+      "Mekanik ve Elektrik Standartları: Kuvvet taşıyan parçalarda SİLİKON VE YAPIŞTIRICI yasaktır. Güç kablolarında (+) hat kırmızı, (-) hat siyah olmalı ve sigorta konulmalıdır.",
+      "Araç Test Videosu Çift Kadraj Kuralı (Özgün Araç): KTR sonrası video, 720p ve kesintisiz 2-5 dk olmalıdır. Hem İÇ kamera (direksiyon) hem DIŞ kamera (slalom, şerit, engel) eşzamanlı gösterilmelidir.",
+      "İlk Görev Noktası Diskalifiyesi: Araç o turdaki İLK yolcu veya otopark noktasına hiç ulaşamazsa tur değerlendirilmez ve DİSKALİFİYE edilir.",
+      "Bariyer ve Engel Mantığı: Statik engeli geçmeden bariyere çarpmak 'engele çarpma' sayılarak DİSKALİFİYE edilir. Engeli aştıktan sonra bariyere çarpmak diskalifiye DEĞİL, şerit ihlali cezasıdır (-50p).",
+      "Yeşil Işık 30 Saniye Kuralı: Yeşil yandıktan sonra ilk 5 sn içinde hareket (+40p), 5-30 sn arası (+20p), 30 saniye boyunca hareketsizlik (-20 CEZA) puanı getirir.",
+      "Görev Eşikleri ve Hız Limiti: Pist içi seyir hızları insan yürüme hızından yüksek olmalıdır. Kırmızı Işık (0-5m arası duruş +60p), Yolcu (±1m tolerans, 15-20 sn bekleme +70p), Park (3 dakika içinde tamamlanmalı +80p)."
+    ],
+    "zorunlu_teknik_kontroller": [
+      "Kör Hakemlik (Pass/Fail): Takım organizasyonu şemalarında ve raporun tamamında AD, SOYAD, ÜNİVERSİTE/OKUL ADI geçmemelidir (Sadece Üye-1, Kaptan formatı).",
+      "Sayfa Sınırları: Özgün ve Hazır KTR raporları kapak dahil MAX 50 SAYFA, Simülasyon Raporu MAX 20 SAYFA olmalıdır.",
+      "Fail-safe Başlangıç (Yazılım): Aracın ilk 'waypoint' (navigasyon rotası) noktasına ulaşmasını garanti eden veya ulaşılamadığında güvenli duruş sağlayan başlatma mantığı kontrol edilmelidir.",
+      "Aşama Ağırlıkları Bilgisi (Nihai Puan): TYF (%0 - Ön eleme), KTR (%15), Araç Test Videosu + Simülasyon + Sunum (%25), Final Parkur Yarışı (%60).",
+      "Başlık Ayrıştırıcı (Parser) Esnekliği: Hazır KTR'de 'REFERANSLAR' veya 'REFERANSLAR VE RAPOR DÜZENİ' esnek algılanmalıdır. Simülasyon başlıklarındaki numaratörler (örn: 3. Giriş) regex aramalarında opsiyonel (fuzzy matching) kabul edilmelidir."
+    ],
+    "teknik_kapsam_uygunlugu": [
+      "Özgün araçların mekanik donanım ve yazılım bütünlüğüne; Hazır araçların ise ROS/otonom state machine karar mekanizmalarına sahip olması."
+    ]
+  },
+  "stages": [
+    {
+      "stage": "KTR_Ozgun_Arac",
+      "template": "Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+      "rubric": {
+        "category_name": "robotaksi-binek-otonom-arac-yarismasi",
+        "stage": "KTR_Ozgun_Arac",
+        "description": "Robotaksi Özgün Araç Kritik Tasarım Raporu Rubriği (11 Resmi Kriter - 100 Puan)",
+        "criteria": [
+          {
+            "id": "giris",
+            "name": "1. Giriş",
+            "max_score": 2.0,
+            "description": "Proje genel tanıtımı ve hedefler.",
+            "guiding_questions": [
+              "Otonom araç projesi genel hedefleri ve kapsamı net olarak verilmiş mi?"
+            ]
+          },
+          {
+            "id": "takim_organizasyonu",
+            "name": "2. Takım Organizasyonu",
+            "max_score": 3.0,
+            "description": "Görev dağılımı (Kör Hakemliğe dikkat edilerek).",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Ad, soyad ve okul ismi gizlenmiş mi? Görev dağılımları (mekanik, yazılım) mantıklı mı?"
+            ]
+          },
+          {
+            "id": "zaman_ve_butce",
+            "name": "3. Zaman Akış Çizelgesi ve Bütçe",
+            "max_score": 5.0,
+            "description": "Gantt şeması, bütçe kıyası.",
+            "guiding_questions": [
+              "KTR ve TYF aşamaları arasındaki bütçe kıyaslaması ve Gantt şeması verilmiş mi?",
+              "HAKEM KONTROLÜ: Bütçe tablosunda 150.000 TL üst sınır aşılmış mı?"
+            ]
+          },
+          {
+            "id": "arac_genel_ozellikleri",
+            "name": "4. Aracın Genel Özellikleri",
+            "max_score": 5.0,
+            "description": "Boyutsal limitler (120-180cm vb.) ve teknik parametre tablosu.",
+            "guiding_questions": [
+              "Resmi tablodaki 12 parametre tam doldurulmuş mu? Araç ölçüleri (Genişlik 120-180cm, Dingil 130cm+) şartname sınırlarına uygun mu?"
+            ]
+          },
+          {
+            "id": "mekanik_ozellikler",
+            "name": "5. Araç Mekanik Özellikleri",
+            "max_score": 15.0,
+            "description": "Şasi, steer/brake by-wire, silikon/yapıştırıcı yasağı kontrolü.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Elektronik direksiyon (steer-by-wire) ve fren (brake-by-wire) aktüatör mekanizmaları 3D CAD üzerinde gösterilmiş mi?",
+              "Kuvvet taşıyan parçalarda silikon/yapıştırıcı yerine mekanik bağlantı (civata) olduğu raporlanmış mı?"
+            ]
+          },
+          {
+            "id": "donanim_mimarisi",
+            "name": "6. Donanım Mimarisi",
+            "max_score": 20.0,
+            "description": "Sensörler, ECU, BMS ve kritik Harness (kablolama) diyagramı.",
+            "guiding_questions": [
+              "Tüm sensör, motor sürücü ve BMS hatlarını gösteren HARNESS (Kablo bağlantı) diyagramı açıkça verilmiş mi?",
+              "Güç kabloları renk standartlarına (+) Kırmızı, (-) Siyah ve sigorta yapılarına uygun tasarlanmış mı?"
+            ]
+          },
+          {
+            "id": "yazilim_mimarisi",
+            "name": "7. Yazılım Mimarisi",
+            "max_score": 20.0,
+            "description": "Otonom sürüş algoritmaları ve State Machine (karar yapısı).",
+            "guiding_questions": [
+              "Şerit, tabela, kırmızı ışık (30 sn timeout), dinamik engel ve park algoritmaları State Machine (durum makinesi) üzerinde modellenmiş mi?",
+              "HAKEM KONTROLÜ: İlk waypoint (hedef nokta) ulaşılamama riskine karşı fail-safe bir navigasyon başlangıç devresi kurulmuş mu?"
+            ]
+          },
+          {
+            "id": "ozgun_bilesenler",
+            "name": "8. Özgün Bileşenler",
+            "max_score": 10.0,
+            "description": "Takıma ait yerli donanım/yazılım kısımları.",
+            "guiding_questions": [
+              "Hazır alınmayıp bizzat takımın geliştirdiği mekanik veya yazılım bileşenleri kanıtlarıyla sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "guvenlik",
+            "name": "9. Güvenlik",
+            "max_score": 5.0,
+            "description": "UMS-1 uzaktan durdurma ve mekanik e-stop devresi.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ (Kritik): Acil stop veya UMS-1 kullanıldığında aracın 2 METRE İÇİNDE durmasını sağlayan donanımsal kesici devre mevcut mu?"
+            ]
+          },
+          {
+            "id": "test",
+            "name": "10. Test",
+            "max_score": 10.0,
+            "description": "Yapısal analizler ve prototip testleri.",
+            "guiding_questions": [
+              "Mekanik yapısal simülasyonlar (statik/yorulma) ve prototip üzerinde sürüş/fren testleri yapılmış mı?"
+            ]
+          },
+          {
+            "id": "referanslar",
+            "name": "11. Rapor Düzeni ve Referanslar",
+            "max_score": 5.0,
+            "description": "Max 50 sayfa, Times New Roman 12pt, Akademik kaynakça.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Kapak dahil rapor 50 sayfayı aşmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "giris": "GİRİŞ",
+          "takim_organizasyonu": "TAKIM ORGANİZASYONU",
+          "zaman_cizelgesi_butce": "ZAMAN AKIŞ ÇİZELGESİ VE BÜTÇE",
+          "arac_genel_ozellikleri": "ARACIN GENEL ÖZELLİKLERİ",
+          "arac_mekanik_ozellikleri": "ARACIN MEKANİK ÖZELLİKLERİ",
+          "donanim_mimarisi": "DONANIM MİMARİSİ",
+          "yazilim_mimarisi": "YAZILIM MİMARİSİ",
+          "ozgun_bilesenler": "ÖZGÜN BİLEŞENLER",
+          "guvenlik": "GÜVENLİK",
+          "test": "TEST",
+          "referanslar": "REFERANSLAR"
+        },
+        "max_pages": 50
+      }
+    },
+    {
+      "stage": "KTR_Hazir_Arac",
+      "template": "Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+      "rubric": {
+        "category_name": "robotaksi-binek-otonom-arac-yarismasi",
+        "stage": "KTR_Hazir_Arac",
+        "description": "Robotaksi Hazır Araç Kritik Tasarım Raporu Rubriği (10 Resmi Kriter - 100 Puan)",
+        "criteria": [
+          {
+            "id": "giris",
+            "name": "1. GİRİŞ",
+            "max_score": 3.0,
+            "description": "Proje tanıtımı.",
+            "guiding_questions": [
+              "Proje amacı ve hedefleri anlaşılır biçimde belirtilmiş mi?"
+            ]
+          },
+          {
+            "id": "takim_organizasyonu",
+            "name": "2. TAKIM ORGANİZASYONU",
+            "max_score": 2.0,
+            "description": "Kör Hakemliğe uygun organizasyon.",
+            "guiding_questions": [
+              "Takım üyelerinin isimleri/okulları gizlenmiş mi? Otonom sürüş yazılım ekipleri mantıklı bölünmüş mü?"
+            ]
+          },
+          {
+            "id": "zaman_cizelgesi",
+            "name": "3. ZAMAN AKIŞ ÇİZELGESİ",
+            "max_score": 5.0,
+            "description": "Gantt şeması.",
+            "guiding_questions": [
+              "Yazılım entegrasyon süreçlerini içeren bir Gantt şeması sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "hazir_arac_ozellikleri",
+            "name": "4. HAZIR ARAÇ ÖZELLİKLERİ VE ANALİZİ",
+            "max_score": 10.0,
+            "description": "Platform analizi, CAN arayüzleri, güç gereksinimleri.",
+            "guiding_questions": [
+              "Sağlanan elektrikli platformun özellikleri, CAN/Ethernet haberleşme protokolleri tanımlanmış mı?"
+            ]
+          },
+          {
+            "id": "algoritmik_tasarim_yazilim",
+            "name": "5. ALGORİTMİK TASARIM VE YAZILIM MİMARİSİ",
+            "max_score": 10.0,
+            "description": "Blok diyagramlar, genel yapay zeka yaklaşımları.",
+            "guiding_questions": [
+              "Yazılım akış diyagramları ve genel ROS (veya diğer mimari) yapıları sunulmuş mu?"
+            ]
+          },
+          {
+            "id": "veri_ve_model_yonetimi",
+            "name": "6. VERİ VE MODEL YÖNETİMİ",
+            "max_score": 10.0,
+            "description": "Eğitim verisetleri, sensör kalibrasyonu, log yönetimi.",
+            "guiding_questions": [
+              "Yapay zeka modelleri için eğitim veri setleri (dataset) nasıl toplandı/yönetildi anlatılmış mı?"
+            ]
+          },
+          {
+            "id": "otonom_surus_algoritmalari",
+            "name": "7. OTONOM SÜRÜŞ ALGORİTMALARI",
+            "max_score": 45.0,
+            "description": "Algılama (10), Konumlandırma (10), Kontrol (10), Planlama (5), Karar Verme/Senaryo (10).",
+            "guiding_questions": [
+              "Algılama (10p): YOLO/Görüntü işleme veya LiDAR nokta bulutu şerit/ışık tespitinde doğruluk metrikleri verilmiş mi?",
+              "Konumlandırma (10p): SLAM, NDT matching veya GPS/IMU füzyon algoritmaları analiz edilmiş mi?",
+              "Kontrol (10p): Hız, direksiyon (PID/MPC) kontrolcü formülleri ve gecikme toleransları var mı?",
+              "Karar Verme ve State Machine (10p): Işıkta bekleme (30 sn timeout), yolcu alma (15-20sn) ve park manevralarını yöneten 'Durum Makinesi' şeması verilmiş mi?",
+              "HAKEM KONTROLÜ: İlk waypoint (hedef) noktasına ulaşılamama riskine karşı fail-safe bir navigasyon başlangıç devresi kurulmuş mu?"
+            ]
+          },
+          {
+            "id": "guvenlik",
+            "name": "8. GÜVENLİK",
+            "max_score": 5.0,
+            "description": "Yazılımsal acil durdurma ve senaryo limitleri.",
+            "guiding_questions": [
+              "UMS ve Acil stop kullanıldığında aracın 2 metre içinde yazılımsal/donanımsal olarak durduğu belgelenmiş mi?"
+            ]
+          },
+          {
+            "id": "sistem_entegrasyonu",
+            "name": "9. SİSTEM ENTEGRASYONU",
+            "max_score": 5.0,
+            "description": "Modüllerin araç üzerindeki uçtan uca çalışabilirliği.",
+            "guiding_questions": [
+              "Yazılım modülleri donanım kartlarına nasıl entegre ediliyor? Sistem gecikme testleri var mı?"
+            ]
+          },
+          {
+            "id": "referanslar",
+            "name": "10. REFERANSLAR",
+            "max_score": 5.0,
+            "description": "Max 50 sayfa, Akademik kaynakça.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Kapak dahil rapor 50 sayfayı aşmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "giris": "GİRİŞ",
+          "takim_organizasyonu": "TAKIM ORGANİZASYONU",
+          "zaman_cizelgesi": "ZAMAN AKIŞ ÇİZELGESİ",
+          "hazir_arac_ozellikleri": "HAZIR ARAÇ ÖZELLİKLERİ VE ANALİZİ",
+          "algoritmik_tasarim_yazilim": "ALGORİTMİK TASARIM VE YAZILIM MİMARİSİ",
+          "veri_ve_model_yonetimi": "VERİ VE MODEL YÖNETİMİ",
+          "otonom_surus_algoritmalari": "OTONOM SÜRÜŞ ALGORİTMALARI",
+          "guvenlik": "GÜVENLİK",
+          "sistem_entegrasyonu": "SİSTEM ENTEGRASYONU",
+          "referanslar": "REFERANSLAR"
+        },
+        "max_pages": 50
+      }
+    },
+    {
+      "stage": "Simulasyon_Raporu",
+      "template": "Robotaksi_Simülasyon_Şablon_rjtpc_bi9so.docx",
+      "rubric": {
+        "category_name": "robotaksi-binek-otonom-arac-yarismasi",
+        "stage": "Simulasyon_Raporu",
+        "description": "Robotaksi Simülasyon Test Raporu (Maksimum 20 Sayfa).",
+        "criteria": [
+          {
+            "id": "platform_ve_arac",
+            "name": "Platform ve Araç Modeli",
+            "max_score": 20.0,
+            "description": "Gazebo/Unity/MATLAB seçimi, kütle, ebat, dinamik araç modeli parametreleri.",
+            "guiding_questions": [
+              "Simülasyon ortamı ve aracın dinamik modeli detaylı belirtilmiş mi?"
+            ]
+          },
+          {
+            "id": "sensor_konfigurasyonu",
+            "name": "Sensör Konfigürasyonu ve KTR Uyumu",
+            "max_score": 20.0,
+            "description": "LiDAR, Kamera, Radar, GPS modelleri ve KTR'de beyan edilen donanım listesiyle tutarlılık.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Simülasyonda kullanılan sensörler KTR donanım listesiyle birebir aynı mı? KTR dışı sensör var mı?"
+            ]
+          },
+          {
+            "id": "yazilim_mimarisi_dogrulama",
+            "name": "Yazılım Mimarisinin Simülasyonda Doğrulanması",
+            "max_score": 30.0,
+            "description": "Algılama, SLAM, global/yerel planlama, State Machine karar akışları ve kontrolcü entegrasyonu.",
+            "guiding_questions": [
+              "State machine (durum makinesi) ve ROS mimarisi simülasyonda test edilmiş mi?"
+            ]
+          },
+          {
+            "id": "test_sonuclari",
+            "name": "Test Sonuçları, Grafikler ve Log Kayıtları",
+            "max_score": 20.0,
+            "description": "Işıkta durma, şerit takip, park süresi, dinamik engel sakınma grafik/logları.",
+            "guiding_questions": [
+              "Senaryo görev (ışık, park, engel) testlerine dair grafikler ve sistem log (kayıt) ekranları eklenmiş mi?"
+            ]
+          },
+          {
+            "id": "rapor_duzeni",
+            "name": "Rapor Düzeni ve Kapsam",
+            "max_score": 10.0,
+            "description": "Maksimum 20 sayfa sınırı ve akademik referanslar.",
+            "guiding_questions": [
+              "HAKEM KONTROLÜ: Rapor referanslar dahil 20 sayfayı aşmış mı?"
+            ]
+          }
+        ],
+        "required_sections": {
+          "giris_kapsam": "Giriş ve Kapsam",
+          "simulasyon_ortami": "Simülasyon Ortamı ve Yazılım Altyapısı",
+          "arac_ve_sensorler": "Araç Modeli ve Sensörler",
+          "gorev_ve_senaryolar": "Görev Tanımı ve Senaryolar",
+          "yazilim_mimarisinin_uygulanmasi": "Algoritma ve Yazılım Mimarisinin Uygulanması",
+          "simulasyon_testleri": "Simülasyon Testleri ve Sonuçları",
+          "karsilastirma_analiz": "Karşılaştırma ve Analiz",
+          "sonuc_gelecek_calismalar": "Sonuç ve Gelecek Çalışmalar",
+          "ekler_referanslar": "Ekler / Referanslar"
+        },
+        "max_pages": 20
+      }
+    }
+  ]
+}
